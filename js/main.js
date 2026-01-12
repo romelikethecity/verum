@@ -1,36 +1,12 @@
 /**
  * Verum Website - Main JavaScript
+ *
+ * Note: Mobile navigation toggle is handled in components.js
+ * for pages using the shared header component.
  */
 
 (function() {
   'use strict';
-
-  // Mobile Navigation Toggle
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mobileNav = document.querySelector('.nav--mobile');
-
-  if (menuToggle && mobileNav) {
-    menuToggle.addEventListener('click', function() {
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', !isExpanded);
-      this.classList.toggle('active');
-      mobileNav.classList.toggle('active');
-
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-    });
-
-    // Close mobile menu when clicking a link
-    const mobileNavLinks = mobileNav.querySelectorAll('a');
-    mobileNavLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        mobileNav.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-  }
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
