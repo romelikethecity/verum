@@ -219,7 +219,8 @@ def get_page_template(title, description, canonical_path, h1, content_html, keyw
   <meta name="keywords" content="{keywords}">
 
   <link rel="canonical" href="{BASE_URL}{canonical_path}">
-  <link rel="icon" href="/assets/logos/verum-favicon-32.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
