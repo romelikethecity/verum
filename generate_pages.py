@@ -332,7 +332,7 @@ def get_page_template(title, description, canonical_path, h1, content_html, keyw
       <div class="footer__bottom">
         <p>&copy; 2025 Verum Inc. All rights reserved.</p>
         <div class="footer__social">
-          <a href="https://linkedin.com/company/verum" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/company/verumai/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </div>

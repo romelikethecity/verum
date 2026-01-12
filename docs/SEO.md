@@ -106,7 +106,7 @@ Sitemap: https://veruminc.com/sitemap.xml
   "url": "https://veruminc.com",
   "logo": "https://veruminc.com/assets/logos/verum-logo-horizontal-light.svg",
   "description": "Enterprise data cleaning and enrichment services for B2B companies",
-  "sameAs": ["https://linkedin.com/company/verum"]
+  "sameAs": ["https://www.linkedin.com/company/verumai/"]
 }
 ```
 
