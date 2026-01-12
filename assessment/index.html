@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Quality Assessment | Verum</title>
+  <meta name="description" content="Get your free Data Quality Scorecard. Find out what bad data is costing your business and how to fix it in under 2 minutes.">
+
+  <link rel="canonical" href="https://veruminc.com/assessment/">
+  <link rel="icon" href="/assets/logos/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veruminc.com/assessment/">
+  <meta property="og:title" content="Data Quality Assessment | Verum">
+  <meta property="og:description" content="Get your free Data Quality Scorecard. Find out what bad data is costing your business.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Quality Assessment | Verum">
+  <meta name="twitter:description" content="Get your free Data Quality Scorecard. Find out what bad data is costing your business.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <style>
+    /* Assessment-specific styles */
+    .assessment-hero {
+      padding: 6rem 0 3rem;
+      text-align: center;
+    }
+    .assessment-hero__title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .assessment-hero__subtitle {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin: 0 auto 0.5rem;
+    }
+    .assessment-hero__time {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+
+    /* Quiz container */
+    .quiz-container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 1rem 4rem;
+    }
+
+    /* Progress bar */
+    .progress-bar {
+      height: 4px;
+      background: var(--color-bg-card);
+      border-radius: 2px;
+      margin-bottom: 3rem;
+      overflow: hidden;
+    }
+    .progress-bar__fill {
+      height: 100%;
+      background: var(--color-teal);
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    /* Question card */
+    .question-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      display: none;
+    }
+    .question-card.active {
+      display: block;
+    }
+    .question-card__number {
+      font-size: 0.875rem;
+      color: var(--color-teal);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .question-card__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+
+    /* Options */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .option {
+      display: block;
+      padding: 1rem 1.25rem;
+      background: var(--color-bg-primary);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-size: 1rem;
+    }
+    .option:hover {
+      border-color: var(--color-teal);
+      background: rgba(0, 184, 148, 0.05);
+    }
+    .option.selected {
+      border-color: var(--color-teal);
+      background: rgba(0, 184, 148, 0.1);
+    }
+    .option input {
+      display: none;
+    }
+
+    /* Navigation */
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      gap: 1rem;
+    }
+    .quiz-nav__btn {
+      padding: 0.875rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: none;
+      font-size: 1rem;
+    }
+    .quiz-nav__btn--back {
+      background: transparent;
+      color: var(--color-text-secondary);
+      border: 1px solid var(--color-border);
+    }
+    .quiz-nav__btn--back:hover {
+      background: var(--color-bg-card);
+    }
+    .quiz-nav__btn--back:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+    .quiz-nav__btn--next {
+      background: var(--color-teal);
+      color: #fff;
+      flex: 1;
+      max-width: 200px;
+    }
+    .quiz-nav__btn--next:hover {
+      background: var(--color-teal-dark);
+    }
+    .quiz-nav__btn--next:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Results */
+    .results {
+      display: none;
+      text-align: center;
+    }
+    .results.active {
+      display: block;
+    }
+    .results__score-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .results__grade {
+      font-size: 5rem;
+      font-weight: 700;
+      color: var(--color-teal);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .results__grade-label {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 2rem;
+    }
+    .results__cost {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .results__cost-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #e74c3c;
+    }
+    .results__cost-label {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Breakdown preview */
+    .results__breakdown {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .results__breakdown h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .breakdown-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .breakdown-item:last-child {
+      border-bottom: none;
+    }
+    .breakdown-item__label {
+      color: var(--color-text-secondary);
+    }
+    .breakdown-item__value {
+      font-weight: 600;
+    }
+    .breakdown-item__value--good {
+      color: var(--color-teal);
+    }
+    .breakdown-item__value--warning {
+      color: #f39c12;
+    }
+    .breakdown-item__value--bad {
+      color: #e74c3c;
+    }
+
+    /* Email capture */
+    .results__cta {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border: 1px solid var(--color-teal);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .results__cta h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .results__cta p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 0.9375rem;
+    }
+    .results__cta ul {
+      text-align: left;
+      margin: 0 auto 1.5rem;
+      max-width: 320px;
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary);
+    }
+    .results__cta li {
+      padding: 0.25rem 0;
+    }
+    .results__cta li::before {
+      content: "✓ ";
+      color: var(--color-teal);
+      font-weight: 600;
+    }
+    .email-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .email-form__input {
+      flex: 1;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      font-size: 1rem;
+    }
+    .email-form__input:focus {
+      outline: none;
+      border-color: var(--color-teal);
+    }
+    .email-form__btn {
+      padding: 0.875rem 1.5rem;
+      background: var(--color-teal);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .email-form__btn:hover {
+      background: var(--color-teal-dark);
+    }
+
+    /* Recommendations */
+    .results__recommendations {
+      text-align: left;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+    }
+    .results__recommendations h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+    .results__recommendations p {
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .results__recommendations .btn {
+      display: inline-block;
+    }
+
+    /* Thank you state */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-teal);
+      border-radius: var(--radius-lg);
+    }
+    .thank-you.active {
+      display: block;
+    }
+    .thank-you h3 {
+      color: var(--color-teal);
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .assessment-hero__title {
+        font-size: 2rem;
+      }
+      .question-card {
+        padding: 1.5rem;
+      }
+      .question-card__title {
+        font-size: 1.25rem;
+      }
+      .email-form {
+        flex-direction: column;
+      }
+      .results__grade {
+        font-size: 4rem;
+      }
+      .results__cost-value {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">
+        <img src="/assets/logos/logos-svg/verum-logo-horizontal-dark.svg" alt="Verum" width="120" height="32">
+      </a>
+      <nav class="nav nav--desktop">
+        <ul class="nav__list">
+          <li><a href="/services/" class="nav__link">Services</a></li>
+          <li><a href="/solutions/" class="nav__link">Solutions</a></li>
+          <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
+          <li><a href="/about.html" class="nav__link">About</a></li>
+        </ul>
+      </nav>
+      <a href="/#contact" class="btn btn--primary btn--sm header__cta">Clean My Data</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="menu-toggle__icon"></span>
+      </button>
+      <nav class="nav nav--mobile">
+        <ul class="nav__list">
+          <li><a href="/services/" class="nav__link">Services</a></li>
+          <li><a href="/solutions/" class="nav__link">Solutions</a></li>
+          <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
+          <li><a href="/about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="/#contact" class="btn btn--primary">Clean My Data</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="assessment-hero">
+    <div class="container">
+      <h1 class="assessment-hero__title">Data Quality Scorecard</h1>
+      <p class="assessment-hero__subtitle">Find out what bad data is costing your business and get personalized recommendations to fix it.</p>
+      <p class="assessment-hero__time">Takes less than 2 minutes</p>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <div class="quiz-container">
+    <div class="progress-bar">
+      <div class="progress-bar__fill" style="width: 0%"></div>
+    </div>
+
+    <!-- Question 1: Database Size -->
+    <div class="question-card active" data-question="1">
+      <div class="question-card__number">Question 1 of 6</div>
+      <h2 class="question-card__title">How many records are in your CRM or database?</h2>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q1" value="2500">
+          Less than 5,000
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="15000">
+          5,000 - 25,000
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="62500">
+          25,000 - 100,000
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="300000">
+          100,000 - 500,000
+        </label>
+        <label class="option">
+          <input type="radio" name="q1" value="750000">
+          500,000+
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="quiz-nav__btn quiz-nav__btn--back" disabled>Back</button>
+        <button class="quiz-nav__btn quiz-nav__btn--next" disabled>Next</button>
+      </div>
+    </div>
+
+    <!-- Question 2: Team Size -->
+    <div class="question-card" data-question="2">
+      <div class="question-card__number">Question 2 of 6</div>
+      <h2 class="question-card__title">How many sales and marketing people use this data?</h2>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q2" value="3">
+          1 - 5 people
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="10">
+          6 - 15 people
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="33">
+          16 - 50 people
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="75">
+          51 - 100 people
+        </label>
+        <label class="option">
+          <input type="radio" name="q2" value="150">
+          100+ people
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="quiz-nav__btn quiz-nav__btn--back">Back</button>
+        <button class="quiz-nav__btn quiz-nav__btn--next" disabled>Next</button>
+      </div>
+    </div>
+
+    <!-- Question 3: Duplicate Rate -->
+    <div class="question-card" data-question="3">
+      <div class="question-card__number">Question 3 of 6</div>
+      <h2 class="question-card__title">What's your estimated duplicate rate?</h2>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q3" value="3" data-score="90">
+          Less than 5%
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="10" data-score="70">
+          5% - 15%
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="22" data-score="50">
+          15% - 30%
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="40" data-score="30">
+          More than 30%
+        </label>
+        <label class="option">
+          <input type="radio" name="q3" value="20" data-score="50">
+          I don't know
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="quiz-nav__btn quiz-nav__btn--back">Back</button>
+        <button class="quiz-nav__btn quiz-nav__btn--next" disabled>Next</button>
+      </div>
+    </div>
+
+    <!-- Question 4: Bounce Rate -->
+    <div class="question-card" data-question="4">
+      <div class="question-card__number">Question 4 of 6</div>
+      <h2 class="question-card__title">What's your email bounce rate on campaigns?</h2>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q4" value="1" data-score="95">
+          Less than 2%
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="3.5" data-score="80">
+          2% - 5%
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="7.5" data-score="60">
+          5% - 10%
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="15" data-score="35">
+          More than 10%
+        </label>
+        <label class="option">
+          <input type="radio" name="q4" value="8" data-score="50">
+          I don't know
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="quiz-nav__btn quiz-nav__btn--back">Back</button>
+        <button class="quiz-nav__btn quiz-nav__btn--next" disabled>Next</button>
+      </div>
+    </div>
+
+    <!-- Question 5: Last Cleaned -->
+    <div class="question-card" data-question="5">
+      <div class="question-card__number">Question 5 of 6</div>
+      <h2 class="question-card__title">When was your database last cleaned or audited?</h2>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q5" value="1" data-score="95">
+          Within the last 6 months
+        </label>
+        <label class="option">
+          <input type="radio" name="q5" value="1.2" data-score="75">
+          6 - 12 months ago
+        </label>
+        <label class="option">
+          <input type="radio" name="q5" value="1.4" data-score="50">
+          1 - 2 years ago
+        </label>
+        <label class="option">
+          <input type="radio" name="q5" value="1.6" data-score="30">
+          More than 2 years ago
+        </label>
+        <label class="option">
+          <input type="radio" name="q5" value="1.8" data-score="20">
+          Never
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="quiz-nav__btn quiz-nav__btn--back">Back</button>
+        <button class="quiz-nav__btn quiz-nav__btn--next" disabled>Next</button>
+      </div>
+    </div>
+
+    <!-- Question 6: AI/Automation -->
+    <div class="question-card" data-question="6">
+      <div class="question-card__number">Question 6 of 6</div>
+      <h2 class="question-card__title">Are you using (or planning to use) this data for AI or automation?</h2>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="q6" value="active" data-score="100">
+          Yes, actively using AI/automation
+        </label>
+        <label class="option">
+          <input type="radio" name="q6" value="planning" data-score="80">
+          Planning to in the next 12 months
+        </label>
+        <label class="option">
+          <input type="radio" name="q6" value="no" data-score="60">
+          Not currently planned
+        </label>
+      </div>
+      <div class="quiz-nav">
+        <button class="quiz-nav__btn quiz-nav__btn--back">Back</button>
+        <button class="quiz-nav__btn quiz-nav__btn--next" disabled>Get My Score</button>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div class="results" id="results">
+      <div class="results__score-card">
+        <div class="results__grade" id="grade">C+</div>
+        <div class="results__grade-label">Data Quality Score: <span id="score">72</span>/100</div>
+        <div class="results__cost">Estimated annual cost of bad data:</div>
+        <div class="results__cost-value" id="cost">$47,000</div>
+        <div class="results__cost-label">in wasted time and lost opportunities</div>
+      </div>
+
+      <div class="results__breakdown">
+        <h3>Score Breakdown</h3>
+        <div class="breakdown-item">
+          <span class="breakdown-item__label">Data Freshness</span>
+          <span class="breakdown-item__value" id="freshness-score">--</span>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-item__label">Duplicate Management</span>
+          <span class="breakdown-item__value" id="duplicate-score">--</span>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-item__label">Email Deliverability</span>
+          <span class="breakdown-item__value" id="email-score">--</span>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-item__label">AI Readiness</span>
+          <span class="breakdown-item__value" id="ai-score">--</span>
+        </div>
+      </div>
+
+      <div class="results__cta" id="email-cta">
+        <h3>Get Your Full Report</h3>
+        <p>Enter your email to receive your detailed Data Quality Report with:</p>
+        <ul>
+          <li>Full cost breakdown by category</li>
+          <li>Industry benchmark comparison</li>
+          <li>Step-by-step remediation plan</li>
+          <li>ROI projection for data cleaning</li>
+        </ul>
+        <form class="email-form" id="email-form" action="https://formspree.io/f/xaqqywlb" method="POST">
+          <input type="hidden" name="form_type" value="Data Quality Assessment">
+          <input type="hidden" name="score" id="hidden-score" value="">
+          <input type="hidden" name="grade" id="hidden-grade" value="">
+          <input type="hidden" name="estimated_cost" id="hidden-cost" value="">
+          <input type="email" name="email" class="email-form__input" placeholder="Work email" required>
+          <button type="submit" class="email-form__btn">Send Report</button>
+        </form>
+      </div>
+
+      <div class="thank-you" id="thank-you">
+        <h3>Check Your Inbox!</h3>
+        <p>We've sent your full Data Quality Report. One of our team members will follow up with personalized recommendations.</p>
+      </div>
+
+      <div class="results__recommendations">
+        <h3>What This Means</h3>
+        <p id="recommendation-text">
+          Your data quality score suggests significant room for improvement. Companies at this level typically see 20-30% of sales time wasted on bad data, and email campaigns underperforming by 15-25%.
+        </p>
+        <p>
+          <strong>The good news:</strong> These are exactly the problems we solve. Most clients see measurable improvements within the first week of working with us.
+        </p>
+        <a href="/#contact" class="btn btn--primary">Talk to Us About Your Data</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="/assets/logos/logos-svg/verum-logo-horizontal-dark.svg" alt="Verum" class="footer__logo" width="120" height="32">
+          <p class="footer__tagline">Enterprise data cleaning and enrichment you can trust.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <ul class="footer__links">
+            <li><a href="/services/data-cleaning.html">Data Cleaning</a></li>
+            <li><a href="/services/data-enrichment.html">Data Enrichment</a></li>
+            <li><a href="/services/data-analysis.html">Data Analysis</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/pricing.html">Pricing</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Verum Inc. All rights reserved.</p>
+        <div class="footer__social">
+          <a href="https://www.linkedin.com/company/verumai/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    (function() {
+      const questions = document.querySelectorAll('.question-card');
+      const progressBar = document.querySelector('.progress-bar__fill');
+      const resultsSection = document.getElementById('results');
+      const totalQuestions = questions.length;
+      let currentQuestion = 0;
+      let answers = {};
+
+      // Initialize
+      function init() {
+        questions.forEach((q, index) => {
+          const options = q.querySelectorAll('.option');
+          const nextBtn = q.querySelector('.quiz-nav__btn--next');
+          const backBtn = q.querySelector('.quiz-nav__btn--back');
+
+          // Option selection
+          options.forEach(option => {
+            option.addEventListener('click', () => {
+              options.forEach(o => o.classList.remove('selected'));
+              option.classList.add('selected');
+              option.querySelector('input').checked = true;
+              nextBtn.disabled = false;
+
+              // Store answer
+              const input = option.querySelector('input');
+              answers[`q${index + 1}`] = {
+                value: input.value,
+                score: input.dataset.score || null
+              };
+            });
+          });
+
+          // Next button
+          nextBtn.addEventListener('click', () => {
+            if (index < totalQuestions - 1) {
+              goToQuestion(index + 1);
+            } else {
+              showResults();
+            }
+          });
+
+          // Back button
+          backBtn.addEventListener('click', () => {
+            if (index > 0) {
+              goToQuestion(index - 1);
+            }
+          });
+        });
+
+        // Email form submission
+        const emailForm = document.getElementById('email-form');
+        emailForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          // Submit to Formspree
+          const formData = new FormData(emailForm);
+          fetch(emailForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          }).then(response => {
+            if (response.ok) {
+              document.getElementById('email-cta').style.display = 'none';
+              document.getElementById('thank-you').classList.add('active');
+            }
+          });
+        });
+
+        updateProgress();
+      }
+
+      function goToQuestion(index) {
+        questions[currentQuestion].classList.remove('active');
+        questions[index].classList.add('active');
+        currentQuestion = index;
+        updateProgress();
+      }
+
+      function updateProgress() {
+        const progress = ((currentQuestion + 1) / totalQuestions) * 100;
+        progressBar.style.width = `${progress}%`;
+      }
+
+      function showResults() {
+        questions[currentQuestion].classList.remove('active');
+        document.querySelector('.progress-bar').style.display = 'none';
+        resultsSection.classList.add('active');
+
+        // Calculate scores
+        const records = parseFloat(answers.q1?.value) || 15000;
+        const teamSize = parseFloat(answers.q2?.value) || 10;
+        const duplicateRate = parseFloat(answers.q3?.value) || 15;
+        const bounceRate = parseFloat(answers.q4?.value) || 5;
+        const decayMultiplier = parseFloat(answers.q5?.value) || 1.4;
+
+        // Score calculation (0-100)
+        const duplicateScore = parseInt(answers.q3?.score) || 60;
+        const bounceScore = parseInt(answers.q4?.score) || 60;
+        const freshnessScore = parseInt(answers.q5?.score) || 50;
+        const aiScore = parseInt(answers.q6?.score) || 70;
+
+        const overallScore = Math.round((duplicateScore + bounceScore + freshnessScore + aiScore) / 4);
+
+        // Grade calculation
+        let grade;
+        if (overallScore >= 90) grade = 'A';
+        else if (overallScore >= 80) grade = 'B+';
+        else if (overallScore >= 70) grade = 'B';
+        else if (overallScore >= 60) grade = 'C+';
+        else if (overallScore >= 50) grade = 'C';
+        else if (overallScore >= 40) grade = 'D';
+        else grade = 'F';
+
+        // Cost calculation
+        // Rep productivity loss: reps × hours/week × hourly cost × 52 weeks
+        const hourlyRate = 50; // $100k salary ≈ $50/hr loaded
+        const wastedHoursPerWeek = 5; // Conservative estimate
+        const repProductivityLoss = teamSize * wastedHoursPerWeek * hourlyRate * 52;
+
+        // Email waste: records × duplicate rate × cost per wasted send × campaigns/year
+        const costPerEmail = 0.01;
+        const campaignsPerYear = 24;
+        const emailWaste = records * (duplicateRate / 100) * costPerEmail * campaignsPerYear;
+
+        // Bounce cost impact (reputation, lost opportunities)
+        const bounceCost = records * (bounceRate / 100) * 0.50 * campaignsPerYear;
+
+        // Apply decay multiplier
+        const totalCost = Math.round((repProductivityLoss + emailWaste + bounceCost) * decayMultiplier);
+
+        // Update UI
+        document.getElementById('grade').textContent = grade;
+        document.getElementById('score').textContent = overallScore;
+        document.getElementById('cost').textContent = '$' + totalCost.toLocaleString();
+
+        // Hidden fields for form
+        document.getElementById('hidden-score').value = overallScore;
+        document.getElementById('hidden-grade').value = grade;
+        document.getElementById('hidden-cost').value = totalCost;
+
+        // Breakdown scores
+        updateBreakdownScore('freshness-score', freshnessScore);
+        updateBreakdownScore('duplicate-score', duplicateScore);
+        updateBreakdownScore('email-score', bounceScore);
+        updateBreakdownScore('ai-score', aiScore);
+
+        // Recommendation text
+        let recText = '';
+        if (overallScore >= 80) {
+          recText = "Your data quality is above average. You're in a good position, but there's always room for optimization. Small improvements can yield significant ROI gains.";
+        } else if (overallScore >= 60) {
+          recText = "Your data quality score suggests moderate issues that are likely impacting productivity. Companies at this level typically see 15-25% of sales time affected by data problems.";
+        } else {
+          recText = "Your data quality score indicates significant challenges. Companies at this level often see 25-40% of sales productivity lost to bad data, with marketing campaigns severely underperforming.";
+        }
+        document.getElementById('recommendation-text').textContent = recText;
+
+        // Track completion
+        gtag('event', 'assessment_completed', {
+          'score': overallScore,
+          'grade': grade,
+          'estimated_cost': totalCost
+        });
+      }
+
+      function updateBreakdownScore(elementId, score) {
+        const el = document.getElementById(elementId);
+        let label, className;
+
+        if (score >= 80) {
+          label = 'Good';
+          className = 'breakdown-item__value--good';
+        } else if (score >= 50) {
+          label = 'Needs Work';
+          className = 'breakdown-item__value--warning';
+        } else {
+          label = 'Poor';
+          className = 'breakdown-item__value--bad';
+        }
+
+        el.textContent = label;
+        el.classList.add(className);
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>
