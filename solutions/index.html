@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions | Verum</title>
+  <meta name="description" content="Data cleaning and enrichment solutions for every industry, team, and use case. From healthcare to fintech, sales ops to marketing ops.">
+
+  <link rel="canonical" href="https://veruminc.com/solutions/">
+  <link rel="icon" href="/assets/logos/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veruminc.com/solutions/">
+  <meta property="og:title" content="Solutions | Verum">
+  <meta property="og:description" content="Data cleaning and enrichment solutions for every industry, team, and use case.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solutions | Verum">
+  <meta name="twitter:description" content="Data cleaning and enrichment solutions for every industry, team, and use case.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <style>
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .solutions-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .solutions-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .solutions-grid a {
+      display: block;
+      padding: 1rem 1.25rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      transition: all var(--transition-fast);
+    }
+    .solutions-grid a:hover {
+      border-color: var(--color-teal);
+      color: var(--color-teal);
+      transform: translateY(-2px);
+    }
+    .team-card {
+      padding: 2rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+    .team-card__icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 184, 148, 0.15);
+      border-radius: var(--radius-md);
+    }
+    .team-card__icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-teal);
+    }
+    .team-card__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-primary);
+    }
+    .team-card__desc {
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      font-size: 0.9375rem;
+    }
+    .team-card__links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    .team-card__links li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .team-card__links li:last-child {
+      border-bottom: none;
+    }
+    .team-card__links a {
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+    .team-card__links a:hover {
+      color: var(--color-teal);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo">
+        <img src="/assets/logos/logos-svg/verum-logo-horizontal-dark.svg" alt="Verum" width="120" height="32">
+      </a>
+      <nav class="nav nav--desktop">
+        <ul class="nav__list">
+          <li><a href="/services/" class="nav__link">Services</a></li>
+          <li><a href="/solutions/" class="nav__link">Solutions</a></li>
+          <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
+          <li><a href="/about.html" class="nav__link">About</a></li>
+        </ul>
+      </nav>
+      <a href="/#contact" class="btn btn--primary btn--sm header__cta">Clean My Data</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="menu-toggle__icon"></span>
+      </button>
+      <nav class="nav nav--mobile">
+        <ul class="nav__list">
+          <li><a href="/services/" class="nav__link">Services</a></li>
+          <li><a href="/solutions/" class="nav__link">Solutions</a></li>
+          <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
+          <li><a href="/about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="/#contact" class="btn btn--primary">Clean My Data</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Solutions</h1>
+      <p class="page-hero__subtitle">Data cleaning and enrichment tailored to your industry, team, and use case.</p>
+    </div>
+  </section>
+
+  <!-- By Team -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-xl">Solutions by Team</h2>
+
+      <div class="services__grid">
+        <div class="team-card">
+          <div class="team-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="team-card__title">Sales Operations</h3>
+          <p class="team-card__desc">Give your reps data worth calling</p>
+          <ul class="team-card__links">
+            <li><a href="/use-cases/crm-hygiene/">CRM Hygiene</a></li>
+            <li><a href="/use-cases/lead-routing/">Lead Routing</a></li>
+            <li><a href="/use-cases/territory-planning/">Territory Planning</a></li>
+            <li><a href="/use-cases/sales-prospecting/">Sales Prospecting</a></li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <h3 class="team-card__title">Marketing Operations</h3>
+          <p class="team-card__desc">Run campaigns that actually deliver</p>
+          <ul class="team-card__links">
+            <li><a href="/use-cases/abm-targeting/">ABM Targeting</a></li>
+            <li><a href="/use-cases/marketing-segmentation/">Marketing Segmentation</a></li>
+            <li><a href="/use-cases/email-marketing-cleanup/">Email Marketing Cleanup</a></li>
+            <li><a href="/use-cases/campaign-targeting/">Campaign Targeting</a></li>
+          </ul>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="20" x2="12" y2="10"></line>
+              <line x1="18" y1="20" x2="18" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="16"></line>
+            </svg>
+          </div>
+          <h3 class="team-card__title">Revenue Operations</h3>
+          <p class="team-card__desc">Build systems that scale</p>
+          <ul class="team-card__links">
+            <li><a href="/use-cases/lead-scoring/">Lead Scoring</a></li>
+            <li><a href="/use-cases/revenue-intelligence/">Revenue Intelligence</a></li>
+            <li><a href="/use-cases/data-integration/">Data Integration</a></li>
+            <li><a href="/use-cases/master-data-management/">Master Data Management</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- By Industry -->
+  <section class="section section--dark">
+    <div class="container">
+      <h2 class="text-center mb-xl">Solutions by Industry</h2>
+      <p class="text-center" style="color: var(--color-text-secondary); max-width: 600px; margin: -1rem auto 2rem;">Every industry has unique data challenges. We understand the nuances of your market.</p>
+
+      <div class="solutions-grid">
+        <a href="/solutions/healthcare-data-enrichment/">Healthcare</a>
+        <a href="/solutions/fintech-data-enrichment/">Fintech</a>
+        <a href="/solutions/saas-data-enrichment/">SaaS</a>
+        <a href="/solutions/ecommerce-data-enrichment/">E-commerce</a>
+        <a href="/solutions/real-estate-data-enrichment/">Real Estate</a>
+        <a href="/solutions/insurance-data-enrichment/">Insurance</a>
+        <a href="/solutions/legal-data-enrichment/">Legal</a>
+        <a href="/solutions/manufacturing-data-enrichment/">Manufacturing</a>
+        <a href="/solutions/retail-data-enrichment/">Retail</a>
+        <a href="/solutions/education-data-enrichment/">Education</a>
+        <a href="/solutions/nonprofit-data-enrichment/">Non-profit</a>
+        <a href="/solutions/logistics-data-enrichment/">Logistics</a>
+        <a href="/solutions/professional-services-data-enrichment/">Professional Services</a>
+        <a href="/solutions/technology-data-enrichment/">Technology</a>
+        <a href="/solutions/cybersecurity-data-enrichment/">Cybersecurity</a>
+        <a href="/solutions/ai-ml-data-enrichment/">AI & ML</a>
+        <a href="/solutions/martech-data-enrichment/">Martech</a>
+        <a href="/solutions/hr-tech-data-enrichment/">HR Tech</a>
+        <a href="/solutions/adtech-data-enrichment/">Adtech</a>
+        <a href="/solutions/telecommunications-data-enrichment/">Telecommunications</a>
+        <a href="/solutions/energy-data-enrichment/">Energy</a>
+        <a href="/solutions/media-data-enrichment/">Media</a>
+        <a href="/solutions/travel-data-enrichment/">Travel</a>
+        <a href="/solutions/construction-data-enrichment/">Construction</a>
+        <a href="/solutions/b2b-services-data-enrichment/">B2B Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- By Use Case -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-xl">Solutions by Use Case</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+        <!-- Data Quality -->
+        <div class="feature-card">
+          <h3 class="feature-card__title">Data Quality & Hygiene</h3>
+          <div class="solutions-grid" style="margin-top: 1rem;">
+            <a href="/use-cases/crm-hygiene/">CRM Hygiene</a>
+            <a href="/cleaning/data-deduplication/">Deduplication</a>
+            <a href="/cleaning/email-validation/">Email Validation</a>
+            <a href="/cleaning/data-standardization/">Data Standardization</a>
+            <a href="/use-cases/data-migration/">Data Migration</a>
+            <a href="/use-cases/database-merge/">Database Merge</a>
+          </div>
+        </div>
+
+        <!-- Prospecting -->
+        <div class="feature-card">
+          <h3 class="feature-card__title">Prospecting & List Building</h3>
+          <div class="solutions-grid" style="margin-top: 1rem;">
+            <a href="/use-cases/sales-prospecting/">Sales Prospecting</a>
+            <a href="/use-cases/business-prospecting/">Business Prospecting</a>
+            <a href="/find/small-business-owners/">Find Business Owners</a>
+            <a href="/enrichment/linkedin-profile-enrichment/">LinkedIn Enrichment</a>
+            <a href="/enrichment/email-finder/">Email Finder</a>
+            <a href="/enrichment/phone-number-enrichment/">Phone Enrichment</a>
+          </div>
+        </div>
+
+        <!-- Targeting -->
+        <div class="feature-card">
+          <h3 class="feature-card__title">Targeting & Segmentation</h3>
+          <div class="solutions-grid" style="margin-top: 1rem;">
+            <a href="/use-cases/abm-targeting/">ABM Targeting</a>
+            <a href="/use-cases/lead-scoring/">Lead Scoring</a>
+            <a href="/use-cases/customer-segmentation/">Customer Segmentation</a>
+            <a href="/enrichment/firmographic-enrichment/">Firmographic Enrichment</a>
+            <a href="/enrichment/technographic-enrichment/">Technographic Enrichment</a>
+            <a href="/enrichment/intent-data-enrichment/">Intent Data</a>
+          </div>
+        </div>
+
+        <!-- Analysis -->
+        <div class="feature-card">
+          <h3 class="feature-card__title">Analysis & Insights</h3>
+          <div class="solutions-grid" style="margin-top: 1rem;">
+            <a href="/analysis/icp-analysis/">ICP Analysis</a>
+            <a href="/analysis/customer-segmentation/">Customer Segmentation</a>
+            <a href="/analysis/market-analysis/">Market Analysis</a>
+            <a href="/analysis/competitor-analysis/">Competitor Analysis</a>
+            <a href="/analysis/churn-analysis/">Churn Analysis</a>
+            <a href="/use-cases/lookalike-modeling/">Lookalike Modeling</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Types -->
+  <section class="section section--dark">
+    <div class="container">
+      <h2 class="text-center mb-xl">Data Types We Enrich</h2>
+
+      <div class="services__grid">
+        <div class="feature-card">
+          <h3 class="feature-card__title">Contact Data</h3>
+          <ul class="benefits-list">
+            <li><a href="/enrichment/email-enrichment/" style="color: inherit;">Email addresses</a></li>
+            <li><a href="/enrichment/phone-number-enrichment/" style="color: inherit;">Phone numbers</a></li>
+            <li><a href="/enrichment/linkedin-profile-enrichment/" style="color: inherit;">LinkedIn profiles</a></li>
+            <li><a href="/enrichment/job-title-enrichment/" style="color: inherit;">Job titles</a></li>
+            <li><a href="/enrichment/seniority-enrichment/" style="color: inherit;">Seniority levels</a></li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <h3 class="feature-card__title">Company Data</h3>
+          <ul class="benefits-list">
+            <li><a href="/enrichment/firmographic-enrichment/" style="color: inherit;">Firmographics</a></li>
+            <li><a href="/enrichment/company-size-enrichment/" style="color: inherit;">Company size</a></li>
+            <li><a href="/enrichment/company-revenue-enrichment/" style="color: inherit;">Revenue data</a></li>
+            <li><a href="/enrichment/company-funding-enrichment/" style="color: inherit;">Funding rounds</a></li>
+            <li><a href="/enrichment/industry-classification-enrichment/" style="color: inherit;">Industry codes</a></li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <h3 class="feature-card__title">Technology Data</h3>
+          <ul class="benefits-list">
+            <li><a href="/enrichment/technographic-enrichment/" style="color: inherit;">Tech stack</a></li>
+            <li><a href="/enrichment/crm-detection/" style="color: inherit;">CRM detection</a></li>
+            <li><a href="/enrichment/marketing-automation-detection/" style="color: inherit;">Marketing automation</a></li>
+            <li><a href="/enrichment/website-technology-enrichment/" style="color: inherit;">Website technologies</a></li>
+            <li><a href="/enrichment/intent-data-enrichment/" style="color: inherit;">Intent signals</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container text-center">
+      <h2>Not sure which solution is right for you?</h2>
+      <p style="color: var(--color-text-secondary); max-width: 500px; margin: 1rem auto 2rem;">Tell us about your data challenges and we'll recommend the best approach for your specific situation.</p>
+      <a href="/#contact" class="btn btn--primary btn--lg">Talk to Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="/assets/logos/logos-svg/verum-logo-horizontal-dark.svg" alt="Verum" class="footer__logo" width="120" height="32">
+          <p class="footer__tagline">Enterprise data cleaning and enrichment you can trust.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <ul class="footer__links">
+            <li><a href="/services/data-cleaning.html">Data Cleaning</a></li>
+            <li><a href="/services/data-enrichment.html">Data Enrichment</a></li>
+            <li><a href="/services/data-analysis.html">Data Analysis</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/pricing.html">Pricing</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Verum Inc. All rights reserved.</p>
+        <div class="footer__social">
+          <a href="https://linkedin.com/company/verum" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
