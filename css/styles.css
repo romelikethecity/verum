@@ -297,6 +297,7 @@ img {
 
 .nav--mobile.active {
   transform: translateX(0);
+  display: block !important;
 }
 
 .nav--mobile .nav__list {
