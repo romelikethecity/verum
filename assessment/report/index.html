@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Data Quality Report | Verum</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" href="/assets/logos/verum-favicon-32.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-teal: #00b894;
+      --color-teal-dark: #00a382;
+      --color-bg: #0a0a0f;
+      --color-card: #12121a;
+      --color-border: #2a2a3a;
+      --color-text: #e0e0e0;
+      --color-text-secondary: #888;
+      --color-red: #ff6b6b;
+      --color-yellow: #f39c12;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    .report-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo svg {
+      height: 32px;
+    }
+
+    .report-date {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* Download button */
+    .download-bar {
+      background: var(--color-card);
+      border: 1px solid var(--color-teal);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .download-bar p {
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--color-teal);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .btn:hover {
+      background: var(--color-teal-dark);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Score card */
+    .score-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .score-card__grade {
+      font-size: 5rem;
+      font-weight: 700;
+      color: var(--color-teal);
+      line-height: 1;
+    }
+
+    .score-card__label {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    .score-card__divider {
+      height: 1px;
+      background: var(--color-border);
+      margin: 2rem 0;
+    }
+
+    .score-card__cost-label {
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .score-card__cost {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-red);
+    }
+
+    .score-card__cost-sublabel {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    /* Breakdown section */
+    .section {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .section__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .breakdown-item {
+      background: var(--color-bg);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .breakdown-item__label {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .breakdown-item__value {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .breakdown-item__value--good {
+      color: var(--color-teal);
+    }
+
+    .breakdown-item__value--warning {
+      color: var(--color-yellow);
+    }
+
+    .breakdown-item__value--bad {
+      color: var(--color-red);
+    }
+
+    /* Recommendations */
+    .recommendations-list {
+      list-style: none;
+    }
+
+    .recommendations-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .recommendations-list li:last-child {
+      border-bottom: none;
+    }
+
+    .rec-number {
+      width: 28px;
+      height: 28px;
+      background: var(--color-teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.875rem;
+      flex-shrink: 0;
+    }
+
+    .rec-content h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .rec-content p {
+      font-size: 0.9375rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* Cost breakdown */
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .cost-table th,
+    .cost-table td {
+      text-align: left;
+      padding: 1rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cost-table th {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    .cost-table td {
+      font-size: 0.9375rem;
+    }
+
+    .cost-table tr:last-child td {
+      border-bottom: none;
+      font-weight: 600;
+    }
+
+    .cost-table .amount {
+      text-align: right;
+      font-family: 'SF Mono', Monaco, monospace;
+    }
+
+    /* CTA section */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border: 1px solid var(--color-teal);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .cta-section h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-section p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Footer */
+    .report-footer {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+      margin-top: 2rem;
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #fff;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .download-bar {
+        display: none !important;
+      }
+
+      .score-card,
+      .section,
+      .cta-section {
+        background: #f8f9fa !important;
+        border-color: #ddd !important;
+        break-inside: avoid;
+      }
+
+      .score-card__grade {
+        color: #00b894 !important;
+      }
+
+      .score-card__cost {
+        color: #dc3545 !important;
+      }
+
+      .breakdown-item {
+        background: #fff !important;
+        border: 1px solid #ddd;
+      }
+
+      .breakdown-item__value--good {
+        color: #00b894 !important;
+      }
+
+      .breakdown-item__value--warning {
+        color: #f39c12 !important;
+      }
+
+      .breakdown-item__value--bad {
+        color: #dc3545 !important;
+      }
+
+      .rec-number {
+        background: #00b894 !important;
+        color: #fff !important;
+      }
+
+      .cta-section {
+        background: #e8f8f5 !important;
+        border-color: #00b894 !important;
+      }
+
+      .cta-section .btn {
+        display: none;
+      }
+
+      .report-footer {
+        color: #666;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .breakdown-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .score-card__grade {
+        font-size: 4rem;
+      }
+
+      .score-card__cost {
+        font-size: 2rem;
+      }
+
+      .download-bar {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="report-header">
+      <div class="logo">
+        <svg width="120" height="32" viewBox="0 0 260 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="30" y1="12" x2="14" y2="42" stroke="#00b894" stroke-width="2"/>
+          <line x1="30" y1="12" x2="46" y2="42" stroke="#00b894" stroke-width="2"/>
+          <line x1="14" y1="42" x2="46" y2="42" stroke="#00b894" stroke-width="2"/>
+          <circle cx="30" cy="12" r="5" fill="#00b894"/>
+          <circle cx="14" cy="42" r="5" fill="#00b894"/>
+          <circle cx="46" cy="42" r="5" fill="#00b894"/>
+          <text x="70" y="38" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600" fill="#ffffff" letter-spacing="4">VERUM</text>
+        </svg>
+      </div>
+      <div class="report-date" id="report-date"></div>
+    </header>
+
+    <!-- Download bar -->
+    <div class="download-bar">
+      <p>Save this report for your records</p>
+      <button class="btn" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download PDF
+      </button>
+    </div>
+
+    <!-- Score Card -->
+    <div class="score-card">
+      <div class="score-card__grade" id="grade">--</div>
+      <div class="score-card__label">Data Quality Score: <span id="score">--</span>/100</div>
+      <div class="score-card__divider"></div>
+      <div class="score-card__cost-label">Estimated Annual Cost of Bad Data</div>
+      <div class="score-card__cost" id="cost">$--</div>
+      <div class="score-card__cost-sublabel">in wasted time and lost opportunities</div>
+    </div>
+
+    <!-- Score Breakdown -->
+    <div class="section">
+      <h2 class="section__title">Score Breakdown</h2>
+      <div class="breakdown-grid">
+        <div class="breakdown-item">
+          <div class="breakdown-item__label">Data Freshness</div>
+          <div class="breakdown-item__value" id="freshness-score">--</div>
+        </div>
+        <div class="breakdown-item">
+          <div class="breakdown-item__label">Duplicate Management</div>
+          <div class="breakdown-item__value" id="duplicate-score">--</div>
+        </div>
+        <div class="breakdown-item">
+          <div class="breakdown-item__label">Email Deliverability</div>
+          <div class="breakdown-item__value" id="email-score">--</div>
+        </div>
+        <div class="breakdown-item">
+          <div class="breakdown-item__label">AI Readiness</div>
+          <div class="breakdown-item__value" id="ai-score">--</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cost Breakdown -->
+    <div class="section">
+      <h2 class="section__title">Cost Breakdown</h2>
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th class="amount">Annual Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sales productivity loss (bad data lookup, manual fixes)</td>
+            <td class="amount" id="cost-productivity">$--</td>
+          </tr>
+          <tr>
+            <td>Email campaign waste (duplicates, invalid sends)</td>
+            <td class="amount" id="cost-email">$--</td>
+          </tr>
+          <tr>
+            <td>Bounce-related costs (reputation, lost opportunities)</td>
+            <td class="amount" id="cost-bounce">$--</td>
+          </tr>
+          <tr>
+            <td><strong>Total Estimated Annual Cost</strong></td>
+            <td class="amount" id="cost-total">$--</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="section">
+      <h2 class="section__title">Recommended Next Steps</h2>
+      <ul class="recommendations-list" id="recommendations">
+        <!-- Populated by JS -->
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <h3>Ready to Fix Your Data?</h3>
+      <p>Our team can help you clean, dedupe, and enrich your database in as little as 48 hours.</p>
+      <a href="https://veruminc.com/#contact" class="btn">Schedule a Free Consultation</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="report-footer">
+      <p>Generated by Verum | veruminc.com</p>
+    </footer>
+  </div>
+
+  <script>
+    (function() {
+      // Get URL parameters
+      const params = new URLSearchParams(window.location.search);
+
+      const score = parseInt(params.get('score')) || 65;
+      const grade = params.get('grade') || 'C+';
+      const cost = parseInt(params.get('cost')) || 47000;
+      const freshness = parseInt(params.get('freshness')) || 50;
+      const duplicate = parseInt(params.get('duplicate')) || 60;
+      const email = parseInt(params.get('email')) || 70;
+      const ai = parseInt(params.get('ai')) || 80;
+
+      // Update date
+      const today = new Date();
+      document.getElementById('report-date').textContent = today.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      // Update score card
+      document.getElementById('grade').textContent = grade;
+      document.getElementById('score').textContent = score;
+      document.getElementById('cost').textContent = '$' + cost.toLocaleString();
+
+      // Update breakdown scores
+      updateScore('freshness-score', freshness);
+      updateScore('duplicate-score', duplicate);
+      updateScore('email-score', email);
+      updateScore('ai-score', ai);
+
+      // Calculate cost breakdown (approximate distribution)
+      const productivityCost = Math.round(cost * 0.55);
+      const emailCost = Math.round(cost * 0.25);
+      const bounceCost = cost - productivityCost - emailCost;
+
+      document.getElementById('cost-productivity').textContent = '$' + productivityCost.toLocaleString();
+      document.getElementById('cost-email').textContent = '$' + emailCost.toLocaleString();
+      document.getElementById('cost-bounce').textContent = '$' + bounceCost.toLocaleString();
+      document.getElementById('cost-total').textContent = '$' + cost.toLocaleString();
+
+      // Generate recommendations based on scores
+      const recommendations = [];
+
+      if (freshness < 70) {
+        recommendations.push({
+          title: 'Schedule Regular Data Audits',
+          desc: 'Your data freshness score indicates outdated information. Set up quarterly data reviews to maintain accuracy.'
+        });
+      }
+
+      if (duplicate < 70) {
+        recommendations.push({
+          title: 'Implement Deduplication',
+          desc: 'High duplicate rates are hurting your efficiency. Run a deduplication process to consolidate records.'
+        });
+      }
+
+      if (email < 70) {
+        recommendations.push({
+          title: 'Verify Email Addresses',
+          desc: 'Your bounce rate is above optimal levels. Validate email addresses before sending campaigns.'
+        });
+      }
+
+      if (ai < 80) {
+        recommendations.push({
+          title: 'Prepare Data for AI',
+          desc: 'Clean, standardized data is essential for AI success. Address data quality before implementing AI tools.'
+        });
+      }
+
+      // Always add these
+      recommendations.push({
+        title: 'Standardize Data Entry',
+        desc: 'Implement validation rules and standardized formats to prevent bad data from entering your system.'
+      });
+
+      recommendations.push({
+        title: 'Consider Professional Data Cleaning',
+        desc: 'A one-time deep clean can address years of accumulated data issues and establish a clean baseline.'
+      });
+
+      // Render recommendations
+      const recList = document.getElementById('recommendations');
+      recommendations.slice(0, 4).forEach((rec, i) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span class="rec-number">${i + 1}</span>
+          <div class="rec-content">
+            <h4>${rec.title}</h4>
+            <p>${rec.desc}</p>
+          </div>
+        `;
+        recList.appendChild(li);
+      });
+
+      function updateScore(elementId, scoreValue) {
+        const el = document.getElementById(elementId);
+        let label, className;
+
+        if (scoreValue >= 80) {
+          label = 'Good (' + scoreValue + '/100)';
+          className = 'breakdown-item__value--good';
+        } else if (scoreValue >= 50) {
+          label = 'Needs Work (' + scoreValue + '/100)';
+          className = 'breakdown-item__value--warning';
+        } else {
+          label = 'Poor (' + scoreValue + '/100)';
+          className = 'breakdown-item__value--bad';
+        }
+
+        el.textContent = label;
+        el.classList.add(className);
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -789,12 +789,46 @@
             body: formData,
             headers: { 'Accept': 'application/json' }
           }).then(response => {
-            if (response.ok) {
-              document.getElementById('email-cta').style.display = 'none';
-              document.getElementById('thank-you').classList.add('active');
-            }
+            // Redirect to report page with scores (regardless of Formspree response)
+            const reportUrl = buildReportUrl();
+            window.location.href = reportUrl;
+          }).catch(() => {
+            // Still redirect even if Formspree fails
+            const reportUrl = buildReportUrl();
+            window.location.href = reportUrl;
           });
         });
+
+        // Build report URL with all score data
+        function buildReportUrl() {
+          const score = document.getElementById('hidden-score').value;
+          const grade = document.getElementById('hidden-grade').value;
+          const cost = document.getElementById('hidden-cost').value;
+
+          // Get individual scores from breakdown display
+          const freshnessEl = document.getElementById('freshness-score');
+          const duplicateEl = document.getElementById('duplicate-score');
+          const emailEl = document.getElementById('email-score');
+          const aiEl = document.getElementById('ai-score');
+
+          // Extract numeric scores from stored answers
+          const freshnessScore = answers.q5?.score || 50;
+          const duplicateScore = answers.q3?.score || 60;
+          const emailScore = answers.q4?.score || 60;
+          const aiScore = answers.q6?.score || 70;
+
+          const params = new URLSearchParams({
+            score: score,
+            grade: grade,
+            cost: cost,
+            freshness: freshnessScore,
+            duplicate: duplicateScore,
+            email: emailScore,
+            ai: aiScore
+          });
+
+          return '/assessment/report/?' + params.toString();
+        }
 
         updateProgress();
       }
