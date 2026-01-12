@@ -96,6 +96,8 @@
 
   // Inject header
   const headerEl = document.getElementById('site-header');
+  console.log('Components.js: headerEl found:', !!headerEl);
+
   if (headerEl) {
     headerEl.classList.add('header');
     headerEl.innerHTML = headerHTML;
@@ -104,13 +106,19 @@
     const menuToggle = headerEl.querySelector('.menu-toggle');
     const mobileNav = headerEl.querySelector('.nav--mobile');
 
+    console.log('Components.js: menuToggle found:', !!menuToggle);
+    console.log('Components.js: mobileNav found:', !!mobileNav);
+
     if (menuToggle && mobileNav) {
+      console.log('Components.js: Adding click listener to menu toggle');
       menuToggle.addEventListener('click', function(e) {
         e.preventDefault();
+        console.log('Components.js: Menu toggle clicked!');
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !isExpanded);
         this.classList.toggle('active');
         mobileNav.classList.toggle('active');
+        console.log('Components.js: mobileNav has active class:', mobileNav.classList.contains('active'));
 
         // Prevent body scroll when menu is open
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
