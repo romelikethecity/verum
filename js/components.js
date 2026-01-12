@@ -99,25 +99,14 @@
   if (headerEl) {
     headerEl.classList.add('header');
     headerEl.innerHTML = headerHTML;
-  }
 
-  // Inject footer
-  const footerEl = document.getElementById('site-footer');
-  if (footerEl) {
-    footerEl.classList.add('footer');
-    footerEl.innerHTML = footerHTML;
-  }
-
-  // Initialize mobile navigation toggle
-  // (must run after header is injected)
-  initMobileNav();
-
-  function initMobileNav() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mobileNav = document.querySelector('.nav--mobile');
+    // Initialize mobile navigation toggle immediately after injection
+    const menuToggle = headerEl.querySelector('.menu-toggle');
+    const mobileNav = headerEl.querySelector('.nav--mobile');
 
     if (menuToggle && mobileNav) {
-      menuToggle.addEventListener('click', function() {
+      menuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !isExpanded);
         this.classList.toggle('active');
@@ -128,16 +117,22 @@
       });
 
       // Close mobile menu when clicking a link
-      const mobileNavLinks = mobileNav.querySelectorAll('a');
-      mobileNavLinks.forEach(function(link) {
-        link.addEventListener('click', function() {
+      mobileNav.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
           menuToggle.classList.remove('active');
           menuToggle.setAttribute('aria-expanded', 'false');
           mobileNav.classList.remove('active');
           document.body.style.overflow = '';
-        });
+        }
       });
     }
+  }
+
+  // Inject footer
+  const footerEl = document.getElementById('site-footer');
+  if (footerEl) {
+    footerEl.classList.add('footer');
+    footerEl.innerHTML = footerHTML;
   }
 
 })();

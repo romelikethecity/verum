@@ -292,6 +292,7 @@ img {
   transform: translateX(100%);
   transition: transform var(--transition-base);
   overflow-y: auto;
+  z-index: 99;
 }
 
 .nav--mobile.active {
