@@ -6,21 +6,14 @@
   <title>Verum | B2B Data Cleaning & Enrichment</title>
   <meta name="description" content="Bad data costs you money. Verum cleans and enriches your B2B data so your team stops chasing ghosts and starts closing deals.">
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://veruminc.com/">
-
-  <!-- Favicon -->
   <link rel="icon" href="/assets/logos/verum-favicon-32.svg" type="image/svg+xml">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="/css/styles.css">
 
-  <!-- Open Graph Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veruminc.com/">
   <meta property="og:title" content="Verum | B2B Data Cleaning & Enrichment">
@@ -28,13 +21,11 @@
   <meta property="og:site_name" content="Verum">
   <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
 
-  <!-- Twitter Card Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Verum | B2B Data Cleaning & Enrichment">
   <meta name="twitter:description" content="Bad data costs you money. Verum cleans and enriches your B2B data so your team stops chasing ghosts.">
   <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
 
-  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -43,7 +34,6 @@
     gtag('config', 'G-R416JZ91B1');
   </script>
 
-  <!-- Microsoft Clarity -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -52,7 +42,6 @@
     })(window, document, "clarity", "script", "uzzgoxxnof");
   </script>
 
-  <!-- Organization Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -64,6 +53,193 @@
     "sameAs": ["https://linkedin.com/company/verum"]
   }
   </script>
+
+  <style>
+    /* Hero with visual */
+    .hero {
+      padding-top: 7rem;
+      padding-bottom: var(--space-3xl);
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .hero__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero {
+        text-align: left;
+      }
+      .hero__buttons {
+        justify-content: flex-start;
+      }
+    }
+    .hero__visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero__visual svg {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+    }
+
+    /* Logos section */
+    .logos-section {
+      padding: var(--space-2xl) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .logos-section__label {
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-lg);
+    }
+    .logos-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-2xl);
+    }
+    .logos-grid img {
+      height: 28px;
+      width: auto;
+      opacity: 0.6;
+      filter: grayscale(100%) brightness(2);
+      transition: opacity var(--transition-fast);
+    }
+    .logos-grid img:hover {
+      opacity: 1;
+    }
+    /* Placeholder logos */
+    .logo-placeholder {
+      padding: 0.5rem 1.5rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      padding: var(--space-xl) 0;
+      border-top: 1px solid var(--color-border);
+      margin-top: var(--space-2xl);
+    }
+    .stats-bar__item {
+      text-align: center;
+    }
+    .stats-bar__value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-teal);
+    }
+    .stats-bar__label {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      margin-top: 0.25rem;
+    }
+    @media (min-width: 640px) {
+      .stats-bar__value {
+        font-size: 2rem;
+      }
+      .stats-bar__label {
+        font-size: 0.875rem;
+      }
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .testimonial-card {
+      padding: var(--space-xl);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+    .testimonial-card__quote {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-lg);
+      font-style: italic;
+    }
+    .testimonial-card__author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .testimonial-card__avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      background: var(--color-bg-card-hover);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: var(--color-teal);
+    }
+    .testimonial-card__name {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      font-size: 0.9375rem;
+    }
+    .testimonial-card__title {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      padding: var(--space-xl);
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+    .faq-item__question {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-sm);
+    }
+    .faq-item__answer {
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -102,12 +278,88 @@
 
   <!-- Hero Section -->
   <section class="hero section">
-    <div class="container hero__content">
-      <h1 class="hero__title">Bad data costs you money</h1>
-      <p class="hero__subtitle">Duplicates, missing fields, outdated records. Every data problem slows your team down and eats into revenue. We fix that.</p>
-      <div class="hero__buttons">
-        <a href="#contact" class="btn btn--primary btn--lg">Clean My Data</a>
-        <a href="#how-it-works" class="btn btn--secondary btn--lg">See How It Works</a>
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__title">Bad data costs you money</h1>
+          <p class="hero__subtitle">Duplicates, missing fields, outdated records. Every data problem slows your team down and eats into revenue. We fix that.</p>
+          <div class="hero__buttons">
+            <a href="#contact" class="btn btn--primary btn--lg">Clean My Data</a>
+            <a href="#how-it-works" class="btn btn--secondary btn--lg">See How It Works</a>
+          </div>
+
+          <!-- Stats inline with hero -->
+          <div class="stats-bar">
+            <div class="stats-bar__item">
+              <div class="stats-bar__value">93%</div>
+              <div class="stats-bar__label">Email deliverability</div>
+            </div>
+            <div class="stats-bar__item">
+              <div class="stats-bar__value">&lt;24hr</div>
+              <div class="stats-bar__label">Turnaround</div>
+            </div>
+            <div class="stats-bar__item">
+              <div class="stats-bar__value">50+</div>
+              <div class="stats-bar__label">Data sources</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <!-- Abstract network/data visualization -->
+          <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Connection lines (drawn first, behind nodes) -->
+            <line x1="200" y1="80" x2="120" y2="160" stroke="#00b894" stroke-width="2" opacity="0.4"/>
+            <line x1="200" y1="80" x2="280" y2="160" stroke="#00b894" stroke-width="2" opacity="0.4"/>
+            <line x1="120" y1="160" x2="80" y2="260" stroke="#00b894" stroke-width="2" opacity="0.3"/>
+            <line x1="120" y1="160" x2="200" y2="240" stroke="#00b894" stroke-width="2" opacity="0.4"/>
+            <line x1="280" y1="160" x2="200" y2="240" stroke="#00b894" stroke-width="2" opacity="0.4"/>
+            <line x1="280" y1="160" x2="320" y2="260" stroke="#00b894" stroke-width="2" opacity="0.3"/>
+            <line x1="200" y1="240" x2="140" y2="320" stroke="#00b894" stroke-width="2" opacity="0.3"/>
+            <line x1="200" y1="240" x2="260" y2="320" stroke="#00b894" stroke-width="2" opacity="0.3"/>
+            <line x1="80" y1="260" x2="140" y2="320" stroke="#00b894" stroke-width="2" opacity="0.2"/>
+            <line x1="320" y1="260" x2="260" y2="320" stroke="#00b894" stroke-width="2" opacity="0.2"/>
+
+            <!-- Outer glow effect -->
+            <circle cx="200" cy="240" r="60" fill="url(#glow)" opacity="0.3"/>
+
+            <!-- Nodes -->
+            <circle cx="200" cy="80" r="16" fill="#00b894" opacity="0.9"/>
+            <circle cx="120" cy="160" r="14" fill="#00b894" opacity="0.8"/>
+            <circle cx="280" cy="160" r="14" fill="#00b894" opacity="0.8"/>
+            <circle cx="80" cy="260" r="10" fill="#00b894" opacity="0.5"/>
+            <circle cx="320" cy="260" r="10" fill="#00b894" opacity="0.5"/>
+            <circle cx="200" cy="240" r="24" fill="#00b894"/>
+            <circle cx="140" cy="320" r="12" fill="#00b894" opacity="0.6"/>
+            <circle cx="260" cy="320" r="12" fill="#00b894" opacity="0.6"/>
+
+            <!-- Central icon (checkmark representing clean data) -->
+            <path d="M192 240 L198 246 L210 234" stroke="#1a1d1e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <!-- Gradient definition -->
+            <defs>
+              <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00b894" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#00b894" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Logos -->
+  <section class="logos-section">
+    <div class="container">
+      <p class="logos-section__label">Trusted by revenue teams at</p>
+      <div class="logos-grid">
+        <!-- TODO: Replace with actual customer logos -->
+        <span class="logo-placeholder">Company 1</span>
+        <span class="logo-placeholder">Company 2</span>
+        <span class="logo-placeholder">Company 3</span>
+        <span class="logo-placeholder">Company 4</span>
+        <span class="logo-placeholder">Company 5</span>
       </div>
     </div>
   </section>
@@ -150,20 +402,20 @@
       <div class="steps">
         <div class="step">
           <div class="step__number">1</div>
-          <h3 class="step__title">Connect your data</h3>
-          <p class="step__text">Export a CSV from your CRM or connect directly via API. Takes 5 minutes.</p>
+          <h3 class="step__title">Send us your data</h3>
+          <p class="step__text">Export a CSV from your CRM or share access. Takes 5 minutes. We handle the rest.</p>
         </div>
 
         <div class="step">
           <div class="step__number">2</div>
           <h3 class="step__title">We clean and enrich</h3>
-          <p class="step__text">Deduplication, standardization, validation. Then we append firmographic, technographic, and contact data from 50+ sources.</p>
+          <p class="step__text">Deduplication, validation, standardization. Then we append missing data from 50+ sources.</p>
         </div>
 
         <div class="step">
           <div class="step__number">3</div>
           <h3 class="step__title">Get clean data back</h3>
-          <p class="step__text">Push directly to your CRM or download enriched files. Your team starts using better data today.</p>
+          <p class="step__text">Receive enriched files or push directly to your CRM. Your team uses better data today.</p>
         </div>
       </div>
     </div>
@@ -214,47 +466,83 @@
     </div>
   </section>
 
-  <!-- Social Proof Section -->
-  <section class="section social-proof">
+  <!-- Testimonials Section -->
+  <section class="section">
     <div class="container">
-      <h2 class="mb-xl">Built for revenue teams</h2>
+      <h2 class="text-center mb-xl">What our customers say</h2>
 
-      <div class="personas">
-        <div class="persona">
-          <p class="persona__role">RevOps Leaders</p>
-          <p class="persona__quote">"Stop fixing data fires. Build systems that work."</p>
+      <div class="testimonials-grid">
+        <!-- TODO: Replace with real customer testimonials -->
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">"We had 50,000 contacts in our CRM but couldn't trust any of them. Verum cleaned everything in 48 hours. Our email deliverability went from 72% to 94%."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">JD</div>
+            <div>
+              <div class="testimonial-card__name">Customer Name</div>
+              <div class="testimonial-card__title">Title, Company</div>
+            </div>
+          </div>
         </div>
 
-        <div class="persona">
-          <p class="persona__role">Sales Ops Managers</p>
-          <p class="persona__quote">"Give reps leads worth calling."</p>
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">"Before Verum, our SDRs spent 2 hours a day researching contacts. Now they just call. The enrichment data is accurate and saves us serious time."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">SM</div>
+            <div>
+              <div class="testimonial-card__name">Customer Name</div>
+              <div class="testimonial-card__title">Title, Company</div>
+            </div>
+          </div>
         </div>
 
-        <div class="persona">
-          <p class="persona__role">Marketing Ops</p>
-          <p class="persona__quote">"Run campaigns that actually deliver."</p>
+        <div class="testimonial-card">
+          <p class="testimonial-card__quote">"The ICP analysis changed how we think about our market. We found segments we'd completely ignored that turned out to be our best converters."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">AK</div>
+            <div>
+              <div class="testimonial-card__name">Customer Name</div>
+              <div class="testimonial-card__title">Title, Company</div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="founder-note">
-        <p class="founder-note__text">"I built Verum after watching sales teams waste millions on bad data. Your reps deserve better leads. Your ops team deserves cleaner systems."</p>
+  <!-- Founder's Note -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="founder-note" style="max-width: 700px; margin: 0 auto;">
+        <p class="founder-note__text">"I built Verum after watching sales teams waste millions on bad data. Reps calling disconnected numbers. Emails bouncing. Duplicates everywhere. Your team deserves better leads. Your ops team deserves cleaner systems. That's what we deliver."</p>
         <p class="founder-note__author">— Rome, Founder</p>
       </div>
+    </div>
+  </section>
 
-      <div class="metrics">
-        <div class="metric">
-          <p class="metric__value">93%</p>
-          <p class="metric__label">Email deliverability after cleaning</p>
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center mb-xl">Common Questions</h2>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-item__question">How long does it take?</h3>
+          <p class="faq-item__answer">Most projects are delivered within 24-48 hours. Large datasets (100K+ records) may take 3-5 days. We'll give you a timeline upfront.</p>
         </div>
 
-        <div class="metric">
-          <p class="metric__value">&lt;24hr</p>
-          <p class="metric__label">Average turnaround time</p>
+        <div class="faq-item">
+          <h3 class="faq-item__question">What's the minimum project size?</h3>
+          <p class="faq-item__answer">Our minimum is $500, which typically covers up to 5,000 records. Smaller datasets? Reach out - we can usually help.</p>
         </div>
 
-        <div class="metric">
-          <p class="metric__value">50+</p>
-          <p class="metric__label">Data enrichment sources</p>
+        <div class="faq-item">
+          <h3 class="faq-item__question">Is my data secure?</h3>
+          <p class="faq-item__answer">Yes. We use encrypted transfers, don't share data with third parties, and delete your data after project completion unless you request otherwise.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__question">Do you integrate with my CRM?</h3>
+          <p class="faq-item__answer">We work with Salesforce, HubSpot, and most major CRMs. We can push data directly or provide CRM-ready files for import.</p>
         </div>
       </div>
     </div>
@@ -265,7 +553,7 @@
     <div class="container">
       <div class="cta-section__header">
         <h2 class="cta-section__title">Your data shouldn't hold your team back</h2>
-        <p class="cta-section__text">Let's fix that. Tell us about your data challenges.</p>
+        <p class="cta-section__text">Tell us about your data challenges. We'll send a custom quote within 24 hours.</p>
       </div>
 
       <form class="form" action="https://formspree.io/f/xaqqywlb" method="POST">
@@ -304,10 +592,9 @@
           <textarea id="message" name="message" class="form__textarea"></textarea>
         </div>
 
-        <!-- Honeypot for spam -->
         <input type="text" name="_gotcha" style="display:none">
 
-        <button type="submit" class="btn btn--white btn--lg form__submit">Clean My Data</button>
+        <button type="submit" class="btn btn--primary btn--lg form__submit">Get My Free Quote</button>
       </form>
     </div>
   </section>
