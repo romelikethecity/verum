@@ -59,8 +59,13 @@
       gap: 0.5rem;
     }
 
-    .logo svg {
+    .logo img {
       height: 32px;
+      width: auto;
+    }
+
+    .logo .logo-print {
+      display: none;
     }
 
     .report-date {
@@ -330,6 +335,14 @@
         display: none !important;
       }
 
+      .logo .logo-screen {
+        display: none !important;
+      }
+
+      .logo .logo-print {
+        display: block !important;
+      }
+
       .score-card,
       .section,
       .cta-section {
@@ -413,15 +426,8 @@
     <!-- Header -->
     <header class="report-header">
       <div class="logo">
-        <svg width="120" height="32" viewBox="0 0 260 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="30" y1="12" x2="14" y2="42" stroke="#00b894" stroke-width="2"/>
-          <line x1="30" y1="12" x2="46" y2="42" stroke="#00b894" stroke-width="2"/>
-          <line x1="14" y1="42" x2="46" y2="42" stroke="#00b894" stroke-width="2"/>
-          <circle cx="30" cy="12" r="5" fill="#00b894"/>
-          <circle cx="14" cy="42" r="5" fill="#00b894"/>
-          <circle cx="46" cy="42" r="5" fill="#00b894"/>
-          <text x="70" y="38" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600" fill="#ffffff" letter-spacing="4">VERUM</text>
-        </svg>
+        <img src="/assets/logos/logos-svg/verum-logo-horizontal-dark.svg" alt="Verum" class="logo-screen">
+        <img src="/assets/logos/logos-svg/verum-logo-horizontal-light.svg" alt="Verum" class="logo-print">
       </div>
       <div class="report-date" id="report-date"></div>
     </header>
