@@ -287,7 +287,8 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #1a1d1e;
+  background-color: #1a1d1e !important;
+  opacity: 1;
   padding: 2rem;
   transform: translateX(100%);
   transition: transform var(--transition-base);

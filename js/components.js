@@ -33,18 +33,21 @@
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span class="menu-toggle__icon"></span>
       </button>
-
-      <nav class="nav nav--mobile">
-        <ul class="nav__list">
-          <li><a href="/services/" class="nav__link">Services</a></li>
-          <li><a href="/solutions/" class="nav__link">Solutions</a></li>
-          <li><a href="/assessment/" class="nav__link">Free Assessment</a></li>
-          <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
-          <li><a href="/about.html" class="nav__link">About</a></li>
-        </ul>
-        <a href="/#contact" class="btn btn--primary">Clean My Data</a>
-      </nav>
     </div>
+  `;
+
+  // Mobile Navigation HTML (separate from header to avoid backdrop-filter containment issue)
+  const mobileNavHTML = `
+    <nav class="nav nav--mobile">
+      <ul class="nav__list">
+        <li><a href="/services/" class="nav__link">Services</a></li>
+        <li><a href="/solutions/" class="nav__link">Solutions</a></li>
+        <li><a href="/assessment/" class="nav__link">Free Assessment</a></li>
+        <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
+        <li><a href="/about.html" class="nav__link">About</a></li>
+      </ul>
+      <a href="/#contact" class="btn btn--primary">Clean My Data</a>
+    </nav>
   `;
 
   // Site Footer HTML
@@ -102,9 +105,12 @@
     headerEl.classList.add('header');
     headerEl.innerHTML = headerHTML;
 
-    // Initialize mobile navigation toggle immediately after injection
+    // Inject mobile nav as sibling after header (outside header to avoid backdrop-filter containment)
+    headerEl.insertAdjacentHTML('afterend', mobileNavHTML);
+
+    // Initialize mobile navigation toggle
     const menuToggle = headerEl.querySelector('.menu-toggle');
-    const mobileNav = headerEl.querySelector('.nav--mobile');
+    const mobileNav = document.querySelector('.nav--mobile');
 
     console.log('Components.js: menuToggle found:', !!menuToggle);
     console.log('Components.js: mobileNav found:', !!mobileNav);
