@@ -112,7 +112,7 @@ Sitemap: https://veruminc.com/sitemap.xml
 
 ## Page Structure
 
-### Core Pages (8)
+### Core Pages (9)
 - `/` - Homepage
 - `/about.html` - About
 - `/contact.html` - Contact
@@ -121,6 +121,14 @@ Sitemap: https://veruminc.com/sitemap.xml
 - `/services/data-cleaning.html`
 - `/services/data-enrichment.html`
 - `/services/data-analysis.html`
+- `/services/icp-analysis.html` - Dedicated ICP analysis service
+
+### Case Studies (1)
+- `/case-studies/icp-analysis-series-a-saas/` - Series A SaaS ICP analysis (anonymized)
+
+### Blog Posts (2)
+- `/blog/revops-team-size-customer-ltv.html` - RevOps as customer LTV predictor
+- `/blog/how-to-build-data-driven-icp.html` - Guide to data-driven ICP
 
 ### Programmatic SEO Pages (195)
 
