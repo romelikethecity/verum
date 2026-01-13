@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verum | B2B Data Cleaning & Enrichment</title>
-  <meta name="description" content="Bad data costs you money. Verum cleans and enriches your B2B data so your team stops chasing ghosts and starts closing deals.">
+  <title>AI-Powered B2B Data Cleaning & Enrichment | Verum</title>
+  <meta name="description" content="AI cleans and enriches your B2B data in 24 hours. Human-verified, revenue-ready. Stop losing deals to bad data.">
 
   <link rel="canonical" href="https://veruminc.com/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -17,14 +17,14 @@
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veruminc.com/">
-  <meta property="og:title" content="Verum | B2B Data Cleaning & Enrichment">
-  <meta property="og:description" content="Bad data costs you money. Verum cleans and enriches your B2B data so your team stops chasing ghosts.">
+  <meta property="og:title" content="AI-Powered B2B Data Cleaning & Enrichment | Verum">
+  <meta property="og:description" content="AI cleans and enriches your B2B data in 24 hours. Human-verified, revenue-ready.">
   <meta property="og:site_name" content="Verum">
   <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Verum | B2B Data Cleaning & Enrichment">
-  <meta name="twitter:description" content="Bad data costs you money. Verum cleans and enriches your B2B data so your team stops chasing ghosts.">
+  <meta name="twitter:title" content="AI-Powered B2B Data Cleaning & Enrichment | Verum">
+  <meta name="twitter:description" content="AI cleans and enriches your B2B data in 24 hours. Human-verified, revenue-ready.">
   <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
@@ -133,11 +133,16 @@
     /* Stats bar */
     .stats-bar {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--space-lg);
       padding: var(--space-xl) 0;
       border-top: 1px solid var(--color-border);
       margin-top: var(--space-2xl);
+    }
+    @media (min-width: 640px) {
+      .stats-bar {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
     .stats-bar__item {
       text-align: center;
@@ -252,7 +257,7 @@
       <div class="hero__grid">
         <div class="hero__content">
           <h1 class="hero__title">Bad data costs you money</h1>
-          <p class="hero__subtitle">Duplicates, missing fields, outdated records. Every data problem slows your team down and eats into revenue. We fix that.</p>
+          <p class="hero__subtitle">AI cleans and enriches your data in 24 hours. Human-verified, revenue-ready.</p>
           <div class="hero__buttons">
             <a href="#contact" class="btn btn--primary btn--lg">Clean My Data</a>
             <a href="#how-it-works" class="btn btn--secondary btn--lg">See How It Works</a>
@@ -271,6 +276,10 @@
             <div class="stats-bar__item">
               <div class="stats-bar__value">50+</div>
               <div class="stats-bar__label">Data sources</div>
+            </div>
+            <div class="stats-bar__item">
+              <div class="stats-bar__value">AI</div>
+              <div class="stats-bar__label">Powered accuracy</div>
             </div>
           </div>
         </div>
@@ -390,8 +399,8 @@
 
         <div class="step">
           <div class="step__number">2</div>
-          <h3 class="step__title">We clean and enrich</h3>
-          <p class="step__text">Deduplication, validation, standardization. Then we append missing data from 50+ sources.</p>
+          <h3 class="step__title">Our AI cleans and enriches</h3>
+          <p class="step__text">Deduplication, validation, standardization. Then we append missing data from 50+ sources. Human QA on every file.</p>
         </div>
 
         <div class="step">
@@ -417,7 +426,7 @@
               <path d="M2 12l10 5 10-5"/>
             </svg>
           </div>
-          <h3 class="service-card__title">Data Cleaning</h3>
+          <h3 class="service-card__title">AI-Powered Data Cleaning</h3>
           <p class="service-card__text">Remove duplicates, standardize formats, validate emails, normalize job titles. Turn chaos into structure.</p>
         </a>
 
@@ -429,7 +438,7 @@
               <line x1="8" y1="12" x2="16" y2="12"/>
             </svg>
           </div>
-          <h3 class="service-card__title">Data Enrichment</h3>
+          <h3 class="service-card__title">AI-Powered Data Enrichment</h3>
           <p class="service-card__text">Fill in the gaps. Append missing company and contact data from 50+ sources so you can score, route, and personalize.</p>
         </a>
 
@@ -441,7 +450,7 @@
               <line x1="6" y1="20" x2="6" y2="14"/>
             </svg>
           </div>
-          <h3 class="service-card__title">Data Analysis</h3>
+          <h3 class="service-card__title">AI-Powered Data Analysis</h3>
           <p class="service-card__text">ICP analysis, customer segmentation, market insights. Understand who your best customers are and find more of them.</p>
         </a>
       </div>
@@ -525,6 +534,11 @@
         <div class="faq-item">
           <h3 class="faq-item__question">Do you integrate with my CRM?</h3>
           <p class="faq-item__answer">We work with Salesforce, HubSpot, and most major CRMs. We can push data directly or provide CRM-ready files for import.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-item__question">How does your AI work?</h3>
+          <p class="faq-item__answer">We use machine learning models trained on millions of B2B records to identify duplicates, standardize formats, and enrich missing fields. Every output gets human QA review for accuracy.</p>
         </div>
       </div>
     </div>

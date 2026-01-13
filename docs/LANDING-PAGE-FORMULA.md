@@ -38,10 +38,15 @@ Three ways to write a great title:
 ### 2. Subtitle — Explain how you'll create the value
 
 Subtitles are where you get specific:
-- Introduce the product
-- Explain how it creates the value in your title
+- Introduce WHAT the product is
+- Explain HOW it creates the value promised in the title
 
-**Verum's subtitle:** "Duplicates, missing fields, outdated records. Every data problem slows your team down and eats into revenue. We fix that."
+**Great subtitle examples (Harry Dry):**
+- **Dormio:** "Calming teas that help you relax, unwind, and drift into a deep, restorative sleep."
+- **Privy:** "Privy's conversion, email marketing, and text messaging tools help you get more customers from your traffic."
+- **Everydae:** "10-min microlessons designed to boost confidence and make SAT strategies easy to remember."
+
+**Verum's subtitle:** "AI cleans and enriches your data in 24 hours. Human-verified, revenue-ready."
 
 ### 3. Visual — Let the user visualise it
 
@@ -184,7 +189,7 @@ You'll learn that fancy words and random images of people shaking hands don't ge
 | Element | Verum Implementation |
 |---------|---------------------|
 | 1. Title | "Bad data costs you money" |
-| 2. Subtitle | "Duplicates, missing fields, outdated records..." |
+| 2. Subtitle | "AI cleans and enriches your data in 24 hours. Human-verified, revenue-ready." |
 | 3. Visual | (Could improve - currently no product visual) |
 | 4. Social Proof | Metrics: 93%, <24hr, 50+ sources |
 | 5. CTA | "Clean My Data" |
