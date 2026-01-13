@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Build a Data-Driven ICP (Not a Guess) | Verum Blog</title>
+  <meta name="description" content="Most ICPs are built on intuition. Here's how to build one based on actual customer data—which segments have the highest LTV, best win rates, and lowest churn.">
+
+  <link rel="canonical" href="https://veruminc.com/blog/how-to-build-data-driven-icp.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/blog/how-to-build-data-driven-icp.html">
+  <meta property="og:title" content="How to Build a Data-Driven ICP (Not a Guess)">
+  <meta property="og:description" content="Most ICPs are built on intuition. Here's how to build one based on actual customer data.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Build a Data-Driven ICP (Not a Guess)">
+  <meta name="twitter:description" content="Most ICPs are built on intuition. Here's how to build one based on actual customer data.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How to Build a Data-Driven ICP (Not a Guess)",
+    "description": "Most ICPs are built on intuition. Here's how to build one based on actual customer data.",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum"
+    },
+    "datePublished": "2026-01-13"
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .step-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .step-box__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--color-teal);
+      color: var(--color-bg-primary);
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: var(--space-md);
+    }
+    .step-box__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-sm);
+    }
+    .step-box__text {
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .avoid-list {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .avoid-list__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .avoid-list ul {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (injected by components.js) -->
+  <header id="site-header"></header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Blog</p>
+      <h1 class="page-hero__title">How to Build a Data-Driven ICP (Not a Guess)</h1>
+      <p class="page-hero__subtitle">Most Ideal Customer Profiles are built on intuition. Here's how to build one based on what your customer data actually shows.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 8 min read</div>
+
+      <div class="blog-content">
+        <p>Every B2B company has an Ideal Customer Profile. The problem is that most ICPs are fiction.</p>
+
+        <p>Someone at a strategy meeting says "we sell to mid-market SaaS companies" and that becomes the target. Or the sales team gravitates toward familiar industries because that's where they have domain expertise. Or marketing targets whoever responds to ads, regardless of whether they convert or retain.</p>
+
+        <p>The result: marketing spends money on the wrong accounts, sales chases unqualified leads, and customer success firefights churn that was predictable from day one.</p>
+
+        <p>A data-driven ICP is different. Instead of guessing who your best customers should be, you analyze who your best customers actually are—and why.</p>
+
+        <h2>What a Data-Driven ICP Reveals</h2>
+
+        <p>A proper ICP analysis answers questions that intuition can't:</p>
+
+        <ul>
+          <li><strong>Which segments have the highest lifetime value?</strong> Not just biggest deal sizes—actual long-term value after churn.</li>
+          <li><strong>Where do you have the best win rates?</strong> Some segments convert at 70%, others at 20%. Do you know which is which?</li>
+          <li><strong>Which customers churn fastest?</strong> High initial revenue means nothing if they're gone in 6 months.</li>
+          <li><strong>Are you targeting segments you can't serve well?</strong> Sometimes the best strategy is knowing where not to play.</li>
+          <li><strong>What predicts success?</strong> The variables that matter are often surprising—not always company size or industry.</li>
+        </ul>
+
+        <h2>The 5-Step Process</h2>
+
+        <div class="step-box">
+          <div class="step-box__number">1</div>
+          <div class="step-box__title">Gather Your Data</div>
+          <p class="step-box__text">Pull your customer list with as much detail as possible: company name, deal size, close date, current status (active/churned), revenue to date, industry, company size. Include lost deals too—understanding why you lose is as important as understanding why you win.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-box__number">2</div>
+          <div class="step-box__title">Enrich Missing Data</div>
+          <p class="step-box__text">Your CRM data is incomplete. Enrich it with firmographic data: employee count, revenue, growth rate, funding stage, technology stack, geographic footprint, team structure. The more dimensions you can analyze, the more patterns you'll find.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-box__number">3</div>
+          <div class="step-box__title">Define Your Segments</div>
+          <p class="step-box__text">Create meaningful segments based on multiple dimensions. Instead of just "company size," try combinations: "100-500 employees + high growth + HubSpot user" or "Series B + RevOps team present + single geography." The goal is segments that behave differently.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-box__number">4</div>
+          <div class="step-box__title">Measure What Matters</div>
+          <p class="step-box__text">For each segment, calculate: median deal size, customer lifetime value, win rate (from qualified opportunity to close), and churn rate. Don't just look at revenue—LTV and churn reveal whether customers are actually succeeding.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-box__number">5</div>
+          <div class="step-box__title">Find the Patterns</div>
+          <p class="step-box__text">Look for segments where multiple metrics align: high LTV + low churn + reasonable win rate. These are your bullseye customers. Also identify danger zones: high churn or low win rates signal segments where you're wasting resources.</p>
+        </div>
+
+        <h2>The Metrics That Matter</h2>
+
+        <p>Most companies over-index on deal size and under-index on retention. Here's how to think about each metric:</p>
+
+        <h3>Customer Lifetime Value (LTV)</h3>
+        <p>The total revenue you'll earn from a customer over their entire relationship with you. A $500/month customer who stays for 3 years ($18,000 LTV) is worth more than a $2,000/month customer who churns in 4 months ($8,000 LTV). Always optimize for LTV, not initial deal size.</p>
+
+        <h3>Churn Rate</h3>
+        <p>The percentage of customers who leave each year. Even small differences in churn compound dramatically. At 20% annual churn, you retain 33% of customers after 5 years. At 40% churn, you retain only 8%. Segment-level churn analysis is often the most valuable part of ICP work.</p>
+
+        <h3>Win Rate</h3>
+        <p>The percentage of qualified opportunities that close. High win rate segments are easier and cheaper to acquire—every percentage point improvement in win rate reduces your CAC. But beware segments with high win rates and high churn—you might be winning the wrong customers.</p>
+
+        <h3>Sales Cycle Length</h3>
+        <p>How long it takes to close. Longer cycles mean higher CAC and more pipeline risk. Some segments that look attractive on LTV become unprofitable when you factor in 9-month sales cycles.</p>
+
+        <div class="callout-box">
+          <p><strong>The magic formula:</strong> Look for segments where LTV is high, churn is low, win rate is reasonable, and sales cycles aren't painfully long. These are your best customers—and probably not who you'd guess based on intuition alone.</p>
+        </div>
+
+        <h2>Common Surprises</h2>
+
+        <p>When we run ICP analyses for clients, the findings often challenge assumptions:</p>
+
+        <h3>"Our biggest customers aren't our best customers"</h3>
+        <p>Enterprise deals look great on the board deck, but when you factor in 12-month sales cycles, heavy implementation costs, and 50%+ churn, the unit economics often don't work. Mid-market customers with faster cycles and better retention frequently have higher lifetime value.</p>
+
+        <h3>"The variable that matters most is unexpected"</h3>
+        <p>In one analysis, we found that RevOps team size was more predictive of customer success than company size, industry, or CRM platform. Companies with exactly 2 RevOps professionals had 4x higher LTV than the average customer. Your "magic variable" might be equally surprising.</p>
+
+        <h3>"Some segments destroy value"</h3>
+        <p>It's not just that some segments are "less good"—some segments are actively unprofitable. When you account for acquisition cost, support burden, and churn, you may find segments where you lose money on every customer. Stop targeting them.</p>
+
+        <div class="avoid-list">
+          <div class="avoid-list__title">Segments to Avoid</div>
+          <ul>
+            <li>Win rate below 20% (CAC too high)</li>
+            <li>Churn above 50% (can't retain them)</li>
+            <li>Sales cycle 2x your average (pipeline risk)</li>
+            <li>High deal size but high churn (value trap)</li>
+            <li>Requires features you don't have (product gap)</li>
+          </ul>
+        </div>
+
+        <h2>From Analysis to Action</h2>
+
+        <p>A data-driven ICP is only valuable if it changes behavior. Here's how to operationalize your findings:</p>
+
+        <h3>Marketing Budget Allocation</h3>
+        <p>Shift spend toward high-LTV, low-churn segments. If your "2 RevOps" segment has 4x the LTV of your average customer, they deserve a disproportionate share of your marketing budget—even if they're harder to reach.</p>
+
+        <h3>Lead Scoring</h3>
+        <p>Build segment membership into your lead scoring model. A lead that matches your bullseye ICP should score higher than a lead from a low-LTV segment, regardless of other signals.</p>
+
+        <h3>Sales Qualification</h3>
+        <p>Give sales clear criteria for which deals to pursue aggressively and which to deprioritize. If your data shows that Pipedrive users have a 7% win rate, your SDRs shouldn't be spending time on those accounts.</p>
+
+        <h3>Customer Success</h3>
+        <p>Allocate CS resources based on segment value and risk. High-LTV customers deserve white-glove treatment. High-churn segments need proactive intervention—or maybe shouldn't be acquired in the first place.</p>
+
+        <h3>Product Roadmap</h3>
+        <p>If your best segments have specific needs you can't meet, that's a roadmap signal. If your worst segments churn because of product gaps, you have a choice: build the features or stop targeting those segments.</p>
+
+        <h2>Getting Started</h2>
+
+        <p>You can run a basic ICP analysis with a spreadsheet and your CRM data. Pull your customers, enrich with available firmographic data, segment by a few key dimensions, and calculate LTV and churn for each segment.</p>
+
+        <p>For a more rigorous analysis—especially if you want to analyze many dimensions simultaneously or don't have clean data—consider getting help. The patterns in your data exist whether or not you find them. The question is whether you find them before your competitors do.</p>
+
+        <div class="text-center mt-xl">
+          <a href="/services/icp-analysis.html" class="btn btn--primary">Learn About Our ICP Analysis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (injected by components.js) -->
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICP Analysis Case Study: How a Series A SaaS Found Their $8,750 LTV Segment | Verum</title>
+  <meta name="description" content="See how a B2B SaaS company used ICP analysis to discover that RevOps team size predicted 4x differences in customer lifetime value. Real data, real results.">
+
+  <link rel="canonical" href="https://veruminc.com/case-studies/icp-analysis-series-a-saas/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/case-studies/icp-analysis-series-a-saas/">
+  <meta property="og:title" content="ICP Analysis Case Study: How a Series A SaaS Found Their $8,750 LTV Segment">
+  <meta property="og:description" content="See how a B2B SaaS company used ICP analysis to discover that RevOps team size predicted 4x differences in customer lifetime value.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ICP Analysis Case Study: How a Series A SaaS Found Their $8,750 LTV Segment">
+  <meta name="twitter:description" content="See how a B2B SaaS company used ICP analysis to discover that RevOps team size predicted 4x differences in customer lifetime value.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ICP Analysis Case Study: How a Series A SaaS Found Their $8,750 LTV Segment",
+    "description": "See how a B2B SaaS company used ICP analysis to discover that RevOps team size predicted 4x differences in customer lifetime value.",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum"
+    }
+  }
+  </script>
+
+  <style>
+    .case-study-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-2xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .case-study-meta__item {
+      flex: 1;
+      min-width: 150px;
+    }
+    .case-study-meta__label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .case-study-meta__value {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .result-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      text-align: center;
+    }
+    .result-card__value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-teal);
+      line-height: 1;
+    }
+    .result-card__label {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: var(--space-sm);
+    }
+    .insight-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border: 1px solid var(--color-teal);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+    }
+    .insight-box__title {
+      font-weight: 600;
+      color: var(--color-teal);
+      margin-bottom: var(--space-sm);
+    }
+    .segment-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-lg) 0;
+    }
+    .segment-table th,
+    .segment-table td {
+      padding: var(--space-md);
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .segment-table th {
+      font-weight: 600;
+      color: var(--color-text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .segment-table td {
+      color: var(--color-text-secondary);
+    }
+    .segment-table tr:hover td {
+      background: var(--color-bg-card);
+    }
+    .highlight-row td {
+      background: rgba(0, 184, 148, 0.1);
+      color: var(--color-text-primary);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header (injected by components.js) -->
+  <header id="site-header"></header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Case Study</p>
+      <h1 class="page-hero__title">How a Series A SaaS Discovered Their $8,750 LTV Customer Segment</h1>
+      <p class="page-hero__subtitle">A multi-dimensional ICP analysis revealed that a single variable—RevOps team size—predicted 4x differences in customer lifetime value.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="content">
+    <div class="container" style="max-width: 800px;">
+
+      <!-- Meta -->
+      <div class="case-study-meta">
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Industry</div>
+          <div class="case-study-meta__value">B2B SaaS</div>
+        </div>
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Company Stage</div>
+          <div class="case-study-meta__value">Series A</div>
+        </div>
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Analysis Type</div>
+          <div class="case-study-meta__value">ICP Analysis</div>
+        </div>
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Records Analyzed</div>
+          <div class="case-study-meta__value">315 deals</div>
+        </div>
+      </div>
+
+      <h2>The Challenge</h2>
+      <p>A B2B data platform at Series A stage needed to optimize their marketing budget allocation. They had paying customers across many segments, but couldn't answer a critical question: <strong>who are our best customers, and where should we focus?</strong></p>
+
+      <p>Their marketing spend was distributed across all segments equally. Sales targeted any company that would take a meeting. The result: unpredictable revenue, high churn in some segments, and no clear path to efficient growth.</p>
+
+      <h2>The Analysis</h2>
+      <p>We analyzed 315 closed deals across five dimensions:</p>
+      <ul>
+        <li><strong>Company growth velocity</strong> — Hiring patterns over 6 months</li>
+        <li><strong>Sales team size</strong> — Number of SDRs/BDRs</li>
+        <li><strong>CRM platform</strong> — Salesforce, HubSpot, Dynamics, etc.</li>
+        <li><strong>Geographic operations</strong> — Single-geo vs. multi-geo</li>
+        <li><strong>RevOps maturity</strong> — Number of dedicated RevOps professionals</li>
+      </ul>
+
+      <p>For each segment, we measured four metrics: median deal size, customer lifetime value (LTV), win rate, and churn rate.</p>
+
+      <h2>The Key Finding</h2>
+
+      <div class="insight-box">
+        <div class="insight-box__title">RevOps team size was the strongest predictor of customer success</div>
+        <p style="margin: 0;">Companies with exactly 2 RevOps professionals had the highest LTV ($8,750) and lowest churn (25%) in the entire dataset—outperforming every other segment by a wide margin.</p>
+      </div>
+
+      <h3>RevOps Maturity Analysis</h3>
+
+      <table class="segment-table">
+        <thead>
+          <tr>
+            <th>RevOps Team Size</th>
+            <th>Median Deal</th>
+            <th>LTV</th>
+            <th>Win Rate</th>
+            <th>Churn</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0 RevOps</td>
+            <td>$500</td>
+            <td>$1,400</td>
+            <td>55%</td>
+            <td>48%</td>
+          </tr>
+          <tr>
+            <td>1 RevOps</td>
+            <td>$850</td>
+            <td>$2,100</td>
+            <td>68%</td>
+            <td>22%</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>2 RevOps</td>
+            <td>$1,500</td>
+            <td>$8,750</td>
+            <td>62%</td>
+            <td>25%</td>
+          </tr>
+          <tr>
+            <td>3+ RevOps</td>
+            <td>$2,000+</td>
+            <td>Variable</td>
+            <td>50%</td>
+            <td>55%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Why 2 RevOps Is the Sweet Spot</h3>
+      <p>Companies with 2 RevOps professionals have:</p>
+      <ul>
+        <li><strong>Sophistication</strong> to use the platform correctly</li>
+        <li><strong>Budget and authority</strong> to purchase appropriate plans</li>
+        <li><strong>Internal champions</strong> who advocate for renewal</li>
+        <li><strong>Embedded processes</strong> that make the tool mission-critical</li>
+        <li><strong>Ability to calculate and prove ROI</strong> internally</li>
+      </ul>
+
+      <p>They've moved past the scrappy startup phase (0-1 RevOps) but haven't yet entered enterprise bureaucracy (3+ RevOps)—they're in the "scaling efficiently" zone.</p>
+
+      <h2>Additional Findings</h2>
+
+      <h3>The Growth Flywheel</h3>
+      <p>We discovered a powerful acquisition strategy: <strong>target companies at the "1 RevOps" stage</strong>. These customers had:</p>
+      <ul>
+        <li>Highest win rate (68%) — easiest to acquire</li>
+        <li>Second-lowest churn (22%) — strong retention</li>
+        <li>Natural expansion path — as they hire RevOps #2, they become $8,750 LTV accounts</li>
+      </ul>
+
+      <h3>CRM Platform Insights</h3>
+      <ul>
+        <li><strong>HubSpot users</strong>: 70% win rate, moderate churn — strong product-market fit</li>
+        <li><strong>Salesforce users</strong>: Higher deal sizes but 48% churn — needed white-glove support</li>
+        <li><strong>Dynamics users</strong>: 99% win rate — severely underserved market opportunity</li>
+      </ul>
+
+      <h3>Segments to Avoid</h3>
+      <p>The analysis also revealed segments that were actively destroying value:</p>
+      <ul>
+        <li><strong>3+ RevOps (Enterprise)</strong>: 55% churn, 50% win rate — product gaps</li>
+        <li><strong>Dual-CRM setups</strong>: 58% churn — integration complexity</li>
+        <li><strong>Pipedrive users</strong>: 7% win rate — unsustainable CAC</li>
+      </ul>
+
+      <h2>The Results</h2>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-card__value">4x</div>
+          <div class="result-card__label">LTV difference between best and average segments</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card__value">75%</div>
+          <div class="result-card__label">Budget reallocated to high-ROI segments</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card__value">25%</div>
+          <div class="result-card__label">Churn rate in optimal segment (vs. 48% average)</div>
+        </div>
+      </div>
+
+      <h2>Strategic Recommendations Delivered</h2>
+
+      <ol>
+        <li><strong>Concentrate 40% of budget</strong> on "2 RevOps" segment — the bullseye ICP</li>
+        <li><strong>Allocate 35% to "1 RevOps"</strong> — the growth flywheel that feeds the bullseye</li>
+        <li><strong>Implement segment-specific retention programs</strong> — different churn drivers require different interventions</li>
+        <li><strong>Avoid enterprise until product ready</strong> — stop burning money on segments with 55% churn</li>
+      </ol>
+
+      <div class="insight-box">
+        <div class="insight-box__title">The Core Insight</div>
+        <p style="margin: 0;">Not all customers are created equal. A single firmographic variable (RevOps team size) explained more about customer success than company size, industry, or CRM platform combined. Finding your "magic variable" can transform how you allocate resources.</p>
+      </div>
+
+      <h2>Get Your Own ICP Analysis</h2>
+      <p>Every company has hidden patterns in their customer data. The question is whether you find them before your competitors do.</p>
+
+      <div class="text-center mt-xl">
+        <a href="/#contact" class="btn btn--primary btn--lg">Request an ICP Analysis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (injected by components.js) -->
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
