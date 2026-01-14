@@ -154,6 +154,7 @@ Sitemap: https://veruminc.com/sitemap.xml
 - [ ] Tracking code included
 - [ ] Page added to sitemap
 - [ ] Internal links from relevant pages
+- [ ] Run PageSpeed Insights after deploy (see below)
 
 ## Google Search Console Setup
 
@@ -170,3 +171,91 @@ Sitemap: https://veruminc.com/sitemap.xml
 3. **Duplicate content** - Each page needs unique title/description
 4. **Broken internal links** - Check after regenerating pages
 5. **Missing tracking** - Every page needs GA4 + Clarity code
+
+---
+
+## PageSpeed Insights (Performance Best Practice)
+
+**URL:** https://pagespeed.web.dev/
+
+Run PageSpeed Insights after every major deploy or new page creation. Test both Mobile and Desktop.
+
+### Target Scores
+| Metric | Target | Current (Jan 2026) |
+|--------|--------|-------------------|
+| Performance | 90+ | 94 |
+| Accessibility | 90+ | 94 |
+| Best Practices | 90+ | 78* |
+| SEO | 100 | 100 |
+
+*Best Practices at 78 due to Cloudflare HTTPS propagation; should resolve within 24 hours.
+
+### Core Web Vitals Targets
+| Metric | Target | Description |
+|--------|--------|-------------|
+| LCP (Largest Contentful Paint) | < 2.5s | How fast main content loads |
+| FCP (First Contentful Paint) | < 1.8s | Time to first visible content |
+| CLS (Cumulative Layout Shift) | < 0.1 | Visual stability (no jumping) |
+| TBT (Total Blocking Time) | < 200ms | Main thread responsiveness |
+
+### HTML Best Practices for Performance
+
+**1. Always wrap page content in `<main>` landmark:**
+```html
+<header id="site-header"></header>
+<main>
+  <!-- All page content here -->
+</main>
+<footer id="site-footer"></footer>
+```
+
+**2. Always add width/height to images:**
+```html
+<!-- Prevents layout shift (CLS) -->
+<img src="/path/to/image.png" alt="Description" width="200" height="100">
+```
+Calculate dimensions based on aspect ratio. CSS still controls display size.
+
+**3. Heading hierarchy:**
+Use headings in sequential order: h1 → h2 → h3. Don't skip levels.
+
+**4. Font loading:**
+Google Fonts with `display=swap` is acceptable. Avoid aggressive preloading unless you're sure it helps.
+
+### Cloudflare Settings for HTTPS (Best Practices Score)
+
+Required settings in Cloudflare dashboard:
+1. **SSL/TLS → Overview:** Set to "Full" or "Full (Strict)"
+2. **SSL/TLS → Edge Certificates:**
+   - "Always Use HTTPS" → ON
+   - "Automatic HTTPS Rewrites" → ON
+   - "Minimum TLS Version" → TLS 1.2
+
+### When to Run PageSpeed
+
+- After deploying new pages
+- After significant CSS/JS changes
+- After adding new images or media
+- Monthly check on homepage
+- Before any major launch or campaign
+
+### Fixing Common Issues
+
+| Issue | Fix | Risk |
+|-------|-----|------|
+| Missing `<main>` landmark | Wrap content in `<main>` tags | None |
+| Images without dimensions | Add width/height attributes | Low |
+| Render blocking resources | Usually Google Fonts; leave alone unless critical | Medium-High |
+| HTTPS not enforced | Enable in Cloudflare (see above) | None |
+| Contrast ratio | Adjust text/background colors in CSS | Low |
+| Heading order | Restructure headings h1→h2→h3 | Medium |
+
+### CLI Quick Check (requires gh CLI)
+
+```bash
+# Check if GitHub Pages deployment succeeded
+gh run list --limit 3
+
+# View failed deployment logs
+gh run view <run-id> --log-failed
+```
