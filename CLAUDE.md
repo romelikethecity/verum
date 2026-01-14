@@ -6,28 +6,48 @@ When creating or editing industry data enrichment pages, follow these guidelines
 
 ### Pain Stats Formatting Rules
 
-**CRITICAL: All stat numbers must fit on ONE LINE**
+**CRITICAL: Stat numbers must NEVER contain spaces**
 
-Before finalizing any page, verify each `.pain-stat__number` value:
+Spaces in `.pain-stat__number` values cause line wrapping on mobile/tablet.
 
-1. **Keep stats short** - Use abbreviations and hyphenated forms:
-   - Use `24-48hr` not `24-48 hours`
-   - Use `84-day` not `84 days`
-   - Use `$12.9M` not `$12.9 million`
-   - Use `13 hrs` not `13 hours`
+**THE RULE: No spaces inside stat values. Ever.**
 
-2. **Max character count** - Stat numbers should be ~8 characters or less
+✅ GOOD (no spaces):
+- `30%` - percentages are always safe
+- `$12.9M` - currency with abbreviation
+- `24-48hr` - hyphenated, no spaces
+- `84-day` - hyphenated, no spaces
+- `13` - just the number, move "hours" to label
+- `5+` - just the number with modifier
+- `50+` - just the number with modifier
 
-3. **Test multi-word stats** - If a stat has spaces (like "84 days"), use a hyphen instead ("84-day") or abbreviate
+❌ BAD (contains spaces - WILL WRAP):
+- `13 hrs` - HAS SPACE, will wrap to two lines
+- `84 days` - HAS SPACE, will wrap
+- `15+ hrs` - HAS SPACE, will wrap
+- `5+ hrs` - HAS SPACE, will wrap
 
-4. **Percentage stats are safe** - Single numbers with % always work (e.g., "70%", "25%", "90%")
+**Pattern for time-based stats:**
+Instead of `13 hrs` in the number, use:
+- Number: `13`
+- Label: `Hours lost weekly to data hunting`
+
+### MANDATORY: Run Verification Before Committing
+
+**YOU MUST run this command before committing any page changes:**
+
+```bash
+grep -r "pain-stat__number" /Users/rome/Documents/projects/verum-website/solutions/*/index.html | grep -E ">[^<]+ [^<]+<"
+```
+
+If this returns ANY results, you have stats with spaces that will wrap. Fix them before committing.
 
 ### Pain Stats Checklist
 
 Before committing any page with `.pain-stats`:
-- [ ] Each stat number is 8 characters or fewer
-- [ ] No multi-word stats that could wrap (use hyphens)
-- [ ] Abbreviate units: hr, day, mo, yr, M, B, K
+- [ ] Ran verification command above - returned no results
+- [ ] Each stat number contains NO SPACES
+- [ ] Stat numbers are 6 characters or fewer
 
 ### Page Template Structure
 
