@@ -155,16 +155,17 @@
 
     .solution-stat__number {
       display: block;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: #00b894;
       line-height: 1;
       margin-bottom: 0.5rem;
+      white-space: nowrap;
     }
 
     @media (min-width: 768px) {
       .solution-stat__number {
-        font-size: 3.5rem;
+        font-size: 2.75rem;
       }
     }
 
@@ -189,6 +190,56 @@
         flex-direction: row;
         justify-content: center;
       }
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 1rem 0;
+      margin: 2rem 0;
+    }
+
+    .comparison-table thead th {
+      padding: 1rem 1.5rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .comparison-table thead th:first-child {
+      background-color: rgba(231, 76, 60, 0.15);
+      color: #e74c3c;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .comparison-table thead th:last-child {
+      background-color: rgba(0, 184, 148, 0.15);
+      color: #00b894;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .comparison-table tbody td {
+      padding: 0.875rem 1.5rem;
+      vertical-align: top;
+    }
+
+    .comparison-table tbody td:first-child {
+      background-color: rgba(231, 76, 60, 0.08);
+      color: #b2bec3;
+    }
+
+    .comparison-table tbody td:last-child {
+      background-color: rgba(0, 184, 148, 0.08);
+      color: #ffffff;
+    }
+
+    .comparison-table tbody tr:last-child td:first-child {
+      border-radius: 0 0 0 8px;
+    }
+
+    .comparison-table tbody tr:last-child td:last-child {
+      border-radius: 0 0 8px 0;
     }
   </style>
 
@@ -218,7 +269,7 @@
         <!-- CTAs Below Stats -->
         <div class="hero-cta-group">
           <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
-          <a href="/assessment.html" class="btn btn--secondary btn--lg">Get Free Data Assessment</a>
+          <a href="/#contact" class="btn btn--secondary btn--lg">Get Free Data Assessment</a>
         </div>
       </div>
     </section>
@@ -252,7 +303,7 @@
         <p>The real cost is partners wasting 500+ hours yearly on data reconciliation instead of client development. That's 62 working days. Roughly a quarter of someone's capacity. Meanwhile, missed cross-sell opportunities and declining client retention chip away at the revenue that's supposed to justify all those billable hours.</p>
 
         <div class="text-center mt-xl">
-          <a href="/assessment.html" class="btn btn--secondary">See How Clean Data Transforms Operations</a>
+          <a href="/#contact" class="btn btn--secondary">See How Clean Data Transforms Operations</a>
         </div>
 
         <h2>How Verum Solves Professional Services Data Challenges</h2>
@@ -311,7 +362,7 @@
         <h2>Getting Started Takes Less Time Than Your Average Meeting</h2>
 
         <p><strong>Step 1: Free Assessment (5 minutes)</strong><br>
-        Take our <a href="/assessment.html">data quality assessment</a>. We'll show you where your biggest gaps are. No commitment, no sales pitch.</p>
+        Take our <a href="/#contact">data quality assessment</a>. We'll show you where your biggest gaps are. No commitment, no sales pitch.</p>
 
         <p><strong>Step 2: Discovery Call (30 minutes)</strong><br>
         We look at your tech stack, data sources, and specific challenges. You'll leave with a clear picture of what's possible. Most firms use some combination of Salesforce or Dynamics, a practice management tool like Kantata or Clio, and separate billing software. We've seen it all.</p>
@@ -401,12 +452,12 @@
 
         <p>Two paths forward:</p>
 
-        <p><strong>Not sure yet?</strong> Take our free <a href="/assessment.html">data quality assessment</a>. Five questions, instant results, zero commitment. See where your biggest gaps are.</p>
+        <p><strong>Not sure yet?</strong> Take our free <a href="/#contact">data quality assessment</a>. Five questions, instant results, zero commitment. See where your biggest gaps are.</p>
 
         <p><strong>Ready to fix this?</strong> Tell us about your data challenges. We'll send a custom quote within 24 hours.</p>
 
         <div class="cta-group mt-xl">
-          <a href="/assessment.html" class="btn btn--secondary btn--lg">Get Free Assessment</a>
+          <a href="/#contact" class="btn btn--secondary btn--lg">Get Free Assessment</a>
           <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
         </div>
 
