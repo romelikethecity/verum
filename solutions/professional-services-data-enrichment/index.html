@@ -87,20 +87,138 @@
 <body>
   <header id="site-header"></header>
 
+  <style>
+    /* Pain Stats - Hero Section */
+    .pain-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .pain-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .pain-stat {
+      padding: 1.5rem;
+    }
+
+    .pain-stat__number {
+      display: block;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #00b894;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .pain-stat__number {
+        font-size: 4.5rem;
+      }
+    }
+
+    .pain-stat__label {
+      display: block;
+      font-size: 1rem;
+      color: #b2bec3;
+      font-weight: 500;
+    }
+
+    /* Solution Stats - Further Down */
+    .solution-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2.5rem;
+      background-color: #2d3436;
+      border-radius: 12px;
+      border: 1px solid #4d5456;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .solution-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+    }
+
+    .solution-stat__number {
+      display: block;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #00b894;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .solution-stat__number {
+        font-size: 3.5rem;
+      }
+    }
+
+    .solution-stat__label {
+      display: block;
+      font-size: 0.9375rem;
+      color: #b2bec3;
+      font-weight: 500;
+    }
+
+    /* Hero CTA Group */
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-cta-group {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  </style>
+
   <main>
     <!-- Hero Section -->
     <section class="page-hero">
       <div class="container">
         <h1 class="page-hero__title">Professional Services Data Enrichment That Actually Works</h1>
         <p class="page-hero__subtitle">Your client data lives in five different systems. We make it live in one place. Clean, complete, and ready to drive revenue.</p>
-        <div class="hero-ctas mt-lg">
+
+        <!-- Pain Stats - The Hook -->
+        <div class="pain-stats">
+          <div class="pain-stat">
+            <span class="pain-stat__number">13 hrs</span>
+            <span class="pain-stat__label">Lost weekly to data hunting</span>
+          </div>
+          <div class="pain-stat">
+            <span class="pain-stat__number">30%</span>
+            <span class="pain-stat__label">Contact decay per year</span>
+          </div>
+          <div class="pain-stat">
+            <span class="pain-stat__number">500+</span>
+            <span class="pain-stat__label">Partner hours wasted yearly</span>
+          </div>
+        </div>
+
+        <!-- CTAs Below Stats -->
+        <div class="hero-cta-group">
           <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
           <a href="/assessment.html" class="btn btn--secondary btn--lg">Get Free Data Assessment</a>
-        </div>
-        <div class="stats-bar mt-xl">
-          <div class="stat"><span class="stat__number">13 hrs</span><span class="stat__label">Lost weekly to data hunting</span></div>
-          <div class="stat"><span class="stat__number">30%</span><span class="stat__label">Contact decay per year</span></div>
-          <div class="stat"><span class="stat__number">500+</span><span class="stat__label">Partner hours wasted yearly</span></div>
         </div>
       </div>
     </section>
@@ -156,10 +274,20 @@
         <h3>Human QA on Everything</h3>
         <p>AI does the heavy lifting. But every file gets human review before it goes back to you. "Pretty good" data isn't good enough when client relationships are on the line. Our team catches the edge cases that algorithms miss.</p>
 
-        <div class="stats-bar stats-bar--solution mt-xl mb-xl">
-          <div class="stat"><span class="stat__number">93%</span><span class="stat__label">Deliverability guarantee</span></div>
-          <div class="stat"><span class="stat__number">24-48hr</span><span class="stat__label">Typical turnaround</span></div>
-          <div class="stat"><span class="stat__number">50+</span><span class="stat__label">Data sources</span></div>
+        <!-- Solution Stats -->
+        <div class="solution-stats">
+          <div class="solution-stat">
+            <span class="solution-stat__number">93%</span>
+            <span class="solution-stat__label">Deliverability guarantee</span>
+          </div>
+          <div class="solution-stat">
+            <span class="solution-stat__number">24-48hr</span>
+            <span class="solution-stat__label">Typical turnaround</span>
+          </div>
+          <div class="solution-stat">
+            <span class="solution-stat__number">50+</span>
+            <span class="solution-stat__label">Data sources</span>
+          </div>
         </div>
 
         <div class="text-center">
