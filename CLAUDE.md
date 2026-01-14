@@ -72,6 +72,24 @@ See `/docs/WRITING-GUIDELINES.md` for anti-AI detection guidelines:
 - No performative interjections ("That's not a typo", "Let that sink in")
 - Industry-specific details and stats with source links
 
+### CSS Cache-Busting
+
+**IMPORTANT: When modifying CSS, increment the version parameter**
+
+GitHub Pages caches CSS for 4 hours. To ensure users see updated styles immediately:
+
+1. All HTML files link to CSS with a version param: `styles.css?v=2`
+2. When you modify `/css/styles.css`, increment the version: `?v=3`, `?v=4`, etc.
+3. Update ALL HTML files with the new version (use find/sed)
+
+```bash
+# Example: Increment from v=2 to v=3 across all HTML files
+find /Users/rome/Documents/projects/verum-website -name "*.html" \
+  -exec sed -i '' 's|styles.css?v=2|styles.css?v=3|g' {} \;
+```
+
+This prevents the "design issues" where new pages show with old cached CSS.
+
 ### CSS Classes Reference
 
 - `.pain-stats` - Container for hero stats
