@@ -78,23 +78,24 @@ Spaces in `.pain-stat__number` values cause line wrapping on mobile/tablet.
 
 **THE RULE: No spaces inside stat values. Ever.**
 
-✅ GOOD (no spaces):
+✅ GOOD (no spaces, use non-breaking hyphens):
 - `30%` - percentages are always safe
 - `$12.9M` - currency with abbreviation
-- `24-48hr` - hyphenated, no spaces
-- `84-day` - hyphenated, no spaces
+- `24&#8209;48hr` - use `&#8209;` (non-breaking hyphen) to prevent line break
+- `84&#8209;day` - use `&#8209;` (non-breaking hyphen) to prevent line break
 - `13` - just the number, move "hours" to label
 - `5+` - just the number with modifier
 - `50+` - just the number with modifier
 - `18mo` - combined unit, no space
 - `11K+` - abbreviated number with modifier
 
-❌ BAD (contains spaces - WILL WRAP):
-- `13 hrs` - HAS SPACE, will wrap to two lines
+❌ BAD (will wrap to two lines):
+- `13 hrs` - HAS SPACE, will wrap
 - `84 days` - HAS SPACE, will wrap
 - `15+ hrs` - HAS SPACE, will wrap
 - `5+ hrs` - HAS SPACE, will wrap
 - `18 mo` - HAS SPACE, will wrap
+- `24-48hr` - regular hyphen allows line break! Use `&#8209;` instead
 
 **Pattern for time-based stats:**
 Instead of `13 hrs` in the number, use:
