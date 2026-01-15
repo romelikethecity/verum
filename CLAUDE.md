@@ -2,11 +2,19 @@
 
 ## Project Overview
 
-Verum is a B2B data enrichment company. This website has ~200 programmatic SEO pages for different industries and services. The high-value industry pages are being rewritten from thin templates (~84 lines) to rich, conversion-focused content (~300+ lines).
+Verum is a B2B data enrichment company. This website has ~200 programmatic SEO pages for different industries and services. The high-value industry pages have been rewritten from thin templates (~84 lines) to rich, conversion-focused content (~300+ lines).
+
+**Site URL:** https://veruminc.com/
+
+---
 
 ## Current Progress
 
-### Completed Industry Pages (13 pages, 300+ lines each)
+### Completed Industry Data Enrichment Pages (28 pages, 300+ lines each)
+
+All industry data enrichment pages are now complete with full content:
+
+**Batch 1 (Original 13):**
 1. Healthcare - NPI verification, provider data, HIPAA considerations
 2. Professional Services - Client data across systems, cross-sell opportunities
 3. Fintech - KYC/AML compliance, regulatory accuracy
@@ -21,22 +29,40 @@ Verum is a B2B data enrichment company. This website has ~200 programmatic SEO p
 12. Accounting - Practice management, busy season outreach, advisory services
 13. Government - Vendor databases, grant recipients, legacy system exports
 
-### Remaining Industry Pages (15 pages, still thin templates)
-1. AdTech
-2. AI/ML
-3. B2B Services
-4. Construction
-5. E-commerce
-6. Education
-7. Energy
-8. Logistics
-9. MarTech
-10. Media
-11. Nonprofit
-12. Retail
-13. Technology
-14. Telecommunications
-15. Travel
+**Batch 2 (15 additional, completed January 2026):**
+14. AdTech - DSP/SSP contacts, programmatic buying, campaign data
+15. AI/ML - Research teams, technical decision-makers, vendor landscape
+16. B2B Services - Client relationship tracking, proposal data, referral networks
+17. Construction - Project managers, contractor licensing, bid management
+18. E-commerce - Customer data, cart abandonment, address verification. Stats: 25%, 70%, $260B
+19. Education - Alumni/donor data, development teams, FERPA. Stats: 30%, 8%, 40%
+20. Energy - Utility M&A, long sales cycles, energy transition. Stats: 30%, $2T, 200+
+21. Logistics - Carrier data, driver turnover (91%), FMCSA verification. Stats: 91%, 30%, 17K
+22. MarTech - CMO turnover, tech stack data, marketing leader movement. Stats: 30%, 18mo, 11K+
+23. Media - Agency turnover (25%), advertiser relationships, brand-agency tracking. Stats: 30%, 25%, $600B
+24. Nonprofit - Donor databases, address decay, major gift prospects. Stats: 30%, 45%, 10%
+25. Retail - Buyer turnover (60%), category manager changes, CPG sales. Stats: 30%, 60%, $5T
+26. Technology - Startup mortality, M&A activity, tech layoffs. Stats: 30%, 90%, $5T
+27. Telecommunications - IT leader turnover, corporate restructuring, enterprise sales. Stats: 30%, $1.5T, 18mo
+28. Travel & Hospitality - Travel manager instability, post-pandemic restructuring. Stats: 30%, $1.9T, 73%
+
+### Next Priority: Services Section Rewrite
+
+**Current Services Pages (all thin, ~100-130 lines):**
+- `/services/index.html` - Grid of 3 service cards (114 lines)
+- `/services/data-cleaning.html` - Basic content (113 lines)
+- `/services/data-enrichment.html` - Basic content (134 lines)
+- `/services/data-analysis.html` - Basic content (134 lines)
+- `/services/icp-analysis.html` - Most complete, has custom CSS (257 lines)
+
+**Services Section Strategy Needed:**
+The services pages need the same treatment as industry pages - expanded from thin templates to rich, conversion-focused content with:
+- Pain-first messaging
+- Specific use cases and outcomes
+- FAQ with schema markup
+- Comparison tables (Verum vs alternatives)
+- Case study integration
+- Industry-specific examples
 
 ---
 
@@ -60,12 +86,15 @@ Spaces in `.pain-stat__number` values cause line wrapping on mobile/tablet.
 - `13` - just the number, move "hours" to label
 - `5+` - just the number with modifier
 - `50+` - just the number with modifier
+- `18mo` - combined unit, no space
+- `11K+` - abbreviated number with modifier
 
 ❌ BAD (contains spaces - WILL WRAP):
 - `13 hrs` - HAS SPACE, will wrap to two lines
 - `84 days` - HAS SPACE, will wrap
 - `15+ hrs` - HAS SPACE, will wrap
 - `5+ hrs` - HAS SPACE, will wrap
+- `18 mo` - HAS SPACE, will wrap
 
 **Pattern for time-based stats:**
 Instead of `13 hrs` in the number, use:
@@ -275,15 +304,36 @@ Each industry page should follow this structure (~300 lines, 1200-1500 words):
 
 ## Writing Style
 
-See `/docs/WRITING-GUIDELINES.md` for full anti-AI detection guidelines.
+### Anti-AI Detection Guidelines
 
-Key points:
-- Use contractions ("we're" not "we are")
-- Vary sentence length dramatically
-- Avoid em-dashes (heavily flagged as AI)
-- No performative interjections ("That's not a typo", "Let that sink in")
-- Industry-specific details and stats with source links
-- Second-person "you" that speaks directly to reader
+To ensure authentic, human-sounding copy:
+
+1. **Use contractions** - "we're" not "we are", "doesn't" not "does not"
+2. **Vary sentence length dramatically** - Mix punchy 4-word sentences with longer, flowing ones
+3. **Add natural pauses** - Organic breaks that let thoughts breathe
+4. **Include occasional tangents** - Brief detours that show personality
+5. **Use relatable metaphors** - Compare data problems to everyday frustrations
+6. **Show you understand the reader** - Acknowledge their reality, frustrations, and constraints
+
+### What to AVOID (AI Detection Flags)
+
+- **Em-dashes** - Use very rarely. Heavily flagged as AI-generated
+- **Performative interjections** - "That's not a typo." "Good question." "And honestly?"
+- **Commentary after stats** - "Let that sink in" or "You read that right"
+- **Forced casual phrases** - "Here's the thing:" or "Spoiler alert:"
+- **Rhetorical questions followed by answers** - "What does this mean? It means..."
+- **Overly parallel structure** - Three bullets that all start the same way
+
+### What WORKS (Human Patterns)
+
+- Short sentences that just end. No commentary needed.
+- Thoughts that trail into the next paragraph naturally
+- Varied paragraph lengths. Some long. Some just one sentence.
+- Specific details only someone in the industry would know
+- Admitting uncertainty or limitations occasionally
+- Second-person "you" that speaks directly to the reader's situation
+
+**Voice check**: Read it out loud. If it sounds like a person talking to a colleague, you're on track.
 
 ---
 
@@ -380,8 +430,98 @@ Three fundamental differences:
 
 ## File Locations
 
-- Industry pages: `/solutions/[industry]-data-enrichment/index.html`
-- Main CSS: `/css/styles.css`
-- Writing guidelines: `/docs/WRITING-GUIDELINES.md`
-- This file: `/CLAUDE.md`
-- Solutions index: `/solutions/index.html`
+### Key Files
+- **Main CSS:** `/css/styles.css`
+- **Writing guidelines:** `/docs/WRITING-GUIDELINES.md`
+- **This file:** `/CLAUDE.md`
+- **Solutions index:** `/solutions/index.html`
+
+### Industry Pages Location
+All at: `/solutions/[industry]-data-enrichment/index.html`
+
+Complete list (28 pages):
+- accounting-data-enrichment
+- adtech-data-enrichment
+- ai-ml-data-enrichment
+- b2b-services-data-enrichment
+- construction-data-enrichment
+- consulting-data-enrichment
+- cybersecurity-data-enrichment
+- e-commerce-data-enrichment
+- ecommerce-data-enrichment (duplicate - check if needed)
+- education-data-enrichment
+- energy-data-enrichment
+- fintech-data-enrichment
+- government-data-enrichment
+- healthcare-data-enrichment
+- hr-tech-data-enrichment
+- insurance-data-enrichment
+- legal-data-enrichment
+- logistics-data-enrichment
+- manufacturing-data-enrichment
+- martech-data-enrichment
+- media-data-enrichment
+- nonprofit-data-enrichment
+- professional-services-data-enrichment
+- real-estate-data-enrichment
+- retail-data-enrichment
+- saas-data-enrichment
+- technology-data-enrichment
+- telecommunications-data-enrichment
+- travel-data-enrichment
+
+### Services Pages Location
+- `/services/index.html` - Main services grid
+- `/services/data-cleaning.html` - Data cleaning service
+- `/services/data-enrichment.html` - Data enrichment service
+- `/services/data-analysis.html` - Data analysis service
+- `/services/icp-analysis.html` - ICP analysis (most complete)
+
+---
+
+## Services Section - Next Steps
+
+The services section needs strategic planning before rewrite:
+
+### Current State
+- Services index: Simple 3-card grid (114 lines)
+- Data Cleaning: Basic problem/solution (~113 lines)
+- Data Enrichment: Basic what we do (~134 lines)
+- Data Analysis: Links to ICP, basic content (~134 lines)
+- ICP Analysis: Most complete with custom CSS, pricing ($2,500), case study link (~257 lines)
+
+### Questions to Address
+1. **Page structure:** Should services follow same template as industry pages?
+2. **Differentiation:** How to make each service page unique (not just feature lists)?
+3. **Pricing:** ICP has pricing ($2,500). Should other services show pricing?
+4. **Case studies:** How to integrate case studies effectively?
+5. **Cross-linking:** How to connect services to industry pages?
+6. **Schema markup:** Service schema vs FAQ schema?
+
+### Potential Service Page Structure
+- Pain-first opening (different from industry pages)
+- Specific deliverables with examples
+- Process with timeline expectations
+- Pricing or "starting at" ranges
+- Case study snippets
+- FAQ with schema
+- Related industries that use this service
+
+---
+
+## Analytics & Tracking
+
+All pages include:
+- Google Analytics: `G-R416JZ91B1`
+- Microsoft Clarity: `uzzgoxxnof`
+
+---
+
+## Git Workflow
+
+**Never commit without running stat verification:**
+```bash
+grep -r "pain-stat__number" /Users/rome/Documents/projects/verum-website/solutions/*/index.html | grep -E ">[^<]+ [^<]+<"
+```
+
+If output is empty, stats are clean. If any results appear, fix before committing.
