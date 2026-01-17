@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email Validation | Verum</title>
-  <meta name="description" content="Verify email addresses are real and deliverable">
-  <meta name="keywords" content="email validation, data cleaning, data quality">
+  <title>Email Validation Services | Verum</title>
+  <meta name="description" content="Verify email addresses are real and deliverable. DNS checks, MX verification, SMTP validation. Know which emails work before you send.">
 
   <link rel="canonical" href="https://veruminc.com/cleaning/email-validation/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -18,14 +17,14 @@
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veruminc.com/cleaning/email-validation/">
-  <meta property="og:title" content="Email Validation | Verum">
-  <meta property="og:description" content="Verify email addresses are real and deliverable">
+  <meta property="og:title" content="Email Validation Services | Verum">
+  <meta property="og:description" content="Verify email addresses are real and deliverable.">
   <meta property="og:site_name" content="Verum">
   <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Email Validation | Verum">
-  <meta name="twitter:description" content="Verify email addresses are real and deliverable">
+  <meta name="twitter:title" content="Email Validation Services | Verum">
+  <meta name="twitter:description" content="Verify email addresses are real and deliverable.">
   <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
@@ -42,46 +41,208 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Email Validation Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "Verum"
+    },
+    "description": "Email validation services using DNS, MX, and SMTP verification to confirm email addresses are real and deliverable.",
+    "serviceType": "Email Validation"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does email validation work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Multiple steps: syntax check (properly formed address), DNS lookup (domain exists), MX record check (mail servers configured), and SMTP verification (mailbox exists). Each step catches different types of invalid addresses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does validation require sending test emails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. SMTP verification confirms mailbox existence without actually sending messages. We connect to the mail server and ask if the address exists, then disconnect. No email is sent or received."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between validation and verification?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The terms are often used interchangeably. Technically, validation checks if an address could be real (format, domain). Verification confirms it is real (mailbox exists). We do both."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why can't I just validate with regex?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Regex only checks format. 'fake@doesnotexist.com' passes regex validation perfectly but will definitely bounce. Real validation requires checking that the domain exists, has mail servers, and the mailbox is configured."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- Header (injected by components.js) -->
   <header id="site-header"></header>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1 class="page-hero__title">Email Validation</h1>
-    </div>
-  </section>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Email Validation</h1>
+        <p class="page-hero__subtitle">An email address can look perfectly valid and still bounce. We check whether addresses actually work, not just whether they follow the right format.</p>
 
-  <section class="content">
-    <div class="container" style="max-width: 800px;">
-      
-<h2>Email Validation</h2>
-<p>Verify email addresses are real and deliverable. Verum helps you maintain accurate, reliable email validation across your entire database.</p>
+        <div class="pain-stats">
+          <div class="pain-stat">
+            <span class="pain-stat__number">20&#8209;40%</span>
+            <span class="pain-stat__label">Typical invalid rate</span>
+          </div>
+          <div class="pain-stat">
+            <span class="pain-stat__number">93%+</span>
+            <span class="pain-stat__label">Validation accuracy</span>
+          </div>
+          <div class="pain-stat">
+            <span class="pain-stat__number">24&#8209;48hr</span>
+            <span class="pain-stat__label">Turnaround</span>
+          </div>
+        </div>
 
-<h2>What We Do</h2>
-<ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
-</ul>
-
-<h2>Results</h2>
-<ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
-</ul>
-
-      <div class="text-center mt-xl">
-        <a href="/#contact" class="btn btn--primary btn--lg">Get Started</a>
+        <div class="hero-cta-group">
+          <a href="/#contact" class="btn btn--primary btn--lg">Validate My Emails</a>
+          <a href="/pricing.html" class="btn btn--secondary btn--lg">See Pricing</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer (injected by components.js) -->
+    <section class="content">
+      <div class="container" style="max-width: 800px;">
+
+        <h2>Format vs Reality</h2>
+
+        <p>john.smith@acme.com looks like a valid email address. Correct format, plausible domain, nothing obviously wrong. But John Smith left Acme two years ago. The mailbox doesn't exist anymore. Send to this address and it bounces.</p>
+
+        <p>Format validation catches addresses that are obviously broken: missing @ symbols, double dots, invalid characters. But it can't tell you whether the mailbox actually exists. For that, you need to ask the mail server.</p>
+
+        <p>That's what real email validation does. We don't just check format. We check that the domain exists, that it has mail servers configured, and that the specific mailbox is accepting mail. The difference between "looks valid" and "is valid" can be the difference between a successful campaign and a deliverability disaster.</p>
+
+        <div class="testimonial mt-xl mb-xl">
+          <blockquote class="testimonial__quote">"Email deliverability went from 72% to 94%."</blockquote>
+          <cite class="testimonial__author">— Hansen, Marketing Director</cite>
+        </div>
+
+        <h2>How We Validate</h2>
+
+        <ul class="feature-list">
+          <li><strong>Syntax validation.</strong> Is the address properly formed? Correct characters, proper format, no obvious errors.</li>
+
+          <li><strong>DNS lookup.</strong> Does the domain exist? A valid-looking address at a defunct domain will never deliver.</li>
+
+          <li><strong>MX record check.</strong> Does the domain have mail servers configured? Some domains exist but don't receive email.</li>
+
+          <li><strong>SMTP verification.</strong> Does this specific mailbox exist? We ask the mail server directly without sending a message.</li>
+
+          <li><strong>Catch-all detection.</strong> Some domains accept all mail regardless of mailbox existence. We identify these separately.</li>
+
+          <li><strong>Disposable domain detection.</strong> Temporary email services like Mailinator. Often used for fake signups.</li>
+
+          <li><strong>Role address identification.</strong> Generic addresses like info@, support@, admin@. Often have different engagement patterns.</li>
+        </ul>
+
+        <h2>The Validation Sequence</h2>
+
+        <p>Each check catches different types of invalid addresses:</p>
+
+        <p><strong>Step 1: Syntax.</strong> Catches typos and formatting errors. "john.smith@acme" fails (no TLD). "john..smith@acme.com" fails (double dot).</p>
+
+        <p><strong>Step 2: Domain.</strong> Catches addresses at defunct or fake domains. "john@acmecorp-fake.com" fails if that domain doesn't exist.</p>
+
+        <p><strong>Step 3: MX records.</strong> Catches addresses at domains that exist but don't receive mail. Some companies have websites but no email.</p>
+
+        <p><strong>Step 4: Mailbox.</strong> Catches addresses where the domain is fine but the specific user doesn't exist. John left, his mailbox was deleted.</p>
+
+        <p>An address must pass all four steps to be considered valid.</p>
+
+        <div class="text-center mt-xl">
+          <a href="/#contact" class="btn btn--secondary">Get a Free Validation Sample</a>
+        </div>
+
+        <h2>What You Get</h2>
+
+        <p><strong>Validation status.</strong> Valid, invalid, or uncertain. Each address categorized.</p>
+
+        <p><strong>Failure reasons.</strong> Why invalid addresses failed. Domain doesn't exist, mailbox not found, etc.</p>
+
+        <p><strong>Risk flags.</strong> Catch-all domains, disposable addresses, role accounts. Valid but potentially risky.</p>
+
+        <p><strong>Statistics.</strong> Valid rate, invalid rate, risk breakdown. Understand your list quality.</p>
+
+        <h2>How It Works</h2>
+
+        <p><strong>Step 1: Send us your emails.</strong> List of addresses to validate. Any format.</p>
+
+        <p><strong>Step 2: We run full validation.</strong> All four verification steps on each address.</p>
+
+        <p><strong>Step 3: Results categorized.</strong> Valid, invalid, uncertain, risky. Each address classified.</p>
+
+        <p><strong>Step 4: Report delivered.</strong> Full results with statistics and recommendations.</p>
+
+        <h2>Pricing</h2>
+
+        <p>Email validation runs $0.01-0.03 per address, depending on volume. Larger lists get better rates.</p>
+
+        <p>Minimum project is $500. Most lists are validated within 24 hours.</p>
+
+        <p><a href="/pricing.html">See full pricing details →</a></p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>How does validation work?</h3>
+          <p>Syntax check, DNS lookup, MX record check, SMTP verification. Each step catches different invalid addresses.</p>
+
+          <h3>Do you send test emails?</h3>
+          <p>No. SMTP verification confirms mailbox existence without sending messages. We ask the server if the address exists, then disconnect.</p>
+
+          <h3>Validation vs verification?</h3>
+          <p>Terms are often interchangeable. Technically, validation checks format; verification confirms existence. We do both.</p>
+
+          <h3>Why not just use regex?</h3>
+          <p>Regex only checks format. "fake@doesnotexist.com" passes regex but bounces. Real validation checks that the mailbox exists.</p>
+        </div>
+
+        <h2>Ready to Validate Your Emails?</h2>
+
+        <p>Two options:</p>
+
+        <p><strong>Want to see your invalid rate?</strong> Send us a sample. We'll validate it and show you the results.</p>
+
+        <p><strong>Ready to validate everything?</strong> Send us your full list. We'll return validation status on every address.</p>
+
+        <div class="cta-group mt-xl">
+          <a href="/#contact" class="btn btn--secondary btn--lg">Get Sample</a>
+          <a href="/#contact" class="btn btn--primary btn--lg">Validate My Emails</a>
+        </div>
+
+        <p class="mt-lg text-muted">Related: <a href="/cleaning/email-verification/">Email Verification</a> | <a href="/cleaning/email-list-cleaning/">Email List Cleaning</a> | <a href="/cleaning/data-validation/">Data Validation</a> | <a href="/pricing.html">Pricing</a></p>
+
+      </div>
+    </section>
+  </main>
+
   <footer id="site-footer"></footer>
 
   <script src="/js/components.js"></script>
