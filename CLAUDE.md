@@ -520,7 +520,9 @@ All pages include:
 
 ## Git Workflow
 
-**Never commit without running stat verification:**
+**Commit and push immediately after every approved change.** No batching. Only say "done" after the push succeeds.
+
+**Never commit without running stat verification (for pSEO pages):**
 ```bash
 grep -r "pain-stat__number" /Users/rome/Documents/projects/verum-website/solutions/*/index.html | grep -E ">[^<]+ [^<]+<"
 ```
