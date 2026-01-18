@@ -187,6 +187,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://veruminc.com/resources/lead-routing-broken-data.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/resources/lead-scoring-not-working.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/resources/abm-account-data-quality.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/resources/email-deliverability-data-quality.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/resources/attribution-data-quality.html</loc>
+    <lastmod>2026-01-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://veruminc.com/solutions/healthcare-data-enrichment/</loc>
     <lastmod>2026-01-12</lastmod>
     <changefreq>monthly</changefreq>

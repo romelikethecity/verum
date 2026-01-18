@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your ABM Program Fails When Your Account Data Is Wrong | Verum</title>
+  <meta name="description" content="You're running account-based marketing on a database where accounts are duplicated, contacts are orphaned, and firmographics are guesswork. No wonder it's not working.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/abm-account-data-quality.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/abm-account-data-quality.html">
+  <meta property="og:title" content="Your ABM Program Fails When Your Account Data Is Wrong">
+  <meta property="og:description" content="ABM on bad data means targeting wrong accounts, missing buying committees, and wasting budget.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your ABM Program Fails When Your Account Data Is Wrong">
+  <meta name="twitter:description" content="ABM on bad data means targeting wrong accounts, missing buying committees, and wasting budget.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Your ABM Program Fails When Your Account Data Is Wrong",
+    "description": "You're running account-based marketing on a database where accounts are duplicated, contacts are orphaned, and firmographics are guesswork. No wonder it's not working.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/abm-account-data-quality.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why isn't my ABM program generating pipeline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ABM requires accurate account data to work. If your target account list is based on incomplete firmographics, you might be targeting wrong accounts. If contacts aren't associated with accounts, your engagement data is incomplete. If you have duplicate accounts, you're splitting activity and confusing sales. The strategy might be sound; the data isn't."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my account data is good enough for ABM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check three things: (1) What percentage of your target accounts have accurate firmographic data for targeting? (2) What's your average contacts-per-account on target accounts? (3) How many duplicate account records exist in your CRM? If firmographics are incomplete, contact coverage is thin, or duplicates are rampant, your ABM data foundation needs work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's a good number of contacts per account for ABM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For enterprise ABM, aim for 5-15 contacts per target account, covering the typical buying committee. If your average is 1-2, you're missing most of the decision-making group. If your numbers look high but engagement is low, check for duplicates or outdated contacts inflating counts."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">ABM</p>
+      <h1 class="page-hero__title">Your ABM Program Fails When Your Account Data Is Wrong</h1>
+      <p class="page-hero__subtitle">Account-based marketing only works if you know which accounts to target, who works there, and how they're engaging. Your data says you do. It's probably lying.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 10 min read</div>
+
+      <div class="blog-content">
+
+        <p>You built a target account list. Ran it through your ABM platform. Launched personalized campaigns. Spent real budget on ads, content, events. Six months later, pipeline from target accounts is barely higher than before ABM.</p>
+
+        <p>The exec team is skeptical. Marketing wonders if ABM is overhyped. Sales says the accounts weren't that good anyway.</p>
+
+        <p>But the problem isn't ABM as a strategy. The problem is you ran ABM on a database where:</p>
+
+        <ul>
+          <li>Half your "target accounts" don't actually match your ICP because the firmographic data was wrong</li>
+          <li>Contacts aren't associated with accounts, so engagement is invisible at the account level</li>
+          <li>Key accounts exist as 2-3 duplicate records, splitting activity and confusing everyone</li>
+          <li>Your buying committee coverage is 1-2 contacts per account when you need 5-10</li>
+        </ul>
+
+        <p>ABM is a data-intensive strategy. Run it on bad data and you get bad results.</p>
+
+        <h2>The Account Data Problems That Break ABM</h2>
+
+        <p>ABM depends on accurate data at every step: selecting accounts, reaching contacts, measuring engagement, coordinating sales. Each step has data dependencies that can fail.</p>
+
+        <h3>Wrong Accounts on Your Target List</h3>
+
+        <p>You built your target account list based on firmographic criteria. Companies with 500-5000 employees in financial services and healthcare. Makes sense.</p>
+
+        <p>But where did the firmographic data come from? Your CRM, which has:</p>
+
+        <ul>
+          <li>Employee count populated on 60% of accounts, blank on 40%</li>
+          <li>Industry values that are three years old</li>
+          <li>Company size data from when they were a startup (they've grown 10x since)</li>
+          <li>Subsidiaries classified as standalone companies</li>
+        </ul>
+
+        <p>Your "500-5000 employees in financial services" filter caught some right accounts, missed others that should qualify, and included companies that don't fit at all. The target list is wrong from the start.</p>
+
+        <h3>Orphaned Contacts</h3>
+
+        <p>ABM requires understanding engagement at the account level. Are people from Acme Corp visiting your site? Opening emails? Attending webinars?</p>
+
+        <p>But what if three people from Acme Corp visited your site, and none of them are associated with the Acme Corp account record in your CRM? Their activity exists but it's invisible at the account level.</p>
+
+        <p>This happens constantly. People fill out forms with personal email addresses. Imports lack association data. Auto-association fails for various technical reasons. The result: your ABM platform shows no engagement from Acme Corp, when actually three people are actively evaluating you.</p>
+
+        <p>For detailed fixes: <a href="/resources/hubspot-contact-company-associations.html">Fixing HubSpot Associations</a></p>
+
+        <h3>Duplicate Accounts</h3>
+
+        <p>Acme Corp exists in your CRM three times. "Acme Corporation" was created by marketing. "Acme Corp" was created by sales. "ACME" was imported from an event list.</p>
+
+        <p>Each account has some contacts, some activity, some deal history. None of them has the complete picture. Your ABM platform sees three separate accounts with low engagement each, not one account with high engagement total.</p>
+
+        <p>Sales doesn't know which record to use. Reporting is fragmented. Account scores are split across duplicates. Nobody can see the full relationship.</p>
+
+        <h3>Thin Contact Coverage</h3>
+
+        <p>B2B buying decisions involve committees. Research says 6-10 people are involved in most enterprise purchases. If your target account has 2 contacts in your database, you're reaching 20-30% of the buying committee. The rest don't know you exist.</p>
+
+        <p>Worse: those 2 contacts might be the wrong people. An SDR from a cold outreach campaign and someone who downloaded an ebook two years ago. Neither is the economic buyer or the technical evaluator who actually makes decisions.</p>
+
+        <p>ABM with thin, wrong contact coverage is just very expensive spray-and-pray.</p>
+
+        <h3>Stale Data</h3>
+
+        <p>That VP of Marketing you're targeting? She left eight months ago. The contact record still exists, marked as VP of Marketing at Acme Corp, because nobody updated it.</p>
+
+        <p>B2B contact data decays at roughly 30% per year. People change jobs, get promoted, leave the industry. If your target account contacts haven't been verified recently, you're marketing to ghosts.</p>
+
+        <h2>Diagnosing Your ABM Data Problems</h2>
+
+        <p>Before investing more in ABM tactics, understand your data foundation.</p>
+
+        <h3>Audit Your Target Account List</h3>
+
+        <p>Take a sample of 50 target accounts. For each one:</p>
+
+        <ul>
+          <li>Verify the firmographic data (employee count, industry, revenue) against current sources (LinkedIn, company website)</li>
+          <li>Check if duplicate records exist</li>
+          <li>Count associated contacts</li>
+          <li>Review contact quality (are they real people? still at the company? relevant roles?)</li>
+        </ul>
+
+        <p>Calculate accuracy rates. If 30% of your target accounts have wrong firmographics, your targeting is 30% wrong.</p>
+
+        <h3>Measure Contact Coverage</h3>
+
+        <p>For your target accounts, pull average contacts per account. Then look at the distribution:</p>
+
+        <ul>
+          <li>What percentage have 0 contacts?</li>
+          <li>What percentage have 1-2 contacts?</li>
+          <li>What percentage have 5+ contacts?</li>
+        </ul>
+
+        <p>If most target accounts have 0-2 contacts, your ABM campaigns are reaching almost nobody in those organizations.</p>
+
+        <h3>Find Your Orphaned Contacts</h3>
+
+        <p>Count contacts without account associations. Then specifically check: how many of those orphans have email domains matching your target accounts?</p>
+
+        <p>These are people from target accounts who are engaged with you but invisible to your ABM tracking. They might be your warmest leads, and you can't see them.</p>
+
+        <h3>Identify Duplicate Accounts</h3>
+
+        <p>Run duplicate detection on your account records. Check for:</p>
+
+        <ul>
+          <li>Similar company names (Acme vs. Acme Corp vs. Acme Inc.)</li>
+          <li>Same website domain on different records</li>
+          <li>Same address on different records</li>
+        </ul>
+
+        <p>Any duplicate in your target account list is splitting your engagement data and confusing your team.</p>
+
+        <h2>Fixing the Foundation</h2>
+
+        <p>ABM on bad data wastes budget. Fix the data before scaling the program.</p>
+
+        <h3>Clean Your Account Records</h3>
+
+        <p><strong>Merge duplicates.</strong> Consolidate duplicate account records so each company exists once with complete information. Preserve all contacts, activities, and deal history on the surviving record.</p>
+
+        <p><strong>Update firmographics.</strong> Refresh employee count, industry, revenue for target accounts. Use enrichment services or manual verification for high-priority accounts. Stale data leads to wrong targeting.</p>
+
+        <p><strong>Standardize company names.</strong> Normalize variations so reporting and deduplication work correctly. <a href="/resources/salesforce-company-name-normalization.html">How to Normalize Company Names</a></p>
+
+        <h3>Fix Contact Associations</h3>
+
+        <p>Associate orphaned contacts with their accounts. For contacts with business email domains, this is straightforward: match domain to account website. For contacts with personal emails, you need additional data (company name field, enrichment, manual research).</p>
+
+        <p>Once contacts are properly associated, your account-level engagement data becomes real.</p>
+
+        <h3>Build Contact Coverage</h3>
+
+        <p>For target accounts with thin coverage, you need more contacts. Options:</p>
+
+        <p><strong>Enrich from data providers.</strong> Tools like ZoomInfo, Cognism, or Apollo can provide contacts at specific accounts. Focus on roles relevant to your buyer committee.</p>
+
+        <p><strong>Research high-priority accounts manually.</strong> For your top 50-100 accounts, have someone build contact lists from LinkedIn. Slower but more accurate.</p>
+
+        <p><strong>Run contact-acquisition campaigns.</strong> Content offers, webinars, and events can capture new contacts. Target by company domain to build coverage at specific accounts.</p>
+
+        <h3>Verify and Update Existing Contacts</h3>
+
+        <p>Contacts decay. Before launching ABM campaigns, verify your existing contact data:</p>
+
+        <ul>
+          <li>Email validation to remove bounces</li>
+          <li>Title/role verification (are they still there? same role?)</li>
+          <li>Phone verification if you're doing outbound</li>
+        </ul>
+
+        <p>Better to have 5 verified contacts than 15 stale ones.</p>
+
+        <h2>Maintaining ABM Data Quality</h2>
+
+        <p>Cleaning is a project. Staying clean is a process.</p>
+
+        <h3>Ongoing Enrichment</h3>
+
+        <p>Set up enrichment to run on new accounts as they're created. Don't let new records enter your system with blank firmographics.</p>
+
+        <h3>Association Rules</h3>
+
+        <p>Configure your CRM to auto-associate contacts with accounts based on email domain. This catches most associations automatically. Build processes to handle the exceptions.</p>
+
+        <h3>Regular Verification</h3>
+
+        <p>Target accounts should be re-verified quarterly. Firmographics change. People leave. New contacts join. Build this into your ABM operations rhythm.</p>
+
+        <h3>Duplicate Prevention</h3>
+
+        <p>Enforce duplicate detection rules so new account duplicates can't be created. Easier to prevent duplicates than to merge them later.</p>
+
+        <h2>The ROI Equation</h2>
+
+        <p>ABM is expensive. Personalized content, targeted ads, dedicated sales plays. That investment assumes your data is right.</p>
+
+        <p>If 30% of your target list doesn't actually fit your ICP, 30% of your ABM spend is wasted.</p>
+
+        <p>If half your contacts at target accounts are orphaned, you're measuring half the engagement and missing half the signals.</p>
+
+        <p>If key accounts are duplicated, sales can't see the full picture and marketing can't prove impact.</p>
+
+        <p>Fixing account data isn't a side project. It's the prerequisite for ABM working at all.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>Why isn't my ABM program generating pipeline?</h3>
+          <p>ABM requires accurate account data. If your target list is based on incomplete firmographics, contacts aren't associated with accounts, or you have duplicate accounts, your measurement is broken and your targeting is wrong. The strategy might be sound; the data isn't.</p>
+
+          <h3>How do I know if my account data is good enough?</h3>
+          <p>Check three things: (1) What percentage of target accounts have accurate firmographics? (2) What's your average contacts-per-account? (3) How many duplicate accounts exist? If firmographics are incomplete, contact coverage is thin, or duplicates are rampant, your data foundation needs work.</p>
+
+          <h3>What's a good number of contacts per account for ABM?</h3>
+          <p>For enterprise ABM, aim for 5-15 contacts per target account, covering the buying committee. If your average is 1-2, you're missing most decision-makers. If numbers look high but engagement is low, check for duplicates or outdated contacts inflating counts.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">ABM not delivering because your account data is a mess?</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">Fix My Account Data</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/salesforce-company-name-normalization.html">Company Name Normalization</a> | <a href="/resources/hubspot-contact-company-associations.html">Fixing Associations</a> | <a href="/services/data-enrichment.html">Data Enrichment Services</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

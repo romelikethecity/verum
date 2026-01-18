@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Lead Routing Is Broken Because Your Data Is Broken | Verum</title>
+  <meta name="description" content="Leads going to the wrong reps. Routing rules failing silently. The problem isn't your logic. It's the data feeding it.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/lead-routing-broken-data.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/lead-routing-broken-data.html">
+  <meta property="og:title" content="Your Lead Routing Is Broken Because Your Data Is Broken">
+  <meta property="og:description" content="Leads going to the wrong reps. Routing rules failing. The problem isn't your logic, it's your data.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Lead Routing Is Broken Because Your Data Is Broken">
+  <meta name="twitter:description" content="Leads going to the wrong reps. Routing rules failing. The problem isn't your logic, it's your data.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Your Lead Routing Is Broken Because Your Data Is Broken",
+    "description": "Leads going to the wrong reps. Routing rules failing silently. The problem isn't your logic. It's the data feeding it.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/lead-routing-broken-data.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do leads keep getting routed to the wrong rep?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most routing failures come from missing or inconsistent data in the fields your routing rules depend on. If you route by company size and 40% of leads have no company size value, those leads either go to a default queue or get assigned randomly. The routing logic is fine; the data isn't."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my routing problems are data problems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pull a report on leads that were routed incorrectly or fell into your default queue. Check the fields your routing rules depend on. If those fields are blank, inconsistent, or wrong, you've found your problem. Common culprits: company size, industry, location, and job title."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I fix my routing rules or fix my data first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fix the data first. Adding more routing rules to compensate for bad data creates complexity that's hard to maintain. You end up with dozens of exception rules that still don't catch everything. Clean the data, then simplify the routing logic."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">RevOps</p>
+      <h1 class="page-hero__title">Your Lead Routing Is Broken Because Your Data Is Broken</h1>
+      <p class="page-hero__subtitle">You've rebuilt your routing rules three times. Leads still go to the wrong reps. The problem isn't your logic.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 9 min read</div>
+
+      <div class="blog-content">
+
+        <p>A lead comes in from your website. Company size: 500 employees. Industry: Financial Services. Location: New York. Your routing rules fire. The lead should go to Sarah, who owns mid-market financial services accounts in the Northeast.</p>
+
+        <p>Instead, it goes to the general queue. Sarah doesn't see it for two days. By then, the prospect has already talked to a competitor.</p>
+
+        <p>You check the routing rules. They look fine. You check the lead record. Industry field: blank. The form only asked for company name and email. Your routing rule needed industry to make the decision, didn't have it, and defaulted to the queue.</p>
+
+        <p>This happens constantly. Not because your routing logic is wrong, but because the data feeding that logic is incomplete, inconsistent, or just not there.</p>
+
+        <h2>The Anatomy of a Routing Failure</h2>
+
+        <p>Lead routing seems simple. Lead comes in, rules evaluate, lead gets assigned. But routing rules are only as good as the data they evaluate.</p>
+
+        <h3>The Fields That Break Everything</h3>
+
+        <p>Most routing logic depends on a handful of fields:</p>
+
+        <p><strong>Company size / Employee count.</strong> Routes leads to SMB, mid-market, or enterprise teams. Problem: this field is blank on 30-60% of inbound leads. Form submissions rarely include it. Even when they do, people lie or guess.</p>
+
+        <p><strong>Industry.</strong> Routes to industry-specialized reps or teams. Problem: Industry values are inconsistent. Is it "Financial Services" or "Finance" or "Banking" or "Fintech"? Your routing rule checks for one; the data says another.</p>
+
+        <p><strong>Location / Region.</strong> Routes to territory owners. Problem: You have country, state, city, and zip code fields. Some have values, some don't. International leads have formats your rules don't expect. "California" doesn't match "CA" in a string comparison.</p>
+
+        <p><strong>Job title / Seniority.</strong> Routes to reps who handle different buying levels. Problem: Job titles are chaotic. "VP Sales" and "Vice President of Sales" and "VP, Sales" are the same person but don't match the same routing rule.</p>
+
+        <h3>What Happens When Data Is Missing</h3>
+
+        <p>When a routing rule can't evaluate because data is missing, one of three things happens:</p>
+
+        <p><strong>Default assignment.</strong> The lead goes to a catch-all queue or round-robin. This might be fine for low-value leads, but for a qualified prospect at a target account, it's a disaster.</p>
+
+        <p><strong>Random assignment.</strong> Some routing systems just pick someone when rules don't match. Your enterprise lead ends up with an SMB rep who doesn't know how to handle a 6-month sales cycle.</p>
+
+        <p><strong>No assignment.</strong> The lead sits unassigned. Nobody sees it. It ages. By the time someone notices, the prospect has moved on.</p>
+
+        <h2>Why This Keeps Happening</h2>
+
+        <p>You're not the first RevOps person to build routing rules that fail. The problem is structural.</p>
+
+        <h3>Forms Don't Collect What Routing Needs</h3>
+
+        <p>Marketing optimizes forms for conversion. Fewer fields = higher conversion rates. They're not wrong. But that means leads come in with email and maybe company name, and nothing else.</p>
+
+        <p>Your routing rules need company size, industry, and location. The lead record has none of those. The rules can't work.</p>
+
+        <h3>Enrichment Happens Too Late (Or Not At All)</h3>
+
+        <p>Some companies use enrichment to fill gaps after form submission. But if enrichment runs after routing, the routing decision was already made with incomplete data.</p>
+
+        <p>Or enrichment exists but only matches 70% of records. The 30% that don't match still have blank fields. Still break routing.</p>
+
+        <h3>Data Entry Is Inconsistent</h3>
+
+        <p>Even when fields have values, they're all over the place. Reps type whatever they want into text fields. Imports bring in data with different conventions. Integrations push values that don't match your picklists.</p>
+
+        <p>Your routing rule checks if Industry equals "Healthcare." The lead record says "Health Care." No match. Wrong assignment.</p>
+
+        <h3>Nobody Owns Data Quality</h3>
+
+        <p>Marketing owns the forms. Sales ops owns the CRM. RevOps owns routing. IT owns integrations. When routing breaks, everyone assumes it's someone else's problem.</p>
+
+        <p>The actual problem is that Lead #47832 has no industry value. But that's not anyone's explicit responsibility to fix.</p>
+
+        <h2>Diagnosing Your Routing Failures</h2>
+
+        <p>Before fixing anything, understand where your routing actually breaks.</p>
+
+        <h3>Find Your Misrouted Leads</h3>
+
+        <p>Pull a report of leads from the last 90 days where:</p>
+
+        <ul>
+          <li>Owner was changed after initial assignment (someone manually rerouted)</li>
+          <li>Lead went to a default queue or catch-all</li>
+          <li>Time-to-first-touch was abnormally long (symptom of wrong assignment)</li>
+        </ul>
+
+        <p>This is your failure population. Understand what went wrong with these specific leads.</p>
+
+        <h3>Audit the Fields Your Routing Depends On</h3>
+
+        <p>For each field in your routing logic, check:</p>
+
+        <ul>
+          <li>What percentage of leads have a value in this field?</li>
+          <li>How many unique values exist? (Too many = inconsistent)</li>
+          <li>Do the values match what your routing rules expect?</li>
+        </ul>
+
+        <p>If you route by company size and 45% of leads have no company size, you've found your problem.</p>
+
+        <h3>Trace Specific Failures</h3>
+
+        <p>Take 10-20 misrouted leads and trace exactly what happened:</p>
+
+        <ul>
+          <li>What values were in the routing fields at the time of assignment?</li>
+          <li>Which routing rule should have matched?</li>
+          <li>Why didn't it match?</li>
+        </ul>
+
+        <p>You'll see patterns. Maybe 60% of failures are missing industry. Maybe 30% have location data in the wrong format. Now you know what to fix.</p>
+
+        <h2>Fixing the Data Problems</h2>
+
+        <p>The goal is to ensure every lead has the data your routing logic needs, in the format your routing logic expects.</p>
+
+        <h3>Enrich Before Routing</h3>
+
+        <p>If you use data enrichment, make sure it runs before routing decisions happen. The sequence should be:</p>
+
+        <ol>
+          <li>Lead created</li>
+          <li>Enrichment runs (fills company size, industry, etc.)</li>
+          <li>Routing rules evaluate</li>
+          <li>Lead assigned</li>
+        </ol>
+
+        <p>In HubSpot, this means enrichment workflows must complete before assignment workflows trigger. In Salesforce, consider using a routing tool that can wait for enrichment to complete.</p>
+
+        <h3>Standardize Field Values</h3>
+
+        <p>Inconsistent values are as bad as missing values. Standardize the fields your routing depends on:</p>
+
+        <p><strong>Use picklists instead of text fields.</strong> Industry shouldn't be a text field where anyone can type anything. It should be a dropdown with defined values that match your routing rules.</p>
+
+        <p><strong>Create normalization rules.</strong> Map variations to canonical values. "Financial Services," "Finance," "Banking" all become "Financial Services." Do this with workflow automation or during data cleaning.</p>
+
+        <p><strong>Standardize location data.</strong> Pick a format for state (abbreviation vs. full name) and enforce it. Normalize country names. Use standardized fields where your CRM offers them.</p>
+
+        <p>For detailed guidance: <a href="/resources/salesforce-job-title-standardization.html">How to Standardize Job Titles in Salesforce</a></p>
+
+        <h3>Fill Gaps in Existing Data</h3>
+
+        <p>Your current database probably has thousands of leads with missing routing fields. Options:</p>
+
+        <p><strong>Bulk enrichment.</strong> Run your existing leads through an enrichment service to fill gaps. This is a one-time project, not an ongoing subscription (though ongoing enrichment helps prevent future gaps).</p>
+
+        <p><strong>Progressive profiling.</strong> For leads who return to your site, ask for additional fields on subsequent form submissions. Over time, you collect the data you need.</p>
+
+        <p><strong>Manual research.</strong> For high-value leads where routing matters most, have someone look them up. Not scalable, but worth it for target accounts.</p>
+
+        <h3>Add Fallback Logic</h3>
+
+        <p>Even with good data practices, some leads will have gaps. Build routing rules that handle this gracefully:</p>
+
+        <p><strong>Use secondary fields.</strong> If company size is blank, can you infer size from another field? Number of LinkedIn employees? Website traffic estimates from enrichment?</p>
+
+        <p><strong>Domain-based routing.</strong> If you can't determine size or industry, at least check if the email domain matches an existing account. If so, route to that account's owner.</p>
+
+        <p><strong>Escalation queues, not black holes.</strong> When rules can't match, route to a queue that someone actively monitors, not a general pool that gets neglected.</p>
+
+        <h2>Simplify Your Routing Logic</h2>
+
+        <p>Once your data is cleaner, you can simplify your routing rules.</p>
+
+        <h3>Fewer Rules, Better Data</h3>
+
+        <p>Complex routing often exists to compensate for bad data. You have 47 rules because you're trying to catch every variation and edge case.</p>
+
+        <p>With standardized data, you might need 10 rules. Fewer rules are easier to maintain, debug, and update when territories change.</p>
+
+        <h3>Test Before Deploying</h3>
+
+        <p>Before going live with routing changes, test against historical data. Take last month's leads and run them through your new rules. Do they route correctly? Which ones don't? Why?</p>
+
+        <h3>Monitor Continuously</h3>
+
+        <p>Routing isn't set-and-forget. Build a dashboard that tracks:</p>
+
+        <ul>
+          <li>Percentage of leads routed correctly on first assignment</li>
+          <li>Leads that hit the default/fallback queue</li>
+          <li>Leads that were manually rerouted</li>
+          <li>Fields with high null rates</li>
+        </ul>
+
+        <p>When numbers drift, investigate before it becomes a crisis.</p>
+
+        <h2>The Payoff</h2>
+
+        <p>Good routing sounds like a small thing. It's not.</p>
+
+        <p>Leads routed to the right rep get worked faster. Speed-to-lead is one of the strongest predictors of conversion. A lead that waits in a queue for 48 hours is significantly less likely to close than one contacted in an hour.</p>
+
+        <p>Reps working the right leads are more effective. An enterprise rep knows how to handle an enterprise sales cycle. An SMB rep knows how to move quickly on smaller deals. Wrong routing means wrong approach.</p>
+
+        <p>Territory conflicts disappear. Nothing kills sales culture like reps fighting over leads that were assigned incorrectly. Clean routing means clear ownership.</p>
+
+        <p>All of this starts with data. Fix the data, and the routing problems solve themselves.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>Why do leads keep getting routed to the wrong rep?</h3>
+          <p>Most routing failures come from missing or inconsistent data. If you route by company size and 40% of leads don't have that field populated, those leads go to a default queue or get assigned randomly. The routing logic is fine; the data isn't.</p>
+
+          <h3>How do I know if it's a data problem?</h3>
+          <p>Pull a report on misrouted leads and check the fields your routing rules depend on. If those fields are blank, inconsistent, or wrong, you've found your problem. Common culprits: company size, industry, location, job title.</p>
+
+          <h3>Should I fix routing rules or fix data first?</h3>
+          <p>Fix the data first. More routing rules to compensate for bad data creates complexity that's hard to maintain. Clean the data, then simplify the routing logic.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Leads going to the wrong reps because of data gaps?</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">Fix My Routing Data</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/salesforce-job-title-standardization.html">Standardizing Job Titles</a> | <a href="/resources/how-to-clean-salesforce-data.html">Cleaning Salesforce Data</a> | <a href="/resources/hubspot-data-cleaning.html">Cleaning HubSpot Data</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

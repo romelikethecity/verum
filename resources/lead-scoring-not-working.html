@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Your Lead Scoring Model Doesn't Work (It's the Data) | Verum</title>
+  <meta name="description" content="Your lead scores don't predict anything. Sales ignores them. The model isn't wrong. The data feeding it is incomplete, inconsistent, or missing entirely.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/lead-scoring-not-working.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/lead-scoring-not-working.html">
+  <meta property="og:title" content="Why Your Lead Scoring Model Doesn't Work">
+  <meta property="og:description" content="Your lead scores don't predict anything. The model isn't wrong. The data feeding it is.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Your Lead Scoring Model Doesn't Work">
+  <meta name="twitter:description" content="Your lead scores don't predict anything. The model isn't wrong. The data feeding it is.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Your Lead Scoring Model Doesn't Work (It's the Data)",
+    "description": "Your lead scores don't predict anything. Sales ignores them. The model isn't wrong. The data feeding it is incomplete, inconsistent, or missing entirely.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/lead-scoring-not-working.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why doesn't my lead scoring model predict conversions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lead scoring models fail when the data they rely on is incomplete or inconsistent. If 40% of leads are missing firmographic data, those leads get incomplete scores. If engagement data is split across duplicate records, behavioral scores are wrong. The model logic might be sound, but garbage in means garbage out."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use demographic scoring, behavioral scoring, or both?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both, but only if you have the data to support both. Demographic/firmographic scoring (job title, company size) tells you if someone could buy. Behavioral scoring (email engagement, page visits) tells you if they're interested. You need both dimensions, but each is only as good as the underlying data quality."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my scoring problems are data problems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check your highest and lowest scored leads. For high scores that didn't convert, was the firmographic data accurate? For low scores that did convert, were the scoring fields populated at all? If you find lots of blank or wrong data, you've found your problem."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">RevOps</p>
+      <h1 class="page-hero__title">Why Your Lead Scoring Model Doesn't Work</h1>
+      <p class="page-hero__subtitle">Sales ignores your lead scores. MQLs don't convert. You've rebuilt the model twice. The problem isn't the model.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 11 min read</div>
+
+      <div class="blog-content">
+
+        <p>You spent weeks building a lead scoring model. Company size, industry, job title for fit. Page visits, email opens, content downloads for engagement. The logic made sense. Marketing and sales agreed on the thresholds. MQL at 75 points, SQL at 100.</p>
+
+        <p>Six months later, sales doesn't look at the scores. They work leads based on gut feel and how recently the lead came in. When you analyze MQL-to-opportunity conversion, there's no correlation between score and conversion rate. High scores convert at roughly the same rate as medium scores. Sometimes worse.</p>
+
+        <p>So you rebuild the model. Tweak the weights. Add new factors. Maybe try predictive scoring from your marketing automation platform. Same result.</p>
+
+        <p>The model isn't the problem. The data feeding the model is.</p>
+
+        <h2>How Scoring Breaks Down</h2>
+
+        <p>Lead scoring combines two types of signals: fit (who they are) and engagement (what they do). Both depend entirely on data quality.</p>
+
+        <h3>Fit Scoring and Missing Data</h3>
+
+        <p>Fit scores evaluate whether a lead matches your ideal customer profile. Typical factors:</p>
+
+        <ul>
+          <li>Job title / seniority (+20 points for Director+)</li>
+          <li>Company size (+15 points for 100-1000 employees)</li>
+          <li>Industry (+10 points for target industries)</li>
+          <li>Location (+5 points for target regions)</li>
+        </ul>
+
+        <p>Now check your database. What percentage of leads have values in each of these fields?</p>
+
+        <p>For most companies: job title is populated on maybe 70% of leads. Company size? 40%. Industry? 50%. These aren't bad databases. This is normal. Forms don't ask for this information because it kills conversion rates.</p>
+
+        <p>But here's what happens to scoring:</p>
+
+        <p>Lead A has perfect fit data. Director at a 500-person company in your target industry. Gets the full +45 fit points.</p>
+
+        <p>Lead B is also a Director at a 500-person company in your target industry. But those fields are blank because they came through a form that only asked for email. Gets +0 fit points.</p>
+
+        <p>Same lead. Same potential. Completely different scores. Your model isn't evaluating Lead B's fit at all because there's nothing to evaluate.</p>
+
+        <h3>Engagement Scoring and Fragmented Data</h3>
+
+        <p>Engagement scores measure behavior: page visits, email interactions, content consumption, webinar attendance. These signals should indicate buying intent.</p>
+
+        <p>The data problems here are different:</p>
+
+        <p><strong>Duplicate records split engagement.</strong> If a lead exists twice in your system (different email addresses, created from different sources), their engagement is split across records. One record shows 3 page visits and 2 email opens. The other shows 5 page visits and a webinar attendance. Neither record has the full picture. Neither scores correctly.</p>
+
+        <p><strong>Anonymous activity isn't attributed.</strong> Someone visits your site 15 times before filling out a form. Most of that activity is tracked under a cookie but not yet tied to a person. When they finally convert, do those 15 visits get attributed to their lead record? Maybe. Depends on your tracking setup. Often, the lead record only shows activity after form submission.</p>
+
+        <p><strong>Cross-device behavior is lost.</strong> They research on mobile during their commute, download content on their laptop at work, and request a demo from their iPad at home. Three devices, three cookies, one person. Your system might see three anonymous visitors instead of one engaged buyer.</p>
+
+        <h3>The Inconsistency Problem</h3>
+
+        <p>Even when data exists, inconsistency corrupts scoring.</p>
+
+        <p>Your model gives +20 points for "VP" or above. But your job title field has:</p>
+
+        <ul>
+          <li>VP of Marketing</li>
+          <li>VP Marketing</li>
+          <li>Vice President, Marketing</li>
+          <li>Vice President of Marketing</li>
+          <li>Marketing VP</li>
+          <li>VP - Marketing</li>
+        </ul>
+
+        <p>If your scoring rule checks for titles containing "VP," some of these match. If it checks for titles starting with "VP," others don't. If you built a list of exact matches, you missed variations you didn't think of.</p>
+
+        <p>Same problem with industry, company size ranges, location formats. Every inconsistency is a potential scoring error.</p>
+
+        <h2>Diagnosing Your Scoring Problems</h2>
+
+        <p>Before rebuilding anything, understand what's actually broken.</p>
+
+        <h3>Score Distribution Analysis</h3>
+
+        <p>Pull a distribution of your lead scores. What does it look like?</p>
+
+        <p><strong>If most leads cluster at the same score:</strong> Your scoring model isn't differentiating. This often means most scoring fields are blank, so everyone gets similar (low) scores based only on a few fields that are actually populated.</p>
+
+        <p><strong>If scores are evenly distributed but don't predict conversion:</strong> The scores are differentiating, but not on the right signals. Check whether the factors you're scoring on actually correlate with conversion.</p>
+
+        <p><strong>If high scores don't convert and low scores do:</strong> Your scoring factors might be wrong, but more often the data in those factors is wrong or stale.</p>
+
+        <h3>Field Completeness Audit</h3>
+
+        <p>For every field in your scoring model, check:</p>
+
+        <ul>
+          <li>What percentage of leads have a value?</li>
+          <li>What percentage of won opportunities had a value (at time of scoring)?</li>
+          <li>Is there a gap?</li>
+        </ul>
+
+        <p>If company size is only populated on 35% of leads, but 80% of won opportunities had company size data, you have a gap. The opportunities might have converted for reasons your score couldn't capture.</p>
+
+        <h3>High-Score / Low-Convert Analysis</h3>
+
+        <p>Take your top 20% of leads by score that didn't convert. Review them:</p>
+
+        <ul>
+          <li>Was the firmographic data accurate?</li>
+          <li>Was the engagement data complete (or split across duplicates)?</li>
+          <li>Were they actually a good fit, or did wrong data inflate their score?</li>
+        </ul>
+
+        <p>Similarly, look at low-score leads that did convert. What scoring data was missing that should have elevated them?</p>
+
+        <h2>Fixing the Data</h2>
+
+        <p>Your scoring model will only work if the underlying data is there and accurate.</p>
+
+        <h3>Enrich Fit Data</h3>
+
+        <p>If you're scoring on company size, industry, and seniority, you need those fields populated. Options:</p>
+
+        <p><strong>Enrich on form submission.</strong> When a lead comes in, automatically enrich with firmographic data from a provider (Clearbit, ZoomInfo, Apollo, etc.). This happens before scoring, so the model has data to work with.</p>
+
+        <p><strong>Progressive forms.</strong> Ask for more information on subsequent form submissions. First touch: just email. Second touch: company name. Third touch: job title. Build the profile over time.</p>
+
+        <p><strong>Bulk enrichment.</strong> For existing leads, run a one-time enrichment to fill gaps. This immediately improves your scoring accuracy across the database.</p>
+
+        <p>For detailed guidance: <a href="/resources/hubspot-data-enrichment.html">How to Enrich HubSpot Data</a> | <a href="/resources/salesforce-data-enrichment.html">How to Enrich Salesforce Data</a></p>
+
+        <h3>Standardize Scoring Fields</h3>
+
+        <p>Inconsistent values mean inconsistent scores. Standardize the fields your model depends on:</p>
+
+        <p><strong>Job titles:</strong> Create a title normalization map. "VP Marketing," "VP of Marketing," "Vice President Marketing" all become "VP Marketing." Apply via workflow or data cleaning. <a href="/resources/salesforce-job-title-standardization.html">How to Standardize Job Titles</a></p>
+
+        <p><strong>Industry:</strong> Use picklists, not free text. Map variations to canonical values.</p>
+
+        <p><strong>Company size:</strong> Standardize on ranges (1-50, 51-200, 201-1000, 1000+) rather than exact numbers.</p>
+
+        <h3>Deduplicate to Consolidate Engagement</h3>
+
+        <p>Engagement data split across duplicate records makes behavioral scoring useless. Merge duplicates so each person has a single record with complete engagement history.</p>
+
+        <p>For detailed guidance: <a href="/resources/salesforce-duplicate-contacts.html">Deduplicating Salesforce Contacts</a> | <a href="/resources/hubspot-duplicate-contacts.html">Deduplicating HubSpot Contacts</a></p>
+
+        <h3>Fix Tracking Gaps</h3>
+
+        <p>Make sure pre-form engagement gets attributed to the lead record once they convert. Your marketing automation and CRM should handle this, but verify it's actually working:</p>
+
+        <ul>
+          <li>Visit your site anonymously multiple times</li>
+          <li>Fill out a form</li>
+          <li>Check the lead record</li>
+          <li>Are those pre-form visits attributed?</li>
+        </ul>
+
+        <p>If not, you're missing significant engagement signal.</p>
+
+        <h2>Rebuilding the Model (After Fixing Data)</h2>
+
+        <p>Once you have clean data, your model has a chance of working.</p>
+
+        <h3>Score Only What You Can Measure</h3>
+
+        <p>Don't include a factor in your scoring model unless you have data for it on most leads. A brilliant scoring factor that's only populated on 20% of records creates more noise than signal.</p>
+
+        <p>Start with factors where data completeness is >70%. Add others as you improve data quality.</p>
+
+        <h3>Weight Based on Evidence</h3>
+
+        <p>Don't guess at scoring weights. Analyze your won opportunities:</p>
+
+        <ul>
+          <li>What percentage came from target industries?</li>
+          <li>What was the average engagement before conversion?</li>
+          <li>What seniority levels actually buy?</li>
+        </ul>
+
+        <p>Weight factors based on how strongly they actually correlate with conversion, not how important you think they should be.</p>
+
+        <h3>Test and Iterate</h3>
+
+        <p>Once you have clean data and evidence-based weights, test the model:</p>
+
+        <ol>
+          <li>Score all leads in your current pipeline</li>
+          <li>Wait 30-60 days</li>
+          <li>Check correlation between score and conversion</li>
+          <li>Adjust weights based on what you learn</li>
+        </ol>
+
+        <p>This is an ongoing process. Scoring models need regular recalibration as your market, product, and buyer behavior evolve.</p>
+
+        <h2>The Bottom Line</h2>
+
+        <p>Lead scoring is a data problem disguised as a model problem.</p>
+
+        <p>If your scoring fields are 30-50% blank, the model can't work. If duplicate records split engagement data, behavioral scores are wrong. If field values are inconsistent, matching logic fails.</p>
+
+        <p>No amount of model tuning fixes these issues. You can rebuild the scoring logic ten times. Without clean, complete data, the output will still be noise.</p>
+
+        <p>Fix the data first. Then the model has a chance.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>Why doesn't my lead scoring model predict conversions?</h3>
+          <p>Lead scoring fails when the data it relies on is incomplete or inconsistent. If 40% of leads are missing firmographic data, those leads get incomplete scores. If engagement data is split across duplicates, behavioral scores are wrong. The model logic might be sound, but garbage in means garbage out.</p>
+
+          <h3>Should I use demographic scoring, behavioral scoring, or both?</h3>
+          <p>Both, but only if you have the data to support both. Demographic scoring tells you if someone could buy. Behavioral scoring tells you if they're interested now. You need both dimensions, but each is only as good as the underlying data.</p>
+
+          <h3>How do I know if it's a data problem?</h3>
+          <p>Check your highest and lowest scored leads. For high scores that didn't convert, was the data accurate? For low scores that did convert, were the fields populated at all? If you find lots of blanks or wrong data, you've found your problem.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Lead scores that don't predict anything useful?</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">Fix My Scoring Data</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/lead-routing-broken-data.html">Lead Routing Data Problems</a> | <a href="/resources/how-to-clean-salesforce-data.html">Cleaning Salesforce Data</a> | <a href="/resources/hubspot-data-cleaning.html">Cleaning HubSpot Data</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
