@@ -46,12 +46,45 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Verum",
-    "url": "https://veruminc.com",
-    "logo": "https://veruminc.com/assets/logos/verum-logo-horizontal-light.svg",
-    "description": "Enterprise data cleaning and enrichment services for B2B companies",
-    "sameAs": ["https://www.linkedin.com/company/verumai/"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://veruminc.com/#website",
+        "url": "https://veruminc.com",
+        "name": "Verum",
+        "description": "AI-powered B2B data cleaning and enrichment services",
+        "publisher": {
+          "@id": "https://veruminc.com/#organization"
+        },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://veruminc.com/#organization",
+        "name": "Verum",
+        "url": "https://veruminc.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://veruminc.com/assets/logos/verum-logo-horizontal-light.svg",
+          "width": 200,
+          "height": 50
+        },
+        "description": "AI-powered data cleaning and enrichment for B2B companies. 24-48 hour turnaround, 70% cost reduction vs agencies.",
+        "foundingDate": "2024",
+        "areaServed": "Worldwide",
+        "knowsAbout": [
+          "B2B Data Cleaning",
+          "Data Enrichment",
+          "CRM Hygiene",
+          "Lead Enrichment",
+          "Company Data Enrichment",
+          "Contact Data Verification"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/verumai/"
+        ]
+      }
+    ]
   }
   </script>
 
@@ -624,6 +657,35 @@
         <p class="founder-note__text">"I built Verum after watching sales teams waste millions on bad data. Reps calling disconnected numbers. Emails bouncing. Duplicates everywhere. Your team deserves better leads. Your ops team deserves cleaner systems. That's what we deliver."</p>
         <p class="founder-note__author">— Rome, Founder</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section class="section section--gray">
+    <div class="container">
+      <h2 class="text-center mb-lg">Popular Use Cases</h2>
+      <p class="text-center mb-xl" style="color: var(--color-text-secondary); max-width: 600px; margin-left: auto; margin-right: auto;">See how teams use Verum to solve specific data challenges.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 900px; margin: 0 auto;">
+        <a href="/use-cases/crm-hygiene/" style="display: block; padding: 1rem 1.25rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; transition: border-color 0.2s;">
+          <span style="color: var(--color-text-primary); font-weight: 500;">CRM Hygiene</span>
+          <span style="display: block; font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.25rem;">Clean years of accumulated mess</span>
+        </a>
+        <a href="/use-cases/lead-scoring/" style="display: block; padding: 1rem 1.25rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; transition: border-color 0.2s;">
+          <span style="color: var(--color-text-primary); font-weight: 500;">Lead Scoring</span>
+          <span style="display: block; font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.25rem;">Prioritize with complete data</span>
+        </a>
+        <a href="/use-cases/abm-targeting/" style="display: block; padding: 1rem 1.25rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; transition: border-color 0.2s;">
+          <span style="color: var(--color-text-primary); font-weight: 500;">ABM Targeting</span>
+          <span style="display: block; font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.25rem;">Build accurate account lists</span>
+        </a>
+        <a href="/use-cases/data-migration/" style="display: block; padding: 1rem 1.25rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); text-decoration: none; transition: border-color 0.2s;">
+          <span style="color: var(--color-text-primary); font-weight: 500;">Data Migration</span>
+          <span style="display: block; font-size: 0.875rem; color: var(--color-text-muted); margin-top: 0.25rem;">Move clean data to new CRM</span>
+        </a>
+      </div>
+
+      <p class="text-center mt-lg"><a href="/solutions/" style="color: var(--color-teal);">See all solutions by industry →</a></p>
     </div>
   </section>
 
