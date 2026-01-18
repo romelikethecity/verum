@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Hygiene for Marketing Ops: A Practical Guide | Verum</title>
+  <meta name="description" content="Your campaigns are only as good as your data. Here's a practical guide to marketing data hygiene that actually gets results without consuming your entire week.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-hygiene-for-marketing-ops.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-hygiene-for-marketing-ops.html">
+  <meta property="og:title" content="Data Hygiene for Marketing Ops | Verum">
+  <meta property="og:description" content="Your campaigns are only as good as your data. Here's a practical guide to marketing data hygiene.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Hygiene for Marketing Ops | Verum">
+  <meta name="twitter:description" content="Your campaigns are only as good as your data. Here's a practical guide to marketing data hygiene.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data Hygiene for Marketing Ops: A Practical Guide",
+    "description": "Your campaigns are only as good as your data. Here's a practical guide to marketing data hygiene that actually gets results without consuming your entire week.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-hygiene-for-marketing-ops.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often should marketing ops clean their database?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Email validation should happen quarterly at minimum, monthly is better. Duplicate detection should run monthly. Full database audits should happen quarterly. The key is making it routine rather than a massive annual project. Small, regular maintenance beats occasional deep cleans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the most important data hygiene task for marketing ops?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Email validation. Invalid emails directly hurt deliverability, sender reputation, and campaign performance. They also cost you money if you're on a contact-based pricing model. Start with validating emails, then move to deduplication and enrichment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does bad data affect marketing campaign performance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bad data impacts every metric: bounce rates climb (hurting deliverability), open rates drop (wrong people or bad emails), click rates suffer (irrelevant targeting), and conversion rates tank (poor segmentation). It also makes attribution unreliable because duplicate records fragment the customer journey."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+    }
+    .article-content h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p,
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    .article-cta p {
+      margin-bottom: 1.5rem;
+      color: var(--color-text-secondary);
+    }
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-section h2 {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-primary);
+    }
+    .faq-item p {
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="section">
+      <div class="container">
+        <div class="article-content">
+          <p class="article-meta">Marketing Ops &middot; January 2026 &middot; 11 min read</p>
+
+          <h1>Data Hygiene for Marketing Ops: A Practical Guide</h1>
+
+          <p>You built a beautiful nurture campaign. Perfect segmentation logic, compelling content, sales is actually excited about the MQLs. Then you send it, and 15% of emails bounce. Your open rate tanks. The segment that was supposed to be enterprise decision-makers is full of people who changed jobs two years ago.</p>
+
+          <p>The campaign wasn't the problem. The data was.</p>
+
+          <p>This is the reality of marketing ops: you can optimize everything downstream, but if the data feeding your programs is garbage, the results will be too. Here's how to actually fix it.</p>
+
+          <h2>Why Marketing Ops Owns Data Hygiene</h2>
+
+          <p>In most organizations, marketing ops is where data hygiene lives by default. Not because it's officially assigned, but because marketing feels the pain first.</p>
+
+          <p>Sales can work around bad data. They research manually, make calls, figure it out deal by deal. Marketing can't. When you're sending 50,000 emails, you can't manually verify each one. When you're running ads against a segment, you can't check if each company is actually the right size.</p>
+
+          <p>So marketing ops ends up being the data quality function, whether that's in the job description or not. The question is whether you do it reactively (scrambling before each campaign) or systematically (maintaining quality continuously).</p>
+
+          <h2>The Four Pillars of Marketing Data Hygiene</h2>
+
+          <h3>1. Email Validity</h3>
+
+          <p>This is the most important and most neglected area. Invalid emails directly hurt you in three ways:</p>
+
+          <ul>
+            <li><strong>Deliverability damage:</strong> High bounce rates signal to email providers that you're a spammer. This affects delivery to everyone, not just the bad addresses.</li>
+            <li><strong>Wasted money:</strong> If you're on HubSpot, Marketo, or any contact-based pricing model, you're paying for contacts that can never convert.</li>
+            <li><strong>Broken automation:</strong> Nurture sequences, lifecycle campaigns, and triggered emails all fail silently when the email is invalid.</li>
+          </ul>
+
+          <p>You need to validate emails regularly. Not just when they come in, but ongoing. An email that was valid six months ago might not be valid today. People leave companies. Domains expire. Mailboxes get deactivated.</p>
+
+          <p>See our guides on email validation for <a href="/resources/salesforce-email-validation.html">Salesforce</a> and <a href="/resources/hubspot-email-validation.html">HubSpot</a>.</p>
+
+          <h3>2. Duplicate Management</h3>
+
+          <p>Duplicates are a marketing ops nightmare for reasons beyond the obvious.</p>
+
+          <p>Yes, you might email the same person twice. That's embarrassing. But the deeper problem is what duplicates do to your data:</p>
+
+          <ul>
+            <li><strong>Split engagement history:</strong> Half their opens are on one record, half on another. Your engagement scoring is wrong.</li>
+            <li><strong>Broken attribution:</strong> The conversion is on record A, but the touchpoints are on record B. Attribution shows nothing.</li>
+            <li><strong>Wrong segment placement:</strong> One record qualifies for enterprise, the other for SMB. They end up in both segments.</li>
+            <li><strong>Compliance risk:</strong> They unsubscribe from one record. You keep emailing the duplicate.</li>
+          </ul>
+
+          <p>Deduplication isn't just about cleanliness. It's about having accurate data to make decisions from.</p>
+
+          <h3>3. Field Completeness</h3>
+
+          <p>Your segmentation is only as good as your data. If 40% of your contacts are missing industry, your industry-based campaign is missing 40% of potential targets. Or worse, it's including people it shouldn't.</p>
+
+          <p>Key fields for marketing typically include:</p>
+
+          <ul>
+            <li>Industry (for relevance)</li>
+            <li>Company size (for targeting and messaging)</li>
+            <li>Job title/function (for persona segmentation)</li>
+            <li>Country (for compliance and localization)</li>
+            <li>Lead source (for attribution)</li>
+          </ul>
+
+          <p>You can't segment on fields that aren't populated. And you can't trust segments built on fields that are inconsistently populated.</p>
+
+          <h3>4. Data Standardization</h3>
+
+          <p>Marketing, marketing department, Marketing Dept, Mktg. These are all the same thing, but your system treats them as four different values. Same with job titles, company names, countries, and every other text field.</p>
+
+          <p>Standardization matters because:</p>
+
+          <ul>
+            <li>Segments become accurate (you can actually target "all marketing roles")</li>
+            <li>Reporting becomes meaningful (you can see true counts by industry)</li>
+            <li>Automation works properly (picklist values match trigger criteria)</li>
+          </ul>
+
+          <p>See our guide on <a href="/resources/salesforce-job-title-standardization.html">job title standardization</a> for specifics.</p>
+
+          <h2>Building a Hygiene Routine</h2>
+
+          <p>Data hygiene isn't a project. It's a practice. Here's what a sustainable routine looks like:</p>
+
+          <h3>Weekly</h3>
+
+          <ul>
+            <li>Review bounce reports from recent campaigns</li>
+            <li>Check for new duplicates created in the past week</li>
+            <li>Spot-check any list imports from the week</li>
+          </ul>
+
+          <h3>Monthly</h3>
+
+          <ul>
+            <li>Run duplicate detection and merge obvious matches</li>
+            <li>Review contacts without company associations</li>
+            <li>Check field completion rates for key segments</li>
+            <li>Clean up any one-time imports or event lists</li>
+          </ul>
+
+          <h3>Quarterly</h3>
+
+          <ul>
+            <li>Full email validation on active marketing contacts</li>
+            <li>Audit segment definitions against actual data</li>
+            <li>Review and clean lifecycle stage accuracy</li>
+            <li>Assess contacts who've never engaged (candidates for removal)</li>
+          </ul>
+
+          <h3>Annually</h3>
+
+          <ul>
+            <li>Full database audit with documented metrics</li>
+            <li>Review data entry points and add validation where needed</li>
+            <li>Purge truly dead records (bounced, unsubscribed, never engaged)</li>
+            <li>Reassess which fields marketing actually needs populated</li>
+          </ul>
+
+          <h2>The Inbound Problem</h2>
+
+          <p>You can spend weeks cleaning your database. Then someone uploads a list from a trade show and dumps 5,000 unvalidated records straight into your system.</p>
+
+          <p>Cleaning existing data is necessary but not sufficient. You need to control what comes in:</p>
+
+          <ul>
+            <li><strong>Form validation:</strong> Require correct formats, block personal emails if targeting business, use email verification on submission.</li>
+            <li><strong>Import rules:</strong> All list imports go through ops review. No exceptions. Every import gets validated before it hits the database.</li>
+            <li><strong>Integration audits:</strong> Check what your integrations are creating. Salesforce syncs, webinar platforms, event tools. What data are they bringing in and what's the quality?</li>
+          </ul>
+
+          <p>Think of it like a kitchen. You can clean all you want, but if you keep bringing in dirty dishes without washing them, you'll never get ahead.</p>
+
+          <h2>Measuring Data Quality</h2>
+
+          <p>You can't improve what you don't measure. Build a simple dashboard with these metrics:</p>
+
+          <ul>
+            <li><strong>Email validity rate:</strong> % of marketing contacts with verified valid emails</li>
+            <li><strong>Duplicate rate:</strong> Estimated % of records that are duplicates</li>
+            <li><strong>Field completion:</strong> % completion for your key segmentation fields</li>
+            <li><strong>Bounce rate trend:</strong> Campaign bounce rates over time</li>
+            <li><strong>Unengaged contacts:</strong> % of marketable contacts with zero engagement in 12+ months</li>
+          </ul>
+
+          <p>Review monthly. Set targets. Celebrate improvements. This isn't glamorous work, but when bounce rates drop and engagement goes up, the connection is clear.</p>
+
+          <h2>The Contact Pricing Reality</h2>
+
+          <p>If you're using HubSpot or another platform with contact-based pricing, data hygiene directly affects your bill.</p>
+
+          <p>Every invalid email, every duplicate, every contact who bounced three years ago and will never engage again is costing you money. You're paying to store and market to contacts that provide zero value.</p>
+
+          <p>A quarterly cleanup focused just on removing truly dead contacts can pay for itself in reduced platform costs. See our guide on <a href="/resources/hubspot-marketing-contacts-cleanup.html">reducing HubSpot marketing contacts</a> for specifics.</p>
+
+          <h2>When to Outsource vs. DIY</h2>
+
+          <p>Some hygiene tasks make sense to do yourself:</p>
+
+          <ul>
+            <li>Weekly bounce review (10 minutes)</li>
+            <li>Spot-checking imports (depends on volume)</li>
+            <li>Building validation rules (one-time setup)</li>
+          </ul>
+
+          <p>Some tasks are better outsourced:</p>
+
+          <ul>
+            <li>Large-scale deduplication (complex matching logic)</li>
+            <li>Email validation at scale (needs specialized tools)</li>
+            <li>Data enrichment (requires data sources you don't have)</li>
+            <li>Initial database cleanup (one-time heavy lift)</li>
+          </ul>
+
+          <p>The question isn't whether to outsource. It's what makes sense given your time, your database size, and the complexity of your data issues.</p>
+
+          <h2>Making the Case Internally</h2>
+
+          <p>Data hygiene doesn't get budget easily. It's not a flashy new tool or a campaign with measurable pipeline impact. Here's how to make the case:</p>
+
+          <ul>
+            <li><strong>Calculate the cost:</strong> X marketing contacts at $Y per contact, with Z% being invalid/duplicate = wasted spend</li>
+            <li><strong>Show the deliverability risk:</strong> Current bounce rate vs. acceptable threshold. If it gets worse, email stops working entirely.</li>
+            <li><strong>Tie to campaign performance:</strong> Last quarter's campaigns had X% lower engagement than benchmark. Here's the data quality connection.</li>
+            <li><strong>Compare to alternatives:</strong> Cleaning the database costs $X. Buying a new list to work around bad data costs $Y. New marketing automation platform because this one is "not working" costs $Z.</li>
+          </ul>
+
+          <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+              <h3>How often should marketing ops clean their database?</h3>
+              <p>Email validation should happen quarterly at minimum, monthly is better. Duplicate detection should run monthly. Full database audits should happen quarterly. The key is making it routine rather than a massive annual project. Small, regular maintenance beats occasional deep cleans.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>What's the most important data hygiene task for marketing ops?</h3>
+              <p>Email validation. Invalid emails directly hurt deliverability, sender reputation, and campaign performance. They also cost you money if you're on a contact-based pricing model. Start with validating emails, then move to deduplication and enrichment.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>How does bad data affect marketing campaign performance?</h3>
+              <p>Bad data impacts every metric: bounce rates climb (hurting deliverability), open rates drop (wrong people or bad emails), click rates suffer (irrelevant targeting), and conversion rates tank (poor segmentation). It also makes attribution unreliable because duplicate records fragment the customer journey.</p>
+            </div>
+          </div>
+
+          <div class="article-cta">
+            <h3>Need help cleaning your marketing database?</h3>
+            <p>We'll audit your data, identify what's broken, and clean it up so your campaigns actually reach the right people.</p>
+            <a href="/contact.html" class="btn btn--primary">Clean My Marketing Data</a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

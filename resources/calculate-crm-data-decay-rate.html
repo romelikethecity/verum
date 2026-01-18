@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calculate Your CRM Data Decay Rate | Verum</title>
+  <meta name="description" content="Your CRM data is decaying right now. Here's how to measure exactly how fast, what's causing it, and what to do about it.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/calculate-crm-data-decay-rate.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/calculate-crm-data-decay-rate.html">
+  <meta property="og:title" content="How to Calculate Your CRM Data Decay Rate | Verum">
+  <meta property="og:description" content="Your CRM data is decaying right now. Here's how to measure exactly how fast.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Calculate Your CRM Data Decay Rate | Verum">
+  <meta name:twitter:description" content="Your CRM data is decaying right now. Here's how to measure exactly how fast.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Calculate Your CRM Data Decay Rate",
+    "description": "Your CRM data is decaying right now. Here's how to measure exactly how fast, what's causing it, and what to do about it.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/calculate-crm-data-decay-rate.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is CRM data decay rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data decay rate is the percentage of your database that becomes inaccurate or outdated over a given period, typically measured annually. For B2B contact data, industry averages range from 25-35% per year due to job changes, company changes, and email/phone number turnover."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you calculate your data decay rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Take a sample of records from 12 months ago and check how many are still accurate today. Verify: Is the person still at that company? Is their email still valid? Is their phone number working? Is their job title correct? The percentage that have changed is your decay rate for that period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What causes CRM data to decay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The primary drivers are: job changes (people leave companies, get promoted, or change roles), company changes (acquisitions, name changes, closures), contact info changes (new email domains, changed phone numbers), and data entry errors that compound over time. Tech industry data decays faster than other sectors due to higher job mobility."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+    }
+    .article-content h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p,
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    .article-cta p {
+      margin-bottom: 1.5rem;
+      color: var(--color-text-secondary);
+    }
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-section h2 {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-primary);
+    }
+    .faq-item p {
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
+    }
+    .calc-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .calc-box h4 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--color-teal);
+    }
+    .calc-box code {
+      display: block;
+      background: var(--color-bg-dark);
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="section">
+      <div class="container">
+        <div class="article-content">
+          <p class="article-meta">Data Quality &middot; January 2026 &middot; 10 min read</p>
+
+          <h1>How to Calculate Your CRM Data Decay Rate</h1>
+
+          <p>Right now, while you're reading this, your CRM data is getting worse. People are changing jobs. Companies are getting acquired. Email addresses are becoming invalid. Phone numbers are being reassigned.</p>
+
+          <p>This isn't a maybe. It's happening at a measurable rate. And unless you know that rate, you can't make good decisions about when and how much to invest in cleaning it up.</p>
+
+          <h2>What Data Decay Actually Means</h2>
+
+          <p>Data decay is the rate at which information in your database becomes inaccurate or outdated. It's not about data being deleted. It's about data that still exists but is no longer true.</p>
+
+          <p>The contact record still shows John Smith at Acme Corp. But John left Acme six months ago. The record exists. It's just wrong.</p>
+
+          <p>For B2B contact data, the commonly cited industry benchmark is 25-35% annual decay. That means roughly a third of your database becomes unreliable every year without any intervention.</p>
+
+          <p>But that's an average. Your actual decay rate depends on your specific data, your industry, and how you measure it.</p>
+
+          <h2>The Five Types of Decay</h2>
+
+          <p>Not all decay is the same. Understanding the types helps you measure and address them appropriately.</p>
+
+          <h3>1. Job Change Decay</h3>
+
+          <p>The person is no longer at the company you have on record. They got a new job, retired, or otherwise moved on. This is the largest contributor to decay in most B2B databases.</p>
+
+          <p>Average job tenure varies by industry and role, but 2-3 years is typical. In tech, it's often shorter. In traditional industries, longer.</p>
+
+          <h3>2. Role Change Decay</h3>
+
+          <p>The person is still at the company, but their title or department has changed. Your VP of Marketing is now the CMO. Your Director of Sales is now in Customer Success.</p>
+
+          <p>This matters if you're targeting by title or function. The person is reachable, but your segmentation is wrong.</p>
+
+          <h3>3. Email Decay</h3>
+
+          <p>The email address no longer works. This can happen because of job changes, but also because of email system migrations, domain changes, or mailbox deletions.</p>
+
+          <p>Email decay is the most immediately visible because it results in bounces. But by the time emails are bouncing, the decay has already happened.</p>
+
+          <h3>4. Phone Decay</h3>
+
+          <p>Direct dial and mobile numbers change less frequently than emails, but they do change. People get new phones, companies change phone systems, extensions get reassigned.</p>
+
+          <h3>5. Company Data Decay</h3>
+
+          <p>The company itself has changed. Acquired by another company, changed its name, went out of business, or had significant shifts in size or industry classification.</p>
+
+          <p>This type of decay affects your account-level data and can cascade to all contacts at that company.</p>
+
+          <h2>How to Calculate Your Decay Rate</h2>
+
+          <p>The basic approach is straightforward: take a sample of records from the past and check how many are still accurate today.</p>
+
+          <div class="calc-box">
+            <h4>Basic Decay Rate Formula</h4>
+            <code>Decay Rate = (Records with Errors / Total Records Checked) × 100</code>
+            <p>Check a random sample of 200-500 records from 12 months ago against current accuracy.</p>
+          </div>
+
+          <h3>Step 1: Define What "Accurate" Means</h3>
+
+          <p>Before you can measure decay, you need to define what counts as accurate. For most B2B use cases:</p>
+
+          <ul>
+            <li>Person still works at the recorded company</li>
+            <li>Email address is valid (doesn't bounce)</li>
+            <li>Job title/function is still correct</li>
+            <li>Phone number is still reachable (if you use phone)</li>
+          </ul>
+
+          <p>You can measure each type separately or create a composite "fully accurate" metric.</p>
+
+          <h3>Step 2: Pull a Sample of Old Records</h3>
+
+          <p>Export contacts that were created or last verified 12 months ago. Aim for at least 200 records for statistical significance. If your database is large, 500+ is better.</p>
+
+          <p>Make sure your sample is random and representative. Don't just pull from one segment or source.</p>
+
+          <h3>Step 3: Verify Each Record</h3>
+
+          <p>This is the manual part. For each record in your sample:</p>
+
+          <ul>
+            <li><strong>Email validation:</strong> Run through an email verification tool. Mark as decayed if invalid.</li>
+            <li><strong>Company verification:</strong> Check LinkedIn or company website. Is the person still there?</li>
+            <li><strong>Title verification:</strong> If still at company, is their title still accurate?</li>
+            <li><strong>Phone verification:</strong> If you use phone data, attempt to verify numbers are still assigned to that person.</li>
+          </ul>
+
+          <p>You don't need to verify everything for every record. Even checking just email validity and current employment gives you useful data.</p>
+
+          <h3>Step 4: Calculate the Rates</h3>
+
+          <div class="calc-box">
+            <h4>Example Calculation</h4>
+            <code>Sample size: 300 records from January 2025
+Checked in January 2026:
+- 78 people no longer at company (26%)
+- 42 emails invalid (14%)
+- 31 job titles changed (10%)
+
+Overall decay: 112 unique records with issues = 37%</code>
+            <p>Note: Some records may have multiple issues, so individual percentages may sum to more than total decay.</p>
+          </div>
+
+          <h2>Decay Rate by Segment</h2>
+
+          <p>Your overall decay rate is useful, but segment-specific rates are more actionable.</p>
+
+          <h3>By Industry</h3>
+
+          <p>Tech and startup contacts decay faster than enterprise or government contacts. Job mobility in tech is higher. Calculate decay for your key industries separately.</p>
+
+          <h3>By Company Size</h3>
+
+          <p>Smaller companies tend to have higher turnover than large enterprises. If you're targeting both SMB and enterprise, their decay rates are probably different.</p>
+
+          <h3>By Role/Seniority</h3>
+
+          <p>C-level executives often have longer tenure than individual contributors. If your database is heavy on one type, your decay rate reflects that mix.</p>
+
+          <h3>By Data Source</h3>
+
+          <p>Data from trade shows might decay differently than data from your website. Purchased lists might decay faster than organically acquired contacts. Understanding source-specific decay helps you evaluate data acquisition strategies.</p>
+
+          <h2>What Your Decay Rate Tells You</h2>
+
+          <p>Once you have a number, here's how to interpret it:</p>
+
+          <ul>
+            <li><strong>Under 20% annual:</strong> Better than average. You're either in a low-turnover industry or doing regular maintenance.</li>
+            <li><strong>20-30% annual:</strong> Typical range for B2B. This is "normal" decay that most companies experience.</li>
+            <li><strong>30-40% annual:</strong> High decay. Common in tech, startups, or if your data hasn't been maintained.</li>
+            <li><strong>Over 40% annual:</strong> Severe decay. Often indicates multiple years of accumulated problems or data from high-turnover segments.</li>
+          </ul>
+
+          <h2>The Financial Impact</h2>
+
+          <p>Decay rate becomes meaningful when you translate it to dollars.</p>
+
+          <div class="calc-box">
+            <h4>Cost Calculation Example</h4>
+            <code>Database size: 50,000 contacts
+Decay rate: 30% annually
+Decayed records: 15,000
+
+Marketing email cost: $0.01 per send × 15,000 = $150/campaign wasted
+Platform cost: $0.50 per contact/year × 15,000 = $7,500 wasted
+Sales time: If reps spend 10 min per bad contact, at $50/hr...
+  10 min × 15,000 contacts = 2,500 hours = $125,000 in productivity</code>
+          </div>
+
+          <p>The exact numbers vary, but the point is the same: decay has real cost. Knowing your rate lets you calculate whether cleanup is worth the investment. It almost always is.</p>
+
+          <h2>Setting a Maintenance Cadence</h2>
+
+          <p>Your decay rate tells you how often to clean.</p>
+
+          <p>If you're decaying at 30% per year, that's about 2.5% per month. Quarterly validation catches most decay before it compounds. Monthly is even better.</p>
+
+          <p>If you're decaying at 40%+, monthly maintenance is probably necessary to keep the database usable.</p>
+
+          <p>The goal isn't zero decay. That's impossible. The goal is maintaining data quality at a level where your operations work effectively.</p>
+
+          <h2>Tracking Over Time</h2>
+
+          <p>Calculate your decay rate quarterly. Track it over time. You should see:</p>
+
+          <ul>
+            <li>Improvement after cleanup projects</li>
+            <li>Gradual increase if maintenance lapses</li>
+            <li>Spikes after importing low-quality data</li>
+            <li>Variations by segment that inform strategy</li>
+          </ul>
+
+          <p>Making decay rate a regular metric keeps data quality visible and creates accountability.</p>
+
+          <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+              <h3>What is CRM data decay rate?</h3>
+              <p>Data decay rate is the percentage of your database that becomes inaccurate or outdated over a given period, typically measured annually. For B2B contact data, industry averages range from 25-35% per year due to job changes, company changes, and email/phone number turnover.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>How do you calculate your data decay rate?</h3>
+              <p>Take a sample of records from 12 months ago and check how many are still accurate today. Verify: Is the person still at that company? Is their email still valid? Is their phone number working? Is their job title correct? The percentage that have changed is your decay rate for that period.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>What causes CRM data to decay?</h3>
+              <p>The primary drivers are: job changes (people leave companies, get promoted, or change roles), company changes (acquisitions, name changes, closures), contact info changes (new email domains, changed phone numbers), and data entry errors that compound over time. Tech industry data decays faster than other sectors due to higher job mobility.</p>
+            </div>
+          </div>
+
+          <div class="article-cta">
+            <h3>Want to know your actual decay rate?</h3>
+            <p>We'll analyze a sample of your CRM data, calculate your decay rate by segment, and tell you exactly what it's costing you.</p>
+            <a href="/contact.html" class="btn btn--primary">Calculate My Decay Rate</a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

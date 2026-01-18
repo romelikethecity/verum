@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Quality Metrics That Actually Matter | Verum</title>
+  <meta name="description" content="Most data quality metrics are vanity metrics. Here are the ones that actually predict operational problems and revenue impact.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-quality-metrics.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-quality-metrics.html">
+  <meta property="og:title" content="Data Quality Metrics That Actually Matter | Verum">
+  <meta property="og:description" content="Most data quality metrics are vanity metrics. Here are the ones that actually predict operational problems.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Quality Metrics That Actually Matter | Verum">
+  <meta name="twitter:description" content="Most data quality metrics are vanity metrics. Here are the ones that actually predict operational problems.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data Quality Metrics That Actually Matter",
+    "description": "Most data quality metrics are vanity metrics. Here are the ones that actually predict operational problems and revenue impact.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-quality-metrics.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What data quality metrics should I track?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Focus on metrics that predict operational problems: email validity rate (affects deliverability), duplicate rate (affects routing and attribution), field completion for routing fields (affects lead distribution), and contact-to-account association rate (affects ABM and reporting). These directly impact revenue operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's a good email validity rate for CRM data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For actively marketed contacts, aim for 95%+ email validity. For your full database, 85%+ is acceptable since older records naturally decay. Below 80% validity indicates serious deliverability risk and wasted marketing spend. Check validity quarterly at minimum."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate duplicate rate in my CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run duplicate detection matching on email, name + company, and phone number. Count unique records that have one or more potential duplicates. Divide by total records for your duplicate rate. Under 5% is good, 5-10% is common, over 10% indicates a significant problem that's affecting operations."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+    }
+    .article-content h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p,
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+    .article-cta p {
+      margin-bottom: 1.5rem;
+      color: var(--color-text-secondary);
+    }
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-section h2 {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-primary);
+    }
+    .faq-item p {
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
+    }
+    .metric-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .metric-card h4 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--color-teal);
+    }
+    .metric-card .target {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="section">
+      <div class="container">
+        <div class="article-content">
+          <p class="article-meta">Data Quality &middot; January 2026 &middot; 10 min read</p>
+
+          <h1>Data Quality Metrics That Actually Matter</h1>
+
+          <p>You could track a hundred data quality metrics. Field completion percentages, format compliance scores, freshness indicators, consistency ratios. Most of them won't tell you anything useful.</p>
+
+          <p>The metrics that matter are the ones that predict operational problems. The ones that, when they go bad, mean something breaks. Here are those metrics, how to calculate them, and what targets to aim for.</p>
+
+          <h2>The Problem with Most Data Quality Metrics</h2>
+
+          <p>Traditional data quality frameworks give you metrics like "accuracy," "completeness," "consistency," and "timeliness." These sound reasonable but often miss the point.</p>
+
+          <p>Knowing that your "completeness score" is 78% doesn't tell you anything actionable. Completeness of what? Which fields? Does it matter if they're empty? What's the actual business impact?</p>
+
+          <p>Good metrics connect directly to operational outcomes. When this metric gets worse, something specific breaks. When it improves, something specific works better. That's the test.</p>
+
+          <h2>The Core Metrics</h2>
+
+          <div class="metric-card">
+            <h4>Email Validity Rate</h4>
+            <p class="target">Target: 95%+ for active marketing contacts, 85%+ for full database</p>
+            <p>Percentage of email addresses that are verified valid and deliverable. This directly predicts campaign bounce rates and deliverability health. Below 85%, you're risking sender reputation damage that affects all your email.</p>
+          </div>
+
+          <p><strong>How to measure:</strong> Run your contact emails through a verification service. Count valid/total. Segment by marketing status since active contacts matter more than dormant ones.</p>
+
+          <p><strong>When to check:</strong> Monthly for active marketing contacts, quarterly for full database.</p>
+
+          <div class="metric-card">
+            <h4>Duplicate Rate</h4>
+            <p class="target">Target: Under 5% (measured as % of records with duplicates)</p>
+            <p>Percentage of records that have one or more potential duplicates in the system. Duplicates break attribution, fragment engagement history, cause routing conflicts, and lead to embarrassing double outreach.</p>
+          </div>
+
+          <p><strong>How to measure:</strong> Run duplicate detection using email exact match, name + company fuzzy match, and phone number match. Count unique records flagged as having duplicates. Divide by total records.</p>
+
+          <p><strong>When to check:</strong> Monthly. Track trend over time to see if duplicates are being created faster than they're being merged.</p>
+
+          <div class="metric-card">
+            <h4>Routing Field Completion</h4>
+            <p class="target">Target: 95%+ for fields used in lead routing/assignment</p>
+            <p>Percentage of leads/contacts with the fields your routing rules depend on. If you route by company size and 40% of records are missing company size, 40% of your leads can't be routed correctly.</p>
+          </div>
+
+          <p><strong>How to measure:</strong> Identify the specific fields your routing logic uses (typically: company size, industry, country, maybe title or revenue). Calculate completion rate for each on your active lead population.</p>
+
+          <p><strong>When to check:</strong> Weekly if you have high lead volume. At minimum, before any routing rule changes.</p>
+
+          <div class="metric-card">
+            <h4>Contact-Account Association Rate</h4>
+            <p class="target">Target: 95%+ of contacts associated to accounts</p>
+            <p>Percentage of contacts that are properly linked to company/account records. Unassociated contacts are invisible to account-based operations: ABM campaigns, account scoring, sales views, and rollup reporting.</p>
+          </div>
+
+          <p><strong>How to measure:</strong> Count contacts with no account/company association. Divide by total contacts. For HubSpot, this is contacts without company associations. For Salesforce, contacts without an account relationship.</p>
+
+          <p><strong>When to check:</strong> Monthly. Spikes often indicate integration issues or import problems.</p>
+
+          <h2>The Operational Metrics</h2>
+
+          <p>Beyond the core data metrics, track metrics that show data quality impact on operations.</p>
+
+          <div class="metric-card">
+            <h4>Campaign Bounce Rate</h4>
+            <p class="target">Target: Under 2% hard bounce, under 5% total bounce</p>
+            <p>Real-time indicator of email data quality. Rising bounce rates mean decaying data. A sudden spike often means a bad list was imported or a segment has old data.</p>
+          </div>
+
+          <div class="metric-card">
+            <h4>Routing Exception Rate</h4>
+            <p class="target">Target: Under 5% of leads requiring manual routing</p>
+            <p>Percentage of leads that can't be automatically routed and require manual intervention. High exception rates mean missing or invalid data on routing fields.</p>
+          </div>
+
+          <div class="metric-card">
+            <h4>SLA Miss Rate on Lead Response</h4>
+            <p class="target">Target: Under 5% of leads missing SLA</p>
+            <p>If leads are missing SLA because they're sitting unrouted or assigned to inactive reps, data quality might be the cause. Track and investigate.</p>
+          </div>
+
+          <h2>Building a Dashboard</h2>
+
+          <p>Put these metrics on a single dashboard that gets reviewed regularly. Here's a structure that works:</p>
+
+          <h3>Weekly Review (Ops Team)</h3>
+          <ul>
+            <li>Campaign bounce rates from past week</li>
+            <li>Routing exceptions from past week</li>
+            <li>New duplicates created (if trackable)</li>
+            <li>Any sudden changes in key metrics</li>
+          </ul>
+
+          <h3>Monthly Review (Leadership)</h3>
+          <ul>
+            <li>Email validity rate (trend)</li>
+            <li>Duplicate rate (trend)</li>
+            <li>Routing field completion (current)</li>
+            <li>Contact-account association rate (current)</li>
+            <li>Month-over-month changes with context</li>
+          </ul>
+
+          <h3>Quarterly Deep Dive</h3>
+          <ul>
+            <li>Full data quality audit with detailed metrics</li>
+            <li>Decay rate calculation for the quarter</li>
+            <li>Segment-specific analysis (by source, by age, by segment)</li>
+            <li>Recommendations for next quarter's priorities</li>
+          </ul>
+
+          <h2>Setting Targets</h2>
+
+          <p>The targets above are reasonable benchmarks, but your specific targets should consider:</p>
+
+          <ul>
+            <li><strong>Where you are now:</strong> If email validity is at 60%, targeting 95% immediately is unrealistic. Set incremental targets.</li>
+            <li><strong>Your tolerance for operational issues:</strong> Some businesses can tolerate more routing exceptions than others.</li>
+            <li><strong>The cost of improvement:</strong> Moving from 90% to 95% is harder than 80% to 85%. Set targets where the ROI makes sense.</li>
+          </ul>
+
+          <h2>What Not to Measure</h2>
+
+          <p>Some commonly tracked metrics aren't worth the effort:</p>
+
+          <ul>
+            <li><strong>Overall "completeness score":</strong> Too vague. Completion of what fields? Not all fields matter equally.</li>
+            <li><strong>Format compliance:</strong> Unless bad formatting actually breaks something, it's not worth tracking.</li>
+            <li><strong>Data age:</strong> Age alone doesn't mean bad. A 3-year-old contact could be perfectly accurate.</li>
+            <li><strong>Record counts:</strong> More records isn't better if they're duplicates or invalid.</li>
+          </ul>
+
+          <p>Focus on metrics tied to outcomes. If you can't explain how a metric affects operations, you probably don't need it.</p>
+
+          <h2>Using Metrics to Prioritize</h2>
+
+          <p>Once you have baseline metrics, use them to decide what to fix first:</p>
+
+          <ol>
+            <li><strong>Fix what's broken:</strong> If email validity is at 70%, that's your first priority. It's actively hurting deliverability.</li>
+            <li><strong>Fix what blocks operations:</strong> If routing field completion is at 60%, leads aren't being handled properly. Fix that next.</li>
+            <li><strong>Maintain what's working:</strong> If duplicate rate is at 4%, maintain it. Set alerts if it starts climbing.</li>
+            <li><strong>Improve for optimization:</strong> Once basics are stable, improve metrics that unlock better performance (enrichment, segmentation accuracy, etc.).</li>
+          </ol>
+
+          <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+              <h3>What data quality metrics should I track?</h3>
+              <p>Focus on metrics that predict operational problems: email validity rate (affects deliverability), duplicate rate (affects routing and attribution), field completion for routing fields (affects lead distribution), and contact-to-account association rate (affects ABM and reporting). These directly impact revenue operations.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>What's a good email validity rate for CRM data?</h3>
+              <p>For actively marketed contacts, aim for 95%+ email validity. For your full database, 85%+ is acceptable since older records naturally decay. Below 80% validity indicates serious deliverability risk and wasted marketing spend. Check validity quarterly at minimum.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3>How do I calculate duplicate rate in my CRM?</h3>
+              <p>Run duplicate detection matching on email, name + company, and phone number. Count unique records that have one or more potential duplicates. Divide by total records for your duplicate rate. Under 5% is good, 5-10% is common, over 10% indicates a significant problem that's affecting operations.</p>
+            </div>
+          </div>
+
+          <div class="article-cta">
+            <h3>Want to know where your data quality stands?</h3>
+            <p>We'll calculate all these metrics for your CRM and show you exactly what needs attention first.</p>
+            <a href="/contact.html" class="btn btn--primary">Get My Data Quality Scorecard</a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
