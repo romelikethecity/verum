@@ -56,6 +56,41 @@
   </script>
 
   <style>
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .filter-tab {
+      padding: 0.625rem 1.25rem;
+      border: 1px solid var(--color-border);
+      border-radius: 9999px;
+      background: transparent;
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .filter-tab:hover {
+      border-color: var(--color-text-muted);
+      color: var(--color-text-primary);
+    }
+    .filter-tab.active {
+      background: var(--color-teal);
+      border-color: var(--color-teal);
+      color: var(--color-bg-dark);
+    }
+    .filter-tab .count {
+      margin-left: 0.375rem;
+      opacity: 0.7;
+    }
     .blog-grid {
       display: grid;
       gap: 1.5rem;
@@ -72,24 +107,42 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
       padding: 1.5rem;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, opacity 0.3s, transform 0.3s;
     }
     .blog-card:hover {
       border-color: var(--color-teal);
     }
+    .blog-card.hidden {
+      display: none;
+    }
     .blog-card__category {
-      font-size: 0.75rem;
+      display: inline-block;
+      font-size: 0.6875rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .blog-card__category--salesforce {
+      background: rgba(1, 118, 211, 0.15);
+      color: #4da6ff;
+    }
+    .blog-card__category--hubspot {
+      background: rgba(255, 122, 89, 0.15);
+      color: #ff9a7a;
+    }
+    .blog-card__category--revops {
+      background: rgba(45, 212, 191, 0.15);
       color: var(--color-teal);
-      margin-bottom: 0.5rem;
     }
     .blog-card__title {
-      font-size: 1.125rem;
+      font-size: 1.0625rem;
       font-weight: 600;
       color: var(--color-text-primary);
       margin-bottom: 0.5rem;
-      line-height: 1.3;
+      line-height: 1.35;
     }
     .blog-card__title a {
       color: inherit;
@@ -100,7 +153,7 @@
     }
     .blog-card__excerpt {
       color: var(--color-text-secondary);
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       line-height: 1.6;
       margin-bottom: 0.75rem;
     }
@@ -108,49 +161,14 @@
       font-size: 0.75rem;
       color: var(--color-text-muted);
     }
-    .blog-section {
-      max-width: 900px;
-      margin: 0 auto 4rem;
-    }
-    .blog-section__header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--color-border);
-    }
-    .blog-section__title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--color-text-primary);
-      margin: 0;
-    }
-    .blog-section__count {
-      font-size: 0.875rem;
+    .no-results {
+      text-align: center;
+      padding: 3rem;
       color: var(--color-text-muted);
+      display: none;
     }
-    .blog-section__icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 0.875rem;
-    }
-    .blog-section__icon--salesforce {
-      background: #0176d3;
-      color: white;
-    }
-    .blog-section__icon--hubspot {
-      background: #ff7a59;
-      color: white;
-    }
-    .blog-section__icon--revops {
-      background: var(--color-teal);
-      color: var(--color-bg-dark);
+    .no-results.visible {
+      display: block;
     }
   </style>
 </head>
@@ -168,179 +186,189 @@
     <section class="section">
       <div class="container">
 
-        <!-- Salesforce Guides -->
-        <div class="blog-section">
-          <div class="blog-section__header">
-            <div class="blog-section__icon blog-section__icon--salesforce">SF</div>
-            <h2 class="blog-section__title">Salesforce Guides</h2>
-            <span class="blog-section__count">8 articles</span>
-          </div>
-          <div class="blog-grid">
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data: The Complete Guide</a></h3>
-              <p class="blog-card__excerpt">Your Salesforce instance has years of accumulated data problems. Here's how to systematically clean it up.</p>
-              <p class="blog-card__meta">12 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/salesforce-duplicate-contacts.html">How to Find and Merge Duplicate Contacts in Salesforce</a></h3>
-              <p class="blog-card__excerpt">Duplicates waste sales time, mess up reporting, and make automation unreliable. Here's how to fix them.</p>
-              <p class="blog-card__meta">10 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/salesforce-email-validation.html">How to Validate Email Addresses in Salesforce</a></h3>
-              <p class="blog-card__excerpt">Bad emails destroy deliverability and waste sales time. Here's how to validate and keep your database clean.</p>
-              <p class="blog-card__meta">9 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/salesforce-data-enrichment.html">How to Enrich Salesforce Records Without ZoomInfo</a></h3>
-              <p class="blog-card__excerpt">ZoomInfo costs $30K+/year. Here are practical alternatives for enriching your contacts and accounts.</p>
-              <p class="blog-card__meta">10 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/salesforce-job-title-standardization.html">How to Standardize Job Titles in Salesforce</a></h3>
-              <p class="blog-card__excerpt">VP Sales, Vice President of Sales, Sales VP. Here's how to standardize so routing and reporting work.</p>
-              <p class="blog-card__meta">8 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/salesforce-company-name-normalization.html">How to Normalize Company Names in Salesforce</a></h3>
-              <p class="blog-card__excerpt">Acme Corp, ACME, Acme Inc. Same company, four records. Here's how to normalize for deduplication.</p>
-              <p class="blog-card__meta">9 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/salesforce-data-quality-audit.html">How to Audit Your Salesforce Data Quality</a></h3>
-              <p class="blog-card__excerpt">You suspect your CRM data has problems, but how bad is it? Here's how to run a comprehensive audit.</p>
-              <p class="blog-card__meta">10 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/crm-migration-data-cleanup.html">Switching CRMs? Clean Your Data First</a></h3>
-              <p class="blog-card__excerpt">Migrating to a new CRM is the perfect time to clean your data. Don't bring your mess with you.</p>
-              <p class="blog-card__meta">11 min read</p>
-            </article>
-          </div>
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All<span class="count">24</span></button>
+          <button class="filter-tab" data-filter="salesforce">Salesforce<span class="count">8</span></button>
+          <button class="filter-tab" data-filter="hubspot">HubSpot<span class="count">7</span></button>
+          <button class="filter-tab" data-filter="revops">RevOps<span class="count">9</span></button>
         </div>
 
-        <!-- HubSpot Guides -->
-        <div class="blog-section">
-          <div class="blog-section__header">
-            <div class="blog-section__icon blog-section__icon--hubspot">HS</div>
-            <h2 class="blog-section__title">HubSpot Guides</h2>
-            <span class="blog-section__count">7 articles</span>
-          </div>
-          <div class="blog-grid">
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/hubspot-data-cleaning.html">How to Clean HubSpot Data: The Complete Guide</a></h3>
-              <p class="blog-card__excerpt">Your HubSpot portal has problems you can see and problems you can't. Here's how to find and fix them.</p>
-              <p class="blog-card__meta">14 min read</p>
-            </article>
+        <div class="blog-grid">
 
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/hubspot-duplicate-contacts.html">How to Find and Merge Duplicate Contacts in HubSpot</a></h3>
-              <p class="blog-card__excerpt">Every duplicate splits your engagement history in half. Here's how to merge without losing data.</p>
-              <p class="blog-card__meta">11 min read</p>
-            </article>
+          <!-- Salesforce Articles -->
+          <article class="blog-card" data-category="salesforce">
+            <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
+            <h2 class="blog-card__title"><a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data: The Complete Guide</a></h2>
+            <p class="blog-card__excerpt">Your Salesforce instance has years of accumulated data problems. Here's how to systematically clean it up.</p>
+            <p class="blog-card__meta">12 min read</p>
+          </article>
 
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/hubspot-email-validation.html">How to Validate Email Addresses in HubSpot</a></h3>
-              <p class="blog-card__excerpt">Every invalid email costs you twice: wasted billing and damaged sender reputation. Here's how to clean them.</p>
-              <p class="blog-card__meta">10 min read</p>
-            </article>
+          <article class="blog-card" data-category="salesforce">
+            <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
+            <h2 class="blog-card__title"><a href="/resources/salesforce-duplicate-contacts.html">How to Find and Merge Duplicate Contacts in Salesforce</a></h2>
+            <p class="blog-card__excerpt">Duplicates waste sales time, mess up reporting, and make automation unreliable. Here's how to fix them.</p>
+            <p class="blog-card__meta">10 min read</p>
+          </article>
 
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/hubspot-marketing-contacts-cleanup.html">How to Reduce Marketing Contacts in HubSpot</a></h3>
-              <p class="blog-card__excerpt">You're paying for contacts who bounced years ago or haven't opened an email since the pandemic.</p>
-              <p class="blog-card__meta">9 min read</p>
-            </article>
+          <article class="blog-card" data-category="salesforce">
+            <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
+            <h2 class="blog-card__title"><a href="/resources/salesforce-email-validation.html">How to Validate Email Addresses in Salesforce</a></h2>
+            <p class="blog-card__excerpt">Bad emails destroy deliverability and waste sales time. Here's how to validate and keep your database clean.</p>
+            <p class="blog-card__meta">9 min read</p>
+          </article>
 
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/hubspot-contact-company-associations.html">How to Fix Missing Contact-Company Associations in HubSpot</a></h3>
-              <p class="blog-card__excerpt">Contacts without company associations are invisible to account-based reporting and automation.</p>
-              <p class="blog-card__meta">10 min read</p>
-            </article>
+          <article class="blog-card" data-category="salesforce">
+            <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
+            <h2 class="blog-card__title"><a href="/resources/salesforce-data-enrichment.html">How to Enrich Salesforce Records Without ZoomInfo</a></h2>
+            <p class="blog-card__excerpt">ZoomInfo costs $30K+/year. Here are practical alternatives for enriching your contacts and accounts.</p>
+            <p class="blog-card__meta">10 min read</p>
+          </article>
 
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/hubspot-lifecycle-stage-cleanup.html">How to Clean Up Lifecycle Stages in HubSpot</a></h3>
-              <p class="blog-card__excerpt">Lifecycle stages that haven't been updated in years tell you where people were, not where they are.</p>
-              <p class="blog-card__meta">11 min read</p>
-            </article>
+          <article class="blog-card" data-category="salesforce">
+            <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
+            <h2 class="blog-card__title"><a href="/resources/salesforce-job-title-standardization.html">How to Standardize Job Titles in Salesforce</a></h2>
+            <p class="blog-card__excerpt">VP Sales, Vice President of Sales, Sales VP. Here's how to standardize so routing and reporting work.</p>
+            <p class="blog-card__meta">8 min read</p>
+          </article>
 
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/hubspot-data-enrichment.html">How to Enrich HubSpot Data Without Expensive Platforms</a></h3>
-              <p class="blog-card__excerpt">Half your contacts are missing phone numbers. Here's how to enrich them without paying $30K for ZoomInfo.</p>
-              <p class="blog-card__meta">12 min read</p>
-            </article>
-          </div>
+          <article class="blog-card" data-category="salesforce">
+            <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
+            <h2 class="blog-card__title"><a href="/resources/salesforce-company-name-normalization.html">How to Normalize Company Names in Salesforce</a></h2>
+            <p class="blog-card__excerpt">Acme Corp, ACME, Acme Inc. Same company, four records. Here's how to normalize for deduplication.</p>
+            <p class="blog-card__meta">9 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="salesforce">
+            <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
+            <h2 class="blog-card__title"><a href="/resources/salesforce-data-quality-audit.html">How to Audit Your Salesforce Data Quality</a></h2>
+            <p class="blog-card__excerpt">You suspect your CRM data has problems, but how bad is it? Here's how to run a comprehensive audit.</p>
+            <p class="blog-card__meta">10 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="salesforce">
+            <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
+            <h2 class="blog-card__title"><a href="/resources/crm-migration-data-cleanup.html">Switching CRMs? Clean Your Data First</a></h2>
+            <p class="blog-card__excerpt">Migrating to a new CRM is the perfect time to clean your data. Don't bring your mess with you.</p>
+            <p class="blog-card__meta">11 min read</p>
+          </article>
+
+          <!-- HubSpot Articles -->
+          <article class="blog-card" data-category="hubspot">
+            <span class="blog-card__category blog-card__category--hubspot">HubSpot</span>
+            <h2 class="blog-card__title"><a href="/resources/hubspot-data-cleaning.html">How to Clean HubSpot Data: The Complete Guide</a></h2>
+            <p class="blog-card__excerpt">Your HubSpot portal has problems you can see and problems you can't. Here's how to find and fix them.</p>
+            <p class="blog-card__meta">14 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="hubspot">
+            <span class="blog-card__category blog-card__category--hubspot">HubSpot</span>
+            <h2 class="blog-card__title"><a href="/resources/hubspot-duplicate-contacts.html">How to Find and Merge Duplicate Contacts in HubSpot</a></h2>
+            <p class="blog-card__excerpt">Every duplicate splits your engagement history in half. Here's how to merge without losing data.</p>
+            <p class="blog-card__meta">11 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="hubspot">
+            <span class="blog-card__category blog-card__category--hubspot">HubSpot</span>
+            <h2 class="blog-card__title"><a href="/resources/hubspot-email-validation.html">How to Validate Email Addresses in HubSpot</a></h2>
+            <p class="blog-card__excerpt">Every invalid email costs you twice: wasted billing and damaged sender reputation. Here's how to clean them.</p>
+            <p class="blog-card__meta">10 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="hubspot">
+            <span class="blog-card__category blog-card__category--hubspot">HubSpot</span>
+            <h2 class="blog-card__title"><a href="/resources/hubspot-marketing-contacts-cleanup.html">How to Reduce Marketing Contacts in HubSpot</a></h2>
+            <p class="blog-card__excerpt">You're paying for contacts who bounced years ago or haven't opened an email since the pandemic.</p>
+            <p class="blog-card__meta">9 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="hubspot">
+            <span class="blog-card__category blog-card__category--hubspot">HubSpot</span>
+            <h2 class="blog-card__title"><a href="/resources/hubspot-contact-company-associations.html">How to Fix Missing Contact-Company Associations in HubSpot</a></h2>
+            <p class="blog-card__excerpt">Contacts without company associations are invisible to account-based reporting and automation.</p>
+            <p class="blog-card__meta">10 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="hubspot">
+            <span class="blog-card__category blog-card__category--hubspot">HubSpot</span>
+            <h2 class="blog-card__title"><a href="/resources/hubspot-lifecycle-stage-cleanup.html">How to Clean Up Lifecycle Stages in HubSpot</a></h2>
+            <p class="blog-card__excerpt">Lifecycle stages that haven't been updated in years tell you where people were, not where they are.</p>
+            <p class="blog-card__meta">11 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="hubspot">
+            <span class="blog-card__category blog-card__category--hubspot">HubSpot</span>
+            <h2 class="blog-card__title"><a href="/resources/hubspot-data-enrichment.html">How to Enrich HubSpot Data Without Expensive Platforms</a></h2>
+            <p class="blog-card__excerpt">Half your contacts are missing phone numbers. Here's how to enrich them without paying $30K for ZoomInfo.</p>
+            <p class="blog-card__meta">12 min read</p>
+          </article>
+
+          <!-- RevOps Articles -->
+          <article class="blog-card" data-category="revops">
+            <span class="blog-card__category blog-card__category--revops">RevOps</span>
+            <h2 class="blog-card__title"><a href="/resources/crm-data-decay-rate.html">Your CRM Data Is Decaying at 30% Per Year</a></h2>
+            <p class="blog-card__excerpt">Contact data doesn't stay accurate. Here's what decay looks like and what to do about it.</p>
+            <p class="blog-card__meta">8 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="revops">
+            <span class="blog-card__category blog-card__category--revops">Strategy</span>
+            <h2 class="blog-card__title"><a href="/resources/how-to-build-data-driven-icp.html">How to Build a Data-Driven ICP (Not a Guess)</a></h2>
+            <p class="blog-card__excerpt">Most ICPs are built on intuition. Here's how to build one based on what your data actually shows.</p>
+            <p class="blog-card__meta">8 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="revops">
+            <span class="blog-card__category blog-card__category--revops">RevOps</span>
+            <h2 class="blog-card__title"><a href="/resources/revops-team-size-customer-ltv.html">RevOps Team Size as a Predictor of Customer LTV</a></h2>
+            <p class="blog-card__excerpt">An unexpected ICP finding: the size of a prospect's RevOps team predicts their value as a customer.</p>
+            <p class="blog-card__meta">6 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="revops">
+            <span class="blog-card__category blog-card__category--revops">Data Quality</span>
+            <h2 class="blog-card__title"><a href="/resources/missing-emails-crm.html">Missing Email Addresses in Your CRM? Here's How to Find Them</a></h2>
+            <p class="blog-card__excerpt">Contacts without emails are dead weight. Here's how to find missing emails and get them into outreach.</p>
+            <p class="blog-card__meta">8 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="revops">
+            <span class="blog-card__category blog-card__category--revops">RevOps</span>
+            <h2 class="blog-card__title"><a href="/resources/lead-routing-broken-data.html">Your Lead Routing Is Broken. Your Data Is Why.</a></h2>
+            <p class="blog-card__excerpt">Leads going to the wrong reps? The routing logic isn't the problem. The data feeding it is.</p>
+            <p class="blog-card__meta">9 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="revops">
+            <span class="blog-card__category blog-card__category--revops">RevOps</span>
+            <h2 class="blog-card__title"><a href="/resources/lead-scoring-not-working.html">Why Your Lead Scoring Model Isn't Working</a></h2>
+            <p class="blog-card__excerpt">Your model says a lead is hot. Sales says it's not. The model isn't wrong. The data is incomplete.</p>
+            <p class="blog-card__meta">10 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="revops">
+            <span class="blog-card__category blog-card__category--revops">ABM</span>
+            <h2 class="blog-card__title"><a href="/resources/abm-account-data-quality.html">Why Your ABM Program Isn't Working (It's the Data)</a></h2>
+            <p class="blog-card__excerpt">You built the target list, set up campaigns, aligned teams. Pipeline hasn't moved. It's your account data.</p>
+            <p class="blog-card__meta">11 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="revops">
+            <span class="blog-card__category blog-card__category--revops">Email</span>
+            <h2 class="blog-card__title"><a href="/resources/email-deliverability-data-quality.html">Email Deliverability Is Tanking. Your Data Is the Problem.</a></h2>
+            <p class="blog-card__excerpt">Open rates dropping, bounce rates climbing. Before you blame the ESP, look at your contact data.</p>
+            <p class="blog-card__meta">10 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="revops">
+            <span class="blog-card__category blog-card__category--revops">RevOps</span>
+            <h2 class="blog-card__title"><a href="/resources/attribution-data-quality.html">Your Attribution Data Is Lying to You</a></h2>
+            <p class="blog-card__excerpt">Attribution is only as good as the data feeding it. Duplicates and broken tracking break your reports.</p>
+            <p class="blog-card__meta">10 min read</p>
+          </article>
+
         </div>
 
-        <!-- RevOps & Strategy -->
-        <div class="blog-section">
-          <div class="blog-section__header">
-            <div class="blog-section__icon blog-section__icon--revops">RO</div>
-            <h2 class="blog-section__title">RevOps & Strategy</h2>
-            <span class="blog-section__count">9 articles</span>
-          </div>
-          <div class="blog-grid">
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/crm-data-decay-rate.html">Your CRM Data Is Decaying at 30% Per Year</a></h3>
-              <p class="blog-card__excerpt">Contact data doesn't stay accurate. Here's what decay looks like and what to do about it.</p>
-              <p class="blog-card__meta">8 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/how-to-build-data-driven-icp.html">How to Build a Data-Driven ICP (Not a Guess)</a></h3>
-              <p class="blog-card__excerpt">Most ICPs are built on intuition. Here's how to build one based on what your data actually shows.</p>
-              <p class="blog-card__meta">8 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/revops-team-size-customer-ltv.html">RevOps Team Size as a Predictor of Customer LTV</a></h3>
-              <p class="blog-card__excerpt">An unexpected ICP finding: the size of a prospect's RevOps team predicts their value as a customer.</p>
-              <p class="blog-card__meta">6 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/missing-emails-crm.html">Missing Email Addresses in Your CRM? Here's How to Find Them</a></h3>
-              <p class="blog-card__excerpt">Contacts without emails are dead weight. Here's how to find missing emails and get them into outreach.</p>
-              <p class="blog-card__meta">8 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/lead-routing-broken-data.html">Your Lead Routing Is Broken. Your Data Is Why.</a></h3>
-              <p class="blog-card__excerpt">Leads going to the wrong reps? The routing logic isn't the problem. The data feeding it is.</p>
-              <p class="blog-card__meta">9 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/lead-scoring-not-working.html">Why Your Lead Scoring Model Isn't Working</a></h3>
-              <p class="blog-card__excerpt">Your model says a lead is hot. Sales says it's not. The model isn't wrong. The data is incomplete.</p>
-              <p class="blog-card__meta">10 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/abm-account-data-quality.html">Why Your ABM Program Isn't Working (It's the Data)</a></h3>
-              <p class="blog-card__excerpt">You built the target list, set up campaigns, aligned teams. Pipeline hasn't moved. It's your account data.</p>
-              <p class="blog-card__meta">11 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/email-deliverability-data-quality.html">Email Deliverability Is Tanking. Your Data Is the Problem.</a></h3>
-              <p class="blog-card__excerpt">Open rates dropping, bounce rates climbing. Before you blame the ESP, look at your contact data.</p>
-              <p class="blog-card__meta">10 min read</p>
-            </article>
-
-            <article class="blog-card">
-              <h3 class="blog-card__title"><a href="/resources/attribution-data-quality.html">Your Attribution Data Is Lying to You</a></h3>
-              <p class="blog-card__excerpt">Attribution is only as good as the data feeding it. Duplicates and broken tracking break your reports.</p>
-              <p class="blog-card__meta">10 min read</p>
-            </article>
-          </div>
-        </div>
+        <p class="no-results">No articles found for this filter.</p>
 
       </div>
     </section>
@@ -350,5 +378,36 @@
 
   <script src="/js/components.js"></script>
   <script src="/js/main.js"></script>
+  <script>
+    (function() {
+      const tabs = document.querySelectorAll('.filter-tab');
+      const cards = document.querySelectorAll('.blog-card');
+      const noResults = document.querySelector('.no-results');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Update active tab
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          const filter = tab.dataset.filter;
+          let visibleCount = 0;
+
+          // Filter cards
+          cards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.classList.remove('hidden');
+              visibleCount++;
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          // Show/hide no results message
+          noResults.classList.toggle('visible', visibleCount === 0);
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
