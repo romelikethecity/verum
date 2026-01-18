@@ -45,11 +45,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://veruminc.com/services/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Analysis"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Service",
     "name": "Data Analysis Services",
     "provider": {
-      "@type": "Organization",
-      "name": "Verum"
+      "@id": "https://veruminc.com/#organization"
     },
     "description": "B2B data analysis services including ICP analysis, customer segmentation, win/loss analysis, and churn prediction. Actionable insights for revenue teams.",
     "serviceType": "Data Analysis"

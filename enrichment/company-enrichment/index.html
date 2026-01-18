@@ -45,11 +45,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Enrichment", "item": "https://veruminc.com/enrichment/"},
+      {"@type": "ListItem", "position": 3, "name": "Company Enrichment"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Service",
     "name": "Company Enrichment Services",
     "provider": {
-      "@type": "Organization",
-      "name": "Verum"
+      "@id": "https://veruminc.com/#organization"
     },
     "description": "Company data enrichment services. Append industry, employee count, revenue, location, technology stack, and funding data to your account records.",
     "serviceType": "Company Data Enrichment"

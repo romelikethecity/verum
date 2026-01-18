@@ -45,11 +45,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://veruminc.com/services/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Enrichment"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Service",
     "name": "Data Enrichment Services",
     "provider": {
-      "@type": "Organization",
-      "name": "Verum"
+      "@id": "https://veruminc.com/#organization"
     },
     "description": "B2B data enrichment services from 50+ sources. Append firmographic, technographic, and contact data. Human QA on every project.",
     "serviceType": "Data Enrichment"

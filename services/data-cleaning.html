@@ -45,11 +45,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://veruminc.com/services/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Cleaning"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "Service",
     "name": "Data Cleaning Services",
     "provider": {
-      "@type": "Organization",
-      "name": "Verum"
+      "@id": "https://veruminc.com/#organization"
     },
     "description": "Professional B2B data cleaning services including deduplication, email validation, phone standardization, and format normalization. Human QA on every project.",
     "serviceType": "Data Cleaning"
