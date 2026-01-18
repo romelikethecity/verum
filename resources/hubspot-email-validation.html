@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Validate Email Addresses in HubSpot | Verum</title>
+  <meta name="description" content="Bad emails destroy deliverability and inflate your marketing contact bill. Here's how to validate emails in HubSpot and clean out the addresses that will never work.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/hubspot-email-validation.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/hubspot-email-validation.html">
+  <meta property="og:title" content="How to Validate Email Addresses in HubSpot">
+  <meta property="og:description" content="Bad emails destroy deliverability and inflate your marketing contact bill. Here's how to validate and clean them.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Validate Email Addresses in HubSpot">
+  <meta name="twitter:description" content="Bad emails destroy deliverability and inflate your marketing contact bill. Here's how to validate and clean them.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Validate Email Addresses in HubSpot",
+    "description": "Bad emails destroy deliverability and inflate your marketing contact bill. Here's how to validate emails in HubSpot and clean out the addresses that will never work.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/hubspot-email-validation.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does HubSpot validate email addresses automatically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HubSpot validates email format (syntax) but doesn't verify that addresses actually exist. It will reject obviously malformed emails like 'notanemail' but accept properly formatted addresses even if they'll bounce. For true validation, you need to either validate before import or use a third-party tool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's a good bounce rate for HubSpot emails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Industry average hard bounce rate is around 0.5-1%. If you're consistently above 2%, you have a data quality problem. Above 5% means significant issues that need immediate attention. HubSpot may throttle or suspend sending if bounce rates stay too high."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I delete contacts with invalid emails in HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. Invalid email doesn't mean the contact has no value. If they have a phone number, they might still be reachable for sales. Consider setting them as non-marketing contacts (to stop billing) while keeping the record. Delete only if the contact has no other value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I validate my HubSpot email list?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Validate new imports before uploading. Re-validate your full list quarterly or semi-annually. Email data decays at roughly 25-30% per year as people change jobs, companies change domains, and mailboxes get abandoned."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">HubSpot</p>
+      <h1 class="page-hero__title">How to Validate Email Addresses in HubSpot</h1>
+      <p class="page-hero__subtitle">Every invalid email costs you twice: once in wasted marketing contact billing, once in damaged sender reputation. Here's how to find them and clean them out.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 10 min read</div>
+
+      <div class="blog-content">
+
+        <p>You import a list of 5,000 contacts. Within a week, you've got a bounce rate that makes Gmail suspicious. Your sender reputation takes a hit. Deliverability drops across your entire email program, not just the imported list. And you're paying marketing contact fees for addresses that will never receive an email.</p>
+
+        <p>HubSpot handles email format validation (catching obviously malformed addresses) but doesn't verify that addresses actually exist and can receive mail. That gap is where problems grow.</p>
+
+        <p>This guide covers how to validate emails before they enter your HubSpot portal, clean up the bad addresses already there, and set up systems to prevent the problem from recurring.</p>
+
+        <h2>Why Email Validation Matters in HubSpot</h2>
+
+        <p>Invalid emails create specific problems in HubSpot's ecosystem.</p>
+
+        <h3>Marketing Contact Costs</h3>
+
+        <p>HubSpot bills based on marketing contacts. A contact with an invalid email address is still a marketing contact if marked as such. You're paying for someone you can never email.</p>
+
+        <p>This gets worse with scale. If 8% of your 50,000 marketing contacts have invalid emails, that's 4,000 contacts you're paying for with zero marketing value. Depending on your tier, that could be a significant portion of your bill.</p>
+
+        <h3>Sender Reputation Damage</h3>
+
+        <p>Every hard bounce hurts your sending reputation. Email providers (Gmail, Microsoft, etc.) track bounce rates from your sending domain. High bounce rates signal that you're sending to lists you haven't maintained, which is a spam indicator.</p>
+
+        <p>The consequences compound. Poor reputation means more of your emails land in spam folders. That means lower open rates. Lower open rates mean lower engagement. Lower engagement further hurts your reputation. It's a downward spiral triggered by bad data.</p>
+
+        <h3>HubSpot's Response to High Bounces</h3>
+
+        <p>HubSpot monitors bounce rates and will take action if yours gets too high. At minimum, you'll get warnings. At worse, HubSpot can throttle your sending or temporarily suspend your email capability.</p>
+
+        <p>HubSpot automatically suppresses hard bounced addresses from future sends, but the damage from the initial bounce is already done. Prevention beats reaction.</p>
+
+        <h2>Types of Invalid Emails</h2>
+
+        <p>Not all bad emails are the same, and they require different handling.</p>
+
+        <h3>Hard Bounces</h3>
+
+        <p>The email address is permanently undeliverable. The mailbox doesn't exist, the domain doesn't exist, or the mail server has explicitly rejected the address. These will never work.</p>
+
+        <p>HubSpot marks these automatically after a hard bounce occurs. Look for the "Email hard bounce reason" property.</p>
+
+        <h3>Soft Bounces</h3>
+
+        <p>Temporary delivery failures. The mailbox is full, the server is temporarily unavailable, or the message was too large. These might work later.</p>
+
+        <p>HubSpot tracks soft bounces but doesn't automatically suppress them. Check the "Email soft bounce reason" property. Contacts with repeated soft bounces might have underlying issues worth investigating.</p>
+
+        <h3>Risky Addresses</h3>
+
+        <p>Addresses that technically exist but have problems: catch-all domains (where any address is accepted), role-based addresses (info@, support@, sales@), or temporary/disposable email services.</p>
+
+        <p>HubSpot doesn't flag these natively. Validation tools can identify them before you send.</p>
+
+        <h3>Syntax Errors</h3>
+
+        <p>Malformed addresses that don't follow email format rules: missing @ symbols, invalid characters, spaces where they shouldn't be. HubSpot's form validation catches most of these, but imports can bring them in.</p>
+
+        <h2>Validating Emails Before Import</h2>
+
+        <p>The best time to catch bad emails is before they enter your system.</p>
+
+        <h3>Use an Email Validation Service</h3>
+
+        <p>Before importing any list, run it through a validation service. Common options:</p>
+
+        <p><strong>ZeroBounce:</strong> Comprehensive validation with AI-enhanced detection. Catches hard bounces, spam traps, abuse addresses, and disposable emails. Pricing per validation.</p>
+
+        <p><strong>NeverBounce:</strong> Fast validation with integrations for common marketing tools. Good for large lists. Pay-as-you-go or monthly plans.</p>
+
+        <p><strong>Kickbox:</strong> Real-time validation API plus batch processing. Particularly good for identifying risky addresses like catch-alls.</p>
+
+        <p><strong>Hunter:</strong> Combines validation with email finding. Useful if you're also trying to find missing emails.</p>
+
+        <p>All of these work similarly: upload your list, get results categorized by deliverability status, remove or flag the bad ones before importing to HubSpot.</p>
+
+        <h3>What Validation Results Mean</h3>
+
+        <p>Validation services typically categorize results as:</p>
+
+        <p><strong>Valid:</strong> The address exists and can receive email. Safe to send.</p>
+
+        <p><strong>Invalid:</strong> The address doesn't exist or will definitely bounce. Don't import as marketing contacts.</p>
+
+        <p><strong>Risky/Accept-all:</strong> The address is on a catch-all domain, so the validator can't confirm it exists. These might bounce, might not. Import with caution.</p>
+
+        <p><strong>Unknown:</strong> The validator couldn't determine status (usually because the mail server didn't respond). Treat similar to risky.</p>
+
+        <p>For clean imports, only upload "Valid" addresses as marketing contacts. Risky addresses can be imported as non-marketing if you want to keep them for sales purposes.</p>
+
+        <h3>Validation Before Form Submission</h3>
+
+        <p>For real-time validation as people submit forms, some services offer JavaScript widgets or API integrations. This catches bad emails before they enter HubSpot at all.</p>
+
+        <p>The tradeoff is form friction. Asking someone to correct their email adds a step. For high-value conversions (demo requests, trial signups), it's worth it. For newsletter signups, you might accept more risk.</p>
+
+        <h2>Cleaning Up Existing Bad Emails</h2>
+
+        <p>Your current database probably has invalid emails already. Here's how to find and handle them.</p>
+
+        <h3>Identify Known Bad Addresses</h3>
+
+        <p>Start with what HubSpot already knows. Create a list with these criteria:</p>
+
+        <p><strong>Hard bounces:</strong> Email hard bounce reason is known (has any value)</p>
+
+        <p><strong>Repeated soft bounces:</strong> You'll need to review these manually. Export contacts with soft bounces and look for patterns suggesting persistent issues.</p>
+
+        <p><strong>Obvious invalids:</strong> Email contains "test" or "noreply" or ends with ".invalid" or similar patterns your organization uses.</p>
+
+        <h3>Validate Your Full List</h3>
+
+        <p>For addresses that haven't bounced yet but might, export your marketing contacts and run them through a validation service.</p>
+
+        <p>Focus on:</p>
+
+        <ul>
+          <li>Contacts who haven't engaged in 12+ months (stale addresses more likely to have gone bad)</li>
+          <li>Imported contacts (especially from purchased lists or events)</li>
+          <li>Contacts with personal email domains (higher job-change turnover than business domains)</li>
+        </ul>
+
+        <h3>What to Do With Invalid Emails</h3>
+
+        <p>You have a few options:</p>
+
+        <p><strong>Set to non-marketing:</strong> Stop paying for the contact but keep the record. Makes sense if the contact has other value (phone number, deal history, company association). Use a workflow to automatically set contacts with hard bounces to non-marketing status.</p>
+
+        <p><strong>Delete:</strong> Remove the record entirely. Makes sense for truly worthless contacts: invalid email, no phone, no activity, no associations. Garbage in, garbage out.</p>
+
+        <p><strong>Flag for enrichment:</strong> If the contact is otherwise valuable, you might try to find a current email address through enrichment services or manual research. Worth it for high-value accounts.</p>
+
+        <h2>Preventing Future Invalid Emails</h2>
+
+        <p>Cleanup is useless if the problem keeps recurring.</p>
+
+        <h3>Form Validation Settings</h3>
+
+        <p>HubSpot forms have basic email validation enabled by default. Make sure it's on:</p>
+
+        <ul>
+          <li>Email format validation (catches missing @ symbols, etc.)</li>
+          <li>Blocked email domains (block personal domains if you only want business emails)</li>
+          <li>CAPTCHA or bot protection (reduces spam submissions)</li>
+        </ul>
+
+        <p>For stricter validation, consider adding a real-time email verification service to your forms.</p>
+
+        <h3>Import Policies</h3>
+
+        <p>Establish rules for anyone importing data:</p>
+
+        <ul>
+          <li>All lists must be validated before import</li>
+          <li>Purchased or rented lists are validated AND cleaned (not just flagged)</li>
+          <li>Event lists are validated before upload, not after</li>
+        </ul>
+
+        <p>Create a staging property like "Import validation status" to track whether imported contacts have been verified.</p>
+
+        <h3>Ongoing Monitoring</h3>
+
+        <p>Watch your email health metrics in HubSpot:</p>
+
+        <ul>
+          <li>Bounce rate by campaign</li>
+          <li>Bounce rate trend over time</li>
+          <li>Hard bounces as percentage of total sends</li>
+        </ul>
+
+        <p>If bounce rates spike after a specific import or campaign, investigate immediately. Don't let bad data spread.</p>
+
+        <h3>Automated Cleanup Workflows</h3>
+
+        <p>Set up workflows that maintain email hygiene automatically:</p>
+
+        <p><strong>Hard bounce handling:</strong> When email hard bounce reason becomes known, set marketing status to non-marketing.</p>
+
+        <p><strong>Engagement-based flagging:</strong> Contacts who haven't opened any email in 12 months get flagged for review or re-validation.</p>
+
+        <p><strong>Unsubscribe handling:</strong> When someone unsubscribes from all communications, set to non-marketing (they can't receive marketing email anyway, don't pay for them).</p>
+
+        <h2>Email Validation Tools That Integrate With HubSpot</h2>
+
+        <p>Some validation services connect directly to HubSpot for automated validation.</p>
+
+        <h3>Clearout</h3>
+
+        <p>Has a native HubSpot integration. Can validate contacts directly in HubSpot, create lists of invalid emails, and validate on form submission. The integration makes cleanup easier but adds ongoing costs.</p>
+
+        <h3>ZeroBounce</h3>
+
+        <p>Offers a HubSpot integration that validates contacts in-app and can write validation results to custom properties. Good if you want validation status visible on contact records.</p>
+
+        <h3>NeverBounce</h3>
+
+        <p>Integrates with HubSpot for both batch validation and real-time form validation. The form integration validates emails before they create contacts, preventing bad data from entering at all.</p>
+
+        <h3>Insycle</h3>
+
+        <p>While primarily a data management tool, Insycle can identify email format issues and integrates with email validation APIs to flag invalid addresses. Good if you're already using Insycle for other data quality work.</p>
+
+        <h2>Special Considerations</h2>
+
+        <h3>Catch-All Domains</h3>
+
+        <p>Some company email servers accept all addresses (anything@company.com works). Validation services flag these as "accept-all" or "risky" because they can't confirm the specific address exists.</p>
+
+        <p>These are tricky. The address might work. Or it might be received by a general inbox nobody monitors. Or the company might change their configuration and it'll bounce later.</p>
+
+        <p>For catch-all addresses: send, but watch for soft bounces and engagement. If they don't engage after a few touches, consider removing them.</p>
+
+        <h3>Role-Based Addresses</h3>
+
+        <p>Addresses like info@, sales@, support@ are often discouraged in marketing. They go to shared inboxes, have lower engagement, and some email providers treat them differently.</p>
+
+        <p>HubSpot doesn't automatically block these, but you might want to. Create a workflow that flags or excludes role-based addresses from certain campaigns.</p>
+
+        <h3>Personal vs. Business Emails</h3>
+
+        <p>For B2B marketing, business email addresses are usually preferred. They're more stable (tied to company domain) and indicate the person's professional context.</p>
+
+        <p>Personal email addresses (Gmail, Yahoo, Outlook) have higher turnover and may indicate less serious intent. Consider treating them differently in your scoring and nurture programs.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>Does HubSpot validate email addresses automatically?</h3>
+          <p>HubSpot validates email format (syntax) but doesn't verify that addresses exist and can receive mail. It catches obviously malformed addresses but accepts properly formatted addresses even if they'll bounce.</p>
+
+          <h3>What's a good bounce rate for HubSpot emails?</h3>
+          <p>Industry average hard bounce rate is around 0.5-1%. Above 2% indicates a data quality problem. Above 5% needs immediate attention. HubSpot may take action if your bounce rate stays too high.</p>
+
+          <h3>Should I delete contacts with invalid emails?</h3>
+          <p>Not necessarily. Invalid email doesn't mean the contact has no value. If they have a phone number, they might be reachable for sales. Set them to non-marketing (to stop billing) while keeping the record. Delete only if the contact has no other value.</p>
+
+          <h3>How often should I validate my email list?</h3>
+          <p>Validate new imports before uploading. Re-validate your full list quarterly or semi-annually. Email data decays at roughly 25-30% per year as people change jobs and companies change domains.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Not sure how many of your HubSpot emails are invalid?</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">Validate My List</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/hubspot-data-cleaning.html">How to Clean HubSpot Data</a> | <a href="/resources/hubspot-marketing-contacts-cleanup.html">Marketing Contact Cleanup</a> | <a href="/use-cases/crm-hygiene/">CRM Hygiene</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

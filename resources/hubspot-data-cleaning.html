@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Clean HubSpot Data: The Complete Guide | Verum</title>
+  <meta name="description" content="A practical guide to cleaning your HubSpot CRM. Duplicates, orphaned contacts, marketing contact bloat, lifecycle stage chaos. Here's how to fix it.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/hubspot-data-cleaning.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/hubspot-data-cleaning.html">
+  <meta property="og:title" content="How to Clean HubSpot Data: The Complete Guide">
+  <meta property="og:description" content="A practical guide to cleaning your HubSpot CRM. Duplicates, orphaned contacts, marketing contact bloat. Here's how to fix it.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Clean HubSpot Data: The Complete Guide">
+  <meta name="twitter:description" content="A practical guide to cleaning your HubSpot CRM. Duplicates, orphaned contacts, marketing contact bloat. Here's how to fix it.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Clean HubSpot Data: The Complete Guide",
+    "description": "A practical guide to cleaning your HubSpot CRM. Duplicates, orphaned contacts, marketing contact bloat, lifecycle stage chaos. Here's how to fix it.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/hubspot-data-cleaning.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often should I clean my HubSpot data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Monthly for marketing contact audits (since this affects billing), quarterly for deeper cleaning like duplicates and enrichment. Set up automated workflows for ongoing maintenance like bounced email flagging and lifecycle stage updates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does HubSpot Operations Hub replace the need for manual data cleaning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Operations Hub (now Data Hub) automates some formatting fixes and duplicate detection, but it can't make judgment calls about which records to keep, how to handle edge cases, or what data to enrich. It's a maintenance tool, not a cleanup tool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will cleaning my data affect my workflows and automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It can. Merging duplicates can trigger enrollment workflows if you're not careful. Before bulk operations, audit your active workflows and either pause them or add suppression logic to prevent unwanted triggers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I clean HubSpot data without losing historical information?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Export complete records before any bulk operations. When merging, activities transfer to the surviving record. For lifecycle stage resets, export historical data first if you need it for reporting. HubSpot preserves most history during merges, but deleted records are gone permanently."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">HubSpot</p>
+      <h1 class="page-hero__title">How to Clean HubSpot Data: The Complete Guide</h1>
+      <p class="page-hero__subtitle">Your HubSpot portal has problems you can see and problems you can't. Here's how to find them, fix them, and stop paying for contacts who will never become customers.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 14 min read</div>
+
+      <div class="blog-content">
+
+        <p>HubSpot is deceptively easy to fill with garbage. Forms submit without validation. Integrations push data in from everywhere. Lists get imported with "we'll clean it later" optimism. And because HubSpot's marketing contact model means you pay for the mess, dirty data has a direct cost that shows up on your invoice every month.</p>
+
+        <p>The problems compound. Contacts float around without company associations, invisible to account-based reporting. Duplicates split engagement history across records, making your scoring useless. Lifecycle stages tell a story that stopped being true three years ago. And somewhere in your portal, there are thousands of contacts marked as "marketing" who haven't opened an email since 2022.</p>
+
+        <p>This guide covers how to systematically clean a HubSpot portal. Not just the obvious stuff like duplicates, but the HubSpot-specific problems that don't exist in other CRMs.</p>
+
+        <h2>The HubSpot-Specific Problems</h2>
+
+        <p>Every CRM has duplicates and bad emails. HubSpot has those plus a few unique headaches.</p>
+
+        <h3>Marketing Contact Bloat</h3>
+
+        <p>HubSpot bills based on marketing contacts. Every contact you can send marketing emails to counts against your tier. Exceed your limit mid-contract and you get automatically upgraded to the next tier. That upgrade is immediate. But if you clean up and drop below? You stay at the higher tier until renewal.</p>
+
+        <p>This creates a specific kind of data debt. Contacts who bounced, unsubscribed, or haven't engaged in years are still counted if they're marked as marketing contacts. You're paying for records that will never generate revenue.</p>
+
+        <p>The fix isn't just deleting bad contacts. It's having a system that continuously moves disengaged contacts to non-marketing status before they push you into an upgrade.</p>
+
+        <h3>Orphaned Contacts</h3>
+
+        <p>HubSpot tries to automatically associate contacts with companies using email domain matching. If someone submits a form with their work email, HubSpot matches the domain to a company record.</p>
+
+        <p>But this breaks constantly. Personal email addresses (Gmail, Yahoo, Outlook) don't match. Contacts imported from lists often lack the metadata needed for matching. And when the automatic association fails, contacts float around with no company attached.</p>
+
+        <p>Orphaned contacts break account-based reporting, prevent rollup metrics, and make it impossible to see the full picture of a company relationship. If your sales team relies on account views, orphaned contacts are invisible to them.</p>
+
+        <h3>Lifecycle Stage Drift</h3>
+
+        <p>Lifecycle stages in HubSpot are supposed to tell you where someone is in your funnel. Subscriber, Lead, MQL, SQL, Opportunity, Customer. The problem: stages don't automatically go backward.</p>
+
+        <p>That customer who churned two years ago? Still marked as "Customer." The SQL who ghosted? Still sitting in the SQL bucket. Over time, lifecycle stages become less of a current status and more of a "highest stage ever reached" watermark that tells you nothing useful.</p>
+
+        <p>Cleaning lifecycle stages requires deciding what they should mean now, not what they meant historically.</p>
+
+        <h3>Property Chaos</h3>
+
+        <p>HubSpot makes it easy to create custom properties. Too easy. A portal that's been running for a few years typically has hundreds of properties, many of which were created for a one-time campaign and never used again.</p>
+
+        <p>The clutter isn't just aesthetic. Unused properties slow down exports, confuse users, and make it harder to find the fields that matter. Some of those abandoned properties have data in them, but nobody knows what it means anymore.</p>
+
+        <h2>Step 1: Audit Before You Clean</h2>
+
+        <p>Before changing anything, understand what you're dealing with.</p>
+
+        <h3>Check Your Marketing Contact Usage</h3>
+
+        <p>Go to Settings > Account & Billing > Usage & Limits. Look at your marketing contact count over time. Are you approaching your tier limit? Already over? This tells you how urgent the cleanup is.</p>
+
+        <p>Then build a list of marketing contacts who shouldn't be marketing contacts:</p>
+
+        <ul>
+          <li>Hard bounced emails (can't receive email anyway)</li>
+          <li>Unsubscribed from all email (won't receive marketing anyway)</li>
+          <li>No email engagement in 12+ months (not reading your emails)</li>
+          <li>Invalid or placeholder emails (test@test.com, no-reply addresses)</li>
+        </ul>
+
+        <p>This list is your immediate savings. Every contact you move to non-marketing status is one you stop paying for.</p>
+
+        <h3>Find Your Orphaned Contacts</h3>
+
+        <p>Create a list with the filter: "Associated Company is unknown." This shows every contact floating without a company association.</p>
+
+        <p>For most portals, this is a bigger number than expected. Check what percentage of your contacts are orphaned. If it's over 20%, association cleanup should be a priority.</p>
+
+        <h3>Assess Duplicate Volume</h3>
+
+        <p>Go to Contacts > Actions > Manage Duplicates. HubSpot shows potential duplicates based on matching name, email, phone, and other properties.</p>
+
+        <p>Note: HubSpot limits this view to 5,000 duplicates for Professional accounts and 10,000 for Enterprise. If you hit that limit, you have more duplicates than HubSpot can show you.</p>
+
+        <h3>Review Lifecycle Stage Distribution</h3>
+
+        <p>Pull a report showing contact count by lifecycle stage. Look for anomalies:</p>
+
+        <ul>
+          <li>More "Customers" than you actually have customers</li>
+          <li>SQLs with no recent activity</li>
+          <li>Empty stages that should have contacts</li>
+          <li>Stages with definitions nobody remembers</li>
+        </ul>
+
+        <h2>Step 2: Clean Marketing Contacts First</h2>
+
+        <p>Marketing contact cleanup has immediate financial impact. Start here.</p>
+
+        <h3>Build Exclusion Lists</h3>
+
+        <p>Create active lists that automatically capture contacts who shouldn't be marketing contacts:</p>
+
+        <p><strong>Hard bounces:</strong> Email hard bounce reason is known</p>
+
+        <p><strong>Unsubscribed:</strong> Unsubscribed from all email is true</p>
+
+        <p><strong>Long-term disengaged:</strong> Last marketing email open date is more than 12 months ago AND Marketing emails opened is greater than 0 (they were engaged once, aren't anymore)</p>
+
+        <p><strong>Never engaged:</strong> Marketing emails opened is 0 AND Create date is more than 6 months ago (been around a while, never opened anything)</p>
+
+        <h3>Set Up Automation</h3>
+
+        <p>Build a workflow that automatically sets contacts to non-marketing status when they join any of these lists. This prevents future bloat.</p>
+
+        <p>You can also trigger on specific events: when an email hard bounces, when someone unsubscribes from all communications, or when a contact's engagement score drops below a threshold.</p>
+
+        <div class="warning-box">
+          <div class="warning-box__title">Timing Matters</div>
+          <p>Removing marketing contacts frees up capacity to avoid tier upgrades, but it won't downgrade you mid-contract. Plan major cleanups before your renewal date and contact HubSpot to request a tier downgrade at least 5 business days before renewal.</p>
+        </div>
+
+        <h3>Handle the Backlog</h3>
+
+        <p>For existing contacts who meet your exclusion criteria, you have two options:</p>
+
+        <p><strong>Set to non-marketing:</strong> Keeps the record but stops the billing. Good for contacts who might re-engage or have historical value.</p>
+
+        <p><strong>Delete:</strong> Removes the record entirely. Good for truly garbage data like spam submissions, obviously fake entries, or competitors who signed up to see your content.</p>
+
+        <p>Be aggressive with deletion on clearly bad data. Be more conservative with disengaged contacts who might have value for sales or could theoretically re-engage.</p>
+
+        <h2>Step 3: Fix Company Associations</h2>
+
+        <p>Orphaned contacts break account-based everything. Fix them.</p>
+
+        <h3>Use Automatic Association</h3>
+
+        <p>Make sure HubSpot's automatic contact-to-company association is enabled. Go to Settings > Objects > Companies > and enable "Create and associate companies with contacts."</p>
+
+        <p>This handles the easy cases: contacts with work email domains that match existing company domains. But it creates problems too. Sometimes it creates duplicate companies. Sometimes it associates contacts with the wrong company (subsidiary vs. parent, old domain vs. new).</p>
+
+        <h3>Handle Personal Email Addresses</h3>
+
+        <p>Contacts with Gmail, Yahoo, Outlook, and other personal domains won't auto-associate. For these, you need the Website URL field populated on the contact record.</p>
+
+        <p>Options:</p>
+
+        <ul>
+          <li><strong>Form fields:</strong> Ask for company website on your forms</li>
+          <li><strong>Enrichment:</strong> Use a data enrichment tool to append company information based on name + email</li>
+          <li><strong>Manual research:</strong> For high-value contacts, look them up and associate manually</li>
+        </ul>
+
+        <h3>Bulk Association</h3>
+
+        <p>HubSpot doesn't have great native tools for bulk association. For large numbers of orphaned contacts, consider:</p>
+
+        <p><strong>Insycle:</strong> Lets you set association rules and run bulk operations. Good for "associate all contacts with @acme.com emails to the Acme company record."</p>
+
+        <p><strong>Import method:</strong> Export orphaned contacts, add a column with the company record ID they should associate with, reimport with the association.</p>
+
+        <p><strong>API:</strong> If you have developer resources, the Associations API can handle bulk operations.</p>
+
+        <h2>Step 4: Merge Duplicates</h2>
+
+        <p>Duplicates split history, corrupt scoring, and waste everyone's time.</p>
+
+        <h3>HubSpot's Native Deduplication</h3>
+
+        <p>HubSpot detects duplicates based on: first name, last name, email, IP country, phone number, zip code, and company name. The Manage Duplicates tool shows potential matches and lets you merge them one pair at a time.</p>
+
+        <p>What happens when you merge:</p>
+
+        <ul>
+          <li>Activities from both records combine on the surviving record</li>
+          <li>The primary contact's email stays primary; the other becomes a secondary email</li>
+          <li>You choose which property values to keep when they differ</li>
+          <li>The merge is permanent. There's no undo.</li>
+        </ul>
+
+        <h3>Limitations of Native Tools</h3>
+
+        <p>HubSpot's duplicate detection is basic. It won't catch:</p>
+
+        <ul>
+          <li>Name variations (Bob Smith vs Robert Smith)</li>
+          <li>Company name variations (Acme Corp vs. ACME Corporation)</li>
+          <li>Typos in email addresses</li>
+          <li>Different emails for the same person (work vs personal)</li>
+        </ul>
+
+        <p>For serious deduplication, you need better matching logic.</p>
+
+        <h3>Third-Party Options</h3>
+
+        <p><strong>Insycle:</strong> Flexible matching rules, bulk merge, scheduling for ongoing deduplication. The most full-featured option.</p>
+
+        <p><strong>Dedupely:</strong> Simpler interface, focuses specifically on duplicate detection. Lower learning curve.</p>
+
+        <p><strong>Koalify:</strong> Workflow-based approach, good if you want deduplication as part of automated processes.</p>
+
+        <h3>Merge Strategy</h3>
+
+        <p>Before merging, decide:</p>
+
+        <p><strong>Which record survives?</strong> Options include oldest (preserves history), most recently active (most current data), most complete (fewest blank fields). Pick a rule and apply it consistently.</p>
+
+        <p><strong>What about conflicting data?</strong> When two records have different values for the same field, you need a policy. Most recent activity date? Manual review? Different rules for different fields?</p>
+
+        <p><strong>Preserve what you'll lose.</strong> Export duplicate sets before merging so you can reference the original data if needed.</p>
+
+        <h2>Step 5: Standardize and Normalize</h2>
+
+        <p>Inconsistent data breaks filtering, segmentation, and reporting.</p>
+
+        <h3>Use Data Hub Automation</h3>
+
+        <p>HubSpot's Data Hub (formerly Operations Hub) can automatically fix common formatting issues:</p>
+
+        <ul>
+          <li>Capitalizing names (john smith → John Smith)</li>
+          <li>Standardizing phone number formats</li>
+          <li>Fixing spacing issues</li>
+        </ul>
+
+        <p>Go to Settings > Data Management > Data Quality to enable AI-powered formatting recommendations. HubSpot suggests rules based on your data patterns.</p>
+
+        <h3>Job Title Standardization</h3>
+
+        <p>Job titles are chaos. "VP Sales," "VP of Sales," "Vice President - Sales," "Sales VP" are all the same role but look like four different things to any filter or report.</p>
+
+        <p>Build a standardization map. Export unique title values, create a mapping to canonical versions, use import or workflow to update records. This is tedious but worth it for any field you use for segmentation or routing.</p>
+
+        <h3>Country and State Standardization</h3>
+
+        <p>HubSpot has country and state/region picklists, but free-text entry on forms can create inconsistencies. "United States," "USA," "US," "U.S.A." all appear as different values.</p>
+
+        <p>For existing data, create a workflow that normalizes variations to the picklist value. For new data, use dropdown fields on forms instead of free text.</p>
+
+        <h2>Step 6: Reset Lifecycle Stages (Maybe)</h2>
+
+        <p>Lifecycle stage cleanup is invasive. Do it deliberately or don't do it at all.</p>
+
+        <h3>Three Approaches</h3>
+
+        <p><strong>Option A: Full reset.</strong> Clear all lifecycle stages and rebuild based on current reality. Gives you accurate data going forward but loses historical progression.</p>
+
+        <p><strong>Option B: Forward-only.</strong> Keep existing stages, apply correct logic to new contacts and stage changes. Existing inaccuracies remain but don't spread.</p>
+
+        <p><strong>Option C: Selective reset.</strong> Reset specific problematic stages (like MQL and SQL) while preserving others (like Customer). Hybrid approach that balances accuracy with preservation.</p>
+
+        <h3>If You Reset</h3>
+
+        <p>Export current lifecycle data before clearing anything. This preserves historical information for any reporting that needs it.</p>
+
+        <p>Audit your workflows before bulk changes. Clearing and re-setting lifecycle stages can trigger enrollment in workflows designed for stage transitions. Either pause those workflows or add suppression logic.</p>
+
+        <p>Build new workflows that set lifecycle stages based on current criteria. Define exactly what makes someone an MQL, SQL, etc., and automate the assignment.</p>
+
+        <h3>Aligning Contacts and Companies</h3>
+
+        <p>Lifecycle stages exist on both contacts and companies. They should align, but often don't. A contact might be marked "Customer" while their associated company is still "Lead."</p>
+
+        <p>Decide which is authoritative and build logic to keep them synced. Most companies use contact stage to drive company stage: when a contact becomes an Opportunity, their company should too.</p>
+
+        <h2>Step 7: Property Cleanup</h2>
+
+        <p>Unused properties clutter your portal and confuse users.</p>
+
+        <h3>Find Unused Properties</h3>
+
+        <p>HubSpot's Data Quality tools can identify properties with no values. Go to Settings > Data Management > Data Quality and review the property insights.</p>
+
+        <p>Also look for:</p>
+
+        <ul>
+          <li>Properties created for one-time campaigns</li>
+          <li>Properties with the same name/purpose (duplicates from different teams creating independently)</li>
+          <li>Properties with values that mean nothing now ("Campaign Q2 2019")</li>
+        </ul>
+
+        <h3>Archive or Delete</h3>
+
+        <p>Unused properties can be archived (hidden from views but data preserved) or deleted (gone forever). Archive first if you're not sure. You can always delete later but can't recover deleted properties.</p>
+
+        <h3>Document What Remains</h3>
+
+        <p>For properties you keep, make sure the description field explains what it's for and how it should be populated. Future you (or your replacement) will thank present you.</p>
+
+        <h2>Maintaining Clean Data</h2>
+
+        <p>Cleanup is a project. Maintenance is a process.</p>
+
+        <h3>Automated Workflows</h3>
+
+        <p>Set up workflows that enforce data quality rules:</p>
+
+        <ul>
+          <li>Move hard bounces to non-marketing status</li>
+          <li>Flag contacts with missing required fields</li>
+          <li>Update lifecycle stages based on activity</li>
+          <li>Associate orphaned contacts when company data becomes available</li>
+        </ul>
+
+        <h3>Form Validation</h3>
+
+        <p>Prevent bad data at the point of entry. Use HubSpot's form validation for email format, required fields, and picklists instead of free text for standardized fields.</p>
+
+        <h3>Regular Audits</h3>
+
+        <p>Monthly: Check marketing contact usage, review new duplicates, spot-check data quality</p>
+
+        <p>Quarterly: Deeper duplicate analysis, lifecycle stage review, association audit</p>
+
+        <p>Annually: Full property audit, integration review, data retention policy check</p>
+
+        <h2>When to DIY vs. Outsource</h2>
+
+        <p>Some cleanup you can handle internally. Some you probably shouldn't.</p>
+
+        <p><strong>Do it yourself if:</strong></p>
+        <ul>
+          <li>You have under 20,000 contacts</li>
+          <li>Your problems are mostly straightforward (obvious duplicates, simple formatting)</li>
+          <li>You have someone with time to learn the tools and do the work</li>
+          <li>You have Operations Hub Professional or Enterprise for the automation tools</li>
+        </ul>
+
+        <p><strong>Consider outsourcing if:</strong></p>
+        <ul>
+          <li>You have 50,000+ contacts with complex problems</li>
+          <li>You need significant enrichment to fill data gaps</li>
+          <li>Your team doesn't have capacity for a multi-week project</li>
+          <li>You've tried cleaning before and the problems came back</li>
+        </ul>
+
+        <p>We clean HubSpot data for a living. If you want help, <a href="/#contact">get in touch</a>. If you'd rather do it yourself, this guide should get you started.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>How often should I clean my HubSpot data?</h3>
+          <p>Monthly for marketing contact audits (since billing is affected), quarterly for deeper cleaning. Set up automated workflows to handle ongoing maintenance automatically.</p>
+
+          <h3>Does Operations Hub eliminate the need for manual cleaning?</h3>
+          <p>It automates some formatting fixes and duplicate detection, but it can't make judgment calls about edge cases, decide what data to keep when merging, or determine which contacts should be deleted versus set to non-marketing. It's a maintenance tool, not a cleanup tool.</p>
+
+          <h3>Will cleaning data break my workflows?</h3>
+          <p>It can. Merging duplicates or changing lifecycle stages can trigger workflow enrollments. Audit your active workflows before bulk operations and either pause them or add suppression logic.</p>
+
+          <h3>How do I clean data without losing history?</h3>
+          <p>Export records before bulk operations. When merging, activities transfer to the surviving record. For lifecycle resets, export historical data first if you need it for reporting.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Need help cleaning your HubSpot data?</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">Clean My HubSpot</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/hubspot-duplicate-contacts.html">How to Merge Duplicates in HubSpot</a> | <a href="/resources/hubspot-marketing-contacts-cleanup.html">Marketing Contact Cleanup</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Clean Up Lifecycle Stages in HubSpot | Verum</title>
+  <meta name="description" content="Your lifecycle stages are lying to you. Customers who churned years ago still show as customers. Here's how to reset and fix HubSpot lifecycle stages.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/hubspot-lifecycle-stage-cleanup.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/hubspot-lifecycle-stage-cleanup.html">
+  <meta property="og:title" content="How to Clean Up Lifecycle Stages in HubSpot">
+  <meta property="og:description" content="Lifecycle stages that don't reflect reality break reporting and automation. Here's how to fix them.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Clean Up Lifecycle Stages in HubSpot">
+  <meta name="twitter:description" content="Lifecycle stages that don't reflect reality break reporting and automation. Here's how to fix them.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Clean Up Lifecycle Stages in HubSpot",
+    "description": "Your lifecycle stages are lying to you. Customers who churned years ago still show as customers. Here's how to reset and fix HubSpot lifecycle stages.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/hubspot-lifecycle-stage-cleanup.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why don't lifecycle stages automatically go backward in HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HubSpot's default behavior assumes lifecycle progression is one-way: someone becomes a lead, then MQL, then customer. The system was designed to prevent accidental demotion from bad data or automation mistakes. But this means churned customers stay as 'Customer' forever unless you deliberately change it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will resetting lifecycle stages break my workflows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It can. Workflows that trigger on lifecycle stage changes will fire when you clear and re-set stages. Before a reset, audit all active workflows that use lifecycle stage as an enrollment trigger or condition. Either pause them during the reset or add suppression logic to prevent unwanted enrollments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should lifecycle stages be the same on contacts and their associated companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generally yes. If a contact is a Customer, their company should be too. HubSpot doesn't sync these automatically. Best practice is to build workflows that update company lifecycle stage when contact stage changes, using the highest stage among all associated contacts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I create custom lifecycle stages in HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, you can customize lifecycle stages in HubSpot. You can rename default stages, add custom stages, and reorder them. Be careful: deleting default stages removes them permanently, and some HubSpot features rely on specific stages. Custom stages should map to real, measurable states in your funnel, not every possible status variation."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">HubSpot</p>
+      <h1 class="page-hero__title">How to Clean Up Lifecycle Stages in HubSpot</h1>
+      <p class="page-hero__subtitle">Lifecycle stages that haven't been updated in years aren't telling you where people are. They're telling you where people were at their peak. Here's how to fix that.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 11 min read</div>
+
+      <div class="blog-content">
+
+        <p>Pull a report of your HubSpot contacts by lifecycle stage. Count the "Customers." Now compare that number to your actual customer count.</p>
+
+        <p>If you're like most companies, HubSpot thinks you have far more customers than you do. That's because lifecycle stages in HubSpot don't automatically go backward. Someone who became a customer five years ago and churned four years ago? Still showing as Customer. That SQL who went cold and never responded again? Still an SQL.</p>
+
+        <p>Over time, lifecycle stages become a historical high-water mark, not a current status. Your reports lie. Your automation triggers wrong. And any segmentation based on lifecycle stage is built on fiction.</p>
+
+        <h2>Why Lifecycle Stages Drift</h2>
+
+        <p>HubSpot designed lifecycle stages to progress forward. Subscriber → Lead → MQL → SQL → Opportunity → Customer. The assumption was that going backward was rare and should require deliberate action.</p>
+
+        <p>In practice, backward movement is constant:</p>
+
+        <h3>Customer Churn</h3>
+
+        <p>Customers cancel. Contracts expire. Companies go out of business. But the contacts from those accounts stay marked as Customer forever unless someone changes them.</p>
+
+        <p>Result: Your "Customer" count includes every customer you've ever had, not your current customers.</p>
+
+        <h3>Dead Opportunities</h3>
+
+        <p>A deal stalls. The contact goes quiet. The opportunity is closed-lost. But the contact's lifecycle stage stays at Opportunity (or SQL, depending on how you set it). They're not an active opportunity anymore, but the system thinks they are.</p>
+
+        <h3>Disqualified Leads</h3>
+
+        <p>An MQL turns out to be a competitor, a student, or someone completely outside your ICP. Sales disqualifies them. The lifecycle stage stays MQL because nobody demotes it.</p>
+
+        <h3>Job Changes</h3>
+
+        <p>A contact was an SQL at Company A. They leave. They're no longer relevant to the deal at Company A, but their lifecycle stage stays SQL. Maybe they reappear at Company B, but that's a different context entirely.</p>
+
+        <h3>No Defined Criteria</h3>
+
+        <p>Many companies never defined what each lifecycle stage actually means. Is someone an MQL because they downloaded an ebook? Attended a webinar? Hit a lead score threshold? Without clear definitions, stages get assigned inconsistently and never cleaned up.</p>
+
+        <h2>Assessing the Damage</h2>
+
+        <p>Before fixing anything, understand how broken things are.</p>
+
+        <h3>Stage Distribution Report</h3>
+
+        <p>Create a report showing contact count by lifecycle stage. Look for obvious problems:</p>
+
+        <ul>
+          <li>More "Customers" than actual customers</li>
+          <li>Large numbers of SQLs with no recent activity</li>
+          <li>MQLs from three years ago who've never progressed</li>
+          <li>Empty stages that should have contacts</li>
+          <li>Stages with unclear purposes that nobody remembers defining</li>
+        </ul>
+
+        <h3>Cross-Reference With Reality</h3>
+
+        <p>For the Customer stage specifically, export your "Customer" contacts and compare against your actual customer list (from your billing system, customer success platform, or contracts). The delta shows how many churned customers are still marked as current.</p>
+
+        <p>For SQLs and Opportunities, check how many have associated deals that are closed-lost or have had no activity in 6+ months.</p>
+
+        <h3>Contact vs. Company Alignment</h3>
+
+        <p>Lifecycle stage exists on both contacts and companies. They should generally align (if a contact is a Customer, their company should be too), but often don't.</p>
+
+        <p>Create a report that shows contacts whose lifecycle stage doesn't match their associated company's stage. The mismatches indicate inconsistent data management.</p>
+
+        <h2>Three Approaches to Cleanup</h2>
+
+        <p>How aggressive you get depends on how broken things are and how much historical context matters.</p>
+
+        <h3>Option 1: Full Reset</h3>
+
+        <p>Clear all lifecycle stages and rebuild based on current reality.</p>
+
+        <p><strong>How it works:</strong> Export current lifecycle data for historical record. Clear lifecycle stage for all contacts. Use workflows to re-assign stages based on current criteria (active deals = Opportunity, current customers = Customer, recent engagement = MQL, etc.).</p>
+
+        <p><strong>Pros:</strong> Cleanest result. Every contact has an accurate current status. Reports immediately become trustworthy.</p>
+
+        <p><strong>Cons:</strong> Loses historical progression data. Any reporting on "time in stage" or "stage progression" breaks. Can trigger workflow enrollments if you're not careful.</p>
+
+        <p><strong>Best for:</strong> Databases where lifecycle stages have been so neglected that incremental fixing isn't feasible. New RevOps teams inheriting a mess.</p>
+
+        <h3>Option 2: Selective Cleanup</h3>
+
+        <p>Fix specific problematic stages while preserving others.</p>
+
+        <p><strong>How it works:</strong> Keep Customer and Opportunity stages intact (or verify them individually). Reset earlier stages like MQL and SQL. Let contacts re-qualify based on current engagement.</p>
+
+        <p><strong>Pros:</strong> Preserves the stages that matter most for revenue reporting. Less disruptive than full reset.</p>
+
+        <p><strong>Cons:</strong> Customers and Opportunities still need manual verification. Doesn't address contacts who should be at earlier stages but are stuck at later ones.</p>
+
+        <p><strong>Best for:</strong> Organizations that trust their Customer data but know early-stage data is garbage.</p>
+
+        <h3>Option 3: Forward-Only Correction</h3>
+
+        <p>Don't reset anything. Apply correct logic to new contacts and stage transitions going forward. Accept that historical data is imperfect.</p>
+
+        <p><strong>How it works:</strong> Define clear criteria for each stage. Build workflows that manage stage transitions. Let existing inaccuracies age out over time. Use filters in reports to exclude old data.</p>
+
+        <p><strong>Pros:</strong> No workflow triggers. No historical data loss. Lowest risk.</p>
+
+        <p><strong>Cons:</strong> Reports remain polluted for years. Segments based on lifecycle stage are unreliable. Doesn't actually fix the problem, just stops making it worse.</p>
+
+        <p><strong>Best for:</strong> Organizations with low tolerance for disruption, or where historical data has compliance or audit value.</p>
+
+        <h2>Executing a Reset</h2>
+
+        <p>If you're going with Option 1 or 2, here's how to do it safely.</p>
+
+        <h3>Export Everything First</h3>
+
+        <p>Before changing anything, export your contacts with:</p>
+
+        <ul>
+          <li>Contact ID</li>
+          <li>Current lifecycle stage</li>
+          <li>Lifecycle stage date (when it was set)</li>
+          <li>Associated company</li>
+          <li>Any other fields relevant to stage determination</li>
+        </ul>
+
+        <p>Store this export securely. You might need it for historical reporting or to undo mistakes.</p>
+
+        <h3>Audit Your Workflows</h3>
+
+        <p>Clearing and re-setting lifecycle stages can trigger workflow enrollments. Before the reset:</p>
+
+        <ol>
+          <li>Go to Automation > Workflows</li>
+          <li>Filter to active workflows</li>
+          <li>Search for workflows that use Lifecycle Stage as an enrollment trigger or branch condition</li>
+          <li>For each one, either pause it during the reset OR add suppression logic (e.g., "don't enroll if Contact property 'Reset in progress' is Yes")</li>
+        </ol>
+
+        <div class="warning-box">
+          <div class="warning-box__title">Workflow Triggers Are Real</div>
+          <p>A reset that touches 50,000 contacts can trigger 50,000 workflow enrollments. If those workflows send emails, create tasks, or update other records, you'll have a mess. Audit and pause before you clear.</p>
+        </div>
+
+        <h3>Clear Stages in Batches</h3>
+
+        <p>Don't clear everyone at once. Work in segments:</p>
+
+        <ol>
+          <li>Start with a test batch (a few hundred contacts from a non-critical segment)</li>
+          <li>Clear their lifecycle stage</li>
+          <li>Run your re-assignment workflows</li>
+          <li>Verify results make sense</li>
+          <li>Proceed to larger batches</li>
+        </ol>
+
+        <p>To clear lifecycle stage, you can use a workflow with "Clear property value" action, or an import with a blank lifecycle stage column.</p>
+
+        <h3>Re-Assign Based on Current Criteria</h3>
+
+        <p>Build workflows that set lifecycle stages based on verifiable current conditions:</p>
+
+        <p><strong>Customer:</strong> Associated deal status is Closed Won AND (subscription is active OR contract end date is in the future OR however you track current customers)</p>
+
+        <p><strong>Opportunity:</strong> Associated deal status is Open AND deal stage is not disqualified</p>
+
+        <p><strong>SQL:</strong> (Your SQL criteria) AND not Customer AND not Opportunity</p>
+
+        <p><strong>MQL:</strong> (Your MQL criteria) AND not SQL AND not Customer AND not Opportunity</p>
+
+        <p>Work backward from Customer. This ensures someone doesn't get set to MQL when they should be Customer.</p>
+
+        <h2>Contact and Company Alignment</h2>
+
+        <p>Lifecycle stage exists on both objects. They should match, but HubSpot doesn't sync them automatically.</p>
+
+        <h3>The Problem</h3>
+
+        <p>A contact becomes a Customer. Their company stays at Lead. Or a contact is reset to Lead, but the company stays at Customer. Now your contact-level and account-level reports tell different stories.</p>
+
+        <h3>The Fix</h3>
+
+        <p>Build workflows that sync lifecycle stages from contacts to companies:</p>
+
+        <p><strong>Option A: Highest stage wins.</strong> When any contact at a company reaches a new stage, update the company to that stage (if it's higher than the current company stage). This is conservative but means companies can never go backward.</p>
+
+        <p><strong>Option B: Roll up from contacts.</strong> Periodically recalculate company stage based on the highest stage among associated contacts. This handles backward movement but requires scheduled workflow runs.</p>
+
+        <p>Choose based on your reporting needs. If you report heavily on company-level pipeline, alignment matters more.</p>
+
+        <h2>Ongoing Maintenance</h2>
+
+        <p>Lifecycle stage cleanup isn't a one-time project. It's a process.</p>
+
+        <h3>Churn Handling</h3>
+
+        <p>When a customer churns, their lifecycle stage should change. Build a workflow or process that:</p>
+
+        <ol>
+          <li>Identifies churned customers (from your billing system, deal closure, or manual flagging)</li>
+          <li>Updates their lifecycle stage to something appropriate (maybe a custom "Former Customer" stage, or back to Lead/MQL depending on your re-engagement strategy)</li>
+        </ol>
+
+        <h3>Dead Opportunity Cleanup</h3>
+
+        <p>Opportunities that haven't progressed in 90+ days are probably dead. Set up regular reviews to close-lose stale deals and reset the associated contacts' lifecycle stages.</p>
+
+        <h3>Quarterly Audit</h3>
+
+        <p>Run your lifecycle stage distribution report quarterly. Compare against reality. Catch drift before it becomes a major cleanup project.</p>
+
+        <h2>Should You Customize Stages?</h2>
+
+        <p>HubSpot allows custom lifecycle stages. Whether you should use them depends on your business.</p>
+
+        <h3>Good Custom Stages</h3>
+
+        <ul>
+          <li><strong>Former Customer:</strong> Distinguishes churned customers from people who've never been customers. Useful for win-back campaigns.</li>
+          <li><strong>Partner:</strong> For contacts who are partners, not customers or prospects.</li>
+          <li><strong>Evangelist:</strong> For highly engaged non-customers (influencers, references).</li>
+        </ul>
+
+        <h3>Bad Custom Stages</h3>
+
+        <ul>
+          <li>Stages that duplicate deal stages (lifecycle stage isn't meant to track deal progression granularity)</li>
+          <li>Stages with no clear definition or criteria</li>
+          <li>Too many stages that fragment your data without adding insight</li>
+        </ul>
+
+        <h3>Warning About Deleting Stages</h3>
+
+        <p>If you delete a default lifecycle stage in HubSpot, you cannot recreate it. Some HubSpot features depend on specific stages existing. Rename stages instead of deleting them if you want to change labels.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>Why don't lifecycle stages go backward automatically?</h3>
+          <p>HubSpot's default assumes forward progression. The system prevents accidental demotion from bad data or automation. But it means churned customers and dead opportunities stay at advanced stages forever unless you deliberately change them.</p>
+
+          <h3>Will resetting stages break my workflows?</h3>
+          <p>Potentially. Workflows using lifecycle stage as enrollment triggers will fire when stages change. Audit all active workflows before a reset. Pause them or add suppression logic to prevent unwanted triggers.</p>
+
+          <h3>Should contacts and companies have the same lifecycle stage?</h3>
+          <p>Generally yes. HubSpot doesn't sync them automatically. Build workflows that update company stage when contact stage changes, typically using the highest stage among all associated contacts.</p>
+
+          <h3>Can I create custom lifecycle stages?</h3>
+          <p>Yes. You can rename, add, reorder, and delete stages. Be careful with deletion (it's permanent). Custom stages should map to real, measurable funnel states, not every possible status.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Lifecycle stages telling the wrong story?</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">Fix My Stages</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/hubspot-data-cleaning.html">How to Clean HubSpot Data</a> | <a href="/resources/hubspot-duplicate-contacts.html">HubSpot Duplicate Cleanup</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

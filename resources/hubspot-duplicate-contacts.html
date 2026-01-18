@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Find and Merge Duplicate Contacts in HubSpot | Verum</title>
+  <meta name="description" content="HubSpot duplicates split your engagement history and corrupt your data. Here's how to find them, merge them properly, and prevent them from coming back.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/hubspot-duplicate-contacts.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/hubspot-duplicate-contacts.html">
+  <meta property="og:title" content="How to Find and Merge Duplicate Contacts in HubSpot">
+  <meta property="og:description" content="HubSpot duplicates split engagement history and corrupt data. Here's how to find and merge them.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Find and Merge Duplicate Contacts in HubSpot">
+  <meta name="twitter:description" content="HubSpot duplicates split engagement history and corrupt data. Here's how to find and merge them.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Find and Merge Duplicate Contacts in HubSpot",
+    "description": "HubSpot duplicates split your engagement history and corrupt your data. Here's how to find them, merge them properly, and prevent them from coming back.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/hubspot-duplicate-contacts.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What happens to email history when I merge contacts in HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All email history from both records transfers to the surviving contact. Email engagement data (opens, clicks) combines. The secondary contact's email address becomes a secondary email on the surviving record, so you don't lose the ability to match on either address."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I undo a merge in HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Once you merge contacts in HubSpot, the merge is permanent. The deleted contact cannot be recovered, even from the recycle bin. Always export your data before bulk merge operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does HubSpot allow duplicate contacts if it has deduplication?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HubSpot only auto-deduplicates on exact email match. If someone submits a form with a different email than their existing record, or if their name is spelled differently, HubSpot creates a new contact. This is intentional to avoid accidentally merging different people, but it means duplicates still accumulate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many duplicates can I merge at once in HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HubSpot's native Manage Duplicates tool lets you merge contacts one pair at a time. For bulk merging, you need a third-party tool like Insycle or Dedupely, which can process hundreds or thousands of duplicates in a single operation."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">HubSpot</p>
+      <h1 class="page-hero__title">How to Find and Merge Duplicate Contacts in HubSpot</h1>
+      <p class="page-hero__subtitle">Every duplicate contact splits your engagement history in half. Here's how to find them, merge them without losing data, and stop them from multiplying.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 11 min read</div>
+
+      <div class="blog-content">
+
+        <p>You send an email campaign. A contact opens it, clicks through, fills out a form, and requests a demo. But your sales rep sees none of this because the form created a new contact record instead of updating the existing one. The engagement history is on Record A. The demo request is on Record B. The rep reaches out cold, having no idea this person has been reading your content for months.</p>
+
+        <p>This is what duplicates actually cost you. Not just clutter, but fractured context that makes your team look clueless and your automation logic wrong.</p>
+
+        <p>HubSpot has duplicate detection built in, but it's conservative by design. It only auto-merges on exact email match. Everything else slips through: same person with two email addresses, name spelled differently, imported records that don't quite match. Over time, the duplicates pile up.</p>
+
+        <h2>How Duplicates Get Created</h2>
+
+        <p>Understanding the sources helps you prevent them, not just clean them up.</p>
+
+        <h3>Form Submissions With Different Emails</h3>
+
+        <p>Someone first interacts with you using their work email. Later, they download a resource using their personal Gmail address. HubSpot sees these as two different people because the email is HubSpot's primary unique identifier.</p>
+
+        <p>This is actually correct behavior from HubSpot's perspective. Two different emails could be two different people. But in practice, you end up with the same person existing twice in your database.</p>
+
+        <h3>Imports Without Deduplication</h3>
+
+        <p>You import a list from an event, a purchased list, or a data migration. The import includes people who already exist in HubSpot, but with slight differences: "Bob" instead of "Robert," a different phone number format, a new email address.</p>
+
+        <p>HubSpot's import deduplication only matches on the exact email field. If the imported email doesn't match an existing record's email exactly, you get a duplicate.</p>
+
+        <h3>Integrations Creating Records</h3>
+
+        <p>Your marketing automation, support system, sales tools, and other platforms push data to HubSpot. Each one might create contacts independently. If they use different identifiers or don't check for existing records before creating new ones, duplicates multiply.</p>
+
+        <p>The worst offenders are usually chat tools, scheduling apps, and sales engagement platforms that create records in HubSpot when someone interacts with them.</p>
+
+        <h3>Manual Entry</h3>
+
+        <p>A sales rep adds a contact they met at a conference. They don't search first, or they search but spell the name wrong and don't find the existing record. Now you have a duplicate.</p>
+
+        <p>Manual entry duplicates are fewer in volume but often more problematic because they're high-value contacts that reps are actively working.</p>
+
+        <h2>Finding Duplicates in HubSpot</h2>
+
+        <p>HubSpot has built-in duplicate detection. Here's how to use it and where it falls short.</p>
+
+        <h3>The Manage Duplicates Tool</h3>
+
+        <p>Go to Contacts, click the Actions dropdown, and select Manage Duplicates. HubSpot shows you potential duplicate pairs based on matching properties: first name, last name, email, phone number, IP country, zip code, and company name.</p>
+
+        <p>For each pair, you can:</p>
+
+        <ul>
+          <li>Review the match and merge the records</li>
+          <li>Dismiss the suggestion if they're actually different people</li>
+          <li>Skip for now and come back later</li>
+        </ul>
+
+        <p>The limitation: this is one pair at a time. If you have 500 duplicate pairs, that's 500 individual review and merge actions. HubSpot also caps the view at 5,000 potential duplicates for Professional accounts and 10,000 for Enterprise. If you have more than that, you won't see them all.</p>
+
+        <h3>What HubSpot Detects (And Doesn't)</h3>
+
+        <p>HubSpot's matching is decent for obvious duplicates. It catches:</p>
+
+        <ul>
+          <li>Exact email matches</li>
+          <li>Very similar names with matching company or email domain</li>
+          <li>Same phone number with similar names</li>
+        </ul>
+
+        <p>It misses:</p>
+
+        <ul>
+          <li>Name variations (Robert vs. Bob, Catherine vs. Kate)</li>
+          <li>Company name variations (Acme Inc. vs. ACME Corporation)</li>
+          <li>Typos that are close but not close enough</li>
+          <li>Same person with completely different email domains</li>
+        </ul>
+
+        <p>If you need to catch these fuzzy matches, you need different tools.</p>
+
+        <h3>Custom Duplicate Rules (Data Hub)</h3>
+
+        <p>With Data Hub Professional or Enterprise, you can create custom duplicate rules that define your own matching criteria. You can have up to two custom rules per object.</p>
+
+        <p>This lets you be more aggressive or more conservative than HubSpot's defaults, depending on your data patterns. But it still won't handle truly fuzzy matching like nickname variations.</p>
+
+        <h2>Third-Party Deduplication Tools</h2>
+
+        <p>For bulk deduplication and smarter matching, these tools fill the gaps.</p>
+
+        <h3>Insycle</h3>
+
+        <p>The most comprehensive option. Insycle connects to your HubSpot portal and offers:</p>
+
+        <ul>
+          <li>Flexible matching rules that you configure</li>
+          <li>Bulk merge operations (process hundreds at once)</li>
+          <li>Preview before committing changes</li>
+          <li>Scheduled automated deduplication</li>
+          <li>Works on contacts, companies, and deals</li>
+        </ul>
+
+        <p>The interface is more complex than HubSpot's native tools, but the power is worth it for serious cleanup projects.</p>
+
+        <h3>Dedupely</h3>
+
+        <p>Simpler than Insycle, focused specifically on duplicate detection. Good if deduplication is your only data quality need. Connects directly to HubSpot without requiring a separate app install.</p>
+
+        <h3>Koalify</h3>
+
+        <p>Takes a workflow-based approach. Useful if you want deduplication as part of automated processes rather than batch operations. Good for ongoing maintenance after initial cleanup.</p>
+
+        <h2>Merging Duplicates Properly</h2>
+
+        <p>Finding duplicates is the easy part. Merging them without losing important data requires care.</p>
+
+        <h3>What Happens When You Merge</h3>
+
+        <p>In HubSpot, when you merge two contacts:</p>
+
+        <ul>
+          <li><strong>Activities combine.</strong> Email history, form submissions, page views, meetings, calls, and notes from both records appear on the surviving contact.</li>
+          <li><strong>Associations transfer.</strong> If either contact was associated with companies, deals, or tickets, those associations move to the surviving record.</li>
+          <li><strong>Property values require choices.</strong> For properties where both records have different values, you pick which one to keep.</li>
+          <li><strong>Email addresses consolidate.</strong> The surviving contact's email stays primary. The other contact's email becomes a secondary email, so both addresses can still match to the record.</li>
+        </ul>
+
+        <p>What you lose:</p>
+
+        <ul>
+          <li>The merged contact's record ID (external systems referencing that ID will break)</li>
+          <li>The ability to undo (merges are permanent)</li>
+          <li>Property values you don't choose to keep</li>
+        </ul>
+
+        <h3>Choosing the Winning Record</h3>
+
+        <p>When merging, one record survives and absorbs the other. The survivor keeps its record ID, which matters for any external integrations or bookmarks.</p>
+
+        <p>Criteria to consider:</p>
+
+        <p><strong>Most complete data:</strong> If one record has more fields populated, it's usually the better survivor.</p>
+
+        <p><strong>Most recent activity:</strong> A record with recent engagement is more likely to have current information.</p>
+
+        <p><strong>Oldest created date:</strong> Preserves the longest history and original source attribution.</p>
+
+        <p><strong>Owner assignment:</strong> If reps actively own one record but not the other, keep the owned one to preserve the relationship.</p>
+
+        <p>Pick a rule that fits your business and apply it consistently.</p>
+
+        <div class="warning-box">
+          <div class="warning-box__title">Export Before Bulk Merging</div>
+          <p>Merges can't be undone. Before any bulk operation, export the full records of contacts you're about to merge. If something goes wrong or you need to reference the original data, you'll have it.</p>
+        </div>
+
+        <h3>Handling Conflicting Property Values</h3>
+
+        <p>When two records have different values for the same field, you have to pick one. This is straightforward for most fields, but some require thought:</p>
+
+        <p><strong>Lifecycle stage:</strong> Usually keep the more advanced stage. A "Customer" shouldn't become an "MQL" through a merge.</p>
+
+        <p><strong>Lead source:</strong> Keep the original source for attribution purposes, even if the surviving record is newer.</p>
+
+        <p><strong>Owner:</strong> If both records have owners, decide which rep should own the merged contact. This is often a judgment call.</p>
+
+        <p><strong>Marketing status:</strong> If either record is a marketing contact, the merged record will count as marketing. Be aware of this for billing.</p>
+
+        <h2>Preventing Future Duplicates</h2>
+
+        <p>Cleaning up duplicates is satisfying. Watching them come back is not.</p>
+
+        <h3>Form Strategy</h3>
+
+        <p>The biggest source of duplicates is forms. Strategies to reduce them:</p>
+
+        <p><strong>Pre-fill forms for known contacts.</strong> If someone clicks through from an email, HubSpot can identify them and pre-fill their email. This encourages them to use the same email, creating an update instead of a new record.</p>
+
+        <p><strong>Ask for work email explicitly.</strong> Instead of a generic "Email" field, label it "Work Email" to reduce personal email submissions.</p>
+
+        <p><strong>Progressive profiling.</strong> Don't ask for all information on every form. If you already have someone's email, ask for additional fields instead. This reduces the chance of creating duplicates when someone fills out multiple forms.</p>
+
+        <h3>Import Best Practices</h3>
+
+        <p>Before importing any list:</p>
+
+        <ul>
+          <li>Deduplicate the import file itself (Excel's Remove Duplicates or similar)</li>
+          <li>Match against existing HubSpot data before creating new records</li>
+          <li>Use HubSpot's import settings to update existing records when possible</li>
+          <li>Consider using a staging property to flag imported records for review</li>
+        </ul>
+
+        <h3>Integration Audit</h3>
+
+        <p>Review every system that writes to HubSpot:</p>
+
+        <ul>
+          <li>How does it handle existing records?</li>
+          <li>Does it check for duplicates before creating?</li>
+          <li>What identifier does it use for matching?</li>
+        </ul>
+
+        <p>Configure integrations to update existing records rather than create new ones when possible. If they can't match on email, see if you can add a custom identifier field that both systems can use.</p>
+
+        <h3>Ongoing Maintenance</h3>
+
+        <p>Even with prevention in place, some duplicates will slip through. Schedule monthly or quarterly duplicate reviews to catch them early, before they accumulate engagement history that makes them harder to merge.</p>
+
+        <p>If you have Insycle or a similar tool, set up automated weekly scans that flag new duplicates for review.</p>
+
+        <h2>The Cost of Duplicates</h2>
+
+        <p>Why bother? Because duplicates create real problems.</p>
+
+        <p><strong>Marketing contact inflation.</strong> If both duplicates are marketing contacts, you're paying for the same person twice. Across thousands of duplicates, this adds up to real money.</p>
+
+        <p><strong>Broken lead scoring.</strong> Engagement signals split across records mean your scoring model only sees half the picture. Contacts that should be hot appear lukewarm.</p>
+
+        <p><strong>Fractured automation.</strong> A nurture sequence might enroll both duplicates, sending the same person the same email twice. Or one duplicate qualifies for a sequence while the other doesn't, even though they're the same person.</p>
+
+        <p><strong>Lost context for sales.</strong> Reps looking at a contact record see only half the engagement history. They don't know what the contact has read, clicked, or expressed interest in.</p>
+
+        <p><strong>Inaccurate reporting.</strong> Contact counts, conversion rates, and attribution all skew when the same people are counted multiple times.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>What happens to email history when I merge contacts?</h3>
+          <p>All email history transfers to the surviving contact. Opens, clicks, and delivery data from both records combine. The secondary contact's email address becomes a secondary email, so future emails to either address will match to the merged record.</p>
+
+          <h3>Can I undo a merge in HubSpot?</h3>
+          <p>No. Merges are permanent. The merged record is deleted immediately and cannot be recovered from the recycle bin. Export before bulk operations.</p>
+
+          <h3>Why does HubSpot allow duplicates if it has deduplication?</h3>
+          <p>HubSpot only auto-deduplicates on exact email match. Different emails, even for the same person, are treated as different contacts. This prevents accidentally merging different people, but it means duplicates with different emails will accumulate.</p>
+
+          <h3>How many duplicates can I merge at once?</h3>
+          <p>HubSpot's native tool handles one pair at a time. For bulk merging, you need a third-party tool like Insycle, which can process hundreds or thousands in a single operation.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Have thousands of duplicates clogging up your HubSpot portal?</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">Dedupe My HubSpot</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/hubspot-data-cleaning.html">How to Clean HubSpot Data</a> | <a href="/cleaning/data-deduplication/">Data Deduplication Services</a> | <a href="/use-cases/crm-hygiene/">CRM Hygiene</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
