@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Switching CRMs? Clean Your Data First | Verum</title>
+  <meta name="description" content="Migrating to a new CRM is the perfect time to clean your data. Here's how to prepare your data for a CRM migration without bringing your mess with you.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/crm-migration-data-cleanup.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/crm-migration-data-cleanup.html">
+  <meta property="og:title" content="Switching CRMs? Clean Your Data First">
+  <meta property="og:description" content="A CRM migration is the perfect time to clean your data. Here's how to do it right.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Switching CRMs? Clean Your Data First">
+  <meta name="twitter:description" content="A CRM migration is the perfect time to clean your data. Here's how to do it right.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Switching CRMs? Clean Your Data First",
+    "description": "Migrating to a new CRM is the perfect time to clean your data. Here's how to prepare your data for a CRM migration without bringing your mess with you.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/crm-migration-data-cleanup.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I clean data before or after a CRM migration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Before. Always before. Cleaning after migration is more expensive because you're dealing with new system complexity, potential automation conflicts, and user confusion. Clean data migrates smoothly; dirty data creates problems in both systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data should I NOT migrate to the new CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Don't migrate: duplicate records, contacts with invalid emails who haven't engaged in 2+ years, closed-lost opportunities older than 2-3 years, test records, records for dissolved companies, and any data that only exists for compliance archival (archive separately)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does CRM migration data cleanup typically take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a database of 50,000-100,000 records, expect 4-8 weeks for thorough cleanup. This includes assessment, deduplication, validation, normalization, and testing. Rushing this step is the most common cause of migration failures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I migrate historical activity data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Migrate activity data for active accounts and opportunities. For inactive records, consider migrating a summary (e.g., last activity date, total activities) rather than individual activity records. Full history is rarely accessed and adds migration complexity."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .checklist {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .checklist h4 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--color-text-primary);
+    }
+    .checklist ul {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>Switching CRMs? Clean Your Data First</h1>
+        <p class="article-meta">January 2026 · 11 min read</p>
+
+        <p>You're moving from HubSpot to Salesforce. Or Salesforce to HubSpot. Or from some legacy system to anything modern. The migration project is scoped, the timeline is set, and everyone's focused on the new system.</p>
+
+        <p>Here's what nobody wants to talk about: your current CRM data is a mess. And if you migrate that mess to the new system, you'll just have the same problems in a different interface. Plus new problems from the migration itself.</p>
+
+        <p>A CRM migration is actually the best opportunity you'll ever have to fix your data. You're already touching every record. You're already rebuilding processes. Taking time to clean before you migrate will save you significant pain later.</p>
+
+        <h2>Why Cleaning Before Migration Matters</h2>
+
+        <p>The argument for cleaning before migration (rather than after) comes down to economics and complexity:</p>
+
+        <p><strong>You're already doing the work.</strong> Migration involves exporting, transforming, and importing data. Adding cleaning steps to this process is incremental effort. Cleaning after migration means doing the whole exercise again.</p>
+
+        <p><strong>Dirty data creates migration failures.</strong> Duplicates cause matching errors. Invalid emails break validation rules. Inconsistent formats fail field mapping. Cleaning first reduces migration complexity.</p>
+
+        <p><strong>Users lose trust immediately.</strong> If sales reps open the new CRM and see the same duplicates and bad data, they'll assume the migration failed. First impressions matter for adoption.</p>
+
+        <p><strong>It's cheaper now.</strong> Data cleaning costs are roughly proportional to volume. Why pay to migrate 100,000 records when 30,000 of them are garbage? Clean first, migrate less.</p>
+
+        <div class="stat-box">
+          <p><strong>The migration tax:</strong> Companies that skip pre-migration cleanup typically spend 2-3x more on post-migration fixes, plus the cost of delayed adoption and user frustration.</p>
+        </div>
+
+        <h2>The Pre-Migration Cleanup Process</h2>
+
+        <p>Here's the systematic approach to cleaning data before a CRM migration:</p>
+
+        <h3>Phase 1: Assessment (Week 1-2)</h3>
+
+        <p>Before you clean anything, understand what you're dealing with. Run a data quality audit on your current system:</p>
+
+        <ul>
+          <li><strong>Record counts:</strong> How many Accounts, Contacts, Leads, Opportunities?</li>
+          <li><strong>Duplicate rate:</strong> What percentage are potential duplicates?</li>
+          <li><strong>Field completeness:</strong> What percentage of key fields are populated?</li>
+          <li><strong>Email validity:</strong> How many emails are invalid or bounced?</li>
+          <li><strong>Data age:</strong> When were records last updated or engaged?</li>
+          <li><strong>Custom fields:</strong> Which custom fields are actually used?</li>
+        </ul>
+
+        <p>This assessment tells you where to focus cleaning efforts and helps set realistic migration timelines.</p>
+
+        <h3>Phase 2: Define What Migrates (Week 2)</h3>
+
+        <p>Not everything should move to the new system. Define clear criteria for what migrates and what stays behind.</p>
+
+        <p><strong>Definitely migrate:</strong></p>
+        <ul>
+          <li>Active customers (current ARR, active contracts)</li>
+          <li>Open opportunities</li>
+          <li>Contacts with recent engagement (email opens, meetings, replies)</li>
+          <li>Accounts in your target market</li>
+          <li>Historical deal data needed for reporting (closed-won, recent closed-lost)</li>
+        </ul>
+
+        <p><strong>Consider not migrating:</strong></p>
+        <ul>
+          <li>Contacts with no engagement in 2+ years</li>
+          <li>Leads that never converted and haven't engaged</li>
+          <li>Duplicate records (keep the master, discard the rest)</li>
+          <li>Contacts with invalid/bounced emails</li>
+          <li>Test records and sandbox data</li>
+          <li>Records for companies that no longer exist</li>
+          <li>Old closed-lost opportunities (2-3+ years)</li>
+        </ul>
+
+        <p><strong>Archive separately:</strong></p>
+        <ul>
+          <li>Records required for legal/compliance purposes</li>
+          <li>Historical data that might be referenced but not actively used</li>
+        </ul>
+
+        <div class="checklist">
+          <h4>Migration Eligibility Checklist</h4>
+          <ul>
+            <li>Has valid email address</li>
+            <li>Has activity within last 24 months OR is current customer</li>
+            <li>Is not a duplicate of another record</li>
+            <li>Company still exists (not acquired/dissolved)</li>
+            <li>Matches current ICP criteria OR is current customer</li>
+            <li>Has complete core fields (name, company, email minimum)</li>
+          </ul>
+        </div>
+
+        <h3>Phase 3: Deduplication (Week 3-4)</h3>
+
+        <p>Duplicates are the most common migration problem. You need to identify and merge them before migration.</p>
+
+        <p><strong>Identify duplicates at multiple levels:</strong></p>
+
+        <ul>
+          <li><strong>Account duplicates:</strong> Same company, different records (name variations, subsidiaries)</li>
+          <li><strong>Contact duplicates:</strong> Same person, different records (multiple emails, job changes)</li>
+          <li><strong>Lead-to-Contact duplicates:</strong> Leads that already exist as contacts</li>
+        </ul>
+
+        <p><strong>Define merge rules in advance:</strong></p>
+
+        <ul>
+          <li>Which record becomes the "master"? (Usually most recently updated or most complete)</li>
+          <li>How do you handle conflicting field values? (Most recent? Most complete? Manual review?)</li>
+          <li>What happens to associated records? (Opportunities, activities, attachments)</li>
+        </ul>
+
+        <p>See our <a href="/resources/salesforce-duplicate-contacts.html">guide to deduplication</a> for detailed processes.</p>
+
+        <h3>Phase 4: Validation and Standardization (Week 4-5)</h3>
+
+        <p>Clean the data that will migrate:</p>
+
+        <p><strong><a href="/resources/salesforce-email-validation.html">Email validation:</a></strong></p>
+        <ul>
+          <li>Run all emails through a validation service</li>
+          <li>Flag or remove invalid addresses</li>
+          <li>Update records where new emails can be found</li>
+        </ul>
+
+        <p><strong><a href="/resources/salesforce-company-name-normalization.html">Company name normalization:</a></strong></p>
+        <ul>
+          <li>Standardize formats (remove Inc., Corp., etc. variations)</li>
+          <li>Fix obvious misspellings</li>
+          <li>Map subsidiaries to parent companies</li>
+        </ul>
+
+        <p><strong><a href="/resources/salesforce-job-title-standardization.html">Job title standardization:</a></strong></p>
+        <ul>
+          <li>Create seniority and department fields</li>
+          <li>Map variations to standard values</li>
+        </ul>
+
+        <p><strong>Address standardization:</strong></p>
+        <ul>
+          <li>Validate and format addresses consistently</li>
+          <li>Add missing country codes for international records</li>
+        </ul>
+
+        <p><strong>Picklist value cleanup:</strong></p>
+        <ul>
+          <li>Map old picklist values to new system values</li>
+          <li>Standardize industry, lead source, and other categorical fields</li>
+        </ul>
+
+        <h3>Phase 5: Enrichment (Week 5-6, Optional)</h3>
+
+        <p>If you have gaps in key fields, pre-migration is a good time to enrich:</p>
+
+        <ul>
+          <li>Fill missing company data (employee count, revenue, industry)</li>
+          <li>Update contact information for job changers</li>
+          <li>Add technology stack data</li>
+          <li>Append LinkedIn URLs</li>
+        </ul>
+
+        <p>See our <a href="/resources/salesforce-data-enrichment.html">enrichment guide</a> for options.</p>
+
+        <h3>Phase 6: Field Mapping and Transformation (Week 6-7)</h3>
+
+        <p>Now prepare your clean data for the new system:</p>
+
+        <ul>
+          <li><strong>Map source fields to destination fields:</strong> Not always 1:1. Some fields combine, some split, some don't exist.</li>
+          <li><strong>Transform data formats:</strong> Date formats, phone formats, currency formats may differ.</li>
+          <li><strong>Handle custom objects:</strong> Decide what translates to the new system.</li>
+          <li><strong>Prepare relationship keys:</strong> Account-to-Contact, Contact-to-Opportunity relationships need consistent IDs.</li>
+        </ul>
+
+        <h3>Phase 7: Test Migration (Week 7-8)</h3>
+
+        <p>Run a test migration with a subset of data:</p>
+
+        <ol>
+          <li>Migrate 5-10% of records to a sandbox environment</li>
+          <li>Verify field mappings worked correctly</li>
+          <li>Check relationships (contacts linked to right accounts)</li>
+          <li>Validate automation triggers work with migrated data</li>
+          <li>Have users review sample records</li>
+        </ol>
+
+        <p>Fix issues and repeat until the test migration is clean.</p>
+
+        <h2>What NOT to Migrate</h2>
+
+        <p>Being aggressive about what you leave behind is one of the highest-leverage decisions in a migration. Here's what to cut:</p>
+
+        <p><strong>Dead records:</strong> If a contact hasn't opened an email, clicked a link, or been touched by sales in 2+ years, they're not coming back. Don't migrate them.</p>
+
+        <p><strong>Bounced emails:</strong> Invalid emails will immediately cause problems in the new system. Either fix them or leave them.</p>
+
+        <p><strong>Duplicate records:</strong> Merge before migration. Migrating duplicates just creates more work later.</p>
+
+        <p><strong>Dissolved companies:</strong> Check for acquisitions, bankruptcies, and closures. Records for companies that no longer exist are worthless.</p>
+
+        <p><strong>Irrelevant segments:</strong> If you've shifted ICP or no longer target certain industries, don't bring those records along.</p>
+
+        <p><strong>Granular activity history:</strong> Does your new system really need every email ever sent? Consider migrating summary data (last activity date, total activities) rather than individual records.</p>
+
+        <p><strong>Unused custom fields:</strong> That custom field from a campaign three years ago that nobody uses? Don't create it in the new system.</p>
+
+        <div class="stat-box">
+          <p><strong>Typical reduction:</strong> A thorough pre-migration cleanup typically reduces data volume by 30-50%. That's 30-50% less data to migrate, validate, and maintain.</p>
+        </div>
+
+        <h2>Common Migration Cleanup Mistakes</h2>
+
+        <p><strong>Rushing the timeline.</strong> Executives want the migration done by [arbitrary date]. Cleaning gets compressed. Dirty data migrates. Problems multiply. Build cleaning time into the project plan from the start.</p>
+
+        <p><strong>Cleaning in the new system.</strong> "We'll clean it up after migration." You won't. Users will be frustrated, IT will be fielding complaints, and nobody will prioritize cleanup over learning the new system.</p>
+
+        <p><strong>Not involving users in validation.</strong> Your sales team knows which accounts are real and which are junk. Get their input during the cleanup phase, not after migration when they're discovering problems.</p>
+
+        <p><strong>Forgetting about relationships.</strong> Cleaning records in isolation can break relationships. If you delete an Account, what happens to its Contacts and Opportunities? Plan for this.</p>
+
+        <p><strong>Not backing up before cleanup.</strong> Before you merge or delete anything, export a complete backup. Mistakes happen. Be able to recover.</p>
+
+        <p><strong>Ignoring the source system after migration.</strong> Your old CRM is still running. Users still have access. Data keeps getting entered there. Set a clear cutoff date and enforce it.</p>
+
+        <h2>The Migration Cleanup Checklist</h2>
+
+        <div class="checklist">
+          <h4>Pre-Migration Cleanup Tasks</h4>
+          <ul>
+            <li>Complete data quality assessment</li>
+            <li>Define migration eligibility criteria</li>
+            <li>Identify and merge duplicate Accounts</li>
+            <li>Identify and merge duplicate Contacts</li>
+            <li>Convert or merge Leads that exist as Contacts</li>
+            <li>Validate all email addresses</li>
+            <li>Remove/flag invalid emails</li>
+            <li>Normalize company names</li>
+            <li>Standardize job titles</li>
+            <li>Standardize addresses</li>
+            <li>Map picklist values to new system</li>
+            <li>Enrich missing fields (if applicable)</li>
+            <li>Archive records not being migrated</li>
+            <li>Document field mappings</li>
+            <li>Test migration with sample data</li>
+            <li>User validation of test data</li>
+            <li>Final backup before production migration</li>
+          </ul>
+        </div>
+
+        <h2>When to Get Help</h2>
+
+        <p>CRM migration cleanup is a significant project. It requires data expertise, understanding of both systems, and dedicated time. Consider getting help if:</p>
+
+        <ul>
+          <li><strong>Your database is large:</strong> 50,000+ records means weeks of cleaning work</li>
+          <li><strong>Your timeline is tight:</strong> Migration date is set and cleanup wasn't budgeted</li>
+          <li><strong>You lack internal resources:</strong> RevOps team is already allocated to migration tasks</li>
+          <li><strong>Data quality is unknown:</strong> You've never done a data audit and don't know how bad it is</li>
+          <li><strong>The stakes are high:</strong> A failed migration affects the whole company</li>
+        </ul>
+
+        <p>At Verum, CRM migration support is one of our core services. We handle the pre-migration cleanup so your team can focus on the new system. We've done this for dozens of migrations and know where the problems hide.</p>
+
+        <div class="article-cta">
+          <p><strong>Planning a CRM migration?</strong></p>
+          <p>Let us assess your current data quality and give you a realistic view of what cleanup is needed before you migrate.</p>
+          <p><a href="/contact.html" class="btn btn--primary">Get a Free Assessment</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

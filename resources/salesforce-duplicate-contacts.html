@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Find and Merge Duplicate Contacts in Salesforce | Verum</title>
+  <meta name="description" content="Duplicate contacts mess up your pipeline, waste rep time, and break automation. Here's how to find them, merge them, and prevent them from coming back.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/salesforce-duplicate-contacts.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/salesforce-duplicate-contacts.html">
+  <meta property="og:title" content="How to Find and Merge Duplicate Contacts in Salesforce">
+  <meta property="og:description" content="Duplicate contacts mess up your pipeline and break automation. Here's how to find and merge them.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Find and Merge Duplicate Contacts in Salesforce">
+  <meta name="twitter:description" content="Duplicate contacts mess up your pipeline and break automation. Here's how to find and merge them.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Find and Merge Duplicate Contacts in Salesforce",
+    "description": "Duplicate contacts mess up your pipeline, waste rep time, and break automation. Here's how to find them, merge them, and prevent them from coming back.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/salesforce-duplicate-contacts.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What happens to activities when I merge contacts in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Activities from both records transfer to the surviving record. Task history, email logs, and call records are preserved. The merged (deleted) record's activities appear in the surviving record's activity timeline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I undo a merge in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Merging is permanent. The losing record is deleted and cannot be recovered through the Recycle Bin. Always export backups before merging, especially for bulk operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does Salesforce create duplicates in the first place?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common causes include: web form submissions creating new records instead of updating existing ones, list imports without duplicate checking, multiple systems syncing to Salesforce independently, and manual entry by reps who don't search first."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p, .warning-box ul {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Salesforce</p>
+      <h1 class="page-hero__title">How to Find and Merge Duplicate Contacts in Salesforce</h1>
+      <p class="page-hero__subtitle">Duplicates waste sales time, mess up reporting, and make automation unreliable. Here's how to find them, merge them, and stop them from coming back.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 10 min read</div>
+
+      <div class="blog-content">
+
+        <p>Two reps are working the same deal without knowing it. Your email campaign sent the same message to the same person three times because they're in your database three times. Your contact count says 50,000, but the real number is somewhere around 38,000 once you account for duplicates.</p>
+
+        <p>Duplicate contacts are one of the most common Salesforce problems, and one of the most damaging. They corrupt your data, waste your team's time, and make it impossible to trust your CRM as a source of truth.</p>
+
+        <p>This guide covers how to find duplicates in Salesforce, merge them without losing data, and set up systems to prevent them from multiplying again.</p>
+
+        <h2>Why Duplicates Happen</h2>
+
+        <p>Before fixing duplicates, it helps to understand where they come from. The usual suspects:</p>
+
+        <p><strong>Web forms that create instead of update.</strong> Someone fills out your demo request form. They're already in Salesforce from a previous interaction, but the form creates a new Lead instead of updating the existing Contact. Now you have two records.</p>
+
+        <p><strong>List imports without deduplication.</strong> Marketing buys a list or exports contacts from an event. They import 5,000 records. 800 of them are people already in your database. Now you have 800 duplicates.</p>
+
+        <p><strong>Multiple systems syncing independently.</strong> Your marketing automation, sales engagement platform, and support system all push data to Salesforce. They don't coordinate. The same person gets created multiple times from different sources.</p>
+
+        <p><strong>Manual entry without checking.</strong> Reps add contacts on the fly. They don't search first, or they search but don't find the existing record because it's spelled slightly differently. "Jon Smith" doesn't match "John Smith" in a quick search.</p>
+
+        <p><strong>Lead conversion creating new Contacts.</strong> A Lead converts, but Salesforce doesn't match it to an existing Contact. This happens when the Lead's email is different from the Contact's, or when matching rules aren't configured.</p>
+
+        <h2>Finding Duplicates: The Manual Way</h2>
+
+        <p>Salesforce has basic duplicate detection built in. Here's how to use it.</p>
+
+        <h3>Duplicate Reports</h3>
+
+        <p>You can create reports that identify potential duplicates based on matching fields. The simplest approach:</p>
+
+        <p>1. Create a new report on Contacts<br>
+        2. Group by Email<br>
+        3. Add a row count<br>
+        4. Filter where row count > 1</p>
+
+        <p>This shows you every email address that appears on multiple Contacts. Same logic works for phone number, name, or any other field.</p>
+
+        <p>The limitation: this only catches exact matches. "john@acme.com" matches "john@acme.com," but it won't catch "john.smith@acme.com" and "jsmith@acme.com" as the same person.</p>
+
+        <h3>Duplicate Rules and Matching Rules</h3>
+
+        <p>Salesforce's Duplicate Management feature (Setup > Duplicate Management) uses matching rules to find duplicates. The standard matching rules compare:</p>
+
+        <ul>
+          <li>Exact email match</li>
+          <li>Exact name match</li>
+          <li>Fuzzy name match (catches some variations)</li>
+        </ul>
+
+        <p>You can view potential duplicates on individual records. Go to any Contact, and if duplicates exist, you'll see a "Potential Duplicates" component (if you've added it to the page layout).</p>
+
+        <p>The problem: you have to check records one at a time. For bulk duplicate detection, you need something more.</p>
+
+        <h2>Finding Duplicates: The Better Way</h2>
+
+        <p>For serious deduplication, you need tools that can process your entire database and identify duplicates using sophisticated matching.</p>
+
+        <h3>Third-Party Deduplication Tools</h3>
+
+        <p>Several AppExchange apps handle bulk deduplication:</p>
+
+        <p><strong>Cloudingo.</strong> Probably the most popular. Connects to your org, runs matching algorithms, presents duplicates for review or auto-merge. Handles Contacts, Leads, Accounts. Pricing scales with record volume.</p>
+
+        <p><strong>DemandTools.</strong> From Validity (the company behind Return Path and BriteVerify). Powerful but complex. Better for admins who need granular control over matching logic.</p>
+
+        <p><strong>Duplicate Check.</strong> Simpler interface, good for basic needs. Lower price point than Cloudingo or DemandTools.</p>
+
+        <p>What these tools do that native Salesforce doesn't:</p>
+
+        <ul>
+          <li>Fuzzy matching on company names (catches "Acme Corp" and "ACME Corporation")</li>
+          <li>Phonetic matching on names (catches "John" and "Jon")</li>
+          <li>Cross-object matching (finds Leads that are already Contacts)</li>
+          <li>Bulk review and merge interfaces</li>
+          <li>Scheduled automated deduplication</li>
+        </ul>
+
+        <h3>Export and Deduplicate Externally</h3>
+
+        <p>If you don't want to buy a tool, you can export your data, deduplicate in Excel or a database, then update Salesforce.</p>
+
+        <p>Export Contacts with ID, Name, Email, Phone, Company, and any other relevant fields. Use Excel's Remove Duplicates feature, or better, use a tool like OpenRefine that handles fuzzy matching.</p>
+
+        <p>Once you've identified duplicates, you can use Data Loader to merge them back in Salesforce (you'll need to use the merge API or handle this carefully to preserve relationships).</p>
+
+        <p>This works, but it's tedious. For databases over 10,000 records, a purpose-built tool will save you significant time.</p>
+
+        <h2>Merging Duplicates Without Losing Data</h2>
+
+        <p>Finding duplicates is the easy part. Merging them correctly is where things get tricky.</p>
+
+        <h3>The Standard Salesforce Merge</h3>
+
+        <p>Salesforce lets you merge up to 3 Contacts at a time through the UI:</p>
+
+        <p>1. Go to the Contacts tab<br>
+        2. Click "Merge Contacts" in the tools section<br>
+        3. Search for the duplicate records<br>
+        4. Select which values to keep for each field<br>
+        5. Click Merge</p>
+
+        <p>The merged record keeps all relationships from both source records. Activities, Opportunities, Cases, and other related records transfer to the survivor. The "losing" records are deleted (not moved to Recycle Bin).</p>
+
+        <div class="warning-box">
+          <div class="warning-box__title">Important: Merges Are Permanent</div>
+          <p>You cannot undo a merge. The deleted records don't go to the Recycle Bin. Always export a backup before merging, especially if you're doing bulk operations.</p>
+        </div>
+
+        <h3>Choosing the Survivor</h3>
+
+        <p>When merging, you choose which record survives. The survivor keeps its record ID, which matters for:</p>
+
+        <ul>
+          <li>External system integrations that reference the ID</li>
+          <li>Bookmarks and saved links</li>
+          <li>API connections</li>
+        </ul>
+
+        <p>Best practices for choosing the survivor:</p>
+
+        <ul>
+          <li><strong>Oldest created date.</strong> This preserves the longest history.</li>
+          <li><strong>Most complete data.</strong> Choose the record with fewer blank fields.</li>
+          <li><strong>Most recent activity.</strong> The record with recent engagement is more likely to be accurate.</li>
+          <li><strong>Owner assignment.</strong> Choose the record owned by the rep who should own the relationship.</li>
+        </ul>
+
+        <h3>Preserving Data From Both Records</h3>
+
+        <p>During merge, you choose field values from either source record. But what if both records have valuable data in the same field?</p>
+
+        <p>For example, one record has the contact's work email, the other has their personal email. You can only keep one in the Email field, but you might want both.</p>
+
+        <p>Solutions:</p>
+
+        <ul>
+          <li>Use custom fields. Create "Secondary Email" or "Alt Phone" fields to preserve additional data.</li>
+          <li>Use the Description field. Before merging, paste important data from the losing record into Description.</li>
+          <li>Export first. Save a complete export of both records before merging, so you can reference the original data later.</li>
+        </ul>
+
+        <h3>Bulk Merging</h3>
+
+        <p>If you have hundreds or thousands of duplicates, merging them one at a time isn't practical. Options:</p>
+
+        <p><strong>Third-party tools.</strong> Cloudingo, DemandTools, and similar tools support bulk merge operations with configurable survivor rules.</p>
+
+        <p><strong>Data Loader with merge API.</strong> Salesforce's API supports programmatic merging, but you need to build the logic for survivor selection and data preservation.</p>
+
+        <p><strong>Hire someone.</strong> Seriously. If you have 10,000 duplicates and no tooling, paying someone to clean it up is often cheaper than figuring it out yourself.</p>
+
+        <h2>Preventing Future Duplicates</h2>
+
+        <p>Cleaning up duplicates is pointless if they keep coming back. Prevention is the real goal.</p>
+
+        <h3>Configure Duplicate Rules to Block</h3>
+
+        <p>By default, Salesforce's duplicate rules just warn users. They can ignore the warning and create the duplicate anyway. Change this.</p>
+
+        <p>Go to Setup > Duplicate Rules. Edit your rules to "Block" instead of "Alert." This prevents users from creating records that match existing ones.</p>
+
+        <p>Be careful here. If your matching rules are too strict, you'll block legitimate record creation. If they're too loose, duplicates slip through. Test your rules before enforcing them org-wide.</p>
+
+        <h3>Fix Your Integrations</h3>
+
+        <p>Most duplicates come from integrations, not manual entry. Audit every system that writes to Salesforce:</p>
+
+        <ul>
+          <li><strong>Web forms.</strong> Should they create new records, or update existing ones? Configure your form handler (Pardot, Marketo, native Web-to-Lead) to match and update.</li>
+          <li><strong>Marketing automation.</strong> How does your MAP handle existing records? Is it set to create or update?</li>
+          <li><strong>Sales tools.</strong> Outreach, Salesloft, and similar tools often create Contacts. Make sure they're checking for existing records first.</li>
+          <li><strong>Data imports.</strong> Never import a list without deduplicating it first. Match against existing data before creating new records.</li>
+        </ul>
+
+        <h3>Train Your Team</h3>
+
+        <p>Reps create duplicates when they don't search before adding contacts. But the real problem is usually that searching is too hard or slow.</p>
+
+        <p>Make it easy:</p>
+
+        <ul>
+          <li>Use Global Search, not list views, to find existing records</li>
+          <li>Search on email (more unique than name)</li>
+          <li>Add the Potential Duplicates component to record pages</li>
+          <li>Create a quick action for adding contacts that includes a duplicate check</li>
+        </ul>
+
+        <h3>Regular Maintenance</h3>
+
+        <p>Even with prevention in place, some duplicates will slip through. Schedule quarterly duplicate reviews to catch them before they multiply.</p>
+
+        <h2>The Hidden Cost of Duplicates</h2>
+
+        <p>Duplicates seem like a minor annoyance, but the costs add up:</p>
+
+        <p><strong>Wasted sales time.</strong> Reps research the same contact multiple times. They don't see the full picture of a relationship because the history is split across records.</p>
+
+        <p><strong>Inflated marketing costs.</strong> You're paying to email the same person multiple times. Your list size looks bigger than it is, so your metrics are wrong.</p>
+
+        <p><strong>Broken automation.</strong> Lead scoring that considers email engagement is wrong when engagement is split across duplicates. Nurture sequences trigger multiple times for the same person.</p>
+
+        <p><strong>Lost trust.</strong> When reps don't trust the CRM, they stop using it. They keep their own spreadsheets. The system becomes less valuable for everyone.</p>
+
+        <p>If your Salesforce has been running for more than a couple years without serious duplicate management, you probably have thousands of them. The question is whether to spend time fixing them now or keep paying the hidden cost every day.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>What happens to activities when I merge contacts?</h3>
+          <p>Activities from both records transfer to the surviving record. Task history, email logs, and call records are preserved. Nothing is lost except the duplicate record itself.</p>
+
+          <h3>Can I undo a merge?</h3>
+          <p>No. Merging is permanent. The losing record is deleted and cannot be recovered. Always export backups before bulk merging.</p>
+
+          <h3>Why does Salesforce create duplicates in the first place?</h3>
+          <p>Common causes: web forms creating new records instead of updating existing ones, list imports without duplicate checking, multiple systems syncing independently, and reps entering data without searching first.</p>
+
+          <h3>How do I merge Leads with Contacts?</h3>
+          <p>You can't directly merge across objects. Instead, convert the Lead and merge the resulting Contact with the existing Contact. Some third-party tools can handle cross-object deduplication more elegantly.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Have thousands of duplicates and not enough time to clean them?</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">Get a Free Assessment</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data</a> | <a href="/cleaning/data-deduplication/">Data Deduplication Services</a> | <a href="/use-cases/crm-hygiene/">CRM Hygiene</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

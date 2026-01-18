@@ -22,6 +22,7 @@
         <ul class="nav__list">
           <li><a href="/services/" class="nav__link">Services</a></li>
           <li><a href="/solutions/" class="nav__link">Solutions</a></li>
+          <li><a href="/resources/" class="nav__link">Resources</a></li>
           <li><a href="/assessment/" class="nav__link">Free Assessment</a></li>
           <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
           <li><a href="/about.html" class="nav__link">About</a></li>
@@ -42,6 +43,7 @@
       <ul class="nav__list">
         <li><a href="/services/" class="nav__link">Services</a></li>
         <li><a href="/solutions/" class="nav__link">Solutions</a></li>
+        <li><a href="/resources/" class="nav__link">Resources</a></li>
         <li><a href="/assessment/" class="nav__link">Free Assessment</a></li>
         <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
         <li><a href="/about.html" class="nav__link">About</a></li>
@@ -71,6 +73,7 @@
         <div>
           <h4 class="footer__heading">Resources</h4>
           <ul class="footer__links">
+            <li><a href="/resources/">Blog</a></li>
             <li><a href="/assessment/">Free Assessment</a></li>
             <li><a href="/pricing.html">Pricing</a></li>
             <li><a href="/solutions/">Solutions</a></li>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Enrich Salesforce Records Without ZoomInfo | Verum</title>
+  <meta name="description" content="ZoomInfo costs $30K+/year. Here are practical alternatives for enriching your Salesforce contacts and accounts with firmographic data.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/salesforce-data-enrichment.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/salesforce-data-enrichment.html">
+  <meta property="og:title" content="How to Enrich Salesforce Records Without ZoomInfo">
+  <meta property="og:description" content="ZoomInfo costs $30K+/year. Here are practical alternatives for enriching Salesforce data.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Enrich Salesforce Records Without ZoomInfo">
+  <meta name="twitter:description" content="ZoomInfo costs $30K+/year. Here are practical alternatives for enriching Salesforce data.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Enrich Salesforce Records Without ZoomInfo",
+    "description": "ZoomInfo costs $30K+/year. Here are practical alternatives for enriching your Salesforce contacts and accounts with firmographic data.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/salesforce-data-enrichment.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What data should I enrich in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Focus on fields that affect routing, scoring, and segmentation: company size (employee count), revenue, industry, location, and technology stack. For contacts, prioritize job title, seniority level, and department."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is enrichment data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It varies by provider and field type. Company revenue and employee count are typically 70-85% accurate. Contact direct dials and personal emails are less reliable (50-70%). Always validate critical data before high-stakes outreach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I enrich all records or just new ones?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both. Enrich new records at the point of entry to capture complete data from the start. For existing records, prioritize enrichment based on account tier or deal stage rather than enriching everything at once."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between enrichment and appending?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Appending adds missing data to blank fields. Enrichment includes appending but also updates existing data that may be outdated. A full enrichment project will fill gaps and refresh stale information."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .comparison-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .comparison-table td {
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>How to Enrich Salesforce Records Without ZoomInfo</h1>
+        <p class="article-meta">January 2026 · 10 min read</p>
+
+        <p>Your Salesforce accounts are missing revenue, employee count, and industry. Your contacts have job titles but no seniority levels. Half your leads don't even have company names filled in.</p>
+
+        <p>The obvious answer is ZoomInfo. The problem is ZoomInfo costs $30,000+ per year. For a lot of companies, that's not in the budget, especially if you're not sure what the ROI looks like.</p>
+
+        <p>Good news: there are other ways to get this data. Some are cheaper. Some are free. Some require more work. Here's what actually works.</p>
+
+        <h2>What Data Should You Actually Enrich?</h2>
+
+        <p>Before you start researching tools, figure out what data you actually need. Enrichment for the sake of enrichment is a waste of money.</p>
+
+        <p>The fields that matter most are the ones that affect:</p>
+
+        <ul>
+          <li><strong>Lead routing:</strong> Which rep handles this? (Usually based on company size, industry, or location)</li>
+          <li><strong>Lead scoring:</strong> Is this a good fit? (Based on ICP criteria like revenue, employee count, technology stack)</li>
+          <li><strong>Segmentation:</strong> What campaigns should they receive? (Industry, company stage, use case)</li>
+          <li><strong>Personalization:</strong> How do we tailor outreach? (Title, seniority, department)</li>
+        </ul>
+
+        <h3>Account-Level Fields (Priority)</h3>
+
+        <p>These are the fields that define whether a company is a fit:</p>
+
+        <ul>
+          <li><strong>Employee count:</strong> Company size is one of the strongest ICP filters</li>
+          <li><strong>Annual revenue:</strong> Indicates budget capacity</li>
+          <li><strong>Industry:</strong> Determines messaging, use cases, and sometimes disqualification</li>
+          <li><strong>Location (HQ):</strong> Territory assignment, timezone, regulatory considerations</li>
+          <li><strong>Technology stack:</strong> What tools do they use? Critical for selling integrations or replacements</li>
+        </ul>
+
+        <h3>Contact-Level Fields (Secondary)</h3>
+
+        <p>These help with personalization and multi-threading:</p>
+
+        <ul>
+          <li><strong>Job title (standardized):</strong> "VP Sales" vs "Vice President of Sales" should match your filters</li>
+          <li><strong>Seniority level:</strong> C-level, VP, Director, Manager, Individual Contributor</li>
+          <li><strong>Department:</strong> Sales, Marketing, Operations, IT, Finance</li>
+          <li><strong>Direct phone:</strong> Useful for outbound, but accuracy is inconsistent</li>
+          <li><strong>LinkedIn URL:</strong> For research and social selling</li>
+        </ul>
+
+        <div class="stat-box">
+          <p><strong>Focus first on account data.</strong> If you know the company fits your ICP, you can always research individual contacts later. The reverse doesn't work as well.</p>
+        </div>
+
+        <h2>ZoomInfo Alternatives by Budget</h2>
+
+        <p>Here's how the options break down, from free to expensive:</p>
+
+        <h3>Free: Manual Research + LinkedIn</h3>
+
+        <p>Time-intensive but works for small volumes. Your SDRs are probably already doing this for outbound research.</p>
+
+        <p>What you can find:</p>
+        <ul>
+          <li>Company size (LinkedIn company page, About Us)</li>
+          <li>Industry (LinkedIn, company website)</li>
+          <li>Funding stage (Crunchbase, LinkedIn news)</li>
+          <li>Technology stack (BuiltWith, Wappalyzer for websites)</li>
+          <li>Contact titles and seniority (LinkedIn)</li>
+        </ul>
+
+        <p>Limitations: Doesn't scale. No way to bulk-enrich 10,000 records. Revenue data is often unavailable for private companies.</p>
+
+        <p><strong>Best for:</strong> Startups with small databases, high-value target accounts worth manual research.</p>
+
+        <h3>Low Cost ($1-5K/year): Point Solutions</h3>
+
+        <p>Several tools specialize in specific types of enrichment data:</p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Best For</th>
+              <th>Pricing Model</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Clearbit</strong></td>
+              <td>Company data, tech stack</td>
+              <td>Credits-based</td>
+            </tr>
+            <tr>
+              <td><strong>Apollo.io</strong></td>
+              <td>Contact data, emails, phones</td>
+              <td>Subscription + credits</td>
+            </tr>
+            <tr>
+              <td><strong>Hunter.io</strong></td>
+              <td>Email finding and verification</td>
+              <td>Per-email credits</td>
+            </tr>
+            <tr>
+              <td><strong>BuiltWith</strong></td>
+              <td>Technology stack data</td>
+              <td>Subscription</td>
+            </tr>
+            <tr>
+              <td><strong>Lusha</strong></td>
+              <td>Contact direct dials</td>
+              <td>Credits-based</td>
+            </tr>
+            <tr>
+              <td><strong>People Data Labs</strong></td>
+              <td>Bulk person/company data API</td>
+              <td>Per-record pricing</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The advantage of point solutions is you only pay for what you need. If you just need company employee counts, you don't have to buy a full contact database.</p>
+
+        <p><strong>Best for:</strong> Companies with specific data gaps (like missing employee count on all accounts) rather than comprehensive enrichment needs.</p>
+
+        <h3>Mid-Range ($5-15K/year): Full-Featured Alternatives</h3>
+
+        <p>These platforms compete directly with ZoomInfo at lower price points:</p>
+
+        <ul>
+          <li><strong>Apollo.io (higher tiers):</strong> Full contact and company database with decent accuracy. Native Salesforce integration.</li>
+          <li><strong>Cognism:</strong> Strong in EMEA data. GDPR-compliant. Good for international sales teams.</li>
+          <li><strong>LeadIQ:</strong> Chrome extension focus. Good for prospecting workflows.</li>
+          <li><strong>Seamless.ai:</strong> Real-time email and phone finding. Variable data quality.</li>
+        </ul>
+
+        <p>Accuracy varies. None of these match ZoomInfo's database size, but for many use cases, 80% accuracy at 50% of the cost is a good tradeoff.</p>
+
+        <p><strong>Best for:</strong> Mid-market companies with active outbound programs and 10,000-100,000 records to enrich.</p>
+
+        <h3>Enterprise ($30K+/year): ZoomInfo and Competitors</h3>
+
+        <p>If budget isn't the constraint, these are the most comprehensive options:</p>
+
+        <ul>
+          <li><strong>ZoomInfo:</strong> Largest database, best accuracy, widest feature set. The default choice if you can afford it.</li>
+          <li><strong>6sense:</strong> Account-based platform with intent data. More expensive but includes buying signals.</li>
+          <li><strong>Demandbase:</strong> Similar to 6sense. Strong ABM features alongside data.</li>
+        </ul>
+
+        <p><strong>Best for:</strong> Enterprise companies where data accuracy directly impacts revenue and the cost is justified by pipeline value.</p>
+
+        <h2>Building an Enrichment Workflow</h2>
+
+        <p>Whatever tools you choose, you need a process. Here's how to set up enrichment that actually works.</p>
+
+        <h3>Point-of-Entry Enrichment</h3>
+
+        <p>Enrich new records as they come in. This is the most valuable place to invest because clean data from the start prevents problems downstream.</p>
+
+        <p>For web form submissions:</p>
+        <ol>
+          <li>Capture company email domain</li>
+          <li>Call enrichment API (Clearbit, Apollo, etc.)</li>
+          <li>Auto-populate company fields (employee count, industry, revenue)</li>
+          <li>Pass enriched lead to Salesforce</li>
+        </ol>
+
+        <p>Most enrichment tools have native integrations with form platforms (Marketo, HubSpot) or Salesforce that handle this automatically.</p>
+
+        <h3>Batch Enrichment for Existing Records</h3>
+
+        <p>For records already in Salesforce, you'll need to export, enrich, and reimport.</p>
+
+        <p>Process:</p>
+        <ol>
+          <li>Export records with Salesforce ID, company name, domain, and existing data</li>
+          <li>Upload to your enrichment tool or use their API</li>
+          <li>Review enriched data for obvious errors</li>
+          <li>Import back to Salesforce, matching on ID</li>
+        </ol>
+
+        <p>Important: Don't overwrite existing good data with enriched data that might be less accurate. Create logic that only fills blank fields or updates fields where the existing value is clearly outdated.</p>
+
+        <h3>Scheduled Re-Enrichment</h3>
+
+        <p>Company data changes. People get promoted, companies grow, and acquisitions happen. Set up quarterly or semi-annual re-enrichment for your active accounts.</p>
+
+        <p>Prioritize:</p>
+        <ul>
+          <li>Open opportunities (data accuracy matters most here)</li>
+          <li>Target accounts (your ABM list)</li>
+          <li>Recently engaged accounts</li>
+        </ul>
+
+        <p>Don't re-enrich your entire database every quarter. That's expensive and usually unnecessary for dormant records.</p>
+
+        <h2>DIY Enrichment with Multiple Sources</h2>
+
+        <p>You can build a reasonable enrichment stack by combining free and low-cost sources. It requires more work but can save significant money.</p>
+
+        <h3>Company Data Stack</h3>
+
+        <ul>
+          <li><strong>Company website:</strong> About page usually lists employee count ranges, locations, and sometimes revenue</li>
+          <li><strong>LinkedIn company page:</strong> Employee count, industry, headquarters, recent hires</li>
+          <li><strong>Crunchbase:</strong> Funding data, estimated revenue for tech companies, key people</li>
+          <li><strong>BuiltWith/Wappalyzer:</strong> Technology stack from website analysis (free tiers available)</li>
+          <li><strong>SEC filings:</strong> Revenue, employee count for public companies (free, accurate)</li>
+        </ul>
+
+        <h3>Contact Data Stack</h3>
+
+        <ul>
+          <li><strong>LinkedIn Sales Navigator:</strong> Job titles, seniority, recent job changes</li>
+          <li><strong>Hunter.io:</strong> Email pattern discovery and verification</li>
+          <li><strong>Email permutator tools:</strong> Generate likely email formats and verify</li>
+          <li><strong>Company website:</strong> Leadership pages, press releases for executive info</li>
+        </ul>
+
+        <h3>Automation Options</h3>
+
+        <p>Tools like Clay, Bardeen, or custom scripts can automate pulling from multiple sources. You can build a workflow that:</p>
+
+        <ol>
+          <li>Takes a company domain as input</li>
+          <li>Pulls LinkedIn company data</li>
+          <li>Checks Crunchbase for funding</li>
+          <li>Runs BuiltWith for tech stack</li>
+          <li>Combines results into a single enriched record</li>
+        </ol>
+
+        <p>This requires technical setup but can match the output of paid enrichment tools at a fraction of the cost.</p>
+
+        <h2>Common Enrichment Mistakes</h2>
+
+        <p><strong>Enriching everything at once.</strong> Start with your most valuable segments (target accounts, active opportunities) and expand from there. Enriching 100,000 records you'll never use is a waste.</p>
+
+        <p><strong>Trusting enriched data blindly.</strong> No enrichment source is 100% accurate. Validate critical data before high-stakes actions like enterprise outreach.</p>
+
+        <p><strong>Overwriting good data.</strong> If a field already has a value, don't automatically replace it with enriched data. The existing value might be from direct customer input or verified by your team.</p>
+
+        <p><strong>Ignoring data decay.</strong> Enriched data has a shelf life. That employee count from 18 months ago is probably wrong now, especially for fast-growing companies.</p>
+
+        <p><strong>Not tracking data sources.</strong> Create a field for "data source" or "enrichment date" so you know where values came from and when they were last updated.</p>
+
+        <h2>Measuring Enrichment ROI</h2>
+
+        <p>How do you know if enrichment is worth the investment? Track these metrics:</p>
+
+        <p><strong>Field fill rates:</strong> What percentage of records have values for your key fields? Track before and after enrichment.</p>
+
+        <p><strong>Lead scoring accuracy:</strong> Are enriched leads scoring correctly? Look at conversion rates by score bracket.</p>
+
+        <p><strong>Routing accuracy:</strong> Are leads going to the right reps? Fewer manual reassignments means routing data is working.</p>
+
+        <p><strong>Sales productivity:</strong> How much time are reps spending on manual research? Should decrease with good enrichment.</p>
+
+        <p><strong>Campaign performance:</strong> Are segmented campaigns (based on enriched data) outperforming generic campaigns?</p>
+
+        <h2>When to Outsource Enrichment</h2>
+
+        <p>Sometimes it makes more sense to have someone else handle this. Consider outsourcing if:</p>
+
+        <ul>
+          <li><strong>You have a large backlog:</strong> 50,000+ records with missing data is a significant project</li>
+          <li><strong>You need custom research:</strong> Data not available from standard enrichment tools (niche industries, specific qualifiers)</li>
+          <li><strong>You're migrating CRMs:</strong> <a href="/resources/crm-migration-data-cleanup.html">Clean and enrich before you move</a>, not after</li>
+          <li><strong>You lack technical resources:</strong> Building and maintaining enrichment workflows takes time</li>
+        </ul>
+
+        <p>At Verum, <a href="/enrichment/">data enrichment</a> is one of our core services. We use a combination of data sources and custom research to fill gaps that automated tools miss. For companies without dedicated RevOps resources, it's often more cost-effective than building internal capabilities.</p>
+
+        <div class="article-cta">
+          <p><strong>Need help enriching your Salesforce data?</strong></p>
+          <p>We can assess your current data gaps and recommend the most cost-effective approach for your database size and budget.</p>
+          <p><a href="/contact.html" class="btn btn--primary">Get a Free Assessment</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Clean Salesforce Data: The Complete Guide | Verum</title>
+  <meta name="description" content="A practical guide to cleaning your Salesforce data. Duplicates, bad emails, outdated contacts, inconsistent formatting. Here's how to fix it systematically.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/how-to-clean-salesforce-data.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/how-to-clean-salesforce-data.html">
+  <meta property="og:title" content="How to Clean Salesforce Data: The Complete Guide">
+  <meta property="og:description" content="A practical guide to cleaning your Salesforce data. Duplicates, bad emails, outdated contacts. Here's how to fix it.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Clean Salesforce Data: The Complete Guide">
+  <meta name="twitter:description" content="A practical guide to cleaning your Salesforce data. Duplicates, bad emails, outdated contacts. Here's how to fix it.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Clean Salesforce Data: The Complete Guide",
+    "description": "A practical guide to cleaning your Salesforce data. Duplicates, bad emails, outdated contacts, inconsistent formatting. Here's how to fix it systematically.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/how-to-clean-salesforce-data.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often should I clean my Salesforce data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most companies benefit from quarterly cleanings. Contact data decays at roughly 30% per year due to job changes, company moves, and email bounces. Regular maintenance prevents problems from compounding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use Salesforce's built-in duplicate management or a third-party tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salesforce's native tools work for preventing new duplicates but struggle with fuzzy matching on existing records. For serious cleanup projects, you'll likely need third-party tools or manual review for edge cases like company name variations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I clean Salesforce data without breaking automations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Export your data, clean it externally, then import using the same record IDs. This preserves relationships and automation references. Always test with a small batch first and document which fields you're modifying."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the ROI of cleaning Salesforce data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sales reps waste an average of 13 hours per week hunting for information in messy CRMs. Cleaning data improves email deliverability (protecting sender reputation), increases connection rates on calls, and makes automation actually work. The ROI is usually obvious within a quarter."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .step-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .step-box__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--color-teal);
+      color: var(--color-bg-primary);
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: var(--space-md);
+    }
+    .step-box__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-sm);
+    }
+    .step-box__text {
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Salesforce</p>
+      <h1 class="page-hero__title">How to Clean Salesforce Data: The Complete Guide</h1>
+      <p class="page-hero__subtitle">Your Salesforce instance has years of accumulated problems. Duplicates, bad emails, outdated contacts, inconsistent formatting. Here's how to fix it.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 12 min read</div>
+
+      <div class="blog-content">
+
+        <p>Your Salesforce org has been running for years. Maybe a decade. In that time, thousands of records have piled up from form submissions, list imports, manual entry, and integrations that push data in whether you want it or not.</p>
+
+        <p>Now you're looking at a database where 15% of emails bounce, phone numbers are formatted six different ways, and the same company appears as "Acme Corp," "ACME Corporation," and "acme inc." Your reps don't trust the data. Marketing automation fails because records are incomplete. Reporting is useless because the data beneath it is garbage.</p>
+
+        <p>This guide covers how to systematically clean your Salesforce data, from assessment to execution. Some of this you can do with native tools. Some requires third-party apps or manual work. And some of it, honestly, might be worth outsourcing.</p>
+
+        <h2>Before You Start: The Assessment</h2>
+
+        <p>Cleaning data without understanding what's broken is like organizing a closet blindfolded. You need to know the scope of the problem before you can fix it.</p>
+
+        <h3>Run a Data Quality Report</h3>
+
+        <p>Start with the basics. For your Contact and Lead objects, pull counts for:</p>
+
+        <ul>
+          <li>Records with no email address</li>
+          <li>Records with no phone number</li>
+          <li>Records with blank required fields (Title, Company, etc.)</li>
+          <li>Records that haven't been touched in 12+ months</li>
+          <li>Records with bounced emails (if you track this)</li>
+        </ul>
+
+        <p>For Accounts, check:</p>
+
+        <ul>
+          <li>Accounts with no associated Contacts</li>
+          <li>Accounts with blank Industry or Employee Count</li>
+          <li>Duplicate detection on Account Name</li>
+        </ul>
+
+        <p>This gives you a baseline. You might find that 8% of records are missing emails, 23% have no phone, and 12% haven't been updated since 2021. Now you know what you're dealing with.</p>
+
+        <h3>Identify Your Problem Categories</h3>
+
+        <p>Salesforce data problems generally fall into five buckets:</p>
+
+        <p><strong>1. Duplicates.</strong> The same person or company appearing multiple times, often with slight variations. "John Smith" at "Acme" exists three times because one record has his work email, one has his personal email, and one was imported from a list with no email at all.</p>
+
+        <p><strong>2. Invalid Data.</strong> Emails that bounce. Phone numbers that don't dial. Addresses that don't exist. This data isn't just useless; it actively hurts you when you try to use it.</p>
+
+        <p><strong>3. Incomplete Data.</strong> Records missing key fields. A Contact with no phone number. An Account with no industry. A Lead with no company name. You can't route, score, or segment what you can't see.</p>
+
+        <p><strong>4. Inconsistent Data.</strong> The same value expressed different ways. "VP of Sales" versus "Vice President, Sales" versus "Sales VP." "California" versus "CA" versus "Calif." This breaks reporting and automation logic.</p>
+
+        <p><strong>5. Stale Data.</strong> Information that was accurate once but isn't anymore. The VP of Sales who left 18 months ago. The company that was acquired. The email that worked until they changed domains. Data decays at roughly 30% per year, so a three-year-old record has a coin flip chance of being wrong.</p>
+
+        <h2>Step 1: Handle Duplicates First</h2>
+
+        <p>Duplicates are the foundation problem. Cleaning everything else is pointless if you're going to merge records later and lose your work. Start here.</p>
+
+        <h3>Use Salesforce Duplicate Management</h3>
+
+        <p>Salesforce has built-in duplicate rules and matching rules. They're not perfect, but they're a starting point.</p>
+
+        <p>Go to Setup > Duplicate Management > Duplicate Rules. Create rules for Contacts, Leads, and Accounts. The standard matching rules work on exact email match, exact name match, or fuzzy name matching.</p>
+
+        <p>The limitation: Salesforce's native matching is weak on fuzzy logic. It won't catch "Acme Corp" and "ACME Corporation" as duplicates unless you configure custom matching rules. For companies with messy data, you'll need more.</p>
+
+        <h3>Consider Third-Party Tools</h3>
+
+        <p>Apps like Cloudingo, DemandTools, or Duplicate Check offer more sophisticated matching. They can:</p>
+
+        <ul>
+          <li>Match on normalized company names (stripping "Inc," "LLC," etc.)</li>
+          <li>Match on fuzzy name variations (Robert/Bob, William/Bill)</li>
+          <li>Match across objects (finding the Lead that's already a Contact)</li>
+          <li>Batch process thousands of records at once</li>
+        </ul>
+
+        <p>If you have more than 10,000 records and serious duplicate problems, a tool will save you weeks of manual work.</p>
+
+        <h3>The Merge Process</h3>
+
+        <p>Once you've identified duplicates, you need a merge strategy. The key question: which record survives, and what data gets preserved?</p>
+
+        <p>Best practice: Keep the record with the most complete data, the most recent activity, or the oldest creation date (depending on your business). Merge the other record's data into it, preserving anything the survivor is missing.</p>
+
+        <div class="warning-box">
+          <div class="warning-box__title">Watch Out</div>
+          <p>Merging deletes records. This affects workflows, automation history, and reporting. Always export a backup before bulk merging, and test with a small batch first.</p>
+        </div>
+
+        <h2>Step 2: Validate and Fix Invalid Data</h2>
+
+        <p>Once duplicates are handled, clean up the data that's actively wrong.</p>
+
+        <h3>Email Validation</h3>
+
+        <p>Bad emails hurt in multiple ways. Bounces damage your sender reputation. Invalid addresses waste marketing spend. And reps lose credibility when they send to dead addresses.</p>
+
+        <p>You can validate emails with tools like NeverBounce, ZeroBounce, or Kickbox. They check whether addresses are:</p>
+
+        <ul>
+          <li>Valid (deliverable)</li>
+          <li>Invalid (hard bounce)</li>
+          <li>Risky (catch-all domains, temporary addresses)</li>
+          <li>Unknown (server didn't respond)</li>
+        </ul>
+
+        <p>Export your email list, run it through a validation service, then update Salesforce with the results. Most companies find 5-15% of their emails are invalid. Some find 30% or more.</p>
+
+        <h3>Phone Standardization</h3>
+
+        <p>Phone numbers get entered in every format imaginable: (555) 123-4567, 555.123.4567, 5551234567, +1-555-123-4567. This matters for:</p>
+
+        <ul>
+          <li>Click-to-dial integrations (which expect consistent formatting)</li>
+          <li>Deduplication (the same number formatted differently looks like different data)</li>
+          <li>International calling (missing country codes break everything)</li>
+        </ul>
+
+        <p>Standardize to a single format. E.164 (+15551234567) is the international standard, but (555) 123-4567 is more human-readable for US numbers. Pick one and apply it everywhere.</p>
+
+        <h3>Address Verification</h3>
+
+        <p>If you use address data for territory assignment, shipping, or compliance, verify it. Services like Smarty (formerly SmartyStreets) or Melissa can standardize addresses to USPS format and flag addresses that don't exist.</p>
+
+        <h2>Step 3: Fill in Missing Data</h2>
+
+        <p>Incomplete records are almost as bad as wrong records. You can't route leads by company size if the field is blank. You can't personalize emails by job title if half your contacts have no title.</p>
+
+        <h3>Identify Critical Gaps</h3>
+
+        <p>Not all fields matter equally. Focus on the fields your business actually uses for:</p>
+
+        <ul>
+          <li>Lead routing and assignment</li>
+          <li>Lead scoring</li>
+          <li>Marketing segmentation</li>
+          <li>Sales prioritization</li>
+          <li>Reporting and forecasting</li>
+        </ul>
+
+        <p>For most B2B companies, the critical fields are: Email, Phone, Title, Company, Industry, Employee Count, and Location. If these are incomplete, everything downstream breaks.</p>
+
+        <h3>Enrichment Options</h3>
+
+        <p>You have a few ways to fill gaps:</p>
+
+        <p><strong>Manual research.</strong> Slow but accurate. Works for high-value accounts where you need perfect data. Doesn't scale past a few hundred records.</p>
+
+        <p><strong>Data enrichment tools.</strong> Services like ZoomInfo, Clearbit, Apollo, or Cognism can append firmographic and contact data. They work by matching your records against their databases. Match rates vary (typically 60-90% for US B2B data), and accuracy varies by vendor.</p>
+
+        <p><strong>Data enrichment services.</strong> If you don't want to buy a platform subscription, some companies (including us) will enrich your data as a one-time project. You get the clean data without the ongoing contract.</p>
+
+        <h2>Step 4: Standardize Inconsistent Data</h2>
+
+        <p>Standardization is the tedious middle child of data cleaning. It's less dramatic than finding duplicates or invalid emails, but inconsistent data quietly breaks everything from reports to automation.</p>
+
+        <h3>Job Titles</h3>
+
+        <p>People enter job titles however they want. Your database might have:</p>
+
+        <ul>
+          <li>VP Sales</li>
+          <li>VP of Sales</li>
+          <li>Vice President Sales</li>
+          <li>Vice President of Sales</li>
+          <li>Vice President, Sales</li>
+          <li>Sales VP</li>
+        </ul>
+
+        <p>These are all the same person, but your automation doesn't know that. Your "target VP and above" campaign misses half its audience.</p>
+
+        <p>Create a standardization map that converts variations to a canonical form. Then use Data Loader or a cleaning tool to apply it across your database.</p>
+
+        <h3>Industry Values</h3>
+
+        <p>Industry is even messier, especially if you've imported lists from multiple sources. You might have NAICS codes, SIC codes, free-text industry names, and Salesforce's default picklist values all mixed together.</p>
+
+        <p>Pick a standard (Salesforce's default picklist is fine for most companies) and map everything to it. This is manual work, but you only have to do it once per unique value.</p>
+
+        <h3>State and Country</h3>
+
+        <p>Enable Salesforce's State and Country Picklists if you haven't already. They force standardization at entry time, preventing "California" versus "CA" versus "calif" problems in the future.</p>
+
+        <p>For existing data, you'll need to clean it first. A simple find-and-replace can handle most variations.</p>
+
+        <h2>Step 5: Archive or Delete Stale Records</h2>
+
+        <p>The final step: deal with records that are too old to trust.</p>
+
+        <p>This is where companies get nervous. Nobody wants to delete data that might be useful someday. But keeping dead records has real costs:</p>
+
+        <ul>
+          <li>They inflate your record counts and storage</li>
+          <li>They pollute reports and dashboards</li>
+          <li>Sales might waste time on leads who left their company years ago</li>
+          <li>Marketing emails to dead addresses hurt deliverability</li>
+        </ul>
+
+        <h3>Define Your Criteria</h3>
+
+        <p>What makes a record "stale"? Common criteria:</p>
+
+        <ul>
+          <li>No activity in 24+ months</li>
+          <li>Email bounced and no phone number</li>
+          <li>Company no longer exists (acquired, closed)</li>
+          <li>Contact confirmed to have left the company</li>
+        </ul>
+
+        <h3>Archive, Don't Delete</h3>
+
+        <p>Unless you have compliance reasons to delete, archive stale records instead. Export them to a CSV (with all related data), then either delete them or move them to a "Stale" status that excludes them from active campaigns and lists.</p>
+
+        <p>This way, you can restore them if needed without losing historical context.</p>
+
+        <h2>Maintaining Clean Data Going Forward</h2>
+
+        <p>Cleaning data is a project. Keeping it clean is a process.</p>
+
+        <h3>Validation Rules</h3>
+
+        <p>Salesforce validation rules can enforce data quality at the point of entry. Require email format validation. Require certain fields on record creation. Block obviously bad data (phone numbers with wrong digit counts, emails from personal domains if you're B2B-only).</p>
+
+        <p>Don't go overboard. Too many required fields slow down data entry and lead to reps putting in junk data to bypass the rules.</p>
+
+        <h3>Regular Audits</h3>
+
+        <p>Run your data quality report monthly or quarterly. Track the metrics over time. If duplicate rates are climbing, something is broken in your processes. If email validity is dropping, you're overdue for a re-validation.</p>
+
+        <h3>Integration Hygiene</h3>
+
+        <p>Every system that pushes data into Salesforce is a potential source of garbage. Review your integrations periodically. Make sure marketing automation, forms, and third-party apps are mapping fields correctly and not creating duplicates.</p>
+
+        <h2>When to DIY vs. Outsource</h2>
+
+        <p>Some of this you can do yourself with Salesforce's native tools, spreadsheets, and some patience. Some of it requires specialized tools or expertise.</p>
+
+        <p><strong>Do it yourself if:</strong></p>
+        <ul>
+          <li>You have fewer than 10,000 records</li>
+          <li>Your problems are mostly straightforward (obvious duplicates, simple formatting)</li>
+          <li>You have someone with time to learn the tools and do the work</li>
+        </ul>
+
+        <p><strong>Consider outsourcing if:</strong></p>
+        <ul>
+          <li>You have 50,000+ records with complex problems</li>
+          <li>You need enrichment from multiple sources</li>
+          <li>You've tried cleaning before and the problems came back</li>
+          <li>You don't have weeks to dedicate to a cleanup project</li>
+        </ul>
+
+        <p>We clean Salesforce data for a living. If you want help, <a href="/#contact">get in touch</a>. If you want to do it yourself, everything above should get you started.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>How often should I clean my Salesforce data?</h3>
+          <p>Most companies benefit from quarterly cleanings. Contact data decays at roughly 30% per year, so even data that was perfect 12 months ago is significantly degraded now.</p>
+
+          <h3>Should I use Salesforce's built-in duplicate management or a third-party tool?</h3>
+          <p>Salesforce's native tools work for preventing new duplicates but struggle with fuzzy matching on existing records. For serious cleanup, you'll need third-party tools or manual review.</p>
+
+          <h3>How do I clean data without breaking automations?</h3>
+          <p>Export your data, clean it externally, then import using the same record IDs. This preserves relationships and automation references. Test with a small batch first.</p>
+
+          <h3>What's the ROI of cleaning Salesforce data?</h3>
+          <p>Sales reps waste an average of 13 hours per week on data problems. Email deliverability improves immediately after removing bounces. Automation that was failing starts working. The ROI is usually obvious within a quarter.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Need help cleaning your Salesforce data?</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">Get a Free Assessment</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/services/data-cleaning.html">Data Cleaning Services</a> | <a href="/use-cases/crm-hygiene/">CRM Hygiene</a> | <a href="/cleaning/data-deduplication/">Data Deduplication</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

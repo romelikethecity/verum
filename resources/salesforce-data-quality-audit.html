@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Audit Your Salesforce Data Quality | Verum</title>
+  <meta name="description" content="You suspect your CRM data has problems, but how bad is it really? Here's how to run a comprehensive Salesforce data quality audit with metrics that matter.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/salesforce-data-quality-audit.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/salesforce-data-quality-audit.html">
+  <meta property="og:title" content="How to Audit Your Salesforce Data Quality">
+  <meta property="og:description" content="You suspect your CRM data has problems. Here's how to measure exactly how bad it is.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Audit Your Salesforce Data Quality">
+  <meta name="twitter:description" content="You suspect your CRM data has problems. Here's how to measure exactly how bad it is.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Audit Your Salesforce Data Quality",
+    "description": "You suspect your CRM data has problems, but how bad is it really? Here's how to run a comprehensive Salesforce data quality audit with metrics that matter.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/salesforce-data-quality-audit.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often should I audit my Salesforce data quality?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quarterly is ideal for most companies. This catches problems before they compound significantly. At minimum, audit before any major initiative: CRM migration, new marketing automation launch, or territory realignment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's an acceptable duplicate rate in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under 5% is good, under 10% is acceptable, above 15% needs immediate attention. These numbers apply to both Accounts and Contacts. Higher rates indicate broken data entry processes or a history of unconsolidated imports."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the most important data quality metric?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your business, but email validity usually has the most direct revenue impact. Invalid emails mean failed campaigns, wasted outreach, and damaged sender reputation. Start there if you can only fix one thing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I audit all records or just a sample?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For quantitative metrics (completeness, duplication rates), analyze all records. For qualitative assessments (accuracy of specific values), a statistically valid sample works. For databases under 100K records, auditing everything is usually feasible."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .metrics-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .metrics-table th,
+    .metrics-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .metrics-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .metrics-table td {
+      color: var(--color-text-secondary);
+    }
+    .benchmark {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .benchmark--good {
+      background: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+    }
+    .benchmark--okay {
+      background: rgba(245, 158, 11, 0.1);
+      color: #f59e0b;
+    }
+    .benchmark--bad {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>How to Audit Your Salesforce Data Quality</h1>
+        <p class="article-meta">January 2026 · 10 min read</p>
+
+        <p>Everyone knows their CRM data has problems. Nobody knows exactly how bad those problems are. "We probably have some duplicates" and "I think a lot of emails are outdated" aren't actionable statements.</p>
+
+        <p>A data quality audit gives you specific numbers: your duplicate rate is 14%, 23% of emails are invalid, 67% of accounts are missing industry data. With numbers, you can prioritize. You can calculate ROI on cleanup. You can make the case for investment.</p>
+
+        <p>Here's how to run a comprehensive Salesforce data quality audit.</p>
+
+        <h2>The Five Dimensions of Data Quality</h2>
+
+        <p>Data quality isn't a single metric. It breaks down into measurable dimensions:</p>
+
+        <p><strong>Completeness:</strong> What percentage of records have values for required fields? If 40% of your Contacts are missing phone numbers, that's a completeness problem.</p>
+
+        <p><strong>Accuracy:</strong> Are the values that exist correct? An email that's formatted properly but bounces is an accuracy problem. A company listed as "Tech" when it's actually healthcare is an accuracy problem.</p>
+
+        <p><strong>Consistency:</strong> Are similar values formatted the same way? "United States", "US", "USA", and "U.S.A." all in your Country field is a consistency problem.</p>
+
+        <p><strong>Uniqueness:</strong> How many duplicate records exist? If the same company appears as three different Accounts, that's a uniqueness problem.</p>
+
+        <p><strong>Timeliness:</strong> How current is the data? A contact's job title from three years ago might be wrong now. Contact data decays at <a href="/resources/crm-data-decay-rate.html">roughly 30% per year</a>.</p>
+
+        <h2>Account-Level Audit</h2>
+
+        <p>Start with Accounts since they're the foundation of your B2B data model.</p>
+
+        <h3>Completeness Metrics</h3>
+
+        <p>Create a report that counts records with null/empty values for each key field:</p>
+
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Why It Matters</th>
+              <th>Target Fill Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Account Name</strong></td>
+              <td>Basic identification</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td><strong>Website/Domain</strong></td>
+              <td>Deduplication, enrichment matching</td>
+              <td>>95%</td>
+            </tr>
+            <tr>
+              <td><strong>Industry</strong></td>
+              <td>Segmentation, ICP filtering</td>
+              <td>>85%</td>
+            </tr>
+            <tr>
+              <td><strong>Employee Count</strong></td>
+              <td>Company size for routing/scoring</td>
+              <td>>80%</td>
+            </tr>
+            <tr>
+              <td><strong>Annual Revenue</strong></td>
+              <td>Budget qualification</td>
+              <td>>60%</td>
+            </tr>
+            <tr>
+              <td><strong>Billing Address</strong></td>
+              <td>Territory assignment</td>
+              <td>>90%</td>
+            </tr>
+            <tr>
+              <td><strong>Account Owner</strong></td>
+              <td>Sales coverage</td>
+              <td>100%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Uniqueness Metrics</h3>
+
+        <p>Duplicate Accounts cause significant problems. Here's how to measure your duplicate rate:</p>
+
+        <ol>
+          <li><strong>Exact domain matches:</strong> How many Accounts share the same website/domain?</li>
+          <li><strong>Fuzzy name matches:</strong> How many Account names are similar enough to be duplicates? (Requires fuzzy matching logic)</li>
+          <li><strong>Orphan Accounts:</strong> How many Accounts have zero Contacts? (May indicate data entry errors or abandonded records)</li>
+        </ol>
+
+        <div class="stat-box">
+          <p><strong>Benchmarks:</strong><br>
+          <span class="benchmark benchmark--good">Good: &lt;5% duplicates</span><br>
+          <span class="benchmark benchmark--okay">Needs work: 5-10% duplicates</span><br>
+          <span class="benchmark benchmark--bad">Problem: &gt;10% duplicates</span></p>
+        </div>
+
+        <h3>Consistency Metrics</h3>
+
+        <p>Check categorical fields for variant values:</p>
+
+        <ul>
+          <li>How many unique values exist in the Industry field? (20 is reasonable; 200 suggests inconsistency)</li>
+          <li>How many Country variations exist? (Should map to a standard list)</li>
+          <li>Are account names standardized? (Check for "Inc." vs "Inc" vs "Incorporated" variations)</li>
+        </ul>
+
+        <h2>Contact-Level Audit</h2>
+
+        <p>Contacts are where most data quality issues live, and where the impact is most directly felt.</p>
+
+        <h3>Completeness Metrics</h3>
+
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Why It Matters</th>
+              <th>Target Fill Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Email</strong></td>
+              <td>Primary communication channel</td>
+              <td>>98%</td>
+            </tr>
+            <tr>
+              <td><strong>First Name</strong></td>
+              <td>Personalization</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td><strong>Last Name</strong></td>
+              <td>Identification</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td><strong>Title</strong></td>
+              <td>Routing, scoring, personalization</td>
+              <td>>90%</td>
+            </tr>
+            <tr>
+              <td><strong>Phone</strong></td>
+              <td>Outbound calling</td>
+              <td>>60%</td>
+            </tr>
+            <tr>
+              <td><strong>Account (lookup)</strong></td>
+              <td>Company relationship</td>
+              <td>100%</td>
+            </tr>
+            <tr>
+              <td><strong>Mailing Address</strong></td>
+              <td>Direct mail, events</td>
+              <td>>50%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Email Quality Metrics</h3>
+
+        <p>Email completeness isn't enough. You need to assess email quality:</p>
+
+        <ul>
+          <li><strong>Format validity:</strong> Does the email follow proper syntax?</li>
+          <li><strong>Domain validity:</strong> Does the domain exist and accept mail?</li>
+          <li><strong>Mailbox validity:</strong> Does the specific mailbox exist?</li>
+          <li><strong>Role-based rate:</strong> What percentage are info@, sales@, support@ addresses?</li>
+          <li><strong>Disposable rate:</strong> What percentage are throwaway email services?</li>
+        </ul>
+
+        <p>Run your email list through a <a href="/resources/salesforce-email-validation.html">validation service</a> to get these metrics.</p>
+
+        <div class="stat-box">
+          <p><strong>Email quality benchmarks:</strong><br>
+          <span class="benchmark benchmark--good">Good: &gt;85% valid</span><br>
+          <span class="benchmark benchmark--okay">Needs work: 70-85% valid</span><br>
+          <span class="benchmark benchmark--bad">Problem: &lt;70% valid</span></p>
+        </div>
+
+        <h3>Uniqueness Metrics</h3>
+
+        <p>Contact duplicates are tricky because the same person might have multiple legitimate records (changed companies, different email addresses).</p>
+
+        <p>Check for duplicates using:</p>
+        <ul>
+          <li><strong>Exact email matches:</strong> Same email on multiple Contact records</li>
+          <li><strong>Same name + same Account:</strong> Strong duplicate indicator</li>
+          <li><strong>Same name + same domain:</strong> Likely duplicate even if different email address</li>
+        </ul>
+
+        <h3>Timeliness Metrics</h3>
+
+        <p>How stale is your Contact data?</p>
+
+        <ul>
+          <li><strong>Last Activity Date distribution:</strong> What percentage of Contacts have had activity in the last 6 months? 12 months? 24 months?</li>
+          <li><strong>Last Modified Date distribution:</strong> When was the record data last updated?</li>
+          <li><strong>Created Date age:</strong> Records created 3+ years ago without updates are likely outdated</li>
+        </ul>
+
+        <p>Contacts with no activity in 24+ months and no updates in 12+ months are high-risk for data decay.</p>
+
+        <h2>Lead-Level Audit</h2>
+
+        <p>If you use Leads, apply similar metrics:</p>
+
+        <ul>
+          <li><strong>Completeness:</strong> Fill rates for key fields (email, company, title)</li>
+          <li><strong>Email validity:</strong> Same validation as Contacts</li>
+          <li><strong>Lead-to-Contact duplicates:</strong> How many Leads already exist as Contacts?</li>
+          <li><strong>Lead aging:</strong> How long do Leads sit before conversion or disqualification?</li>
+          <li><strong>Source quality:</strong> Which Lead Sources have the worst data quality?</li>
+        </ul>
+
+        <h2>Opportunity-Level Audit</h2>
+
+        <p>Opportunity data quality directly affects forecasting and reporting:</p>
+
+        <ul>
+          <li><strong>Stage consistency:</strong> Are stages being used correctly or skipped?</li>
+          <li><strong>Close Date accuracy:</strong> How often do Close Dates slip past the original date?</li>
+          <li><strong>Amount fill rate:</strong> What percentage of Opportunities have amounts?</li>
+          <li><strong>Contact Roles:</strong> What percentage of Opportunities have associated Contacts?</li>
+          <li><strong>Orphan Opportunities:</strong> Opportunities without Accounts or with deleted Accounts</li>
+        </ul>
+
+        <h2>Running the Audit: Practical Steps</h2>
+
+        <h3>Step 1: Export Your Data</h3>
+
+        <p>Pull reports for each object you're auditing. Include all fields you want to measure. Export to CSV for analysis.</p>
+
+        <p>For large databases, you may need to use Data Loader or the Bulk API instead of standard reports.</p>
+
+        <h3>Step 2: Calculate Completeness</h3>
+
+        <p>For each field, count:</p>
+        <ul>
+          <li>Total records</li>
+          <li>Records with blank/null values</li>
+          <li>Fill rate = (Total - Blank) / Total</li>
+        </ul>
+
+        <p>This can be done in Excel with COUNTBLANK functions, or programmatically with Python/SQL.</p>
+
+        <h3>Step 3: Identify Duplicates</h3>
+
+        <p>For exact matches (same email, same domain), simple sorting and comparison works.</p>
+
+        <p>For fuzzy matches (similar names, minor spelling variations), you'll need:</p>
+        <ul>
+          <li>Fuzzy matching algorithms (Levenshtein distance, Jaro-Winkler)</li>
+          <li>Specialized tools (Cloudingo, DemandTools, RingLead)</li>
+          <li>Or manual review of sorted lists</li>
+        </ul>
+
+        <h3>Step 4: Validate Emails</h3>
+
+        <p>Upload your email list to a validation service. They'll return results categorized by validity status.</p>
+
+        <h3>Step 5: Assess Consistency</h3>
+
+        <p>For picklist fields, pull the distinct value counts. High counts suggest inconsistency:</p>
+
+        <ul>
+          <li>Country field with 50+ values probably has inconsistent entries</li>
+          <li>Industry field with 200+ values definitely needs cleanup</li>
+        </ul>
+
+        <p>For free-text fields like company names, look for obvious variations (Inc vs Inc. vs Incorporated).</p>
+
+        <h3>Step 6: Compile Results</h3>
+
+        <p>Create a summary scorecard with all metrics:</p>
+
+        <table class="metrics-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Current</th>
+              <th>Target</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Account duplicate rate</td>
+              <td>8.3%</td>
+              <td>&lt;5%</td>
+              <td><span class="benchmark benchmark--okay">Needs work</span></td>
+            </tr>
+            <tr>
+              <td>Contact email fill rate</td>
+              <td>94.2%</td>
+              <td>&gt;98%</td>
+              <td><span class="benchmark benchmark--okay">Needs work</span></td>
+            </tr>
+            <tr>
+              <td>Contact email validity</td>
+              <td>78.5%</td>
+              <td>&gt;85%</td>
+              <td><span class="benchmark benchmark--bad">Problem</span></td>
+            </tr>
+            <tr>
+              <td>Account industry fill rate</td>
+              <td>89.1%</td>
+              <td>&gt;85%</td>
+              <td><span class="benchmark benchmark--good">Good</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Prioritizing Cleanup</h2>
+
+        <p>You can't fix everything at once. Prioritize based on:</p>
+
+        <p><strong>Business impact:</strong> Email validity directly affects campaigns. Duplicate Accounts affect forecasting. Missing industry data affects segmentation. Rank by what's costing you most.</p>
+
+        <p><strong>Effort to fix:</strong> Some issues (email validation) are straightforward. Others (duplicate merging) require more careful work. Balance quick wins with important fixes.</p>
+
+        <p><strong>Compounding effect:</strong> Duplicates get worse over time as people add to both records. Bad data entry processes create ongoing problems. Fix root causes early.</p>
+
+        <p>A typical prioritization:</p>
+        <ol>
+          <li>Merge duplicate Accounts (affects everything else)</li>
+          <li>Validate and flag invalid emails (highest immediate ROI)</li>
+          <li>Merge duplicate Contacts (reduces confusion)</li>
+          <li>Fill missing critical fields through <a href="/resources/salesforce-data-enrichment.html">enrichment</a></li>
+          <li>Standardize categorical fields</li>
+          <li>Archive or delete truly dead records</li>
+        </ol>
+
+        <h2>Ongoing Monitoring</h2>
+
+        <p>A data quality audit isn't a one-time event. Set up ongoing monitoring:</p>
+
+        <p><strong>Scheduled reports:</strong> Create Salesforce reports that surface data quality issues weekly or monthly.</p>
+
+        <p><strong>Dashboard:</strong> Build a data quality dashboard with key metrics visible to RevOps and leadership.</p>
+
+        <p><strong>Trend tracking:</strong> Are metrics improving or degrading over time? A declining email validity rate suggests a process problem.</p>
+
+        <p><strong>Source analysis:</strong> Which Lead Sources, import files, or entry points create the worst data? Fix the sources, not just the symptoms.</p>
+
+        <h2>When to Get Help</h2>
+
+        <p>Running a comprehensive data quality audit takes time and expertise. Consider getting help if:</p>
+
+        <ul>
+          <li><strong>You've never done one:</strong> First-time audits benefit from experienced perspective</li>
+          <li><strong>Your database is large:</strong> 100K+ records means significant analysis work</li>
+          <li><strong>You need to justify investment:</strong> An external audit carries more weight with leadership</li>
+          <li><strong>You need benchmarks:</strong> How do you compare to similar companies?</li>
+        </ul>
+
+        <p>At Verum, <a href="/services/data-cleaning.html">data audits</a> are often the first step in our engagements. We assess your current state, identify priorities, and give you a clear picture of what cleanup will involve. If you just want the audit without the cleanup, that works too.</p>
+
+        <div class="article-cta">
+          <p><strong>Not sure about your data quality?</strong></p>
+          <p>We can run a comprehensive audit of your Salesforce instance and give you a detailed report with specific metrics and prioritized recommendations.</p>
+          <p><a href="/contact.html" class="btn btn--primary">Get a Free Assessment</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

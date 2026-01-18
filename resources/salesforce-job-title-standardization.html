@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Standardize Job Titles in Salesforce | Verum</title>
+  <meta name="description" content="VP Sales, Vice President of Sales, VP of Sales, Sales VP. They're all the same person. Here's how to standardize job titles so your routing and reporting actually work.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/salesforce-job-title-standardization.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/salesforce-job-title-standardization.html">
+  <meta property="og:title" content="How to Standardize Job Titles in Salesforce">
+  <meta property="og:description" content="VP Sales, Vice President of Sales, VP of Sales. They're the same. Here's how to standardize them.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Standardize Job Titles in Salesforce">
+  <meta name="twitter:description" content="VP Sales, Vice President of Sales, VP of Sales. They're the same. Here's how to standardize them.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Standardize Job Titles in Salesforce",
+    "description": "VP Sales, Vice President of Sales, VP of Sales, Sales VP. They're all the same person. Here's how to standardize job titles so your routing and reporting actually work.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/salesforce-job-title-standardization.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I replace the original job title or create a new field?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Create new fields (Standardized_Title__c, Seniority_Level__c, Department__c). Keep the original title intact for reference and to preserve what the person actually calls themselves."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I handle job titles in other languages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Map foreign titles to your English standard list. Common mappings include Directeur to Director, Geschäftsführer to CEO/Managing Director, and Gerente to Manager. Maintain a translation reference table."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about creative or non-standard titles like Chief Happiness Officer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Map them to functional equivalents. Chief Happiness Officer usually means HR Director or Head of People. Focus on what the person actually does, not what their business card says."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I re-standardize job titles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standardize at point of entry for new records. For existing data, run a batch process quarterly to catch newly imported records or manual entries that bypassed validation."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .mapping-table th,
+    .mapping-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .mapping-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .mapping-table td {
+      color: var(--color-text-secondary);
+    }
+    code {
+      background: var(--color-bg-card);
+      padding: 0.125rem 0.375rem;
+      border-radius: 3px;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>How to Standardize Job Titles in Salesforce</h1>
+        <p class="article-meta">January 2026 · 8 min read</p>
+
+        <p>You want to see all VP-level contacts at your target accounts. You run a report filtering for "VP" in the title field. You get some results, but you're missing half of them.</p>
+
+        <p>Why? Because your database has "VP Sales", "Vice President of Sales", "VP, Sales", "Vice President - Sales", "Sales VP", and "V.P. Sales". They're all the same seniority level, but your filter only catches the ones with "VP" at the beginning.</p>
+
+        <p>This is the job title standardization problem. It breaks lead scoring, routing, reporting, and segmentation. Here's how to fix it.</p>
+
+        <h2>Why Job Titles Are So Messy</h2>
+
+        <p>Job title chaos comes from multiple sources:</p>
+
+        <p><strong>No standard exists.</strong> Unlike countries (ISO codes) or currencies (USD, EUR), there's no universal list of job titles. Every company makes them up as they go.</p>
+
+        <p><strong>Titles mean different things at different companies.</strong> A "Director" at a startup might be an individual contributor. A "Director" at a Fortune 500 company manages 50 people. Same title, completely different seniority.</p>
+
+        <p><strong>People write their own titles.</strong> Web forms, business cards, LinkedIn profiles all have self-reported titles with inconsistent formatting.</p>
+
+        <p><strong>Creative titles are trendy.</strong> "Growth Hacker", "Chief Happiness Officer", "Evangelist", "Ninja". These tell you nothing about function or seniority without translation.</p>
+
+        <p><strong>International variations.</strong> "Geschäftsführer" (German), "Directeur Général" (French), "Gerente" (Spanish) all need to map to something in your system.</p>
+
+        <h2>The Goal: Structured Title Data</h2>
+
+        <p>You don't need to fix the raw title field. Keep that intact for reference. Instead, create structured fields that can be used in automations:</p>
+
+        <table class="mapping-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Purpose</th>
+              <th>Example Values</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Title (original)</strong></td>
+              <td>What they call themselves</td>
+              <td>"VP of Revenue Operations"</td>
+            </tr>
+            <tr>
+              <td><strong>Standardized_Title__c</strong></td>
+              <td>Normalized version</td>
+              <td>"Vice President, Revenue Operations"</td>
+            </tr>
+            <tr>
+              <td><strong>Seniority_Level__c</strong></td>
+              <td>For scoring and routing</td>
+              <td>"VP"</td>
+            </tr>
+            <tr>
+              <td><strong>Department__c</strong></td>
+              <td>For segmentation</td>
+              <td>"Operations"</td>
+            </tr>
+            <tr>
+              <td><strong>Function__c</strong></td>
+              <td>Specific role type</td>
+              <td>"Revenue Operations"</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>With this structure, you can:</p>
+        <ul>
+          <li>Score leads based on seniority level</li>
+          <li>Route leads based on department</li>
+          <li>Report on contacts by function</li>
+          <li>Segment campaigns by decision-maker level</li>
+        </ul>
+
+        <h2>Building Your Seniority Taxonomy</h2>
+
+        <p>Start by defining your seniority levels. Here's a common framework that works for most B2B sales contexts:</p>
+
+        <table class="mapping-table">
+          <thead>
+            <tr>
+              <th>Seniority Level</th>
+              <th>Title Patterns</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>C-Level</strong></td>
+              <td>CEO, CFO, CTO, CRO, CMO, COO, Chief [X] Officer</td>
+            </tr>
+            <tr>
+              <td><strong>President</strong></td>
+              <td>President, SVP, EVP, Executive Vice President</td>
+            </tr>
+            <tr>
+              <td><strong>VP</strong></td>
+              <td>VP, Vice President, Global VP, Regional VP</td>
+            </tr>
+            <tr>
+              <td><strong>Director</strong></td>
+              <td>Director, Senior Director, Associate Director, Head of</td>
+            </tr>
+            <tr>
+              <td><strong>Manager</strong></td>
+              <td>Manager, Senior Manager, Team Lead</td>
+            </tr>
+            <tr>
+              <td><strong>Individual Contributor</strong></td>
+              <td>Analyst, Specialist, Coordinator, Associate</td>
+            </tr>
+            <tr>
+              <td><strong>Intern/Entry</strong></td>
+              <td>Intern, Trainee, Junior, Graduate</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="stat-box">
+          <p><strong>Important:</strong> Adjust this taxonomy based on your ICP and sales process. If you sell to enterprise, you might need more granularity at the executive level. If you sell to SMB, the distinction between VP and Director might not matter.</p>
+        </div>
+
+        <h2>Building Your Department Taxonomy</h2>
+
+        <p>Departments are more stable than seniority. Most B2B companies use some version of:</p>
+
+        <ul>
+          <li><strong>Sales</strong> (Account Executive, SDR, Sales Manager, VP Sales)</li>
+          <li><strong>Marketing</strong> (Demand Gen, Content, Product Marketing, CMO)</li>
+          <li><strong>Operations</strong> (RevOps, Sales Ops, Marketing Ops, BizOps)</li>
+          <li><strong>Customer Success</strong> (CSM, Account Manager, Implementation)</li>
+          <li><strong>Product</strong> (Product Manager, Product Owner, CPO)</li>
+          <li><strong>Engineering</strong> (Developer, Engineer, CTO, Engineering Manager)</li>
+          <li><strong>Finance</strong> (CFO, Controller, Accounting, FP&A)</li>
+          <li><strong>HR/People</strong> (Recruiter, HRBP, Chief People Officer)</li>
+          <li><strong>Legal</strong> (General Counsel, Legal Ops, Compliance)</li>
+          <li><strong>IT</strong> (IT Manager, Sysadmin, CIO, Security)</li>
+          <li><strong>Executive</strong> (CEO, Founder, Owner, Partner)</li>
+        </ul>
+
+        <p>Customize based on what matters for your targeting. If you sell to marketers, you might want sub-departments like "Demand Generation" vs "Brand Marketing".</p>
+
+        <h2>The Mapping Process</h2>
+
+        <p>Here's how to actually standardize your existing title data:</p>
+
+        <h3>Step 1: Export and Analyze</h3>
+
+        <p>Pull all unique job titles from your Salesforce database:</p>
+
+        <ol>
+          <li>Create a report of all Contacts grouped by Title</li>
+          <li>Export to CSV</li>
+          <li>Sort by frequency (most common titles first)</li>
+        </ol>
+
+        <p>You'll likely find that 100-200 unique titles cover 80% of your records. The long tail of weird one-off titles can be handled later.</p>
+
+        <h3>Step 2: Create Mapping Rules</h3>
+
+        <p>Build a mapping table that transforms raw titles into your structured fields. The logic follows a pattern:</p>
+
+        <p><strong>If title CONTAINS "CEO" or "Chief Executive" → Seniority = "C-Level", Department = "Executive"</strong></p>
+
+        <p><strong>If title CONTAINS "VP" and title CONTAINS "Sales" → Seniority = "VP", Department = "Sales"</strong></p>
+
+        <p>Start with the most specific rules and work toward general ones. Order matters: "VP of Sales Operations" should match "Operations" before it matches "Sales" if that's your intent.</p>
+
+        <h3>Step 3: Handle Edge Cases</h3>
+
+        <p>Some titles need manual review:</p>
+
+        <ul>
+          <li><strong>Founder:</strong> Could be C-Level at a startup or an honorific at a large company</li>
+          <li><strong>Partner:</strong> C-Level equivalent at consulting/law/VC firms</li>
+          <li><strong>Principal:</strong> Senior IC at some companies, senior leader at others</li>
+          <li><strong>Owner:</strong> Could mean CEO or could mean franchise operator</li>
+          <li><strong>Consultant:</strong> External? Internal? Seniority unclear</li>
+        </ul>
+
+        <p>For ambiguous titles, you may need additional context (company size, industry) to map correctly.</p>
+
+        <h3>Step 4: Implement in Salesforce</h3>
+
+        <p>You have several options for implementation:</p>
+
+        <p><strong>Formula fields:</strong> Good for simple mappings. Limited by formula character limits and can't handle complex logic.</p>
+
+        <p><strong>Flow (Process Builder replacement):</strong> Can handle complex IF/THEN logic and updates fields automatically when records are created or edited.</p>
+
+        <p><strong>Apex triggers:</strong> Most flexible but requires development resources. Good for complex pattern matching.</p>
+
+        <p><strong>External processing:</strong> Export, process in Python/Excel, reimport. Best for one-time cleanup of existing data.</p>
+
+        <p>For most companies, a combination works best: Flow for ongoing automation of new records, and a batch process (external or Apex) for cleaning existing data.</p>
+
+        <h2>Example Mapping Rules</h2>
+
+        <p>Here's a starter set of mapping rules you can adapt:</p>
+
+        <table class="mapping-table">
+          <thead>
+            <tr>
+              <th>Pattern</th>
+              <th>Seniority</th>
+              <th>Department</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>CEO, Chief Executive</td>
+              <td>C-Level</td>
+              <td>Executive</td>
+            </tr>
+            <tr>
+              <td>CFO, Chief Financial</td>
+              <td>C-Level</td>
+              <td>Finance</td>
+            </tr>
+            <tr>
+              <td>CTO, Chief Technology, Chief Technical</td>
+              <td>C-Level</td>
+              <td>Engineering</td>
+            </tr>
+            <tr>
+              <td>CMO, Chief Marketing</td>
+              <td>C-Level</td>
+              <td>Marketing</td>
+            </tr>
+            <tr>
+              <td>CRO, Chief Revenue</td>
+              <td>C-Level</td>
+              <td>Sales</td>
+            </tr>
+            <tr>
+              <td>COO, Chief Operating</td>
+              <td>C-Level</td>
+              <td>Operations</td>
+            </tr>
+            <tr>
+              <td>VP + Sales</td>
+              <td>VP</td>
+              <td>Sales</td>
+            </tr>
+            <tr>
+              <td>VP + Marketing</td>
+              <td>VP</td>
+              <td>Marketing</td>
+            </tr>
+            <tr>
+              <td>VP + Revenue Operations, VP + RevOps</td>
+              <td>VP</td>
+              <td>Operations</td>
+            </tr>
+            <tr>
+              <td>Director + Sales</td>
+              <td>Director</td>
+              <td>Sales</td>
+            </tr>
+            <tr>
+              <td>SDR, Sales Development</td>
+              <td>Individual Contributor</td>
+              <td>Sales</td>
+            </tr>
+            <tr>
+              <td>Account Executive, AE</td>
+              <td>Individual Contributor</td>
+              <td>Sales</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Expand this based on what you find in your actual data. Your database will have patterns specific to your industry and target market.</p>
+
+        <h2>Maintaining Title Data Quality</h2>
+
+        <p>Standardization isn't a one-time project. New records come in constantly, and they'll have the same messy titles.</p>
+
+        <h3>Point-of-Entry Standardization</h3>
+
+        <p>Set up automation to standardize titles as records are created:</p>
+
+        <ul>
+          <li>Salesforce Flow triggered on Contact/Lead creation</li>
+          <li>Apply mapping rules to populate structured fields</li>
+          <li>Flag records that can't be mapped for manual review</li>
+        </ul>
+
+        <h3>Quarterly Cleanup</h3>
+
+        <p>Run a report of records with blank or unmapped structured fields:</p>
+
+        <ul>
+          <li>Records imported from external sources</li>
+          <li>Records where the title was updated manually</li>
+          <li>Records that hit edge cases in your mapping logic</li>
+        </ul>
+
+        <p>Update your mapping rules as you encounter new patterns.</p>
+
+        <h3>Monitor for Drift</h3>
+
+        <p>Track the percentage of records with complete structured fields. If it starts dropping, you have a process gap somewhere (a new import source, a form that bypasses standardization, etc.).</p>
+
+        <h2>Integration with Lead Scoring</h2>
+
+        <p>The whole point of standardized titles is to use them in automation. Here's how to connect them to lead scoring:</p>
+
+        <p><strong>Seniority-based scoring:</strong></p>
+        <ul>
+          <li>C-Level: +25 points</li>
+          <li>VP: +20 points</li>
+          <li>Director: +15 points</li>
+          <li>Manager: +10 points</li>
+          <li>Individual Contributor: +5 points</li>
+        </ul>
+
+        <p><strong>Department-based scoring</strong> (adjust based on your ICP):</p>
+        <ul>
+          <li>Target department: +15 points</li>
+          <li>Related department: +10 points</li>
+          <li>Unrelated department: +0 points</li>
+        </ul>
+
+        <p>These scores combine with account-level data (company size, industry, technology stack) for a complete picture.</p>
+
+        <h2>When to Get Help</h2>
+
+        <p>Job title standardization is tedious work. It's also foundational to everything else in your RevOps stack. Consider getting help if:</p>
+
+        <ul>
+          <li><strong>Your database is large:</strong> 50,000+ contacts means thousands of unique titles to map</li>
+          <li><strong>You're international:</strong> Titles in multiple languages add complexity</li>
+          <li><strong>You lack Salesforce expertise:</strong> Building the automation requires Flow or Apex knowledge</li>
+          <li><strong>You need it done quickly:</strong> A migration or launch timeline doesn't allow for gradual cleanup</li>
+        </ul>
+
+        <p>At Verum, job title standardization is part of our broader <a href="/services/data-cleaning.html">data cleaning services</a>. We've built mapping tables that cover most B2B titles across industries and can handle the edge cases that simple pattern matching misses.</p>
+
+        <div class="article-cta">
+          <p><strong>Need help cleaning up job titles?</strong></p>
+          <p>We can audit your Salesforce data and show you exactly how fragmented your title field is, along with a plan to fix it.</p>
+          <p><a href="/contact.html" class="btn btn--primary">Get a Free Assessment</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

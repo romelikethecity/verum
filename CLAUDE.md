@@ -518,6 +518,268 @@ All pages include:
 
 ---
 
+## SEO Best Practices
+
+### Schema Markup Strategy
+
+**1. Homepage - Organization + WebSite Schema (using @graph)**
+
+Use `@graph` to combine multiple schema types with cross-references:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://veruminc.com/#website",
+      "url": "https://veruminc.com",
+      "name": "Verum",
+      "description": "AI-powered B2B data cleaning and enrichment services",
+      "publisher": {
+        "@id": "https://veruminc.com/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization",
+      "name": "Verum",
+      "url": "https://veruminc.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://veruminc.com/assets/logos/verum-logo-horizontal-light.svg",
+        "width": 200,
+        "height": 50
+      },
+      "description": "AI-powered data cleaning and enrichment for B2B companies.",
+      "foundingDate": "2024",
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "B2B Data Cleaning",
+        "Data Enrichment",
+        "CRM Hygiene",
+        "Lead Enrichment"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/verumai/"
+      ]
+    }
+  ]
+}
+```
+
+**2. Service/Use Case Pages - BreadcrumbList + Service Schema**
+
+Every deeper page needs BreadcrumbList for navigation hierarchy:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://veruminc.com/services/"},
+    {"@type": "ListItem", "position": 3, "name": "Data Cleaning"}
+  ]
+}
+```
+
+Plus Service schema:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Data Cleaning Services",
+  "provider": {
+    "@id": "https://veruminc.com/#organization"
+  },
+  "description": "Professional B2B data cleaning services...",
+  "serviceType": "Data Cleaning"
+}
+```
+
+**3. Team/Founder Page - Person Schema (EEAT Signal)**
+
+Person schema with alumniOf, knowsAbout, and sameAs for credibility:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://veruminc.com/team/#rome",
+  "name": "Rome Thorndike",
+  "jobTitle": "Founder",
+  "description": "Founder of Verum. Former Head of Sales at Datajoy (acquired by Databricks)...",
+  "url": "https://veruminc.com/team/",
+  "worksFor": {
+    "@id": "https://veruminc.com/#organization"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "UC Berkeley Haas School of Business"
+    }
+  ],
+  "knowsAbout": [
+    "B2B Data Operations",
+    "Data Enrichment",
+    "Machine Learning",
+    "Generative AI"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/romethorndike/"
+  ]
+}
+```
+
+**4. FAQ Schema**
+
+Every page with Q&A content should have FAQPage schema (enables rich snippets):
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most projects complete in 24-48 hours..."
+      }
+    }
+  ]
+}
+```
+
+### Internal Linking Strategy
+
+**1. Homepage Internal Links**
+
+Add "Popular Use Cases" section linking to top use-case pages:
+- CRM Hygiene
+- Lead Scoring
+- ABM Targeting
+- Data Migration
+
+Add link to industry solutions: "See all solutions by industry →"
+
+**2. Services Page Internal Links**
+
+Add "Solutions by Industry" section linking to top industry pages.
+
+**3. Footer/Related Links**
+
+Every content page should end with related links:
+
+```html
+<p class="mt-lg text-muted">Related: <a href="/services/data-cleaning.html">Data Cleaning</a> | <a href="/use-cases/data-migration/">Data Migration</a> | <a href="/pricing.html">Pricing</a></p>
+```
+
+### Meta Description Best Practices
+
+- **Length:** 150-160 characters
+- **Include:** Primary keyword, value proposition, differentiator
+- **Avoid:** Duplicate descriptions across pages
+- **Format:** Action-oriented, specific benefits
+
+Examples:
+- Homepage: "AI-powered B2B data cleaning and enrichment. 24-48 hour turnaround, 70% cost reduction vs agencies. Get a free data assessment."
+- Service: "Fill in the blanks on your account records. Industry, employee count, revenue, location, technology stack from 50+ verified sources."
+- Contact: "Get a free quote within 24 hours. Tell us about your data challenges and we'll show you how AI-powered cleaning and enrichment can help."
+
+### Sitemap Management
+
+**Location:** `/sitemap.xml`
+
+**Update sitemap when:**
+- Adding new pages
+- Significant content updates (update lastmod date)
+- Removing pages
+
+**Submit to Google Search Console:**
+1. Go to Google Search Console
+2. Select property (veruminc.com)
+3. Sitemaps → Add sitemap → Enter "sitemap.xml"
+4. Click Submit
+
+**After major updates:**
+- Request indexing for key pages via URL Inspection tool
+- Monitor Coverage report for errors
+
+### Open Graph & Twitter Cards
+
+Every page needs both for social sharing:
+
+```html
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://veruminc.com/page/">
+<meta property="og:title" content="Page Title | Verum">
+<meta property="og:description" content="Description here">
+<meta property="og:site_name" content="Verum">
+<meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Page Title | Verum">
+<meta name="twitter:description" content="Description here">
+<meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+```
+
+### Canonical URLs
+
+Every page must have a canonical URL to prevent duplicate content issues:
+
+```html
+<link rel="canonical" href="https://veruminc.com/exact-page-url/">
+```
+
+- Use trailing slashes consistently (directory-style URLs use `/`, file URLs use `.html`)
+- Match the canonical exactly to how the page should be indexed
+
+---
+
+## Founder Information (for Team Page & About Content)
+
+**DO NOT mention Firmograph role.**
+
+### Background
+- Head of Sales at Datajoy (acquired by Databricks)
+- Microsoft: Dynamics CRM and Azure AI/ML, built machine learning algorithms
+- Enterprise sales at Salesforce
+- Snapdocs from Series A to D (Sequoia, Founders Fund, Y Combinator, Tiger Global)
+- Building in generative AI since 2022
+- MBA from UC Berkeley Haas
+- BS from University of Minnesota
+
+### Key Message
+Focus on the problem being solved, not credentials. The "Why I Built Verum" section should emphasize:
+- Watching sales teams waste millions on bad data
+- Data services industry overcharging and underdelivering
+- AI making the old model obsolete
+
+### Signature Quote (styled as testimonial)
+"That model is dead, and I killed it with AI."
+
+---
+
+## Testimonial Styling
+
+Use the `.testimonial` class for highlighted quotes:
+
+```html
+<div class="testimonial mt-lg mb-lg">
+  <blockquote class="testimonial__quote">Quote text here</blockquote>
+  <cite class="testimonial__author">— Name, Title</cite>
+</div>
+```
+
+The cite element is optional for personal statements (like Rome's quote on team page).
+
+---
+
 ## Git Workflow
 
 **Commit and push immediately after every approved change.** No batching. Only say "done" after the push succeeds.
@@ -528,3 +790,132 @@ grep -r "pain-stat__number" /Users/rome/Documents/projects/verum-website/solutio
 ```
 
 If output is empty, stats are clean. If any results appear, fix before committing.
+
+---
+
+## Blog Content Guidelines
+
+### Blog Post Template Structure
+
+Each post should follow this structure for SEO and conversion:
+
+1. Pain-first opening (scenario or direct statement about the problem)
+2. "What you'll learn" or quick summary (optional)
+3. Step-by-step guide OR problem breakdown
+4. Common mistakes to avoid
+5. When to DIY vs. outsource (soft CTA)
+6. FAQ section (3+ questions for schema)
+7. Final CTA to contact/assessment
+
+**Word count target:** 1,500-2,500 words
+**Schema:** Article schema + FAQ schema
+**Internal links:** Each post links to 2-3 service/use-case pages
+
+### Article Schema Template
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Article Title Here",
+  "description": "Meta description here",
+  "author": {
+    "@type": "Person",
+    "@id": "https://veruminc.com/team/#rome"
+  },
+  "publisher": {
+    "@id": "https://veruminc.com/#organization"
+  },
+  "datePublished": "2026-01-17",
+  "dateModified": "2026-01-17",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://veruminc.com/blog/article-slug.html"
+  }
+}
+```
+
+### Blog-Specific Writing Style
+
+**Opening paragraphs:**
+- Don't start with a question
+- Don't start with a statistic
+- Start with a scenario or direct statement about the problem
+- Example: "Your Salesforce instance has 50,000 contacts. You know at least 20% of them are garbage. The question is: which 20%?"
+
+**Headers:**
+- Action-oriented or problem-statement
+- Good: "The Hidden Cost of Duplicate Records"
+- Bad: "Understanding the Impact of Data Duplication"
+
+**CTAs:**
+- Soft, not salesy
+- Good: "If you're dealing with this and want help, we clean data for a living."
+- Bad: "Contact us today to learn how Verum can transform your data quality!"
+
+**What to AVOID (AI Red Flags):**
+- Em-dashes (—) - use commas, periods, or parentheses instead
+- "In today's fast-paced business environment..."
+- "It's important to note that..."
+- "Let's dive in" or "Let's explore"
+- "Leverage" (use "use")
+- "Utilize" (use "use")
+- "Robust" or "seamless" or "cutting-edge"
+- "In conclusion" or "To summarize"
+- "First and foremost"
+- Rhetorical questions followed by their answers
+- Lists where every item starts the same way
+- Exclamation points (almost never appropriate in B2B)
+
+**What WORKS (Human Patterns):**
+- Admitting limitations: "This won't work for everyone" or "To be fair..."
+- Specific examples: "We had a client with 47,000 contacts and 12% duplicates..."
+- Casual asides: "which, honestly, is more common than you'd think"
+- Direct statements: "This is a waste of money." Not "This may not provide optimal ROI."
+- Opinions: "I think the best approach is..." (for founder content)
+- Imperfect transitions: Starting a paragraph with "So" or "Look"
+- Fragments for emphasis. Like this.
+- Varying sentence length dramatically
+
+**Voice Test:** Read it out loud. If it sounds like a human explaining something to a colleague over coffee, you're on track.
+
+### Blog URL Pattern
+
+- Location: `/blog/[slug].html`
+- Slugs: lowercase, hyphens, descriptive
+- Example: `/blog/how-to-clean-salesforce-data.html`
+
+### Blog Categories
+
+Use these category labels consistently:
+- Salesforce (Salesforce-specific content)
+- HubSpot (HubSpot-specific content)
+- Data Quality (general data hygiene/decay)
+- Strategy (ICP, segmentation, planning)
+- RevOps (operations insights)
+- Migration (CRM migration, data moves)
+
+---
+
+## Recent Work Log (January 2026)
+
+### SEO Improvements Completed
+1. **Enhanced homepage schema** - Added @graph with WebSite + Organization, knowsAbout, foundingDate
+2. **BreadcrumbList schema** - Added to all service pages, use-case pages, enrichment pages, solutions pages
+3. **Internal linking sections** - Added "Popular Use Cases" to homepage, "Solutions by Industry" to services
+4. **Meta descriptions** - Updated services and contact pages with keyword-rich, action-oriented copy
+5. **Team page created** - `/team/` with Person schema for EEAT (expertise, experience, authoritativeness, trustworthiness)
+6. **Sitemap updated** - Added team page, updated lastmod dates
+
+### Pages Modified
+- `/index.html` - Schema, internal links
+- `/services/index.html` - Industry solutions section
+- `/services/data-cleaning.html` - BreadcrumbList schema
+- `/services/data-enrichment.html` - BreadcrumbList schema
+- `/services/data-analysis.html` - BreadcrumbList schema
+- `/use-cases/crm-hygiene/index.html` - BreadcrumbList schema
+- `/solutions/saas-data-enrichment/index.html` - BreadcrumbList schema
+- `/enrichment/company-enrichment/index.html` - BreadcrumbList schema
+- `/contact.html` - Meta description
+- `/team/index.html` - NEW (Person schema, founder bio)
+- `/sitemap.xml` - Updated

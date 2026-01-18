@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Normalize Company Names in Salesforce | Verum</title>
+  <meta name="description" content="Acme Corp, ACME, Acme Inc., Acme Corporation. Same company, four different records. Here's how to normalize company names so deduplication and reporting work.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/salesforce-company-name-normalization.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/salesforce-company-name-normalization.html">
+  <meta property="og:title" content="How to Normalize Company Names in Salesforce">
+  <meta property="og:description" content="Acme Corp, ACME, Acme Inc. Same company, four records. Here's how to fix it.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Normalize Company Names in Salesforce">
+  <meta name="twitter:description" content="Acme Corp, ACME, Acme Inc. Same company, four records. Here's how to fix it.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Normalize Company Names in Salesforce",
+    "description": "Acme Corp, ACME, Acme Inc., Acme Corporation. Same company, four different records. Here's how to normalize company names so deduplication and reporting work.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/salesforce-company-name-normalization.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I replace the original company name or create a new field?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Create a new Normalized_Company_Name__c field. Keep the original for reference and searching. Use the normalized version for deduplication, matching, and reporting."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I handle subsidiaries and parent companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use Salesforce's Account Hierarchy feature. Create parent and child account relationships rather than trying to merge subsidiaries into one record. This preserves the ability to report on both levels."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about company name changes after acquisitions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Update the normalized name to the acquiring company, but keep the original name and add an alias field. This way, historical data makes sense and searches for the old name still find the record."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I handle company names in other languages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Normalize to the official English name when one exists. For companies that primarily operate under a foreign name, transliterate to Latin characters consistently. Add the native language name as an alias."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .example-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .example-table th,
+    .example-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .example-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .example-table td {
+      color: var(--color-text-secondary);
+    }
+    code {
+      background: var(--color-bg-card);
+      padding: 0.125rem 0.375rem;
+      border-radius: 3px;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>How to Normalize Company Names in Salesforce</h1>
+        <p class="article-meta">January 2026 · 9 min read</p>
+
+        <p>Your sales rep closes a deal with "Acme Corporation." Finance creates an invoice for "Acme Corp." Marketing imported a list with "ACME, Inc." The CEO filled out a web form as just "Acme."</p>
+
+        <p>Same company. Four Account records in Salesforce. Four contacts scattered across them. No unified view of the customer relationship. This happens more than you'd think.</p>
+
+        <p>Company name normalization is the process of standardizing company names so that variations of the same company match each other. It's foundational to deduplication, account matching, and clean reporting.</p>
+
+        <h2>Why Company Names Get Messy</h2>
+
+        <p>Company name chaos has multiple causes:</p>
+
+        <p><strong>Legal suffixes vary.</strong> Inc., Corp., Corporation, LLC, Ltd., Limited, GmbH, S.A., Pty Ltd. The same company uses different suffixes depending on context.</p>
+
+        <p><strong>Punctuation and formatting differ.</strong> "Johnson & Johnson" vs "Johnson and Johnson" vs "Johnson&Johnson". Commas, periods, ampersands, hyphens all create variations.</p>
+
+        <p><strong>Capitalization is inconsistent.</strong> "IBM" vs "Ibm" vs "ibm". "NASDAQ" vs "Nasdaq". Self-reported data comes in every format.</p>
+
+        <p><strong>Abbreviations and full names mix.</strong> "International Business Machines" vs "IBM". "General Electric" vs "GE". People use both interchangeably.</p>
+
+        <p><strong>DBAs and brand names differ from legal names.</strong> "Google" is actually "Alphabet Inc." "Facebook" became "Meta Platforms, Inc." The company your sales team calls isn't always the legal entity.</p>
+
+        <p><strong>Acquisitions create confusion.</strong> "Salesforce" acquired "Slack Technologies" which is now "Slack, a Salesforce company" or just "Salesforce" depending on who's entering data.</p>
+
+        <h2>The Cost of Non-Normalized Names</h2>
+
+        <p>This isn't just a cosmetic problem. Bad company names break things:</p>
+
+        <p><strong>Duplicate accounts multiply.</strong> Without normalization, duplicate detection can't match "Acme Corp" to "ACME, Inc." You end up with phantom accounts that waste storage and confuse users.</p>
+
+        <p><strong>Account ownership splits.</strong> One rep owns "Acme Corporation" while another works "Acme Inc." Neither sees the full picture. Territory assignments fail.</p>
+
+        <p><strong>Reporting becomes unreliable.</strong> "How many customers do we have in the Fortune 500?" Depends on whether your data matches their actual company names.</p>
+
+        <p><strong>Enrichment fails to match.</strong> Data providers can't enrich an account they can't identify. Misspelled or non-standard names don't match their databases.</p>
+
+        <p><strong>Account-based marketing misfires.</strong> Your ABM platform tries to match website visitors to target accounts. "Acme" visiting your site won't match "Acme Corporation" in your list.</p>
+
+        <div class="stat-box">
+          <p><strong>Reality check:</strong> We typically find 10-15% duplicate accounts in Salesforce instances, and the majority of them are name variations rather than truly duplicate entries.</p>
+        </div>
+
+        <h2>Building a Normalization Strategy</h2>
+
+        <p>Effective normalization follows a consistent set of rules. Here's a framework that works for most B2B companies:</p>
+
+        <h3>Rule 1: Remove Legal Suffixes</h3>
+
+        <p>Strip suffixes for matching purposes, but keep them in a separate field if needed for legal documents.</p>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Original</th>
+              <th>Normalized</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Acme Corporation</td>
+              <td>Acme</td>
+            </tr>
+            <tr>
+              <td>Acme, Inc.</td>
+              <td>Acme</td>
+            </tr>
+            <tr>
+              <td>Acme Corp.</td>
+              <td>Acme</td>
+            </tr>
+            <tr>
+              <td>Acme LLC</td>
+              <td>Acme</td>
+            </tr>
+            <tr>
+              <td>Acme Ltd.</td>
+              <td>Acme</td>
+            </tr>
+            <tr>
+              <td>Acme GmbH</td>
+              <td>Acme</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Common suffixes to remove:</p>
+        <ul>
+          <li>Inc., Inc, Incorporated</li>
+          <li>Corp., Corp, Corporation</li>
+          <li>LLC, L.L.C., Limited Liability Company</li>
+          <li>Ltd., Ltd, Limited</li>
+          <li>Co., Company</li>
+          <li>GmbH, AG, S.A., Pty Ltd, PLC</li>
+        </ul>
+
+        <h3>Rule 2: Standardize Punctuation</h3>
+
+        <p>Convert all punctuation to a consistent format:</p>
+
+        <ul>
+          <li>Remove trailing periods</li>
+          <li>Replace "&" with "and" (or vice versa, pick one)</li>
+          <li>Remove commas</li>
+          <li>Replace multiple spaces with single spaces</li>
+          <li>Trim leading/trailing whitespace</li>
+        </ul>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Original</th>
+              <th>Normalized</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Johnson & Johnson</td>
+              <td>Johnson and Johnson</td>
+            </tr>
+            <tr>
+              <td>Procter & Gamble Co.</td>
+              <td>Procter and Gamble</td>
+            </tr>
+            <tr>
+              <td>AT&T Inc.</td>
+              <td>AT and T</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Rule 3: Standardize Capitalization</h3>
+
+        <p>Two common approaches:</p>
+
+        <p><strong>Option A: Title Case</strong> ("International Business Machines")<br>
+        Looks better in reports and customer-facing contexts. Requires handling exceptions like "eBay", "iPhone", "McKinsey".</p>
+
+        <p><strong>Option B: Uppercase for Matching</strong> ("INTERNATIONAL BUSINESS MACHINES")<br>
+        Simpler for matching purposes. Store this in a separate field and display the original for users.</p>
+
+        <p>Most companies use Option B for a matching key and preserve the original capitalization for display.</p>
+
+        <h3>Rule 4: Handle Abbreviations</h3>
+
+        <p>Decide whether to expand abbreviations or keep them. Either is fine, just be consistent.</p>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Expand Approach</th>
+              <th>Keep Approach</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>International Business Machines</td>
+              <td>IBM</td>
+            </tr>
+            <tr>
+              <td>General Electric</td>
+              <td>GE</td>
+            </tr>
+            <tr>
+              <td>Hewlett Packard Enterprise</td>
+              <td>HPE</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The "keep abbreviations" approach is usually easier because it's what people actually type. Create an alias table for the expanded names to support searches.</p>
+
+        <h3>Rule 5: Create an Alias Field</h3>
+
+        <p>Some companies have multiple legitimate names. Rather than losing this information, store it:</p>
+
+        <ul>
+          <li><strong>Account Name:</strong> Meta Platforms</li>
+          <li><strong>Normalized_Name__c:</strong> META PLATFORMS</li>
+          <li><strong>Account_Aliases__c:</strong> Facebook; Facebook Inc; FB</li>
+        </ul>
+
+        <p>This allows searches for any version to find the correct record.</p>
+
+        <h2>Implementation in Salesforce</h2>
+
+        <p>Here's how to actually implement normalization in your Salesforce instance:</p>
+
+        <h3>Step 1: Create Custom Fields</h3>
+
+        <p>Add these fields to the Account object:</p>
+
+        <ul>
+          <li><strong>Normalized_Company_Name__c</strong> (Text, 255): The standardized version</li>
+          <li><strong>Company_Aliases__c</strong> (Long Text): Alternative names, semicolon-separated</li>
+          <li><strong>Legal_Entity_Name__c</strong> (Text, 255): The official legal name if different</li>
+        </ul>
+
+        <h3>Step 2: Batch Process Existing Data</h3>
+
+        <p>For your existing accounts, you'll need to run a cleanup process:</p>
+
+        <ol>
+          <li>Export all Account records with their names</li>
+          <li>Apply normalization rules (can use Excel, Python, or specialized tools)</li>
+          <li>Review for edge cases and manual corrections</li>
+          <li>Import normalized names back to Salesforce</li>
+        </ol>
+
+        <p>This is where you'll catch duplicates. After normalizing, sort by normalized name to find records that should be merged.</p>
+
+        <h3>Step 3: Automate Ongoing Normalization</h3>
+
+        <p>Set up a Flow or Apex trigger to normalize new records automatically:</p>
+
+        <p><strong>On Account insert/update:</strong></p>
+        <ol>
+          <li>Take the Account Name value</li>
+          <li>Apply normalization rules (remove suffixes, standardize punctuation, uppercase)</li>
+          <li>Store in Normalized_Company_Name__c</li>
+        </ol>
+
+        <p>This ensures new data follows your standards without manual intervention.</p>
+
+        <h3>Step 4: Update Duplicate Rules</h3>
+
+        <p>Configure Salesforce Duplicate Management to use your normalized field:</p>
+
+        <ul>
+          <li>Create a matching rule that compares Normalized_Company_Name__c</li>
+          <li>Use fuzzy matching for remaining variations</li>
+          <li>Set appropriate action (alert, block, or auto-merge based on your process)</li>
+        </ul>
+
+        <h2>Handling Special Cases</h2>
+
+        <p>Some company names require extra logic:</p>
+
+        <h3>Subsidiaries and Parent Companies</h3>
+
+        <p>Should "Google Cloud" be normalized to "Google" or kept separate? The answer depends on your sales motion:</p>
+
+        <ul>
+          <li><strong>If you sell to divisions separately:</strong> Keep them as separate accounts with a parent-child hierarchy</li>
+          <li><strong>If you sell to the parent company:</strong> Normalize subsidiaries to the parent name</li>
+        </ul>
+
+        <p>Salesforce's Account Hierarchy feature handles this well. Link subsidiary accounts to parent accounts rather than merging them.</p>
+
+        <h3>Acquired Companies</h3>
+
+        <p>When "Slack" was acquired by "Salesforce":</p>
+
+        <ul>
+          <li>Update normalized name to reflect current ownership if they're truly merged</li>
+          <li>Keep original name as alias for historical searches</li>
+          <li>Don't merge historical data if the acquisition was recent</li>
+        </ul>
+
+        <h3>Franchise and Location Variations</h3>
+
+        <p>"McDonald's Chicago" vs "McDonald's" vs "McDonald's Corporation"</p>
+
+        <ul>
+          <li>Decide if you treat locations as separate accounts</li>
+          <li>If yes, normalize the base company name but preserve location identifiers</li>
+          <li>If no, normalize everything to the parent company</li>
+        </ul>
+
+        <h3>International Names</h3>
+
+        <p>Companies with non-English names need special handling:</p>
+
+        <ul>
+          <li>Use the official English name if one exists (Samsung, Sony, Volkswagen)</li>
+          <li>Transliterate to Latin characters consistently</li>
+          <li>Store the native language name as an alias</li>
+        </ul>
+
+        <h2>Common Normalization Mistakes</h2>
+
+        <p><strong>Over-normalizing to the point of ambiguity.</strong> "First National Bank" could be hundreds of different banks. Don't remove enough context that unrelated companies match.</p>
+
+        <p><strong>Losing legal names entirely.</strong> Your legal team needs the actual entity name for contracts. Keep it in a separate field.</p>
+
+        <p><strong>Not handling acronyms consistently.</strong> If "IBM" is your standard, make sure "I.B.M." and "ibm" also normalize to "IBM".</p>
+
+        <p><strong>Forgetting to normalize Lead Company as well.</strong> If you only normalize Account names, your Leads won't match. Apply the same rules to both objects.</p>
+
+        <p><strong>One-time cleanup without ongoing automation.</strong> Data entropy is real. New records come in messy. Automate normalization at point of entry.</p>
+
+        <h2>Measuring Success</h2>
+
+        <p>How do you know if normalization is working?</p>
+
+        <p><strong>Duplicate account rate:</strong> Should decrease after normalization and ongoing automation catch variations.</p>
+
+        <p><strong>Enrichment match rate:</strong> Data providers should match more accounts when names are normalized.</p>
+
+        <p><strong>Account merge frequency:</strong> Fewer manual merges required because duplicates are caught earlier.</p>
+
+        <p><strong>User complaints:</strong> "I can't find this account" should become less common.</p>
+
+        <h2>When to Outsource</h2>
+
+        <p>Company name normalization is more complex than it first appears. Consider getting help if:</p>
+
+        <ul>
+          <li><strong>You have a large database:</strong> 50,000+ accounts is a significant project</li>
+          <li><strong>You sell internationally:</strong> Multi-language normalization adds complexity</li>
+          <li><strong>You're doing a CRM migration:</strong> Clean before you move</li>
+          <li><strong>You have complex corporate hierarchies:</strong> Parent/child relationships need careful handling</li>
+        </ul>
+
+        <p>At Verum, <a href="/cleaning/data-normalization/">data normalization</a> is one of our core services. We've built normalization rules that handle edge cases most automated tools miss, and we can set up the Salesforce automation to keep your data clean going forward.</p>
+
+        <div class="article-cta">
+          <p><strong>Messy company names in your CRM?</strong></p>
+          <p>We can audit your Salesforce Accounts and show you exactly how many duplicates are hiding behind name variations.</p>
+          <p><a href="/contact.html" class="btn btn--primary">Get a Free Assessment</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

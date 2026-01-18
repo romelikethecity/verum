@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Validate Email Addresses in Salesforce | Verum</title>
+  <meta name="description" content="Bad emails destroy deliverability and waste sales time. Here's how to validate email addresses in Salesforce and keep your database clean.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/salesforce-email-validation.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/salesforce-email-validation.html">
+  <meta property="og:title" content="How to Validate Email Addresses in Salesforce">
+  <meta property="og:description" content="Bad emails destroy deliverability and waste sales time. Here's how to validate emails in Salesforce.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Validate Email Addresses in Salesforce">
+  <meta name="twitter:description" content="Bad emails destroy deliverability and waste sales time. Here's how to validate emails in Salesforce.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Validate Email Addresses in Salesforce",
+    "description": "Bad emails destroy deliverability and waste sales time. Here's how to validate email addresses in Salesforce and keep your database clean.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-17",
+    "dateModified": "2026-01-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/salesforce-email-validation.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What percentage of emails in a typical CRM are invalid?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most B2B databases have 15-25% invalid emails. This includes hard bounces, spam traps, role-based addresses, and emails that were valid but are now defunct due to job changes or company closures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I delete contacts with invalid emails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. Flag them and try to find updated contact information first. Many contacts with bad emails are still valuable if you can find their new email through LinkedIn, company websites, or data enrichment services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I validate emails in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Validate at the point of entry (forms, imports) and run quarterly batch validations on your database. Email validity decays at roughly 20-30% per year due to job changes and company events."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between email verification and validation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Validation checks if an email is formatted correctly and the domain exists. Verification goes further by checking if the specific mailbox exists and can receive mail. For Salesforce data quality, you want verification."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .validation-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .validation-table th,
+    .validation-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .validation-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .validation-table td {
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>How to Validate Email Addresses in Salesforce</h1>
+        <p class="article-meta">January 2026 · 9 min read</p>
+
+        <p>Your sales team sends 500 emails. 47 bounce. That's not just wasted effort. Every hard bounce chips away at your sender reputation. Enough of them and you'll find your emails landing in spam folders even for people who want to hear from you.</p>
+
+        <p>The fix isn't complicated, but it does require understanding what makes an email "invalid" and how to catch the bad ones before they cause problems.</p>
+
+        <h2>Why Email Validation Matters More Than You Think</h2>
+
+        <p>Most companies focus on email validation because of bounce rates. That's valid, but it's not the whole picture. Here's what bad emails actually cost you:</p>
+
+        <p><strong>Sender reputation damage.</strong> Email providers track your bounce rate. Go above 2% consistently and you'll start seeing deliverability problems across your entire domain. That affects everyone at your company, not just sales.</p>
+
+        <p><strong>Wasted sales time.</strong> Every email that bounces is time your SDR spent researching that contact, personalizing that message, and waiting for a response that will never come. Multiply that by hundreds of bad emails in your database.</p>
+
+        <p><strong>Broken automations.</strong> Your marketing sequences, renewal reminders, and onboarding flows all depend on valid emails. One bad email doesn't just fail quietly. It throws errors, skips steps, or worse, triggers incorrect follow-up logic.</p>
+
+        <p><strong>Inflated metrics.</strong> Your "database of 50,000 contacts" sounds impressive until you realize 12,000 of those emails don't work. You're making decisions based on numbers that don't reflect reality.</p>
+
+        <div class="stat-box">
+          <p><strong>Reality check:</strong> The average B2B database has 15-25% invalid emails. If you haven't validated your Salesforce emails in the past year, assume at least 20% of your contacts can't receive your messages.</p>
+        </div>
+
+        <h2>Types of Invalid Emails</h2>
+
+        <p>Not all bad emails are the same. Understanding the categories helps you decide what to do with each contact.</p>
+
+        <table class="validation-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>What It Means</th>
+              <th>What to Do</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hard bounce</strong></td>
+              <td>Mailbox doesn't exist. Permanent failure.</td>
+              <td>Mark invalid, try to find new email</td>
+            </tr>
+            <tr>
+              <td><strong>Soft bounce</strong></td>
+              <td>Temporary issue (full inbox, server down)</td>
+              <td>Retry later, validate again in 30 days</td>
+            </tr>
+            <tr>
+              <td><strong>Spam trap</strong></td>
+              <td>Email exists but is monitored for spam</td>
+              <td>Remove immediately, never email again</td>
+            </tr>
+            <tr>
+              <td><strong>Role-based</strong></td>
+              <td>info@, sales@, support@ addresses</td>
+              <td>Flag for review, often low value</td>
+            </tr>
+            <tr>
+              <td><strong>Disposable</strong></td>
+              <td>Temporary email service (guerrillamail, etc.)</td>
+              <td>Remove, person didn't want real contact</td>
+            </tr>
+            <tr>
+              <td><strong>Catch-all</strong></td>
+              <td>Domain accepts all emails, can't verify</td>
+              <td>Flag as unverifiable, proceed with caution</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Validation at Point of Entry</h2>
+
+        <p>The best time to catch a bad email is before it enters your database. Here's how to validate emails as they come in.</p>
+
+        <h3>Web Forms</h3>
+
+        <p>Your website forms should validate emails in real-time. This catches typos (gmail.con, @gmial.com) and obvious fakes before they create Salesforce records.</p>
+
+        <p>Basic validation checks:</p>
+        <ul>
+          <li>Correct format (has @ symbol, valid domain structure)</li>
+          <li>Domain exists (MX record lookup)</li>
+          <li>Not a disposable email service</li>
+          <li>Not a known spam trap domain</li>
+        </ul>
+
+        <p>For Salesforce Web-to-Lead forms, you'll need middleware or a third-party validation service since native Salesforce forms don't do real-time email verification.</p>
+
+        <h3>Data Imports</h3>
+
+        <p>Before importing any list into Salesforce, run it through an email validation service. This is non-negotiable. Importing 5,000 contacts with 20% bad emails means adding 1,000 problems to your database.</p>
+
+        <p>Process:</p>
+        <ol>
+          <li>Export your import file</li>
+          <li>Run through validation service (NeverBounce, ZeroBounce, Hunter, etc.)</li>
+          <li>Remove or flag invalid emails</li>
+          <li>Import only verified records</li>
+        </ol>
+
+        <p>Yes, this adds time. It's still faster than cleaning up the mess later.</p>
+
+        <h3>Salesforce Validation Rules</h3>
+
+        <p>Salesforce's native validation rules can catch format issues but can't verify if an email actually exists. Still, they're worth setting up as a first line of defense.</p>
+
+        <p>A basic email format validation rule:</p>
+
+        <div class="stat-box">
+          <p><code>NOT(REGEX(Email, "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"))</code></p>
+        </div>
+
+        <p>This catches obvious errors but won't tell you if john.smith@acme.com is a real mailbox.</p>
+
+        <h2>Batch Validation for Existing Data</h2>
+
+        <p>Your current Salesforce database needs validation too. Here's how to clean what you already have.</p>
+
+        <h3>Step 1: Export Your Contacts</h3>
+
+        <p>Pull a report of all contacts with email addresses. Include the Salesforce ID so you can match records when you import the validation results.</p>
+
+        <p>Fields to export:</p>
+        <ul>
+          <li>Contact ID (or Lead ID)</li>
+          <li>Email</li>
+          <li>Last Activity Date (helps prioritize)</li>
+          <li>Account Name (for context)</li>
+        </ul>
+
+        <h3>Step 2: Choose a Validation Service</h3>
+
+        <p>Several services can validate emails in bulk. Pricing is typically per-email, ranging from $0.003 to $0.01 per verification.</p>
+
+        <p>What to look for:</p>
+        <ul>
+          <li>Bulk upload capability (CSV processing)</li>
+          <li>Detailed status codes (not just valid/invalid)</li>
+          <li>Spam trap detection</li>
+          <li>Catch-all domain flagging</li>
+          <li>API access if you want to automate later</li>
+        </ul>
+
+        <p>Popular options: NeverBounce, ZeroBounce, Hunter.io, Clearout, BriteVerify. They all work similarly. Pick based on your volume and budget.</p>
+
+        <h3>Step 3: Process Results</h3>
+
+        <p>Your validation service will return results with status codes. Here's how to handle each:</p>
+
+        <p><strong>Valid emails:</strong> No action needed. These are confirmed deliverable.</p>
+
+        <p><strong>Invalid emails:</strong> Create a custom field in Salesforce (Email_Status__c or similar) and mark these as "Invalid." Don't delete the contacts yet. Try to find updated emails first.</p>
+
+        <p><strong>Risky/Unknown:</strong> Some emails can't be definitively verified (catch-all domains, for example). Flag these for manual review or test with a small batch.</p>
+
+        <p><strong>Spam traps:</strong> Remove these immediately. Emailing spam traps gets your domain blacklisted.</p>
+
+        <h3>Step 4: Update Salesforce</h3>
+
+        <p>Import your validation results back into Salesforce using Data Loader or a similar tool. Match on Contact ID and update your Email_Status__c field.</p>
+
+        <p>Now you can:</p>
+        <ul>
+          <li>Exclude invalid emails from campaigns</li>
+          <li>Create a task to find new emails for invalid contacts</li>
+          <li>Report on email quality by source, date, or segment</li>
+        </ul>
+
+        <h2>Ongoing Maintenance</h2>
+
+        <p>Email validation isn't a one-time project. Data decays. People change jobs. Companies get acquired. You need a system to keep your database clean.</p>
+
+        <h3>Quarterly Validation</h3>
+
+        <p>Run batch validation on your database every quarter. Focus on:</p>
+        <ul>
+          <li>Contacts added since last validation</li>
+          <li>Contacts with no activity in 90+ days</li>
+          <li>Contacts from older imports or acquisitions</li>
+        </ul>
+
+        <h3>Bounce Monitoring</h3>
+
+        <p>Track bounces from your email sends. Most marketing automation platforms (Pardot, HubSpot, Marketo) can push bounce data back to Salesforce. Use this to update your Email_Status__c field automatically.</p>
+
+        <h3>Lead Source Tracking</h3>
+
+        <p>Some lead sources produce more invalid emails than others. Track email validity rates by source and address the root cause. That webinar you sponsored? Maybe 40% of the list was garbage. That event scanner? Might have captured business cards with outdated info.</p>
+
+        <h2>Common Mistakes to Avoid</h2>
+
+        <p><strong>Deleting contacts with invalid emails.</strong> Bad move. That contact might still be valuable. They might have a new email at a new company. Flag them, don't delete them.</p>
+
+        <p><strong>Ignoring catch-all domains.</strong> Just because a domain accepts all emails doesn't mean yours is valid. Test carefully or treat as unverified.</p>
+
+        <p><strong>Validating once and forgetting.</strong> Email validity has a half-life. That perfectly clean database from January will be 15% dirty by December.</p>
+
+        <p><strong>Not checking your own team's emails.</strong> Your sales reps send from personal addresses. Make sure their email authentication (SPF, DKIM, DMARC) is set up correctly, or their bounces affect the whole domain.</p>
+
+        <p><strong>Bulk emailing unverified lists.</strong> Purchased lists or scraped data should never go directly into campaigns. Validate first, then segment carefully.</p>
+
+        <h2>What to Do With Invalid Emails</h2>
+
+        <p>You've validated your database and flagged 8,000 contacts with invalid emails. Now what?</p>
+
+        <h3>Try to Find New Emails</h3>
+
+        <p>For high-value contacts, it's worth the effort to find updated information:</p>
+        <ul>
+          <li>Check LinkedIn for current job and company</li>
+          <li>Look up the company website for email patterns</li>
+          <li>Use <a href="/enrichment/">data enrichment services</a> to append new emails</li>
+          <li>Cross-reference with other database records</li>
+        </ul>
+
+        <h3>Prioritize by Value</h3>
+
+        <p>You don't have time to research every invalid contact. Focus on:</p>
+        <ul>
+          <li>Contacts at target accounts</li>
+          <li>Contacts with recent activity or deal history</li>
+          <li>Contacts in your Ideal Customer Profile</li>
+        </ul>
+
+        <p>The rest can stay flagged. If they re-engage through other channels, you'll update their info then.</p>
+
+        <h3>Consider a Data Enrichment Partner</h3>
+
+        <p>If you have thousands of invalid emails and limited time, <a href="/services/data-cleaning.html">data cleaning services</a> can find new emails in bulk. The economics work if the value of updated contacts exceeds the cost of enrichment.</p>
+
+        <h2>When to Outsource Email Validation</h2>
+
+        <p>DIY validation works for small databases or ongoing maintenance. But there are situations where it makes sense to get help:</p>
+
+        <ul>
+          <li><strong>Large databases (50,000+ records):</strong> The volume of work becomes significant</li>
+          <li><strong>Post-acquisition cleanup:</strong> Merging databases with unknown quality</li>
+          <li><strong>CRM migration:</strong> Clean before you move, not after</li>
+          <li><strong>Compliance requirements:</strong> Some industries need documented data quality processes</li>
+        </ul>
+
+        <p>If you're dealing with any of these situations and don't have dedicated RevOps resources, <a href="/contact.html">we can help</a>. Email validation is one part of <a href="/use-cases/crm-hygiene/">CRM data hygiene</a>, and it's often more efficient to tackle it as part of a broader data cleanup project.</p>
+
+        <div class="article-cta">
+          <p><strong>Not sure about your email data quality?</strong></p>
+          <p>We can run a quick audit of your Salesforce database and tell you exactly what percentage of your emails are invalid, risky, or unverifiable.</p>
+          <p><a href="/contact.html" class="btn btn--primary">Get a Free Assessment</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
