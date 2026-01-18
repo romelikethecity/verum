@@ -431,12 +431,17 @@ img {
 }
 
 .hero__subtitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--color-text-secondary);
   margin-bottom: var(--space-2xl);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.hero__subtitle-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .hero__buttons {
