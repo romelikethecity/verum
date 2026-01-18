@@ -919,3 +919,81 @@ Use these category labels consistently:
 - `/contact.html` - Meta description
 - `/team/index.html` - NEW (Person schema, founder bio)
 - `/sitemap.xml` - Updated
+
+### Resources Section Expansion (January 17, 2026)
+
+**Total articles now: 31**
+
+Added filter tabs to resources page with categories:
+- All (31)
+- Salesforce (8)
+- HubSpot (7)
+- RevOps (16)
+
+**New articles written this session (7):**
+
+Role-Specific Content:
+1. `/resources/data-quality-for-sales-leaders.html` - CTA: "Get My Sales Data Audited"
+2. `/resources/data-hygiene-for-marketing-ops.html` - CTA: "Clean My Marketing Data"
+3. `/resources/ceo-guide-crm-data-quality.html` - CTA: "Get an Executive Data Briefing"
+
+CRM-Agnostic Data Quality:
+4. `/resources/calculate-crm-data-decay-rate.html` - CTA: "Calculate My Decay Rate"
+5. `/resources/data-quality-metrics.html` - CTA: "Get My Data Quality Scorecard"
+6. `/resources/data-governance-without-team.html` - CTA: "Build My Governance Process"
+7. `/resources/true-cost-bad-crm-data.html` - CTA: "Calculate My Data Costs"
+
+**Previous batch (5 problem-focused articles):**
+- `/resources/lead-routing-broken-data.html`
+- `/resources/lead-scoring-not-working.html`
+- `/resources/abm-account-data-quality.html`
+- `/resources/email-deliverability-data-quality.html`
+- `/resources/attribution-data-quality.html`
+
+---
+
+## Future Next Steps
+
+### Newsletter/Substack Strategy (Approved, Not Yet Implemented)
+
+**Recommended approach:** Hybrid model to keep SEO value on-site while building email list.
+
+1. **Publish full articles on veruminc.com/resources** (already doing this)
+2. **Newsletter sends teaser + link** to drive traffic back to site
+3. **Add email signup CTA** to every resource article
+4. **Occasional newsletter-only content** (quick tips, behind-the-scenes) to reward subscribers
+
+**Benefits:**
+- SEO value stays on veruminc.com domain
+- Email list as owned lead magnet
+- Substack/Beehiiv network effects for discovery
+- Clear funnel: content → email signup → nurture → service inquiry
+
+**Implementation tasks when ready:**
+- [ ] Add email signup form/CTA to all resource pages
+- [ ] Create newsletter landing page (/newsletter or /subscribe)
+- [ ] Set up Substack/Beehiiv/ConvertKit account
+- [ ] Create welcome sequence for new subscribers
+- [ ] Establish publishing cadence (weekly/biweekly)
+
+### Job Board Consideration (Evaluated, Lower Priority)
+
+Job board for RevOps/Marketing Ops/Sales Ops roles was considered but deemed medium-fit compared to CRO Report model because:
+- Less niche than "CRO/VP Sales" queries
+- More competitive (LinkedIn, Indeed dominate)
+- Requires consistent scraping infrastructure
+
+**Alternative long-tail plays that may fit better:**
+- Tool comparison pages (already have some)
+- Salary/benchmark data ("RevOps Manager salary 2026")
+- Interactive templates/calculators ("CRM data audit template")
+
+### Filter Strategy for Resources
+
+Current: 4 tabs (All, Salesforce, HubSpot, RevOps)
+
+**Decision:** Keep current filters until 40+ articles or 8+ articles in a natural sub-category. Then consider splitting RevOps into:
+- Data Quality (tactical how-tos)
+- Strategy (role-specific, ICP, planning)
+
+---
