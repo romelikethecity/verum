@@ -997,3 +997,57 @@ Current: 4 tabs (All, Salesforce, HubSpot, RevOps)
 - Strategy (role-specific, ICP, planning)
 
 ---
+
+### SEO Improvements (January 19, 2026)
+
+**1. BreadcrumbList Schema Added (90 pages)**
+Added structured data breadcrumbs to programmatic SEO pages:
+- 42 enrichment pages (`/enrichment/*/`)
+- 20 cleaning pages (`/cleaning/*/`)
+- 28 use-case pages (`/use-cases/*/`)
+
+Pattern: `Home > Category > Page Name`
+
+**2. Hub/Index Pages Created (3 new pages)**
+
+Created category landing pages that were previously 404:
+
+- `/enrichment/index.html` - Links to all 43 enrichment services
+  - Organized by: Contact, Company, Technographic, Social/Web, Intent/Signals
+  - Includes BreadcrumbList, Service, and FAQPage schema
+
+- `/cleaning/index.html` - Links to all 20 cleaning services
+  - Organized by: Deduplication, Email/Contact Validation, Standardization, Database/CRM, Data Quality
+  - Includes BreadcrumbList, Service, and FAQPage schema
+
+- `/find/index.html` - Links to all 25 list-building pages
+  - Organized by: Professional Services, Healthcare, Local Business/Retail, Other Industries
+  - Includes BreadcrumbList, Service, and FAQPage schema
+
+**3. Related Links Added (13 use-case pages)**
+
+Added internal linking footer to pages that were missing them:
+- business-prospecting, customer-data-platform, customer-profiling
+- customer-segmentation, data-migration, database-merge
+- franchise-prospecting, lead-qualification, local-business-lists
+- lookalike-modeling, market-sizing, smb-targeting, tam-sam-som-analysis
+
+**4. Sitemap Updated**
+Added 3 new hub page URLs to sitemap.xml
+
+**5. Homepage Updates**
+- Replaced customer logos: Removed Databricks, JP Morgan, Gilead → Added WesBanco, Snapdocs, BTL
+- Fixed WesBanco SVG viewBox coordinates for proper rendering
+- Fixed hero subtitle mobile orphan ("weeks" on its own line)
+
+**Already Complete (found during audit):**
+- All 31 resource articles already have Article/BlogPosting schema
+- All 20 cleaning pages already have related links
+- All 43 enrichment pages already have related links
+
+**Remaining SEO Opportunities (Lower Priority):**
+- Create category landing pages for resources (`/resources/salesforce/`, `/resources/hubspot/`)
+- Add Service schema to cleaning pages (enrichment pages have it, cleaning don't)
+- Optimize generic meta descriptions on some pages
+
+---
