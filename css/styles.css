@@ -634,6 +634,13 @@ img {
   margin-bottom: 0;
 }
 
+.service-card__subtitle {
+  font-size: 0.875rem;
+  color: var(--color-teal);
+  margin: 0.25rem 0 0.5rem 0;
+  font-weight: 500;
+}
+
 /* ============================================
    Social Proof Section
    ============================================ */
@@ -979,6 +986,10 @@ img {
 
 .mb-xl {
   margin-bottom: var(--space-xl);
+}
+
+.mb-2xl {
+  margin-bottom: var(--space-2xl);
 }
 
 .mt-xl {
