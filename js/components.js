@@ -29,7 +29,7 @@
         </ul>
       </nav>
 
-      <a href="/#contact" class="btn btn--primary btn--sm header__cta">Clean My Data</a>
+      <a href="/#contact" class="btn btn--primary btn--sm header__cta">Fix My Data</a>
 
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span class="menu-toggle__icon"></span>
@@ -48,7 +48,7 @@
         <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
         <li><a href="/about.html" class="nav__link">About</a></li>
       </ul>
-      <a href="/#contact" class="btn btn--primary">Clean My Data</a>
+      <a href="/#contact" class="btn btn--primary">Fix My Data</a>
     </nav>
   `;
 
