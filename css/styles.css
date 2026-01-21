@@ -501,8 +501,20 @@ img {
 }
 
 .problem-card:hover {
-  border-color: var(--color-teal);
+  border-color: #ff6b6b;
   transform: translateY(-2px);
+}
+
+.problem-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 107, 107, 0.1);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  color: #ff6b6b;
 }
 
 .problem-card__title {
@@ -517,9 +529,16 @@ img {
 }
 
 .problems__solution {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--color-teal);
+  margin-top: var(--space-xl);
+}
+
+@media (min-width: 640px) {
+  .problems__solution {
+    font-size: 2.5rem;
+  }
 }
 
 /* ============================================
