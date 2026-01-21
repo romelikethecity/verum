@@ -441,7 +441,12 @@ img {
 
 .hero__subtitle-line {
   display: block;
-  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .hero__subtitle-line {
+    white-space: nowrap;
+  }
 }
 
 .hero__buttons {
