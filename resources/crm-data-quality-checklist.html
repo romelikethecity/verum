@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Data Quality Checklist: 25 Things to Check | Verum</title>
+  <meta name="description" content="A practical checklist for auditing your CRM data quality. Use this to assess your Salesforce, HubSpot, or any CRM and identify what needs cleaning.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/crm-data-quality-checklist.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/crm-data-quality-checklist.html">
+  <meta property="og:title" content="CRM Data Quality Checklist: 25 Things to Check">
+  <meta property="og:description" content="A practical checklist for auditing your CRM data quality. Identify what needs cleaning in Salesforce, HubSpot, or any CRM.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CRM Data Quality Checklist: 25 Things to Check">
+  <meta name="twitter:description" content="A practical checklist for auditing your CRM data quality. Identify what needs cleaning in Salesforce, HubSpot, or any CRM.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CRM Data Quality Checklist: 25 Things to Check",
+    "description": "A practical checklist for auditing your CRM data quality. Use this to assess your Salesforce, HubSpot, or any CRM and identify what needs cleaning.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/crm-data-quality-checklist.html"
+    }
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .checklist-section {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+    }
+    .checklist-section__title {
+      font-weight: 600;
+      color: var(--color-teal);
+      margin-bottom: var(--space-lg);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .checklist-section__icon {
+      font-size: 1.25rem;
+    }
+    .checklist-item {
+      display: flex;
+      gap: var(--space-md);
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .checklist-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .checklist-item__checkbox {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--color-border);
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+    .checklist-item__content {
+      flex: 1;
+    }
+    .checklist-item__title {
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-xs);
+    }
+    .checklist-item__description {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+    .checklist-item__benchmark {
+      font-size: 0.75rem;
+      color: var(--color-teal);
+      margin-top: var(--space-xs);
+    }
+    .severity-badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.125rem 0.5rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      margin-left: var(--space-sm);
+    }
+    .severity-badge--critical {
+      background: rgba(255, 107, 107, 0.15);
+      color: #ff6b6b;
+    }
+    .severity-badge--warning {
+      background: rgba(243, 156, 18, 0.15);
+      color: #f39c12;
+    }
+    .severity-badge--info {
+      background: rgba(52, 152, 219, 0.15);
+      color: #5dade2;
+    }
+    .score-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border: 1px solid rgba(0, 184, 148, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+      text-align: center;
+    }
+    .score-box__title {
+      font-weight: 600;
+      color: var(--color-teal);
+      margin-bottom: var(--space-md);
+    }
+    .score-box__scale {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--space-md);
+      padding: 0 var(--space-md);
+    }
+    .score-box__level {
+      text-align: center;
+    }
+    .score-box__level-score {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      font-size: 0.875rem;
+    }
+    .score-box__level-label {
+      font-size: 0.75rem;
+      color: var(--color-text-secondary);
+    }
+    .score-box__description {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Practical Guide</p>
+      <h1 class="page-hero__title">CRM Data Quality Checklist</h1>
+      <p class="page-hero__subtitle">25 things to check when auditing your CRM. Use this to find out where your data problems are hiding.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 10 min read</div>
+
+      <div class="blog-content">
+
+        <p>Before you can fix your data, you need to know what's broken. This checklist helps you systematically audit your CRM data quality and identify the highest-priority issues.</p>
+
+        <p>Go through each item, note your findings, and use the benchmarks to understand where you stand. At the end, you'll have a clear picture of your data health and know exactly what needs attention.</p>
+
+        <div class="callout-box">
+          <p><strong>How to use this checklist:</strong> Run the queries or reports needed to answer each question. Record the percentage or count. Compare against the benchmark to see if you're in good shape, need improvement, or have a critical problem.</p>
+        </div>
+
+        <div class="checklist-section">
+          <h2 class="checklist-section__title">
+            <span class="checklist-section__icon">📧</span>
+            Email Quality
+          </h2>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">What percentage of contacts have an email address?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Filter contacts where Email is blank. Calculate as percentage of total contacts.</p>
+              <p class="checklist-item__benchmark">Benchmark: 95%+ should have email for B2B databases</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">What's your email bounce rate?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Check your marketing platform for hard bounce percentage over the last 90 days.</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 2% is good, 2-5% needs attention, over 5% is critical</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">How many contacts have personal email domains?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Count emails ending in gmail.com, yahoo.com, hotmail.com, etc. (for B2B databases)</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 10% for B2B. Higher suggests low-quality lead sources.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">How many emails look obviously fake?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Search for patterns like test@, fake@, asdf@, noemail@, or repeating characters.</p>
+              <p class="checklist-item__benchmark">Benchmark: Should be near 0%. Any significant number indicates form abuse or lazy data entry.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <h2 class="checklist-section__title">
+            <span class="checklist-section__icon">📱</span>
+            Phone Data
+          </h2>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">What percentage of contacts have a phone number?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Count contacts where Phone is populated. Include mobile if tracked separately.</p>
+              <p class="checklist-item__benchmark">Benchmark: 60-80% for most B2B databases. Lower limits outbound calling effectiveness.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">Are phone numbers formatted consistently?<span class="severity-badge severity-badge--info">Info</span></div>
+              <p class="checklist-item__description">Check if numbers follow a single format or are mixed (with/without country codes, dashes vs. dots, etc.)</p>
+              <p class="checklist-item__benchmark">Benchmark: All numbers should follow one standard format for click-to-dial and deduplication.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">How many phone numbers have invalid formats?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Look for numbers with wrong digit counts, obviously fake patterns (555-555-5555), or non-numeric characters.</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 5%. Higher suggests data entry problems or bad list imports.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <h2 class="checklist-section__title">
+            <span class="checklist-section__icon">👤</span>
+            Contact Completeness
+          </h2>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">What percentage of contacts have a job title?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Count contacts where Title/Job Title field is populated.</p>
+              <p class="checklist-item__benchmark">Benchmark: 80%+ for effective lead scoring and personalization.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">Are job titles standardized?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Check for variations: VP Sales, VP of Sales, Vice President Sales, Sales VP. How many unique values exist?</p>
+              <p class="checklist-item__benchmark">Benchmark: Use a controlled vocabulary or mapping. Dozens of variations for the same role breaks segmentation.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">What percentage of contacts are linked to an Account/Company?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Count contacts with no Account association (orphaned contacts).</p>
+              <p class="checklist-item__benchmark">Benchmark: 95%+. Orphaned contacts break ABM, routing, and reporting.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">How many contacts have location data?<span class="severity-badge severity-badge--info">Info</span></div>
+              <p class="checklist-item__description">Check City, State/Province, Country fields. What percentage are complete?</p>
+              <p class="checklist-item__benchmark">Benchmark: Depends on use case. Critical if you do territory-based routing or regional marketing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <h2 class="checklist-section__title">
+            <span class="checklist-section__icon">🏢</span>
+            Account/Company Data
+          </h2>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">What percentage of accounts have Industry populated?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Count accounts where Industry is blank or "Unknown".</p>
+              <p class="checklist-item__benchmark">Benchmark: 80%+ for effective segmentation and routing.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">What percentage of accounts have Employee Count?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Count accounts missing employee count or company size indicator.</p>
+              <p class="checklist-item__benchmark">Benchmark: 75%+ for proper lead routing and scoring.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">How many accounts have no associated contacts?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Find accounts with zero contacts linked. These are often junk or incomplete records.</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 10%. High numbers suggest account creation without follow-through.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">Are company names standardized?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Search for variations: Acme, Acme Inc, Acme Inc., Acme Corporation, ACME. How fragmented is your data?</p>
+              <p class="checklist-item__benchmark">Benchmark: Each company should appear once with a consistent name format.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <h2 class="checklist-section__title">
+            <span class="checklist-section__icon">👥</span>
+            Duplicates
+          </h2>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">How many duplicate contacts exist?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Run duplicate detection on Email (exact match) and Name + Company (fuzzy match).</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 5% duplicate rate. Over 15% indicates serious problems.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">How many duplicate accounts exist?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Run duplicate detection on Company Name (with fuzzy matching for variations) and Website domain.</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 5%. Duplicate accounts cause rep conflicts and broken reporting.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">Are there Lead-Contact duplicates?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Compare Lead emails against Contact emails. How many leads exist as contacts?</p>
+              <p class="checklist-item__benchmark">Benchmark: Leads should convert to Contacts, not coexist. Any matches are process failures.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <h2 class="checklist-section__title">
+            <span class="checklist-section__icon">📅</span>
+            Data Freshness
+          </h2>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">How many records haven't been touched in 12+ months?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Filter by Last Modified Date or Last Activity Date older than 12 months.</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 30%. Higher suggests stale data that may be decayed.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">How many records are 24+ months stale?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Filter by Last Activity Date older than 24 months. These records are likely 50%+ inaccurate.</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 15%. These should be flagged for verification or archiving.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">When was company data last enriched/verified?<span class="severity-badge severity-badge--info">Info</span></div>
+              <p class="checklist-item__description">Check if you track enrichment dates. If not, assume firmographic data is decaying.</p>
+              <p class="checklist-item__benchmark">Benchmark: Company data should be refreshed at least annually.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="checklist-section">
+          <h2 class="checklist-section__title">
+            <span class="checklist-section__icon">⚙️</span>
+            Process Health
+          </h2>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">Are validation rules in place for key fields?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Check if your CRM enforces email format, required fields, picklist values.</p>
+              <p class="checklist-item__benchmark">Benchmark: At minimum, validate email format and require key fields on record creation.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">Is duplicate prevention enabled?<span class="severity-badge severity-badge--warning">Warning</span></div>
+              <p class="checklist-item__description">Check if your CRM warns or blocks when creating potential duplicates.</p>
+              <p class="checklist-item__benchmark">Benchmark: Duplicate rules should be active for Contacts, Leads, and Accounts.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-item__checkbox"></div>
+            <div class="checklist-item__content">
+              <div class="checklist-item__title">Who owns data quality?<span class="severity-badge severity-badge--critical">Critical</span></div>
+              <p class="checklist-item__description">Is there a person or team accountable for data quality metrics and maintenance?</p>
+              <p class="checklist-item__benchmark">Benchmark: Someone should own data quality as part of their defined responsibilities.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="score-box">
+          <div class="score-box__title">Interpreting Your Results</div>
+          <div class="score-box__scale">
+            <div class="score-box__level">
+              <div class="score-box__level-score">0-5 issues</div>
+              <div class="score-box__level-label">Healthy</div>
+            </div>
+            <div class="score-box__level">
+              <div class="score-box__level-score">6-12 issues</div>
+              <div class="score-box__level-label">Needs attention</div>
+            </div>
+            <div class="score-box__level">
+              <div class="score-box__level-score">13+ issues</div>
+              <div class="score-box__level-label">Critical cleanup needed</div>
+            </div>
+          </div>
+          <p class="score-box__description">Count how many items fall outside the benchmarks. Focus on Critical items first, then Warning, then Info.</p>
+        </div>
+
+        <h2>What To Do Next</h2>
+
+        <p>Now that you know where your problems are, prioritize based on business impact:</p>
+
+        <p><strong>Fix first:</strong> Issues affecting revenue operations—lead routing failures, duplicate accounts causing rep conflicts, bounce rates damaging sender reputation.</p>
+
+        <p><strong>Fix second:</strong> Completeness issues—missing data that limits segmentation, scoring, or personalization.</p>
+
+        <p><strong>Fix third:</strong> Standardization and formatting—important for long-term maintenance but less urgent than accuracy issues.</p>
+
+        <p>For most companies with significant issues, a one-time cleanup project makes sense before establishing ongoing maintenance. Trying to maintain a fundamentally broken database is like mopping while the faucet's running.</p>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Want a professional assessment of your data quality?</p>
+          <a href="/assessment/" class="btn btn--primary btn--lg">Get a Free Data Assessment</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/how-to-build-data-hygiene-strategy.html">How to Build a Data Hygiene Strategy</a> | <a href="/resources/cost-of-bad-crm-data.html">The Cost of Bad CRM Data</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
