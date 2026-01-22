@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Quality for Customer Success Teams: Health Scores, Signals & Retention | Verum</title>
+  <meta name="description" content="How CS teams can leverage clean, enriched data for accurate health scoring, churn prediction, expansion signals, and proactive customer engagement.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-quality-customer-success.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-quality-customer-success.html">
+  <meta property="og:title" content="Data Quality for Customer Success Teams: Health Scores, Signals & Retention">
+  <meta property="og:description" content="How CS teams can leverage clean, enriched data for accurate health scoring, churn prediction, expansion signals, and proactive customer engagement.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Quality for Customer Success Teams: Health Scores, Signals & Retention">
+  <meta name="twitter:description" content="How CS teams can leverage clean, enriched data for accurate health scoring, churn prediction, expansion signals, and proactive customer engagement.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data Quality for Customer Success Teams: Health Scores, Signals & Retention",
+    "description": "How CS teams can leverage clean, enriched data for accurate health scoring, churn prediction, expansion signals, and proactive customer engagement.",
+    "image": "https://veruminc.com/assets/social-preview.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum",
+      "url": "https://veruminc.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://veruminc.com/assets/logos/logos-svg/verum-logo-dark-bg.svg"
+      }
+    },
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-quality-customer-success.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does data quality affect customer health scores?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data quality directly impacts health score accuracy. Missing product usage data creates blind spots, stale contact information means health scores don't reflect current stakeholders, and incomplete company data prevents proper segmentation. Poor data leads to false positives (accounts flagged as at-risk when healthy) and false negatives (missing actual churn signals), reducing CS team efficiency and effectiveness."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data should customer success teams track for churn prediction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Effective churn prediction requires multiple data categories: product usage metrics (login frequency, feature adoption, depth of use), engagement signals (support tickets, NPS responses, meeting attendance), stakeholder changes (champion departure, executive sponsor changes), and external signals (company layoffs, M&A activity, competitor adoption). The combination of behavioral and firmographic data provides the most accurate predictions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can CS teams identify expansion opportunities through data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Expansion signals include usage approaching tier limits, adoption spreading to new departments or use cases, growing user counts, positive engagement scores, and external growth indicators (funding, hiring, new offices). Enriched firmographic data helps identify accounts with expansion potential based on company growth trajectory and technology adoption patterns."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the biggest data quality challenge for customer success?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The biggest challenge is maintaining accurate stakeholder data. Contacts change roles, leave companies, or get promoted frequently. CS teams often discover stakeholder changes only when reaching out—by which time relationships may have degraded. Proactive monitoring of contact changes through enrichment services helps CS teams stay ahead of stakeholder evolution."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-header {
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+    }
+    .article-category {
+      display: inline-block;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.625rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      background: rgba(45, 212, 191, 0.15);
+      color: var(--color-teal);
+    }
+    .article-header h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+    .article-content {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+    }
+    .article-content h2 {
+      font-size: 1.625rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 3rem 0 1.25rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 2rem 0 1rem;
+    }
+    .article-content p {
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.625rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-content blockquote {
+      border-left: 3px solid var(--color-teal);
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--color-text-secondary);
+    }
+    .highlight-box {
+      background: rgba(45, 212, 191, 0.08);
+      border: 1px solid rgba(45, 212, 191, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .highlight-box h4 {
+      color: var(--color-teal);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .highlight-box ul {
+      margin-bottom: 0;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.9375rem;
+    }
+    .data-table th, .data-table td {
+      padding: 0.875rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .data-table th {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      background: rgba(45, 212, 191, 0.05);
+    }
+    .data-table tr:hover {
+      background: rgba(45, 212, 191, 0.03);
+    }
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .related-articles h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .related-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .related-card {
+      padding: 1.25rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--color-teal);
+    }
+    .related-card__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.375rem;
+      line-height: 1.3;
+    }
+    .related-card__title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .related-card__excerpt {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+    }
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-section h2 {
+      margin-top: 0;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1.0625rem;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p {
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="article-container">
+      <header class="article-header">
+        <span class="article-category">RevOps Guide</span>
+        <h1>Data Quality for Customer Success Teams: Health Scores, Signals & Retention</h1>
+        <p class="article-meta">15 min read</p>
+      </header>
+
+      <div class="article-content">
+        <p>Customer Success teams operate in a data-rich environment. Product usage, support tickets, NPS scores, renewal dates, stakeholder information—the inputs for health scores and playbooks come from dozens of sources. When this data is clean, accurate, and complete, CS teams can proactively identify at-risk accounts and expansion opportunities. When it's not, they're flying blind.</p>
+
+        <p>The cost of poor CS data is measured in preventable churn. An account looks healthy based on incomplete data, then churns unexpectedly. Or a CSM wastes cycles on false alerts while real risks go undetected. This guide covers how to build the data foundation that enables effective customer success.</p>
+
+        <h2>The CS Data Challenge</h2>
+
+        <p>Customer Success sits at the intersection of multiple data streams, each with its own quality issues:</p>
+
+        <h3>Data Sources and Their Problems</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data Source</th>
+              <th>What It Provides</th>
+              <th>Common Quality Issues</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product/Usage</td>
+              <td>Login frequency, feature adoption, depth of use</td>
+              <td>Missing events, attribution errors, incomplete tracking</td>
+            </tr>
+            <tr>
+              <td>CRM</td>
+              <td>Account info, contacts, renewal dates, ARR</td>
+              <td>Stale contacts, missing stakeholders, wrong renewal dates</td>
+            </tr>
+            <tr>
+              <td>Support</td>
+              <td>Ticket volume, sentiment, resolution time</td>
+              <td>Uncategorized tickets, missed sentiment signals</td>
+            </tr>
+            <tr>
+              <td>Billing</td>
+              <td>Payment status, invoice history, seat counts</td>
+              <td>Sync delays, mismatched account IDs</td>
+            </tr>
+            <tr>
+              <td>Marketing</td>
+              <td>Email engagement, content consumption, event attendance</td>
+              <td>Cookie fragmentation, untracked touchpoints</td>
+            </tr>
+            <tr>
+              <td>External</td>
+              <td>Company changes, funding, layoffs, exec turnover</td>
+              <td>Delayed updates, incomplete coverage</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Why CS Data Quality Is Hard</h3>
+
+        <p>Several factors make CS data particularly challenging:</p>
+
+        <ul>
+          <li><strong>Multi-source aggregation:</strong> Health scores combine data from 5-10+ systems</li>
+          <li><strong>Identity complexity:</strong> Same person may exist in multiple systems with different identifiers</li>
+          <li><strong>Rapid change:</strong> Contacts change roles, companies restructure, usage patterns shift</li>
+          <li><strong>Subjective inputs:</strong> CSM notes, relationship assessments, qualitative signals</li>
+          <li><strong>Timing dependencies:</strong> Data must be current enough to be actionable</li>
+        </ul>
+
+        <h2>Building Health Score Data Quality</h2>
+
+        <p>Health scores are only as good as the data feeding them. Here's how to ensure accuracy:</p>
+
+        <h3>Health Score Components</h3>
+
+        <p>Most health scores combine several signal categories:</p>
+
+        <div class="highlight-box">
+          <h4>Core Health Score Inputs</h4>
+          <ul>
+            <li><strong>Product adoption:</strong> Feature usage, depth, breadth across users</li>
+            <li><strong>Engagement:</strong> Login trends, session duration, active users</li>
+            <li><strong>Support sentiment:</strong> Ticket volume, escalations, CSAT scores</li>
+            <li><strong>Relationship health:</strong> Meeting attendance, responsiveness, NPS</li>
+            <li><strong>Business health:</strong> On-time payments, contract compliance</li>
+            <li><strong>Growth trajectory:</strong> User growth, feature expansion, upsell conversations</li>
+          </ul>
+        </div>
+
+        <h3>Data Quality Requirements by Component</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Key Quality Requirement</th>
+              <th>Warning Sign of Poor Quality</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product adoption</td>
+              <td>Complete event tracking, accurate user attribution</td>
+              <td>Usage shows zero for accounts you know are active</td>
+            </tr>
+            <tr>
+              <td>Engagement</td>
+              <td>Consistent tracking across platforms, time series accuracy</td>
+              <td>Sudden drops/spikes not tied to real behavior</td>
+            </tr>
+            <tr>
+              <td>Support</td>
+              <td>Proper categorization, sentiment analysis accuracy</td>
+              <td>All tickets show neutral sentiment regardless of content</td>
+            </tr>
+            <tr>
+              <td>Relationship</td>
+              <td>Current contact info, stakeholder mapping complete</td>
+              <td>CSM discovers champion left 3 months ago</td>
+            </tr>
+            <tr>
+              <td>Business</td>
+              <td>Billing sync accuracy, contract data current</td>
+              <td>Renewal date in CRM doesn't match actual contract</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Validating Health Score Accuracy</h3>
+
+        <p>How to tell if your health scores are working:</p>
+
+        <ul>
+          <li><strong>Correlation analysis:</strong> Do low scores actually predict churn? What's the false positive rate?</li>
+          <li><strong>CSM feedback loop:</strong> Do CSMs trust the scores? Where do they disagree?</li>
+          <li><strong>Surprise churn:</strong> What % of churn comes from accounts marked healthy?</li>
+          <li><strong>Score volatility:</strong> Do scores change appropriately or swing wildly on data blips?</li>
+          <li><strong>Missing data impact:</strong> What happens to scores when data sources have gaps?</li>
+        </ul>
+
+        <h2>Contact and Stakeholder Data</h2>
+
+        <p>CS effectiveness depends heavily on knowing who matters at each account and how to reach them.</p>
+
+        <h3>Stakeholder Data Requirements</h3>
+
+        <p>For each account, CS teams need:</p>
+
+        <ul>
+          <li><strong>Economic buyer:</strong> Who controls budget and renewal decision</li>
+          <li><strong>Champion:</strong> Who advocates internally for your product</li>
+          <li><strong>Power users:</strong> Who gets the most value and can speak to results</li>
+          <li><strong>Technical contacts:</strong> Who handles implementation and integrations</li>
+          <li><strong>Executive sponsor:</strong> Senior leader with strategic interest</li>
+        </ul>
+
+        <h3>Common Stakeholder Data Problems</h3>
+
+        <div class="highlight-box">
+          <h4>Stakeholder Data Issues</h4>
+          <ul>
+            <li><strong>Role changes:</strong> Champion got promoted and is no longer hands-on</li>
+            <li><strong>Departures:</strong> Key contact left company, no one updated CRM</li>
+            <li><strong>Wrong contacts:</strong> Primary contact is admin, not decision-maker</li>
+            <li><strong>Missing stakeholders:</strong> New executive joined and isn't in system</li>
+            <li><strong>Stale info:</strong> Email bounces, phone numbers disconnected</li>
+            <li><strong>Incomplete mapping:</strong> Only know 2 contacts at 500-person company</li>
+          </ul>
+        </div>
+
+        <h3>Maintaining Stakeholder Data</h3>
+
+        <p>Strategies to keep contact data current:</p>
+
+        <ul>
+          <li><strong>Regular validation:</strong> Email and phone verification on scheduled basis</li>
+          <li><strong>Job change monitoring:</strong> Track when contacts change roles or companies</li>
+          <li><strong>Meeting-based updates:</strong> Update contacts after every customer interaction</li>
+          <li><strong>Enrichment automation:</strong> Automated append of new stakeholders from data providers</li>
+          <li><strong>LinkedIn integration:</strong> Sales Navigator or similar for real-time role tracking</li>
+        </ul>
+
+        <h2>Churn Signal Data</h2>
+
+        <p>Predicting churn requires capturing leading indicators before it's too late.</p>
+
+        <h3>Internal Churn Signals</h3>
+
+        <p>Behavioral indicators from your own systems:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Signal Type</th>
+              <th>Specific Indicators</th>
+              <th>Data Quality Requirement</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Usage decline</td>
+              <td>Login frequency down, fewer active users, reduced feature use</td>
+              <td>Accurate baseline, consistent tracking</td>
+            </tr>
+            <tr>
+              <td>Engagement drop</td>
+              <td>Ignoring emails, skipping QBRs, slow response times</td>
+              <td>Email tracking, meeting attendance logged</td>
+            </tr>
+            <tr>
+              <td>Support patterns</td>
+              <td>Increasing tickets, frustrated tone, repeat issues</td>
+              <td>Sentiment analysis, ticket categorization</td>
+            </tr>
+            <tr>
+              <td>Stakeholder changes</td>
+              <td>Champion departure, new exec with different priorities</td>
+              <td>Contact change monitoring</td>
+            </tr>
+            <tr>
+              <td>Contract signals</td>
+              <td>Not adding users, declining upsells, renewal pushback</td>
+              <td>Deal stage tracking, conversation logging</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>External Churn Signals</h3>
+
+        <p>Company changes that indicate risk:</p>
+
+        <ul>
+          <li><strong>Layoffs:</strong> Workforce reductions often precede vendor cuts</li>
+          <li><strong>Leadership changes:</strong> New CEO/CFO may re-evaluate vendors</li>
+          <li><strong>M&A activity:</strong> Acquisitions lead to tool consolidation</li>
+          <li><strong>Financial distress:</strong> Missed earnings, credit downgrades</li>
+          <li><strong>Competitive adoption:</strong> Signals they're evaluating alternatives</li>
+          <li><strong>Strategic shift:</strong> Moving away from your product's use case</li>
+        </ul>
+
+        <h3>Data Requirements for Churn Prediction</h3>
+
+        <p>To catch churn signals early:</p>
+
+        <ul>
+          <li><strong>Time series data:</strong> Need historical patterns to identify decline</li>
+          <li><strong>Baseline establishment:</strong> Know what "normal" looks like per segment</li>
+          <li><strong>Multi-signal correlation:</strong> Single signals have false positives; combine for accuracy</li>
+          <li><strong>Timeliness:</strong> Data must be fresh enough to act on</li>
+          <li><strong>Coverage:</strong> Must track signals across all relevant accounts</li>
+        </ul>
+
+        <h2>Expansion Signal Data</h2>
+
+        <p>The flip side of churn prediction is identifying growth opportunities.</p>
+
+        <h3>Internal Expansion Signals</h3>
+
+        <div class="highlight-box">
+          <h4>Growth Indicators</h4>
+          <ul>
+            <li><strong>Usage growth:</strong> Approaching tier limits, requesting higher quotas</li>
+            <li><strong>User expansion:</strong> Adding seats, new teams adopting</li>
+            <li><strong>Feature adoption:</strong> Moving to advanced features, requesting new capabilities</li>
+            <li><strong>Engagement increase:</strong> More stakeholders involved, executive engagement</li>
+            <li><strong>Positive sentiment:</strong> High NPS, willing to be reference customer</li>
+          </ul>
+        </div>
+
+        <h3>External Expansion Signals</h3>
+
+        <p>Company growth indicators:</p>
+
+        <ul>
+          <li><strong>Funding rounds:</strong> New capital enables vendor investment</li>
+          <li><strong>Hiring growth:</strong> More employees may need more seats</li>
+          <li><strong>New locations:</strong> Office expansion creates rollout opportunities</li>
+          <li><strong>Revenue growth:</strong> Successful companies invest in tools</li>
+          <li><strong>Technology adoption:</strong> Related tech purchases indicate maturity</li>
+        </ul>
+
+        <h3>Enrichment for Expansion</h3>
+
+        <p>Data to append for expansion targeting:</p>
+
+        <ul>
+          <li><strong>Company size updates:</strong> Current headcount vs. at purchase</li>
+          <li><strong>Funding history:</strong> Recent raises and burn rate indicators</li>
+          <li><strong>Tech stack:</strong> Complementary tools they've adopted</li>
+          <li><strong>Growth rate:</strong> Hiring velocity, revenue trajectory</li>
+          <li><strong>Similar company patterns:</strong> What did accounts like this expand to?</li>
+        </ul>
+
+        <h2>CS Platform Data Architecture</h2>
+
+        <p>Getting clean data into CS platforms requires proper architecture.</p>
+
+        <h3>Data Integration Patterns</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Integration Type</th>
+              <th>Best For</th>
+              <th>Considerations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Native connectors</td>
+              <td>Standard systems (Salesforce, HubSpot, Zendesk)</td>
+              <td>Usually sync daily; may miss real-time needs</td>
+            </tr>
+            <tr>
+              <td>Reverse ETL</td>
+              <td>Warehouse-first architecture, complex transformations</td>
+              <td>Census, Hightouch to sync transformed data</td>
+            </tr>
+            <tr>
+              <td>Event streaming</td>
+              <td>Real-time usage data, immediate alerting</td>
+              <td>Segment, Rudderstack for event collection</td>
+            </tr>
+            <tr>
+              <td>API integrations</td>
+              <td>Custom systems, enrichment providers</td>
+              <td>More maintenance, but more control</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>CS Platform Options</h3>
+
+        <p>Major CS platforms and their data capabilities:</p>
+
+        <ul>
+          <li><strong>Gainsight:</strong> Deep analytics, complex health scores, extensive integrations</li>
+          <li><strong>ChurnZero:</strong> Real-time usage tracking, in-app engagement</li>
+          <li><strong>Totango:</strong> Modular approach, segment-based automation</li>
+          <li><strong>Vitally:</strong> Product-led focus, strong usage analytics</li>
+          <li><strong>Planhat:</strong> Revenue focus, expansion playbooks</li>
+          <li><strong>ClientSuccess:</strong> Relationship-focused, success planning</li>
+        </ul>
+
+        <h3>Data Quality at Ingestion</h3>
+
+        <p>Prevent bad data from entering CS systems:</p>
+
+        <ul>
+          <li><strong>Schema validation:</strong> Reject malformed data at ingestion</li>
+          <li><strong>Deduplication:</strong> Prevent duplicate accounts or contacts</li>
+          <li><strong>Standardization:</strong> Normalize fields (company names, industries)</li>
+          <li><strong>Completeness checks:</strong> Alert when critical fields missing</li>
+          <li><strong>Anomaly detection:</strong> Flag unusual values (negative ARR, impossible dates)</li>
+        </ul>
+
+        <h2>Operational Data Quality Practices</h2>
+
+        <p>Maintaining data quality requires ongoing processes.</p>
+
+        <h3>CSM-Driven Data Hygiene</h3>
+
+        <p>Empower CSMs to maintain data quality:</p>
+
+        <ul>
+          <li><strong>Easy update interfaces:</strong> Make it simple to correct bad data</li>
+          <li><strong>Feedback mechanisms:</strong> Report data quality issues to ops</li>
+          <li><strong>Meeting-triggered updates:</strong> Prompt contact updates after calls</li>
+          <li><strong>Gamification:</strong> Recognize CSMs who maintain clean data</li>
+          <li><strong>Quality dashboards:</strong> Show CSMs their portfolio data quality</li>
+        </ul>
+
+        <h3>Automated Quality Processes</h3>
+
+        <div class="highlight-box">
+          <h4>Automated Quality Checks</h4>
+          <ul>
+            <li><strong>Contact verification:</strong> Scheduled email/phone validation</li>
+            <li><strong>Company data refresh:</strong> Quarterly firmographic enrichment</li>
+            <li><strong>Usage data validation:</strong> Cross-check with billing for accuracy</li>
+            <li><strong>Duplicate detection:</strong> Weekly scans for merged or duplicate accounts</li>
+            <li><strong>Stale data alerts:</strong> Flag contacts not updated in 6+ months</li>
+          </ul>
+        </div>
+
+        <h3>Quality Metrics to Track</h3>
+
+        <p>Measure CS data quality:</p>
+
+        <ul>
+          <li><strong>Contact accuracy:</strong> % of emails deliverable, phones reachable</li>
+          <li><strong>Stakeholder coverage:</strong> Average contacts per account vs. target</li>
+          <li><strong>Data freshness:</strong> Average age of last update per account</li>
+          <li><strong>Health score reliability:</strong> Correlation between scores and outcomes</li>
+          <li><strong>Missing data rate:</strong> % of accounts missing key health inputs</li>
+        </ul>
+
+        <h2>Enrichment for Customer Success</h2>
+
+        <p>External data enrichment fills gaps and provides early warning signals.</p>
+
+        <h3>Company Data Enrichment</h3>
+
+        <p>Keep firmographic data current:</p>
+
+        <ul>
+          <li><strong>Size updates:</strong> Headcount changes, revenue growth</li>
+          <li><strong>Funding events:</strong> Raises, IPOs, M&A activity</li>
+          <li><strong>Leadership changes:</strong> Executive appointments and departures</li>
+          <li><strong>News monitoring:</strong> Press releases, earnings, strategic announcements</li>
+          <li><strong>Technology changes:</strong> Tech stack evolution, competitive adoption</li>
+        </ul>
+
+        <h3>Contact Data Enrichment</h3>
+
+        <p>Maintain relationship context:</p>
+
+        <ul>
+          <li><strong>Job changes:</strong> When contacts move roles or companies</li>
+          <li><strong>New stakeholders:</strong> Identify new executives or decision-makers</li>
+          <li><strong>Contact validation:</strong> Verify email and phone accuracy</li>
+          <li><strong>Title standardization:</strong> Normalize job titles for segmentation</li>
+          <li><strong>Social profiles:</strong> LinkedIn, Twitter for engagement context</li>
+        </ul>
+
+        <h3>Enrichment Providers for CS</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Strength</th>
+              <th>Best CS Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ZoomInfo</td>
+              <td>Contact accuracy, org charts</td>
+              <td>Stakeholder mapping, job change alerts</td>
+            </tr>
+            <tr>
+              <td>Clearbit</td>
+              <td>Real-time enrichment, tech stack</td>
+              <td>Company data refresh, segment targeting</td>
+            </tr>
+            <tr>
+              <td>6sense</td>
+              <td>Intent data, buying signals</td>
+              <td>Competitive threat detection</td>
+            </tr>
+            <tr>
+              <td>Bombora</td>
+              <td>Topic-level intent</td>
+              <td>Expansion interest signals</td>
+            </tr>
+            <tr>
+              <td>LinkedIn Sales Navigator</td>
+              <td>Contact updates, relationship intel</td>
+              <td>Real-time stakeholder monitoring</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Playbook Data Requirements</h2>
+
+        <p>CS playbooks are only effective when triggered by accurate data.</p>
+
+        <h3>Onboarding Playbooks</h3>
+
+        <p>Data needed for effective onboarding:</p>
+
+        <ul>
+          <li><strong>Account context:</strong> Size, industry, use case, success criteria</li>
+          <li><strong>Stakeholder map:</strong> Who to involve at each stage</li>
+          <li><strong>Technical requirements:</strong> Integration needs, security requirements</li>
+          <li><strong>Timeline expectations:</strong> Go-live dates, milestone targets</li>
+          <li><strong>Historical context:</strong> Sales notes, implementation concerns raised</li>
+        </ul>
+
+        <h3>Risk Intervention Playbooks</h3>
+
+        <p>Data triggers for at-risk accounts:</p>
+
+        <ul>
+          <li><strong>Health score thresholds:</strong> When to trigger outreach</li>
+          <li><strong>Specific signal combinations:</strong> Usage drop + support spike + renewal approaching</li>
+          <li><strong>Stakeholder changes:</strong> Champion departure triggers exec engagement</li>
+          <li><strong>External events:</strong> Funding concerns, layoff news</li>
+        </ul>
+
+        <h3>Expansion Playbooks</h3>
+
+        <p>Data triggers for growth motions:</p>
+
+        <ul>
+          <li><strong>Usage thresholds:</strong> Approaching limits triggers upsell</li>
+          <li><strong>Feature adoption:</strong> Adopting advanced features signals readiness</li>
+          <li><strong>Company growth:</strong> Funding or hiring triggers capacity conversation</li>
+          <li><strong>Success metrics:</strong> Strong outcomes enable case study + expansion</li>
+        </ul>
+
+        <h2>Measuring CS Data Quality Impact</h2>
+
+        <p>Connect data quality to business outcomes:</p>
+
+        <h3>Leading Indicators</h3>
+        <ul>
+          <li><strong>Health score accuracy:</strong> % of churn predicted by low scores</li>
+          <li><strong>Alert relevance:</strong> % of alerts that lead to meaningful action</li>
+          <li><strong>Contact reach rate:</strong> % of outreach that reaches intended recipient</li>
+          <li><strong>Playbook completion:</strong> % of triggered playbooks completed successfully</li>
+        </ul>
+
+        <h3>Lagging Indicators</h3>
+        <ul>
+          <li><strong>Surprise churn rate:</strong> Churn from accounts not flagged at-risk</li>
+          <li><strong>Net retention:</strong> Overall expansion vs. contraction</li>
+          <li><strong>Time to value:</strong> Onboarding efficiency improvements</li>
+          <li><strong>CSM productivity:</strong> Accounts managed per CSM at quality levels</li>
+        </ul>
+
+        <section class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How does data quality affect customer health scores?</h3>
+            <p>Data quality directly impacts health score accuracy. Missing product usage data creates blind spots, stale contact information means health scores don't reflect current stakeholders, and incomplete company data prevents proper segmentation. Poor data leads to false positives (accounts flagged as at-risk when healthy) and false negatives (missing actual churn signals), reducing CS team efficiency and effectiveness.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What data should customer success teams track for churn prediction?</h3>
+            <p>Effective churn prediction requires multiple data categories: product usage metrics (login frequency, feature adoption, depth of use), engagement signals (support tickets, NPS responses, meeting attendance), stakeholder changes (champion departure, executive sponsor changes), and external signals (company layoffs, M&A activity, competitor adoption). The combination of behavioral and firmographic data provides the most accurate predictions.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How can CS teams identify expansion opportunities through data?</h3>
+            <p>Expansion signals include usage approaching tier limits, adoption spreading to new departments or use cases, growing user counts, positive engagement scores, and external growth indicators (funding, hiring, new offices). Enriched firmographic data helps identify accounts with expansion potential based on company growth trajectory and technology adoption patterns.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What's the biggest data quality challenge for customer success?</h3>
+            <p>The biggest challenge is maintaining accurate stakeholder data. Contacts change roles, leave companies, or get promoted frequently. CS teams often discover stakeholder changes only when reaching out—by which time relationships may have degraded. Proactive monitoring of contact changes through enrichment services helps CS teams stay ahead of stakeholder evolution.</p>
+          </div>
+        </section>
+
+        <div class="related-articles">
+          <h3>Related Resources</h3>
+          <div class="related-grid">
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/data-quality-metrics.html">Data Quality Metrics That Matter</a></p>
+              <p class="related-card__excerpt">Measuring and reporting on data quality.</p>
+            </div>
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/contact-data-accuracy.html">Contact Data Accuracy</a></p>
+              <p class="related-card__excerpt">Keeping contact information current.</p>
+            </div>
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/data-enrichment-enterprise.html">Enterprise Data Enrichment</a></p>
+              <p class="related-card__excerpt">Strategies for large account enrichment.</p>
+            </div>
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/crm-data-hygiene.html">CRM Data Hygiene Guide</a></p>
+              <p class="related-card__excerpt">Keeping your CRM clean and actionable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
