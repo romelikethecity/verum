@@ -1440,6 +1440,7 @@ img {
   color: var(--color-teal);
   line-height: 1;
   margin-bottom: 0.5rem;
+  white-space: nowrap;
 }
 
 @media (min-width: 768px) {
