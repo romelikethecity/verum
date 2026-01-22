@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Cleaning vs. Data Enrichment: What's the Difference? | Verum</title>
+  <meta name="description" content="Data cleaning fixes what's wrong. Data enrichment adds what's missing. Learn when you need each, why order matters, and how to approach both for your CRM.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-cleaning-vs-data-enrichment.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-cleaning-vs-data-enrichment.html">
+  <meta property="og:title" content="Data Cleaning vs. Data Enrichment: What's the Difference?">
+  <meta property="og:description" content="Data cleaning fixes what's wrong. Data enrichment adds what's missing. Learn when you need each and why order matters.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Cleaning vs. Data Enrichment: What's the Difference?">
+  <meta name="twitter:description" content="Data cleaning fixes what's wrong. Data enrichment adds what's missing. Learn when you need each and why order matters.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data Cleaning vs. Data Enrichment: What's the Difference?",
+    "description": "Data cleaning fixes what's wrong. Data enrichment adds what's missing. Learn when you need each, why order matters, and how to approach both for your CRM.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-cleaning-vs-data-enrichment.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between data cleaning and data enrichment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data cleaning fixes problems in existing data: removing duplicates, correcting invalid emails, standardizing formats, and deleting outdated records. Data enrichment adds new data that wasn't there before: appending missing phone numbers, job titles, company information, and other fields from external sources."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I clean my data before enriching it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Always clean before enriching. Cleaning removes duplicates, invalid records, and obvious errors that would waste enrichment credits and potentially create new problems. Enriching dirty data means paying to enhance records that should be deleted or merged."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need both data cleaning and data enrichment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most B2B companies need both. Data cleaning ensures the records you have are accurate and deduplicated. Data enrichment fills in missing fields that are critical for sales, marketing, and operations. Together, they give you a complete, accurate database."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I clean and enrich my CRM data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "B2B data decays at 25-30% per year. Most companies benefit from quarterly cleaning (duplicate detection, email validation, stale record removal) and annual enrichment of records missing critical fields. High-volume sales teams may need more frequent maintenance."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .vs-comparison {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    @media (min-width: 640px) {
+      .vs-comparison {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .vs-comparison__item {
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+    }
+    .vs-comparison__item--cleaning {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+    }
+    .vs-comparison__item--enrichment {
+      background: rgba(0, 184, 148, 0.1);
+      border: 1px solid rgba(0, 184, 148, 0.3);
+    }
+    .vs-comparison__title {
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .vs-comparison__item--cleaning .vs-comparison__title {
+      color: #ff6b6b;
+    }
+    .vs-comparison__item--enrichment .vs-comparison__title {
+      color: var(--color-teal);
+    }
+    .vs-comparison__subtitle {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-lg);
+    }
+    .vs-comparison__list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .vs-comparison__list li {
+      padding: var(--space-sm) 0;
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .vs-comparison__item--cleaning .vs-comparison__list li::before {
+      content: '−';
+      position: absolute;
+      left: 0;
+      color: #ff6b6b;
+      font-weight: 700;
+    }
+    .vs-comparison__item--enrichment .vs-comparison__list li::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      color: var(--color-teal);
+      font-weight: 700;
+    }
+    .process-flow {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    @media (min-width: 640px) {
+      .process-flow {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+    .process-flow__step {
+      flex: 1;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      text-align: center;
+    }
+    .process-flow__step--active {
+      border-color: var(--color-teal);
+    }
+    .process-flow__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--color-teal);
+      color: var(--color-bg-primary);
+      font-weight: 700;
+      font-size: 0.875rem;
+      border-radius: 50%;
+      margin-bottom: var(--space-sm);
+    }
+    .process-flow__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-xs);
+    }
+    .process-flow__text {
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+    .process-flow__arrow {
+      display: none;
+      color: var(--color-text-muted);
+      font-size: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .process-flow__arrow {
+        display: block;
+      }
+    }
+    .example-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-xl) 0;
+      font-size: 0.875rem;
+    }
+    .example-table th {
+      background: var(--color-bg-secondary);
+      padding: var(--space-md);
+      text-align: left;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .example-table td {
+      padding: var(--space-md);
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text-secondary);
+    }
+    .example-table tr:last-child td {
+      border-bottom: none;
+    }
+    .example-table__problem {
+      color: #ff6b6b;
+    }
+    .example-table__cleaning {
+      color: var(--color-text-primary);
+    }
+    .example-table__enrichment {
+      color: var(--color-teal);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .decision-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+    }
+    .decision-box__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-lg);
+    }
+    .decision-box__item {
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .decision-box__item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .decision-box__question {
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-xs);
+    }
+    .decision-box__answer {
+      font-size: 0.875rem;
+      color: var(--color-teal);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Data Quality</p>
+      <h1 class="page-hero__title">Data Cleaning vs. Data Enrichment</h1>
+      <p class="page-hero__subtitle">Two terms that often get confused. They solve different problems, and the order you do them matters.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 8 min read</div>
+
+      <div class="blog-content">
+
+        <p>Your CRM data has problems. Some records have invalid emails. Some are duplicates. Some are missing phone numbers or company information. Some are all of the above.</p>
+
+        <p>To fix this, you need two different processes: data cleaning and data enrichment. They're often mentioned together, sometimes used interchangeably, but they do fundamentally different things.</p>
+
+        <div class="vs-comparison">
+          <div class="vs-comparison__item vs-comparison__item--cleaning">
+            <div class="vs-comparison__title">Data Cleaning</div>
+            <div class="vs-comparison__subtitle">Fixes what's wrong</div>
+            <ul class="vs-comparison__list">
+              <li>Remove duplicate records</li>
+              <li>Fix invalid email addresses</li>
+              <li>Standardize formatting</li>
+              <li>Delete outdated records</li>
+              <li>Correct data entry errors</li>
+              <li>Merge related records</li>
+            </ul>
+          </div>
+          <div class="vs-comparison__item vs-comparison__item--enrichment">
+            <div class="vs-comparison__title">Data Enrichment</div>
+            <div class="vs-comparison__subtitle">Adds what's missing</div>
+            <ul class="vs-comparison__list">
+              <li>Append phone numbers</li>
+              <li>Add job titles</li>
+              <li>Fill in company data</li>
+              <li>Add industry classification</li>
+              <li>Include employee count</li>
+              <li>Attach social profiles</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>Think of it this way: cleaning makes your existing data accurate. Enrichment makes it complete.</p>
+
+        <h2>Why the Distinction Matters</h2>
+
+        <p>Companies often jump straight to enrichment because adding data feels like progress. But enriching dirty data creates new problems:</p>
+
+        <ul>
+          <li><strong>Wasted money:</strong> You're paying to enrich duplicate records. Why enrich the same person twice?</li>
+          <li><strong>Compounded errors:</strong> You enrich a record for someone who left the company two years ago. Now you have detailed wrong information.</li>
+          <li><strong>New duplicates:</strong> The enrichment provider matches "John Smith" differently than your existing "J. Smith" record. Now you have two enriched records for the same person.</li>
+        </ul>
+
+        <div class="warning-box">
+          <div class="warning-box__title">The expensive mistake</div>
+          <p>A company with 100,000 records and 15% duplicates that skips cleaning and pays $0.50 per record for enrichment just spent $7,500 enriching records that should have been merged. And they've made their duplicate problem harder to fix because now the duplicate records have different enrichment data.</p>
+        </div>
+
+        <h2>The Right Order: Clean First, Then Enrich</h2>
+
+        <p>For most databases, the correct sequence is:</p>
+
+        <div class="process-flow">
+          <div class="process-flow__step">
+            <div class="process-flow__number">1</div>
+            <div class="process-flow__title">Deduplicate</div>
+            <p class="process-flow__text">Find and merge duplicate records</p>
+          </div>
+          <div class="process-flow__arrow">→</div>
+          <div class="process-flow__step">
+            <div class="process-flow__number">2</div>
+            <div class="process-flow__title">Validate</div>
+            <p class="process-flow__text">Remove invalid emails, fix formatting</p>
+          </div>
+          <div class="process-flow__arrow">→</div>
+          <div class="process-flow__step">
+            <div class="process-flow__number">3</div>
+            <div class="process-flow__title">Prune</div>
+            <p class="process-flow__text">Archive or delete stale records</p>
+          </div>
+          <div class="process-flow__arrow">→</div>
+          <div class="process-flow__step process-flow__step--active">
+            <div class="process-flow__number">4</div>
+            <div class="process-flow__title">Enrich</div>
+            <p class="process-flow__text">Add missing information</p>
+          </div>
+        </div>
+
+        <p>This order ensures you're only enriching records that are worth keeping, and you're not creating new problems in the process.</p>
+
+        <h2>What Each Process Actually Does</h2>
+
+        <h3>Data Cleaning in Detail</h3>
+
+        <p><strong>Deduplication</strong> identifies records that represent the same person or company. This isn't always obvious. "Acme Corporation" and "ACME Corp" are the same company. "Robert Johnson" and "Bob Johnson" might be the same person. Good deduplication uses fuzzy matching to catch these variations.</p>
+
+        <p><strong>Validation</strong> checks whether data is correct. Email validation confirms addresses are deliverable. Phone validation checks for proper formatting and valid area codes. Address validation ensures locations exist.</p>
+
+        <p><strong>Standardization</strong> makes data consistent. Job titles get normalized ("VP Sales" → "Vice President of Sales"). Phone numbers get formatted uniformly. State names become abbreviations. This consistency matters for automation and reporting.</p>
+
+        <p><strong>Pruning</strong> removes data that shouldn't be there. Records for people who've left companies. Contacts who've unsubscribed. Companies that no longer exist. Keeping this data clutters your system and wastes resources.</p>
+
+        <h3>Data Enrichment in Detail</h3>
+
+        <p><strong>Contact enrichment</strong> adds information about individuals: direct phone numbers, job titles, department, seniority level, LinkedIn profiles, and verified email addresses.</p>
+
+        <p><strong>Company enrichment</strong> adds firmographic data: employee count, annual revenue, industry, sub-industry, headquarters location, funding history, and technology stack.</p>
+
+        <p><strong>Enrichment providers</strong> maintain large databases compiled from public records, web scraping, partnerships, and proprietary sources. When you submit a record, they match it against their database and return additional fields.</p>
+
+        <h2>When You Need Each</h2>
+
+        <div class="decision-box">
+          <div class="decision-box__title">You probably need cleaning if...</div>
+          <div class="decision-box__item">
+            <p class="decision-box__question">Your email bounce rate is above 5%</p>
+            <p class="decision-box__answer">→ Email validation and cleaning</p>
+          </div>
+          <div class="decision-box__item">
+            <p class="decision-box__question">Multiple reps claim to own the same account</p>
+            <p class="decision-box__answer">→ Deduplication</p>
+          </div>
+          <div class="decision-box__item">
+            <p class="decision-box__question">Your reports show inconsistent industry or title values</p>
+            <p class="decision-box__answer">→ Standardization</p>
+          </div>
+          <div class="decision-box__item">
+            <p class="decision-box__question">You have records that haven't been touched in 2+ years</p>
+            <p class="decision-box__answer">→ Pruning</p>
+          </div>
+        </div>
+
+        <div class="decision-box">
+          <div class="decision-box__title">You probably need enrichment if...</div>
+          <div class="decision-box__item">
+            <p class="decision-box__question">More than 30% of contacts are missing phone numbers</p>
+            <p class="decision-box__answer">→ Contact enrichment</p>
+          </div>
+          <div class="decision-box__item">
+            <p class="decision-box__question">Lead routing fails because company size is unknown</p>
+            <p class="decision-box__answer">→ Firmographic enrichment</p>
+          </div>
+          <div class="decision-box__item">
+            <p class="decision-box__question">Your lead scoring model has too many unknowns</p>
+            <p class="decision-box__answer">→ Both contact and company enrichment</p>
+          </div>
+          <div class="decision-box__item">
+            <p class="decision-box__question">Marketing can't segment by industry or company size</p>
+            <p class="decision-box__answer">→ Firmographic enrichment</p>
+          </div>
+        </div>
+
+        <h2>A Practical Example</h2>
+
+        <p>Here's how the same records might be processed through both cleaning and enrichment:</p>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Problem</th>
+              <th>Cleaning Fixes</th>
+              <th>Enrichment Adds</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="example-table__problem">Email: john@acme (invalid)</td>
+              <td class="example-table__cleaning">Removes invalid email, flags for review</td>
+              <td class="example-table__enrichment">Appends verified email: john.smith@acme.com</td>
+            </tr>
+            <tr>
+              <td class="example-table__problem">Phone: (blank)</td>
+              <td class="example-table__cleaning">Nothing to clean</td>
+              <td class="example-table__enrichment">Adds: +1 (555) 123-4567</td>
+            </tr>
+            <tr>
+              <td class="example-table__problem">Title: "sales"</td>
+              <td class="example-table__cleaning">Standardizes to proper case: "Sales"</td>
+              <td class="example-table__enrichment">Enriches to: "Vice President of Sales"</td>
+            </tr>
+            <tr>
+              <td class="example-table__problem">Company: "acme corp"</td>
+              <td class="example-table__cleaning">Normalizes to: "Acme Corporation"</td>
+              <td class="example-table__enrichment">Adds: Industry, Employee Count, Revenue</td>
+            </tr>
+            <tr>
+              <td class="example-table__problem">Duplicate exists</td>
+              <td class="example-table__cleaning">Merges records, preserves best data</td>
+              <td class="example-table__enrichment">N/A (no duplicate to enrich)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Cost Comparison</h2>
+
+        <p>Both processes have costs, but they're structured differently:</p>
+
+        <p><strong>Data cleaning</strong> is typically project-based or priced per record cleaned. Costs depend on complexity: simple email validation might be $0.01 per record, while comprehensive deduplication with manual review could be $0.10-0.50 per record.</p>
+
+        <p><strong>Data enrichment</strong> is usually priced per record enriched, ranging from $0.10 to $2.00+ depending on the data fields and provider. Platform subscriptions (ZoomInfo, Cognism) bundle enrichment with access to prospect databases, typically $15,000-$50,000+ annually.</p>
+
+        <div class="callout-box">
+          <p><strong>Budget tip:</strong> If you're choosing one or the other due to budget constraints, start with cleaning. Clean data that's incomplete is more useful than complete data that's wrong. You can always enrich later; undoing enrichment damage is harder.</p>
+        </div>
+
+        <h2>Do You Need Both?</h2>
+
+        <p>Most B2B companies need both cleaning and enrichment, but not necessarily at the same time or frequency.</p>
+
+        <p><strong>Cleaning should be ongoing.</strong> Duplicates accumulate continuously. Email addresses go bad. Data entry errors happen daily. Regular cleaning (quarterly at minimum) prevents problems from compounding.</p>
+
+        <p><strong>Enrichment can be periodic.</strong> Once records are enriched, that data is good until it changes (job changes, company updates). Annual enrichment of new or changed records is sufficient for many companies. High-velocity sales teams might enrich more frequently.</p>
+
+        <p><strong>The exception:</strong> If your database is brand new or recently imported from another system, you might need a one-time project that does both cleaning and enrichment together. Clean the import first, then enrich what survives.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>What is the difference between data cleaning and data enrichment?</h3>
+          <p>Data cleaning fixes problems in existing data: removing duplicates, correcting invalid emails, standardizing formats, and deleting outdated records. Data enrichment adds new data that wasn't there before: appending missing phone numbers, job titles, and company information from external sources.</p>
+
+          <h3>Should I clean my data before enriching it?</h3>
+          <p>Yes. Always clean before enriching. Cleaning removes duplicates, invalid records, and obvious errors that would waste enrichment credits. Enriching dirty data means paying to enhance records that should be deleted or merged.</p>
+
+          <h3>Do I need both data cleaning and data enrichment?</h3>
+          <p>Most B2B companies need both. Data cleaning ensures the records you have are accurate. Data enrichment fills in missing fields. Together, they give you a complete, accurate database that supports sales, marketing, and operations.</p>
+
+          <h3>How often should I clean and enrich my CRM data?</h3>
+          <p>Most companies benefit from quarterly cleaning (duplicate detection, email validation, stale record removal) and annual enrichment. High-volume sales teams may need more frequent maintenance.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Need help cleaning or enriching your data?</p>
+          <a href="/assessment/" class="btn btn--primary btn--lg">Get a Free Data Assessment</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/what-is-data-enrichment.html">What Is Data Enrichment?</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a> | <a href="/services/data-enrichment.html">Data Enrichment Services</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

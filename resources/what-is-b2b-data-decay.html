@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is B2B Data Decay? Why 30% of Your Database Goes Bad Every Year | Verum</title>
+  <meta name="description" content="B2B data decays at 25-30% annually. Learn why contact data goes stale, how to measure decay in your CRM, and what to do about it before it hurts your revenue.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/what-is-b2b-data-decay.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/what-is-b2b-data-decay.html">
+  <meta property="og:title" content="What Is B2B Data Decay? Why 30% Goes Bad Every Year">
+  <meta property="og:description" content="B2B data decays at 25-30% annually. Learn why contact data goes stale and what to do about it.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Is B2B Data Decay? Why 30% Goes Bad Every Year">
+  <meta name="twitter:description" content="B2B data decays at 25-30% annually. Learn why contact data goes stale and what to do about it.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What Is B2B Data Decay? Why 30% of Your Database Goes Bad Every Year",
+    "description": "B2B data decays at 25-30% annually. Learn why contact data goes stale, how to measure decay in your CRM, and what to do about it before it hurts your revenue.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/what-is-b2b-data-decay.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is B2B data decay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "B2B data decay refers to the natural degradation of contact and company information over time. As people change jobs, companies get acquired, and contact details change, the data in your CRM becomes increasingly inaccurate. Industry research suggests B2B data decays at 25-30% per year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast does B2B data decay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "B2B data typically decays at 25-30% per year. This means that after one year, roughly a quarter of your contact data is wrong. After two years without maintenance, nearly half your database may be inaccurate. The exact rate varies by industry and the types of contacts you're tracking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What causes B2B data to decay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main causes are: job changes (average tenure is 4.2 years), company changes (acquisitions, closures, name changes), contact changes (new phone numbers, email address changes), and location changes (office moves, remote work). Economic conditions like layoffs accelerate decay temporarily."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I measure data decay in my CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Measure decay by tracking: email bounce rates over time, phone number validity rates, percentage of records with recent activity, and comparison of job titles against LinkedIn. A simple decay audit involves validating a sample of records aged 1, 2, and 3 years old to calculate your specific decay rate."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .definition-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border: 1px solid rgba(0, 184, 148, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+    }
+    .definition-box__term {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-teal);
+      margin-bottom: var(--space-sm);
+    }
+    .definition-box__text {
+      font-size: 1.125rem;
+      color: var(--color-text-primary);
+      margin: 0;
+      line-height: 1.6;
+    }
+    .decay-visual {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+    }
+    .decay-visual__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-lg);
+      text-align: center;
+    }
+    .decay-visual__bars {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .decay-visual__bar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .decay-visual__label {
+      width: 80px;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      flex-shrink: 0;
+    }
+    .decay-visual__track {
+      flex: 1;
+      height: 24px;
+      background: var(--color-bg-secondary);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+    }
+    .decay-visual__fill {
+      height: 100%;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: var(--space-sm);
+    }
+    .decay-visual__fill--good {
+      background: linear-gradient(90deg, var(--color-teal), #00d9a7);
+    }
+    .decay-visual__fill--warning {
+      background: linear-gradient(90deg, #f39c12, #f1c40f);
+    }
+    .decay-visual__fill--bad {
+      background: linear-gradient(90deg, #e74c3c, #ff6b6b);
+    }
+    .decay-visual__percent {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-bg-primary);
+    }
+    .decay-causes {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    @media (min-width: 640px) {
+      .decay-causes {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .decay-cause {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+    }
+    .decay-cause__icon {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-sm);
+    }
+    .decay-cause__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-sm);
+    }
+    .decay-cause__stat {
+      font-size: 0.875rem;
+      color: var(--color-teal);
+      margin-bottom: var(--space-sm);
+    }
+    .decay-cause__text {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+    .stat-highlight {
+      background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(255, 107, 107, 0.05) 100%);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+      text-align: center;
+    }
+    .stat-highlight__number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ff6b6b;
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+    .stat-highlight__label {
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+    }
+    .calculator-box {
+      background: var(--color-bg-secondary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+    }
+    .calculator-box__title {
+      font-weight: 600;
+      color: var(--color-teal);
+      margin-bottom: var(--space-md);
+    }
+    .calculator-box__formula {
+      font-family: monospace;
+      background: var(--color-bg-primary);
+      padding: var(--space-md);
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-md);
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+    .calculator-box__note {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Data Quality</p>
+      <h1 class="page-hero__title">What Is B2B Data Decay?</h1>
+      <p class="page-hero__subtitle">Your database is rotting. Not from anything you did wrong, but because people change jobs, companies get acquired, and phone numbers expire. Here's what you need to know.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">January 2026 &middot; 9 min read</div>
+
+      <div class="blog-content">
+
+        <div class="definition-box">
+          <div class="definition-box__term">Definition</div>
+          <p class="definition-box__text"><strong>B2B data decay</strong> is the gradual degradation of contact and company information over time. As people change jobs, companies evolve, and contact details change, your CRM data becomes increasingly inaccurate, even if nothing was wrong when it was first entered.</p>
+        </div>
+
+        <p>You could have perfect data today. Every email verified, every phone number correct, every job title accurate. Come back in a year, and roughly a quarter of it will be wrong.</p>
+
+        <p>This isn't a failure of data hygiene. It's physics. People move around. Businesses change. The information you collected at one point in time drifts further from reality with every passing month.</p>
+
+        <div class="stat-highlight">
+          <div class="stat-highlight__number">25-30%</div>
+          <div class="stat-highlight__label">of B2B contact data becomes inaccurate each year</div>
+        </div>
+
+        <h2>The Math of Decay</h2>
+
+        <p>If 25-30% of data goes bad annually, here's what your database looks like over time:</p>
+
+        <div class="decay-visual">
+          <div class="decay-visual__title">Data Accuracy Over Time (No Maintenance)</div>
+          <div class="decay-visual__bars">
+            <div class="decay-visual__bar">
+              <span class="decay-visual__label">Day 1</span>
+              <div class="decay-visual__track">
+                <div class="decay-visual__fill decay-visual__fill--good" style="width: 100%;">
+                  <span class="decay-visual__percent">100%</span>
+                </div>
+              </div>
+            </div>
+            <div class="decay-visual__bar">
+              <span class="decay-visual__label">Year 1</span>
+              <div class="decay-visual__track">
+                <div class="decay-visual__fill decay-visual__fill--good" style="width: 72%;">
+                  <span class="decay-visual__percent">~72%</span>
+                </div>
+              </div>
+            </div>
+            <div class="decay-visual__bar">
+              <span class="decay-visual__label">Year 2</span>
+              <div class="decay-visual__track">
+                <div class="decay-visual__fill decay-visual__fill--warning" style="width: 52%;">
+                  <span class="decay-visual__percent">~52%</span>
+                </div>
+              </div>
+            </div>
+            <div class="decay-visual__bar">
+              <span class="decay-visual__label">Year 3</span>
+              <div class="decay-visual__track">
+                <div class="decay-visual__fill decay-visual__fill--bad" style="width: 37%;">
+                  <span class="decay-visual__percent">~37%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>After three years without any data maintenance, only about a third of your records are still accurate. The rest have bad emails, wrong job titles, outdated phone numbers, or contacts who no longer work at the company.</p>
+
+        <p>This is why companies that neglect data hygiene find their CRMs full of garbage. It's not that someone loaded bad data. It's that good data turned bad while nobody was watching.</p>
+
+        <h2>What Causes Data Decay</h2>
+
+        <p>Data doesn't decay randomly. Specific events trigger specific types of inaccuracy:</p>
+
+        <div class="decay-causes">
+          <div class="decay-cause">
+            <div class="decay-cause__icon">💼</div>
+            <div class="decay-cause__title">Job Changes</div>
+            <div class="decay-cause__stat">Average tenure: 4.2 years</div>
+            <p class="decay-cause__text">People get promoted, change departments, or leave for other companies. Their title, responsibilities, and sometimes their email change with them.</p>
+          </div>
+          <div class="decay-cause">
+            <div class="decay-cause__icon">🏢</div>
+            <div class="decay-cause__title">Company Changes</div>
+            <div class="decay-cause__stat">~10,000 M&A deals per year in the US</div>
+            <p class="decay-cause__text">Companies get acquired, merge, rebrand, or shut down. The "Acme Corp" in your database might now be a division of "MegaCorp Inc."</p>
+          </div>
+          <div class="decay-cause">
+            <div class="decay-cause__icon">📧</div>
+            <div class="decay-cause__title">Email Changes</div>
+            <div class="decay-cause__stat">5-8% of emails bounce annually</div>
+            <p class="decay-cause__text">Companies change email domains. People's naming conventions change (first.last vs. flast). Accounts get deactivated when people leave.</p>
+          </div>
+          <div class="decay-cause">
+            <div class="decay-cause__icon">📱</div>
+            <div class="decay-cause__title">Phone Changes</div>
+            <div class="decay-cause__stat">~15% change numbers annually</div>
+            <p class="decay-cause__text">Direct lines get reassigned. Mobile numbers change. Companies switch phone systems. Remote work shifted many to personal numbers.</p>
+          </div>
+        </div>
+
+        <h3>Accelerating Factors</h3>
+
+        <p>Some conditions speed up decay:</p>
+
+        <ul>
+          <li><strong>Economic downturns:</strong> Layoffs cause sudden spikes in job changes. During major layoff waves, decay rates can temporarily double.</li>
+          <li><strong>High-growth industries:</strong> Tech and startups have higher turnover than stable industries. Your SaaS prospect database decays faster than your manufacturing one.</li>
+          <li><strong>Junior roles:</strong> Early-career professionals change jobs more frequently than executives. An SDR database decays faster than a C-suite database.</li>
+          <li><strong>Hot job markets:</strong> When hiring is strong, people move around more. Low unemployment accelerates decay.</li>
+        </ul>
+
+        <h2>Which Fields Decay Fastest</h2>
+
+        <p>Not all data decays at the same rate:</p>
+
+        <p><strong>High decay (changes frequently):</strong></p>
+        <ul>
+          <li>Job title and department</li>
+          <li>Direct phone number</li>
+          <li>Work email address</li>
+          <li>Office location (especially post-2020)</li>
+        </ul>
+
+        <p><strong>Medium decay:</strong></p>
+        <ul>
+          <li>Mobile phone number</li>
+          <li>Company employee count</li>
+          <li>Company revenue</li>
+          <li>Technology stack</li>
+        </ul>
+
+        <p><strong>Low decay (relatively stable):</strong></p>
+        <ul>
+          <li>Person's name</li>
+          <li>Company name (unless acquired)</li>
+          <li>Industry classification</li>
+          <li>Company headquarters location</li>
+        </ul>
+
+        <p>This matters for prioritization. If you can only refresh some fields, focus on the high-decay ones: job titles, work emails, and direct phone numbers.</p>
+
+        <h2>How to Measure Your Decay Rate</h2>
+
+        <p>The 25-30% figure is an industry average. Your actual decay rate depends on your database composition. Here's how to measure it:</p>
+
+        <h3>Method 1: Bounce Rate Tracking</h3>
+
+        <p>Your email bounce rate is a proxy for overall data decay. Track it over time:</p>
+
+        <ul>
+          <li>Less than 2%: Your data is relatively fresh</li>
+          <li>2-5%: Normal range, typical decay in progress</li>
+          <li>5-10%: Significant decay, cleanup needed</li>
+          <li>Above 10%: Serious problems, immediate attention required</li>
+        </ul>
+
+        <p>Note: A single email validation pass can remove most hard bounces. The decay rate shows up as new bounces over time.</p>
+
+        <h3>Method 2: Sample Audit</h3>
+
+        <p>Pull a random sample of records by age and manually verify them:</p>
+
+        <div class="calculator-box">
+          <div class="calculator-box__title">Sample Decay Audit</div>
+          <div class="calculator-box__formula">
+1. Pull 100 random records created 1 year ago<br>
+2. Pull 100 random records created 2 years ago<br>
+3. Pull 100 random records created 3 years ago<br>
+4. Verify each: Is the person still at the company? Is the email valid? Is the phone correct?<br>
+5. Calculate accuracy rate for each cohort
+          </div>
+          <p class="calculator-box__note">If 1-year-old records are 75% accurate, 2-year-old are 55% accurate, and 3-year-old are 38% accurate, your decay rate is roughly 25% per year.</p>
+        </div>
+
+        <h3>Method 3: LinkedIn Cross-Reference</h3>
+
+        <p>For a quick gut check, take 50 contacts from records older than 18 months. Look them up on LinkedIn. How many still have the job title and company in your database?</p>
+
+        <p>This method is fast but incomplete, since it only catches job changes and won't flag bad phone numbers or emails.</p>
+
+        <h2>The Business Impact of Decay</h2>
+
+        <p>Data decay isn't just an operational nuisance. It directly impacts revenue:</p>
+
+        <h3>Sales Efficiency</h3>
+
+        <p>Reps calling wrong numbers or emailing dead addresses waste time. If 20% of a rep's call list is bad data, they're losing an hour a day to decay-related inefficiency.</p>
+
+        <h3>Email Deliverability</h3>
+
+        <p>High bounce rates damage your sender reputation. ISPs see lots of bounces and start routing your emails to spam. The 5% of your list with bad emails hurts deliverability to the other 95%.</p>
+
+        <h3>Pipeline Accuracy</h3>
+
+        <p>Opportunities attached to contacts who've left the company are unlikely to close. If your pipeline includes deals where the champion is gone and nobody noticed, your forecast is wrong.</p>
+
+        <h3>Marketing Waste</h3>
+
+        <p>Every email sent to a dead address costs money. Every direct mail piece sent to someone who left is wasted. With marketing budgets under scrutiny, decay-driven waste is an easy target.</p>
+
+        <h2>How to Combat Data Decay</h2>
+
+        <p>You can't stop decay, but you can manage it:</p>
+
+        <h3>1. Continuous Validation</h3>
+
+        <p>Run email validation regularly, not just once. Quarterly validation catches new bounces before they hurt your sender reputation. Some companies validate before every major campaign.</p>
+
+        <h3>2. Activity-Based Refresh</h3>
+
+        <p>Prioritize refreshing records based on how important they are. Active opportunities should be verified constantly. Closed-lost from three years ago can wait.</p>
+
+        <h3>3. Engagement Monitoring</h3>
+
+        <p>Contacts who stop engaging may have churned. If someone hasn't opened an email in 12 months, their data probably needs verification before you reach out again.</p>
+
+        <h3>4. Periodic Enrichment</h3>
+
+        <p>Annual enrichment passes can refresh job titles, phone numbers, and company data. Enrichment providers have fresher data than your aging records.</p>
+
+        <h3>5. Sales Feedback Loops</h3>
+
+        <p>When reps discover bad data (wrong number, person left), make it easy to flag the record. This real-time feedback catches decay faster than any automated process.</p>
+
+        <div class="callout-box">
+          <p><strong>The maintenance mindset:</strong> Think of data quality like fitness. You don't work out once and stay in shape forever. Regular maintenance is the only way to stay ahead of decay.</p>
+        </div>
+
+        <h2>Setting Realistic Expectations</h2>
+
+        <p>You will never have 100% accurate data. The goal is "good enough" for your business processes to work effectively.</p>
+
+        <p>For most B2B companies, maintaining 85-90% accuracy is a reasonable target. This means:</p>
+
+        <ul>
+          <li>Most leads route correctly</li>
+          <li>Email campaigns have acceptable bounce rates</li>
+          <li>Sales reps can reach most of their contacts</li>
+          <li>Reporting is directionally accurate</li>
+        </ul>
+
+        <p>Trying to achieve 99% accuracy is expensive and usually not worth it. The effort to eliminate the last 10% of data problems often exceeds the cost of those problems.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>What is B2B data decay?</h3>
+          <p>B2B data decay refers to the natural degradation of contact and company information over time. As people change jobs, companies get acquired, and contact details change, the data in your CRM becomes increasingly inaccurate. Industry research suggests B2B data decays at 25-30% per year.</p>
+
+          <h3>How fast does B2B data decay?</h3>
+          <p>B2B data typically decays at 25-30% per year. After one year, roughly a quarter of your contact data is wrong. After two years without maintenance, nearly half your database may be inaccurate.</p>
+
+          <h3>What causes B2B data to decay?</h3>
+          <p>The main causes are job changes (average tenure is 4.2 years), company changes (acquisitions, closures, name changes), contact changes (new phone numbers, email address changes), and location changes. Economic conditions like layoffs accelerate decay temporarily.</p>
+
+          <h3>How do I measure data decay in my CRM?</h3>
+          <p>Track email bounce rates over time, validate a sample of records by age, or cross-reference contacts against LinkedIn. A simple decay audit involves checking a sample of 1-, 2-, and 3-year-old records to calculate your specific accuracy rates.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Want to know how decayed your data is?</p>
+          <a href="/assessment/" class="btn btn--primary btn--lg">Get a Free Data Assessment</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/crm-data-decay-rate.html">Your CRM Data Is Decaying at 30% Per Year</a> | <a href="/resources/calculate-crm-data-decay-rate.html">How to Calculate Your CRM Data Decay Rate</a> | <a href="/services/data-maintenance.html">Data Maintenance Services</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
