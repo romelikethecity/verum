@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a Data Quality Roadmap: 6, 12 & 18 Month Plans | Verum</title>
+  <meta name="description" content="How to build a data quality roadmap with realistic timelines. Covers quick wins, foundational work, and long-term governance for sustainable data quality.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-quality-roadmap.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-quality-roadmap.html">
+  <meta property="og:title" content="Building a Data Quality Roadmap: 6, 12 & 18 Month Plans">
+  <meta property="og:description" content="How to build a data quality roadmap with realistic timelines. Covers quick wins, foundational work, and long-term governance.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Building a Data Quality Roadmap: 6, 12 & 18 Month Plans">
+  <meta name="twitter:description" content="How to build a data quality roadmap with realistic timelines. Covers quick wins, foundational work, and long-term governance.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Building a Data Quality Roadmap: 6, 12 & 18 Month Plans",
+    "description": "How to build a data quality roadmap with realistic timelines. Covers quick wins, foundational work, and long-term governance for sustainable data quality.",
+    "image": "https://veruminc.com/assets/social-preview.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum",
+      "url": "https://veruminc.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://veruminc.com/assets/logos/logos-svg/verum-logo-dark-bg.svg"
+      }
+    },
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-quality-roadmap.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to fix data quality issues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quick wins like obvious duplicate cleanup can take 2-4 weeks. Foundational work like standardization and enrichment typically requires 3-6 months. Sustainable governance and automation usually takes 12-18 months to fully implement. Most organizations see meaningful improvement within 6 months but need 18 months for lasting change."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should be the first priority in a data quality initiative?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with assessment and quick wins. Audit your data to understand the scope of problems, then tackle obvious issues like hard bounces, exact duplicate records, and clearly incomplete records. These quick wins build credibility and stakeholder support for longer-term investments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I get executive buy-in for a data quality roadmap?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quantify the business impact: calculate wasted rep time, missed opportunities from incomplete data, cost of bounced emails, and incorrect routing. Connect data quality to revenue metrics executives care about. Start with a small pilot showing measurable improvement before requesting budget for larger initiatives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I clean existing data or focus on preventing new issues?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both, but prevention first. There's no point cleaning data if dirty data keeps flowing in. Implement validation rules and quality controls at entry points, then clean historical data. Otherwise, you're constantly playing catch-up with new bad data while trying to fix old problems."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-header {
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+    }
+    .article-category {
+      display: inline-block;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.625rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      background: rgba(45, 212, 191, 0.15);
+      color: var(--color-teal);
+    }
+    .article-header h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+    .article-content {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+    }
+    .article-content h2 {
+      font-size: 1.625rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 3rem 0 1.25rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 2rem 0 1rem;
+    }
+    .article-content p {
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.625rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-content blockquote {
+      border-left: 3px solid var(--color-teal);
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--color-text-secondary);
+    }
+    .highlight-box {
+      background: rgba(45, 212, 191, 0.08);
+      border: 1px solid rgba(45, 212, 191, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .highlight-box h4 {
+      color: var(--color-teal);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .highlight-box ul {
+      margin-bottom: 0;
+    }
+    .phase-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .phase-box h4 {
+      color: var(--color-text-primary);
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .phase-box .timeline {
+      font-size: 0.875rem;
+      color: var(--color-teal);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .related-articles h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .related-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .related-card {
+      padding: 1.25rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--color-teal);
+    }
+    .related-card__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.375rem;
+      line-height: 1.3;
+    }
+    .related-card__title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .related-card__excerpt {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+    }
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-section h2 {
+      margin-top: 0;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1.0625rem;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p {
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
+    }
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      position: relative;
+      padding-left: 1.75rem;
+    }
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--color-teal);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="article-container">
+      <header class="article-header">
+        <span class="article-category">Strategy Guide</span>
+        <h1>Building a Data Quality Roadmap: 6, 12 & 18 Month Plans</h1>
+        <p class="article-meta">16 min read</p>
+      </header>
+
+      <div class="article-content">
+        <p>Everyone knows their data quality needs work. Few have a realistic plan to fix it. "We need to clean up our data" becomes a perpetual priority that never gets resourced, or becomes a one-time project that doesn't stick.</p>
+
+        <p>The solution is a roadmap—a phased plan that balances quick wins with foundational work, shows progress to stakeholders, and builds toward sustainable quality. This guide provides templates for 6, 12, and 18-month data quality initiatives, with realistic timelines and concrete deliverables.</p>
+
+        <h2>Why Most Data Quality Initiatives Fail</h2>
+
+        <p>Before building a roadmap, understand why data quality projects often stall:</p>
+
+        <h3>The One-Time Cleanup Trap</h3>
+        <p>Teams do a massive cleanup, declare victory, and move on. Six months later, quality is back to where it started because they didn't fix the processes creating bad data in the first place.</p>
+
+        <h3>Boiling the Ocean</h3>
+        <p>Trying to fix everything at once. Perfect becomes the enemy of good. The project scope keeps expanding until it collapses under its own weight.</p>
+
+        <h3>No Executive Sponsorship</h3>
+        <p>Data quality is seen as an "ops thing" or "IT problem" rather than a business priority. Without executive support, resources get pulled to other initiatives.</p>
+
+        <h3>Wrong Metrics</h3>
+        <p>Measuring data quality in abstract terms ("accuracy improved 15%") instead of business outcomes ("routing errors reduced 60%"). Stakeholders don't see the value.</p>
+
+        <h3>No Ownership</h3>
+        <p>Everyone thinks data quality is someone else's job. Without clear accountability, it falls through the cracks.</p>
+
+        <p>A good roadmap addresses all of these: phased approach prevents boiling the ocean, governance prevents regression, business metrics get executive attention, and clear ownership ensures accountability.</p>
+
+        <h2>The Assessment Phase (Month 0-1)</h2>
+
+        <p>Before building your roadmap, you need to understand your current state. This assessment typically takes 2-4 weeks.</p>
+
+        <h3>Data Quality Audit</h3>
+
+        <p>Measure baseline quality across key dimensions:</p>
+
+        <ul>
+          <li><strong>Completeness:</strong> % of records with critical fields populated</li>
+          <li><strong>Accuracy:</strong> % of email addresses valid, phone numbers dialable</li>
+          <li><strong>Consistency:</strong> % of records following naming conventions</li>
+          <li><strong>Duplication:</strong> Estimated duplicate rate</li>
+          <li><strong>Freshness:</strong> % of records updated in past 12 months</li>
+        </ul>
+
+        <div class="highlight-box">
+          <h4>Key Fields to Audit</h4>
+          <ul>
+            <li>Email address (valid format, deliverable)</li>
+            <li>Phone number (valid format, callable)</li>
+            <li>Company name (standardized)</li>
+            <li>Job title (present, standardized)</li>
+            <li>Industry (populated, accurate)</li>
+            <li>Company size (populated, accurate)</li>
+            <li>Address (complete, deliverable)</li>
+            <li>Owner assignment (present, current employee)</li>
+          </ul>
+        </div>
+
+        <h3>Process Assessment</h3>
+
+        <p>Understand how data enters and flows through your systems:</p>
+
+        <ul>
+          <li><strong>Entry points:</strong> Forms, imports, integrations, manual entry</li>
+          <li><strong>Validation:</strong> What checks exist at each entry point?</li>
+          <li><strong>Enrichment:</strong> What automated enrichment exists?</li>
+          <li><strong>Maintenance:</strong> Who updates records and when?</li>
+          <li><strong>Integrations:</strong> What systems sync data? In which direction?</li>
+        </ul>
+
+        <h3>Impact Assessment</h3>
+
+        <p>Quantify the business impact of data quality issues:</p>
+
+        <ul>
+          <li><strong>Sales time:</strong> Hours spent on data tasks vs. selling</li>
+          <li><strong>Routing failures:</strong> Leads going to wrong reps</li>
+          <li><strong>Email performance:</strong> Bounce rates, deliverability issues</li>
+          <li><strong>Marketing waste:</strong> Campaigns to bad addresses</li>
+          <li><strong>Reporting gaps:</strong> Segments that can't be built due to missing data</li>
+        </ul>
+
+        <p>This impact assessment is crucial for executive buy-in. "We have data quality issues" is vague. "Sales reps spend 8 hours per week on data tasks, and we're losing $50K per month in marketing spend to undeliverable contacts" gets attention.</p>
+
+        <h2>The 6-Month Roadmap: Foundation</h2>
+
+        <p>The first six months focus on quick wins and building the foundation for sustainable quality.</p>
+
+        <div class="phase-box">
+          <h4>Phase 1: Quick Wins</h4>
+          <p class="timeline">Months 1-2</p>
+          <p>High-impact, low-effort improvements that build credibility.</p>
+          <ul>
+            <li><strong>Remove hard bounces:</strong> Delete or suppress contacts with verified invalid emails</li>
+            <li><strong>Merge obvious duplicates:</strong> Exact match name + email duplicates</li>
+            <li><strong>Fix owner assignment:</strong> Reassign records owned by departed employees</li>
+            <li><strong>Standardize picklist values:</strong> Clean up "Other" fields, merge similar values</li>
+            <li><strong>Archive junk:</strong> Remove test records, competitors, clearly fake entries</li>
+          </ul>
+        </div>
+
+        <div class="phase-box">
+          <h4>Phase 2: Entry Point Controls</h4>
+          <p class="timeline">Months 2-3</p>
+          <p>Stop bad data at the source.</p>
+          <ul>
+            <li><strong>Form validation:</strong> Email format, phone format, required fields</li>
+            <li><strong>Real-time email verification:</strong> Check deliverability on form submission</li>
+            <li><strong>Duplicate detection:</strong> Block or alert on duplicate creation</li>
+            <li><strong>Standardization rules:</strong> Auto-format phone numbers, addresses</li>
+            <li><strong>Import controls:</strong> Validation rules for bulk imports</li>
+          </ul>
+        </div>
+
+        <div class="phase-box">
+          <h4>Phase 3: Standardization</h4>
+          <p class="timeline">Months 3-5</p>
+          <p>Normalize existing data for consistency.</p>
+          <ul>
+            <li><strong>Company name normalization:</strong> Legal suffixes, formatting</li>
+            <li><strong>Job title standardization:</strong> Map variations to standard titles</li>
+            <li><strong>Industry coding:</strong> Assign industry codes consistently</li>
+            <li><strong>Address standardization:</strong> USPS validation, formatting</li>
+            <li><strong>Phone formatting:</strong> Consistent format, country codes</li>
+          </ul>
+        </div>
+
+        <div class="phase-box">
+          <h4>Phase 4: Baseline Enrichment</h4>
+          <p class="timeline">Months 4-6</p>
+          <p>Fill critical gaps in existing data.</p>
+          <ul>
+            <li><strong>Email verification:</strong> Verify all existing emails</li>
+            <li><strong>Phone append:</strong> Add missing phone numbers</li>
+            <li><strong>Firmographic fill:</strong> Industry, employee count, revenue</li>
+            <li><strong>Company matching:</strong> Link contacts to company records</li>
+          </ul>
+        </div>
+
+        <h3>6-Month Success Metrics</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Typical Starting Point</th>
+              <th>6-Month Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Email deliverability</td>
+              <td>85-90%</td>
+              <td>95%+</td>
+            </tr>
+            <tr>
+              <td>Phone number completeness</td>
+              <td>40-60%</td>
+              <td>70-80%</td>
+            </tr>
+            <tr>
+              <td>Duplicate rate</td>
+              <td>15-25%</td>
+              <td>5-10%</td>
+            </tr>
+            <tr>
+              <td>Unassigned records</td>
+              <td>10-20%</td>
+              <td><5%</td>
+            </tr>
+            <tr>
+              <td>Title completeness</td>
+              <td>60-70%</td>
+              <td>85%+</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>The 12-Month Roadmap: Scale</h2>
+
+        <p>Months 7-12 focus on scaling quality processes and building governance.</p>
+
+        <div class="phase-box">
+          <h4>Phase 5: Advanced Deduplication</h4>
+          <p class="timeline">Months 7-8</p>
+          <p>Address fuzzy duplicates and account hierarchies.</p>
+          <ul>
+            <li><strong>Fuzzy matching:</strong> Similar names, likely duplicates</li>
+            <li><strong>Account hierarchies:</strong> Link subsidiaries to parents</li>
+            <li><strong>Cross-object deduplication:</strong> Leads vs. contacts, account variants</li>
+            <li><strong>Ongoing duplicate prevention:</strong> Automated detection and alerting</li>
+          </ul>
+        </div>
+
+        <div class="phase-box">
+          <h4>Phase 6: Automated Enrichment</h4>
+          <p class="timeline">Months 8-10</p>
+          <p>Move from batch to continuous enrichment.</p>
+          <ul>
+            <li><strong>Real-time enrichment:</strong> Enrich on record creation</li>
+            <li><strong>Scheduled refresh:</strong> Re-enrich aging records</li>
+            <li><strong>Waterfall providers:</strong> Multiple sources for better coverage</li>
+            <li><strong>Quality scoring:</strong> Track confidence levels on enriched data</li>
+          </ul>
+        </div>
+
+        <div class="phase-box">
+          <h4>Phase 7: Governance Framework</h4>
+          <p class="timeline">Months 9-11</p>
+          <p>Establish ownership and processes for ongoing quality.</p>
+          <ul>
+            <li><strong>Data ownership:</strong> Define who owns each data domain</li>
+            <li><strong>Quality SLAs:</strong> Define acceptable quality levels by field</li>
+            <li><strong>Change management:</strong> Process for schema changes</li>
+            <li><strong>Incident response:</strong> How to handle data quality emergencies</li>
+            <li><strong>Training:</strong> Educate teams on data entry standards</li>
+          </ul>
+        </div>
+
+        <div class="phase-box">
+          <h4>Phase 8: Monitoring & Reporting</h4>
+          <p class="timeline">Months 10-12</p>
+          <p>Build visibility into data quality metrics.</p>
+          <ul>
+            <li><strong>Quality dashboards:</strong> Real-time visibility into key metrics</li>
+            <li><strong>Trend reporting:</strong> Track improvement over time</li>
+            <li><strong>Alerting:</strong> Notify when quality drops below thresholds</li>
+            <li><strong>Business impact metrics:</strong> Connect quality to outcomes</li>
+          </ul>
+        </div>
+
+        <h3>12-Month Success Metrics</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>6-Month Point</th>
+              <th>12-Month Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Email deliverability</td>
+              <td>95%</td>
+              <td>97%+</td>
+            </tr>
+            <tr>
+              <td>Phone completeness</td>
+              <td>70-80%</td>
+              <td>85%+</td>
+            </tr>
+            <tr>
+              <td>Duplicate rate</td>
+              <td>5-10%</td>
+              <td><3%</td>
+            </tr>
+            <tr>
+              <td>Enrichment coverage</td>
+              <td>60%</td>
+              <td>85%+</td>
+            </tr>
+            <tr>
+              <td>Data freshness (updated <12mo)</td>
+              <td>50%</td>
+              <td>80%+</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>The 18-Month Roadmap: Mature</h2>
+
+        <p>Months 13-18 focus on optimization, advanced use cases, and continuous improvement.</p>
+
+        <div class="phase-box">
+          <h4>Phase 9: Advanced Segmentation</h4>
+          <p class="timeline">Months 13-14</p>
+          <p>Use clean data to enable sophisticated targeting.</p>
+          <ul>
+            <li><strong>ICP scoring:</strong> Score accounts against ideal customer profile</li>
+            <li><strong>Propensity modeling:</strong> Predict likelihood to buy</li>
+            <li><strong>Segment health:</strong> Monitor quality by segment</li>
+            <li><strong>ABM account tiers:</strong> Data-driven account prioritization</li>
+          </ul>
+        </div>
+
+        <div class="phase-box">
+          <h4>Phase 10: Cross-System Quality</h4>
+          <p class="timeline">Months 14-16</p>
+          <p>Extend quality controls across the tech stack.</p>
+          <ul>
+            <li><strong>Integration quality:</strong> Validate data flowing between systems</li>
+            <li><strong>Master data management:</strong> Single source of truth for key entities</li>
+            <li><strong>Sync monitoring:</strong> Detect sync failures and data drift</li>
+            <li><strong>Cross-system deduplication:</strong> Identify duplicates across platforms</li>
+          </ul>
+        </div>
+
+        <div class="phase-box">
+          <h4>Phase 11: Predictive Quality</h4>
+          <p class="timeline">Months 15-17</p>
+          <p>Anticipate and prevent quality issues.</p>
+          <ul>
+            <li><strong>Decay prediction:</strong> Identify records likely to go stale</li>
+            <li><strong>Anomaly detection:</strong> Spot unusual patterns before they spread</li>
+            <li><strong>Source quality scoring:</strong> Track which sources produce best data</li>
+            <li><strong>Proactive enrichment:</strong> Refresh data before it decays</li>
+          </ul>
+        </div>
+
+        <div class="phase-box">
+          <h4>Phase 12: Continuous Improvement</h4>
+          <p class="timeline">Months 16-18</p>
+          <p>Establish the culture and processes for ongoing excellence.</p>
+          <ul>
+            <li><strong>Quarterly reviews:</strong> Regular quality assessments</li>
+            <li><strong>Feedback loops:</strong> Sales and marketing input on data quality</li>
+            <li><strong>Tooling optimization:</strong> Evaluate and improve tools</li>
+            <li><strong>Process refinement:</strong> Continuous improvement of workflows</li>
+          </ul>
+        </div>
+
+        <h3>18-Month Success Metrics</h3>
+
+        <p>At 18 months, you should see sustained quality with minimal effort:</p>
+
+        <ul>
+          <li><strong>Quality maintenance:</strong> Less than 4 hours per week to maintain quality</li>
+          <li><strong>New record quality:</strong> 95%+ of new records meet standards on entry</li>
+          <li><strong>Decay rate:</strong> Less than 2% per month data going stale</li>
+          <li><strong>Business impact:</strong> Measurable improvement in conversion, efficiency</li>
+          <li><strong>Stakeholder satisfaction:</strong> Sales and marketing trust the data</li>
+        </ul>
+
+        <h2>Prioritization Framework</h2>
+
+        <p>Not every organization needs every phase. Prioritize based on your situation:</p>
+
+        <h3>High-Priority: Core Revenue Impact</h3>
+        <ul>
+          <li>Email deliverability (affects all outreach)</li>
+          <li>Duplicate resolution (affects reporting and routing)</li>
+          <li>Owner assignment (affects sales capacity)</li>
+          <li>Entry point validation (stops bad data flow)</li>
+        </ul>
+
+        <h3>Medium-Priority: Efficiency Gains</h3>
+        <ul>
+          <li>Phone number enrichment (enables outbound)</li>
+          <li>Title standardization (enables routing and segmentation)</li>
+          <li>Company matching (enables ABM)</li>
+          <li>Quality dashboards (enables monitoring)</li>
+        </ul>
+
+        <h3>Lower-Priority: Optimization</h3>
+        <ul>
+          <li>Advanced segmentation (requires foundation first)</li>
+          <li>Predictive quality (nice-to-have)</li>
+          <li>Cross-system MDM (complex, high effort)</li>
+        </ul>
+
+        <h2>Resource Requirements</h2>
+
+        <p>Realistic resource expectations by organization size:</p>
+
+        <h3>Small Team (1-2 people, 500-5,000 records)</h3>
+        <ul>
+          <li><strong>Months 1-6:</strong> 10-20 hours/week from RevOps or marketing ops</li>
+          <li><strong>Months 7-12:</strong> 5-10 hours/week maintenance + tool investment</li>
+          <li><strong>Tools budget:</strong> $5K-15K/year for verification and enrichment</li>
+        </ul>
+
+        <h3>Mid-Market (2-4 people, 5,000-100,000 records)</h3>
+        <ul>
+          <li><strong>Months 1-6:</strong> 0.5-1 FTE dedicated to data quality</li>
+          <li><strong>Months 7-12:</strong> 0.25-0.5 FTE ongoing + governance time</li>
+          <li><strong>Tools budget:</strong> $20K-75K/year</li>
+        </ul>
+
+        <h3>Enterprise (dedicated team, 100,000+ records)</h3>
+        <ul>
+          <li><strong>Months 1-6:</strong> 2-4 FTEs for initial cleanup and implementation</li>
+          <li><strong>Months 7-18:</strong> 1-2 FTEs ongoing + data stewards in each function</li>
+          <li><strong>Tools budget:</strong> $100K-500K/year</li>
+        </ul>
+
+        <h2>Common Roadblocks and Solutions</h2>
+
+        <h3>"We don't have budget"</h3>
+        <p><strong>Solution:</strong> Start with free/cheap quick wins. Use the results to build a business case. Calculate cost of bad data (bounced emails, wasted rep time) to justify investment.</p>
+
+        <h3>"We don't have time"</h3>
+        <p><strong>Solution:</strong> Show how much time bad data costs. If reps spend 5 hours/week on data tasks, that's 250 hours/year per rep. Some upfront investment saves far more time downstream.</p>
+
+        <h3>"We tried this before and it didn't work"</h3>
+        <p><strong>Solution:</strong> Understand why. Usually it was one-time cleanup without prevention, or lack of ownership. This roadmap addresses both with governance and automation.</p>
+
+        <h3>"Our data is too messy to fix"</h3>
+        <p><strong>Solution:</strong> Start with triage. Not all data is worth saving. Focus on high-value segments first. Archive or delete beyond-repair records rather than trying to fix everything.</p>
+
+        <h3>"Leadership doesn't see this as a priority"</h3>
+        <p><strong>Solution:</strong> Translate to business impact. "Data quality" is abstract. "Sales reps spending 6 hours/week on data instead of selling" or "25% of marketing emails bouncing" is concrete.</p>
+
+        <h2>Building the Business Case</h2>
+
+        <p>To get executive buy-in, frame data quality in business terms:</p>
+
+        <h3>Revenue Impact</h3>
+        <ul>
+          <li><strong>Lost deals:</strong> Opportunities lost due to wrong routing or missing contact info</li>
+          <li><strong>Rep productivity:</strong> Time spent on data vs. selling</li>
+          <li><strong>Conversion rates:</strong> Impact of personalization from better data</li>
+        </ul>
+
+        <h3>Cost Savings</h3>
+        <ul>
+          <li><strong>Marketing waste:</strong> Emails to invalid addresses</li>
+          <li><strong>Tool costs:</strong> Paying for duplicate records in seat-based tools</li>
+          <li><strong>Compliance risk:</strong> GDPR fines, CAN-SPAM violations</li>
+        </ul>
+
+        <h3>Efficiency Gains</h3>
+        <ul>
+          <li><strong>Faster segmentation:</strong> Time to build lists and campaigns</li>
+          <li><strong>Accurate reporting:</strong> Confidence in dashboards and forecasts</li>
+          <li><strong>Reduced rework:</strong> Less time fixing problems after the fact</li>
+        </ul>
+
+        <div class="highlight-box">
+          <h4>Sample Business Case Summary</h4>
+          <ul>
+            <li><strong>Current state:</strong> 18% duplicate rate, 85% email deliverability, reps spend 6 hrs/week on data</li>
+            <li><strong>Annual cost:</strong> $180K in wasted marketing, $240K in lost rep productivity (10 reps)</li>
+            <li><strong>Investment needed:</strong> $75K in tools, 1 FTE for 6 months, 0.25 FTE ongoing</li>
+            <li><strong>Expected return:</strong> $350K annual savings, payback in 4 months</li>
+          </ul>
+        </div>
+
+        <h2>Maintaining Momentum</h2>
+
+        <p>Keep your initiative on track:</p>
+
+        <h3>Weekly</h3>
+        <ul class="checklist">
+          <li>Review new data quality alerts</li>
+          <li>Process duplicate queue</li>
+          <li>Check entry point rejection rates</li>
+        </ul>
+
+        <h3>Monthly</h3>
+        <ul class="checklist">
+          <li>Update quality dashboards</li>
+          <li>Review progress against roadmap</li>
+          <li>Address any blocked initiatives</li>
+          <li>Share wins with stakeholders</li>
+        </ul>
+
+        <h3>Quarterly</h3>
+        <ul class="checklist">
+          <li>Full data quality audit</li>
+          <li>Review and adjust roadmap priorities</li>
+          <li>Present to leadership</li>
+          <li>Plan next quarter's focus</li>
+        </ul>
+
+        <section class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>How long does it take to fix data quality issues?</h3>
+            <p>Quick wins like obvious duplicate cleanup can take 2-4 weeks. Foundational work like standardization and enrichment typically requires 3-6 months. Sustainable governance and automation usually takes 12-18 months to fully implement. Most organizations see meaningful improvement within 6 months but need 18 months for lasting change.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What should be the first priority in a data quality initiative?</h3>
+            <p>Start with assessment and quick wins. Audit your data to understand the scope of problems, then tackle obvious issues like hard bounces, exact duplicate records, and clearly incomplete records. These quick wins build credibility and stakeholder support for longer-term investments.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do I get executive buy-in for a data quality roadmap?</h3>
+            <p>Quantify the business impact: calculate wasted rep time, missed opportunities from incomplete data, cost of bounced emails, and incorrect routing. Connect data quality to revenue metrics executives care about. Start with a small pilot showing measurable improvement before requesting budget for larger initiatives.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Should I clean existing data or focus on preventing new issues?</h3>
+            <p>Both, but prevention first. There's no point cleaning data if dirty data keeps flowing in. Implement validation rules and quality controls at entry points, then clean historical data. Otherwise, you're constantly playing catch-up with new bad data while trying to fix old problems.</p>
+          </div>
+        </section>
+
+        <div class="related-articles">
+          <h3>Related Resources</h3>
+          <div class="related-grid">
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/how-to-build-data-hygiene-strategy.html">How to Build a Data Hygiene Strategy</a></p>
+              <p class="related-card__excerpt">Framework for sustainable data maintenance.</p>
+            </div>
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/data-quality-dashboards.html">Building Data Quality Dashboards</a></p>
+              <p class="related-card__excerpt">Metrics, tools, and best practices.</p>
+            </div>
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/building-data-quality-team.html">Building a Data Quality Team</a></p>
+              <p class="related-card__excerpt">Roles, skills, and hiring guide.</p>
+            </div>
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/data-quality-metrics.html">Data Quality Metrics That Matter</a></p>
+              <p class="related-card__excerpt">Which metrics predict real problems.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
