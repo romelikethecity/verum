@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABM Data Strategy: Build Target Account Lists That Convert | Verum</title>
+    <meta name="description" content="How to build and maintain high-quality account lists for ABM. Learn about account selection, contact coverage, data enrichment, and ongoing list hygiene.">
+    <meta name="keywords" content="ABM data, account-based marketing data, target account list, ABM strategy, account selection, contact coverage, ABM enrichment">
+    <link rel="canonical" href="https://veruminc.com/resources/abm-data-strategy.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ABM Data Strategy: Build Target Account Lists That Convert">
+    <meta property="og:description" content="How to build and maintain high-quality account lists for ABM.">
+    <meta property="og:url" content="https://veruminc.com/resources/abm-data-strategy.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://veruminc.com/images/og-abm-data.jpg">
+    <meta property="og:site_name" content="Verum">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ABM Data Strategy: Build Target Account Lists That Convert">
+    <meta name="twitter:description" content="How to build and maintain high-quality account lists for ABM.">
+    <meta name="twitter:image" content="https://veruminc.com/images/og-abm-data.jpg">
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "ABM Data Strategy: Build Target Account Lists That Convert",
+        "description": "How to build and maintain high-quality account lists for ABM. Learn about account selection, contact coverage, data enrichment, and ongoing list hygiene.",
+        "author": {
+            "@type": "Organization",
+            "name": "Verum",
+            "url": "https://veruminc.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Verum",
+            "url": "https://veruminc.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://veruminc.com/images/verum-logo.png"
+            }
+        },
+        "datePublished": "2026-01-22",
+        "dateModified": "2026-01-22",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://veruminc.com/resources/abm-data-strategy.html"
+        },
+        "image": "https://veruminc.com/images/og-abm-data.jpg"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What data do you need for ABM?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Effective ABM requires account-level data (company name, size, industry, revenue, tech stack, intent signals) and contact-level data (names, titles, emails, phone numbers for the buying committee). You need multiple contacts per account—typically 5-10 for mid-market and 15-25+ for enterprise—across different roles in the buying process."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you build an ABM target account list?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start by defining your Ideal Customer Profile (ICP) based on firmographic criteria from your best customers. Use data enrichment to identify companies matching these criteria. Layer in intent data to prioritize accounts showing buying signals. Finally, add engagement data from your existing marketing to identify accounts already interacting with your brand."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is contact coverage in ABM?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Contact coverage measures how many relevant contacts you have at each target account. B2B purchases involve 6-10 decision makers on average. If you only have one contact at an account, you're missing most of the buying committee. Good ABM requires 5-10 contacts per mid-market account and 15-25+ for enterprise accounts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should you refresh ABM data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ABM data should be refreshed quarterly at minimum. B2B contact data decays at 25-30% per year—people change jobs, get promoted, or leave. Account-level data changes too: companies get acquired, change industries, or go out of business. Regular enrichment ensures your campaigns reach the right people."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "XXXXXXXXXX");
+    </script>
+
+    <style>
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .article-category {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .article-body h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .article-body h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .article-body p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .data-layer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .data-layer-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .data-layer-card h4 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .data-layer-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .data-layer-card ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .data-layer-card li {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .layer-number {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .coverage-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .coverage-table th {
+            background: var(--accent);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .coverage-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .coverage-table tr:hover {
+            background: var(--accent-light);
+        }
+
+        .framework-box {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .framework-box h3 {
+            margin-top: 0;
+            color: var(--text-primary);
+        }
+
+        .tiering-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .tiering-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tier-card {
+            padding: 1.25rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .tier-card.tier-1 {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+        }
+
+        .tier-card.tier-2 {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border: 2px solid #6366f1;
+        }
+
+        .tier-card.tier-3 {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border: 2px solid #10b981;
+        }
+
+        .tier-card h5 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .tier-card p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+
+        .checklist-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .checklist-section h3 {
+            color: #0369a1;
+            margin-top: 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(186, 230, 253, 0.5);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-icon {
+            color: #0369a1;
+            font-size: 1.25rem;
+        }
+
+        .tip-box {
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tip-box h4 {
+            color: #166534;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-box p {
+            color: #14532d;
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: #92400e;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .warning-box p {
+            color: #78350f;
+            margin-bottom: 0;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(180deg, var(--accent-light) 0%, #fff 100%);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--accent);
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--text-secondary);
+        }
+
+        .related-articles {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .related-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .related-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="article-content">
+        <nav class="breadcrumb">
+            <a href="/">Home</a> <span>/</span>
+            <a href="/resources/">Resources</a> <span>/</span>
+            <span>ABM Data Strategy</span>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Strategy</span>
+                    <span>January 22, 2026</span>
+                    <span>14 min read</span>
+                </div>
+                <h1>ABM Data Strategy: Build Target Account Lists That Convert</h1>
+                <p class="article-intro">You've got 500 target accounts. But how many have accurate contact data? How many contacts do you have at each account? ABM campaigns fail not because of strategy—but because of data gaps that make execution impossible.</p>
+            </header>
+
+            <div class="article-body">
+                <p>Account-based marketing concentrates resources on high-value accounts. But concentration only works if you can actually reach those accounts. Without complete, accurate data, you're running personalized campaigns to the wrong people at the wrong companies.</p>
+
+                <p>This guide covers how to build and maintain the data foundation that makes ABM work: account selection, contact coverage, enrichment, and ongoing hygiene.</p>
+
+                <h2>The Four Layers of ABM Data</h2>
+
+                <p>Effective ABM requires data across four layers, each building on the previous:</p>
+
+                <div class="data-layer-grid">
+                    <div class="data-layer-card">
+                        <h4><span class="layer-number">1</span> Account Firmographics</h4>
+                        <p>The foundation: who are these companies?</p>
+                        <ul>
+                            <li>Company name and domain</li>
+                            <li>Industry/vertical</li>
+                            <li>Employee count and revenue</li>
+                            <li>Headquarters and locations</li>
+                            <li>Funding stage and investors</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-layer-card">
+                        <h4><span class="layer-number">2</span> Technographics</h4>
+                        <p>What technology do they use?</p>
+                        <ul>
+                            <li>Tech stack installed</li>
+                            <li>Competitive products</li>
+                            <li>Complementary tools</li>
+                            <li>Infrastructure choices</li>
+                            <li>Recent tech changes</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-layer-card">
+                        <h4><span class="layer-number">3</span> Contact Data</h4>
+                        <p>Who should you reach?</p>
+                        <ul>
+                            <li>Names and titles</li>
+                            <li>Email addresses</li>
+                            <li>Phone numbers</li>
+                            <li>LinkedIn profiles</li>
+                            <li>Reporting structure</li>
+                        </ul>
+                    </div>
+
+                    <div class="data-layer-card">
+                        <h4><span class="layer-number">4</span> Intent Data</h4>
+                        <p>Are they in-market now?</p>
+                        <ul>
+                            <li>Topic research signals</li>
+                            <li>Competitor comparison</li>
+                            <li>Website visits (if tracked)</li>
+                            <li>Content consumption</li>
+                            <li>Review site activity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>Most ABM programs have layer 1 (they know which companies to target) but are weak on layers 2-4. Without technographics, you can't personalize messaging. Without contacts, you can't reach decision-makers. Without intent, you can't prioritize timing.</p>
+
+                <h2>Building Your Target Account List</h2>
+
+                <p>Account selection is where ABM data strategy starts. Get this wrong, and no amount of contact coverage or personalization will save you.</p>
+
+                <h3>Step 1: Define Your ICP</h3>
+
+                <p>Your Ideal Customer Profile should be based on data, not intuition. Analyze your best customers:</p>
+
+                <ul>
+                    <li>What firmographic attributes do they share? (size, industry, geography)</li>
+                    <li>What technographic patterns exist? (what tools do they use?)</li>
+                    <li>What buying behaviors did they exhibit? (sales cycle, deal size, expansion)</li>
+                    <li>Which accounts have the highest LTV and lowest churn?</li>
+                </ul>
+
+                <div class="tip-box">
+                    <h4>💡 Data-Driven ICP</h4>
+                    <p>Export your top 50 customers by LTV. Enrich them with firmographic and technographic data. Look for patterns—what do these accounts have in common that your average customer doesn't? Those patterns define your ICP.</p>
+                </div>
+
+                <h3>Step 2: Build the Initial List</h3>
+
+                <p>Use enrichment data to identify companies matching your ICP criteria:</p>
+
+                <ul>
+                    <li><strong>Start with firmographics:</strong> Filter by industry, size, geography, and other ICP criteria</li>
+                    <li><strong>Layer in technographics:</strong> Identify companies using complementary or competitive tools</li>
+                    <li><strong>Add intent signals:</strong> Prioritize accounts showing buying intent for your category</li>
+                    <li><strong>Include existing engagement:</strong> Add accounts already visiting your site or engaging with content</li>
+                </ul>
+
+                <h3>Step 3: Tier Your Accounts</h3>
+
+                <p>Not all target accounts deserve equal investment. Tier them based on fit and opportunity:</p>
+
+                <div class="framework-box">
+                    <h3>Account Tiering Framework</h3>
+                    <div class="tiering-grid">
+                        <div class="tier-card tier-1">
+                            <h5>Tier 1: Strategic</h5>
+                            <p>50-100 accounts</p>
+                            <p>Best ICP fit + highest deal potential</p>
+                            <p>Fully personalized, 1:1 campaigns</p>
+                        </div>
+                        <div class="tier-card tier-2">
+                            <h5>Tier 2: Target</h5>
+                            <p>200-500 accounts</p>
+                            <p>Strong ICP fit</p>
+                            <p>Industry/segment personalization</p>
+                        </div>
+                        <div class="tier-card tier-3">
+                            <h5>Tier 3: Scale</h5>
+                            <p>500-2000 accounts</p>
+                            <p>Meets ICP criteria</p>
+                            <p>Programmatic ABM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Contact Coverage: The Hidden ABM Killer</h2>
+
+                <p>Having 1,000 target accounts means nothing if you only have one contact per account. B2B purchases involve buying committees—and you need to reach multiple stakeholders.</p>
+
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <span class="metric-value">6-10</span>
+                        <span class="metric-label">Average B2B Buying Committee Size</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">5-10</span>
+                        <span class="metric-label">Contacts Needed (Mid-Market)</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">15-25+</span>
+                        <span class="metric-label">Contacts Needed (Enterprise)</span>
+                    </div>
+                </div>
+
+                <h3>Who Should You Cover?</h3>
+
+                <p>Map the typical buying committee for your solution:</p>
+
+                <table class="coverage-table">
+                    <thead>
+                        <tr>
+                            <th>Role Type</th>
+                            <th>What They Care About</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Economic Buyer</strong></td>
+                            <td>ROI, budget approval, strategic fit</td>
+                            <td>Essential</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Technical Buyer</strong></td>
+                            <td>Integration, security, implementation</td>
+                            <td>Essential</td>
+                        </tr>
+                        <tr>
+                            <td><strong>User Buyer</strong></td>
+                            <td>Ease of use, daily workflow impact</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Champion</strong></td>
+                            <td>Internal advocate, project owner</td>
+                            <td>Essential</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Influencer</strong></td>
+                            <td>Team needs, peer recommendations</td>
+                            <td>Medium</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Blocker</strong></td>
+                            <td>Risk mitigation, alternative preferences</td>
+                            <td>Medium (to neutralize)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Measuring Contact Coverage</h3>
+
+                <p>Track coverage metrics for your target account list:</p>
+
+                <ul>
+                    <li><strong>Average contacts per account:</strong> Target 5+ for mid-market, 15+ for enterprise</li>
+                    <li><strong>Role coverage:</strong> % of accounts with economic buyer contact, technical buyer contact, etc.</li>
+                    <li><strong>Email validity:</strong> % of contact emails that are deliverable</li>
+                    <li><strong>Data completeness:</strong> % of contacts with phone, LinkedIn, etc.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <h4>⚠️ Coverage Gap Alert</h4>
+                    <p>If you have 500 target accounts but only 500 contacts, you have a 1:1 ratio—meaning you can only reach one person per account. At minimum, you should have a 5:1 contact-to-account ratio. For enterprise ABM, aim for 15:1 or higher.</p>
+                </div>
+
+                <h2>ABM Data Quality Checklist</h2>
+
+                <div class="checklist-section">
+                    <h3>Pre-Campaign Data Audit</h3>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div>
+                            <strong>Account list is enriched with current firmographics</strong>
+                            <p>Company size, industry, and other attributes are verified within the last 90 days</p>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div>
+                            <strong>Contact coverage meets tier requirements</strong>
+                            <p>Tier 1: 15+ contacts | Tier 2: 8+ contacts | Tier 3: 5+ contacts</p>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div>
+                            <strong>Email addresses are validated</strong>
+                            <p>Deliverability verified, catch-all detection, role-based emails flagged</p>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div>
+                            <strong>Buying committee roles are mapped</strong>
+                            <p>Economic buyer, technical buyer, and champion identified per account</p>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div>
+                            <strong>Technographic data is current</strong>
+                            <p>Tech stack data verified within last 6 months for personalization</p>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div>
+                            <strong>Intent signals are integrated</strong>
+                            <p>Third-party intent data connected to identify in-market accounts</p>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div>
+                            <strong>CRM and MAP records are synced</strong>
+                            <p>No duplicate accounts, contacts linked to correct accounts</p>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div>
+                            <strong>Existing engagement data is incorporated</strong>
+                            <p>Website visits, content downloads, and email engagement mapped to accounts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Enrichment Strategy for ABM</h2>
+
+                <p>ABM requires deeper enrichment than standard demand gen. Here's how to approach it:</p>
+
+                <h3>Account-Level Enrichment</h3>
+
+                <ul>
+                    <li><strong>Basic firmographics:</strong> Size, industry, revenue, headquarters</li>
+                    <li><strong>Growth signals:</strong> Funding, hiring trends, news mentions</li>
+                    <li><strong>Technographics:</strong> Tech stack, especially competitive and complementary tools</li>
+                    <li><strong>Organizational structure:</strong> Parent/subsidiary relationships, divisions</li>
+                    <li><strong>Intent data:</strong> Research activity, comparison shopping, review site visits</li>
+                </ul>
+
+                <h3>Contact-Level Enrichment</h3>
+
+                <ul>
+                    <li><strong>Identity:</strong> Full name, verified email, direct phone</li>
+                    <li><strong>Role:</strong> Job title, department, seniority level</li>
+                    <li><strong>Buying role:</strong> Economic buyer, technical buyer, user, influencer</li>
+                    <li><strong>Social:</strong> LinkedIn profile, Twitter handle</li>
+                    <li><strong>Engagement history:</strong> Past interactions with your brand</li>
+                </ul>
+
+                <h3>When to Enrich</h3>
+
+                <ul>
+                    <li><strong>Initial list build:</strong> Enrich all accounts and contacts when creating your target list</li>
+                    <li><strong>Quarterly refresh:</strong> Re-enrich entire list to catch job changes, company updates</li>
+                    <li><strong>Pre-campaign:</strong> Validate emails and refresh contacts before major campaigns</li>
+                    <li><strong>Intent triggers:</strong> Enrich new accounts showing intent signals</li>
+                    <li><strong>After engagement:</strong> Deepen coverage when accounts engage (add more contacts)</li>
+                </ul>
+
+                <h2>Maintaining ABM Data Quality</h2>
+
+                <p><a href="/resources/what-is-b2b-data-decay.html">B2B data decays at 25-30% per year</a>. For ABM, where you're investing heavily in specific accounts, stale data is especially costly.</p>
+
+                <h3>Ongoing Hygiene Practices</h3>
+
+                <ul>
+                    <li><strong>Monitor bounce rates:</strong> Email bounces indicate data decay. Investigate and refresh bounced contacts.</li>
+                    <li><strong>Track job changes:</strong> Use LinkedIn or enrichment providers with change detection.</li>
+                    <li><strong>Validate before campaigns:</strong> Always verify email deliverability before major sends.</li>
+                    <li><strong>Refresh quarterly:</strong> Re-enrich your full list every 90 days at minimum.</li>
+                    <li><strong>Remove departed contacts:</strong> Don't keep emailing people who left target accounts.</li>
+                    <li><strong>Update account status:</strong> Mark accounts as acquired, out of business, or no longer ICP-fit.</li>
+                </ul>
+
+                <h3>Signals That Trigger Data Refresh</h3>
+
+                <ul>
+                    <li>Email bounce from a key contact</li>
+                    <li>Account shows intent surge (need current contacts)</li>
+                    <li>Account enters active opportunity stage</li>
+                    <li>Key contact goes dark (may have changed roles)</li>
+                    <li>Company announces major news (funding, acquisition, leadership change)</li>
+                </ul>
+
+                <h2>Integrating Data Across the ABM Stack</h2>
+
+                <p>ABM data lives across multiple systems. Integration gaps create blind spots:</p>
+
+                <table class="coverage-table">
+                    <thead>
+                        <tr>
+                            <th>System</th>
+                            <th>Data Type</th>
+                            <th>Integration Need</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CRM</strong></td>
+                            <td>Account + contact records, opportunity data</td>
+                            <td>Source of truth for account ownership and engagement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MAP</strong></td>
+                            <td>Email engagement, lead scores, campaign membership</td>
+                            <td>Sync contacts and engagement back to CRM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ABM Platform</strong></td>
+                            <td>Account scores, intent data, advertising engagement</td>
+                            <td>Push scores to CRM, trigger workflows in MAP</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sales Engagement</strong></td>
+                            <td>Outreach activity, reply rates, meetings</td>
+                            <td>Sync activity to CRM for full picture</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Enrichment Provider</strong></td>
+                            <td>Firmographics, technographics, contacts</td>
+                            <td>Automated enrichment into CRM/MAP</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="cta-box">
+                    <h3>Need Help Building Your ABM Data Foundation?</h3>
+                    <p>We help companies build and maintain the data quality that makes ABM work—from account selection to contact coverage to ongoing hygiene.</p>
+                    <a href="/assessment/" class="cta-button">Get Free Assessment</a>
+                </div>
+
+                <section class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What data do you need for ABM?</div>
+                        <div class="faq-answer">Effective ABM requires account-level data (company name, size, industry, revenue, tech stack, intent signals) and contact-level data (names, titles, emails, phone numbers for the buying committee). You need multiple contacts per account—typically 5-10 for mid-market and 15-25+ for enterprise—across different roles in the buying process.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do you build an ABM target account list?</div>
+                        <div class="faq-answer">Start by defining your Ideal Customer Profile (ICP) based on firmographic criteria from your best customers. Use data enrichment to identify companies matching these criteria. Layer in intent data to prioritize accounts showing buying signals. Finally, add engagement data from your existing marketing to identify accounts already interacting with your brand.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is contact coverage in ABM?</div>
+                        <div class="faq-answer">Contact coverage measures how many relevant contacts you have at each target account. B2B purchases involve 6-10 decision makers on average. If you only have one contact at an account, you're missing most of the buying committee. Good ABM requires 5-10 contacts per mid-market account and 15-25+ for enterprise accounts.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How often should you refresh ABM data?</div>
+                        <div class="faq-answer">ABM data should be refreshed quarterly at minimum. B2B contact data decays at 25-30% per year—people change jobs, get promoted, or leave. Account-level data changes too: companies get acquired, change industries, or go out of business. Regular enrichment ensures your campaigns reach the right people.</div>
+                    </div>
+                </section>
+
+                <section class="related-articles">
+                    <h2>Related Articles</h2>
+                    <div class="related-grid">
+                        <a href="/resources/lead-scoring-with-enriched-data.html" class="related-card">
+                            <h4>Lead Scoring with Enriched Data</h4>
+                            <p>Build scoring models that combine fit and engagement signals.</p>
+                        </a>
+                        <a href="/resources/what-is-data-enrichment.html" class="related-card">
+                            <h4>What is Data Enrichment?</h4>
+                            <p>The complete guide to data enrichment fundamentals.</p>
+                        </a>
+                        <a href="/resources/best-data-enrichment-tools.html" class="related-card">
+                            <h4>10 Best Data Enrichment Tools for 2026</h4>
+                            <p>Compare platforms for building ABM data coverage.</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Scoring with Enriched Data: Build Models That Actually Work | Verum</title>
+    <meta name="description" content="How to build lead scoring models using enriched data. Learn which firmographic and technographic signals matter, scoring frameworks, and common mistakes to avoid.">
+    <meta name="keywords" content="lead scoring, enriched data scoring, B2B lead scoring, firmographic scoring, predictive lead scoring, lead qualification, MQL scoring">
+    <link rel="canonical" href="https://veruminc.com/resources/lead-scoring-with-enriched-data.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lead Scoring with Enriched Data: Build Models That Actually Work">
+    <meta property="og:description" content="How to build lead scoring models using enriched data. Learn which signals matter and common mistakes to avoid.">
+    <meta property="og:url" content="https://veruminc.com/resources/lead-scoring-with-enriched-data.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://veruminc.com/images/og-lead-scoring.jpg">
+    <meta property="og:site_name" content="Verum">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lead Scoring with Enriched Data: Build Models That Actually Work">
+    <meta name="twitter:description" content="How to build lead scoring models using enriched data.">
+    <meta name="twitter:image" content="https://veruminc.com/images/og-lead-scoring.jpg">
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Lead Scoring with Enriched Data: Build Models That Actually Work",
+        "description": "How to build lead scoring models using enriched data. Learn which firmographic and technographic signals matter, scoring frameworks, and common mistakes to avoid.",
+        "author": {
+            "@type": "Organization",
+            "name": "Verum",
+            "url": "https://veruminc.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Verum",
+            "url": "https://veruminc.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://veruminc.com/images/verum-logo.png"
+            }
+        },
+        "datePublished": "2026-01-22",
+        "dateModified": "2026-01-22",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://veruminc.com/resources/lead-scoring-with-enriched-data.html"
+        },
+        "image": "https://veruminc.com/images/og-lead-scoring.jpg"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is lead scoring with enriched data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Lead scoring with enriched data combines behavioral signals (form fills, website visits, email engagement) with firmographic data (company size, industry, funding) and technographic data (tech stack, tools used) to predict which leads are most likely to convert. Enrichment fills in the firmographic and technographic data that leads don't provide themselves."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which enrichment data points matter most for lead scoring?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The most predictive enrichment data points vary by business, but typically include: company size (employee count and revenue), industry/vertical, job title/seniority of the contact, technology stack (especially competitive or complementary tools), recent funding or growth signals, and geographic location. Analyze your closed-won deals to identify which attributes correlate with success."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you build a lead scoring model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start by analyzing your closed-won customers to identify common firmographic and behavioral patterns. Assign point values to attributes that correlate with winning (positive) and losing (negative). Test your model against historical data, then implement in your CRM or marketing automation platform. Monitor performance and adjust weights based on actual conversion data."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between fit score and engagement score?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fit score measures how well a lead matches your ideal customer profile based on firmographic attributes (company size, industry, title). Engagement score measures behavioral signals showing interest (email opens, content downloads, website visits). The best lead scoring models combine both—a highly engaged lead at a poorly-fit company may not convert, and a perfect-fit company with no engagement isn't ready to buy."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "XXXXXXXXXX");
+    </script>
+
+    <style>
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .article-category {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .article-body h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .article-body h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .article-body p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .score-component {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .score-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .score-card.fit {
+            border-top: 4px solid #8b5cf6;
+        }
+
+        .score-card.engagement {
+            border-top: 4px solid #f59e0b;
+        }
+
+        .score-card h4 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .score-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .score-card ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .score-card li {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .scoring-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .scoring-table th {
+            background: var(--accent);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .scoring-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .scoring-table tr:hover {
+            background: var(--accent-light);
+        }
+
+        .points-positive {
+            color: #16a34a;
+            font-weight: 600;
+        }
+
+        .points-negative {
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        .framework-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .framework-box h3 {
+            color: #0369a1;
+            margin-top: 0;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .matrix-cell {
+            padding: 1.25rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .matrix-cell.high-fit.high-engagement {
+            background: #dcfce7;
+            border: 2px solid #22c55e;
+        }
+
+        .matrix-cell.high-fit.low-engagement {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+        }
+
+        .matrix-cell.low-fit.high-engagement {
+            background: #fee2e2;
+            border: 2px solid #ef4444;
+        }
+
+        .matrix-cell.low-fit.low-engagement {
+            background: #f3f4f6;
+            border: 2px solid #9ca3af;
+        }
+
+        .matrix-cell h5 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .matrix-cell p {
+            margin: 0;
+            font-size: 0.8rem;
+        }
+
+        .tip-box {
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tip-box h4 {
+            color: #166534;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-box p {
+            color: #14532d;
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: #92400e;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .warning-box p {
+            color: #78350f;
+            margin-bottom: 0;
+        }
+
+        .process-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .process-step {
+            position: relative;
+            padding: 1.5rem;
+            padding-left: 4rem;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .process-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 1.5rem;
+            top: 1.5rem;
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .process-step h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+
+        .process-step p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .mistake-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .mistake-card {
+            background: #fef2f2;
+            border: 1px solid #fca5a5;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .mistake-card h4 {
+            color: #991b1b;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .mistake-card p {
+            color: #7f1d1d;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--accent);
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--text-secondary);
+        }
+
+        .related-articles {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .related-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .related-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="article-content">
+        <nav class="breadcrumb">
+            <a href="/">Home</a> <span>/</span>
+            <a href="/resources/">Resources</a> <span>/</span>
+            <span>Lead Scoring with Enriched Data</span>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Strategy</span>
+                    <span>January 22, 2026</span>
+                    <span>13 min read</span>
+                </div>
+                <h1>Lead Scoring with Enriched Data: Build Models That Actually Work</h1>
+                <p class="article-intro">Your lead scoring model says this lead is hot. Sales disagrees. The model isn't wrong—it's just missing information. Enriched data fills the gaps between what leads tell you and what you need to know.</p>
+            </header>
+
+            <div class="article-body">
+                <p>Most lead scoring models fail because they rely on incomplete data. A form fill tells you someone downloaded a whitepaper. It doesn't tell you if they work at a 10-person startup or a Fortune 500—and that context changes everything.</p>
+
+                <p>Data enrichment transforms lead scoring from guesswork into science. By adding firmographic, technographic, and intent data to behavioral signals, you can build models that actually predict conversion.</p>
+
+                <h2>The Two Components of Effective Lead Scoring</h2>
+
+                <p>The best lead scoring models evaluate two distinct dimensions:</p>
+
+                <div class="score-component">
+                    <div class="score-card fit">
+                        <h4>Fit Score</h4>
+                        <p>Does this lead match your ideal customer profile? Based on firmographic attributes.</p>
+                        <ul>
+                            <li>Company size (employees, revenue)</li>
+                            <li>Industry/vertical</li>
+                            <li>Geographic location</li>
+                            <li>Job title/seniority</li>
+                            <li>Technology stack</li>
+                            <li>Funding/growth signals</li>
+                        </ul>
+                    </div>
+
+                    <div class="score-card engagement">
+                        <h4>Engagement Score</h4>
+                        <p>Is this lead showing buying intent? Based on behavioral signals.</p>
+                        <ul>
+                            <li>Website visits (pages, frequency)</li>
+                            <li>Content downloads</li>
+                            <li>Email engagement</li>
+                            <li>Product trial activity</li>
+                            <li>Pricing page visits</li>
+                            <li>Demo requests</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>Without enrichment, you can only score engagement. You see what leads do, but not who they are. This leads to false positives (highly engaged leads at companies that will never buy) and false negatives (perfect-fit companies with lower engagement that would convert with sales attention).</p>
+
+                <h2>The Fit + Engagement Matrix</h2>
+
+                <div class="framework-box">
+                    <h3>Lead Prioritization Framework</h3>
+                    <p>Combine fit and engagement scores to prioritize leads into action buckets:</p>
+
+                    <div class="matrix-grid">
+                        <div class="matrix-cell high-fit high-engagement">
+                            <h5>High Fit + High Engagement</h5>
+                            <p><strong>Action:</strong> Immediate sales outreach. These are your best leads—right company, showing intent.</p>
+                        </div>
+                        <div class="matrix-cell high-fit low-engagement">
+                            <h5>High Fit + Low Engagement</h5>
+                            <p><strong>Action:</strong> Nurture with targeted content. Great company, needs more education before they're ready.</p>
+                        </div>
+                        <div class="matrix-cell low-fit high-engagement">
+                            <h5>Low Fit + High Engagement</h5>
+                            <p><strong>Action:</strong> Qualify carefully. High engagement from poor-fit companies often means they won't convert or will churn.</p>
+                        </div>
+                        <div class="matrix-cell low-fit low-engagement">
+                            <h5>Low Fit + Low Engagement</h5>
+                            <p><strong>Action:</strong> Deprioritize or disqualify. Not worth sales time—let marketing nurture or archive.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Firmographic Scoring: Which Enrichment Data Matters</h2>
+
+                <p>Not all enrichment data is equally predictive. Analyze your closed-won deals to identify which attributes correlate with success, then weight your scoring model accordingly.</p>
+
+                <h3>Example Firmographic Scoring Model</h3>
+
+                <table class="scoring-table">
+                    <thead>
+                        <tr>
+                            <th>Attribute</th>
+                            <th>Criteria</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Company Size</strong></td>
+                            <td>500+ employees</td>
+                            <td class="points-positive">+25</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>100-499 employees</td>
+                            <td class="points-positive">+15</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>50-99 employees</td>
+                            <td class="points-positive">+5</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>&lt;50 employees</td>
+                            <td class="points-negative">-10</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Industry</strong></td>
+                            <td>Target verticals (Tech, Finance, Healthcare)</td>
+                            <td class="points-positive">+15</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Adjacent verticals</td>
+                            <td class="points-positive">+5</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Non-target (Education, Government)</td>
+                            <td class="points-negative">-15</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Job Title</strong></td>
+                            <td>VP/Director/Head of target function</td>
+                            <td class="points-positive">+20</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Manager in target function</td>
+                            <td class="points-positive">+10</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>C-level (if typical buyer)</td>
+                            <td class="points-positive">+25</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Individual contributor</td>
+                            <td class="points-positive">+0</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Student/Intern</td>
+                            <td class="points-negative">-20</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tech Stack</strong></td>
+                            <td>Uses complementary tools</td>
+                            <td class="points-positive">+10</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Uses competitor</td>
+                            <td class="points-positive">+15</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Funding</strong></td>
+                            <td>Raised funding in last 12 months</td>
+                            <td class="points-positive">+10</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Location</strong></td>
+                            <td>Primary market (US, UK, etc.)</td>
+                            <td class="points-positive">+5</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Non-serviceable region</td>
+                            <td class="points-negative">-25</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tip-box">
+                    <h4>💡 Start with Your Data</h4>
+                    <p>Don't copy this model verbatim. Export your last 100 closed-won and 100 closed-lost opportunities. Analyze which firmographic attributes differ between the groups. Those differences should drive your scoring weights.</p>
+                </div>
+
+                <h2>Engagement Scoring: Behavioral Signals</h2>
+
+                <p>Combine firmographic fit with engagement signals for a complete picture:</p>
+
+                <table class="scoring-table">
+                    <thead>
+                        <tr>
+                            <th>Behavior</th>
+                            <th>Points</th>
+                            <th>Decay</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Requested demo</td>
+                            <td class="points-positive">+50</td>
+                            <td>30 days</td>
+                        </tr>
+                        <tr>
+                            <td>Started free trial</td>
+                            <td class="points-positive">+40</td>
+                            <td>14 days</td>
+                        </tr>
+                        <tr>
+                            <td>Visited pricing page</td>
+                            <td class="points-positive">+20</td>
+                            <td>7 days</td>
+                        </tr>
+                        <tr>
+                            <td>Downloaded case study</td>
+                            <td class="points-positive">+15</td>
+                            <td>30 days</td>
+                        </tr>
+                        <tr>
+                            <td>Downloaded whitepaper</td>
+                            <td class="points-positive">+10</td>
+                            <td>30 days</td>
+                        </tr>
+                        <tr>
+                            <td>Attended webinar</td>
+                            <td class="points-positive">+15</td>
+                            <td>30 days</td>
+                        </tr>
+                        <tr>
+                            <td>Opened marketing email</td>
+                            <td class="points-positive">+2</td>
+                            <td>7 days</td>
+                        </tr>
+                        <tr>
+                            <td>Clicked marketing email</td>
+                            <td class="points-positive">+5</td>
+                            <td>7 days</td>
+                        </tr>
+                        <tr>
+                            <td>Visited website (per session)</td>
+                            <td class="points-positive">+3</td>
+                            <td>7 days</td>
+                        </tr>
+                        <tr>
+                            <td>Unsubscribed from emails</td>
+                            <td class="points-negative">-20</td>
+                            <td>Never</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <h4>⚠️ Score Decay Is Critical</h4>
+                    <p>Engagement from 6 months ago doesn't indicate current intent. Implement score decay—points should decrease over time if no new activity occurs. A lead who was hot 90 days ago but has gone silent isn't hot anymore.</p>
+                </div>
+
+                <h2>Building Your Lead Scoring Model: Step by Step</h2>
+
+                <ol class="process-steps">
+                    <li class="process-step">
+                        <h4>Analyze Historical Data</h4>
+                        <p>Export your closed-won and closed-lost opportunities. Identify which firmographic and behavioral attributes correlate with winning. This data-driven approach beats guessing.</p>
+                    </li>
+
+                    <li class="process-step">
+                        <h4>Define Your ICP Criteria</h4>
+                        <p>Based on your analysis, define the firmographic attributes of your ideal customer. Be specific: "B2B SaaS companies, 100-1000 employees, Series A+ funded, in US/UK/Canada."</p>
+                    </li>
+
+                    <li class="process-step">
+                        <h4>Enrich Your Database</h4>
+                        <p>You can't score on data you don't have. <a href="/resources/what-is-data-enrichment.html">Enrich your existing leads</a> with the firmographic data points you'll use for scoring.</p>
+                    </li>
+
+                    <li class="process-step">
+                        <h4>Assign Point Values</h4>
+                        <p>Create your scoring rules. Start simple—you can always add complexity later. Assign positive points to desirable attributes, negative points to disqualifying ones.</p>
+                    </li>
+
+                    <li class="process-step">
+                        <h4>Set Thresholds</h4>
+                        <p>Define what score makes a lead "Sales Ready" (MQL threshold). Start conservative—it's easier to lower the bar than to explain why you're raising it.</p>
+                    </li>
+
+                    <li class="process-step">
+                        <h4>Implement in Your Tech Stack</h4>
+                        <p>Configure scoring rules in your marketing automation or CRM. Set up alerts for sales when leads cross the MQL threshold.</p>
+                    </li>
+
+                    <li class="process-step">
+                        <h4>Monitor and Iterate</h4>
+                        <p>Track MQL-to-SQL conversion and SQL-to-Closed-Won rates. If sales is rejecting too many MQLs, your threshold is too low or your fit criteria are off.</p>
+                    </li>
+                </ol>
+
+                <h2>Common Lead Scoring Mistakes</h2>
+
+                <div class="mistake-grid">
+                    <div class="mistake-card">
+                        <h4>Scoring Without Enrichment</h4>
+                        <p>Behavior-only models miss fit entirely. You'll send sales highly engaged leads from companies that will never buy.</p>
+                    </div>
+
+                    <div class="mistake-card">
+                        <h4>Too Many Scoring Rules</h4>
+                        <p>Complex models are hard to maintain and debug. Start with 10-15 rules maximum. Add complexity only when data proves it's needed.</p>
+                    </div>
+
+                    <div class="mistake-card">
+                        <h4>No Score Decay</h4>
+                        <p>Without decay, old leads accumulate high scores and clutter your MQL queue. Implement decay for engagement signals.</p>
+                    </div>
+
+                    <div class="mistake-card">
+                        <h4>Ignoring Negative Signals</h4>
+                        <p>Only adding points for positive attributes means bad-fit leads can score high through volume. Use negative scoring for disqualifying attributes.</p>
+                    </div>
+
+                    <div class="mistake-card">
+                        <h4>Not Validating with Sales</h4>
+                        <p>Building a model in isolation from sales creates misalignment. Get sales input on what makes a good lead, and review rejected MQLs together.</p>
+                    </div>
+
+                    <div class="mistake-card">
+                        <h4>Set-and-Forget</h4>
+                        <p>Markets change. Your ICP evolves. Score thresholds that worked last year may not work now. Review and adjust quarterly.</p>
+                    </div>
+                </div>
+
+                <h2>Advanced: Predictive Lead Scoring</h2>
+
+                <p>Once you have enriched data and historical conversion data, you can move beyond rules-based scoring to predictive models:</p>
+
+                <h3>How Predictive Scoring Works</h3>
+
+                <ul>
+                    <li><strong>Training data:</strong> Feed the model your historical leads with outcomes (converted vs. didn't convert)</li>
+                    <li><strong>Feature engineering:</strong> Include both enriched firmographic data and behavioral signals</li>
+                    <li><strong>Model training:</strong> Algorithm identifies which combinations of attributes predict conversion</li>
+                    <li><strong>Scoring:</strong> New leads are scored based on how similar they are to historical converters</li>
+                </ul>
+
+                <p>Predictive models can identify patterns humans miss—like "leads from companies with 200-350 employees in fintech who downloaded pricing content convert at 3x the average rate."</p>
+
+                <h3>When to Use Predictive vs. Rules-Based</h3>
+
+                <ul>
+                    <li><strong>Rules-based:</strong> You have &lt;1,000 historical conversions, or you need explainable scoring for sales buy-in</li>
+                    <li><strong>Predictive:</strong> You have &gt;1,000 conversions, good data hygiene, and the technical resources to implement and maintain a model</li>
+                </ul>
+
+                <h2>Measuring Lead Scoring Effectiveness</h2>
+
+                <p>Track these metrics to evaluate your model:</p>
+
+                <ul>
+                    <li><strong>MQL-to-SQL rate:</strong> What percentage of MQLs does sales accept? Target 50%+.</li>
+                    <li><strong>SQL-to-Opportunity rate:</strong> How many accepted leads become opportunities?</li>
+                    <li><strong>Score-to-conversion correlation:</strong> Do higher-scored leads convert at higher rates?</li>
+                    <li><strong>Time to conversion:</strong> Do high-fit leads convert faster?</li>
+                    <li><strong>Sales feedback:</strong> Are reps finding MQLs useful? What's missing?</li>
+                </ul>
+
+                <div class="cta-box">
+                    <h3>Need Help Building Your Lead Scoring Model?</h3>
+                    <p>We help companies enrich their lead data and build scoring models that actually predict conversion. Get a free assessment of your current data and scoring approach.</p>
+                    <a href="/assessment/" class="cta-button">Get Free Assessment</a>
+                </div>
+
+                <section class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is lead scoring with enriched data?</div>
+                        <div class="faq-answer">Lead scoring with enriched data combines behavioral signals (form fills, website visits, email engagement) with firmographic data (company size, industry, funding) and technographic data (tech stack, tools used) to predict which leads are most likely to convert. Enrichment fills in the firmographic and technographic data that leads don't provide themselves.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Which enrichment data points matter most for lead scoring?</div>
+                        <div class="faq-answer">The most predictive enrichment data points vary by business, but typically include: company size (employee count and revenue), industry/vertical, job title/seniority of the contact, technology stack (especially competitive or complementary tools), recent funding or growth signals, and geographic location. Analyze your closed-won deals to identify which attributes correlate with success.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do you build a lead scoring model?</div>
+                        <div class="faq-answer">Start by analyzing your closed-won customers to identify common firmographic and behavioral patterns. Assign point values to attributes that correlate with winning (positive) and losing (negative). Test your model against historical data, then implement in your CRM or marketing automation platform. Monitor performance and adjust weights based on actual conversion data.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between fit score and engagement score?</div>
+                        <div class="faq-answer">Fit score measures how well a lead matches your ideal customer profile based on firmographic attributes (company size, industry, title). Engagement score measures behavioral signals showing interest (email opens, content downloads, website visits). The best lead scoring models combine both—a highly engaged lead at a poorly-fit company may not convert, and a perfect-fit company with no engagement isn't ready to buy.</div>
+                    </div>
+                </section>
+
+                <section class="related-articles">
+                    <h2>Related Articles</h2>
+                    <div class="related-grid">
+                        <a href="/resources/what-is-data-enrichment.html" class="related-card">
+                            <h4>What is Data Enrichment?</h4>
+                            <p>The complete guide to understanding data enrichment fundamentals.</p>
+                        </a>
+                        <a href="/resources/data-enrichment-for-saas.html" class="related-card">
+                            <h4>Data Enrichment for SaaS Companies</h4>
+                            <p>How SaaS companies use enrichment for PLG, sales-led, and hybrid models.</p>
+                        </a>
+                        <a href="/resources/best-data-enrichment-tools.html" class="related-card">
+                            <h4>10 Best Data Enrichment Tools for 2026</h4>
+                            <p>Compare top platforms for enriching your lead data.</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/js/components.js"></script>
+</body>
+</html>
