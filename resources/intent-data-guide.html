@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intent Data Guide: What It Is, How It Works, and How to Use It | Verum</title>
+    <meta name="description" content="Everything you need to know about B2B intent data: first-party vs third-party, use cases for sales and marketing, top providers, and implementation best practices.">
+    <meta name="keywords" content="intent data, B2B intent data, buyer intent signals, intent data providers, sales intent, marketing intent data, Bombora, 6sense, G2 intent">
+    <link rel="canonical" href="https://veruminc.com/resources/intent-data-guide.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Intent Data Guide: What It Is, How It Works, and How to Use It">
+    <meta property="og:description" content="Everything you need to know about B2B intent data and how to use it for sales and marketing.">
+    <meta property="og:url" content="https://veruminc.com/resources/intent-data-guide.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://veruminc.com/images/og-intent-data.jpg">
+    <meta property="og:site_name" content="Verum">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intent Data Guide: What It Is, How It Works, and How to Use It">
+    <meta name="twitter:description" content="Everything you need to know about B2B intent data.">
+    <meta name="twitter:image" content="https://veruminc.com/images/og-intent-data.jpg">
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Intent Data Guide: What It Is, How It Works, and How to Use It",
+        "description": "Everything you need to know about B2B intent data: first-party vs third-party, use cases for sales and marketing, top providers, and implementation best practices.",
+        "author": {
+            "@type": "Organization",
+            "name": "Verum",
+            "url": "https://veruminc.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Verum",
+            "url": "https://veruminc.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://veruminc.com/images/verum-logo.png"
+            }
+        },
+        "datePublished": "2026-01-22",
+        "dateModified": "2026-01-22",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://veruminc.com/resources/intent-data-guide.html"
+        },
+        "image": "https://veruminc.com/images/og-intent-data.jpg"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is B2B intent data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "B2B intent data is information that signals when companies are actively researching or considering a purchase. It includes signals like content consumption (whitepapers, blog posts), search behavior, product review site activity, and technology research. Intent data helps sales and marketing identify accounts that are 'in-market' before they raise their hand."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between first-party and third-party intent data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "First-party intent data comes from your own properties—website visits, content downloads, email engagement. Third-party intent data comes from external sources tracking research behavior across the web—content sites, review platforms, and data co-ops. First-party is more accurate but limited to known visitors; third-party reveals accounts researching before they visit your site."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate is intent data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Intent data accuracy varies by provider and signal type. First-party data (your own website) is most accurate. Third-party data accuracy depends on the provider's methodology—Bombora's co-op model is considered reliable, while some scraped data is less accurate. Intent data works best as a prioritization signal, not a guarantee of purchase interest."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the best intent data providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Top intent data providers include Bombora (largest B2B intent co-op), 6sense (AI-powered intent and ABM), G2 (software buyer intent), TrustRadius (enterprise software intent), and ZoomInfo (intent combined with contact data). The best choice depends on your industry, target market, and existing tech stack."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "XXXXXXXXXX");
+    </script>
+
+    <style>
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .article-category {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .article-body h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .article-body h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .article-body p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .intent-type-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .intent-type-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .intent-type-card.first-party {
+            border-top: 4px solid #10b981;
+        }
+
+        .intent-type-card.third-party {
+            border-top: 4px solid #6366f1;
+        }
+
+        .intent-type-card h4 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .intent-type-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .intent-type-card ul {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .intent-type-card li {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .provider-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .provider-table th {
+            background: var(--accent);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .provider-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .provider-table tr:hover {
+            background: var(--accent-light);
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .use-case-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .use-case-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .use-case-card h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .use-case-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .signal-strength {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .signal-strength h3 {
+            margin-top: 0;
+        }
+
+        .signal-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .signal-item:last-child {
+            border-bottom: none;
+        }
+
+        .signal-name {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .signal-bar {
+            flex: 2;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0 1rem;
+        }
+
+        .signal-fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        .signal-label {
+            width: 80px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .tip-box {
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tip-box h4 {
+            color: #166534;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-box p {
+            color: #14532d;
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: #92400e;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .warning-box p {
+            color: #78350f;
+            margin-bottom: 0;
+        }
+
+        .implementation-steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .implementation-step {
+            position: relative;
+            padding: 1.5rem;
+            padding-left: 4rem;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .implementation-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 1.5rem;
+            top: 1.5rem;
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .implementation-step h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+
+        .implementation-step p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--accent);
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--text-secondary);
+        }
+
+        .related-articles {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .related-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .related-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="article-content">
+        <nav class="breadcrumb">
+            <a href="/">Home</a> <span>/</span>
+            <a href="/resources/">Resources</a> <span>/</span>
+            <span>Intent Data Guide</span>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Guide</span>
+                    <span>January 22, 2026</span>
+                    <span>14 min read</span>
+                </div>
+                <h1>Intent Data Guide: What It Is, How It Works, and How to Use It</h1>
+                <p class="article-intro">What if you could identify companies actively researching solutions like yours—before they ever fill out a form? That's the promise of intent data. This guide explains how it works, where it comes from, and how to use it effectively.</p>
+            </header>
+
+            <div class="article-body">
+                <p>The average B2B buyer completes 70% of their research before ever talking to sales. By the time they raise their hand, they've already formed opinions, shortlisted vendors, and may have a favorite. Intent data lets you identify these buyers earlier in their journey—when you can still influence the conversation.</p>
+
+                <p>But intent data isn't magic. It has real limitations, accuracy concerns, and implementation challenges. This guide cuts through the hype to explain what intent data actually is, how it works, and how to use it effectively.</p>
+
+                <h2>What is Intent Data?</h2>
+
+                <p>Intent data is behavioral data that signals when companies or individuals are actively researching a particular topic, solution, or category. It answers the question: "Who is in-market right now?"</p>
+
+                <p>Intent signals come from various behaviors:</p>
+
+                <ul>
+                    <li><strong>Content consumption</strong> – Reading articles, downloading whitepapers, watching videos on relevant topics</li>
+                    <li><strong>Search behavior</strong> – Searching for product categories, competitors, or problem-related keywords</li>
+                    <li><strong>Review site activity</strong> – Visiting G2, TrustRadius, or Capterra to compare solutions</li>
+                    <li><strong>Website visits</strong> – Visiting your site or competitor sites (if tracked)</li>
+                    <li><strong>Technology research</strong> – Evaluating new tools, comparing features, reading documentation</li>
+                </ul>
+
+                <h2>First-Party vs. Third-Party Intent Data</h2>
+
+                <div class="intent-type-grid">
+                    <div class="intent-type-card first-party">
+                        <h4>First-Party Intent Data</h4>
+                        <p>Signals from your own properties—data you collect directly.</p>
+                        <ul>
+                            <li>Website visits and page views</li>
+                            <li>Content downloads</li>
+                            <li>Email opens and clicks</li>
+                            <li>Product trial activity</li>
+                            <li>Webinar attendance</li>
+                            <li>Chatbot interactions</li>
+                        </ul>
+                        <p><strong>Pros:</strong> Accurate, free, shows direct interest in you</p>
+                        <p><strong>Cons:</strong> Limited to people who already found you</p>
+                    </div>
+
+                    <div class="intent-type-card third-party">
+                        <h4>Third-Party Intent Data</h4>
+                        <p>Signals from external sources tracking behavior across the web.</p>
+                        <ul>
+                            <li>B2B content publisher networks</li>
+                            <li>Data co-ops (Bombora)</li>
+                            <li>Review site activity (G2, TrustRadius)</li>
+                            <li>Bidstream data</li>
+                            <li>Technology research signals</li>
+                            <li>Job posting analysis</li>
+                        </ul>
+                        <p><strong>Pros:</strong> Reveals pre-funnel research, broader coverage</p>
+                        <p><strong>Cons:</strong> Less accurate, privacy concerns, cost</p>
+                    </div>
+                </div>
+
+                <h2>How Third-Party Intent Data Works</h2>
+
+                <p>Third-party intent data comes from several methodologies:</p>
+
+                <h3>Data Co-ops (Bombora Model)</h3>
+                <p>Publishers agree to share anonymized visitor data. When a company's IP address shows up consuming more content than normal on a topic, that creates an intent signal. Bombora's Company Surge® data works this way—measuring consumption against a baseline.</p>
+
+                <h3>Bidstream Data</h3>
+                <p>When websites serve programmatic ads, bid requests contain information about the visitor. Some vendors aggregate this data to identify company-level browsing patterns. Accuracy varies significantly.</p>
+
+                <h3>Review Site Data</h3>
+                <p>G2, TrustRadius, and Capterra track when companies research and compare software. If someone from Acme Corp views your product profile or compares you to competitors, that's a high-value signal.</p>
+
+                <h3>Web Scraping & Inference</h3>
+                <p>Some providers scrape public data (job postings, press releases, technology detections) and infer intent. For example, if a company posts a job for "Salesforce Administrator," they may be in-market for Salesforce-related services.</p>
+
+                <h2>Intent Signal Strength</h2>
+
+                <p>Not all intent signals are equal. Here's how different signals rank in predictive value:</p>
+
+                <div class="signal-strength">
+                    <h3>Signal Strength Ranking</h3>
+
+                    <div class="signal-item">
+                        <span class="signal-name">Demo/pricing page visit (your site)</span>
+                        <div class="signal-bar"><div class="signal-fill" style="width: 95%;"></div></div>
+                        <span class="signal-label">Very High</span>
+                    </div>
+
+                    <div class="signal-item">
+                        <span class="signal-name">Review site comparison (G2, TrustRadius)</span>
+                        <div class="signal-bar"><div class="signal-fill" style="width: 85%;"></div></div>
+                        <span class="signal-label">High</span>
+                    </div>
+
+                    <div class="signal-item">
+                        <span class="signal-name">Competitor website visit</span>
+                        <div class="signal-bar"><div class="signal-fill" style="width: 80%;"></div></div>
+                        <span class="signal-label">High</span>
+                    </div>
+
+                    <div class="signal-item">
+                        <span class="signal-name">Solution-specific content surge</span>
+                        <div class="signal-bar"><div class="signal-fill" style="width: 70%;"></div></div>
+                        <span class="signal-label">Medium-High</span>
+                    </div>
+
+                    <div class="signal-item">
+                        <span class="signal-name">Related job posting</span>
+                        <div class="signal-bar"><div class="signal-fill" style="width: 60%;"></div></div>
+                        <span class="signal-label">Medium</span>
+                    </div>
+
+                    <div class="signal-item">
+                        <span class="signal-name">Topic-level content consumption</span>
+                        <div class="signal-bar"><div class="signal-fill" style="width: 50%;"></div></div>
+                        <span class="signal-label">Medium</span>
+                    </div>
+
+                    <div class="signal-item">
+                        <span class="signal-name">General industry research</span>
+                        <div class="signal-bar"><div class="signal-fill" style="width: 30%;"></div></div>
+                        <span class="signal-label">Low</span>
+                    </div>
+                </div>
+
+                <h2>Top Intent Data Providers</h2>
+
+                <table class="provider-table">
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>Type</th>
+                            <th>Best For</th>
+                            <th>Pricing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Bombora</strong></td>
+                            <td>Co-op data</td>
+                            <td>Topic-level intent at scale</td>
+                            <td>$$$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6sense</strong></td>
+                            <td>AI-powered intent + ABM</td>
+                            <td>Enterprise ABM, predictive analytics</td>
+                            <td>$$$$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>G2</strong></td>
+                            <td>Review site intent</td>
+                            <td>Software buyers, category research</td>
+                            <td>$$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TrustRadius</strong></td>
+                            <td>Review site intent</td>
+                            <td>Enterprise software research</td>
+                            <td>$$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ZoomInfo</strong></td>
+                            <td>Combined intent + contacts</td>
+                            <td>Sales teams, contact coverage</td>
+                            <td>$$$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Demandbase</strong></td>
+                            <td>ABM + intent</td>
+                            <td>Account-based programs</td>
+                            <td>$$$$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Clearbit</strong></td>
+                            <td>Website visitor ID + enrichment</td>
+                            <td>PLG companies, website intent</td>
+                            <td>$$</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Use Cases for Intent Data</h2>
+
+                <div class="use-case-grid">
+                    <div class="use-case-card">
+                        <div class="use-case-icon">🎯</div>
+                        <h4>ABM Account Prioritization</h4>
+                        <p>Identify which target accounts are actively researching to focus sales and marketing resources.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon">📞</div>
+                        <h4>Sales Outreach Timing</h4>
+                        <p>Alert sales when accounts show intent—outreach when they're thinking about the problem.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon">📊</div>
+                        <h4>Lead Scoring Enhancement</h4>
+                        <p>Add intent signals to lead scoring models for better MQL quality.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon">🎨</div>
+                        <h4>Content Personalization</h4>
+                        <p>Serve relevant content based on research topics—meet buyers where they are.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon">📢</div>
+                        <h4>Advertising Targeting</h4>
+                        <p>Focus ad spend on accounts showing intent—higher ROI than spray-and-pray.</p>
+                    </div>
+
+                    <div class="use-case-card">
+                        <div class="use-case-icon">⚠️</div>
+                        <h4>Churn Prevention</h4>
+                        <p>Detect when customers research competitors—trigger retention outreach.</p>
+                    </div>
+                </div>
+
+                <h2>Implementing Intent Data: Step by Step</h2>
+
+                <ol class="implementation-steps">
+                    <li class="implementation-step">
+                        <h4>Define Your Topics</h4>
+                        <p>Work with your intent provider to define the topics that indicate buying interest. Be specific—"CRM" is too broad; "Salesforce alternative" or "sales automation software" is better.</p>
+                    </li>
+
+                    <li class="implementation-step">
+                        <h4>Integrate with Your Stack</h4>
+                        <p>Connect intent data to your CRM and marketing automation. Most providers offer native integrations. Intent data siloed in a separate tool provides little value.</p>
+                    </li>
+
+                    <li class="implementation-step">
+                        <h4>Build Workflows</h4>
+                        <p>Create automated responses: add to nurture campaigns, alert sales, adjust ad targeting. Intent without action is just interesting data.</p>
+                    </li>
+
+                    <li class="implementation-step">
+                        <h4>Train Your Team</h4>
+                        <p>Sales needs to understand what intent signals mean—and what they don't. An intent signal isn't a guarantee of interest; it's a prioritization indicator.</p>
+                    </li>
+
+                    <li class="implementation-step">
+                        <h4>Measure and Iterate</h4>
+                        <p>Track how intent-triggered actions perform vs. baseline. Are intent-prioritized accounts converting better? If not, refine your topics and workflows.</p>
+                    </li>
+                </ol>
+
+                <h2>Common Intent Data Mistakes</h2>
+
+                <div class="warning-box">
+                    <h4>⚠️ Pitfalls to Avoid</h4>
+                    <ul>
+                        <li><strong>Treating intent as certainty:</strong> An intent signal means research activity, not purchase intent. Don't assume they're ready to buy.</li>
+                        <li><strong>Topics too broad:</strong> Generic topics generate noise. "Marketing" could mean anything; "marketing automation software comparison" is actionable.</li>
+                        <li><strong>Ignoring first-party data:</strong> Third-party intent is useful, but your own website data is more accurate. Don't neglect it.</li>
+                        <li><strong>Not combining with firmographics:</strong> Intent from a company that doesn't fit your ICP isn't valuable. Filter by fit.</li>
+                        <li><strong>Expecting instant results:</strong> Intent data improves prioritization; it doesn't create demand that doesn't exist.</li>
+                    </ul>
+                </div>
+
+                <h2>Combining Intent with Enrichment</h2>
+
+                <p>Intent data tells you who's researching. <a href="/resources/what-is-data-enrichment.html">Enrichment data</a> tells you who they are. Together, they're powerful:</p>
+
+                <ul>
+                    <li><strong>Filter by fit:</strong> Only surface intent from companies matching your ICP</li>
+                    <li><strong>Add contacts:</strong> Intent is account-level; enrichment provides people to reach</li>
+                    <li><strong>Personalize outreach:</strong> Use firmographics to tailor messaging for intent-showing accounts</li>
+                    <li><strong>Score more accurately:</strong> Combine intent signals with firmographic fit for better lead scoring</li>
+                </ul>
+
+                <div class="tip-box">
+                    <h4>💡 The Intent + Enrichment Stack</h4>
+                    <p>Best practice: Use intent to identify in-market accounts, enrichment to ensure they fit your ICP and to find contacts, then trigger personalized outreach. Intent without contacts is frustrating; contacts without intent is cold outreach.</p>
+                </div>
+
+                <h2>Intent Data and Privacy</h2>
+
+                <p>Intent data raises legitimate privacy questions:</p>
+
+                <ul>
+                    <li><strong>How is it collected?</strong> Reputable providers use consent-based methods (co-ops, first-party publisher relationships). Some use more questionable methods.</li>
+                    <li><strong>Is it GDPR compliant?</strong> Company-level intent (not individual tracking) is generally acceptable. Individual-level intent requires more care.</li>
+                    <li><strong>Cookie deprecation impact:</strong> Third-party cookie death affects some intent methodologies. Ask providers how they're adapting.</li>
+                </ul>
+
+                <p>Due diligence questions for providers:</p>
+                <ul>
+                    <li>Where does your data come from?</li>
+                    <li>What consent mechanisms are in place?</li>
+                    <li>How are you handling cookie deprecation?</li>
+                    <li>Can you provide a Data Processing Agreement (DPA)?</li>
+                </ul>
+
+                <h2>Is Intent Data Worth It?</h2>
+
+                <p>Intent data works best when:</p>
+
+                <ul>
+                    <li>You have a defined ICP to filter against</li>
+                    <li>You have the resources to act on signals</li>
+                    <li>Your sales cycle is long enough that early identification matters</li>
+                    <li>You're doing ABM or targeted outbound</li>
+                </ul>
+
+                <p>Intent data may not be worth it when:</p>
+
+                <ul>
+                    <li>You're purely inbound and handling demand you already have</li>
+                    <li>Your market is too niche for providers to have coverage</li>
+                    <li>You don't have workflows to act on the data</li>
+                    <li>Your budget is better spent on other acquisition channels</li>
+                </ul>
+
+                <div class="cta-box">
+                    <h3>Ready to Add Intent to Your Data Strategy?</h3>
+                    <p>We help companies combine intent data with enrichment for effective ABM and outbound programs. Get a free assessment of your current setup.</p>
+                    <a href="/assessment/" class="cta-button">Get Free Assessment</a>
+                </div>
+
+                <section class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What is B2B intent data?</div>
+                        <div class="faq-answer">B2B intent data is information that signals when companies are actively researching or considering a purchase. It includes signals like content consumption (whitepapers, blog posts), search behavior, product review site activity, and technology research. Intent data helps sales and marketing identify accounts that are "in-market" before they raise their hand.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What's the difference between first-party and third-party intent data?</div>
+                        <div class="faq-answer">First-party intent data comes from your own properties—website visits, content downloads, email engagement. Third-party intent data comes from external sources tracking research behavior across the web—content sites, review platforms, and data co-ops. First-party is more accurate but limited to known visitors; third-party reveals accounts researching before they visit your site.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How accurate is intent data?</div>
+                        <div class="faq-answer">Intent data accuracy varies by provider and signal type. First-party data (your own website) is most accurate. Third-party data accuracy depends on the provider's methodology—Bombora's co-op model is considered reliable, while some scraped data is less accurate. Intent data works best as a prioritization signal, not a guarantee of purchase interest.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What are the best intent data providers?</div>
+                        <div class="faq-answer">Top intent data providers include Bombora (largest B2B intent co-op), 6sense (AI-powered intent and ABM), G2 (software buyer intent), TrustRadius (enterprise software intent), and ZoomInfo (intent combined with contact data). The best choice depends on your industry, target market, and existing tech stack.</div>
+                    </div>
+                </section>
+
+                <section class="related-articles">
+                    <h2>Related Articles</h2>
+                    <div class="related-grid">
+                        <a href="/resources/abm-data-strategy.html" class="related-card">
+                            <h4>ABM Data Strategy</h4>
+                            <p>How to build target account lists that convert.</p>
+                        </a>
+                        <a href="/resources/lead-scoring-with-enriched-data.html" class="related-card">
+                            <h4>Lead Scoring with Enriched Data</h4>
+                            <p>Build models combining fit, engagement, and intent.</p>
+                        </a>
+                        <a href="/resources/what-is-data-enrichment.html" class="related-card">
+                            <h4>What is Data Enrichment?</h4>
+                            <p>The complete guide to enriching your lead and account data.</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/js/components.js"></script>
+</body>
+</html>
