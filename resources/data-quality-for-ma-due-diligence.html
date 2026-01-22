@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Quality for M&A Due Diligence: What Acquirers Need to Know | Verum</title>
+    <meta name="description" content="Why data quality can make or break M&A deals. Learn how to assess customer data health during due diligence and avoid post-acquisition integration nightmares.">
+    <meta name="keywords" content="M&A data quality, due diligence data, acquisition data assessment, CRM data M&A, customer data valuation, M&A integration, data due diligence">
+    <link rel="canonical" href="https://veruminc.com/resources/data-quality-for-ma-due-diligence.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Data Quality for M&A Due Diligence: What Acquirers Need to Know">
+    <meta property="og:description" content="Why data quality can make or break M&A deals. Learn how to assess customer data health during due diligence.">
+    <meta property="og:url" content="https://veruminc.com/resources/data-quality-for-ma-due-diligence.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://veruminc.com/images/og-ma-data-quality.jpg">
+    <meta property="og:site_name" content="Verum">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data Quality for M&A Due Diligence: What Acquirers Need to Know">
+    <meta name="twitter:description" content="Why data quality can make or break M&A deals. Learn how to assess customer data health during due diligence.">
+    <meta name="twitter:image" content="https://veruminc.com/images/og-ma-data-quality.jpg">
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Data Quality for M&A Due Diligence: What Acquirers Need to Know",
+        "description": "Why data quality can make or break M&A deals. Learn how to assess customer data health during due diligence and avoid post-acquisition integration nightmares.",
+        "author": {
+            "@type": "Organization",
+            "name": "Verum",
+            "url": "https://veruminc.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Verum",
+            "url": "https://veruminc.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://veruminc.com/images/verum-logo.png"
+            }
+        },
+        "datePublished": "2026-01-22",
+        "dateModified": "2026-01-22",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://veruminc.com/resources/data-quality-for-ma-due-diligence.html"
+        },
+        "image": "https://veruminc.com/images/og-ma-data-quality.jpg"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why does data quality matter in M&A due diligence?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Data quality directly impacts deal valuation and post-acquisition success. Poor customer data leads to inflated customer counts, overstated revenue projections, and costly integration failures. Studies show that 70% of M&A deals fail to achieve expected synergies, with data integration issues being a leading cause."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What data quality metrics should be assessed during M&A due diligence?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Key metrics include duplicate rate (typically 10-30% in unmanaged databases), contact validity (email deliverability, phone connectivity), data completeness (percentage of records with key fields populated), data freshness (age since last verification), and customer overlap (between acquirer and target)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does data quality affect M&A deal valuation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Data quality issues can significantly impact valuation. Duplicate customers inflate customer counts and LTV calculations. Invalid contacts reduce the actual reachable customer base. Missing data fields limit cross-sell opportunities. Acquirers should apply a 'data quality discount' to valuations based on assessment findings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are common data integration challenges in M&A?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Common challenges include duplicate customer records across systems (20-40% overlap is typical), incompatible data schemas, missing fields required by the acquirer's systems, data quality gaps that compound when merged, and privacy/consent complications when combining databases."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "XXXXXXXXXX");
+    </script>
+
+    <style>
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .article-category {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .article-body h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .article-body h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .article-body p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .article-body ul, .article-body ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .key-stat {
+            background: linear-gradient(135deg, var(--accent-light) 0%, #e8f4f8 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .key-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .key-stat-text {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-section {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .checklist-section h3 {
+            margin-top: 0;
+            color: var(--text-primary);
+        }
+
+        .checklist-item {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-icon {
+            color: var(--accent);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .checklist-content strong {
+            display: block;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .checklist-content span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .impact-card.negative {
+            border-left: 4px solid #ef4444;
+        }
+
+        .impact-card.positive {
+            border-left: 4px solid #22c55e;
+        }
+
+        .impact-card h4 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .impact-card p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        .metric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.95rem;
+        }
+
+        .metric-table th {
+            background: var(--accent);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .metric-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        .metric-table tr:hover {
+            background: var(--accent-light);
+        }
+
+        .score-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .score-good {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .score-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .score-bad {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            transform: translateX(-5px);
+        }
+
+        .timeline-item h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+
+        .timeline-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: #92400e;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-box p {
+            color: #78350f;
+            margin-bottom: 0;
+        }
+
+        .case-study {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .case-study h4 {
+            color: #0369a1;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .case-study p {
+            color: #0c4a6e;
+        }
+
+        .case-study ul {
+            color: #0c4a6e;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--accent) 0%, #0891b2 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .cta-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--accent);
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--text-secondary);
+        }
+
+        .related-articles {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .related-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .related-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .related-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="article-content">
+        <nav class="breadcrumb">
+            <a href="/">Home</a> <span>/</span>
+            <a href="/resources/">Resources</a> <span>/</span>
+            <span>Data Quality for M&A Due Diligence</span>
+        </nav>
+
+        <article>
+            <header class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">Strategy</span>
+                    <span>January 22, 2026</span>
+                    <span>13 min read</span>
+                </div>
+                <h1>Data Quality for M&A Due Diligence: What Acquirers Need to Know</h1>
+                <p class="article-intro">You're acquiring a company for its customer base. But how many of those "customers" are duplicates, invalid contacts, or churned accounts still sitting in the CRM? Data quality issues discovered post-close can derail integration plans and destroy deal value.</p>
+            </header>
+
+            <div class="article-body">
+                <div class="key-stat">
+                    <span class="key-stat-number">70%</span>
+                    <span class="key-stat-text">of M&A deals fail to achieve expected synergies. Data integration issues are consistently cited as a leading cause.</span>
+                </div>
+
+                <p>Financial due diligence catches obvious problems. Legal due diligence uncovers contractual risks. But data due diligence—a systematic assessment of the target's customer and operational data—is often treated as an afterthought.</p>
+
+                <p>This is a mistake. In the digital economy, customer data is often the asset being acquired. If that data is riddled with duplicates, missing fields, and invalid contacts, you're not getting what you paid for.</p>
+
+                <h2>Why Data Quality Matters in M&A</h2>
+
+                <p>Data quality issues impact M&A deals at every stage:</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card negative">
+                        <h4>Inflated Valuations</h4>
+                        <p>Duplicate records inflate customer counts. A company claiming 100,000 customers might have 70,000 unique customers after deduplication.</p>
+                    </div>
+
+                    <div class="impact-card negative">
+                        <h4>Overstated Revenue Projections</h4>
+                        <p>LTV calculations based on dirty data overestimate future revenue. Churned customers still in the database skew retention metrics.</p>
+                    </div>
+
+                    <div class="impact-card negative">
+                        <h4>Integration Nightmares</h4>
+                        <p>Merging two CRMs with overlapping, inconsistent data creates compounding problems. Customer records become unreliable.</p>
+                    </div>
+
+                    <div class="impact-card negative">
+                        <h4>Customer Experience Failures</h4>
+                        <p>Duplicate communications, incorrect information, and operational errors damage customer relationships post-acquisition.</p>
+                    </div>
+                </div>
+
+                <h2>The Data Quality Due Diligence Checklist</h2>
+
+                <div class="checklist-section">
+                    <h3>Pre-Close Assessment Areas</h3>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div class="checklist-content">
+                            <strong>Duplicate Analysis</strong>
+                            <span>What percentage of customer records are duplicates? Typical ranges: 10-30% in unmanaged databases.</span>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div class="checklist-content">
+                            <strong>Contact Validity</strong>
+                            <span>What percentage of email addresses are deliverable? Phone numbers connectable? Addresses valid?</span>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div class="checklist-content">
+                            <strong>Data Completeness</strong>
+                            <span>What percentage of records have all required fields populated? Key fields: email, phone, company, job title.</span>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div class="checklist-content">
+                            <strong>Data Freshness</strong>
+                            <span>When was customer data last verified or updated? <a href="/resources/what-is-b2b-data-decay.html">B2B data decays at 25-30% annually</a>.</span>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div class="checklist-content">
+                            <strong>Customer Overlap</strong>
+                            <span>How many of the target's customers are already your customers? This affects cross-sell opportunity sizing.</span>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div class="checklist-content">
+                            <strong>Customer Status Accuracy</strong>
+                            <span>Are active/churned statuses accurate? Many databases contain "zombie" customers who churned but weren't updated.</span>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div class="checklist-content">
+                            <strong>Data Governance</strong>
+                            <span>What governance processes exist? Who owns data quality? Are there documented standards?</span>
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">☐</span>
+                        <div class="checklist-content">
+                            <strong>Consent & Compliance</strong>
+                            <span>What consent records exist for marketing communications? Are they GDPR/CCPA compliant?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Key Metrics to Request</h2>
+
+                <p>During due diligence, request these specific data quality metrics from the target:</p>
+
+                <table class="metric-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Good</th>
+                            <th>Warning</th>
+                            <th>Red Flag</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Duplicate Rate</strong></td>
+                            <td><span class="score-badge score-good">&lt;5%</span></td>
+                            <td><span class="score-badge score-warning">5-15%</span></td>
+                            <td><span class="score-badge score-bad">&gt;15%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email Deliverability</strong></td>
+                            <td><span class="score-badge score-good">&gt;95%</span></td>
+                            <td><span class="score-badge score-warning">85-95%</span></td>
+                            <td><span class="score-badge score-bad">&lt;85%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Key Field Completeness</strong></td>
+                            <td><span class="score-badge score-good">&gt;90%</span></td>
+                            <td><span class="score-badge score-warning">70-90%</span></td>
+                            <td><span class="score-badge score-bad">&lt;70%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Age (% updated in 12mo)</strong></td>
+                            <td><span class="score-badge score-good">&gt;60%</span></td>
+                            <td><span class="score-badge score-warning">30-60%</span></td>
+                            <td><span class="score-badge score-bad">&lt;30%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Customer Overlap</strong></td>
+                            <td><span class="score-badge score-good">&lt;10%</span></td>
+                            <td><span class="score-badge score-warning">10-25%</span></td>
+                            <td><span class="score-badge score-bad">&gt;25%</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <h4>⚠️ If They Can't Provide These Metrics</h4>
+                    <p>If the target cannot provide data quality metrics, that itself is a red flag. It indicates either poor data governance or data quality issues they don't want to reveal. Request raw data access to conduct your own assessment.</p>
+                </div>
+
+                <h2>Impact on Deal Valuation</h2>
+
+                <p>Data quality issues should directly impact how you value the deal. Here's a framework for quantifying the impact:</p>
+
+                <h3>Customer Count Adjustment</h3>
+                <p>If the target claims 100,000 customers but due diligence reveals a 20% duplicate rate, the actual customer count is 80,000. If 15% of remaining contacts are invalid, you're down to 68,000 reachable customers.</p>
+
+                <p><strong>Formula:</strong> Reported Customers × (1 - Duplicate Rate) × (1 - Invalid Contact Rate) = Actual Customers</p>
+
+                <h3>LTV Adjustment</h3>
+                <p>Customer Lifetime Value calculations are only as good as the underlying data. If customer status data is unreliable, retention rates may be overstated. Apply a discount based on data quality confidence.</p>
+
+                <h3>Integration Cost Addition</h3>
+                <p>Poor data quality increases integration costs. For a typical mid-market acquisition:</p>
+
+                <ul>
+                    <li><strong>Good data quality:</strong> 2-4 weeks of data integration work</li>
+                    <li><strong>Moderate data quality:</strong> 6-10 weeks, plus ongoing cleanup</li>
+                    <li><strong>Poor data quality:</strong> 3-6 months, potential system re-implementation</li>
+                </ul>
+
+                <div class="case-study">
+                    <h4>Case Study: The 30% Haircut</h4>
+                    <p>A SaaS company was acquired for its 50,000-customer base. Post-close data analysis revealed:</p>
+                    <ul>
+                        <li>18% duplicate rate (9,000 fake customers)</li>
+                        <li>12% of emails were invalid or role-based</li>
+                        <li>25% of "active" customers hadn't logged in for 18+ months</li>
+                        <li>35% overlap with the acquirer's existing customer base</li>
+                    </ul>
+                    <p>The "50,000 customers" turned out to be roughly 25,000 unique, reachable, non-overlapping customers. The acquirer's board demanded answers about why this wasn't caught in due diligence.</p>
+                </div>
+
+                <h2>The Due Diligence Timeline</h2>
+
+                <p>Data quality assessment should be integrated into your standard due diligence process:</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Letter of Intent (LOI) Stage</h4>
+                        <p>Request high-level data quality metrics. If they can't provide basic duplicate rates and completeness stats, that's an early warning sign.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Early Due Diligence</h4>
+                        <p>Request anonymized sample data (1,000-5,000 records) to conduct independent quality assessment. Validate their reported metrics.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Deep Due Diligence</h4>
+                        <p>Conduct full customer overlap analysis. Assess data governance documentation. Interview data owners about processes and known issues.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Pre-Close</h4>
+                        <p>Finalize integration plan with realistic timelines based on data quality findings. Negotiate data cleanup escrow or price adjustments if needed.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h4>Post-Close (Day 1-30)</h4>
+                        <p>Execute data cleanup before attempting full integration. Verify actuals against due diligence findings.</p>
+                    </div>
+                </div>
+
+                <h2>Common Data Quality Red Flags</h2>
+
+                <p>Watch for these warning signs during due diligence:</p>
+
+                <h3>1. "We Don't Track That"</h3>
+                <p>If the target can't provide basic data quality metrics, their data governance is likely immature. Expect significant cleanup work post-acquisition.</p>
+
+                <h3>2. Inconsistent Numbers</h3>
+                <p>If customer counts differ significantly between sales materials, the CRM, and billing systems, data integrity is compromised.</p>
+
+                <h3>3. No Deduplication History</h3>
+                <p>If they've never run a formal deduplication project, duplicate rates are likely high. Any company with 3+ years of CRM history and no dedup has a problem.</p>
+
+                <h3>4. High Marketing Contact Churn</h3>
+                <p>If email bounce rates exceed 5% or unsubscribe rates are unusually high, the database likely contains significant invalid data.</p>
+
+                <h3>5. No Data Governance Role</h3>
+                <p>If no one owns data quality—no ops person, no admin, no governance committee—data quality has been an afterthought.</p>
+
+                <h3>6. Multiple Systems of Record</h3>
+                <p>If customer data lives in multiple systems (CRM, billing, support) without clear synchronization, expect reconciliation nightmares.</p>
+
+                <h2>Negotiating Data Quality Protections</h2>
+
+                <p>If due diligence reveals data quality issues, you have several options:</p>
+
+                <h3>Price Adjustment</h3>
+                <p>Negotiate a lower purchase price based on the actual (not reported) customer base and projected cleanup costs. Use your data quality assessment to justify the adjustment.</p>
+
+                <h3>Escrow for Data Cleanup</h3>
+                <p>Hold a portion of the purchase price in escrow, released upon achieving specific data quality benchmarks post-close.</p>
+
+                <h3>Representation & Warranty</h3>
+                <p>Include specific representations about data quality in the purchase agreement. Define metrics and thresholds. If post-close reality differs materially, you have recourse.</p>
+
+                <h3>Transition Services</h3>
+                <p>Require the seller to provide resources for data cleanup during a transition period. They know the data best and should help fix it.</p>
+
+                <h2>Post-Close: Integration Best Practices</h2>
+
+                <p>Even with good due diligence, data integration requires careful execution:</p>
+
+                <h3>1. Clean Before You Merge</h3>
+                <p>Don't merge dirty data into your clean system. <a href="/resources/data-cleaning-vs-data-enrichment.html">Clean the target's data first</a>, then integrate. It's easier to clean data in isolation than to untangle merged messes.</p>
+
+                <h3>2. Define the Golden Record</h3>
+                <p>When duplicates exist across both systems, decide upfront which record wins. Usually it's whichever has more recent activity, but establish clear rules.</p>
+
+                <h3>3. Preserve History</h3>
+                <p>Don't delete data during cleanup—archive it. You may need it for audit trails, dispute resolution, or to recover information that was incorrectly deemed duplicate.</p>
+
+                <h3>4. Communicate with Customers</h3>
+                <p>If customers exist in both databases, they may receive duplicate communications during integration. Proactively communicate about the acquisition and what to expect.</p>
+
+                <h3>5. Measure Integration Success</h3>
+                <p>Track data quality metrics throughout integration. If quality is declining, stop and reassess before proceeding.</p>
+
+                <h2>Building Data Quality Into Your M&A Playbook</h2>
+
+                <p>For organizations that do frequent acquisitions, systematize data quality due diligence:</p>
+
+                <ul>
+                    <li><strong>Create a standard data request list</strong> – Same metrics requested from every target</li>
+                    <li><strong>Develop assessment tools</strong> – Scripts or processes to quickly analyze sample data</li>
+                    <li><strong>Train deal teams</strong> – Ensure M&A leads understand data quality impacts</li>
+                    <li><strong>Document playbooks</strong> – Standard integration approaches based on data quality tiers</li>
+                    <li><strong>Build internal expertise</strong> – Have data quality specialists available for due diligence support</li>
+                </ul>
+
+                <div class="cta-box">
+                    <h3>Planning an Acquisition?</h3>
+                    <p>Our team can help you assess target data quality before you close—and clean it up efficiently after. Get a free consultation on your M&A data strategy.</p>
+                    <a href="/assessment/" class="cta-button">Get Free Assessment</a>
+                </div>
+
+                <section class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Why does data quality matter in M&A due diligence?</div>
+                        <div class="faq-answer">Data quality directly impacts deal valuation and post-acquisition success. Poor customer data leads to inflated customer counts, overstated revenue projections, and costly integration failures. Studies show that 70% of M&A deals fail to achieve expected synergies, with data integration issues being a leading cause.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What data quality metrics should be assessed during M&A due diligence?</div>
+                        <div class="faq-answer">Key metrics include duplicate rate (typically 10-30% in unmanaged databases), contact validity (email deliverability, phone connectivity), data completeness (percentage of records with key fields populated), data freshness (age since last verification), and customer overlap (between acquirer and target).</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How does data quality affect M&A deal valuation?</div>
+                        <div class="faq-answer">Data quality issues can significantly impact valuation. Duplicate customers inflate customer counts and LTV calculations. Invalid contacts reduce the actual reachable customer base. Missing data fields limit cross-sell opportunities. Acquirers should apply a "data quality discount" to valuations based on assessment findings.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What are common data integration challenges in M&A?</div>
+                        <div class="faq-answer">Common challenges include duplicate customer records across systems (20-40% overlap is typical), incompatible data schemas, missing fields required by the acquirer's systems, data quality gaps that compound when merged, and privacy/consent complications when combining databases.</div>
+                    </div>
+                </section>
+
+                <section class="related-articles">
+                    <h2>Related Articles</h2>
+                    <div class="related-grid">
+                        <a href="/resources/cost-of-bad-crm-data.html" class="related-card">
+                            <h4>The Real Cost of Bad CRM Data</h4>
+                            <p>Quantifying the financial impact of data quality issues on your business.</p>
+                        </a>
+                        <a href="/resources/crm-data-quality-checklist.html" class="related-card">
+                            <h4>CRM Data Quality Checklist</h4>
+                            <p>25 essential checks for assessing and maintaining data quality.</p>
+                        </a>
+                        <a href="/resources/how-to-build-data-hygiene-strategy.html" class="related-card">
+                            <h4>How to Build a Data Hygiene Strategy</h4>
+                            <p>A framework for maintaining clean data long-term.</p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/js/components.js"></script>
+</body>
+</html>
