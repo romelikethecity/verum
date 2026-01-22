@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Enrichment API Integration: A Technical Guide for Developers | Verum</title>
+  <meta name="description" content="Technical guide to integrating data enrichment APIs. Covers authentication, rate limiting, error handling, webhooks, and best practices for Clearbit, ZoomInfo, and other providers.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-enrichment-api-integration.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-enrichment-api-integration.html">
+  <meta property="og:title" content="Data Enrichment API Integration: A Technical Guide for Developers">
+  <meta property="og:description" content="Technical guide to integrating data enrichment APIs. Covers authentication, rate limiting, error handling, and best practices.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Enrichment API Integration: A Technical Guide for Developers">
+  <meta name="twitter:description" content="Technical guide to integrating data enrichment APIs. Covers authentication, rate limiting, error handling, and best practices.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Data Enrichment API Integration: A Technical Guide for Developers",
+    "description": "Technical guide to integrating data enrichment APIs. Covers authentication, rate limiting, error handling, webhooks, and best practices.",
+    "image": "https://veruminc.com/assets/social-preview.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum",
+      "url": "https://veruminc.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://veruminc.com/assets/logos/logos-svg/verum-logo-dark-bg.svg"
+      }
+    },
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-enrichment-api-integration.html"
+    },
+    "proficiencyLevel": "Expert"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What authentication methods do enrichment APIs use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most enrichment APIs use API key authentication via headers (Authorization: Bearer or X-API-Key). Some enterprise providers also support OAuth 2.0 for more granular access control. Always use HTTPS and never expose API keys in client-side code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should I handle rate limits in enrichment APIs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Implement exponential backoff with jitter when you receive 429 responses. Most APIs return rate limit headers (X-RateLimit-Remaining, X-RateLimit-Reset) that you can use to proactively throttle requests. For bulk operations, use batch endpoints or implement a queue system."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between synchronous and asynchronous enrichment APIs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Synchronous APIs return enriched data immediately in the response, ideal for real-time lookups. Asynchronous APIs accept requests and deliver results via webhooks or polling, better for bulk operations. Many providers offer both modes depending on the endpoint."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I test enrichment API integrations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use sandbox environments when available. Create mock responses for unit tests. Use rate-limited test accounts for integration tests. Always test error scenarios including timeouts, rate limits, and malformed responses. Consider using tools like VCR to record and replay API responses."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+    .article-header {
+      margin-bottom: 3rem;
+    }
+    .article-category {
+      display: inline-block;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      background: rgba(45, 212, 191, 0.15);
+      color: var(--color-teal);
+    }
+    .article-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--color-text-primary);
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      color: var(--color-text-primary);
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--color-text-primary);
+    }
+    .article-content h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-primary);
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+    .article-content a {
+      color: var(--color-teal);
+      text-decoration: none;
+    }
+    .article-content a:hover {
+      text-decoration: underline;
+    }
+    .callout {
+      background: rgba(45, 212, 191, 0.08);
+      border-left: 3px solid var(--color-teal);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+    .callout-warning {
+      background: rgba(251, 191, 36, 0.08);
+      border-left-color: #fbbf24;
+    }
+    .callout-danger {
+      background: rgba(239, 68, 68, 0.08);
+      border-left-color: #ef4444;
+    }
+    .code-block {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+    }
+    .code-block pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .code-block code {
+      color: var(--color-text-secondary);
+    }
+    .code-block .comment {
+      color: var(--color-text-muted);
+    }
+    .code-block .keyword {
+      color: #c678dd;
+    }
+    .code-block .string {
+      color: #98c379;
+    }
+    .code-block .function {
+      color: #61afef;
+    }
+    .code-block .number {
+      color: #d19a66;
+    }
+    .code-label {
+      display: inline-block;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      background: rgba(97, 175, 239, 0.15);
+      color: #61afef;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    }
+    .inline-code {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+      font-size: 0.8125rem;
+      color: var(--color-text-primary);
+    }
+    .architecture-diagram {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .diagram-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .diagram-box {
+      background: var(--color-bg-dark);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      min-width: 120px;
+    }
+    .diagram-box--primary {
+      border-color: var(--color-teal);
+      color: var(--color-teal);
+    }
+    .diagram-box--secondary {
+      border-color: #61afef;
+      color: #61afef;
+    }
+    .diagram-arrow {
+      color: var(--color-text-muted);
+      font-size: 1.25rem;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.875rem;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .comparison-table th {
+      background: var(--color-bg-card);
+      color: var(--color-text-primary);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .comparison-table td {
+      color: var(--color-text-secondary);
+    }
+    .comparison-table tr:hover td {
+      background: rgba(45, 212, 191, 0.03);
+    }
+    .endpoint-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+    }
+    .endpoint-method {
+      display: inline-block;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+      font-weight: 600;
+      font-family: 'SF Mono', 'Monaco', monospace;
+    }
+    .endpoint-method--get {
+      background: rgba(34, 197, 94, 0.15);
+      color: #22c55e;
+    }
+    .endpoint-method--post {
+      background: rgba(59, 130, 246, 0.15);
+      color: #3b82f6;
+    }
+    .endpoint-path {
+      font-family: 'SF Mono', 'Monaco', monospace;
+      font-size: 0.875rem;
+      color: var(--color-text-primary);
+    }
+    .endpoint-desc {
+      color: var(--color-text-secondary);
+      font-size: 0.8125rem;
+      margin-top: 0.5rem;
+    }
+    .status-badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .status-badge--success {
+      background: rgba(34, 197, 94, 0.15);
+      color: #22c55e;
+    }
+    .status-badge--warning {
+      background: rgba(251, 191, 36, 0.15);
+      color: #fbbf24;
+    }
+    .status-badge--error {
+      background: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
+    }
+    .toc {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .toc-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .toc-list li {
+      margin-bottom: 0.5rem;
+    }
+    .toc-list a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+    .toc-list a:hover {
+      color: var(--color-teal);
+    }
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+    }
+    .faq-answer {
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+    .related-articles {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .related-articles h3 {
+      margin-top: 0;
+    }
+    .related-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 640px) {
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .related-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: 1rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--color-teal);
+      text-decoration: none;
+    }
+    .related-card__title {
+      color: var(--color-text-primary);
+      font-weight: 500;
+      font-size: 0.9375rem;
+      margin-bottom: 0.25rem;
+    }
+    .related-card__excerpt {
+      color: var(--color-text-muted);
+      font-size: 0.8125rem;
+    }
+    .cta-box {
+      background: linear-gradient(135deg, rgba(45, 212, 191, 0.1) 0%, rgba(45, 212, 191, 0.02) 100%);
+      border: 1px solid rgba(45, 212, 191, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .cta-box h3 {
+      margin-top: 0;
+      color: var(--color-text-primary);
+    }
+    .cta-box p {
+      color: var(--color-text-secondary);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-button {
+      display: inline-block;
+      background: var(--color-teal);
+      color: var(--color-bg-dark);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 0.5rem;
+      transition: opacity 0.2s;
+    }
+    .cta-button:hover {
+      opacity: 0.9;
+      text-decoration: none;
+    }
+    @media (max-width: 640px) {
+      .article-title {
+        font-size: 1.75rem;
+      }
+      .comparison-table {
+        font-size: 0.75rem;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="article-content">
+      <header class="article-header">
+        <span class="article-category">Technical Guide</span>
+        <h1 class="article-title">Data Enrichment API Integration: A Technical Guide for Developers</h1>
+        <p class="article-meta">18 min read</p>
+      </header>
+
+      <nav class="toc">
+        <p class="toc-title">Table of Contents</p>
+        <ul class="toc-list">
+          <li><a href="#architecture">Integration Architecture Patterns</a></li>
+          <li><a href="#authentication">Authentication & Security</a></li>
+          <li><a href="#endpoints">Common Endpoints & Data Models</a></li>
+          <li><a href="#rate-limiting">Rate Limiting & Throttling</a></li>
+          <li><a href="#error-handling">Error Handling & Retries</a></li>
+          <li><a href="#webhooks">Webhooks & Async Processing</a></li>
+          <li><a href="#caching">Caching Strategies</a></li>
+          <li><a href="#testing">Testing & Monitoring</a></li>
+          <li><a href="#providers">Provider-Specific Notes</a></li>
+        </ul>
+      </nav>
+
+      <p>Integrating data enrichment APIs into your application seems straightforward until you hit your first rate limit, deal with inconsistent response formats, or try to handle partial matches gracefully. This guide covers the technical patterns and gotchas that turn a fragile integration into a robust one.</p>
+
+      <p>We'll focus on practical implementation details: authentication patterns, error handling, webhooks, caching, and the provider-specific quirks that documentation often glosses over.</p>
+
+      <h2 id="architecture">Integration Architecture Patterns</h2>
+
+      <p>Before writing code, decide on your integration pattern. The right choice depends on your use case, volume, and latency requirements.</p>
+
+      <h3>Pattern 1: Synchronous Real-Time</h3>
+
+      <p>Best for: Form submissions, live lookups, low-volume enrichment</p>
+
+      <div class="architecture-diagram">
+        <div class="diagram-row">
+          <div class="diagram-box">User Request</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box diagram-box--primary">Your API</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box diagram-box--secondary">Enrichment API</div>
+        </div>
+        <div class="diagram-row">
+          <div class="diagram-box diagram-box--secondary">Enriched Response</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box diagram-box--primary">Your API</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box">User Response</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <span class="code-label">Node.js / Express</span>
+        <pre><code><span class="keyword">async function</span> <span class="function">enrichContact</span>(email) {
+  <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(<span class="string">'https://api.enrichment.com/v1/person'</span>, {
+    method: <span class="string">'POST'</span>,
+    headers: {
+      <span class="string">'Authorization'</span>: <span class="string">`Bearer ${process.env.ENRICHMENT_API_KEY}`</span>,
+      <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>
+    },
+    body: JSON.stringify({ email })
+  });
+
+  <span class="keyword">if</span> (!response.ok) {
+    <span class="keyword">throw new</span> EnrichmentError(response.status, <span class="keyword">await</span> response.text());
+  }
+
+  <span class="keyword">return</span> response.json();
+}</code></pre>
+      </div>
+
+      <p><strong>Pros:</strong> Simple to implement, immediate feedback</p>
+      <p><strong>Cons:</strong> Adds latency to user requests, vulnerable to provider outages</p>
+
+      <h3>Pattern 2: Asynchronous Queue-Based</h3>
+
+      <p>Best for: Bulk enrichment, background processing, high-volume operations</p>
+
+      <div class="architecture-diagram">
+        <div class="diagram-row">
+          <div class="diagram-box">Records</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box diagram-box--primary">Queue</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box diagram-box--secondary">Worker</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box">Enrichment API</div>
+        </div>
+        <div class="diagram-row">
+          <div class="diagram-box">Enriched Response</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box diagram-box--secondary">Worker</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box diagram-box--primary">Database</div>
+        </div>
+      </div>
+
+      <div class="code-block">
+        <span class="code-label">Python / Celery</span>
+        <pre><code><span class="keyword">from</span> celery <span class="keyword">import</span> Celery
+<span class="keyword">from</span> tenacity <span class="keyword">import</span> retry, stop_after_attempt, wait_exponential
+
+app = Celery(<span class="string">'enrichment'</span>)
+
+<span class="function">@app.task</span>(bind=<span class="keyword">True</span>, max_retries=<span class="number">3</span>)
+<span class="function">@retry</span>(stop=stop_after_attempt(<span class="number">3</span>), wait=wait_exponential(multiplier=<span class="number">1</span>, max=<span class="number">60</span>))
+<span class="keyword">def</span> <span class="function">enrich_contact</span>(self, contact_id, email):
+    <span class="keyword">try</span>:
+        response = enrichment_client.enrich_person(email=email)
+        update_contact(contact_id, response.data)
+    <span class="keyword">except</span> RateLimitError <span class="keyword">as</span> e:
+        <span class="comment"># Re-queue with delay based on rate limit headers</span>
+        self.retry(countdown=e.retry_after)
+    <span class="keyword">except</span> EnrichmentError <span class="keyword">as</span> e:
+        log_enrichment_failure(contact_id, e)
+        <span class="keyword">raise</span></code></pre>
+      </div>
+
+      <p><strong>Pros:</strong> Handles failures gracefully, scales horizontally, doesn't block users</p>
+      <p><strong>Cons:</strong> More infrastructure, eventual consistency</p>
+
+      <h3>Pattern 3: Webhook-Based</h3>
+
+      <p>Best for: Large batch operations, providers with async-only APIs</p>
+
+      <div class="architecture-diagram">
+        <div class="diagram-row">
+          <div class="diagram-box">Submit Batch</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box diagram-box--secondary">Enrichment API</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box">Job ID</div>
+        </div>
+        <div class="diagram-row" style="margin-top: 1.5rem;">
+          <div class="diagram-box diagram-box--secondary">Enrichment API</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box diagram-box--primary">Your Webhook</div>
+          <span class="diagram-arrow">→</span>
+          <div class="diagram-box">Database</div>
+        </div>
+      </div>
+
+      <p>We'll cover webhook implementation in detail in the <a href="#webhooks">webhooks section</a>.</p>
+
+      <h2 id="authentication">Authentication & Security</h2>
+
+      <h3>API Key Authentication</h3>
+
+      <p>Most enrichment APIs use API key authentication. Common patterns:</p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Header Format</th>
+            <th>Providers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bearer Token</td>
+            <td><span class="inline-code">Authorization: Bearer sk_live_xxx</span></td>
+            <td>Clearbit, Apollo</td>
+          </tr>
+          <tr>
+            <td>API Key Header</td>
+            <td><span class="inline-code">X-API-Key: xxx</span></td>
+            <td>Hunter, Snov.io</td>
+          </tr>
+          <tr>
+            <td>Basic Auth</td>
+            <td><span class="inline-code">Authorization: Basic base64(key:)</span></td>
+            <td>Some legacy APIs</td>
+          </tr>
+          <tr>
+            <td>Query Parameter</td>
+            <td><span class="inline-code">?api_key=xxx</span></td>
+            <td>FullContact (deprecated)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-danger">
+        <p><strong>Security Warning:</strong> Never expose API keys in client-side code. Even "read-only" keys can be abused to exhaust your quota. Always proxy enrichment requests through your backend.</p>
+      </div>
+
+      <h3>Secure Key Management</h3>
+
+      <div class="code-block">
+        <span class="code-label">Best Practices</span>
+        <pre><code><span class="comment">// DON'T: Hardcode keys</span>
+<span class="keyword">const</span> API_KEY = <span class="string">'sk_live_abc123'</span>;  <span class="comment">// Never do this</span>
+
+<span class="comment">// DO: Use environment variables</span>
+<span class="keyword">const</span> API_KEY = process.env.ENRICHMENT_API_KEY;
+
+<span class="comment">// BETTER: Use a secrets manager</span>
+<span class="keyword">const</span> { SecretManagerServiceClient } = require(<span class="string">'@google-cloud/secret-manager'</span>);
+<span class="keyword">const</span> client = <span class="keyword">new</span> SecretManagerServiceClient();
+
+<span class="keyword">async function</span> <span class="function">getApiKey</span>() {
+  <span class="keyword">const</span> [version] = <span class="keyword">await</span> client.accessSecretVersion({
+    name: <span class="string">'projects/my-project/secrets/enrichment-api-key/versions/latest'</span>
+  });
+  <span class="keyword">return</span> version.payload.data.toString();
+}</code></pre>
+      </div>
+
+      <h3>Key Rotation</h3>
+
+      <p>Enterprise providers support multiple API keys for rotation. Implement a rotation strategy:</p>
+
+      <ol>
+        <li>Generate new key in provider dashboard</li>
+        <li>Update secrets manager with new key</li>
+        <li>Deploy with new key</li>
+        <li>Monitor for errors using old key</li>
+        <li>Revoke old key after confirming new key works</li>
+      </ol>
+
+      <h2 id="endpoints">Common Endpoints & Data Models</h2>
+
+      <h3>Person Enrichment</h3>
+
+      <div class="endpoint-card">
+        <span class="endpoint-method endpoint-method--post">POST</span>
+        <span class="endpoint-path">/v1/person/enrich</span>
+        <p class="endpoint-desc">Enrich a person record by email, name + company, or LinkedIn URL</p>
+      </div>
+
+      <div class="code-block">
+        <span class="code-label">Request</span>
+        <pre><code>{
+  <span class="string">"email"</span>: <span class="string">"jane@acme.com"</span>,
+  <span class="comment">// OR</span>
+  <span class="string">"linkedin_url"</span>: <span class="string">"https://linkedin.com/in/janedoe"</span>,
+  <span class="comment">// OR</span>
+  <span class="string">"name"</span>: <span class="string">"Jane Doe"</span>,
+  <span class="string">"company"</span>: <span class="string">"Acme Inc"</span>
+}</code></pre>
+      </div>
+
+      <div class="code-block">
+        <span class="code-label">Response</span>
+        <pre><code>{
+  <span class="string">"id"</span>: <span class="string">"per_abc123"</span>,
+  <span class="string">"email"</span>: <span class="string">"jane@acme.com"</span>,
+  <span class="string">"name"</span>: {
+    <span class="string">"full"</span>: <span class="string">"Jane Doe"</span>,
+    <span class="string">"first"</span>: <span class="string">"Jane"</span>,
+    <span class="string">"last"</span>: <span class="string">"Doe"</span>
+  },
+  <span class="string">"title"</span>: <span class="string">"VP of Engineering"</span>,
+  <span class="string">"seniority"</span>: <span class="string">"vp"</span>,
+  <span class="string">"department"</span>: <span class="string">"engineering"</span>,
+  <span class="string">"phone"</span>: <span class="string">"+1-555-123-4567"</span>,
+  <span class="string">"linkedin"</span>: <span class="string">"https://linkedin.com/in/janedoe"</span>,
+  <span class="string">"company"</span>: {
+    <span class="string">"id"</span>: <span class="string">"com_xyz789"</span>,
+    <span class="string">"name"</span>: <span class="string">"Acme Inc"</span>,
+    <span class="string">"domain"</span>: <span class="string">"acme.com"</span>
+  },
+  <span class="string">"confidence"</span>: <span class="number">0.92</span>,
+  <span class="string">"last_updated"</span>: <span class="string">"2026-01-15T10:30:00Z"</span>
+}</code></pre>
+      </div>
+
+      <h3>Company Enrichment</h3>
+
+      <div class="endpoint-card">
+        <span class="endpoint-method endpoint-method--get">GET</span>
+        <span class="endpoint-path">/v1/company/enrich?domain=acme.com</span>
+        <p class="endpoint-desc">Enrich a company by domain, name, or other identifiers</p>
+      </div>
+
+      <div class="code-block">
+        <span class="code-label">Response</span>
+        <pre><code>{
+  <span class="string">"id"</span>: <span class="string">"com_xyz789"</span>,
+  <span class="string">"name"</span>: <span class="string">"Acme Inc"</span>,
+  <span class="string">"legal_name"</span>: <span class="string">"Acme Incorporated"</span>,
+  <span class="string">"domain"</span>: <span class="string">"acme.com"</span>,
+  <span class="string">"industry"</span>: <span class="string">"Software"</span>,
+  <span class="string">"sub_industry"</span>: <span class="string">"Enterprise Software"</span>,
+  <span class="string">"employee_count"</span>: <span class="number">500</span>,
+  <span class="string">"employee_range"</span>: <span class="string">"201-500"</span>,
+  <span class="string">"revenue"</span>: <span class="number">50000000</span>,
+  <span class="string">"revenue_range"</span>: <span class="string">"$10M-$50M"</span>,
+  <span class="string">"founded_year"</span>: <span class="number">2015</span>,
+  <span class="string">"location"</span>: {
+    <span class="string">"city"</span>: <span class="string">"San Francisco"</span>,
+    <span class="string">"state"</span>: <span class="string">"CA"</span>,
+    <span class="string">"country"</span>: <span class="string">"US"</span>
+  },
+  <span class="string">"technologies"</span>: [<span class="string">"Salesforce"</span>, <span class="string">"HubSpot"</span>, <span class="string">"Slack"</span>],
+  <span class="string">"social"</span>: {
+    <span class="string">"linkedin"</span>: <span class="string">"https://linkedin.com/company/acme"</span>,
+    <span class="string">"twitter"</span>: <span class="string">"https://twitter.com/acme"</span>
+  }
+}</code></pre>
+      </div>
+
+      <h3>Handling Partial Matches</h3>
+
+      <p>Not every enrichment returns complete data. Design your data model to handle partial results:</p>
+
+      <div class="code-block">
+        <span class="code-label">TypeScript</span>
+        <pre><code><span class="keyword">interface</span> EnrichedPerson {
+  email: <span class="keyword">string</span>;
+  name?: {
+    full?: <span class="keyword">string</span>;
+    first?: <span class="keyword">string</span>;
+    last?: <span class="keyword">string</span>;
+  };
+  title?: <span class="keyword">string</span>;
+  phone?: <span class="keyword">string</span>;
+  company?: EnrichedCompany;
+  confidence: <span class="keyword">number</span>;  <span class="comment">// Always present</span>
+  enriched_at: Date;      <span class="comment">// Always present</span>
+  enrichment_source: <span class="keyword">string</span>;  <span class="comment">// Track which provider</span>
+}
+
+<span class="keyword">function</span> <span class="function">mergeEnrichmentData</span>(existing: Contact, enriched: EnrichedPerson): Contact {
+  <span class="comment">// Only overwrite if enriched data exists AND confidence is high enough</span>
+  <span class="keyword">return</span> {
+    ...existing,
+    first_name: enriched.name?.first ?? existing.first_name,
+    last_name: enriched.name?.last ?? existing.last_name,
+    title: enriched.confidence > <span class="number">0.8</span> ? (enriched.title ?? existing.title) : existing.title,
+    phone: enriched.phone ?? existing.phone,
+    enriched_at: enriched.enriched_at,
+    enrichment_confidence: enriched.confidence
+  };
+}</code></pre>
+      </div>
+
+      <h2 id="rate-limiting">Rate Limiting & Throttling</h2>
+
+      <p>Every enrichment API has rate limits. Exceeding them results in <span class="status-badge status-badge--warning">429 Too Many Requests</span> responses and potentially temporary bans.</p>
+
+      <h3>Common Rate Limit Headers</h3>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Header</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="inline-code">X-RateLimit-Limit</span></td>
+            <td>Maximum requests per window</td>
+          </tr>
+          <tr>
+            <td><span class="inline-code">X-RateLimit-Remaining</span></td>
+            <td>Requests left in current window</td>
+          </tr>
+          <tr>
+            <td><span class="inline-code">X-RateLimit-Reset</span></td>
+            <td>Unix timestamp when window resets</td>
+          </tr>
+          <tr>
+            <td><span class="inline-code">Retry-After</span></td>
+            <td>Seconds to wait before retrying (on 429)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Implementing a Rate Limiter</h3>
+
+      <div class="code-block">
+        <span class="code-label">JavaScript - Token Bucket</span>
+        <pre><code><span class="keyword">class</span> <span class="function">RateLimiter</span> {
+  <span class="keyword">constructor</span>(maxRequests, windowMs) {
+    <span class="keyword">this</span>.maxRequests = maxRequests;
+    <span class="keyword">this</span>.windowMs = windowMs;
+    <span class="keyword">this</span>.tokens = maxRequests;
+    <span class="keyword">this</span>.lastRefill = Date.now();
+  }
+
+  <span class="keyword">async</span> <span class="function">acquire</span>() {
+    <span class="keyword">this</span>.refill();
+
+    <span class="keyword">if</span> (<span class="keyword">this</span>.tokens > <span class="number">0</span>) {
+      <span class="keyword">this</span>.tokens--;
+      <span class="keyword">return true</span>;
+    }
+
+    <span class="comment">// Calculate wait time</span>
+    <span class="keyword">const</span> waitTime = <span class="keyword">this</span>.windowMs - (Date.now() - <span class="keyword">this</span>.lastRefill);
+    <span class="keyword">await</span> <span class="keyword">new</span> Promise(resolve => setTimeout(resolve, waitTime));
+    <span class="keyword">return this</span>.acquire();
+  }
+
+  <span class="function">refill</span>() {
+    <span class="keyword">const</span> now = Date.now();
+    <span class="keyword">const</span> elapsed = now - <span class="keyword">this</span>.lastRefill;
+
+    <span class="keyword">if</span> (elapsed >= <span class="keyword">this</span>.windowMs) {
+      <span class="keyword">this</span>.tokens = <span class="keyword">this</span>.maxRequests;
+      <span class="keyword">this</span>.lastRefill = now;
+    }
+  }
+
+  <span class="function">updateFromHeaders</span>(headers) {
+    <span class="keyword">const</span> remaining = parseInt(headers.get(<span class="string">'X-RateLimit-Remaining'</span>), <span class="number">10</span>);
+    <span class="keyword">if</span> (!isNaN(remaining)) {
+      <span class="keyword">this</span>.tokens = remaining;
+    }
+  }
+}
+
+<span class="comment">// Usage</span>
+<span class="keyword">const</span> limiter = <span class="keyword">new</span> RateLimiter(<span class="number">100</span>, <span class="number">60000</span>);  <span class="comment">// 100 requests per minute</span>
+
+<span class="keyword">async function</span> <span class="function">enrichWithRateLimit</span>(email) {
+  <span class="keyword">await</span> limiter.acquire();
+
+  <span class="keyword">const</span> response = <span class="keyword">await</span> fetch(<span class="string">'...'</span>);
+  limiter.updateFromHeaders(response.headers);
+
+  <span class="keyword">return</span> response.json();
+}</code></pre>
+      </div>
+
+      <h3>Batch Endpoint Optimization</h3>
+
+      <p>When available, use batch endpoints to reduce API calls:</p>
+
+      <div class="code-block">
+        <span class="code-label">Batch Request</span>
+        <pre><code><span class="comment">// Instead of 100 individual calls...</span>
+<span class="keyword">for</span> (<span class="keyword">const</span> email <span class="keyword">of</span> emails) {
+  <span class="keyword">await</span> enrichPerson(email);  <span class="comment">// 100 API calls</span>
+}
+
+<span class="comment">// Use a single batch call</span>
+<span class="keyword">const</span> results = <span class="keyword">await</span> fetch(<span class="string">'https://api.enrichment.com/v1/person/bulk'</span>, {
+  method: <span class="string">'POST'</span>,
+  headers: { <span class="string">'Authorization'</span>: <span class="string">`Bearer ${API_KEY}`</span> },
+  body: JSON.stringify({
+    emails: emails,  <span class="comment">// Up to 100 emails per batch</span>
+    webhook_url: <span class="string">'https://yourapp.com/webhooks/enrichment'</span>
+  })
+});  <span class="comment">// 1 API call</span></code></pre>
+      </div>
+
+      <h2 id="error-handling">Error Handling & Retries</h2>
+
+      <h3>Common Error Codes</h3>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>Meaning</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="status-badge status-badge--success">200</span></td>
+            <td>Success (match found)</td>
+            <td>Process response</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-badge--success">202</span></td>
+            <td>Accepted (async processing)</td>
+            <td>Wait for webhook</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-badge--warning">400</span></td>
+            <td>Bad request</td>
+            <td>Fix request, don't retry</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-badge--warning">401</span></td>
+            <td>Invalid API key</td>
+            <td>Check credentials</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-badge--warning">404</span></td>
+            <td>No match found</td>
+            <td>Mark as not enriched</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-badge--warning">422</span></td>
+            <td>Invalid input data</td>
+            <td>Validate input, don't retry</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-badge--warning">429</span></td>
+            <td>Rate limited</td>
+            <td>Backoff and retry</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-badge--error">500</span></td>
+            <td>Server error</td>
+            <td>Retry with backoff</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-badge--error">503</span></td>
+            <td>Service unavailable</td>
+            <td>Retry with backoff</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Exponential Backoff with Jitter</h3>
+
+      <div class="code-block">
+        <span class="code-label">JavaScript</span>
+        <pre><code><span class="keyword">async function</span> <span class="function">enrichWithRetry</span>(email, maxRetries = <span class="number">3</span>) {
+  <span class="keyword">let</span> lastError;
+
+  <span class="keyword">for</span> (<span class="keyword">let</span> attempt = <span class="number">0</span>; attempt < maxRetries; attempt++) {
+    <span class="keyword">try</span> {
+      <span class="keyword">const</span> response = <span class="keyword">await</span> enrichPerson(email);
+      <span class="keyword">return</span> response;
+    } <span class="keyword">catch</span> (error) {
+      lastError = error;
+
+      <span class="comment">// Don't retry client errors (except rate limits)</span>
+      <span class="keyword">if</span> (error.status >= <span class="number">400</span> && error.status < <span class="number">500</span> && error.status !== <span class="number">429</span>) {
+        <span class="keyword">throw</span> error;
+      }
+
+      <span class="comment">// Calculate delay with exponential backoff + jitter</span>
+      <span class="keyword">const</span> baseDelay = Math.pow(<span class="number">2</span>, attempt) * <span class="number">1000</span>;  <span class="comment">// 1s, 2s, 4s...</span>
+      <span class="keyword">const</span> jitter = Math.random() * <span class="number">1000</span>;           <span class="comment">// 0-1s random</span>
+      <span class="keyword">const</span> delay = Math.min(baseDelay + jitter, <span class="number">30000</span>);  <span class="comment">// Cap at 30s</span>
+
+      <span class="comment">// Use Retry-After header if available</span>
+      <span class="keyword">if</span> (error.retryAfter) {
+        <span class="keyword">await</span> sleep(error.retryAfter * <span class="number">1000</span>);
+      } <span class="keyword">else</span> {
+        <span class="keyword">await</span> sleep(delay);
+      }
+    }
+  }
+
+  <span class="keyword">throw</span> lastError;
+}
+
+<span class="keyword">function</span> <span class="function">sleep</span>(ms) {
+  <span class="keyword">return new</span> Promise(resolve => setTimeout(resolve, ms));
+}</code></pre>
+      </div>
+
+      <div class="callout">
+        <p><strong>Why jitter?</strong> Without jitter, multiple clients hitting a rate limit will all retry at exactly the same time, causing another rate limit. Random jitter spreads retries across time.</p>
+      </div>
+
+      <h3>Circuit Breaker Pattern</h3>
+
+      <p>Prevent cascading failures when an enrichment provider is down:</p>
+
+      <div class="code-block">
+        <span class="code-label">JavaScript</span>
+        <pre><code><span class="keyword">class</span> <span class="function">CircuitBreaker</span> {
+  <span class="keyword">constructor</span>(failureThreshold = <span class="number">5</span>, resetTimeMs = <span class="number">60000</span>) {
+    <span class="keyword">this</span>.failureCount = <span class="number">0</span>;
+    <span class="keyword">this</span>.failureThreshold = failureThreshold;
+    <span class="keyword">this</span>.resetTimeMs = resetTimeMs;
+    <span class="keyword">this</span>.state = <span class="string">'CLOSED'</span>;  <span class="comment">// CLOSED, OPEN, HALF_OPEN</span>
+    <span class="keyword">this</span>.lastFailure = <span class="keyword">null</span>;
+  }
+
+  <span class="keyword">async</span> <span class="function">execute</span>(fn) {
+    <span class="keyword">if</span> (<span class="keyword">this</span>.state === <span class="string">'OPEN'</span>) {
+      <span class="keyword">if</span> (Date.now() - <span class="keyword">this</span>.lastFailure > <span class="keyword">this</span>.resetTimeMs) {
+        <span class="keyword">this</span>.state = <span class="string">'HALF_OPEN'</span>;
+      } <span class="keyword">else</span> {
+        <span class="keyword">throw new</span> Error(<span class="string">'Circuit breaker is OPEN'</span>);
+      }
+    }
+
+    <span class="keyword">try</span> {
+      <span class="keyword">const</span> result = <span class="keyword">await</span> fn();
+      <span class="keyword">this</span>.onSuccess();
+      <span class="keyword">return</span> result;
+    } <span class="keyword">catch</span> (error) {
+      <span class="keyword">this</span>.onFailure();
+      <span class="keyword">throw</span> error;
+    }
+  }
+
+  <span class="function">onSuccess</span>() {
+    <span class="keyword">this</span>.failureCount = <span class="number">0</span>;
+    <span class="keyword">this</span>.state = <span class="string">'CLOSED'</span>;
+  }
+
+  <span class="function">onFailure</span>() {
+    <span class="keyword">this</span>.failureCount++;
+    <span class="keyword">this</span>.lastFailure = Date.now();
+
+    <span class="keyword">if</span> (<span class="keyword">this</span>.failureCount >= <span class="keyword">this</span>.failureThreshold) {
+      <span class="keyword">this</span>.state = <span class="string">'OPEN'</span>;
+    }
+  }
+}
+
+<span class="comment">// Usage</span>
+<span class="keyword">const</span> breaker = <span class="keyword">new</span> CircuitBreaker();
+
+<span class="keyword">async function</span> <span class="function">safeEnrich</span>(email) {
+  <span class="keyword">try</span> {
+    <span class="keyword">return await</span> breaker.execute(() => enrichPerson(email));
+  } <span class="keyword">catch</span> (error) {
+    <span class="keyword">if</span> (error.message.includes(<span class="string">'Circuit breaker'</span>)) {
+      <span class="comment">// Return cached data or skip enrichment</span>
+      <span class="keyword">return</span> { enriched: <span class="keyword">false</span>, reason: <span class="string">'service_unavailable'</span> };
+    }
+    <span class="keyword">throw</span> error;
+  }
+}</code></pre>
+      </div>
+
+      <h2 id="webhooks">Webhooks & Async Processing</h2>
+
+      <h3>Setting Up a Webhook Endpoint</h3>
+
+      <div class="code-block">
+        <span class="code-label">Express.js</span>
+        <pre><code><span class="keyword">const</span> crypto = require(<span class="string">'crypto'</span>);
+
+app.post(<span class="string">'/webhooks/enrichment'</span>, <span class="keyword">async</span> (req, res) => {
+  <span class="comment">// 1. Verify webhook signature</span>
+  <span class="keyword">const</span> signature = req.headers[<span class="string">'x-webhook-signature'</span>];
+  <span class="keyword">const</span> payload = JSON.stringify(req.body);
+  <span class="keyword">const</span> expectedSig = crypto
+    .createHmac(<span class="string">'sha256'</span>, process.env.WEBHOOK_SECRET)
+    .update(payload)
+    .digest(<span class="string">'hex'</span>);
+
+  <span class="keyword">if</span> (signature !== expectedSig) {
+    <span class="keyword">return</span> res.status(<span class="number">401</span>).json({ error: <span class="string">'Invalid signature'</span> });
+  }
+
+  <span class="comment">// 2. Acknowledge receipt immediately</span>
+  res.status(<span class="number">200</span>).json({ received: <span class="keyword">true</span> });
+
+  <span class="comment">// 3. Process asynchronously</span>
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> { job_id, status, results } = req.body;
+
+    <span class="keyword">if</span> (status === <span class="string">'completed'</span>) {
+      <span class="keyword">for</span> (<span class="keyword">const</span> result <span class="keyword">of</span> results) {
+        <span class="keyword">await</span> updateContact(result.request_id, result.data);
+      }
+    } <span class="keyword">else</span> <span class="keyword">if</span> (status === <span class="string">'failed'</span>) {
+      <span class="keyword">await</span> logBatchFailure(job_id, results);
+    }
+  } <span class="keyword">catch</span> (error) {
+    <span class="comment">// Log but don't fail - we already acknowledged</span>
+    console.error(<span class="string">'Webhook processing error:'</span>, error);
+  }
+});</code></pre>
+      </div>
+
+      <div class="callout callout-warning">
+        <p><strong>Always verify signatures.</strong> Without signature verification, anyone can send fake webhook payloads to your endpoint. Most providers include an HMAC signature in headers.</p>
+      </div>
+
+      <h3>Handling Webhook Retries</h3>
+
+      <p>Providers retry failed webhooks. Make your handler idempotent:</p>
+
+      <div class="code-block">
+        <span class="code-label">Idempotent Handler</span>
+        <pre><code><span class="keyword">async function</span> <span class="function">handleWebhook</span>(payload) {
+  <span class="keyword">const</span> { event_id, job_id, results } = payload;
+
+  <span class="comment">// Check if we've already processed this event</span>
+  <span class="keyword">const</span> processed = <span class="keyword">await</span> redis.get(<span class="string">`webhook:${event_id}`</span>);
+  <span class="keyword">if</span> (processed) {
+    console.log(<span class="string">`Webhook ${event_id} already processed, skipping`</span>);
+    <span class="keyword">return</span>;
+  }
+
+  <span class="comment">// Process the webhook</span>
+  <span class="keyword">await</span> processResults(results);
+
+  <span class="comment">// Mark as processed (expire after 7 days)</span>
+  <span class="keyword">await</span> redis.setex(<span class="string">`webhook:${event_id}`</span>, <span class="number">604800</span>, <span class="string">'processed'</span>);
+}</code></pre>
+      </div>
+
+      <h2 id="caching">Caching Strategies</h2>
+
+      <p>Enrichment data doesn't change frequently. Caching reduces costs and improves performance.</p>
+
+      <h3>Cache Key Design</h3>
+
+      <div class="code-block">
+        <span class="code-label">Cache Keys</span>
+        <pre><code><span class="comment">// Person enrichment - email is the primary key</span>
+<span class="keyword">const</span> personKey = <span class="string">`enrich:person:${email.toLowerCase()}`</span>;
+
+<span class="comment">// Company enrichment - domain is the primary key</span>
+<span class="keyword">const</span> companyKey = <span class="string">`enrich:company:${domain.toLowerCase()}`</span>;
+
+<span class="comment">// Include provider if using multiple</span>
+<span class="keyword">const</span> keyWithProvider = <span class="string">`enrich:person:clearbit:${email.toLowerCase()}`</span>;</code></pre>
+      </div>
+
+      <h3>Cache-Aside Pattern</h3>
+
+      <div class="code-block">
+        <span class="code-label">Node.js with Redis</span>
+        <pre><code><span class="keyword">const</span> CACHE_TTL = <span class="number">86400</span> * <span class="number">30</span>;  <span class="comment">// 30 days</span>
+
+<span class="keyword">async function</span> <span class="function">enrichPersonCached</span>(email) {
+  <span class="keyword">const</span> cacheKey = <span class="string">`enrich:person:${email.toLowerCase()}`</span>;
+
+  <span class="comment">// 1. Try cache first</span>
+  <span class="keyword">const</span> cached = <span class="keyword">await</span> redis.get(cacheKey);
+  <span class="keyword">if</span> (cached) {
+    <span class="keyword">return</span> JSON.parse(cached);
+  }
+
+  <span class="comment">// 2. Call API</span>
+  <span class="keyword">const</span> result = <span class="keyword">await</span> enrichPerson(email);
+
+  <span class="comment">// 3. Cache result (including "not found" to prevent repeated lookups)</span>
+  <span class="keyword">await</span> redis.setex(cacheKey, CACHE_TTL, JSON.stringify(result));
+
+  <span class="keyword">return</span> result;
+}</code></pre>
+      </div>
+
+      <h3>Cache Invalidation</h3>
+
+      <p>Consider when to refresh enrichment data:</p>
+
+      <ul>
+        <li><strong>Time-based:</strong> Refresh after 30-90 days (balance freshness vs. cost)</li>
+        <li><strong>Event-based:</strong> Refresh when user updates their profile</li>
+        <li><strong>Confidence-based:</strong> Refresh low-confidence matches sooner</li>
+        <li><strong>On-demand:</strong> Allow manual refresh when data seems stale</li>
+      </ul>
+
+      <div class="code-block">
+        <span class="code-label">Conditional Refresh</span>
+        <pre><code><span class="keyword">async function</span> <span class="function">getEnrichedPerson</span>(email, forceRefresh = <span class="keyword">false</span>) {
+  <span class="keyword">const</span> existing = <span class="keyword">await</span> getFromCache(email);
+
+  <span class="keyword">if</span> (!forceRefresh && existing) {
+    <span class="keyword">const</span> age = Date.now() - existing.enriched_at;
+    <span class="keyword">const</span> maxAge = existing.confidence > <span class="number">0.9</span>
+      ? <span class="number">90</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>  <span class="comment">// 90 days for high confidence</span>
+      : <span class="number">30</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>; <span class="comment">// 30 days for low confidence</span>
+
+    <span class="keyword">if</span> (age < maxAge) {
+      <span class="keyword">return</span> existing;
+    }
+  }
+
+  <span class="keyword">return</span> enrichPersonCached(email);
+}</code></pre>
+      </div>
+
+      <h2 id="testing">Testing & Monitoring</h2>
+
+      <h3>Unit Testing with Mocks</h3>
+
+      <div class="code-block">
+        <span class="code-label">Jest</span>
+        <pre><code><span class="keyword">import</span> { enrichPerson } <span class="keyword">from</span> <span class="string">'./enrichment'</span>;
+<span class="keyword">import</span> { mockEnrichmentResponse } <span class="keyword">from</span> <span class="string">'./fixtures'</span>;
+
+jest.mock(<span class="string">'./enrichment-client'</span>);
+
+describe(<span class="string">'enrichPerson'</span>, () => {
+  it(<span class="string">'returns enriched data for valid email'</span>, <span class="keyword">async</span> () => {
+    enrichmentClient.enrich.mockResolvedValue(mockEnrichmentResponse);
+
+    <span class="keyword">const</span> result = <span class="keyword">await</span> enrichPerson(<span class="string">'jane@acme.com'</span>);
+
+    expect(result.name.full).toBe(<span class="string">'Jane Doe'</span>);
+    expect(result.confidence).toBeGreaterThan(<span class="number">0.8</span>);
+  });
+
+  it(<span class="string">'handles rate limit with retry'</span>, <span class="keyword">async</span> () => {
+    enrichmentClient.enrich
+      .mockRejectedValueOnce({ status: <span class="number">429</span>, retryAfter: <span class="number">1</span> })
+      .mockResolvedValue(mockEnrichmentResponse);
+
+    <span class="keyword">const</span> result = <span class="keyword">await</span> enrichPerson(<span class="string">'jane@acme.com'</span>);
+
+    expect(enrichmentClient.enrich).toHaveBeenCalledTimes(<span class="number">2</span>);
+    expect(result.name.full).toBe(<span class="string">'Jane Doe'</span>);
+  });
+
+  it(<span class="string">'returns null for not found'</span>, <span class="keyword">async</span> () => {
+    enrichmentClient.enrich.mockRejectedValue({ status: <span class="number">404</span> });
+
+    <span class="keyword">const</span> result = <span class="keyword">await</span> enrichPerson(<span class="string">'unknown@nowhere.com'</span>);
+
+    expect(result).toBeNull();
+  });
+});</code></pre>
+      </div>
+
+      <h3>Recording API Responses</h3>
+
+      <p>Use VCR-style recording for integration tests:</p>
+
+      <div class="code-block">
+        <span class="code-label">Nock (Node.js)</span>
+        <pre><code><span class="keyword">import</span> nock <span class="keyword">from</span> <span class="string">'nock'</span>;
+
+<span class="comment">// Record mode: capture real API responses</span>
+nock.recorder.rec({ output_objects: <span class="keyword">true</span> });
+
+<span class="comment">// Playback mode: use recorded responses</span>
+<span class="keyword">const</span> scope = nock(<span class="string">'https://api.enrichment.com'</span>)
+  .get(<span class="string">'/v1/person?email=jane@acme.com'</span>)
+  .reply(<span class="number">200</span>, recordedResponse);</code></pre>
+      </div>
+
+      <h3>Key Metrics to Monitor</h3>
+
+      <ul>
+        <li><strong>Enrichment rate:</strong> % of records successfully enriched</li>
+        <li><strong>Match quality:</strong> Average confidence score</li>
+        <li><strong>API latency:</strong> P50, P95, P99 response times</li>
+        <li><strong>Error rate:</strong> % of requests that fail</li>
+        <li><strong>Rate limit hits:</strong> How often you're throttled</li>
+        <li><strong>Cache hit rate:</strong> % of requests served from cache</li>
+        <li><strong>Cost per enrichment:</strong> Track spend vs. budget</li>
+      </ul>
+
+      <div class="code-block">
+        <span class="code-label">Prometheus Metrics</span>
+        <pre><code><span class="keyword">const</span> enrichmentTotal = <span class="keyword">new</span> Counter({
+  name: <span class="string">'enrichment_requests_total'</span>,
+  help: <span class="string">'Total enrichment requests'</span>,
+  labelNames: [<span class="string">'provider'</span>, <span class="string">'status'</span>, <span class="string">'type'</span>]
+});
+
+<span class="keyword">const</span> enrichmentLatency = <span class="keyword">new</span> Histogram({
+  name: <span class="string">'enrichment_latency_seconds'</span>,
+  help: <span class="string">'Enrichment request latency'</span>,
+  labelNames: [<span class="string">'provider'</span>],
+  buckets: [<span class="number">0.1</span>, <span class="number">0.5</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>]
+});
+
+<span class="keyword">const</span> enrichmentConfidence = <span class="keyword">new</span> Histogram({
+  name: <span class="string">'enrichment_confidence'</span>,
+  help: <span class="string">'Distribution of enrichment confidence scores'</span>,
+  buckets: [<span class="number">0.5</span>, <span class="number">0.6</span>, <span class="number">0.7</span>, <span class="number">0.8</span>, <span class="number">0.9</span>, <span class="number">0.95</span>, <span class="number">1.0</span>]
+});</code></pre>
+      </div>
+
+      <h2 id="providers">Provider-Specific Notes</h2>
+
+      <h3>Clearbit</h3>
+
+      <ul>
+        <li><strong>Auth:</strong> Bearer token in Authorization header</li>
+        <li><strong>Rate limit:</strong> 600 requests/minute (varies by plan)</li>
+        <li><strong>Gotcha:</strong> Returns 202 for async lookups, poll for results or use webhooks</li>
+        <li><strong>Best for:</strong> Real-time enrichment with streaming updates</li>
+      </ul>
+
+      <h3>ZoomInfo</h3>
+
+      <ul>
+        <li><strong>Auth:</strong> OAuth 2.0 with JWT tokens</li>
+        <li><strong>Rate limit:</strong> Plan-dependent, typically 50-200/minute</li>
+        <li><strong>Gotcha:</strong> Complex token refresh flow, tokens expire in 1 hour</li>
+        <li><strong>Best for:</strong> High-quality B2B data, large enterprises</li>
+      </ul>
+
+      <h3>Apollo</h3>
+
+      <ul>
+        <li><strong>Auth:</strong> API key in header</li>
+        <li><strong>Rate limit:</strong> 300 requests/minute</li>
+        <li><strong>Gotcha:</strong> Credit-based pricing, some endpoints cost more</li>
+        <li><strong>Best for:</strong> Sales prospecting, bulk enrichment</li>
+      </ul>
+
+      <h3>Hunter</h3>
+
+      <ul>
+        <li><strong>Auth:</strong> API key as query parameter or header</li>
+        <li><strong>Rate limit:</strong> Plan-dependent (25-500/minute)</li>
+        <li><strong>Gotcha:</strong> Email verification separate from enrichment</li>
+        <li><strong>Best for:</strong> Email discovery and verification</li>
+      </ul>
+
+      <h3>Lusha</h3>
+
+      <ul>
+        <li><strong>Auth:</strong> API key in header</li>
+        <li><strong>Rate limit:</strong> Contact support for limits</li>
+        <li><strong>Gotcha:</strong> Direct dial phone numbers have different pricing</li>
+        <li><strong>Best for:</strong> Contact phone numbers, especially mobile</li>
+      </ul>
+
+      <div class="cta-box">
+        <h3>Need Help with Your Integration?</h3>
+        <p>We've built enrichment integrations for dozens of companies. Get expert guidance on architecture, vendor selection, and implementation.</p>
+        <a href="/assessment.html" class="cta-button">Get a Free Assessment</a>
+      </div>
+
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3 class="faq-question">What authentication methods do enrichment APIs use?</h3>
+          <p class="faq-answer">Most enrichment APIs use API key authentication via headers (Authorization: Bearer or X-API-Key). Some enterprise providers also support OAuth 2.0 for more granular access control. Always use HTTPS and never expose API keys in client-side code.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">How should I handle rate limits in enrichment APIs?</h3>
+          <p class="faq-answer">Implement exponential backoff with jitter when you receive 429 responses. Most APIs return rate limit headers (X-RateLimit-Remaining, X-RateLimit-Reset) that you can use to proactively throttle requests. For bulk operations, use batch endpoints or implement a queue system.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">What's the difference between synchronous and asynchronous enrichment APIs?</h3>
+          <p class="faq-answer">Synchronous APIs return enriched data immediately in the response, ideal for real-time lookups. Asynchronous APIs accept requests and deliver results via webhooks or polling, better for bulk operations. Many providers offer both modes depending on the endpoint.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-question">How do I test enrichment API integrations?</h3>
+          <p class="faq-answer">Use sandbox environments when available. Create mock responses for unit tests. Use rate-limited test accounts for integration tests. Always test error scenarios including timeouts, rate limits, and malformed responses. Consider using tools like VCR to record and replay API responses.</p>
+        </div>
+      </section>
+
+      <section class="related-articles">
+        <h3>Related Resources</h3>
+        <div class="related-grid">
+          <a href="/resources/best-data-enrichment-tools.html" class="related-card">
+            <p class="related-card__title">10 Best Data Enrichment Tools</p>
+            <p class="related-card__excerpt">Compare top enrichment providers by features, pricing, and data quality.</p>
+          </a>
+          <a href="/resources/data-enrichment-roi-calculator.html" class="related-card">
+            <p class="related-card__title">Data Enrichment ROI Calculator</p>
+            <p class="related-card__excerpt">Calculate the potential returns from implementing data enrichment.</p>
+          </a>
+          <a href="/resources/how-to-choose-data-enrichment-provider.html" class="related-card">
+            <p class="related-card__title">How to Choose a Provider</p>
+            <p class="related-card__excerpt">Questions to ask and red flags to watch for when evaluating vendors.</p>
+          </a>
+          <a href="/resources/data-enrichment-for-saas.html" class="related-card">
+            <p class="related-card__title">Data Enrichment for SaaS</p>
+            <p class="related-card__excerpt">How SaaS companies use enrichment across PLG and sales-led models.</p>
+          </a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
