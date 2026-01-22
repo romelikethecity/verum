@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a Data Quality Team: Roles, Skills & Hiring Guide | Verum</title>
+  <meta name="description" content="How to build a data quality team from scratch. Covers organizational structures, key roles, required skills, hiring criteria, and team scaling strategies.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/building-data-quality-team.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/building-data-quality-team.html">
+  <meta property="og:title" content="Building a Data Quality Team: Roles, Skills & Hiring Guide">
+  <meta property="og:description" content="How to build a data quality team from scratch. Covers organizational structures, key roles, and hiring criteria.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Building a Data Quality Team: Roles, Skills & Hiring Guide">
+  <meta name="twitter:description" content="How to build a data quality team from scratch. Covers organizational structures, key roles, and hiring criteria.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Building a Data Quality Team: Roles, Skills & Hiring Guide",
+    "description": "How to build a data quality team from scratch. Covers organizational structures, key roles, required skills, hiring criteria, and team scaling strategies.",
+    "image": "https://veruminc.com/assets/social-preview.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum",
+      "url": "https://veruminc.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://veruminc.com/assets/logos/logos-svg/verum-logo-dark-bg.svg"
+      }
+    },
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/building-data-quality-team.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What roles make up a data quality team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical data quality team includes: Data Quality Manager (strategy and leadership), Data Stewards (domain-specific ownership), Data Analysts (measurement and reporting), Data Engineers (technical implementation), and sometimes dedicated Data Governance specialists. Small teams often combine roles, with one person wearing multiple hats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where should a data quality team report in the organization?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common reporting structures include: under IT/Engineering (technical focus), under Operations/RevOps (business process focus), under a Chief Data Officer (data-centric organizations), or as a shared service reporting to multiple stakeholders. The best structure depends on where data quality problems primarily originate and who has authority to enforce standards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What skills should you look for when hiring for data quality roles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Core skills include: SQL and data manipulation, understanding of CRM/business systems, analytical thinking, attention to detail, and communication skills. Technical roles need programming (Python, SQL) and ETL experience. Management roles need stakeholder management and change management expertise. All roles benefit from domain knowledge in your industry."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How big should a data quality team be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Team size depends on data volume and complexity. As a rough guide: small companies (under 500 employees) typically need 1-2 people, mid-market (500-2000) need 3-5 people, and enterprise (2000+) need 5-15+ people. The ratio also depends on how many systems you have, regulatory requirements, and data-intensive your business is."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .article-header {
+      margin-bottom: 3rem;
+    }
+    .article-category {
+      display: inline-block;
+      background: var(--primary-blue);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .article-meta {
+      color: var(--gray-600);
+      font-size: 0.9rem;
+    }
+    .article-body h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--gray-900);
+    }
+    .article-body h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2rem 0 0.75rem;
+      color: var(--gray-800);
+    }
+    .article-body p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      color: var(--gray-700);
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .article-body li {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+      color: var(--gray-700);
+    }
+    .article-body strong {
+      color: var(--gray-900);
+    }
+    .callout-box {
+      background: var(--blue-50);
+      border-left: 4px solid var(--primary-blue);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .callout-box p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .callout-box strong {
+      color: var(--primary-blue);
+    }
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-200);
+    }
+    .related-articles h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .related-card {
+      padding: 1.25rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--primary-blue);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .related-card h3 {
+      font-size: 1rem;
+      margin: 0 0 0.5rem;
+    }
+    .related-card h3 a {
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .related-card h3 a:hover {
+      color: var(--primary-blue);
+    }
+    .related-card p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    .faq-section {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--gray-50);
+      border-radius: 12px;
+    }
+    .faq-section h2 {
+      margin-top: 0;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .faq-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+    .faq-answer {
+      color: var(--gray-700);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .data-table th, .data-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border: 1px solid var(--gray-200);
+    }
+    .data-table th {
+      background: var(--gray-50);
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+    .data-table td {
+      color: var(--gray-700);
+    }
+    .role-card {
+      background: var(--gray-50);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    .role-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0 0 0.75rem;
+    }
+    .role-card p {
+      font-size: 0.95rem;
+      margin: 0 0 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 1.875rem;
+      }
+      .article-body h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__container container">
+      <a href="/" class="site-header__brand">
+        <img src="/assets/logos/logos-svg/verum-logo-light-bg.svg" alt="Verum">
+      </a>
+      <nav class="site-header__nav">
+        <ul class="site-header__menu">
+          <li class="site-header__item"><a href="/solutions.html" class="site-header__link">Solutions</a></li>
+          <li class="site-header__item"><a href="/resources/" class="site-header__link">Resources</a></li>
+          <li class="site-header__item"><a href="/contact.html" class="site-header__link">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="/demo.html" class="cta-button cta-button--nav">Request Demo</a>
+    </div>
+  </header>
+
+  <main class="article-content">
+    <article>
+      <header class="article-header">
+        <span class="article-category">Team Building</span>
+        <h1 class="article-title">Building a Data Quality Team: Roles, Skills & Hiring Guide</h1>
+        <p class="article-meta">16 min read</p>
+      </header>
+
+      <div class="article-body">
+        <p>Every company reaches a point where data quality can't remain "everyone's job" (which really means "no one's job"). You need dedicated people. But what roles do you need? What skills should you hire for? Where should the team sit in the org? And how do you scale from one person to a full team?</p>
+
+        <p>This guide covers how to build a data quality team from scratch—from your first hire to a mature, scaled operation.</p>
+
+        <h2>When Do You Need a Dedicated Team?</h2>
+
+        <p>Signs you've outgrown ad-hoc data quality management:</p>
+
+        <ul>
+          <li><strong>Recurring problems</strong>: Same data issues keep happening despite "fixes"</li>
+          <li><strong>Scaling pain</strong>: Manual processes that worked at 1,000 records break at 100,000</li>
+          <li><strong>Cross-functional blame</strong>: Sales blames marketing's data, marketing blames sales' entry</li>
+          <li><strong>Integration complexity</strong>: More than 5-10 integrated systems with data flowing between them</li>
+          <li><strong>Compliance requirements</strong>: GDPR, CCPA, SOC 2, or industry regulations requiring data governance</li>
+          <li><strong>M&A activity</strong>: Merging data from acquisitions into existing systems</li>
+          <li><strong>Revenue impact</strong>: Data quality issues visibly affecting sales efficiency, customer experience, or reporting</li>
+        </ul>
+
+        <p>If three or more of these apply, you likely need dedicated data quality resources.</p>
+
+        <h2>Organizational Structures</h2>
+
+        <p>Where the data quality team reports affects what problems they can solve:</p>
+
+        <h3>Option 1: Under IT/Engineering</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pros</th>
+              <th>Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Direct access to technical resources</td>
+              <td>May be seen as "IT problem" not business problem</td>
+            </tr>
+            <tr>
+              <td>Can implement technical solutions quickly</td>
+              <td>Less visibility into business process issues</td>
+            </tr>
+            <tr>
+              <td>Aligned with data infrastructure</td>
+              <td>May lack authority over business user behavior</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Best for:</strong> Organizations where data problems are primarily technical (ETL failures, system integrations) rather than process or behavioral.</p>
+
+        <h3>Option 2: Under Operations/RevOps</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pros</th>
+              <th>Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Close to business processes that create data</td>
+              <td>May lack technical depth</td>
+            </tr>
+            <tr>
+              <td>Can influence user behavior directly</td>
+              <td>Could be seen as "RevOps problem" by other functions</td>
+            </tr>
+            <tr>
+              <td>Clear line to revenue impact</td>
+              <td>May not cover non-revenue data (HR, finance)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Best for:</strong> B2B companies where data quality primarily affects go-to-market operations (CRM, marketing automation, sales tools).</p>
+
+        <h3>Option 3: Under a Chief Data Officer</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pros</th>
+              <th>Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dedicated data leadership</td>
+              <td>Requires executive investment in data function</td>
+            </tr>
+            <tr>
+              <td>Cross-functional authority</td>
+              <td>May be disconnected from day-to-day operations</td>
+            </tr>
+            <tr>
+              <td>Comprehensive data strategy</td>
+              <td>CDO role doesn't exist at most companies</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Best for:</strong> Large enterprises, data-intensive businesses (fintech, healthcare), or companies with significant compliance requirements.</p>
+
+        <h3>Option 4: Shared Service / Center of Excellence</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pros</th>
+              <th>Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Serves multiple business units equally</td>
+              <td>Can lack urgency when not tied to P&L</td>
+            </tr>
+            <tr>
+              <td>Consistent standards across organization</td>
+              <td>May compete with business priorities</td>
+            </tr>
+            <tr>
+              <td>Economies of scale</td>
+              <td>Requires strong executive sponsorship</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Best for:</strong> Multi-division companies, organizations with diverse data needs across business units.</p>
+
+        <div class="callout-box">
+          <p><strong>The real answer:</strong> Start where the biggest data problems live. If CRM data quality is killing sales productivity, start under RevOps. If data integration failures are the issue, start under Engineering. You can reorganize later as the function matures.</p>
+        </div>
+
+        <h2>Core Roles</h2>
+
+        <h3>Data Quality Manager / Lead</h3>
+
+        <div class="role-card">
+          <h4>What They Do</h4>
+          <p>Sets data quality strategy, defines standards, manages the team, interfaces with stakeholders, reports on quality metrics, owns the roadmap.</p>
+          <p><strong>Key skills:</strong> Data management experience, stakeholder management, project management, strategic thinking, communication</p>
+          <p><strong>Experience level:</strong> 5-10+ years in data-related roles</p>
+          <p><strong>Reports to:</strong> CDO, VP of Operations, VP of Engineering, or CIO</p>
+          <p><strong>Salary range:</strong> $120K-180K (varies by market and company size)</p>
+        </div>
+
+        <h3>Data Steward</h3>
+
+        <div class="role-card">
+          <h4>What They Do</h4>
+          <p>Owns data quality for specific domains (customer data, product data, etc.). Defines rules, monitors quality, resolves issues, trains users, documents standards.</p>
+          <p><strong>Key skills:</strong> Domain expertise, analytical thinking, attention to detail, communication, process documentation</p>
+          <p><strong>Experience level:</strong> 3-7 years in business operations or data roles</p>
+          <p><strong>Reports to:</strong> Data Quality Manager or business function leader</p>
+          <p><strong>Salary range:</strong> $70K-110K</p>
+        </div>
+
+        <h3>Data Quality Analyst</h3>
+
+        <div class="role-card">
+          <h4>What They Do</h4>
+          <p>Measures and reports on data quality. Builds dashboards, runs audits, identifies patterns in data issues, investigates root causes.</p>
+          <p><strong>Key skills:</strong> SQL, data visualization (Tableau, Looker), analytical thinking, statistics, attention to detail</p>
+          <p><strong>Experience level:</strong> 2-5 years in analytics or data roles</p>
+          <p><strong>Reports to:</strong> Data Quality Manager or Data Steward</p>
+          <p><strong>Salary range:</strong> $65K-95K</p>
+        </div>
+
+        <h3>Data Quality Engineer</h3>
+
+        <div class="role-card">
+          <h4>What They Do</h4>
+          <p>Builds technical solutions: validation rules, automated monitoring, data quality pipelines, integrations with quality tools. Implements fixes at scale.</p>
+          <p><strong>Key skills:</strong> Python/SQL, ETL tools, API integrations, data pipeline development, testing frameworks</p>
+          <p><strong>Experience level:</strong> 3-7 years in data engineering or software development</p>
+          <p><strong>Reports to:</strong> Data Quality Manager or Engineering leadership</p>
+          <p><strong>Salary range:</strong> $100K-150K</p>
+        </div>
+
+        <h3>Data Governance Specialist</h3>
+
+        <div class="role-card">
+          <h4>What They Do</h4>
+          <p>Focuses on policies, compliance, and data management frameworks. Owns data catalogs, maintains metadata, ensures regulatory compliance.</p>
+          <p><strong>Key skills:</strong> Data governance frameworks (DAMA, DCAM), compliance knowledge (GDPR, CCPA), policy development, documentation</p>
+          <p><strong>Experience level:</strong> 5-10 years in data governance, compliance, or risk management</p>
+          <p><strong>Reports to:</strong> Data Quality Manager, CDO, or Compliance</p>
+          <p><strong>Salary range:</strong> $90K-140K</p>
+        </div>
+
+        <h2>Team Sizing Guidelines</h2>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Company Size</th>
+              <th>Recommended Team</th>
+              <th>Key Roles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Startup (under 100)</td>
+              <td>0.5-1 FTE</td>
+              <td>Part of ops or engineering role</td>
+            </tr>
+            <tr>
+              <td>Small (100-500)</td>
+              <td>1-2 FTE</td>
+              <td>Data Quality Lead + part-time analyst</td>
+            </tr>
+            <tr>
+              <td>Mid-Market (500-2000)</td>
+              <td>3-5 FTE</td>
+              <td>Manager + Stewards + Analyst + Engineer</td>
+            </tr>
+            <tr>
+              <td>Enterprise (2000-10000)</td>
+              <td>5-15 FTE</td>
+              <td>Full team with domain specialists</td>
+            </tr>
+            <tr>
+              <td>Large Enterprise (10000+)</td>
+              <td>15-50+ FTE</td>
+              <td>Multiple teams by business unit/domain</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>These are rough guidelines. Actual needs depend on:</p>
+        <ul>
+          <li><strong>Number of systems</strong>: More integrations = more complexity = more people</li>
+          <li><strong>Regulatory requirements</strong>: Compliance-heavy industries need more governance</li>
+          <li><strong>Data volume</strong>: Billions of records require different approaches than millions</li>
+          <li><strong>Data maturity</strong>: Organizations with years of data debt need more cleanup resources initially</li>
+        </ul>
+
+        <h2>Skills to Hire For</h2>
+
+        <h3>Universal Skills (All Roles)</h3>
+
+        <ul>
+          <li><strong>SQL proficiency</strong>: Everyone needs to query data directly</li>
+          <li><strong>Business system knowledge</strong>: CRM (Salesforce, HubSpot), ERP, marketing automation</li>
+          <li><strong>Analytical thinking</strong>: Pattern recognition, root cause analysis</li>
+          <li><strong>Communication</strong>: Explaining technical issues to non-technical stakeholders</li>
+          <li><strong>Attention to detail</strong>: The job is literally finding things that are wrong</li>
+        </ul>
+
+        <h3>Technical Skills (Engineers, Technical Analysts)</h3>
+
+        <ul>
+          <li><strong>Programming</strong>: Python, potentially R or Scala for larger data sets</li>
+          <li><strong>ETL tools</strong>: Fivetran, Airbyte, dbt, or enterprise tools (Informatica, Talend)</li>
+          <li><strong>Data quality tools</strong>: Great Expectations, Monte Carlo, Atlan, or similar</li>
+          <li><strong>Cloud platforms</strong>: AWS, GCP, or Azure data services</li>
+          <li><strong>API development</strong>: Building integrations and validation services</li>
+        </ul>
+
+        <h3>Strategic Skills (Managers, Governance)</h3>
+
+        <ul>
+          <li><strong>Stakeholder management</strong>: Getting buy-in, managing expectations</li>
+          <li><strong>Change management</strong>: Rolling out new processes, driving adoption</li>
+          <li><strong>Framework knowledge</strong>: DAMA-DMBOK, DCAM, or similar data management frameworks</li>
+          <li><strong>Compliance understanding</strong>: GDPR, CCPA, industry-specific regulations</li>
+          <li><strong>Executive communication</strong>: Presenting ROI, business cases, strategy</li>
+        </ul>
+
+        <h2>Hiring Criteria</h2>
+
+        <h3>What to Look for in Resumes</h3>
+
+        <p><strong>Green flags:</strong></p>
+        <ul>
+          <li>Experience with your specific systems (Salesforce admin experience for CRM-heavy roles)</li>
+          <li>Track record of improving data quality metrics (not just maintaining)</li>
+          <li>Cross-functional experience (understands both technical and business sides)</li>
+          <li>Project-based accomplishments (migrated X records, reduced duplicates by Y%)</li>
+        </ul>
+
+        <p><strong>Yellow flags:</strong></p>
+        <ul>
+          <li>Only large enterprise experience (may struggle with resource constraints)</li>
+          <li>Pure technical background without business exposure (may miss process issues)</li>
+          <li>Only business background without technical skills (may be limited in solutions)</li>
+        </ul>
+
+        <h3>Interview Questions</h3>
+
+        <p><strong>For all roles:</strong></p>
+        <ul>
+          <li>"Walk me through how you would investigate a data quality issue reported by a sales rep."</li>
+          <li>"How would you prioritize between fixing existing bad data and preventing new bad data?"</li>
+          <li>"Tell me about a time you had to get someone to change their data entry behavior."</li>
+        </ul>
+
+        <p><strong>For technical roles:</strong></p>
+        <ul>
+          <li>"How would you design a system to catch duplicate records before they're created?"</li>
+          <li>"What's your approach to testing data quality rules before deploying them?"</li>
+          <li>Live SQL/coding exercise on a data quality scenario</li>
+        </ul>
+
+        <p><strong>For leadership roles:</strong></p>
+        <ul>
+          <li>"How would you make the case for data quality investment to a skeptical CFO?"</li>
+          <li>"How do you balance quick wins with long-term quality improvements?"</li>
+          <li>"Describe how you've built data quality programs at previous organizations."</li>
+        </ul>
+
+        <h2>Building from Scratch: Phased Approach</h2>
+
+        <h3>Phase 1: Foundation (0-6 months)</h3>
+
+        <p><strong>Hire:</strong> One experienced Data Quality Lead who can do multiple things</p>
+
+        <p><strong>Focus areas:</strong></p>
+        <ul>
+          <li>Audit current state—document the biggest data quality problems</li>
+          <li>Quick wins—fix the most painful, visible issues</li>
+          <li>Establish baseline metrics—you can't improve what you don't measure</li>
+          <li>Build relationships—understand stakeholder pain points</li>
+          <li>Create initial documentation—data dictionaries, basic standards</li>
+        </ul>
+
+        <h3>Phase 2: Stabilization (6-18 months)</h3>
+
+        <p><strong>Hire:</strong> Add 1-2 specialists (analyst + engineer or domain steward)</p>
+
+        <p><strong>Focus areas:</strong></p>
+        <ul>
+          <li>Implement monitoring and alerting</li>
+          <li>Build data quality dashboards</li>
+          <li>Establish data stewardship model</li>
+          <li>Create formal data quality rules and validation</li>
+          <li>Develop training programs for data creators</li>
+          <li>Start measuring ROI</li>
+        </ul>
+
+        <h3>Phase 3: Scaling (18+ months)</h3>
+
+        <p><strong>Hire:</strong> Add domain-specific stewards, governance specialists as needed</p>
+
+        <p><strong>Focus areas:</strong></p>
+        <ul>
+          <li>Formalize governance framework</li>
+          <li>Automate routine quality processes</li>
+          <li>Expand coverage to additional domains</li>
+          <li>Build self-service quality tools for business users</li>
+          <li>Develop predictive quality measures (prevent issues before they happen)</li>
+        </ul>
+
+        <div class="callout-box">
+          <p><strong>Don't skip phase 1:</strong> Many organizations try to jump straight to governance frameworks and sophisticated tooling. Without foundational work—understanding the problems, building relationships, establishing credibility—those efforts usually fail. Start with the basics.</p>
+        </div>
+
+        <h2>Common Mistakes to Avoid</h2>
+
+        <h3>Hiring Only Technical People</h3>
+
+        <p>Data quality is as much about process and people as technology. A team of engineers who can't communicate with business stakeholders or influence behavior will struggle to create lasting change.</p>
+
+        <h3>Centralizing Everything</h3>
+
+        <p>The data quality team can't own all data quality. They should own standards, tools, and metrics—but domain experts (sales ops, marketing ops, product) need to own data quality in their areas. Build a hub-and-spoke model, not a bottleneck.</p>
+
+        <h3>Focusing Only on Cleanup</h3>
+
+        <p>If all you do is clean up bad data, you'll never catch up. Balance remediation (fixing existing issues) with prevention (stopping new issues from entering). Aim for at least 50% of effort on prevention.</p>
+
+        <h3>Not Measuring ROI</h3>
+
+        <p>Data quality teams that can't demonstrate business impact get cut when budgets tighten. From day one, track and communicate the value you're creating—time saved, revenue protected, costs avoided.</p>
+
+        <h3>Underestimating Change Management</h3>
+
+        <p>Implementing data quality improvements often means changing how people work. That requires communication, training, and sometimes incentive alignment. Technical solutions alone won't change behavior.</p>
+
+        <h2>Tools for the Team</h2>
+
+        <h3>Data Quality Platforms</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Best For</th>
+              <th>Pricing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monte Carlo</td>
+              <td>Data observability, automated monitoring</td>
+              <td>Enterprise pricing</td>
+            </tr>
+            <tr>
+              <td>Great Expectations</td>
+              <td>Data testing, open source</td>
+              <td>Free + paid cloud</td>
+            </tr>
+            <tr>
+              <td>Atlan</td>
+              <td>Data catalog + quality</td>
+              <td>Enterprise pricing</td>
+            </tr>
+            <tr>
+              <td>Collibra</td>
+              <td>Enterprise governance</td>
+              <td>Enterprise pricing</td>
+            </tr>
+            <tr>
+              <td>Talend Data Quality</td>
+              <td>Traditional DQ profiling</td>
+              <td>Per-user licensing</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>CRM-Specific Tools</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Platform</th>
+              <th>Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Validity DemandTools</td>
+              <td>Salesforce</td>
+              <td>Deduplication, mass updates</td>
+            </tr>
+            <tr>
+              <td>Cloudingo</td>
+              <td>Salesforce</td>
+              <td>Deduplication, data cleaning</td>
+            </tr>
+            <tr>
+              <td>Insycle</td>
+              <td>HubSpot</td>
+              <td>Data management, automation</td>
+            </tr>
+            <tr>
+              <td>Dedupely</td>
+              <td>HubSpot</td>
+              <td>Duplicate detection</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <p class="faq-question">What roles make up a data quality team?</p>
+            <p class="faq-answer">A typical data quality team includes: Data Quality Manager (strategy and leadership), Data Stewards (domain-specific ownership), Data Analysts (measurement and reporting), Data Engineers (technical implementation), and sometimes dedicated Data Governance specialists. Small teams often combine roles, with one person wearing multiple hats.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">Where should a data quality team report in the organization?</p>
+            <p class="faq-answer">Common reporting structures include: under IT/Engineering (technical focus), under Operations/RevOps (business process focus), under a Chief Data Officer (data-centric organizations), or as a shared service reporting to multiple stakeholders. The best structure depends on where data quality problems primarily originate and who has authority to enforce standards.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">What skills should you look for when hiring for data quality roles?</p>
+            <p class="faq-answer">Core skills include: SQL and data manipulation, understanding of CRM/business systems, analytical thinking, attention to detail, and communication skills. Technical roles need programming (Python, SQL) and ETL experience. Management roles need stakeholder management and change management expertise. All roles benefit from domain knowledge in your industry.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">How big should a data quality team be?</p>
+            <p class="faq-answer">Team size depends on data volume and complexity. As a rough guide: small companies (under 500 employees) typically need 1-2 people, mid-market (500-2000) need 3-5 people, and enterprise (2000+) need 5-15+ people. The ratio also depends on how many systems you have, regulatory requirements, and data-intensive your business is.</p>
+          </div>
+        </div>
+
+        <div class="related-articles">
+          <h2>Related Resources</h2>
+          <div class="related-grid">
+            <div class="related-card">
+              <h3><a href="/resources/data-quality-dashboards.html">Building Data Quality Dashboards</a></h3>
+              <p>Create dashboards your team can use to monitor and report on quality.</p>
+            </div>
+            <div class="related-card">
+              <h3><a href="/resources/data-governance-crm.html">CRM Data Governance Framework</a></h3>
+              <p>Establish governance processes for your CRM data.</p>
+            </div>
+            <div class="related-card">
+              <h3><a href="/resources/measuring-enrichment-roi.html">How to Measure Data Enrichment ROI</a></h3>
+              <p>Prove the value of your data quality investments.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <img src="/assets/logos/logos-svg/verum-logo-dark-bg.svg" alt="Verum" class="site-footer__logo">
+          <p class="site-footer__tagline">Clean data. Clear results.</p>
+        </div>
+        <nav class="site-footer__nav">
+          <a href="/solutions.html" class="site-footer__link">Solutions</a>
+          <a href="/resources/" class="site-footer__link">Resources</a>
+          <a href="/contact.html" class="site-footer__link">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer__legal">
+        <span>&copy; 2025 Verum Inc.</span>
+        <a href="/privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

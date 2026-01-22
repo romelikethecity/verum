@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Enrichment for Real Estate: Agents, Brokers & PropTech | Verum</title>
+  <meta name="description" content="How real estate professionals use data enrichment to find motivated sellers, qualify buyers, and close more deals. Covers property data, owner info, and intent signals.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-enrichment-real-estate.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-enrichment-real-estate.html">
+  <meta property="og:title" content="Data Enrichment for Real Estate: Agents, Brokers & PropTech">
+  <meta property="og:description" content="How real estate professionals use data enrichment to find motivated sellers, qualify buyers, and close more deals.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Enrichment for Real Estate: Agents, Brokers & PropTech">
+  <meta name="twitter:description" content="How real estate professionals use data enrichment to find motivated sellers, qualify buyers, and close more deals.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data Enrichment for Real Estate: Agents, Brokers & PropTech",
+    "description": "How real estate professionals use data enrichment to find motivated sellers, qualify buyers, and close more deals.",
+    "image": "https://veruminc.com/assets/social-preview.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum",
+      "url": "https://veruminc.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://veruminc.com/assets/logos/logos-svg/verum-logo-dark-bg.svg"
+      }
+    },
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-enrichment-real-estate.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What data can real estate agents enrich for prospecting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Real estate enrichment typically includes property data (ownership, equity, tax records), owner contact information (phone, email), demographic data (income, household composition), and intent signals (pre-foreclosure, divorce filings, job relocations, life events). This helps identify motivated sellers and qualified buyers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the best data providers for real estate prospecting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Top providers include ATTOM Data (property records), CoreLogic (property and mortgage data), PropStream (investor-focused), BatchLeads (skip tracing and owner data), and REISift (lead stacking). For contact data, Cole Information and LexisNexis provide owner contact information with varying accuracy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you find motivated sellers using data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stack multiple distress signals: high equity + long ownership tenure, pre-foreclosure notices, tax delinquency, code violations, vacant properties, absentee owners, divorce filings, and probate records. Properties with 3+ signals are significantly more likely to sell. Combine property data with life event data for best results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is skip tracing legal for real estate prospecting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, skip tracing (finding owner contact information) is legal when used for legitimate business purposes like real estate prospecting. However, you must comply with TCPA for phone calls (especially mobile), honor do-not-call lists, and follow state-specific real estate solicitation rules. Some states require disclosure of how you obtained contact information."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    .article-header {
+      margin-bottom: 3rem;
+    }
+    .article-category {
+      display: inline-block;
+      background: var(--primary-blue);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .article-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .article-meta {
+      color: var(--gray-600);
+      font-size: 0.9rem;
+    }
+    .article-body h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1rem;
+      color: var(--gray-900);
+    }
+    .article-body h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2rem 0 0.75rem;
+      color: var(--gray-800);
+    }
+    .article-body p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      color: var(--gray-700);
+    }
+    .article-body ul, .article-body ol {
+      margin: 1rem 0 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .article-body li {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+      color: var(--gray-700);
+    }
+    .article-body strong {
+      color: var(--gray-900);
+    }
+    .callout-box {
+      background: var(--blue-50);
+      border-left: 4px solid var(--primary-blue);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .callout-box p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .callout-box strong {
+      color: var(--primary-blue);
+    }
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-200);
+    }
+    .related-articles h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .related-card {
+      padding: 1.25rem;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--primary-blue);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    .related-card h3 {
+      font-size: 1rem;
+      margin: 0 0 0.5rem;
+    }
+    .related-card h3 a {
+      color: var(--gray-900);
+      text-decoration: none;
+    }
+    .related-card h3 a:hover {
+      color: var(--primary-blue);
+    }
+    .related-card p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+      margin: 0;
+    }
+    .faq-section {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--gray-50);
+      border-radius: 12px;
+    }
+    .faq-section h2 {
+      margin-top: 0;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .faq-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 0.5rem;
+    }
+    .faq-answer {
+      color: var(--gray-700);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+    .data-table th, .data-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border: 1px solid var(--gray-200);
+    }
+    .data-table th {
+      background: var(--gray-50);
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+    .data-table td {
+      color: var(--gray-700);
+    }
+    .use-case-card {
+      background: var(--gray-50);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+    .use-case-card h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin: 0 0 0.75rem;
+    }
+    .use-case-card p {
+      font-size: 0.95rem;
+      margin: 0 0 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 1.875rem;
+      }
+      .article-body h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__container container">
+      <a href="/" class="site-header__brand">
+        <img src="/assets/logos/logos-svg/verum-logo-light-bg.svg" alt="Verum">
+      </a>
+      <nav class="site-header__nav">
+        <ul class="site-header__menu">
+          <li class="site-header__item"><a href="/solutions.html" class="site-header__link">Solutions</a></li>
+          <li class="site-header__item"><a href="/resources/" class="site-header__link">Resources</a></li>
+          <li class="site-header__item"><a href="/contact.html" class="site-header__link">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="/demo.html" class="cta-button cta-button--nav">Request Demo</a>
+    </div>
+  </header>
+
+  <main class="article-content">
+    <article>
+      <header class="article-header">
+        <span class="article-category">Industry Guide</span>
+        <h1 class="article-title">Data Enrichment for Real Estate: Agents, Brokers & PropTech</h1>
+        <p class="article-meta">14 min read</p>
+      </header>
+
+      <div class="article-body">
+        <p>Real estate runs on data. Who owns a property, how long they've owned it, what they owe on it, whether they're likely to sell—every transaction starts with knowing something the next agent doesn't. The agents who win listings and the investors who find deals are the ones with better data and faster access to it.</p>
+
+        <p>This guide covers how real estate professionals—from individual agents to large brokerages to PropTech platforms—use data enrichment to find motivated sellers, qualify buyers, and close more deals.</p>
+
+        <h2>The Real Estate Data Landscape</h2>
+
+        <p>Real estate data comes from multiple sources, each with different strengths:</p>
+
+        <h3>Public Records</h3>
+
+        <ul>
+          <li><strong>County assessor/recorder</strong>: Ownership records, deed transfers, tax assessments, liens</li>
+          <li><strong>Court records</strong>: Foreclosure filings, divorce proceedings, probate cases</li>
+          <li><strong>Building departments</strong>: Permits, code violations, certificates of occupancy</li>
+          <li><strong>Tax authorities</strong>: Property tax status, delinquencies, assessed values</li>
+        </ul>
+
+        <h3>MLS Data</h3>
+
+        <ul>
+          <li>Active listings, pending sales, sold properties</li>
+          <li>Days on market, price changes, listing history</li>
+          <li>Agent and brokerage information</li>
+          <li>Property details and photos</li>
+        </ul>
+
+        <h3>Third-Party Data</h3>
+
+        <ul>
+          <li><strong>Owner contact info</strong>: Phone numbers, email addresses (skip tracing)</li>
+          <li><strong>Mortgage data</strong>: Loan amounts, lenders, origination dates, estimated equity</li>
+          <li><strong>Demographic data</strong>: Income, household composition, lifestyle indicators</li>
+          <li><strong>Life event data</strong>: Job changes, marriages, deaths, relocations</li>
+        </ul>
+
+        <h2>Key Data Points for Real Estate</h2>
+
+        <h3>Property Data</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data Point</th>
+              <th>Use Case</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ownership type</td>
+              <td>Identify absentee owners, LLC owners, inherited properties</td>
+              <td>County records</td>
+            </tr>
+            <tr>
+              <td>Ownership tenure</td>
+              <td>Long-term owners may have high equity, life changes</td>
+              <td>Deed history</td>
+            </tr>
+            <tr>
+              <td>Estimated equity</td>
+              <td>High equity = more flexibility in sale price</td>
+              <td>AVM + mortgage data</td>
+            </tr>
+            <tr>
+              <td>Last sale price/date</td>
+              <td>Understand owner's basis, appreciation potential</td>
+              <td>County records</td>
+            </tr>
+            <tr>
+              <td>Tax assessment</td>
+              <td>Identify undervalued or overvalued properties</td>
+              <td>Assessor records</td>
+            </tr>
+            <tr>
+              <td>Property condition</td>
+              <td>Code violations, permits, age indicate opportunity</td>
+              <td>Building dept, permits</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Owner Data</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data Point</th>
+              <th>Use Case</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mailing address</td>
+              <td>Direct mail campaigns, absentee owner identification</td>
+              <td>County records, skip trace</td>
+            </tr>
+            <tr>
+              <td>Phone number</td>
+              <td>Cold calling, follow-up after mail</td>
+              <td>Skip tracing services</td>
+            </tr>
+            <tr>
+              <td>Email address</td>
+              <td>Digital outreach, drip campaigns</td>
+              <td>Skip tracing, data append</td>
+            </tr>
+            <tr>
+              <td>Other properties owned</td>
+              <td>Portfolio owners, potential multiple transactions</td>
+              <td>County records, ATTOM</td>
+            </tr>
+            <tr>
+              <td>Age/demographics</td>
+              <td>Life stage targeting (downsizing, estate planning)</td>
+              <td>Consumer data providers</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Distress & Motivation Signals</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Signal</th>
+              <th>What It Indicates</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pre-foreclosure</td>
+              <td>Owner behind on mortgage, motivated to sell to avoid foreclosure</td>
+              <td>Court records, RealtyTrac</td>
+            </tr>
+            <tr>
+              <td>Tax delinquency</td>
+              <td>Financial distress, potential lien issues</td>
+              <td>County tax records</td>
+            </tr>
+            <tr>
+              <td>Divorce filing</td>
+              <td>Often requires property liquidation</td>
+              <td>Court records</td>
+            </tr>
+            <tr>
+              <td>Probate</td>
+              <td>Inherited property, heirs often sell</td>
+              <td>Probate court records</td>
+            </tr>
+            <tr>
+              <td>Code violations</td>
+              <td>Owner may be overwhelmed, motivated to sell</td>
+              <td>Building dept records</td>
+            </tr>
+            <tr>
+              <td>Vacant property</td>
+              <td>Absentee owners often willing to sell</td>
+              <td>USPS vacancy data, utilities</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Use Cases by Role</h2>
+
+        <h3>For Listing Agents</h3>
+
+        <div class="use-case-card">
+          <h4>Expired Listing Prospecting</h4>
+          <p><strong>The play:</strong> When a listing expires, enrich with owner contact info and property details. Call before competing agents do.</p>
+          <p><strong>Key data:</strong> Owner phone/email, original listing details, days on market, price history, comparable sales</p>
+          <p><strong>Advantage:</strong> Personalized outreach with specific knowledge of why the property didn't sell</p>
+        </div>
+
+        <div class="use-case-card">
+          <h4>FSBO Conversion</h4>
+          <p><strong>The play:</strong> Identify for-sale-by-owner properties, enrich with owner data and property details to make a compelling case for professional representation.</p>
+          <p><strong>Key data:</strong> Days on market as FSBO, owner contact info, comparable sold prices, estimated savings/cost analysis</p>
+        </div>
+
+        <div class="use-case-card">
+          <h4>Geographic Farming</h4>
+          <p><strong>The play:</strong> Build a comprehensive database of homeowners in target neighborhoods. Enrich with equity, tenure, and motivation signals to prioritize outreach.</p>
+          <p><strong>Key data:</strong> All homeowners in area, ownership tenure, estimated equity, absentee status, recent life events</p>
+        </div>
+
+        <h3>For Buyer's Agents</h3>
+
+        <div class="use-case-card">
+          <h4>Buyer Qualification</h4>
+          <p><strong>The play:</strong> Enrich new buyer leads with financial data to prioritize and tailor service levels.</p>
+          <p><strong>Key data:</strong> Estimated income, current home ownership status, equity in current home, employment data</p>
+          <p><strong>Outcome:</strong> Focus on qualified, motivated buyers; identify who can actually close</p>
+        </div>
+
+        <div class="use-case-card">
+          <h4>Off-Market Opportunities</h4>
+          <p><strong>The play:</strong> When a buyer wants a specific area with limited inventory, find owners who might sell even if not listed.</p>
+          <p><strong>Key data:</strong> Owners with high equity + long tenure, absentee owners, owners in other states, recent life events</p>
+        </div>
+
+        <h3>For Real Estate Investors</h3>
+
+        <div class="use-case-card">
+          <h4>Distressed Property Acquisition</h4>
+          <p><strong>The play:</strong> Stack multiple distress signals to find motivated sellers who will accept below-market offers.</p>
+          <p><strong>Key signals:</strong> Pre-foreclosure + high equity, tax delinquent + vacant, probate + out-of-state heir, code violations + absentee owner</p>
+          <p><strong>Why it works:</strong> Properties with 3+ distress signals have significantly higher contact-to-contract rates</p>
+        </div>
+
+        <div class="use-case-card">
+          <h4>Wholesale Deal Finding</h4>
+          <p><strong>The play:</strong> Find properties that can be acquired under market value and assigned to other investors.</p>
+          <p><strong>Key data:</strong> Estimated ARV (after repair value), property condition indicators, owner motivation signals, comparable sales</p>
+        </div>
+
+        <div class="callout-box">
+          <p><strong>Lead stacking:</strong> The most successful investors don't rely on single data points. They "stack" multiple criteria—a property might need to be absentee-owned AND have high equity AND show a tax delinquency before it makes the priority list. More signals = higher conversion rates.</p>
+        </div>
+
+        <h2>Data Providers for Real Estate</h2>
+
+        <h3>Property Data Providers</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Strengths</th>
+              <th>Best For</th>
+              <th>Pricing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ATTOM Data</td>
+              <td>Comprehensive property records, nationwide coverage</td>
+              <td>Enterprise, PropTech platforms</td>
+              <td>API + licensing fees</td>
+            </tr>
+            <tr>
+              <td>CoreLogic</td>
+              <td>Mortgage data, AVMs, analytics</td>
+              <td>Lenders, large brokerages</td>
+              <td>Enterprise contracts</td>
+            </tr>
+            <tr>
+              <td>PropStream</td>
+              <td>Investor-focused, skip tracing included</td>
+              <td>Individual investors, small teams</td>
+              <td>$99/mo</td>
+            </tr>
+            <tr>
+              <td>BatchLeads</td>
+              <td>List building, skip tracing, lead stacking</td>
+              <td>Wholesalers, investors</td>
+              <td>$99-299/mo</td>
+            </tr>
+            <tr>
+              <td>REISift</td>
+              <td>Lead stacking, motivation scoring</td>
+              <td>High-volume investors</td>
+              <td>$49-149/mo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Skip Tracing Providers</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>Hit Rate</th>
+              <th>Best For</th>
+              <th>Cost Per Record</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BatchSkipTracing</td>
+              <td>70-85%</td>
+              <td>High-volume investors</td>
+              <td>$0.12-0.18</td>
+            </tr>
+            <tr>
+              <td>REISkip</td>
+              <td>65-80%</td>
+              <td>Budget-conscious users</td>
+              <td>$0.10-0.15</td>
+            </tr>
+            <tr>
+              <td>SkipGenie</td>
+              <td>70-80%</td>
+              <td>Wholesalers</td>
+              <td>$0.15-0.20</td>
+            </tr>
+            <tr>
+              <td>LexisNexis Accurint</td>
+              <td>85-90%</td>
+              <td>Enterprise, compliance-focused</td>
+              <td>$0.50-1.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>All-in-One Platforms</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Features</th>
+              <th>Best For</th>
+              <th>Pricing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PropStream</td>
+              <td>Property data + skip trace + comps + marketing</td>
+              <td>Investors, agents</td>
+              <td>$99/mo + skip costs</td>
+            </tr>
+            <tr>
+              <td>DealMachine</td>
+              <td>Driving for dollars + skip trace + direct mail</td>
+              <td>Wholesalers, driving teams</td>
+              <td>$49-99/mo</td>
+            </tr>
+            <tr>
+              <td>Privy</td>
+              <td>MLS data + investor analytics + alerts</td>
+              <td>Investor-agents</td>
+              <td>$97-197/mo</td>
+            </tr>
+            <tr>
+              <td>Realeflow</td>
+              <td>Lead gen + CRM + marketing automation</td>
+              <td>Scaling investors</td>
+              <td>$99-299/mo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Building Motivated Seller Lists</h2>
+
+        <p>The key to real estate prospecting is finding people who need to sell, not just people who own property. Here's how to build high-quality motivated seller lists:</p>
+
+        <h3>Step 1: Define Your Criteria</h3>
+
+        <p>Stack multiple motivation signals:</p>
+
+        <ul>
+          <li><strong>Equity requirements</strong>: Minimum 30-40% equity (room for below-market offers)</li>
+          <li><strong>Tenure requirements</strong>: Owned 10+ years (more likely to have life changes, equity)</li>
+          <li><strong>Ownership type</strong>: Absentee owners, out-of-state owners, inherited properties</li>
+          <li><strong>Distress indicators</strong>: Pre-foreclosure, tax delinquent, code violations</li>
+          <li><strong>Life events</strong>: Divorce, probate, job relocation, retirement</li>
+        </ul>
+
+        <h3>Step 2: Pull and Clean Lists</h3>
+
+        <ol>
+          <li>Pull base property list from county records or data provider</li>
+          <li>Apply filtering criteria to narrow to potential motivated sellers</li>
+          <li>Remove recently sold properties and active listings</li>
+          <li>Remove properties you've already contacted (if applicable)</li>
+          <li>Deduplicate by owner (same person may own multiple properties)</li>
+        </ol>
+
+        <h3>Step 3: Skip Trace for Contact Info</h3>
+
+        <ul>
+          <li>Submit owner names and property addresses to skip trace provider</li>
+          <li>Request phone numbers (landline and mobile), email addresses</li>
+          <li>Expect 70-85% hit rate on contact information</li>
+          <li>Validate phone numbers before cold calling campaigns</li>
+        </ul>
+
+        <h3>Step 4: Score and Prioritize</h3>
+
+        <p>Not all motivated sellers are equally motivated. Score leads based on:</p>
+
+        <ul>
+          <li>Number of distress signals (more = higher priority)</li>
+          <li>Recency of trigger event (recent foreclosure filing > old)</li>
+          <li>Equity level (higher equity = more flexibility)</li>
+          <li>Contact quality (verified phone > unverified)</li>
+        </ul>
+
+        <div class="callout-box">
+          <p><strong>The 3+ signal rule:</strong> Properties with three or more motivation signals typically have 3-5x higher conversion rates than single-signal leads. A high-equity, long-tenure property with a recent pre-foreclosure notice is far more likely to transact than a property with only high equity.</p>
+        </div>
+
+        <h2>Compliance Considerations</h2>
+
+        <h3>TCPA Compliance (Phone Calls)</h3>
+
+        <ul>
+          <li><strong>Cell phones</strong>: Obtain consent before auto-dialing or using pre-recorded messages</li>
+          <li><strong>Do-not-call list</strong>: Scrub against national DNC and state DNC lists</li>
+          <li><strong>Time restrictions</strong>: Call only between 8am-9pm recipient's local time</li>
+          <li><strong>Identification</strong>: Identify yourself and your company at the start of calls</li>
+        </ul>
+
+        <h3>CAN-SPAM Compliance (Email)</h3>
+
+        <ul>
+          <li>Include physical address in all emails</li>
+          <li>Provide clear unsubscribe mechanism</li>
+          <li>Honor opt-out requests within 10 business days</li>
+          <li>Don't use misleading subject lines</li>
+        </ul>
+
+        <h3>Real Estate-Specific Rules</h3>
+
+        <ul>
+          <li><strong>Fair housing</strong>: Don't use enrichment data to discriminate based on protected classes</li>
+          <li><strong>State regulations</strong>: Some states have specific solicitation rules for real estate</li>
+          <li><strong>Disclosure</strong>: Some states require disclosure of how you obtained contact information</li>
+          <li><strong>Foreclosure solicitation</strong>: Many states regulate contact with homeowners in foreclosure</li>
+        </ul>
+
+        <h2>PropTech Applications</h2>
+
+        <p>Technology platforms use data enrichment to power various real estate products:</p>
+
+        <h3>iBuyer Platforms</h3>
+
+        <p>Companies like Opendoor, Offerpad, and Zillow Offers use enrichment to:</p>
+        <ul>
+          <li>Generate instant offers based on property data and AVMs</li>
+          <li>Identify likely sellers based on life event signals</li>
+          <li>Price renovations based on permit and condition data</li>
+          <li>Underwrite resale risk based on market analytics</li>
+        </ul>
+
+        <h3>Lead Generation Platforms</h3>
+
+        <p>Platforms like Zillow, Realtor.com, and HomeLight use enrichment to:</p>
+        <ul>
+          <li>Qualify buyer leads before routing to agents</li>
+          <li>Match sellers with appropriate agents</li>
+          <li>Provide market insights and home valuations</li>
+          <li>Identify homeowners likely to sell soon</li>
+        </ul>
+
+        <h3>Investment Platforms</h3>
+
+        <p>Platforms like Roofstock, Fundrise, and RealtyMogul use enrichment to:</p>
+        <ul>
+          <li>Underwrite investment properties</li>
+          <li>Analyze rental income potential</li>
+          <li>Identify off-market acquisition opportunities</li>
+          <li>Monitor portfolio property values</li>
+        </ul>
+
+        <h2>Measuring Success</h2>
+
+        <h3>Key Metrics</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>What It Measures</th>
+              <th>Benchmark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Skip trace hit rate</td>
+              <td>% of records with valid contact info</td>
+              <td>70-85%</td>
+            </tr>
+            <tr>
+              <td>Contact rate</td>
+              <td>% of contacts reached by phone</td>
+              <td>15-25%</td>
+            </tr>
+            <tr>
+              <td>Appointment rate</td>
+              <td>% of contacts that agree to meet</td>
+              <td>5-10%</td>
+            </tr>
+            <tr>
+              <td>Contract rate</td>
+              <td>% of appointments that become contracts</td>
+              <td>20-40%</td>
+            </tr>
+            <tr>
+              <td>Cost per deal</td>
+              <td>Total data/marketing cost per closed transaction</td>
+              <td>$500-2,000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>ROI Calculation</h3>
+
+        <p>Simple formula for real estate prospecting ROI:</p>
+
+        <ul>
+          <li><strong>Data costs</strong>: List purchases + skip tracing + marketing</li>
+          <li><strong>Revenue</strong>: Commission/profit per deal × deals closed</li>
+          <li><strong>ROI</strong>: (Revenue - Data costs) / Data costs</li>
+        </ul>
+
+        <p>Most successful agents and investors see 5-20x ROI on data investments when combined with consistent follow-up.</p>
+
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <p class="faq-question">What data can real estate agents enrich for prospecting?</p>
+            <p class="faq-answer">Real estate enrichment typically includes property data (ownership, equity, tax records), owner contact information (phone, email), demographic data (income, household composition), and intent signals (pre-foreclosure, divorce filings, job relocations, life events). This helps identify motivated sellers and qualified buyers.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">What are the best data providers for real estate prospecting?</p>
+            <p class="faq-answer">Top providers include ATTOM Data (property records), CoreLogic (property and mortgage data), PropStream (investor-focused), BatchLeads (skip tracing and owner data), and REISift (lead stacking). For contact data, Cole Information and LexisNexis provide owner contact information with varying accuracy.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">How do you find motivated sellers using data?</p>
+            <p class="faq-answer">Stack multiple distress signals: high equity + long ownership tenure, pre-foreclosure notices, tax delinquency, code violations, vacant properties, absentee owners, divorce filings, and probate records. Properties with 3+ signals are significantly more likely to sell. Combine property data with life event data for best results.</p>
+          </div>
+
+          <div class="faq-item">
+            <p class="faq-question">Is skip tracing legal for real estate prospecting?</p>
+            <p class="faq-answer">Yes, skip tracing (finding owner contact information) is legal when used for legitimate business purposes like real estate prospecting. However, you must comply with TCPA for phone calls (especially mobile), honor do-not-call lists, and follow state-specific real estate solicitation rules. Some states require disclosure of how you obtained contact information.</p>
+          </div>
+        </div>
+
+        <div class="related-articles">
+          <h2>Related Resources</h2>
+          <div class="related-grid">
+            <div class="related-card">
+              <h3><a href="/resources/contact-data-waterfall.html">Contact Data Waterfall Strategy</a></h3>
+              <p>Maximize contact coverage using multiple data providers.</p>
+            </div>
+            <div class="related-card">
+              <h3><a href="/resources/measuring-enrichment-roi.html">How to Measure Data Enrichment ROI</a></h3>
+              <p>Calculate and prove the value of your data investments.</p>
+            </div>
+            <div class="related-card">
+              <h3><a href="/resources/signal-based-selling.html">Signal-Based Selling with Enriched Data</a></h3>
+              <p>Use intent signals to time your outreach perfectly.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <img src="/assets/logos/logos-svg/verum-logo-dark-bg.svg" alt="Verum" class="site-footer__logo">
+          <p class="site-footer__tagline">Clean data. Clear results.</p>
+        </div>
+        <nav class="site-footer__nav">
+          <a href="/solutions.html" class="site-footer__link">Solutions</a>
+          <a href="/resources/" class="site-footer__link">Resources</a>
+          <a href="/contact.html" class="site-footer__link">Contact</a>
+        </nav>
+      </div>
+      <div class="site-footer__legal">
+        <span>&copy; 2025 Verum Inc.</span>
+        <a href="/privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
