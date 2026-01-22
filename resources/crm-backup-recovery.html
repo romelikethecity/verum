@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Data Backup & Recovery: Protect Your Revenue Data | Verum</title>
+  <meta name="description" content="How to back up and recover CRM data in Salesforce, HubSpot, and other platforms. Covers backup strategies, recovery procedures, and disaster planning for revenue teams.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/crm-backup-recovery.html">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/crm-backup-recovery.html">
+  <meta property="og:title" content="CRM Data Backup & Recovery: Protect Your Revenue Data">
+  <meta property="og:description" content="How to back up and recover CRM data in Salesforce, HubSpot, and other platforms. Covers backup strategies, recovery procedures, and disaster planning for revenue teams.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CRM Data Backup & Recovery: Protect Your Revenue Data">
+  <meta name="twitter:description" content="How to back up and recover CRM data in Salesforce, HubSpot, and other platforms. Covers backup strategies, recovery procedures, and disaster planning for revenue teams.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CRM Data Backup & Recovery: Protect Your Revenue Data",
+    "description": "How to back up and recover CRM data in Salesforce, HubSpot, and other platforms. Covers backup strategies, recovery procedures, and disaster planning for revenue teams.",
+    "image": "https://veruminc.com/assets/social-preview.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum",
+      "url": "https://veruminc.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://veruminc.com/assets/logos/logos-svg/verum-logo-dark-bg.svg"
+      }
+    },
+    "datePublished": "2026-01-22",
+    "dateModified": "2026-01-22",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/crm-backup-recovery.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Salesforce automatically back up my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salesforce maintains infrastructure-level backups for disaster recovery, but these aren't designed for individual customer data recovery. Salesforce's Data Recovery Service costs $10,000+ and takes 6-8 weeks. For practical data protection, you need your own backup solution—either native Data Export, a third-party backup tool, or custom API-based backups to your own storage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I back up my CRM data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Backup frequency depends on your data change velocity and acceptable data loss. For most organizations: daily backups for core objects (Accounts, Contacts, Opportunities), more frequent for high-change objects, and real-time replication for mission-critical data. Consider your Recovery Point Objective (RPO)—if you can't afford to lose more than 4 hours of data, you need at least 4-hour backup intervals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between backup and data export?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data export gives you a copy of your data, typically as CSV files. True backup includes: relationship preservation (so you can restore linked records), metadata backup (custom fields, workflows, automations), incremental backups (efficient storage of changes), and point-in-time recovery (restore to any backup point). Export is a starting point; backup is a complete recovery solution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I recover from mass data deletion or corruption?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "First, stop the bleeding—identify what's affected and prevent further damage. Check the Recycle Bin for deleted records (Salesforce keeps them for 15 days). For corruption or Recycle Bin-expired data, you'll need your backup solution. Restore in a sandbox first to validate, then restore to production. Document what happened for process improvement. Having tested recovery procedures before an incident is critical."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-header {
+      margin-bottom: 3rem;
+      padding-top: 2rem;
+    }
+    .article-category {
+      display: inline-block;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.625rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      background: rgba(45, 212, 191, 0.15);
+      color: var(--color-teal);
+    }
+    .article-header h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+    .article-content {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+    }
+    .article-content h2 {
+      font-size: 1.625rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 3rem 0 1.25rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 2rem 0 1rem;
+    }
+    .article-content p {
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.625rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-content blockquote {
+      border-left: 3px solid var(--color-teal);
+      padding-left: 1.25rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--color-text-secondary);
+    }
+    .highlight-box {
+      background: rgba(45, 212, 191, 0.08);
+      border: 1px solid rgba(45, 212, 191, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .highlight-box h4 {
+      color: var(--color-teal);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .highlight-box ul {
+      margin-bottom: 0;
+    }
+    .warning-box {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    .warning-box h4 {
+      color: #ef4444;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .warning-box ul {
+      margin-bottom: 0;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.9375rem;
+    }
+    .data-table th, .data-table td {
+      padding: 0.875rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .data-table th {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      background: rgba(45, 212, 191, 0.05);
+    }
+    .data-table tr:hover {
+      background: rgba(45, 212, 191, 0.03);
+    }
+    .related-articles {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .related-articles h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .related-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .related-card {
+      padding: 1.25rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--color-teal);
+    }
+    .related-card__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.375rem;
+      line-height: 1.3;
+    }
+    .related-card__title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .related-card__excerpt {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+    }
+    .faq-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-section h2 {
+      margin-top: 0;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1.0625rem;
+      margin-bottom: 0.5rem;
+    }
+    .faq-item p {
+      color: var(--color-text-secondary);
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <article class="article-container">
+      <header class="article-header">
+        <span class="article-category">Operations Guide</span>
+        <h1>CRM Data Backup & Recovery: Protect Your Revenue Data</h1>
+        <p class="article-meta">15 min read</p>
+      </header>
+
+      <div class="article-content">
+        <p>Your CRM contains your company's revenue history, customer relationships, and sales pipeline. It's also one of the systems most vulnerable to data loss—not from hackers or infrastructure failures, but from everyday mistakes, bad integrations, and user errors.</p>
+
+        <p>A sales rep accidentally mass-deletes accounts while trying to clean up their pipeline. An integration goes haywire and overwrites thousands of records. A departing employee corrupts data on their way out. A well-meaning admin runs a data loader job that goes wrong.</p>
+
+        <p>Most CRM platforms don't include the backup and recovery capabilities you need to handle these scenarios. Salesforce's recovery service costs $10,000+ and takes weeks. HubSpot's restore options are limited. The assumption is that you've got this handled.</p>
+
+        <p>This guide covers how to actually protect your CRM data—backup strategies, recovery procedures, and disaster planning that works for revenue operations.</p>
+
+        <h2>Why CRM Data Is at Risk</h2>
+
+        <p>CRM data loss isn't theoretical. These scenarios happen regularly:</p>
+
+        <h3>User Errors</h3>
+
+        <ul>
+          <li><strong>Mass deletions:</strong> User selects wrong records and deletes hundreds or thousands</li>
+          <li><strong>Mass updates gone wrong:</strong> Data loader or inline edit updates wrong field or wrong records</li>
+          <li><strong>Import errors:</strong> Bad CSV import overwrites existing data</li>
+          <li><strong>Merge mistakes:</strong> Wrong record survives merge, losing data from deleted record</li>
+        </ul>
+
+        <h3>Integration Failures</h3>
+
+        <ul>
+          <li><strong>Sync loops:</strong> Two systems overwrite each other repeatedly</li>
+          <li><strong>Mapping errors:</strong> Integration maps data to wrong fields</li>
+          <li><strong>Null overwrites:</strong> Integration overwrites good data with empty values</li>
+          <li><strong>Duplicate creation:</strong> Integration creates duplicates instead of updating</li>
+        </ul>
+
+        <h3>Configuration Mistakes</h3>
+
+        <ul>
+          <li><strong>Workflow errors:</strong> Automation updates or deletes wrong records</li>
+          <li><strong>Trigger bugs:</strong> Custom code has unintended effects</li>
+          <li><strong>Permission changes:</strong> Users gain destructive permissions they shouldn't have</li>
+          <li><strong>Schema changes:</strong> Deleting fields loses historical data</li>
+        </ul>
+
+        <h3>Malicious Actions</h3>
+
+        <ul>
+          <li><strong>Departing employees:</strong> Data deletion or exfiltration before leaving</li>
+          <li><strong>Compromised accounts:</strong> Attackers with stolen credentials</li>
+          <li><strong>Insider threats:</strong> Intentional sabotage</li>
+        </ul>
+
+        <div class="warning-box">
+          <h4>Common Misconception</h4>
+          <ul>
+            <li>"Our CRM vendor backs up our data" — They back up their infrastructure, not your data for your use</li>
+            <li>"We can just restore from the Recycle Bin" — Recycle Bin has limits (15 days in Salesforce, varies by platform)</li>
+            <li>"Our IT team handles backups" — CRM often falls outside traditional IT backup scope</li>
+            <li>"We've never had a problem" — Data loss is a matter of when, not if</li>
+          </ul>
+        </div>
+
+        <h2>Understanding Your CRM's Native Capabilities</h2>
+
+        <p>Before implementing third-party solutions, understand what your CRM provides:</p>
+
+        <h3>Salesforce</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>What It Does</th>
+              <th>Limitations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Recycle Bin</td>
+              <td>Holds deleted records for 15 days</td>
+              <td>Limited capacity (25x storage), no protection from updates</td>
+            </tr>
+            <tr>
+              <td>Weekly Data Export</td>
+              <td>Manual or scheduled CSV export of all objects</td>
+              <td>Weekly only, no relationships, manual restore</td>
+            </tr>
+            <tr>
+              <td>Data Recovery Service</td>
+              <td>Salesforce restores your data</td>
+              <td>$10,000+, 6-8 weeks, not guaranteed</td>
+            </tr>
+            <tr>
+              <td>Backup & Restore (beta)</td>
+              <td>Native backup solution</td>
+              <td>Limited GA, check current availability</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>HubSpot</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>What It Does</th>
+              <th>Limitations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Activity Log</td>
+              <td>Shows recent changes (90 days)</td>
+              <td>View only, limited restore capabilities</td>
+            </tr>
+            <tr>
+              <td>Export</td>
+              <td>Export objects to CSV</td>
+              <td>Manual process, no relationships, no automation</td>
+            </tr>
+            <tr>
+              <td>Restore Deleted</td>
+              <td>Restore recently deleted records</td>
+              <td>90-day limit, no protection from updates</td>
+            </tr>
+            <tr>
+              <td>API</td>
+              <td>Build custom backup solutions</td>
+              <td>Rate limits, requires development</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Microsoft Dynamics 365</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>What It Does</th>
+              <th>Limitations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>System Backups</td>
+              <td>Microsoft backs up infrastructure</td>
+              <td>Not for individual record recovery</td>
+            </tr>
+            <tr>
+              <td>On-Demand Backup</td>
+              <td>Admin-triggered backup</td>
+              <td>Requires admin intervention, limited retention</td>
+            </tr>
+            <tr>
+              <td>Export to Excel</td>
+              <td>Export data views</td>
+              <td>Manual, limited scope</td>
+            </tr>
+            <tr>
+              <td>Azure-based solutions</td>
+              <td>Custom backup to Azure storage</td>
+              <td>Requires Azure expertise and setup</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Backup Strategy Components</h2>
+
+        <p>A complete CRM backup strategy includes several elements:</p>
+
+        <h3>Recovery Objectives</h3>
+
+        <p>Define what you need before selecting solutions:</p>
+
+        <ul>
+          <li><strong>Recovery Point Objective (RPO):</strong> How much data loss is acceptable? If RPO is 4 hours, you need backups at least every 4 hours.</li>
+          <li><strong>Recovery Time Objective (RTO):</strong> How quickly must you recover? This determines whether you need instant restore or can wait for manual processes.</li>
+          <li><strong>Scope:</strong> Which objects are critical? Pipeline data might be more urgent than marketing lists.</li>
+          <li><strong>Retention:</strong> How long do you need to keep backups? Compliance may require years.</li>
+        </ul>
+
+        <div class="highlight-box">
+          <h4>Example Recovery Objectives</h4>
+          <ul>
+            <li><strong>Tier 1 (Accounts, Contacts, Opportunities):</strong> RPO: 4 hours, RTO: 2 hours</li>
+            <li><strong>Tier 2 (Leads, Cases, Activities):</strong> RPO: 24 hours, RTO: 8 hours</li>
+            <li><strong>Tier 3 (Reports, Dashboards, Custom Objects):</strong> RPO: 7 days, RTO: 48 hours</li>
+          </ul>
+        </div>
+
+        <h3>What to Back Up</h3>
+
+        <p>A complete CRM backup includes:</p>
+
+        <ul>
+          <li><strong>Data records:</strong> All standard and custom object records</li>
+          <li><strong>Relationships:</strong> Lookup and master-detail relationships between records</li>
+          <li><strong>Attachments:</strong> Files, documents, and attachments</li>
+          <li><strong>Metadata:</strong> Custom fields, page layouts, workflows, automation</li>
+          <li><strong>Configuration:</strong> User permissions, roles, profiles, settings</li>
+          <li><strong>Historical data:</strong> Field history tracking, audit trails</li>
+        </ul>
+
+        <h3>Backup Types</h3>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Description</th>
+              <th>Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full backup</td>
+              <td>Complete copy of all data</td>
+              <td>Baseline, disaster recovery</td>
+            </tr>
+            <tr>
+              <td>Incremental backup</td>
+              <td>Only changed records since last backup</td>
+              <td>Frequent backups, efficient storage</td>
+            </tr>
+            <tr>
+              <td>Differential backup</td>
+              <td>All changes since last full backup</td>
+              <td>Faster restore than incremental</td>
+            </tr>
+            <tr>
+              <td>Point-in-time</td>
+              <td>Continuous capture enabling any point restore</td>
+              <td>Precise recovery needs</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Backup Solutions</h2>
+
+        <p>Options for CRM backup range from native tools to enterprise solutions:</p>
+
+        <h3>Third-Party Backup Tools</h3>
+
+        <p>Specialized CRM backup vendors:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Platforms</th>
+              <th>Key Features</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>OwnBackup</td>
+              <td>Salesforce, ServiceNow, Dynamics</td>
+              <td>Full backup, granular restore, sandbox seeding</td>
+            </tr>
+            <tr>
+              <td>Spanning</td>
+              <td>Salesforce, Microsoft 365</td>
+              <td>Automated daily backups, point-in-time restore</td>
+            </tr>
+            <tr>
+              <td>Odaseva</td>
+              <td>Salesforce</td>
+              <td>Enterprise backup, GDPR tools, archiving</td>
+            </tr>
+            <tr>
+              <td>Rewind</td>
+              <td>HubSpot, QuickBooks, others</td>
+              <td>Automated backups, quick restore</td>
+            </tr>
+            <tr>
+              <td>CloudAlly</td>
+              <td>Salesforce, Dynamics, HubSpot</td>
+              <td>Cross-platform backup, compliance features</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Build vs. Buy Considerations</h3>
+
+        <p>When custom solutions make sense:</p>
+
+        <ul>
+          <li><strong>Buy:</strong> Standard backup needs, limited IT resources, compliance requirements</li>
+          <li><strong>Build:</strong> Unique requirements, existing data infrastructure, cost sensitivity at scale</li>
+          <li><strong>Hybrid:</strong> Third-party tool for backup, custom scripts for specific needs</li>
+        </ul>
+
+        <h3>Custom Backup Approaches</h3>
+
+        <p>If building your own solution:</p>
+
+        <ul>
+          <li><strong>API-based extraction:</strong> Use CRM APIs to pull data into your own storage</li>
+          <li><strong>ETL tools:</strong> Tools like Fivetran, Stitch, or Airbyte can replicate CRM data</li>
+          <li><strong>Data warehouse replication:</strong> Maintain a copy in Snowflake, BigQuery, etc.</li>
+          <li><strong>Change data capture:</strong> Stream changes in real-time to backup storage</li>
+        </ul>
+
+        <h2>Recovery Procedures</h2>
+
+        <p>Having backups is useless without tested recovery procedures:</p>
+
+        <h3>Recovery Scenarios</h3>
+
+        <p>Plan for specific scenarios:</p>
+
+        <div class="highlight-box">
+          <h4>Scenario 1: Mass Deletion</h4>
+          <ul>
+            <li><strong>Detection:</strong> User reports missing records, monitoring alert</li>
+            <li><strong>Assessment:</strong> How many records? Which objects? When did it happen?</li>
+            <li><strong>Triage:</strong> Check Recycle Bin first—fastest recovery if within retention</li>
+            <li><strong>Restore:</strong> If not in Recycle Bin, restore from backup</li>
+            <li><strong>Validation:</strong> Verify record count and relationships</li>
+          </ul>
+        </div>
+
+        <div class="highlight-box">
+          <h4>Scenario 2: Data Corruption</h4>
+          <ul>
+            <li><strong>Detection:</strong> Reports show wrong data, users notice errors</li>
+            <li><strong>Assessment:</strong> Which records affected? What changed? When?</li>
+            <li><strong>Isolation:</strong> Stop the process causing corruption</li>
+            <li><strong>Restore:</strong> Restore affected records from pre-corruption backup</li>
+            <li><strong>Reconciliation:</strong> Merge any valid changes made after corruption</li>
+          </ul>
+        </div>
+
+        <div class="highlight-box">
+          <h4>Scenario 3: Integration Error</h4>
+          <ul>
+            <li><strong>Detection:</strong> Monitoring shows mass updates, integration errors</li>
+            <li><strong>Immediate action:</strong> Disable the integration</li>
+            <li><strong>Assessment:</strong> What fields changed? How many records?</li>
+            <li><strong>Restore:</strong> Restore affected fields (not whole records if possible)</li>
+            <li><strong>Fix:</strong> Correct integration before re-enabling</li>
+          </ul>
+        </div>
+
+        <h3>Recovery Process</h3>
+
+        <p>General recovery workflow:</p>
+
+        <ol>
+          <li><strong>Incident declaration:</strong> Recognize that recovery is needed</li>
+          <li><strong>Impact assessment:</strong> Determine scope, affected records, business impact</li>
+          <li><strong>Communication:</strong> Notify stakeholders, set expectations</li>
+          <li><strong>Sandbox test:</strong> Restore to sandbox first to validate</li>
+          <li><strong>Production restore:</strong> Execute restore to production</li>
+          <li><strong>Validation:</strong> Verify data integrity and relationships</li>
+          <li><strong>Documentation:</strong> Document incident and lessons learned</li>
+        </ol>
+
+        <h3>Granular vs. Full Restore</h3>
+
+        <p>Different recovery needs require different approaches:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Restore Type</th>
+              <th>Use Case</th>
+              <th>Considerations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Single record</td>
+              <td>One record deleted or corrupted</td>
+              <td>Fast, minimal risk, may need relationship handling</td>
+            </tr>
+            <tr>
+              <td>Field-level</td>
+              <td>Specific fields overwritten</td>
+              <td>Preserve other valid changes, complex to execute</td>
+            </tr>
+            <tr>
+              <td>Object-level</td>
+              <td>All records of one type affected</td>
+              <td>Faster than record-by-record, relationship complexity</td>
+            </tr>
+            <tr>
+              <td>Full restore</td>
+              <td>Catastrophic loss</td>
+              <td>Last resort, loses all changes since backup</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Relationship Handling</h3>
+
+        <p>CRM records are interconnected. When restoring:</p>
+
+        <ul>
+          <li><strong>Parent-child relationships:</strong> Restore parents before children</li>
+          <li><strong>Lookup relationships:</strong> May need to recreate or remap IDs</li>
+          <li><strong>Junction objects:</strong> Restore after both related objects</li>
+          <li><strong>External IDs:</strong> Use external IDs when possible for matching</li>
+        </ul>
+
+        <h2>Testing Your Backup</h2>
+
+        <p>Untested backups aren't backups—they're hopes:</p>
+
+        <h3>Recovery Testing Schedule</h3>
+
+        <ul>
+          <li><strong>Monthly:</strong> Restore a sample of records to sandbox</li>
+          <li><strong>Quarterly:</strong> Full restore test of critical objects</li>
+          <li><strong>Annually:</strong> Complete disaster recovery exercise</li>
+          <li><strong>After changes:</strong> Test after major CRM configuration changes</li>
+        </ul>
+
+        <h3>What to Test</h3>
+
+        <ul>
+          <li><strong>Record restoration:</strong> Can you restore individual records?</li>
+          <li><strong>Relationship integrity:</strong> Do restored records maintain relationships?</li>
+          <li><strong>Attachment recovery:</strong> Can you restore files and documents?</li>
+          <li><strong>Metadata restoration:</strong> Can you restore custom fields, workflows?</li>
+          <li><strong>Time to recover:</strong> Does actual RTO meet your objectives?</li>
+          <li><strong>Data completeness:</strong> Are all expected records and fields present?</li>
+        </ul>
+
+        <h3>Documenting Tests</h3>
+
+        <p>For each test, document:</p>
+
+        <ul>
+          <li>Date and time of test</li>
+          <li>Scenario tested</li>
+          <li>Records/objects involved</li>
+          <li>Time to complete restoration</li>
+          <li>Issues encountered</li>
+          <li>Resolution of issues</li>
+          <li>Sign-off from stakeholders</li>
+        </ul>
+
+        <h2>Disaster Recovery Planning</h2>
+
+        <p>Beyond routine backups, plan for major incidents:</p>
+
+        <h3>Disaster Scenarios</h3>
+
+        <p>Plan for worst-case scenarios:</p>
+
+        <ul>
+          <li><strong>Complete data loss:</strong> All CRM data deleted or corrupted</li>
+          <li><strong>Platform unavailability:</strong> CRM vendor has extended outage</li>
+          <li><strong>Account compromise:</strong> Malicious actor gains admin access</li>
+          <li><strong>Ransomware:</strong> Data encrypted by attackers</li>
+        </ul>
+
+        <h3>Disaster Recovery Plan Components</h3>
+
+        <ul>
+          <li><strong>Roles and responsibilities:</strong> Who does what during an incident?</li>
+          <li><strong>Communication plan:</strong> How to notify stakeholders and customers?</li>
+          <li><strong>Recovery priorities:</strong> What to restore first?</li>
+          <li><strong>Manual procedures:</strong> How to operate without CRM temporarily?</li>
+          <li><strong>Vendor contacts:</strong> Who to call at your CRM vendor?</li>
+          <li><strong>Escalation paths:</strong> When to escalate and to whom?</li>
+        </ul>
+
+        <h3>Business Continuity</h3>
+
+        <p>How to operate while CRM is unavailable:</p>
+
+        <ul>
+          <li><strong>Offline access:</strong> Ensure key reports are available offline</li>
+          <li><strong>Alternative contact info:</strong> Maintain customer contact info outside CRM</li>
+          <li><strong>Pipeline documentation:</strong> Regular exports of pipeline for continuity</li>
+          <li><strong>Process fallbacks:</strong> Manual processes for critical workflows</li>
+        </ul>
+
+        <h2>Implementation Checklist</h2>
+
+        <p>Steps to implement CRM backup:</p>
+
+        <h3>Phase 1: Assessment</h3>
+
+        <ul>
+          <li>Inventory all CRM data objects</li>
+          <li>Classify data by criticality</li>
+          <li>Define RPO and RTO for each tier</li>
+          <li>Document current backup capabilities</li>
+          <li>Identify gaps</li>
+        </ul>
+
+        <h3>Phase 2: Solution Selection</h3>
+
+        <ul>
+          <li>Evaluate native CRM capabilities</li>
+          <li>Research third-party tools</li>
+          <li>Assess build vs. buy</li>
+          <li>Get budget approval</li>
+          <li>Select solution</li>
+        </ul>
+
+        <h3>Phase 3: Implementation</h3>
+
+        <ul>
+          <li>Deploy backup solution</li>
+          <li>Configure backup schedules</li>
+          <li>Set up monitoring and alerts</li>
+          <li>Document configuration</li>
+          <li>Train administrators</li>
+        </ul>
+
+        <h3>Phase 4: Validation</h3>
+
+        <ul>
+          <li>Verify backups are running</li>
+          <li>Test restore procedures</li>
+          <li>Validate data completeness</li>
+          <li>Confirm relationship integrity</li>
+          <li>Document test results</li>
+        </ul>
+
+        <h3>Phase 5: Operations</h3>
+
+        <ul>
+          <li>Establish monitoring procedures</li>
+          <li>Create runbooks for recovery scenarios</li>
+          <li>Schedule regular recovery tests</li>
+          <li>Review and update quarterly</li>
+        </ul>
+
+        <h2>Monitoring and Alerting</h2>
+
+        <p>Ongoing monitoring ensures backup health:</p>
+
+        <h3>Backup Health Metrics</h3>
+
+        <ul>
+          <li><strong>Backup completion:</strong> Did backups run successfully?</li>
+          <li><strong>Backup size:</strong> Is data volume as expected?</li>
+          <li><strong>Backup duration:</strong> Are backups completing in expected time?</li>
+          <li><strong>Storage usage:</strong> Is backup storage adequate?</li>
+          <li><strong>Last successful backup:</strong> How long since last good backup?</li>
+        </ul>
+
+        <h3>Alert Conditions</h3>
+
+        <ul>
+          <li>Backup fails to start</li>
+          <li>Backup fails to complete</li>
+          <li>Backup takes longer than threshold</li>
+          <li>Backup size significantly different from normal</li>
+          <li>Storage nearing capacity</li>
+          <li>No backup in X hours</li>
+        </ul>
+
+        <h3>Regular Reviews</h3>
+
+        <ul>
+          <li><strong>Weekly:</strong> Check backup logs for errors</li>
+          <li><strong>Monthly:</strong> Review backup metrics and test restore</li>
+          <li><strong>Quarterly:</strong> Full backup strategy review</li>
+          <li><strong>Annually:</strong> Disaster recovery exercise</li>
+        </ul>
+
+        <section class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>Does Salesforce automatically back up my data?</h3>
+            <p>Salesforce maintains infrastructure-level backups for disaster recovery, but these aren't designed for individual customer data recovery. Salesforce's Data Recovery Service costs $10,000+ and takes 6-8 weeks. For practical data protection, you need your own backup solution—either native Data Export, a third-party backup tool, or custom API-based backups to your own storage.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How often should I back up my CRM data?</h3>
+            <p>Backup frequency depends on your data change velocity and acceptable data loss. For most organizations: daily backups for core objects (Accounts, Contacts, Opportunities), more frequent for high-change objects, and real-time replication for mission-critical data. Consider your Recovery Point Objective (RPO)—if you can't afford to lose more than 4 hours of data, you need at least 4-hour backup intervals.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What's the difference between backup and data export?</h3>
+            <p>Data export gives you a copy of your data, typically as CSV files. True backup includes: relationship preservation (so you can restore linked records), metadata backup (custom fields, workflows, automations), incremental backups (efficient storage of changes), and point-in-time recovery (restore to any backup point). Export is a starting point; backup is a complete recovery solution.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>How do I recover from mass data deletion or corruption?</h3>
+            <p>First, stop the bleeding—identify what's affected and prevent further damage. Check the Recycle Bin for deleted records (Salesforce keeps them for 15 days). For corruption or Recycle Bin-expired data, you'll need your backup solution. Restore in a sandbox first to validate, then restore to production. Document what happened for process improvement. Having tested recovery procedures before an incident is critical.</p>
+          </div>
+        </section>
+
+        <div class="related-articles">
+          <h3>Related Resources</h3>
+          <div class="related-grid">
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/crm-migration-data-cleanup.html">CRM Migration Data Cleanup</a></p>
+              <p class="related-card__excerpt">Pre-migration checklist and data preparation.</p>
+            </div>
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/salesforce-data-cleanup.html">Salesforce Data Cleanup Guide</a></p>
+              <p class="related-card__excerpt">Comprehensive cleanup procedures for Salesforce.</p>
+            </div>
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/data-quality-automation.html">Data Quality Automation</a></p>
+              <p class="related-card__excerpt">Automating data protection and quality.</p>
+            </div>
+            <div class="related-card">
+              <p class="related-card__title"><a href="/resources/multi-crm-data-sync.html">Multi-CRM Data Sync</a></p>
+              <p class="related-card__excerpt">Keeping multiple systems synchronized.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
