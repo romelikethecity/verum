@@ -11,6 +11,9 @@
 (function() {
   'use strict';
 
+  // Chevron down SVG icon for dropdown
+  const chevronDownSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>`;
+
   // Site Header HTML
   const headerHTML = `
     <div class="container header__inner">
@@ -22,9 +25,16 @@
         <ul class="nav__list">
           <li><a href="/services/" class="nav__link">Services</a></li>
           <li><a href="/solutions/" class="nav__link">Solutions</a></li>
-          <li><a href="/resources/" class="nav__link">Resources</a></li>
-          <li><a href="/assessment/" class="nav__link">Free Assessment</a></li>
-          <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
+          <li class="nav__item--dropdown">
+            <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              Resources ${chevronDownSVG}
+            </button>
+            <div class="nav__dropdown">
+              <a href="/resources/" class="nav__dropdown-item">Blog</a>
+              <a href="/assessment/" class="nav__dropdown-item">Free Assessment</a>
+              <a href="/pricing.html" class="nav__dropdown-item">Pricing</a>
+            </div>
+          </li>
           <li><a href="/about.html" class="nav__link">About</a></li>
         </ul>
       </nav>
@@ -43,9 +53,16 @@
       <ul class="nav__list">
         <li><a href="/services/" class="nav__link">Services</a></li>
         <li><a href="/solutions/" class="nav__link">Solutions</a></li>
-        <li><a href="/resources/" class="nav__link">Resources</a></li>
-        <li><a href="/assessment/" class="nav__link">Free Assessment</a></li>
-        <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
+        <li class="nav__item--dropdown">
+          <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Resources ${chevronDownSVG}
+          </button>
+          <div class="nav__dropdown">
+            <a href="/resources/" class="nav__dropdown-item">Blog</a>
+            <a href="/assessment/" class="nav__dropdown-item">Free Assessment</a>
+            <a href="/pricing.html" class="nav__dropdown-item">Pricing</a>
+          </div>
+        </li>
         <li><a href="/about.html" class="nav__link">About</a></li>
       </ul>
       <a href="/#contact" class="btn btn--primary">Fix My Data</a>
@@ -133,7 +150,7 @@
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
       });
 
-      // Close mobile menu when clicking a link
+      // Close mobile menu when clicking a link (but not dropdown toggles)
       mobileNav.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
           menuToggle.classList.remove('active');
@@ -141,6 +158,29 @@
           mobileNav.classList.remove('active');
           document.body.style.overflow = '';
         }
+      });
+
+      // Mobile dropdown toggle
+      const mobileDropdownToggles = mobileNav.querySelectorAll('.nav__dropdown-toggle');
+      mobileDropdownToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const dropdownItem = this.closest('.nav__item--dropdown');
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+          // Close other dropdowns
+          mobileDropdownToggles.forEach(function(otherToggle) {
+            if (otherToggle !== toggle) {
+              otherToggle.setAttribute('aria-expanded', 'false');
+              otherToggle.closest('.nav__item--dropdown').classList.remove('active');
+            }
+          });
+
+          // Toggle current dropdown
+          this.setAttribute('aria-expanded', !isExpanded);
+          dropdownItem.classList.toggle('active');
+        });
       });
     }
   }
