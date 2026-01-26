@@ -498,3 +498,247 @@ data on average job tenure.</p>
 - Research: Gartner, Forrester, McKinsey, HBR
 - Industry: Salesforce State of Sales, HubSpot Research, Validity
 - Platform docs: Salesforce Help, HubSpot Knowledge Base
+
+---
+
+## Page Templates (Copy-Paste Ready)
+
+### Meta Description Templates (Under 160 chars)
+
+Use these patterns when creating new pages:
+
+**Industry Data Enrichment:**
+```
+Enrich your {industry} data with firmographics, contacts, and technographics. 50+ sources, human-verified. 24-hour turnaround.
+```
+Example: "Enrich your healthcare data with firmographics, contacts, and technographics. 50+ sources, human-verified. 24-hour turnaround." (121 chars)
+
+**Industry Data Cleaning:**
+```
+Clean your {industry} data: dedupe, validate emails, standardize records. Human-verified quality. 24-hour turnaround.
+```
+Example: "Clean your healthcare data: dedupe, validate emails, standardize records. Human-verified quality. 24-hour turnaround." (118 chars)
+
+**Industry Data Analysis:**
+```
+Turn your {industry} sales data into insights. ICP analysis by {dimension} for teams selling to {buyers}.
+```
+Example: "Turn your healthcare sales data into insights. ICP analysis for teams selling to hospitals and health systems." (110 chars)
+
+**Resources/Guides:**
+```
+{Topic} for {audience}. {Key benefit or use case}.
+```
+Example: "Data enrichment for financial services. KYC automation, compliance, and customer data management." (97 chars)
+
+**Find/Discovery Pages:**
+```
+Find {business type} with verified contact data. {Key data points included}.
+```
+Example: "Find dental practices with verified contact data. Owner contacts, NPI numbers, and practice details." (100 chars)
+
+---
+
+### Full Page Template (Solutions)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{Page Title} | Verum</title>
+  <meta name="description" content="{120-160 char description}">
+  <meta name="keywords" content="{keyword1}, {keyword2}, {keyword3}">
+
+  <link rel="canonical" href="https://veruminc.com/{path}/">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veruminc.com/{path}/">
+  <meta property="og:title" content="{Page Title} | Verum">
+  <meta property="og:description" content="{Same as meta description}">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{Page Title} | Verum">
+  <meta name="twitter:description" content="{Same as meta description}">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "{Category}", "item": "https://veruminc.com/{category}/"},
+      {"@type": "ListItem", "position": 3, "name": "{Page Title}"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">{Page Title}</h1>
+        <p class="page-hero__subtitle">{Subtitle}</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container" style="max-width: 800px;">
+        <!-- Page content here -->
+
+        <div class="text-center mt-xl">
+          <a href="/#contact" class="btn btn--primary btn--lg">Get Started</a>
+        </div>
+
+        <p class="mt-lg text-muted">Related: <a href="/path1/">Link 1</a> | <a href="/path2/">Link 2</a> | <a href="/path3/">Link 3</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
+```
+
+---
+
+### FAQPage Schema Template
+
+Add this after BreadcrumbList schema for pages with FAQ sections:
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Question 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Answer 1."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Question 2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Answer 2."
+      }
+    }
+  ]
+}
+</script>
+```
+
+**Important:** The FAQ schema questions must match the visible FAQ content on the page.
+
+---
+
+### Service Schema Template
+
+Add this for service and solution pages:
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{Service Name}",
+  "provider": {
+    "@type": "Organization",
+    "name": "Verum"
+  },
+  "description": "{Service description under 200 chars}",
+  "serviceType": "{Service Type}"
+}
+</script>
+```
+
+---
+
+## Programmatic Page Generation
+
+### Using generate_pages.py
+
+The `generate_pages.py` script creates 195+ SEO pages automatically. When modifying:
+
+1. **Meta descriptions** - Keep templates under 160 chars
+2. **CSS version** - Update `?v=5` when CSS changes
+3. **Run after changes:** `python3 generate_pages.py`
+4. **Verify output:** Check a few generated pages for correctness
+
+### Current Description Templates in Generator
+
+**Enrichment pages:**
+```python
+desc = f"Enrich your {name.lower()} data with firmographics, contacts, and technographics. 50+ sources, human-verified. 24-hour turnaround."
+```
+
+**Cleaning pages:**
+```python
+desc = f"Clean your {name.lower()} data: dedupe, validate emails, standardize records. Human-verified quality. 24-hour turnaround."
+```
+
+These produce descriptions of ~100-120 chars, safely under the 160 limit.
+
+---
+
+## Quick SEO Audit Commands
+
+Run these periodically to catch issues:
+
+```bash
+# Count pages with long meta descriptions
+for f in $(find . -name "*.html" -type f | grep -v node_modules); do
+  desc=$(grep -o 'meta name="description" content="[^"]*"' "$f" 2>/dev/null | head -1 | sed 's/.*content="\(.*\)"/\1/')
+  if [ -n "$desc" ] && [ ${#desc} -gt 160 ]; then
+    echo "${#desc} $f"
+  fi
+done | wc -l
+
+# Find pages missing BreadcrumbList schema
+grep -L 'BreadcrumbList' services/*.html solutions/*/index.html
+
+# Find pages missing CSS version
+grep -l 'href="/css/styles.css"' **/*.html | grep -v 'styles.css?v='
+
+# Find pages missing tracking
+grep -L 'G-R416JZ91B1' **/*.html
+
+# Find pages missing related links (solutions)
+grep -L 'class="mt-lg text-muted">Related:' solutions/*/index.html
+```
