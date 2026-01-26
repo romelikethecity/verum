@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/email-deliverability-data-quality.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Email Deliverability Tanking? It's Probably Your Data"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -153,7 +165,7 @@
 
         <p>A hard bounce means the email address doesn't exist. The mailbox was never real, or it was deleted when someone left a company. Either way, the message can't be delivered.</p>
 
-        <p>Email providers track bounce rates. High bounces indicate you're sending to lists you haven't maintained, which is spammer behavior. A bounce rate over 2% is a yellow flag. Over 5% is a red flag that can trigger spam filtering across your entire sending domain.</p>
+        <p>Email providers track bounce rates. High bounces indicate you're sending to lists you haven't maintained, which is spammer behavior. According to <a href="https://www.validity.com/resource-center/state-of-email-report/" target="_blank" rel="noopener">Validity's email deliverability research</a>, a bounce rate over 2% is a yellow flag. Over 5% is a red flag that can trigger spam filtering across your entire sending domain.</p>
 
         <h3>Spam Traps</h3>
 
@@ -190,7 +202,7 @@
           <li>Bounce rate by list segment (is one source particularly bad?)</li>
         </ul>
 
-        <p>Healthy hard bounce rate: under 0.5%. Acceptable: under 2%. Problematic: over 2%. Emergency: over 5%.</p>
+        <p>Healthy hard bounce rate: under 0.5%. Acceptable: under 2%. Problematic: over 2%. Emergency: over 5% (per <a href="https://www.validity.com/resource-center/state-of-email-report/" target="_blank" rel="noopener">Validity email benchmarks</a>).</p>
 
         <h3>Analyze Engagement Decay</h3>
 
@@ -318,7 +330,7 @@
 
         <h3>Regular Validation</h3>
 
-        <p>Email data decays. People change jobs, companies change domains, mailboxes get abandoned. Re-validate your list quarterly, or at minimum semi-annually.</p>
+        <p>Email data decays—the <a href="https://www.bls.gov/news.release/tenure.nr0.htm" target="_blank" rel="noopener">Bureau of Labor Statistics</a> reports average job tenure around 4 years, meaning roughly 25% of contacts change roles annually. Re-validate your list quarterly, or at minimum semi-annually.</p>
 
         <h2>The Numbers That Matter</h2>
 
@@ -326,7 +338,7 @@
 
         <p><strong>Hard bounce rate:</strong> Should be under 0.5%. Above 2% is a problem.</p>
 
-        <p><strong>Spam complaint rate:</strong> Should be under 0.1%. Above 0.3% is a problem.</p>
+        <p><strong>Spam complaint rate:</strong> Should be under 0.1%. Above 0.3% is a problem (according to <a href="https://support.google.com/mail/answer/81126" target="_blank" rel="noopener">Google's sender guidelines</a>).</p>
 
         <p><strong>List decay rate:</strong> What percentage of addresses become invalid per month? Track over time.</p>
 
@@ -356,6 +368,10 @@
 
         <p class="mt-xl text-muted">Related: <a href="/resources/salesforce-email-validation.html">Salesforce Email Validation</a> | <a href="/resources/hubspot-email-validation.html">HubSpot Email Validation</a> | <a href="/resources/missing-emails-crm.html">Finding Missing Emails</a></p>
 
+        <div style="margin-top: 3rem; padding: 2rem; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border-color);">
+          <p style="font-weight: 600; margin-bottom: 0.75rem;">About the Author</p>
+          <p style="color: var(--text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+        </div>
       </div>
     </div>
   </section>

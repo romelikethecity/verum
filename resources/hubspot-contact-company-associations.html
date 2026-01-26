@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/hubspot-contact-company-associations.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Fix Missing Contact-Company Associations in HubSpot"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -171,7 +183,7 @@
 
         <h2>Why Associations Break</h2>
 
-        <p>HubSpot has automatic contact-to-company association. When it works, contacts get linked to companies based on email domain. When it doesn't, you get orphans.</p>
+        <p>HubSpot has <a href="https://knowledge.hubspot.com/crm-setup/automatically-create-and-associate-companies-with-contacts" target="_blank" rel="noopener">automatic contact-to-company association</a>. When it works, contacts get linked to companies based on email domain. When it doesn't, you get orphans.</p>
 
         <h3>Personal Email Addresses</h3>
 
@@ -211,7 +223,7 @@
 
         <h3>Basic Orphan List</h3>
 
-        <p>Create an active list with the criteria: Associated Company is unknown.</p>
+        <p>Create an <a href="https://knowledge.hubspot.com/lists/create-active-or-static-lists" target="_blank" rel="noopener">active list</a> with the criteria: Associated Company is unknown.</p>
 
         <p>This shows every contact with no company association. The number might surprise you. In databases that have been running for years without association hygiene, 20-40% of contacts being orphaned is common.</p>
 
@@ -237,7 +249,7 @@
 
         <h3>Manual Association (Small Scale)</h3>
 
-        <p>For individual high-priority contacts:</p>
+        <p>For individual high-priority contacts (see <a href="https://knowledge.hubspot.com/crm-setup/associate-records" target="_blank" rel="noopener">HubSpot's guide on associating records</a>):</p>
 
         <ol>
           <li>Go to the contact record</li>
@@ -250,7 +262,7 @@
 
         <h3>Import-Based Bulk Association</h3>
 
-        <p>For larger volumes where you know which company each contact should associate with:</p>
+        <p>For larger volumes where you know which company each contact should associate with (see <a href="https://knowledge.hubspot.com/crm-setup/import-associations" target="_blank" rel="noopener">HubSpot's import associations guide</a>):</p>
 
         <ol>
           <li>Export your orphaned contacts with Record ID</li>
@@ -324,7 +336,7 @@
 
         <h3>Configure Auto-Association Properly</h3>
 
-        <p>Make sure HubSpot's automatic contact-to-company association is enabled: Settings > Objects > Companies > "Create and associate companies with contacts."</p>
+        <p>Make sure HubSpot's <a href="https://knowledge.hubspot.com/crm-setup/automatically-create-and-associate-companies-with-contacts" target="_blank" rel="noopener">automatic contact-to-company association</a> is enabled: Settings > Objects > Companies > "Create and associate companies with contacts."</p>
 
         <p>Understand what this does: it associates contacts based on email domain and can create company records if no match exists. This prevents orphans but can create duplicate companies if you already have a company under a different domain.</p>
 
@@ -386,6 +398,11 @@
         </div>
 
         <p class="mt-xl text-muted">Related: <a href="/resources/hubspot-data-cleaning.html">How to Clean HubSpot Data</a> | <a href="/resources/hubspot-data-enrichment.html">Data Enrichment for HubSpot</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+        </div>
 
       </div>
     </div>

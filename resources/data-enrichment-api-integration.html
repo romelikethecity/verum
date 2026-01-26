@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/data-enrichment-api-integration.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Enrichment API Integration: A Technical Guide for Developers"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -685,7 +697,7 @@ app = Celery(<span class="string">'enrichment'</span>)
           <tr>
             <td>Bearer Token</td>
             <td><span class="inline-code">Authorization: Bearer sk_live_xxx</span></td>
-            <td>Clearbit, Apollo</td>
+            <td><a href="https://clearbit.com/docs" target="_blank" rel="noopener">Clearbit</a>, <a href="https://apolloio.github.io/apollo-api-docs" target="_blank" rel="noopener">Apollo</a></td>
           </tr>
           <tr>
             <td>API Key Header</td>
@@ -1384,27 +1396,33 @@ nock.recorder.rec({ output_objects: <span class="keyword">true</span> });
 
       <h3>Clearbit</h3>
 
+      <p>See the official <a href="https://clearbit.com/docs" target="_blank" rel="noopener">Clearbit API documentation</a> for complete implementation details.</p>
+
       <ul>
         <li><strong>Auth:</strong> Bearer token in Authorization header</li>
-        <li><strong>Rate limit:</strong> 600 requests/minute (varies by plan)</li>
+        <li><strong>Rate limit:</strong> Varies by plan (check your <a href="https://clearbit.com/docs" target="_blank" rel="noopener">API dashboard</a> for current limits)</li>
         <li><strong>Gotcha:</strong> Returns 202 for async lookups, poll for results or use webhooks</li>
         <li><strong>Best for:</strong> Real-time enrichment with streaming updates</li>
       </ul>
 
       <h3>ZoomInfo</h3>
 
+      <p>Refer to the <a href="https://developers.zoominfo.com" target="_blank" rel="noopener">ZoomInfo Developer Portal</a> for authentication flows and endpoint specifications.</p>
+
       <ul>
-        <li><strong>Auth:</strong> OAuth 2.0 with JWT tokens</li>
-        <li><strong>Rate limit:</strong> Plan-dependent, typically 50-200/minute</li>
-        <li><strong>Gotcha:</strong> Complex token refresh flow, tokens expire in 1 hour</li>
+        <li><strong>Auth:</strong> OAuth 2.0 with JWT tokens (see <a href="https://developers.zoominfo.com" target="_blank" rel="noopener">authentication docs</a>)</li>
+        <li><strong>Rate limit:</strong> Plan-dependent (contact ZoomInfo for your specific limits)</li>
+        <li><strong>Gotcha:</strong> Complex token refresh flow, check <a href="https://developers.zoominfo.com" target="_blank" rel="noopener">developer docs</a> for token expiration details</li>
         <li><strong>Best for:</strong> High-quality B2B data, large enterprises</li>
       </ul>
 
       <h3>Apollo</h3>
 
+      <p>The <a href="https://apolloio.github.io/apollo-api-docs" target="_blank" rel="noopener">Apollo API documentation</a> provides full endpoint references and usage examples.</p>
+
       <ul>
-        <li><strong>Auth:</strong> API key in header</li>
-        <li><strong>Rate limit:</strong> 300 requests/minute</li>
+        <li><strong>Auth:</strong> API key in header (see <a href="https://apolloio.github.io/apollo-api-docs" target="_blank" rel="noopener">authentication guide</a>)</li>
+        <li><strong>Rate limit:</strong> Check <a href="https://apolloio.github.io/apollo-api-docs" target="_blank" rel="noopener">current rate limits</a> in the API docs (varies by plan)</li>
         <li><strong>Gotcha:</strong> Credit-based pricing, some endpoints cost more</li>
         <li><strong>Best for:</strong> Sales prospecting, bulk enrichment</li>
       </ul>
@@ -1478,6 +1496,11 @@ nock.recorder.rec({ output_objects: <span class="keyword">true</span> });
           </a>
         </div>
       </section>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border-color);">
+        <p style="font-weight: 600; margin-bottom: 0.75rem;">About the Author</p>
+        <p style="color: var(--text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+      </div>
     </article>
   </main>
 

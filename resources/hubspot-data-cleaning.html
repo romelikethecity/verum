@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/hubspot-data-cleaning.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Clean HubSpot Data: The Complete Guide"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -175,7 +187,7 @@
 
         <h3>Marketing Contact Bloat</h3>
 
-        <p>HubSpot bills based on marketing contacts. Every contact you can send marketing emails to counts against your tier. Exceed your limit mid-contract and you get automatically upgraded to the next tier. That upgrade is immediate. But if you clean up and drop below? You stay at the higher tier until renewal.</p>
+        <p>HubSpot bills based on <a href="https://knowledge.hubspot.com/contacts/marketing-contacts" target="_blank" rel="noopener">marketing contacts</a>. Every contact you can send marketing emails to counts against your tier. Exceed your limit mid-contract and you get automatically upgraded to the next tier. That upgrade is immediate. But if you clean up and drop below? You stay at the higher tier until renewal.</p>
 
         <p>This creates a specific kind of data debt. Contacts who bounced, unsubscribed, or haven't engaged in years are still counted if they're marked as marketing contacts. You're paying for records that will never generate revenue.</p>
 
@@ -183,7 +195,7 @@
 
         <h3>Orphaned Contacts</h3>
 
-        <p>HubSpot tries to automatically associate contacts with companies using email domain matching. If someone submits a form with their work email, HubSpot matches the domain to a company record.</p>
+        <p>HubSpot tries to <a href="https://knowledge.hubspot.com/crm-setup/automatically-create-and-associate-companies-with-contacts" target="_blank" rel="noopener">automatically associate contacts with companies</a> using email domain matching. If someone submits a form with their work email, HubSpot matches the domain to a company record.</p>
 
         <p>But this breaks constantly. Personal email addresses (Gmail, Yahoo, Outlook) don't match. Contacts imported from lists often lack the metadata needed for matching. And when the automatic association fails, contacts float around with no company attached.</p>
 
@@ -191,7 +203,7 @@
 
         <h3>Lifecycle Stage Drift</h3>
 
-        <p>Lifecycle stages in HubSpot are supposed to tell you where someone is in your funnel. Subscriber, Lead, MQL, SQL, Opportunity, Customer. The problem: stages don't automatically go backward.</p>
+        <p><a href="https://knowledge.hubspot.com/crm-setup/use-lifecycle-stages" target="_blank" rel="noopener">Lifecycle stages</a> in HubSpot are supposed to tell you where someone is in your funnel. Subscriber, Lead, MQL, SQL, Opportunity, Customer. The problem: stages don't automatically go backward.</p>
 
         <p>That customer who churned two years ago? Still marked as "Customer." The SQL who ghosted? Still sitting in the SQL bucket. Over time, lifecycle stages become less of a current status and more of a "highest stage ever reached" watermark that tells you nothing useful.</p>
 
@@ -232,7 +244,7 @@
 
         <p>Go to Contacts > Actions > Manage Duplicates. HubSpot shows potential duplicates based on matching name, email, phone, and other properties.</p>
 
-        <p>Note: HubSpot limits this view to 5,000 duplicates for Professional accounts and 10,000 for Enterprise. If you hit that limit, you have more duplicates than HubSpot can show you.</p>
+        <p>Note: HubSpot limits this view to 5,000 duplicates for Professional accounts and 10,000 for Enterprise (according to <a href="https://knowledge.hubspot.com/contacts/find-and-merge-duplicate-contacts-companies-deals-tickets" target="_blank" rel="noopener">HubSpot's duplicate management documentation</a>). If you hit that limit, you have more duplicates than HubSpot can show you.</p>
 
         <h3>Review Lifecycle Stage Distribution</h3>
 
@@ -368,7 +380,7 @@
 
         <h3>Use Data Hub Automation</h3>
 
-        <p>HubSpot's Data Hub (formerly Operations Hub) can automatically fix common formatting issues:</p>
+        <p>HubSpot's <a href="https://knowledge.hubspot.com/data-management/data-quality-automation" target="_blank" rel="noopener">Data Hub</a> (formerly Operations Hub) can automatically fix common formatting issues:</p>
 
         <ul>
           <li>Capitalizing names (john smith → John Smith)</li>
@@ -376,7 +388,7 @@
           <li>Fixing spacing issues</li>
         </ul>
 
-        <p>Go to Settings > Data Management > Data Quality to enable AI-powered formatting recommendations. HubSpot suggests rules based on your data patterns.</p>
+        <p>Go to Settings > Data Management > <a href="https://knowledge.hubspot.com/data-management/manage-data-quality-issues" target="_blank" rel="noopener">Data Quality</a> to enable AI-powered formatting recommendations. HubSpot suggests rules based on your data patterns.</p>
 
         <h3>Job Title Standardization</h3>
 
@@ -511,6 +523,11 @@
         </div>
 
         <p class="mt-xl text-muted">Related: <a href="/resources/hubspot-duplicate-contacts.html">How to Merge Duplicates in HubSpot</a> | <a href="/resources/hubspot-marketing-contacts-cleanup.html">Marketing Contact Cleanup</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+        </div>
 
       </div>
     </div>

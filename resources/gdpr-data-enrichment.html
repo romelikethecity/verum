@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/gdpr-data-enrichment.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "GDPR Compliance for Data Enrichment: A Practical Guide"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -97,7 +109,7 @@
         "name": "Do I need to inform contacts when I enrich their data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, under GDPR Article 14, when you obtain personal data from sources other than the data subject, you must inform them within a reasonable period (max 1 month) or at first contact. Your privacy policy should explain what enrichment you perform, the sources, and data subject rights."
+          "text": "Yes, under GDPR Article 14 (see gdpr.eu for the full text), when you obtain personal data from sources other than the data subject, you must inform them within a reasonable period (max 1 month) or at first contact. Your privacy policy should explain what enrichment you perform, the sources, and data subject rights."
         }
       },
       {
@@ -105,7 +117,7 @@
         "name": "How do I handle data subject access requests for enriched data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "You must be able to identify all enriched data for a specific individual and provide it upon request. Track which fields came from enrichment providers vs. direct collection. Implement processes to export this data within the 30-day GDPR deadline and delete it upon valid erasure requests."
+          "text": "You must be able to identify all enriched data for a specific individual and provide it upon request. Track which fields came from enrichment providers vs. direct collection. Implement processes to export this data within the one-month deadline specified in GDPR Article 12 and delete it upon valid erasure requests."
         }
       }
     ]
@@ -502,7 +514,7 @@
 
       <h2>Understanding the GDPR Framework</h2>
 
-      <p>Before diving into enrichment-specific guidance, let's establish the key GDPR principles that apply:</p>
+      <p>Before diving into enrichment-specific guidance, let's establish the key GDPR principles that apply. For the full legal text, see the <a href="https://gdpr.eu/" target="_blank" rel="noopener">official GDPR resource</a> or the <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/" target="_blank" rel="noopener">UK ICO guidance</a>.</p>
 
       <h3>The Six Principles of Data Processing</h3>
 
@@ -519,12 +531,12 @@
 
       <h2>Legal Bases for Data Enrichment</h2>
 
-      <p>Every processing activity needs a legal basis under GDPR Article 6. For data enrichment, three bases are potentially relevant:</p>
+      <p>Every processing activity needs a legal basis under <a href="https://gdpr.eu/article-6-how-to-process-personal-data-legally/" target="_blank" rel="noopener">GDPR Article 6</a>. For data enrichment, three bases are potentially relevant:</p>
 
       <div class="legal-card">
         <div class="legal-card__header">
           <div class="legal-card__icon legal-card__icon--green">✓</div>
-          <h3 class="legal-card__title">Legitimate Interest (Article 6(1)(f))</h3>
+          <h3 class="legal-card__title"><a href="https://gdpr.eu/article-6-how-to-process-personal-data-legally/" target="_blank" rel="noopener">Legitimate Interest (Article 6(1)(f))</a></h3>
         </div>
         <div class="legal-card__body">
           <p>The most common basis for B2B data enrichment. Requires a Legitimate Interest Assessment (LIA) demonstrating:</p>
@@ -540,7 +552,7 @@
       <div class="legal-card">
         <div class="legal-card__header">
           <div class="legal-card__icon legal-card__icon--yellow">!</div>
-          <h3 class="legal-card__title">Consent (Article 6(1)(a))</h3>
+          <h3 class="legal-card__title"><a href="https://gdpr.eu/article-6-how-to-process-personal-data-legally/" target="_blank" rel="noopener">Consent (Article 6(1)(a))</a></h3>
         </div>
         <div class="legal-card__body">
           <p>Explicit permission from the individual. Must be freely given, specific, informed, and unambiguous. Can be withdrawn at any time.</p>
@@ -556,7 +568,7 @@
       <div class="legal-card">
         <div class="legal-card__header">
           <div class="legal-card__icon legal-card__icon--green">✓</div>
-          <h3 class="legal-card__title">Contract Performance (Article 6(1)(b))</h3>
+          <h3 class="legal-card__title"><a href="https://gdpr.eu/article-6-how-to-process-personal-data-legally/" target="_blank" rel="noopener">Contract Performance (Article 6(1)(b))</a></h3>
         </div>
         <div class="legal-card__body">
           <p>When enrichment is necessary to perform a contract with the data subject.</p>
@@ -626,7 +638,7 @@
         </tbody>
       </table>
 
-      <p class="article-reference">Reference: GDPR Recital 47 explicitly mentions direct marketing as a potential legitimate interest.</p>
+      <p class="article-reference">Reference: <a href="https://gdpr.eu/recital-47-overriding-legitimate-interest/" target="_blank" rel="noopener">GDPR Recital 47</a> explicitly mentions direct marketing as a potential legitimate interest.</p>
 
       <h2>Vendor Compliance Requirements</h2>
 
@@ -674,7 +686,7 @@
 
       <h2>Transparency Obligations</h2>
 
-      <p>When you collect data from sources other than the individual (like enrichment providers), GDPR Article 14 requires you to inform them.</p>
+      <p>When you collect data from sources other than the individual (like enrichment providers), <a href="https://gdpr.eu/article-14-personal-data-not-obtained-from-data-subject/" target="_blank" rel="noopener">GDPR Article 14</a> requires you to inform them.</p>
 
       <h3>What to Tell Data Subjects</h3>
 
@@ -725,7 +737,7 @@
 
       <p>Enriched data creates additional obligations for data subject requests. You need processes to:</p>
 
-      <h3>Right of Access (Article 15)</h3>
+      <h3><a href="https://gdpr.eu/article-15-right-of-access/" target="_blank" rel="noopener">Right of Access (Article 15)</a></h3>
 
       <p>Individuals can request all personal data you hold, including enriched data. You must:</p>
 
@@ -736,7 +748,7 @@
         <li>Include the source of the data</li>
       </ul>
 
-      <h3>Right to Erasure (Article 17)</h3>
+      <h3><a href="https://gdpr.eu/article-17-right-to-be-forgotten/" target="_blank" rel="noopener">Right to Erasure (Article 17)</a></h3>
 
       <p>When valid, you must delete enriched data along with original data. However, you can retain data if:</p>
 
@@ -746,7 +758,7 @@
         <li>It's necessary for legitimate interest that overrides the individual's rights (rare for enriched data)</li>
       </ul>
 
-      <h3>Right to Object (Article 21)</h3>
+      <h3><a href="https://gdpr.eu/article-21-right-to-object/" target="_blank" rel="noopener">Right to Object (Article 21)</a></h3>
 
       <p>Individuals can object to processing based on legitimate interest. If they object:</p>
 
@@ -849,7 +861,7 @@
       </ol>
 
       <div class="callout callout-warning">
-        <p><strong>Record keeping:</strong> GDPR Article 30 requires you to maintain records of processing activities. Include enrichment in these records with: purposes, data categories, recipients, transfers, retention periods, and security measures.</p>
+        <p><strong>Record keeping:</strong> <a href="https://gdpr.eu/article-30-records-of-processing-activities/" target="_blank" rel="noopener">GDPR Article 30</a> requires you to maintain records of processing activities. Include enrichment in these records with: purposes, data categories, recipients, transfers, retention periods, and security measures.</p>
       </div>
 
       <h2>Common Mistakes to Avoid</h2>
@@ -885,12 +897,12 @@
 
         <div class="faq-item">
           <h3 class="faq-question">Do I need to inform contacts when I enrich their data?</h3>
-          <p class="faq-answer">Yes, under GDPR Article 14, when you obtain personal data from sources other than the data subject, you must inform them within a reasonable period (max 1 month) or at first contact. Your privacy policy should explain what enrichment you perform, the sources, and data subject rights.</p>
+          <p class="faq-answer">Yes, under <a href="https://gdpr.eu/article-14-personal-data-not-obtained-from-data-subject/" target="_blank" rel="noopener">GDPR Article 14</a>, when you obtain personal data from sources other than the data subject, you must inform them within a reasonable period (max 1 month) or at first contact. Your privacy policy should explain what enrichment you perform, the sources, and data subject rights.</p>
         </div>
 
         <div class="faq-item">
           <h3 class="faq-question">How do I handle data subject access requests for enriched data?</h3>
-          <p class="faq-answer">You must be able to identify all enriched data for a specific individual and provide it upon request. Track which fields came from enrichment providers vs. direct collection. Implement processes to export this data within the 30-day GDPR deadline and delete it upon valid erasure requests.</p>
+          <p class="faq-answer">You must be able to identify all enriched data for a specific individual and provide it upon request. Track which fields came from enrichment providers vs. direct collection. Implement processes to export this data within the one-month deadline specified in <a href="https://gdpr.eu/article-12-how-controllers-should-provide-personal-data-to-the-subject/" target="_blank" rel="noopener">GDPR Article 12</a> and delete it upon valid erasure requests.</p>
         </div>
       </section>
 
@@ -915,6 +927,11 @@
           </a>
         </div>
       </section>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border-color);">
+        <p style="font-weight: 600; margin-bottom: 0.75rem;">About the Author</p>
+        <p style="color: var(--text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+      </div>
     </article>
   </main>
 

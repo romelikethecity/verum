@@ -66,6 +66,47 @@
     "serviceType": "Data Validation"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I really need weekly validation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depends on your velocity. High-volume outbound teams benefit most. If you're only sending 500 emails a month, monthly validation might suffice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if nothing changes most weeks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "That's fine—you're paying for the check, not the problem. Most weeks are quiet. But the weeks when problems appear, you'll catch them immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we validate more frequently?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Some high-velocity clients want daily validation. We can accommodate that with appropriate pricing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle edge cases?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ambiguous results get confidence scores rather than binary valid/invalid. You decide how to treat records we're uncertain about."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>

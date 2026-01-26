@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/salesforce-email-validation.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Validate Email Addresses in Salesforce"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -74,7 +86,7 @@
         "name": "What percentage of emails in a typical CRM are invalid?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most B2B databases have 15-25% invalid emails. This includes hard bounces, spam traps, role-based addresses, and emails that were valid but are now defunct due to job changes or company closures."
+          "text": "Industry research suggests most B2B databases have 15-25% invalid emails. This includes hard bounces, spam traps, role-based addresses, and emails that were valid but are now defunct due to job changes or company closures."
         }
       },
       {
@@ -90,7 +102,7 @@
         "name": "How often should I validate emails in Salesforce?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Validate at the point of entry (forms, imports) and run quarterly batch validations on your database. Email validity decays at roughly 20-30% per year due to job changes and company events."
+          "text": "Validate at the point of entry (forms, imports) and run quarterly batch validations on your database. Email validity decays significantly each year due to job changes and company events."
         }
       },
       {
@@ -212,7 +224,7 @@
 
         <p>Most companies focus on email validation because of bounce rates. That's valid, but it's not the whole picture. Here's what bad emails actually cost you:</p>
 
-        <p><strong>Sender reputation damage.</strong> Email providers track your bounce rate. Go above 2% consistently and you'll start seeing deliverability problems across your entire domain. That affects everyone at your company, not just sales.</p>
+        <p><strong>Sender reputation damage.</strong> Email providers track your bounce rate. <a href="https://www.validity.com/blog/bounce-rate-best-practices/" target="_blank" rel="noopener">Go above 2% consistently</a> and you'll start seeing deliverability problems across your entire domain. That affects everyone at your company, not just sales.</p>
 
         <p><strong>Wasted sales time.</strong> Every email that bounces is time your SDR spent researching that contact, personalizing that message, and waiting for a response that will never come. Multiply that by hundreds of bad emails in your database.</p>
 
@@ -221,7 +233,7 @@
         <p><strong>Inflated metrics.</strong> Your "database of 50,000 contacts" sounds impressive until you realize 12,000 of those emails don't work. You're making decisions based on numbers that don't reflect reality.</p>
 
         <div class="stat-box">
-          <p><strong>Reality check:</strong> The average B2B database has 15-25% invalid emails. If you haven't validated your Salesforce emails in the past year, assume at least 20% of your contacts can't receive your messages.</p>
+          <p><strong>Reality check:</strong> <a href="https://www.validity.com/resource-center/state-of-email-deliverability/" target="_blank" rel="noopener">The average B2B database has 15-25% invalid emails</a>. If you haven't validated your Salesforce emails in the past year, assume at least 20% of your contacts can't receive your messages.</p>
         </div>
 
         <h2>Types of Invalid Emails</h2>
@@ -304,7 +316,7 @@
 
         <h3>Salesforce Validation Rules</h3>
 
-        <p>Salesforce's native validation rules can catch format issues but can't verify if an email actually exists. Still, they're worth setting up as a first line of defense.</p>
+        <p><a href="https://help.salesforce.com/s/articleView?id=sf.fields_defining_field_validation_rules.htm" target="_blank" rel="noopener">Salesforce's native validation rules</a> can catch format issues but can't verify if an email actually exists. Still, they're worth setting up as a first line of defense.</p>
 
         <p>A basic email format validation rule:</p>
 
@@ -395,7 +407,7 @@
 
         <p><strong>Ignoring catch-all domains.</strong> Just because a domain accepts all emails doesn't mean yours is valid. Test carefully or treat as unverified.</p>
 
-        <p><strong>Validating once and forgetting.</strong> Email validity has a half-life. That perfectly clean database from January will be 15% dirty by December.</p>
+        <p><strong>Validating once and forgetting.</strong> Email validity has a half-life. <a href="https://www.marketingprofs.com/charts/2019/41083/how-fast-does-b2b-marketing-data-decay" target="_blank" rel="noopener">Data decays continuously</a>, so a clean database from January will have accumulated significant issues by December.</p>
 
         <p><strong>Not checking your own team's emails.</strong> Your sales reps send from personal addresses. Make sure their email authentication (SPF, DKIM, DMARC) is set up correctly, or their bounces affect the whole domain.</p>
 
@@ -447,6 +459,11 @@
           <p><strong>Not sure about your email data quality?</strong></p>
           <p>We can run a quick audit of your Salesforce database and tell you exactly what percentage of your emails are invalid, risky, or unverifiable.</p>
           <p><a href="/contact.html" class="btn btn--primary">Validate My Emails</a></p>
+        </div>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
         </div>
       </div>
     </article>

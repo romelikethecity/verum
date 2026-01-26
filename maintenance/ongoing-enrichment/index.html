@@ -66,6 +66,47 @@
     "serviceType": "Data Enrichment"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What if a field is already filled?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We don't overwrite existing data unless you want us to. Ongoing enrichment focuses on filling gaps, not replacing what you have."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you update stale data too?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, if you want. Some clients want us to refresh data over 12 months old even if it's filled. Others only want gap-filling. Your choice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data sources do you use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "50+ sources including major providers (ZoomInfo, Clearbit, Apollo) plus specialized sources for healthcare, technology, and other verticals. We match records against multiple sources."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle conflicting data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We use confidence scoring and recency weighting. When sources conflict, we either pick the highest-confidence value or flag it for your review."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>

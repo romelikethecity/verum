@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/salesforce-data-enrichment.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Enrich Salesforce Records Without ZoomInfo"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -82,7 +94,7 @@
         "name": "How accurate is enrichment data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It varies by provider and field type. Company revenue and employee count are typically 70-85% accurate. Contact direct dials and personal emails are less reliable (50-70%). Always validate critical data before high-stakes outreach."
+          "text": "It varies by provider and field type. Company firmographic data (revenue, employee count) tends to be more reliable than contact-level data (direct dials, personal emails). Always validate critical data before high-stakes outreach."
         }
       },
       {
@@ -206,7 +218,7 @@
 
         <p>Your Salesforce accounts are missing revenue, employee count, and industry. Your contacts have job titles but no seniority levels. Half your leads don't even have company names filled in.</p>
 
-        <p>The obvious answer is ZoomInfo. The problem is ZoomInfo costs $30,000+ per year. For a lot of companies, that's not in the budget, especially if you're not sure what the ROI looks like.</p>
+        <p>The obvious answer is ZoomInfo. The problem is <a href="https://www.vendr.com/buyer-guides/zoominfo-pricing" target="_blank" rel="noopener">ZoomInfo costs $30,000+ per year</a>. For a lot of companies, that's not in the budget, especially if you're not sure what the ROI looks like.</p>
 
         <p>Good news: there are other ways to get this data. Some are cheaper. Some are free. Some require more work. Here's what actually works.</p>
 
@@ -333,7 +345,7 @@
           <li><strong>Seamless.ai:</strong> Real-time email and phone finding. Variable data quality.</li>
         </ul>
 
-        <p>Accuracy varies. None of these match ZoomInfo's database size, but for many use cases, 80% accuracy at 50% of the cost is a good tradeoff.</p>
+        <p>Accuracy varies. None of these match ZoomInfo's database size, but for many use cases, the lower cost makes them practical alternatives for mid-market companies.</p>
 
         <p><strong>Best for:</strong> Mid-market companies with active outbound programs and 10,000-100,000 records to enrich.</p>
 
@@ -365,7 +377,7 @@
           <li>Pass enriched lead to Salesforce</li>
         </ol>
 
-        <p>Most enrichment tools have native integrations with form platforms (Marketo, HubSpot) or Salesforce that handle this automatically.</p>
+        <p>Most enrichment tools have native integrations with form platforms (Marketo, HubSpot) or <a href="https://help.salesforce.com/s/articleView?id=sf.data_dot_com_clean_about.htm" target="_blank" rel="noopener">Salesforce</a> that handle this automatically.</p>
 
         <h3>Batch Enrichment for Existing Records</h3>
 
@@ -474,6 +486,11 @@
           <p><strong>Need help enriching your Salesforce data?</strong></p>
           <p>We can assess your current data gaps and recommend the most cost-effective approach for your database size and budget.</p>
           <p><a href="/contact.html" class="btn btn--primary">Enrich My Data</a></p>
+        </div>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
         </div>
       </div>
     </article>

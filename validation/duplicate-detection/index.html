@@ -66,6 +66,47 @@
     "serviceType": "Duplicate Detection"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What if I don't have email addresses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can match on name + company, name + phone, or other field combinations. Match confidence depends on available data, but we can work with what you have."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle partial matches?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Partial matches are flagged as potential duplicates with lower confidence scores. You decide whether to import, skip, or review manually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you check against multiple systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If you have data in Salesforce, HubSpot, and a marketing automation platform, we can check against all of them. Duplicates across systems are just as problematic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about internal duplicates in the incoming list?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We check for those too. If your incoming list has duplicates within itself, we flag them before they become duplicates in your CRM."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>

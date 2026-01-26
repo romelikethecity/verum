@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/salesforce-job-title-standardization.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Standardize Job Titles in Salesforce"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -390,11 +402,11 @@
 
         <p>You have several options for implementation:</p>
 
-        <p><strong>Formula fields:</strong> Good for simple mappings. Limited by formula character limits and can't handle complex logic.</p>
+        <p><strong><a href="https://help.salesforce.com/s/articleView?id=sf.customize_formuladef.htm" target="_blank" rel="noopener">Formula fields</a>:</strong> Good for simple mappings. Limited by formula character limits and can't handle complex logic.</p>
 
-        <p><strong>Flow (Process Builder replacement):</strong> Can handle complex IF/THEN logic and updates fields automatically when records are created or edited.</p>
+        <p><strong><a href="https://help.salesforce.com/s/articleView?id=sf.flow.htm" target="_blank" rel="noopener">Flow</a> (Process Builder replacement):</strong> Can handle complex IF/THEN logic and updates fields automatically when records are created or edited.</p>
 
-        <p><strong>Apex triggers:</strong> Most flexible but requires development resources. Good for complex pattern matching.</p>
+        <p><strong><a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers.htm" target="_blank" rel="noopener">Apex triggers</a>:</strong> Most flexible but requires development resources. Good for complex pattern matching.</p>
 
         <p><strong>External processing:</strong> Export, process in Python/Excel, reimport. Best for one-time cleanup of existing data.</p>
 
@@ -487,7 +499,7 @@
         <p>Set up automation to standardize titles as records are created:</p>
 
         <ul>
-          <li>Salesforce Flow triggered on Contact/Lead creation</li>
+          <li><a href="https://help.salesforce.com/s/articleView?id=sf.flow.htm" target="_blank" rel="noopener">Salesforce Flow</a> triggered on Contact/Lead creation</li>
           <li>Apply mapping rules to populate structured fields</li>
           <li>Flag records that can't be mapped for manual review</li>
         </ul>
@@ -547,6 +559,11 @@
           <p><strong>Need help cleaning up job titles?</strong></p>
           <p>We can audit your Salesforce data and show you exactly how fragmented your title field is, along with a plan to fix it.</p>
           <p><a href="/contact.html" class="btn btn--primary">Standardize My Titles</a></p>
+        </div>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
         </div>
       </div>
     </article>

@@ -66,6 +66,47 @@
     "serviceType": "CRM Maintenance"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Will this break our CRM workflows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We work within your existing data model and respect your validation rules. Updates go through your normal processes—we're just providing cleaner data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about records we don't want touched?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can exclude any records you specify—by owner, status, custom field, or any other criteria. You control what gets maintained."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you need admin access to our CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depends on the integration method. For file-based workflows, no. For API integrations, we need appropriate read/write permissions on the objects we're maintaining."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle duplicates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We identify merge candidates but don't auto-merge without approval. You get a list of recommended merges with match confidence scores."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>

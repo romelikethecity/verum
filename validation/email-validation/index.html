@@ -66,6 +66,47 @@
     "serviceType": "Email Validation"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you send test emails?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. SMTP verification confirms mailbox existence without sending messages. We connect to the server, ask if the address exists, then disconnect."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is email validation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "93%+ accuracy for most lists. Catch-all domains are the main limitation—they accept all mail, so we can't verify specific mailboxes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about catch-all domains?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We flag catch-all domains separately. The domain is valid, but we can't verify the specific mailbox. You decide whether to send."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can validation tell if someone will reply?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We verify the mailbox exists and accepts mail. Whether someone reads and responds is a different question entirely."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>

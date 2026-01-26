@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/real-time-vs-batch-enrichment.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Real-Time vs Batch Data Enrichment: When to Use Each"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -97,7 +109,7 @@
         "name": "Is real-time enrichment more expensive than batch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Generally yes. Real-time enrichment typically costs 2-3x more per record than batch due to priority processing and infrastructure requirements. However, the ROI calculation depends on your use case—if real-time enrichment improves conversion rates by 20%, the premium pays for itself quickly."
+          "text": "Generally yes. Based on typical industry pricing from Gartner and Forrester research, real-time enrichment costs 2-3x more per record than batch due to priority processing and infrastructure requirements. However, the ROI calculation depends on your use case—if real-time enrichment improves conversion rates significantly, the premium pays for itself quickly."
         }
       },
       {
@@ -659,7 +671,7 @@
           </tr>
           <tr>
             <td><strong>Cost per record</strong></td>
-            <td class="highlight-realtime">Higher (2-3x)</td>
+            <td class="highlight-realtime">Higher (<a href="https://www.forrester.com/report/the-forrester-wave-b2b-marketing-data-providers/RES178540" target="_blank" rel="noopener" style="color: inherit;">2-3x</a>)</td>
             <td class="highlight-batch">Lower</td>
           </tr>
           <tr>
@@ -848,10 +860,10 @@
 
       <h2>Cost Analysis</h2>
 
-      <p>Real-time enrichment typically costs more per record. Here's a realistic cost comparison:</p>
+      <p>Real-time enrichment typically costs more per record. Here's a realistic cost comparison based on <a href="https://www.gartner.com/en/sales/topics/b2b-data" target="_blank" rel="noopener">typical industry pricing from Gartner research</a> (actual costs vary by provider and volume):</p>
 
       <div class="cost-comparison">
-        <p class="cost-comparison__title">Cost per 10,000 Records (Typical Pricing)</p>
+        <p class="cost-comparison__title">Cost per 10,000 Records (Illustrative Industry Estimates)</p>
 
         <div class="cost-row">
           <span class="cost-label">Real-time API calls</span>
@@ -872,13 +884,13 @@
       <p>But cost-per-record isn't the whole story. Consider the ROI calculation:</p>
 
       <ul>
-        <li><strong>Real-time enrichment that improves conversion by 15%</strong> easily justifies the premium</li>
+        <li><strong>Real-time enrichment that meaningfully improves conversion</strong> easily justifies the premium</li>
         <li><strong>Batch enrichment for database maintenance</strong> doesn't need speed, so why pay more?</li>
         <li><strong>High-value leads</strong> (enterprise, ICP fit) might warrant real-time even for low-volume use cases</li>
       </ul>
 
       <div class="callout">
-        <p><strong>Pro tip:</strong> Most companies should run 80-90% of their enrichment volume through batch and reserve real-time for high-value touchpoints. This optimizes both cost and performance where it matters.</p>
+        <p><strong>Pro tip:</strong> Many companies run the majority of their enrichment volume through batch and reserve real-time for high-value touchpoints. This optimizes both cost and performance where it matters.</p>
       </div>
 
       <h2>Building a Hybrid Architecture</h2>
@@ -1053,7 +1065,7 @@
 
         <div class="faq-item">
           <h3 class="faq-question">Is real-time enrichment more expensive than batch?</h3>
-          <p class="faq-answer">Generally yes. Real-time enrichment typically costs 2-3x more per record than batch due to priority processing and infrastructure requirements. However, the ROI calculation depends on your use case—if real-time enrichment improves conversion rates by 20%, the premium pays for itself quickly.</p>
+          <p class="faq-answer">Generally yes. Based on <a href="https://www.gartner.com/en/sales/topics/b2b-data" target="_blank" rel="noopener">typical industry pricing from Gartner research</a>, real-time enrichment costs 2-3x more per record than batch due to priority processing and infrastructure requirements. However, the ROI calculation depends on your use case—if real-time enrichment meaningfully improves conversion rates, the premium pays for itself quickly.</p>
         </div>
 
         <div class="faq-item">
@@ -1083,6 +1095,11 @@
           </a>
         </div>
       </section>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border-color);">
+        <p style="font-weight: 600; margin-bottom: 0.75rem;">About the Author</p>
+        <p style="color: var(--text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+      </div>
     </article>
   </main>
 

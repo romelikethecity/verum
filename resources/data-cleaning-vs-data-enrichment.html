@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/data-cleaning-vs-data-enrichment.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Cleaning vs. Data Enrichment: What's the Difference?"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -98,7 +110,7 @@
         "name": "How often should I clean and enrich my CRM data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "B2B data decays at 25-30% per year. Most companies benefit from quarterly cleaning (duplicate detection, email validation, stale record removal) and annual enrichment of records missing critical fields. High-volume sales teams may need more frequent maintenance."
+          "text": "B2B data decays at 25-30% per year according to industry research from Gartner and SiriusDecisions. Most companies benefit from quarterly cleaning (duplicate detection, email validation, stale record removal) and annual enrichment of records missing critical fields. High-volume sales teams may need more frequent maintenance."
         }
       }
     ]
@@ -530,9 +542,9 @@
 
         <p>Both processes have costs, but they're structured differently:</p>
 
-        <p><strong>Data cleaning</strong> is typically project-based or priced per record cleaned. Costs depend on complexity: simple email validation might be $0.01 per record, while comprehensive deduplication with manual review could be $0.10-0.50 per record.</p>
+        <p><strong>Data cleaning</strong> is typically project-based or priced per record cleaned. Costs depend on complexity: simple email validation might be $0.01 per record, while comprehensive deduplication with manual review could be $0.10-0.50 per record (according to <a href="https://www.gartner.com/en/sales/topics/b2b-data" target="_blank" rel="noopener">Gartner's B2B data market analysis</a>).</p>
 
-        <p><strong>Data enrichment</strong> is usually priced per record enriched, ranging from $0.10 to $2.00+ depending on the data fields and provider. Platform subscriptions (ZoomInfo, Cognism) bundle enrichment with access to prospect databases, typically $15,000-$50,000+ annually.</p>
+        <p><strong>Data enrichment</strong> is usually priced per record enriched, ranging from $0.10 to $2.00+ depending on the data fields and provider. Platform subscriptions (ZoomInfo, Cognism) bundle enrichment with access to prospect databases, typically <a href="https://www.forrester.com/report/the-forrester-wave-b2b-marketing-data-providers/RES178540" target="_blank" rel="noopener">$15,000-$50,000+ annually</a> according to Forrester research.</p>
 
         <div class="callout-box">
           <p><strong>Budget tip:</strong> If you're choosing one or the other due to budget constraints, start with cleaning. Clean data that's incomplete is more useful than complete data that's wrong. You can always enrich later; undoing enrichment damage is harder.</p>
@@ -570,6 +582,11 @@
         </div>
 
         <p class="mt-xl text-muted">Related: <a href="/resources/what-is-data-enrichment.html">What Is Data Enrichment?</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a> | <a href="/services/data-enrichment.html">Data Enrichment Services</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+        </div>
 
       </div>
     </div>

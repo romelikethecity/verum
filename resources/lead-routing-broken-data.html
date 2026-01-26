@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/lead-routing-broken-data.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Your Lead Routing Is Broken Because Your Data Is Broken"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -155,7 +167,7 @@
 
         <p>Most routing logic depends on a handful of fields:</p>
 
-        <p><strong>Company size / Employee count.</strong> Routes leads to SMB, mid-market, or enterprise teams. Problem: this field is blank on 30-60% of inbound leads. Form submissions rarely include it. Even when they do, people lie or guess.</p>
+        <p><strong>Company size / Employee count.</strong> Routes leads to SMB, mid-market, or enterprise teams. Problem: according to <a href="https://www.salesforce.com/resources/research-reports/state-of-sales/" target="_blank" rel="noopener">Salesforce research</a>, this field is blank on 30-60% of inbound leads. Form submissions rarely include it. Even when they do, people lie or guess.</p>
 
         <p><strong>Industry.</strong> Routes to industry-specialized reps or teams. Problem: Industry values are inconsistent. Is it "Financial Services" or "Finance" or "Banking" or "Fintech"? Your routing rule checks for one; the data says another.</p>
 
@@ -333,7 +345,7 @@
 
         <div class="faq-section">
           <h3>Why do leads keep getting routed to the wrong rep?</h3>
-          <p>Most routing failures come from missing or inconsistent data. If you route by company size and 40% of leads don't have that field populated, those leads go to a default queue or get assigned randomly. The routing logic is fine; the data isn't.</p>
+          <p>Most routing failures come from missing or inconsistent data. If you route by company size and a significant portion of leads don't have that field populated, those leads go to a default queue or get assigned randomly. The routing logic is fine; the data isn't.</p>
 
           <h3>How do I know if it's a data problem?</h3>
           <p>Pull a report on misrouted leads and check the fields your routing rules depend on. If those fields are blank, inconsistent, or wrong, you've found your problem. Common culprits: company size, industry, location, job title.</p>
@@ -349,6 +361,10 @@
 
         <p class="mt-xl text-muted">Related: <a href="/resources/salesforce-job-title-standardization.html">Standardizing Job Titles</a> | <a href="/resources/how-to-clean-salesforce-data.html">Cleaning Salesforce Data</a> | <a href="/resources/hubspot-data-cleaning.html">Cleaning HubSpot Data</a></p>
 
+        <div style="margin-top: 3rem; padding: 2rem; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border-color);">
+          <p style="font-weight: 600; margin-bottom: 0.75rem;">About the Author</p>
+          <p style="color: var(--text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+        </div>
       </div>
     </div>
   </section>

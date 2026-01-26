@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NPI Validation Services | Verum</title>
-  <meta name="description" content="Verify healthcare provider credentials against the NPI Registry. Confirm active status, check specialty, validate practice information. Essential for medical device and pharma sales.">
+  <meta name="description" content="Verify healthcare provider credentials against the NPI Registry. Confirm active status, check specialty, validate practice info for medical device and pharma.">
 
   <link rel="canonical" href="https://veruminc.com/validation/npi-validation/">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -64,6 +64,47 @@
     },
     "description": "NPI Registry validation for healthcare providers. Verify credentials, confirm active status, validate specialty and practice information for medical device and pharmaceutical sales teams.",
     "serviceType": "NPI Validation"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What if I don't have NPIs in my database?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can match providers by name and address to find their NPIs. Match rates depend on data quality, but typically 70-90% of valid providers can be matched."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How current is the NPI Registry data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We use the most current NPPES data available, typically updated weekly. For real-time validation needs, we can check directly against the live registry."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you validate organization NPIs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Type 2 (organization) NPIs are validated the same way as Type 1 (individual) NPIs. Practices, hospitals, group practices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about providers with multiple NPIs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We validate the NPI you provide. If you need to find all NPIs associated with a provider, that's a separate lookup we can do."
+        }
+      }
+    ]
   }
   </script>
 </head>

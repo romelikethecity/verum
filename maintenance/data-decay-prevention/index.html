@@ -66,6 +66,47 @@
     "serviceType": "Data Monitoring"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is this different from regular validation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Validation checks if data is currently good. Decay prevention monitors for change over time and predicts future problems. Validation is a snapshot; decay prevention is surveillance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you replace contacts who leave?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. When we detect a contact departure, we can research their replacement. This is optional—some clients want the data, others want us to find replacements automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about GDPR and privacy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We only monitor business contact information using publicly available sources. No scraping personal data or violating privacy regulations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly do you detect job changes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depends on the source. LinkedIn changes are often caught within 48-72 hours. Email bounces are immediate. Some changes take longer to surface in public sources."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>

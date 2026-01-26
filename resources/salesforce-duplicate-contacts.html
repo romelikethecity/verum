@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/salesforce-duplicate-contacts.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Find and Merge Duplicate Contacts in Salesforce"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -194,7 +206,7 @@
 
         <h3>Duplicate Rules and Matching Rules</h3>
 
-        <p>Salesforce's Duplicate Management feature (Setup > Duplicate Management) uses matching rules to find duplicates. The standard matching rules compare:</p>
+        <p><a href="https://help.salesforce.com/s/articleView?id=sf.duplicate_rules_map_of_tasks.htm" target="_blank" rel="noopener">Salesforce's Duplicate Management feature</a> (Setup > Duplicate Management) uses matching rules to find duplicates. The standard matching rules compare:</p>
 
         <ul>
           <li>Exact email match</li>
@@ -246,7 +258,7 @@
 
         <h3>The Standard Salesforce Merge</h3>
 
-        <p>Salesforce lets you merge up to 3 Contacts at a time through the UI:</p>
+        <p><a href="https://help.salesforce.com/s/articleView?id=sf.contacts_merge.htm" target="_blank" rel="noopener">Salesforce lets you merge up to 3 Contacts</a> at a time through the UI:</p>
 
         <p>1. Go to the Contacts tab<br>
         2. Click "Merge Contacts" in the tools section<br>
@@ -312,7 +324,7 @@
 
         <p>By default, Salesforce's duplicate rules just warn users. They can ignore the warning and create the duplicate anyway. Change this.</p>
 
-        <p>Go to Setup > Duplicate Rules. Edit your rules to "Block" instead of "Alert." This prevents users from creating records that match existing ones.</p>
+        <p>Go to Setup > <a href="https://help.salesforce.com/s/articleView?id=sf.duplicate_rules_map_of_tasks.htm" target="_blank" rel="noopener">Duplicate Rules</a>. Edit your rules to "Block" instead of "Alert." This prevents users from creating records that match existing ones.</p>
 
         <p>Be careful here. If your matching rules are too strict, you'll block legitimate record creation. If they're too loose, duplicates slip through. Test your rules before enforcing them org-wide.</p>
 
@@ -380,6 +392,11 @@
         </div>
 
         <p class="mt-xl text-muted">Related: <a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data</a> | <a href="/cleaning/data-deduplication/">Data Deduplication Services</a> | <a href="/use-cases/crm-hygiene/">CRM Hygiene</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
+        </div>
 
       </div>
     </div>

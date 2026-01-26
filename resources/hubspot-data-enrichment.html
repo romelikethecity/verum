@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/hubspot-data-enrichment.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Enrich HubSpot Data Without Expensive Platforms"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -214,13 +226,13 @@
 
         <h3>Company Insights</h3>
 
-        <p>When you create a company record and add a domain, HubSpot auto-populates some fields: description, industry, employee count range, social profiles, and more. This data comes from HubSpot's own database plus public sources.</p>
+        <p>When you create a company record and add a domain, HubSpot <a href="https://knowledge.hubspot.com/companies/hubspot-insights" target="_blank" rel="noopener">auto-populates some fields</a>: description, industry, employee count range, social profiles, and more. This data comes from HubSpot's own database plus public sources.</p>
 
         <p>Coverage varies. Large, well-known companies usually populate well. Smaller companies and those outside the US often don't. Recent startups might have no data at all.</p>
 
         <h3>Breeze Intelligence</h3>
 
-        <p>HubSpot's Breeze Intelligence is an add-on that provides more comprehensive enrichment. It enriches both contacts and companies with firmographic and technographic data.</p>
+        <p>HubSpot's <a href="https://knowledge.hubspot.com/data-management/enrich-company-and-contact-records-with-breeze-intelligence" target="_blank" rel="noopener">Breeze Intelligence</a> is an add-on that provides more comprehensive enrichment. It enriches both contacts and companies with firmographic and technographic data.</p>
 
         <p>Pricing is credit-based, on top of your existing HubSpot subscription. The cost scales with usage. For companies already committed to the HubSpot ecosystem, it's worth evaluating since integration is native.</p>
 
@@ -364,7 +376,7 @@
 
         <h3>Data Freshness</h3>
 
-        <p>When was the data last verified? B2B data decays at roughly 30% per year. If the provider's database hasn't been updated recently, you're getting stale information.</p>
+        <p>When was the data last verified? B2B data decays at roughly 30% per year (according to <a href="https://blog.hubspot.com/marketing/crm-data-decay" target="_blank" rel="noopener">HubSpot research on CRM data decay</a>). If the provider's database hasn't been updated recently, you're getting stale information.</p>
 
         <h3>Coverage Gaps</h3>
 
@@ -438,7 +450,7 @@
           <p>No. Enrich strategically. High-value contacts (MQLs, target accounts, recent converters) are worth the cost. Old, disengaged contacts probably aren't. Better ROI comes from enriching a focused segment thoroughly.</p>
 
           <h3>How do I keep enriched data fresh?</h3>
-          <p>Data decays at roughly 30% per year. Options include: continuous enrichment subscriptions with re-verification, quarterly refreshes for active contacts, or accepting aging and re-enriching when contacts become active again.</p>
+          <p>Data decays at roughly <a href="https://blog.hubspot.com/marketing/crm-data-decay" target="_blank" rel="noopener">30% per year</a>. Options include: continuous enrichment subscriptions with re-verification, quarterly refreshes for active contacts, or accepting aging and re-enriching when contacts become active again.</p>
         </div>
 
         <div class="text-center mt-xl">
@@ -447,6 +459,11 @@
         </div>
 
         <p class="mt-xl text-muted">Related: <a href="/resources/hubspot-data-cleaning.html">How to Clean HubSpot Data</a> | <a href="/resources/hubspot-contact-company-associations.html">Fixing Contact Associations</a> | <a href="/services/data-enrichment.html">Data Enrichment Services</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+        </div>
 
       </div>
     </div>

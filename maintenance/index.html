@@ -65,6 +65,47 @@
     "serviceType": "Data Maintenance"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you connect to our data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most clients send us monthly CRM exports or connect us to their data warehouse. We can also work with file drops (SFTP, cloud storage) or API connections for larger implementations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you write back to our CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can. For clients who want hands-off maintenance, we deliver updated files that your team imports. For full automation, we can configure direct CRM updates with your approval workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the minimum database size?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Maintenance makes sense for databases over 5,000 records. Below that, periodic one-time projects are usually more cost-effective."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we pause maintenance temporarily?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If you're doing a major CRM migration or other project, we can pause and resume. You're not locked into rigid contracts."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>

@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/data-quality-metrics.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Quality Metrics That Actually Matter"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -199,7 +211,7 @@
 
           <h2>The Problem with Most Data Quality Metrics</h2>
 
-          <p>Traditional data quality frameworks give you metrics like "accuracy," "completeness," "consistency," and "timeliness." These sound reasonable but often miss the point.</p>
+          <p>Traditional data quality frameworks give you metrics like "accuracy," "completeness," "consistency," and "timeliness" (the standard dimensions defined by <a href="https://www.dama.org/cpages/body-of-knowledge" target="_blank" rel="noopener">DAMA International's DMBOK</a>). These sound reasonable but often miss the point.</p>
 
           <p>Knowing that your "completeness score" is 78% doesn't tell you anything actionable. Completeness of what? Which fields? Does it matter if they're empty? What's the actual business impact?</p>
 
@@ -210,7 +222,7 @@
           <div class="metric-card">
             <h4>Email Validity Rate</h4>
             <p class="target">Target: 95%+ for active marketing contacts, 85%+ for full database</p>
-            <p>Percentage of email addresses that are verified valid and deliverable. This directly predicts campaign bounce rates and deliverability health. Below 85%, you're risking sender reputation damage that affects all your email.</p>
+            <p>Percentage of email addresses that are verified valid and deliverable. This directly predicts campaign bounce rates and deliverability health. Below 85%, you're risking sender reputation damage that affects all your email (email service providers like <a href="https://sendgrid.com/en-us/blog/email-reputation-what-it-is-how-to-check-it-and-how-to-improve-it" target="_blank" rel="noopener">SendGrid</a> recommend keeping bounce rates under 2% to protect sender reputation).</p>
           </div>
 
           <p><strong>How to measure:</strong> Run your contact emails through a verification service. Count valid/total. Segment by marketing status since active contacts matter more than dormant ones.</p>
@@ -220,7 +232,7 @@
           <div class="metric-card">
             <h4>Duplicate Rate</h4>
             <p class="target">Target: Under 5% (measured as % of records with duplicates)</p>
-            <p>Percentage of records that have one or more potential duplicates in the system. Duplicates break attribution, fragment engagement history, cause routing conflicts, and lead to embarrassing double outreach.</p>
+            <p>Percentage of records that have one or more potential duplicates in the system. Duplicates break attribution, fragment engagement history, cause routing conflicts, and lead to embarrassing double outreach. Research from <a href="https://www.gartner.com/en/newsroom/press-releases/2021-07-13-gartner-says-poor-data-quality-is-a-leading-cause-of-crm-implementation-failures" target="_blank" rel="noopener">Gartner</a> indicates that poor data quality is a leading cause of CRM implementation failures.</p>
           </div>
 
           <p><strong>How to measure:</strong> Run duplicate detection using email exact match, name + company fuzzy match, and phone number match. Count unique records flagged as having duplicates. Divide by total records.</p>
@@ -240,7 +252,7 @@
           <div class="metric-card">
             <h4>Contact-Account Association Rate</h4>
             <p class="target">Target: 95%+ of contacts associated to accounts</p>
-            <p>Percentage of contacts that are properly linked to company/account records. Unassociated contacts are invisible to account-based operations: ABM campaigns, account scoring, sales views, and rollup reporting.</p>
+            <p>Percentage of contacts that are properly linked to company/account records. Unassociated contacts are invisible to account-based operations: ABM campaigns, account scoring, sales views, and rollup reporting. For companies running <a href="https://www.itsma.com/research/" target="_blank" rel="noopener">ABM programs</a>, orphaned contacts represent a significant blind spot in account coverage.</p>
           </div>
 
           <p><strong>How to measure:</strong> Count contacts with no account/company association. Divide by total contacts. For HubSpot, this is contacts without company associations. For Salesforce, contacts without an account relationship.</p>
@@ -355,6 +367,11 @@
             <h3>Want to know where your data quality stands?</h3>
             <p>We'll calculate all these metrics for your CRM and show you exactly what needs attention first.</p>
             <a href="/contact.html" class="btn btn--primary">Get My Data Quality Scorecard</a>
+          </div>
+
+          <div style="margin-top: 3rem; padding: 2rem; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border-color);">
+            <p style="font-weight: 600; margin-bottom: 0.75rem;">About the Author</p>
+            <p style="color: var(--text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
           </div>
 
         </div>

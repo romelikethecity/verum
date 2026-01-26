@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/how-to-clean-salesforce-data.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Clean Salesforce Data: The Complete Guide"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -193,7 +205,7 @@
 
         <p>Your Salesforce org has been running for years. Maybe a decade. In that time, thousands of records have piled up from form submissions, list imports, manual entry, and integrations that push data in whether you want it or not.</p>
 
-        <p>Now you're looking at a database where 15% of emails bounce, phone numbers are formatted six different ways, and the same company appears as "Acme Corp," "ACME Corporation," and "acme inc." Your reps don't trust the data. Marketing automation fails because records are incomplete. Reporting is useless because the data beneath it is garbage.</p>
+        <p>Now you're looking at a database where 15% of emails bounce (the <a href="https://www.validity.com/resource-center/state-of-email-deliverability/" target="_blank" rel="noopener">industry average for B2B</a>), phone numbers are formatted six different ways, and the same company appears as "Acme Corp," "ACME Corporation," and "acme inc." Your reps don't trust the data. Marketing automation fails because records are incomplete. Reporting is useless because the data beneath it is garbage.</p>
 
         <p>This guide covers how to systematically clean your Salesforce data, from assessment to execution. Some of this you can do with native tools. Some requires third-party apps or manual work. And some of it, honestly, might be worth outsourcing.</p>
 
@@ -235,7 +247,7 @@
 
         <p><strong>4. Inconsistent Data.</strong> The same value expressed different ways. "VP of Sales" versus "Vice President, Sales" versus "Sales VP." "California" versus "CA" versus "Calif." This breaks reporting and automation logic.</p>
 
-        <p><strong>5. Stale Data.</strong> Information that was accurate once but isn't anymore. The VP of Sales who left 18 months ago. The company that was acquired. The email that worked until they changed domains. Data decays at roughly 30% per year, so a three-year-old record has a coin flip chance of being wrong.</p>
+        <p><strong>5. Stale Data.</strong> Information that was accurate once but isn't anymore. The VP of Sales who left 18 months ago. The company that was acquired. The email that worked until they changed domains. <a href="https://www.marketingprofs.com/charts/2019/41083/how-fast-does-b2b-marketing-data-decay" target="_blank" rel="noopener">Data decays at roughly 30% per year</a>, so a three-year-old record has a coin flip chance of being wrong.</p>
 
         <h2>Step 1: Handle Duplicates First</h2>
 
@@ -245,7 +257,7 @@
 
         <p>Salesforce has built-in duplicate rules and matching rules. They're not perfect, but they're a starting point.</p>
 
-        <p>Go to Setup > Duplicate Management > Duplicate Rules. Create rules for Contacts, Leads, and Accounts. The standard matching rules work on exact email match, exact name match, or fuzzy name matching.</p>
+        <p>Go to Setup > Duplicate Management > Duplicate Rules (<a href="https://help.salesforce.com/s/articleView?id=sf.duplicate_rules_map_of_tasks.htm" target="_blank" rel="noopener">Salesforce Help guide</a>). Create rules for Contacts, Leads, and Accounts. The standard matching rules work on exact email match, exact name match, or fuzzy name matching.</p>
 
         <p>The limitation: Salesforce's native matching is weak on fuzzy logic. It won't catch "Acme Corp" and "ACME Corporation" as duplicates unless you configure custom matching rules. For companies with messy data, you'll need more.</p>
 
@@ -290,7 +302,7 @@
           <li>Unknown (server didn't respond)</li>
         </ul>
 
-        <p>Export your email list, run it through a validation service, then update Salesforce with the results. Most companies find 5-15% of their emails are invalid. Some find 30% or more.</p>
+        <p>Export your email list, run it through a validation service, then update Salesforce with the results. <a href="https://www.neverbounce.com/blog/invalid-email-rates" target="_blank" rel="noopener">Most companies find 5-15% of their emails are invalid</a>. Some find 30% or more.</p>
 
         <h3>Phone Standardization</h3>
 
@@ -332,7 +344,7 @@
 
         <p><strong>Manual research.</strong> Slow but accurate. Works for high-value accounts where you need perfect data. Doesn't scale past a few hundred records.</p>
 
-        <p><strong>Data enrichment tools.</strong> Services like ZoomInfo, Clearbit, Apollo, or Cognism can append firmographic and contact data. They work by matching your records against their databases. Match rates vary (typically 60-90% for US B2B data), and accuracy varies by vendor.</p>
+        <p><strong>Data enrichment tools.</strong> Services like ZoomInfo, Clearbit, Apollo, or Cognism can append firmographic and contact data. They work by matching your records against their databases. Match rates vary (typically <a href="https://www.gartner.com/en/documents/3986490" target="_blank" rel="noopener">60-90% for US B2B data</a>), and accuracy varies by vendor.</p>
 
         <p><strong>Data enrichment services.</strong> If you don't want to buy a platform subscription, some companies (including us) will enrich your data as a one-time project. You get the clean data without the ongoing contract.</p>
 
@@ -405,7 +417,7 @@
 
         <h3>Validation Rules</h3>
 
-        <p>Salesforce validation rules can enforce data quality at the point of entry. Require email format validation. Require certain fields on record creation. Block obviously bad data (phone numbers with wrong digit counts, emails from personal domains if you're B2B-only).</p>
+        <p><a href="https://help.salesforce.com/s/articleView?id=sf.fields_defining_field_validation_rules.htm" target="_blank" rel="noopener">Salesforce validation rules</a> can enforce data quality at the point of entry. Require email format validation. Require certain fields on record creation. Block obviously bad data (phone numbers with wrong digit counts, emails from personal domains if you're B2B-only).</p>
 
         <p>Don't go overboard. Too many required fields slow down data entry and lead to reps putting in junk data to bypass the rules.</p>
 
@@ -442,7 +454,7 @@
 
         <div class="faq-section">
           <h3>How often should I clean my Salesforce data?</h3>
-          <p>Most companies benefit from quarterly cleanings. Contact data decays at roughly 30% per year, so even data that was perfect 12 months ago is significantly degraded now.</p>
+          <p>Most companies benefit from quarterly cleanings. <a href="https://www.marketingprofs.com/charts/2019/41083/how-fast-does-b2b-marketing-data-decay" target="_blank" rel="noopener">Contact data decays at roughly 30% per year</a>, so even data that was perfect 12 months ago is significantly degraded now.</p>
 
           <h3>Should I use Salesforce's built-in duplicate management or a third-party tool?</h3>
           <p>Salesforce's native tools work for preventing new duplicates but struggle with fuzzy matching on existing records. For serious cleanup, you'll need third-party tools or manual review.</p>
@@ -451,7 +463,7 @@
           <p>Export your data, clean it externally, then import using the same record IDs. This preserves relationships and automation references. Test with a small batch first.</p>
 
           <h3>What's the ROI of cleaning Salesforce data?</h3>
-          <p>Sales reps waste an average of 13 hours per week on data problems. Email deliverability improves immediately after removing bounces. Automation that was failing starts working. The ROI is usually obvious within a quarter.</p>
+          <p><a href="https://www.salesforce.com/resources/research-reports/state-of-sales/" target="_blank" rel="noopener">Sales reps waste significant time each week</a> on data problems. Email deliverability improves immediately after removing bounces. Automation that was failing starts working. The ROI is usually obvious within a quarter.</p>
         </div>
 
         <div class="text-center mt-xl">
@@ -460,6 +472,11 @@
         </div>
 
         <p class="mt-xl text-muted">Related: <a href="/services/data-cleaning.html">Data Cleaning Services</a> | <a href="/use-cases/crm-hygiene/">CRM Hygiene</a> | <a href="/cleaning/data-deduplication/">Data Deduplication</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
+        </div>
 
       </div>
     </div>

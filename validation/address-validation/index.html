@@ -66,6 +66,47 @@
     "serviceType": "Address Validation"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you validate international addresses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We specialize in US addresses with USPS verification. Canadian addresses are supported. Other international addresses have limited validation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you add ZIP+4?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We append ZIP+4 when available, which is required for many bulk mail discounts and improves delivery precision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about PO Boxes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PO Boxes are validated like any other address. We verify the box exists at that post office."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you validate rural routes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Rural routes and highway contract routes are validated against USPS databases."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>

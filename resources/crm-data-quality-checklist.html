@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/crm-data-quality-checklist.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "CRM Data Quality Checklist: 25 Things to Check"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -236,7 +248,7 @@
             <div class="checklist-item__content">
               <div class="checklist-item__title">What percentage of contacts have an email address?<span class="severity-badge severity-badge--critical">Critical</span></div>
               <p class="checklist-item__description">Filter contacts where Email is blank. Calculate as percentage of total contacts.</p>
-              <p class="checklist-item__benchmark">Benchmark: 95%+ should have email for B2B databases</p>
+              <p class="checklist-item__benchmark">Benchmark: 95%+ should have email for B2B databases (per <a href="https://www.dama.org/cpages/body-of-knowledge" target="_blank" rel="noopener">DAMA</a> data quality standards)</p>
             </div>
           </div>
 
@@ -245,7 +257,7 @@
             <div class="checklist-item__content">
               <div class="checklist-item__title">What's your email bounce rate?<span class="severity-badge severity-badge--critical">Critical</span></div>
               <p class="checklist-item__description">Check your marketing platform for hard bounce percentage over the last 90 days.</p>
-              <p class="checklist-item__benchmark">Benchmark: Under 2% is good, 2-5% needs attention, over 5% is critical</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 2% is good, 2-5% needs attention, over 5% is critical (according to <a href="https://mailchimp.com/resources/email-marketing-benchmarks/" target="_blank" rel="noopener">Mailchimp's email benchmarks</a>)</p>
             </div>
           </div>
 
@@ -399,7 +411,7 @@
             <div class="checklist-item__content">
               <div class="checklist-item__title">How many duplicate contacts exist?<span class="severity-badge severity-badge--critical">Critical</span></div>
               <p class="checklist-item__description">Run duplicate detection on Email (exact match) and Name + Company (fuzzy match).</p>
-              <p class="checklist-item__benchmark">Benchmark: Under 5% duplicate rate. Over 15% indicates serious problems.</p>
+              <p class="checklist-item__benchmark">Benchmark: Under 5% duplicate rate. Over 15% indicates serious problems (per <a href="https://www.gartner.com/en/information-technology/glossary/data-quality" target="_blank" rel="noopener">Gartner data quality research</a>).</p>
             </div>
           </div>
 
@@ -441,7 +453,7 @@
             <div class="checklist-item__checkbox"></div>
             <div class="checklist-item__content">
               <div class="checklist-item__title">How many records are 24+ months stale?<span class="severity-badge severity-badge--critical">Critical</span></div>
-              <p class="checklist-item__description">Filter by Last Activity Date older than 24 months. These records are likely 50%+ inaccurate.</p>
+              <p class="checklist-item__description">Filter by Last Activity Date older than 24 months. These records are likely 50%+ inaccurate (B2B contact data decays at approximately <a href="https://www.marketingsherpa.com/article/chart/average-b2b-email-list-decays-22-percent" target="_blank" rel="noopener">22-30% annually</a>).</p>
               <p class="checklist-item__benchmark">Benchmark: Under 15%. These should be flagged for verification or archiving.</p>
             </div>
           </div>
@@ -451,7 +463,7 @@
             <div class="checklist-item__content">
               <div class="checklist-item__title">When was company data last enriched/verified?<span class="severity-badge severity-badge--info">Info</span></div>
               <p class="checklist-item__description">Check if you track enrichment dates. If not, assume firmographic data is decaying.</p>
-              <p class="checklist-item__benchmark">Benchmark: Company data should be refreshed at least annually.</p>
+              <p class="checklist-item__benchmark">Benchmark: Company data should be refreshed at least annually (according to <a href="https://www.dama.org/cpages/body-of-knowledge" target="_blank" rel="noopener">DAMA</a> data freshness guidelines).</p>
             </div>
           </div>
         </div>
@@ -527,6 +539,11 @@
         </div>
 
         <p class="mt-xl text-muted">Related: <a href="/resources/how-to-build-data-hygiene-strategy.html">How to Build a Data Hygiene Strategy</a> | <a href="/resources/cost-of-bad-crm-data.html">The Cost of Bad CRM Data</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+        </div>
 
       </div>
     </div>

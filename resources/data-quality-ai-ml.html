@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/data-quality-ai-ml.html">
@@ -40,6 +40,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Quality for AI & Machine Learning: Preparing Training Data"}
+    ]
+  }
   </script>
 
   <script type="application/ld+json">
@@ -662,7 +674,7 @@ profile.generate_report()
             <tr>
               <td>Cohen's Kappa</td>
               <td>Two labelers, categorical labels</td>
-              <td>&gt;0.8 excellent, 0.6-0.8 good, &lt;0.6 needs work</td>
+              <td>&gt;0.8 excellent, 0.6-0.8 good, &lt;0.6 needs work (per <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3900052/" target="_blank" rel="noopener">Landis &amp; Koch guidelines</a>)</td>
             </tr>
             <tr>
               <td>Fleiss' Kappa</td>
@@ -672,7 +684,7 @@ profile.generate_report()
             <tr>
               <td>Krippendorff's Alpha</td>
               <td>Multiple labelers, various scales</td>
-              <td>&gt;0.8 reliable, &gt;0.67 acceptable</td>
+              <td>&gt;0.8 reliable, &gt;0.67 acceptable (per <a href="https://repository.upenn.edu/asc_papers/43/" target="_blank" rel="noopener">Krippendorff's standards</a>)</td>
             </tr>
             <tr>
               <td>IoU (Jaccard)</td>
@@ -989,6 +1001,11 @@ alerts:
               <p class="related-card__excerpt">Planning your data quality journey.</p>
             </div>
           </div>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: #f8fafc; border-radius: 12px; border: 1px solid var(--border-color);">
+          <p style="font-weight: 600; margin-bottom: 0.75rem;">About the Author</p>
+          <p style="color: var(--text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
         </div>
       </div>
     </article>

@@ -66,6 +66,47 @@
     "serviceType": "Batch Validation"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's the maximum file size?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No limit. We've processed files with over 1 million records. For very large files (500K+), we may request a data sample first to optimize processing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What file formats do you accept?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CSV, Excel (.xlsx, .xls), TSV, or database exports. If you have a different format, ask—we're flexible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I validate multiple times?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many customers validate quarterly to catch data decay. We offer discounts for recurring validation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle sensitive data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Secure transfer (SFTP or encrypted), processing in isolated environments, deletion after delivery. Happy to sign NDAs and discuss compliance requirements."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>
