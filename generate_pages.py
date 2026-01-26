@@ -225,7 +225,7 @@ def get_page_template(title, description, canonical_path, h1, content_html, keyw
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="{BASE_URL}{canonical_path}">
@@ -289,7 +289,7 @@ def generate_industry_pages():
         # Data Enrichment page
         path = f"/solutions/{slug}-data-enrichment/"
         title = f"{name} Data Enrichment"
-        desc = f"Data enrichment services for {plural}. Append firmographic, technographic, and contact data focused on {focus}."
+        desc = f"Enrich your {name.lower()} data with firmographics, contacts, and technographics. 50+ sources, human-verified. 24-hour turnaround."
         content = f'''
 <h2>{name} Data Enrichment</h2>
 <p>Verum provides specialized data enrichment for {plural}. We understand the unique data needs of the {name.lower()} industry, including {focus}.</p>
@@ -310,7 +310,7 @@ def generate_industry_pages():
         # Data Cleaning page
         path = f"/solutions/{slug}-data-cleaning/"
         title = f"{name} Data Cleaning"
-        desc = f"Data cleaning services for {plural}. Remove duplicates, validate emails, and standardize records with focus on {focus}."
+        desc = f"Clean your {name.lower()} data: dedupe, validate emails, standardize records. Human-verified quality. 24-hour turnaround."
         content = f'''
 <h2>{name} Data Cleaning</h2>
 <p>Verum provides specialized data cleaning for {plural}. We understand the unique data challenges of the {name.lower()} industry, including {focus}.</p>
