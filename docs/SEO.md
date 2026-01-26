@@ -259,3 +259,242 @@ gh run list --limit 3
 # View failed deployment logs
 gh run view <run-id> --log-failed
 ```
+
+---
+
+## SEO Best Practices for New Page Creation
+
+### Meta Description Guidelines
+
+**Length Requirements:**
+- **Minimum:** 120 characters
+- **Maximum:** 160 characters (Google truncates longer descriptions)
+- **Optimal:** 150-160 characters
+
+**Common Mistakes to Avoid:**
+- Don't use template patterns that produce >160 char descriptions (e.g., "Selling to X, Y, or Z? Your prospect data is full of duplicates...")
+- Don't duplicate descriptions across similar pages
+- Don't leave descriptions empty or use placeholder text
+
+**Verification Command:**
+```bash
+# Find meta descriptions over 160 characters
+grep -r 'meta name="description"' . --include="*.html" | while read line; do
+  desc=$(echo "$line" | sed 's/.*content="\([^"]*\)".*/\1/')
+  len=${#desc}
+  if [ $len -gt 160 ]; then
+    echo "$line" | cut -d: -f1 | xargs echo "$len chars:"
+  fi
+done
+```
+
+---
+
+### CSS Cache-Busting (CRITICAL)
+
+**Always include version parameter on CSS links:**
+```html
+<link rel="stylesheet" href="/css/styles.css?v=5">
+```
+
+**Current version:** `?v=5`
+
+**When to increment:**
+- After any CSS changes
+- When creating new pages (use current version)
+
+**Verification Command:**
+```bash
+# Find files missing CSS version parameter
+grep -l 'href="/css/styles.css"' **/*.html
+```
+
+**Why this matters:** GitHub Pages caches CSS for 4 hours. Without version params, users see stale styles.
+
+---
+
+### Schema Markup Requirements
+
+**Every page MUST have:**
+
+1. **BreadcrumbList Schema** (all inner pages)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Category", "item": "https://veruminc.com/category/"},
+    {"@type": "ListItem", "position": 3, "name": "Page Title"}
+  ]
+}
+```
+
+2. **Service Schema** (service/solution pages)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Service Name",
+  "provider": {"@type": "Organization", "name": "Verum"},
+  "description": "Service description",
+  "serviceType": "Service Type"
+}
+```
+
+3. **FAQPage Schema** (pages with FAQ sections)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Question text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Answer text."
+      }
+    }
+  ]
+}
+```
+
+4. **Article Schema** (resource/blog pages)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Article Title",
+  "author": {"@type": "Organization", "name": "Verum"},
+  "publisher": {"@type": "Organization", "name": "Verum"},
+  "datePublished": "2026-01-25",
+  "dateModified": "2026-01-25"
+}
+```
+
+**JSON-LD Validation:**
+- Each `<script type="application/ld+json">` block must be complete
+- Never leave unclosed braces or incomplete schema blocks
+- Test with Google's Rich Results Test: https://search.google.com/test/rich-results
+
+**Common Schema Errors:**
+- Missing closing `}` or `</script>` tags
+- Incomplete schema blocks (e.g., `"@context": "https://schema.org",` with nothing else)
+- Duplicate opening `<script>` tags without closing previous block
+
+---
+
+### Internal Linking Requirements
+
+**Every content page must have related links at the bottom:**
+```html
+<p class="mt-lg text-muted">Related: <a href="/path1/">Link 1</a> | <a href="/path2/">Link 2</a> | <a href="/path3/">Link 3</a></p>
+```
+
+**Link to:**
+- 3-4 related pages within the same category
+- At least 1 page from a different but relevant category
+- Service pages when appropriate
+
+**Verification Command:**
+```bash
+# Find pages missing related links
+grep -L 'class="mt-lg text-muted">Related:' solutions/*/index.html
+```
+
+---
+
+### Tracking Code Verification
+
+**Required on every page:**
+- Google Analytics 4: `G-R416JZ91B1`
+- Microsoft Clarity: `uzzgoxxnof`
+
+**Never use placeholders:**
+- ❌ `G-XXXXXXXXXX`
+- ❌ `XXXXXXXXXX`
+
+**Verification Commands:**
+```bash
+# Check for placeholder GA IDs
+grep -r "G-XXXXXXXXXX" --include="*.html"
+
+# Check for placeholder Clarity IDs
+grep -r '"clarity", "script", "XXXXXXXXXX"' --include="*.html"
+
+# Verify all pages have correct GA ID
+grep -L "G-R416JZ91B1" **/*.html
+```
+
+---
+
+### Pre-Commit SEO Checklist
+
+Before committing any new or modified HTML page:
+
+- [ ] Meta description is 120-160 characters
+- [ ] CSS link includes `?v=5` version parameter
+- [ ] BreadcrumbList schema present (inner pages)
+- [ ] All JSON-LD blocks are complete and valid
+- [ ] Related links section present at bottom
+- [ ] GA4 and Clarity tracking codes present with correct IDs
+- [ ] No placeholder values anywhere
+
+**Quick validation script:**
+```bash
+# Run from project root
+file="path/to/file.html"
+
+# Check meta description length
+grep -o 'meta name="description" content="[^"]*"' "$file" | sed 's/.*content="\(.*\)"/\1/' | wc -c
+
+# Check CSS version
+grep -c 'styles.css?v=5' "$file"
+
+# Check for BreadcrumbList
+grep -c 'BreadcrumbList' "$file"
+
+# Check for tracking
+grep -c 'G-R416JZ91B1' "$file"
+grep -c 'uzzgoxxnof' "$file"
+```
+
+---
+
+### Author Bio (Resource Pages)
+
+All resource/article pages should include author bio before closing content section:
+
+```html
+<div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+  <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+  <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum, where he helps B2B companies clean, enrich, and maintain their CRM data. With over 10 years of experience in data at Microsoft, Databricks, and Salesforce, Rome has seen firsthand how data quality impacts revenue operations.</p>
+</div>
+```
+
+---
+
+### Citation Requirements (E-E-A-T)
+
+**Statistics must be cited with sources:**
+
+| Statistic | Source |
+|-----------|--------|
+| 25-30% annual data decay | Bureau of Labor Statistics (job tenure) |
+| $12.9M cost of bad data | Gartner |
+| 20-30% sales time on data tasks | Salesforce State of Sales |
+| 21x more likely to qualify (speed to lead) | Harvard Business Review |
+
+**How to cite:**
+```html
+<p>B2B databases decay at 25-30% annually, according to
+<a href="https://www.bls.gov/news.release/tenure.nr0.htm" target="_blank" rel="noopener">Bureau of Labor Statistics</a>
+data on average job tenure.</p>
+```
+
+**Authoritative sources to use:**
+- Government: BLS, Census, FinCEN, Federal Reserve
+- Research: Gartner, Forrester, McKinsey, HBR
+- Industry: Salesforce State of Sales, HubSpot Research, Validity
+- Platform docs: Salesforce Help, HubSpot Knowledge Base
