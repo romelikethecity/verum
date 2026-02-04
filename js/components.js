@@ -94,6 +94,7 @@
             <li><a href="/assessment/">Free Assessment</a></li>
             <li><a href="/pricing.html">Pricing</a></li>
             <li><a href="/solutions/">Solutions</a></li>
+            <li><a href="https://datastackguide.com/" target="_blank" rel="noopener noreferrer">DataStackGuide</a></li>
           </ul>
         </div>
 
