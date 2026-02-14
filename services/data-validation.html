@@ -72,6 +72,47 @@
     "serviceType": "Data Validation"
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is validation different from cleaning?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Validation checks if data is accurate and usable. Cleaning fixes formatting and removes duplicates. Many projects need both, but validation comes first. No point cleaning data that shouldn't be in your system at all."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does validation take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most projects complete in 24-48 hours. Large datasets (100K+ records) may take 3-5 days depending on validation depth."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I need to validate data regularly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Check out our Ongoing Maintenance service. We can set up recurring validation on whatever schedule works for you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you validate data already in my CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Export your data, we validate it, and you get a report showing which records need attention. This is a good first step before a larger data cleaning project."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header id="site-header"></header>
@@ -116,6 +157,8 @@
 
     <section class="content">
       <div class="container" style="max-width: 800px;">
+
+        <p><strong>Data validation</strong> is the process of verifying that business data is accurate, complete, and usable before it enters your CRM or other systems. This includes email deliverability verification, phone number validation, business status checks, address verification, and duplicate detection. Catching a bad record before import costs a fraction of fixing the downstream damage it causes: bounced emails, wasted sales calls, polluted reporting, and degraded sender reputation. Pre-import validation is the most cost-effective step in any data quality program.</p>
 
         <h2>The Problem: Bad Data Is Already in Your CRM</h2>
 
