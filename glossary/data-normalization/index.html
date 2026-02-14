@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is Data Normalization? | Verum</title>
+    <meta name="description" content="Data normalization standardizes inconsistent values into a single format. Learn how normalizing job titles, company names, and other fields makes your CRM data usable.">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/styles.css?v=6">
+
+    <meta property="og:title" content="What Is Data Normalization? | Verum">
+    <meta property="og:description" content="Data normalization standardizes inconsistent values into a single format, making your CRM data usable for segmentation and reporting.">
+    <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+    <meta property="og:url" content="https://veruminc.com/glossary/data-normalization/">
+    <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is Data Normalization? | Verum">
+    <meta name="twitter:description" content="Data normalization standardizes inconsistent values into a single format, making your CRM data usable for segmentation and reporting.">
+    <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R416JZ91B1');
+    </script>
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uzzgoxxnof");
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://veruminc.com/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Glossary",
+            "item": "https://veruminc.com/glossary/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Data Normalization",
+            "item": "https://veruminc.com/glossary/data-normalization/"
+        }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "Data Normalization",
+        "description": "The process of standardizing inconsistent data values into a uniform format, such as converting various job title formats into standard categories or company name variations into canonical forms.",
+        "inDefinedTermSet": "https://veruminc.com/glossary/"
+    }
+    </script>
+</head>
+<body>
+    <header id="site-header"></header>
+
+    <noscript>
+        <nav style="padding: 1rem; background: #0B1120; color: white; text-align: center;">
+            <a href="/" style="color: white; margin: 0 1rem;">Home</a>
+            <a href="/services/" style="color: white; margin: 0 1rem;">Services</a>
+            <a href="/about/" style="color: white; margin: 0 1rem;">About</a>
+            <a href="/#contact" style="color: white; margin: 0 1rem;">Contact</a>
+        </nav>
+    </noscript>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Data Normalization</h1>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container" style="max-width: 800px;">
+                <p><strong>Data normalization</strong> standardizes inconsistent values into a uniform format. It takes "VP Sales," "Vice President of Sales," and "VP, Sales" and makes them all "Vice President of Sales." Same with company names: "IBM," "I.B.M.," and "International Business Machines" all become "IBM."</p>
+
+                <h2>Why It Matters</h2>
+                <p>Inconsistent data breaks segmentation, reporting, and automation. You can't filter by job title if the same role has 47 variations. You can't count customers by company if the name appears 12 different ways. Normalization turns messy data into data you can use. It makes filters work. It makes reports accurate. It makes automation reliable.</p>
+
+                <h2>How It Works</h2>
+                <ul>
+                    <li><strong>Standardized mappings:</strong> Create master lists of canonical values. Every job title variant maps to a standard. Every company name variant maps to the official name.</li>
+                    <li><strong>Pattern matching:</strong> Use rules to catch common variations. Remove punctuation, expand abbreviations, fix capitalization, trim whitespace.</li>
+                    <li><strong>Fuzzy matching:</strong> Identify similar-but-not-identical values that should be the same. "Acme Corp" and "Acme Corporation" are 87% similar, probably the same company.</li>
+                    <li><strong>Hierarchical grouping:</strong> Roll up specific titles into broader categories. "Senior Software Engineer" and "Staff Software Engineer" both map to "Software Engineer" for high-level segmentation.</li>
+                    <li><strong>Domain-specific rules:</strong> Apply industry-specific standardization. Medical practices need specialty normalization. Tech companies need technology stack normalization.</li>
+                </ul>
+
+                <h2>Example</h2>
+                <p>A CRM has 8,000 contacts with job titles. Analysis finds 1,200 unique title values, but only 180 actual roles. "Chief Executive Officer" appears as: CEO, C.E.O., Chief Exec Officer, Chief Executive, Exec Director, Managing Director. Normalization maps all variants to standard titles. Now you can segment by role. "Show me all CEOs" returns everyone, not just the 47 who typed it exactly that way.</p>
+
+                <h3>Related Terms</h3>
+                <ul>
+                    <li><a href="/glossary/crm-hygiene/">CRM Hygiene</a></li>
+                    <li><a href="/glossary/email-validation/">Email Validation</a></li>
+                    <li><a href="/glossary/technographic-data/">Technographic Data</a></li>
+                </ul>
+
+                <h3>Learn More</h3>
+                <ul>
+                    <li><a href="/resources/salesforce-job-title-standardization.html">How to Standardize Job Titles in Salesforce</a></li>
+                    <li><a href="/resources/salesforce-company-name-normalization.html">How to Normalize Company Names in Salesforce</a></li>
+                    <li><a href="/services/data-cleaning.html">Data Cleaning Services</a></li>
+                </ul>
+
+                <div class="cta-box" style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--surface-secondary); border-radius: var(--radius-lg);">
+                    <h3>How messy is your CRM data?</h3>
+                    <p>We'll analyze your inconsistencies and deliver a normalized, usable dataset.</p>
+                    <a href="/#contact" class="btn-primary">See What We'll Find</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+
+    <script src="/js/components.js"></script>
+</body>
+</html>

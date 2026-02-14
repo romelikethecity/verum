@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is a Contact Data Waterfall? | Verum</title>
+    <meta name="description" content="A contact data waterfall uses multiple enrichment providers in sequence to maximize data coverage while controlling costs. Learn how waterfalls work and when to use them.">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/styles.css?v=6">
+
+    <meta property="og:title" content="What Is a Contact Data Waterfall? | Verum">
+    <meta property="og:description" content="A contact data waterfall uses multiple enrichment providers in sequence to maximize data coverage while controlling costs.">
+    <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+    <meta property="og:url" content="https://veruminc.com/glossary/contact-waterfall/">
+    <meta property="og:type" content="article">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is a Contact Data Waterfall? | Verum">
+    <meta name="twitter:description" content="A contact data waterfall uses multiple enrichment providers in sequence to maximize data coverage while controlling costs.">
+    <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-R416JZ91B1');
+    </script>
+
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "uzzgoxxnof");
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://veruminc.com/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Glossary",
+            "item": "https://veruminc.com/glossary/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Contact Data Waterfall",
+            "item": "https://veruminc.com/glossary/contact-waterfall/"
+        }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "DefinedTerm",
+        "name": "Contact Data Waterfall",
+        "description": "A sequential enrichment strategy that queries multiple data providers in order of cost or quality until contact information is found, maximizing coverage while controlling expenses.",
+        "inDefinedTermSet": "https://veruminc.com/glossary/"
+    }
+    </script>
+</head>
+<body>
+    <header id="site-header"></header>
+
+    <noscript>
+        <nav style="padding: 1rem; background: #0B1120; color: white; text-align: center;">
+            <a href="/" style="color: white; margin: 0 1rem;">Home</a>
+            <a href="/services/" style="color: white; margin: 0 1rem;">Services</a>
+            <a href="/about/" style="color: white; margin: 0 1rem;">About</a>
+            <a href="/#contact" style="color: white; margin: 0 1rem;">Contact</a>
+        </nav>
+    </noscript>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Contact Data Waterfall</h1>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container" style="max-width: 800px;">
+                <p>A <strong>contact data waterfall</strong> is a sequential enrichment strategy that queries multiple data providers in order until contact information is found. Instead of checking every source, it stops at the first match, maximizing coverage while controlling costs.</p>
+
+                <h2>Why It Matters</h2>
+                <p>No single data provider has everything. One might excel at tech companies, another at healthcare. A waterfall lets you combine their strengths without paying for redundant lookups. You get better coverage than any single source while spending less than querying all sources for every contact.</p>
+
+                <h2>How It Works</h2>
+                <ul>
+                    <li><strong>Provider ordering:</strong> Arrange sources by cost, quality, or coverage. Cheap providers first, expensive ones last, or reverse if quality matters more than budget.</li>
+                    <li><strong>Sequential lookup:</strong> Query the first provider. If no match, move to the next. If found, stop and return the data.</li>
+                    <li><strong>Fallback logic:</strong> Define what counts as a "match." Email only? Email and phone? Different requirements trigger different fallback behavior.</li>
+                    <li><strong>Cost tracking:</strong> Log which provider returned each record. This shows where you're spending and which sources deliver the best value.</li>
+                    <li><strong>Coverage analysis:</strong> Track overall hit rate and per-provider contribution. Adjust your waterfall order based on real performance.</li>
+                </ul>
+
+                <h2>Example</h2>
+                <p>You need email addresses for 10,000 contacts. Provider A costs $0.10/lookup with 60% coverage. Provider B costs $0.50/lookup with 85% coverage. A waterfall checks A first, finds 6,000 emails for $600. Then checks B for the remaining 4,000, finds 3,400 more for $2,000. Total: 9,400 emails for $2,600. Checking B alone would have been $5,000. Checking both for everyone would have been $6,000.</p>
+
+                <h3>Related Terms</h3>
+                <ul>
+                    <li><a href="/glossary/data-normalization/">Data Normalization</a></li>
+                    <li><a href="/glossary/technographic-data/">Technographic Data</a></li>
+                    <li><a href="/glossary/email-validation/">Email Validation</a></li>
+                </ul>
+
+                <h3>Learn More</h3>
+                <ul>
+                    <li><a href="/resources/contact-data-waterfall.html">Building a Contact Data Waterfall</a></li>
+                    <li><a href="/services/data-enrichment.html">Data Enrichment Services</a></li>
+                </ul>
+
+                <div class="cta-box" style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--surface-secondary); border-radius: var(--radius-lg);">
+                    <h3>Need help building your waterfall?</h3>
+                    <p>We'll design and run your enrichment strategy so you get maximum coverage at minimum cost.</p>
+                    <a href="/#contact" class="btn-primary">See What We'll Find</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+
+    <script src="/js/components.js"></script>
+</body>
+</html>

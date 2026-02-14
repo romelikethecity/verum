@@ -791,6 +791,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://veruminc.com/resources/salesforce/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/resources/hubspot/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://veruminc.com/resources/abm-account-data-quality.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1316,11 +1326,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://veruminc.com/solutions/ecommerce-data-enrichment/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://veruminc.com/solutions/education-data-analysis/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1809,5 +1814,65 @@
     <loc>https://veruminc.com/validation/pre-import-validation/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/data-enrichment/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/data-decay/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/firmographic-data/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/data-deduplication/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/ideal-customer-profile/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/contact-waterfall/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/crm-hygiene/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/technographic-data/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/email-validation/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/glossary/data-normalization/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/sitemap.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

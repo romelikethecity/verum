@@ -106,6 +106,7 @@
           <h4 class="footer__heading">Resources</h4>
           <ul class="footer__links">
             <li><a href="/resources/">Blog</a></li>
+            <li><a href="/glossary/">Glossary</a></li>
             <li><a href="/assessment/">Free Assessment</a></li>
             <li><a href="/pricing.html">Pricing</a></li>
             <li><a href="https://datastackguide.com/" target="_blank" rel="noopener noreferrer">DataStackGuide</a></li>
