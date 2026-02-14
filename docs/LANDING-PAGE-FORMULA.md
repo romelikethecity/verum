@@ -21,19 +21,35 @@ In five seconds customers try to establish whether or not you can help them. Mak
 Three ways to write a great title:
 
 **Option A: Explain what you do**
-- When your product is unique, explain what you do as simply as possible
-- Example: "Send better email" (Mailchimp)
+- ONLY works when your product is genuinely unique/differentiated
+- The differentiation must be visible IN the title itself
+- If your product isn't unique, this approach falls flat — it just describes a category
 
-**Option B: Use a hook**
+**Examples of unique products where this works:**
+- "Coffee-Infused Energy Bars" (Quantum — the product itself is unique)
+- "Silence embarrassing notifications while screensharing" (Muzzle — unique product solving a specific problem)
+- "Send better email" (Mailchimp — when they were the only simple email tool)
+
+**When it DOESN'T work:** If you could swap in a competitor's name and the title still works, you're not differentiated enough for this approach.
+
+**Option B: Use a hook (VALUE + OBJECTION)**
 - Most products aren't unique, so a hook adds oomph
-- Address your customer's biggest objection
-- Example: "Finally, email that people actually read"
+- The formula: identify the VALUE you provide → identify the customer's biggest OBJECTION → combine them
+
+**The Hook Framework:**
+| Value | Objection | Value + Hook |
+|-------|-----------|--------------|
+| Rank higher on Google | "I suck at SEO" | "You don't have to be an SEO pro to rank higher on Google" |
+| Ace the SAT | "I bet it's hard work" | "Ace the SAT with just 10 minutes of studying per day" |
+| Erectile dysfunction pills | "I can't ask my doctor" | "Erectile dysfunction pills. Direct to your door." |
+
+The hook addresses why the customer thinks they CAN'T get the value, and removes that barrier in the title.
 
 **Option C: Own your niche**
 - Write with conviction. You're THE solution.
 - Example: "The #1 platform for [X]"
 
-**Verum's title:** "Bad data costs you money" (Hook - addresses the pain)
+**Verum's title:** "Bad data costs you money" (Hook — addresses the objection "I don't know if my data is actually a problem" by making the cost tangible)
 
 ### 2. Subtitle — Explain how you'll create the value
 

@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insurance Data Cleaning | Verum</title>
-  <meta name="description" content="Clean your insurance data: dedupe, validate emails, standardize records. Human-verified quality. 24-hour turnaround.">
-  <meta name="keywords" content="insurance, data cleaning, policy holder data and risk assessment">
+  <title>Insurance Data Cleaning: Agent Dedup & License Validation | Verum</title>
+  <meta name="description" content="Clean insurance CRM data in 24-48 hours. Deduplicate agent/broker records, validate licenses, standardize carrier data. 93% accuracy. Human-verified.">
+  <meta name="keywords" content="insurance data cleaning, agent deduplication, producer license validation, insurance CRM cleaning, broker data">
 
   <link rel="canonical" href="https://veruminc.com/solutions/insurance-data-cleaning/">
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="icon" href="/assets/logos/logos-svg/verum-favicon-32.svg" type="image/svg+xml">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=5">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veruminc.com/solutions/insurance-data-cleaning/">
-  <meta property="og:title" content="Insurance Data Cleaning | Verum">
-  <meta property="og:description" content="Clean your insurance data: dedupe, validate emails, standardize records. Human-verified quality. 24-hour turnaround.">
+  <meta property="og:title" content="Insurance Data Cleaning: Agent Dedup & License Validation | Verum">
+  <meta property="og:description" content="Clean insurance CRM data in 24-48 hours. Deduplicate agent/broker records, validate licenses, standardize carrier data. 93% accuracy.">
   <meta property="og:site_name" content="Verum">
-  <meta property="og:image" content="https://veruminc.com/assets/social-preview.png">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Insurance Data Cleaning | Verum">
-  <meta name="twitter:description" content="Clean your insurance data: dedupe, validate emails, standardize records. Human-verified quality. 24-hour turnaround.">
-  <meta name="twitter:image" content="https://veruminc.com/assets/social-preview.png">
+  <meta name="twitter:title" content="Insurance Data Cleaning: Agent Dedup & License Validation | Verum">
+  <meta name="twitter:description" content="Clean insurance CRM data in 24-48 hours. Deduplicate agent/broker records, validate licenses, standardize carrier data. 93% accuracy.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
   <script>
@@ -42,41 +46,211 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://veruminc.com/solutions/"},
+      {"@type": "ListItem", "position": 3, "name": "Insurance Data Cleaning"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can you validate insurance producer licenses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We verify producer licenses against state insurance department databases. We check license status (active, expired, suspended), lines of authority, and whether the NPN matches the agent name. This helps you avoid compliance issues from working with unlicensed producers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle agents who change agencies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Insurance agents move between agencies frequently. We identify when an agent has changed agencies and flag outdated records. We can track where they went so you can update your outreach to their current agency while removing stale data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about carrier appointment data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can identify carrier appointments where that data is available through state filings. This helps you understand which carriers an agent represents, which is critical for carrier-specific marketing or competitive intelligence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does insurance data cleaning take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most insurance data cleaning projects complete in 24-48 hours for databases under 100,000 records. Multi-state license validation or complex agency hierarchy mapping may take 3-5 business days. We'll give you a timeline after reviewing your export."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- Header (injected by components.js) -->
   <header id="site-header"></header>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1 class="page-hero__title">Insurance Data Cleaning</h1>
-    </div>
-  </section>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Insurance Data Cleaning</h1>
+        <p class="page-hero__subtitle">Your producer database has 100,000 agents. Licenses have expired. Agents have switched agencies. You have duplicates from every carrier feed and conference you've touched. Compliance is asking questions. Time to clean it up.</p>
 
-  <section class="content">
-    <div class="container" style="max-width: 800px;">
-      
-<h2>Insurance Data Cleaning</h2>
-<p>Verum provides specialized data cleaning for insurance companies. We understand the unique data challenges of the insurance industry, including policy holder data and risk assessment.</p>
+        <div class="pain-stats">
+          <div class="pain-stat">
+            <span class="pain-stat__number">25%</span>
+            <span class="pain-stat__label">Agents switch agencies yearly</span>
+          </div>
+          <div class="pain-stat">
+            <span class="pain-stat__number">15%</span>
+            <span class="pain-stat__label">Producer licenses expire annually</span>
+          </div>
+          <div class="pain-stat">
+            <span class="pain-stat__number">20%</span>
+            <span class="pain-stat__label">Typical CRM duplicate rate</span>
+          </div>
+        </div>
 
-<h2>What We Clean</h2>
-<ul>
-  <li>Duplicate detection and merging</li>
-  <li>Email validation and verification</li>
-  <li>Data standardization and normalization</li>
-  <li>Industry-specific field validation</li>
-</ul>
-
-<h2>Why Insurance Companies Choose Verum</h2>
-<p>We understand policy holder data and risk assessment, ensuring your data is clean, accurate, and ready for your go-to-market efforts.</p>
-
-      <div class="text-center mt-xl">
-        <a href="/#contact" class="btn btn--primary btn--lg">Get Started</a>
+        <div class="hero-cta-group">
+          <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
+          <a href="/#contact" class="btn btn--secondary btn--lg">Get Free Assessment</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer (injected by components.js) -->
+    <section class="content">
+      <div class="container" style="max-width: 800px;">
+
+        <h2>The Insurance Data Quality Problem</h2>
+
+        <p>You're selling to insurance agents, brokers, and agencies. Your CRM has tens of thousands of producer records. But insurance is a highly regulated industry where data accuracy isn't just about efficiency. It's about compliance.</p>
+
+        <p>Agents change agencies constantly, chasing better commission structures or following books of business. Licenses expire or get suspended. And every carrier data feed, trade show, and purchased list adds duplicates without any validation.</p>
+
+        <h3>Agents change agencies constantly</h3>
+        <p>The agent at State Farm is now independent. The independent broker just joined a cluster. The entire agency got acquired by a larger firm. Every change means wrong emails, wrong phone numbers, and wrong agency affiliations in your database.</p>
+
+        <h3>License data gets stale fast</h3>
+        <p>Producer licenses expire. Some agents let them lapse. Others get suspended for compliance issues. If you're a carrier or MGA, working with unlicensed producers is a regulatory problem. Your CRM doesn't automatically flag when licenses are no longer valid.</p>
+
+        <h3>Duplicates pile up from everywhere</h3>
+        <p>Carrier appointment feeds, conference attendee lists, purchased producer databases, referral partner uploads. Every source creates records without checking if the agent already exists. Now you have four records for the same top producer with conflicting information.</p>
+
+        <h3>Lines of authority are a mess</h3>
+        <p>"P&C" and "Property and Casualty" and "Property/Casualty" are all the same line. Your segmentation breaks when you can't reliably target agents by the lines they're licensed to sell.</p>
+
+        <div class="text-center mt-xl">
+          <a href="/#contact" class="btn btn--secondary">See What's Wrong With Your Producer Data</a>
+        </div>
+
+        <h2>How Verum Cleans Insurance Data</h2>
+
+        <p>We understand insurance data challenges. NPN validation, lines of authority, agency hierarchies, and the regulatory requirements that make data accuracy non-negotiable.</p>
+
+        <h3>License validation</h3>
+        <p>We verify producer licenses against state insurance department databases. Is the license active? What lines of authority? Does the NPN match the agent name? We flag expired, suspended, or mismatched licenses before they become compliance problems.</p>
+        <p><strong>What you get:</strong> Validated license status with NPN verification and lines of authority for every producer.</p>
+
+        <h3>Agency change detection</h3>
+        <p>We identify when agents have switched agencies. The record shows Farmers but they're now at an independent agency? We flag it and provide current affiliation data. You stop marketing to people at companies they left.</p>
+        <p><strong>What you get:</strong> Flagged records for agency changes with current affiliation where available.</p>
+
+        <h3>NPN-based deduplication</h3>
+        <p>We dedupe using NPN as the primary key, plus fuzzy matching on names and email patterns. John Smith at ABC Insurance and J. Smith at ABC Agency might be the same producer. We figure that out and create one clean record.</p>
+        <p><strong>What you get:</strong> One golden record per producer with the most complete, most current information.</p>
+
+        <h3>Lines of authority standardization</h3>
+        <p>We normalize lines of authority to consistent categories. "P&C," "Property and Casualty," and "Property/Casualty" become one standardized value. Your segmentation by line of business actually works.</p>
+        <p><strong>What you get:</strong> Standardized lines of authority ready for targeting and compliance reporting.</p>
+
+        <div class="solution-stats">
+          <div class="solution-stat">
+            <span class="solution-stat__number">93%</span>
+            <span class="solution-stat__label">Email deliverability guarantee</span>
+          </div>
+          <div class="solution-stat">
+            <span class="solution-stat__number">24&#8209;48hr</span>
+            <span class="solution-stat__label">Typical turnaround</span>
+          </div>
+          <div class="solution-stat">
+            <span class="solution-stat__number">100%</span>
+            <span class="solution-stat__label">Human-verified output</span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="/#contact" class="btn btn--primary btn--lg">Get Clean Insurance Data</a>
+        </div>
+
+        <h2>What Insurance Teams Do With Clean Data</h2>
+
+        <ul class="feature-list">
+          <li><strong>Stay compliant.</strong> License validation ensures you're only working with actively licensed producers. No more compliance surprises from expired or suspended licenses.</li>
+          <li><strong>Target by line of business.</strong> Standardized lines of authority mean your P&C campaign reaches P&C agents and your life campaign reaches life agents.</li>
+          <li><strong>Track agency movement.</strong> When agents change agencies, clean data helps you reconnect and update your relationship records.</li>
+          <li><strong>Run accurate reporting.</strong> When duplicates are gone and agencies are standardized, your producer count and distribution metrics are reliable.</li>
+          <li><strong>Merge carrier feeds cleanly.</strong> Multiple carrier appointment files coming in? Clean and dedupe them before they pollute your master database.</li>
+        </ul>
+
+        <h2>The Process</h2>
+
+        <p><strong>Step 1: Export your data.</strong> Pull producer records from your agency management system, CRM, or carrier database. We work with standard exports.</p>
+
+        <p><strong>Step 2: We assess it.</strong> We analyze duplicate rates, license status, agency inconsistencies, and email validity. You get a report even if you don't proceed.</p>
+
+        <p><strong>Step 3: We clean it.</strong> Deduplication, license validation, standardization. Human review on edge cases. Most projects finish in 24-48 hours.</p>
+
+        <p><strong>Step 4: You import clean data.</strong> Import-ready file with documentation of all changes. Your compliance team can trust the data.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>Can you validate insurance producer licenses?</h3>
+          <p>Yes. We verify producer licenses against state insurance department databases. We check license status (active, expired, suspended), lines of authority, and whether the NPN matches the agent name.</p>
+
+          <h3>How do you handle agents who change agencies?</h3>
+          <p>Insurance agents move between agencies frequently. We identify when an agent has changed agencies and flag outdated records. We can track where they went so you can update your records.</p>
+
+          <h3>What about carrier appointment data?</h3>
+          <p>We can identify carrier appointments where that data is available through state filings. This helps you understand which carriers an agent represents.</p>
+
+          <h3>How long does insurance data cleaning take?</h3>
+          <p>Most insurance data cleaning projects complete in 24-48 hours for databases under 100,000 records. Multi-state license validation may take 3-5 business days.</p>
+
+          <h3>Do you handle both personal lines and commercial lines agents?</h3>
+          <p>Yes. We clean data for all producer types: personal lines agents, commercial lines brokers, life and health specialists, MGAs, and wholesale brokers. The cleaning process adapts to the specific data patterns of each segment.</p>
+        </div>
+
+        <h2>Ready to Clean Your Insurance Data?</h2>
+
+        <p><strong>Not sure how bad it is?</strong> Send us a sample of 5,000 producer records. We'll analyze free and show you the license issues, duplicates, and agency problems.</p>
+
+        <p><strong>Ready to fix it?</strong> Most insurance data cleaning projects start same-day and complete within 48 hours.</p>
+
+        <div class="cta-group mt-xl">
+          <a href="/#contact" class="btn btn--secondary btn--lg">Get Free Assessment</a>
+          <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
+        </div>
+
+        <p class="mt-lg text-muted">Related: <a href="/solutions/insurance-data-enrichment/">Insurance Data Enrichment</a> | <a href="/solutions/insurance-data-analysis/">Insurance Data Analysis</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+
+      </div>
+    </section>
+  </main>
+
   <footer id="site-footer"></footer>
 
   <script src="/js/components.js"></script>

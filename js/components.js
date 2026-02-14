@@ -18,7 +18,7 @@
   const headerHTML = `
     <div class="container header__inner">
       <a href="/" class="header__logo">
-        <img src="/assets/logos/logos-svg/verum-logo-horizontal-dark.svg" alt="Verum" width="120" height="32">
+        <img src="/assets/logos/logo-horizontal-transparent-dark.svg" alt="Verum" width="160" height="44">
       </a>
 
       <nav class="nav nav--desktop">
@@ -39,7 +39,7 @@
         </ul>
       </nav>
 
-      <a href="/#contact" class="btn btn--primary btn--sm header__cta">Fix My Data</a>
+      <a href="/#contact" class="btn btn--primary btn--sm header__cta">See What We'll Find</a>
 
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span class="menu-toggle__icon"></span>
@@ -65,7 +65,7 @@
         </li>
         <li><a href="/about.html" class="nav__link">About</a></li>
       </ul>
-      <a href="/#contact" class="btn btn--primary">Fix My Data</a>
+      <a href="/#contact" class="btn btn--primary">See What We'll Find</a>
     </nav>
   `;
 
@@ -74,8 +74,8 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="/assets/logos/logos-svg/verum-logo-horizontal-dark.svg" alt="Verum" class="footer__logo" width="120" height="32">
-          <p class="footer__tagline">Enterprise data cleaning and enrichment you can trust.</p>
+          <img src="/assets/logos/logo-horizontal-transparent-dark.svg" alt="Verum" class="footer__logo" width="160" height="44">
+          <p class="footer__tagline">Sales data you actually trust.</p>
         </div>
 
         <div>
