@@ -1262,6 +1262,7 @@
         </div>
 
         <input type="text" name="_gotcha" style="display:none">
+        <input type="hidden" id="referral" name="referral" value="">
 
         <button type="submit" class="btn btn--primary btn--lg form__submit">See What We'll Find</button>
       </form>
@@ -1275,5 +1276,25 @@
 
   <script src="/js/components.js"></script>
   <script src="/js/main.js"></script>
+  <script>
+    // Detect free-sample referral from pricing page
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('ref') === 'free-sample') {
+        var msg = document.getElementById('message');
+        var label = document.querySelector('label[for="message"]');
+        var title = document.querySelector('.cta-section__title');
+        var subtitle = document.querySelector('.cta-section__text');
+        var btn = document.querySelector('.form__submit');
+        var ref = document.getElementById('referral');
+        if (msg) msg.value = 'I\u2019d like to try the free 100-record sample.';
+        if (label) label.textContent = 'Tell us about your dataset (optional)';
+        if (title) title.textContent = 'Send us 100 records free';
+        if (subtitle) subtitle.textContent = 'We\u2019ll clean and enrich them at no cost. No strings attached.';
+        if (btn) btn.textContent = 'Send My Records';
+        if (ref) ref.value = 'free-sample';
+      }
+    })();
+  </script>
 </body>
 </html>
