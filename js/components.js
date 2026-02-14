@@ -83,7 +83,22 @@
           <ul class="footer__links">
             <li><a href="/services/data-cleaning.html">Data Cleaning</a></li>
             <li><a href="/services/data-enrichment.html">Data Enrichment</a></li>
+            <li><a href="/services/data-validation.html">Data Validation</a></li>
+            <li><a href="/services/data-discovery.html">Data Discovery</a></li>
             <li><a href="/services/data-analysis.html">Data Analysis</a></li>
+            <li><a href="/services/data-maintenance.html">Data Maintenance</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__heading">Solutions</h4>
+          <ul class="footer__links">
+            <li><a href="/solutions/">By Industry</a></li>
+            <li><a href="/for/">By Role</a></li>
+            <li><a href="/use-cases/">Use Cases</a></li>
+            <li><a href="/find/">Find Businesses</a></li>
+            <li><a href="/healthcare/">Healthcare</a></li>
+            <li><a href="/compare/verum-vs-zoominfo/">Compare</a></li>
           </ul>
         </div>
 
@@ -93,7 +108,6 @@
             <li><a href="/resources/">Blog</a></li>
             <li><a href="/assessment/">Free Assessment</a></li>
             <li><a href="/pricing.html">Pricing</a></li>
-            <li><a href="/solutions/">Solutions</a></li>
             <li><a href="https://datastackguide.com/" target="_blank" rel="noopener noreferrer">DataStackGuide</a></li>
           </ul>
         </div>
@@ -102,6 +116,7 @@
           <h4 class="footer__heading">Company</h4>
           <ul class="footer__links">
             <li><a href="/about.html">About</a></li>
+            <li><a href="/team/">Team</a></li>
             <li><a href="/contact.html">Contact</a></li>
             <li><a href="https://www.linkedin.com/company/verumai/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
@@ -120,7 +135,6 @@
 
   // Inject header
   const headerEl = document.getElementById('site-header');
-  console.log('Components.js: headerEl found:', !!headerEl);
 
   if (headerEl) {
     headerEl.classList.add('header');
@@ -133,19 +147,13 @@
     const menuToggle = headerEl.querySelector('.menu-toggle');
     const mobileNav = document.querySelector('.nav--mobile');
 
-    console.log('Components.js: menuToggle found:', !!menuToggle);
-    console.log('Components.js: mobileNav found:', !!mobileNav);
-
     if (menuToggle && mobileNav) {
-      console.log('Components.js: Adding click listener to menu toggle');
       menuToggle.addEventListener('click', function(e) {
         e.preventDefault();
-        console.log('Components.js: Menu toggle clicked!');
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !isExpanded);
         this.classList.toggle('active');
         mobileNav.classList.toggle('active');
-        console.log('Components.js: mobileNav has active class:', mobileNav.classList.contains('active'));
 
         // Prevent body scroll when menu is open
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
