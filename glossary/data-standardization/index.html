@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://veruminc.com/glossary/data-standardization/">
+    <title>What Is Data Standardization? | Verum</title>
+    <meta name="description" content="Data standardization converts data into consistent formats so records can be compared, merged, and analyzed. Learn what fields need standardizing and why it matters.">
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <meta name="theme-color" content="#00b894">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css?v=6">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R416JZ91B1');</script>
+    <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","uzzgoxxnof");</script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What Is Data Standardization? | Verum">
+    <meta property="og:description" content="Data standardization converts data into consistent formats so records can be compared, merged, and analyzed. Learn what fields need standardizing and why it matters.">
+    <meta property="og:url" content="https://veruminc.com/glossary/data-standardization/">
+    <meta property="og:site_name" content="Verum">
+    <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is Data Standardization? | Verum">
+    <meta name="twitter:description" content="Data standardization converts data into consistent formats so records can be compared, merged, and analyzed. Learn what fields need standardizing and why it matters.">
+    <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://veruminc.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Glossary",
+        "item": "https://veruminc.com/glossary/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Data Standardization"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTerm",
+      "name": "Data Standardization",
+      "description": "Data standardization converts data into consistent formats so records can be compared, merged, and analyzed. Learn what fields need standardizing and why it matters.",
+      "inDefinedTermSet": "https://veruminc.com/glossary/"
+    }
+    </script>
+</head>
+<body>
+    <noscript>
+        <nav style="padding: 1rem; background: #f5f5f5; text-align: center;">
+            <a href="/" style="margin: 0 1rem;">Home</a>
+            <a href="/services/" style="margin: 0 1rem;">Services</a>
+            <a href="/resources/" style="margin: 0 1rem;">Resources</a>
+            <a href="/#contact" style="margin: 0 1rem;">Contact</a>
+        </nav>
+    </noscript>
+
+    <header id="site-header"></header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Data Standardization</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container" style="max-width: 800px;">
+            <p><strong>Data standardization</strong> converts data values into consistent, predefined formats so that records can be accurately compared, merged, and analyzed. It covers everything from capitalizing names correctly (john doe becomes John Doe) to normalizing job titles (VP Sales, Vice President of Sales, and VP-Sales all become Vice President of Sales). Without standardization, the same data looks different enough that your systems treat it as different records.</p>
+
+            <h2>Why It Matters</h2>
+            <p>Inconsistent data breaks everything downstream. Deduplication can't match "Acme Corp" to "ACME Corporation" if they're not standardized first. Lead routing fails when "California" and "CA" and "Calif" map to different territories. Reports show fragmented data instead of aggregated totals. Standardization is the foundation that makes every other data operation work correctly.</p>
+
+            <h2>What Gets Standardized</h2>
+            <ul>
+                <li><strong>Company names:</strong> Acme Corp, ACME Inc., Acme Corporation all become the canonical form. Legal suffixes (LLC, Inc.) are standardized or stripped</li>
+                <li><strong>Job titles:</strong> VP Sales, Vice President of Sales, VP - Sales all normalize to a standard title and seniority level</li>
+                <li><strong>Phone numbers:</strong> Convert all formats to E.164 standard (+16125551234) with a display format alongside</li>
+                <li><strong>Addresses:</strong> USPS Publication 28 standards for US addresses. Street/St/Str/Ave all get consistent abbreviations</li>
+                <li><strong>Industry and category:</strong> Map free-text industry entries to standard classifications like NAICS or SIC codes</li>
+            </ul>
+
+            <h3>Example</h3>
+            <p>A company exports 30,000 contacts and finds the "State" field contains CA, California, Calif, Cali, and Ca. The "Title" field has 4,200 unique values for 30,000 records. After standardization, states map to 50 valid two-letter codes and titles collapse to 340 normalized values. Segmentation and routing that was broken now works.</p>
+
+            <h3>Related Terms</h3>
+            <ul>
+                <li><a href="/glossary/data-normalization/">Data Normalization</a></li>
+                <li><a href="/glossary/data-governance/">Data Governance</a></li>
+                <li><a href="/glossary/data-quality-management/">Data Quality Management</a></li>
+            </ul>
+
+            <h3>Related Resources</h3>
+            <ul>
+                <li><a href="/cleaning/data-standardization/">Data Standardization Service</a></li>
+                <li><a href="/cleaning/job-title-normalization/">Job Title Normalization</a></li>
+                <li><a href="/cleaning/company-name-standardization/">Company Name Standardization</a></li>
+            </ul>
+
+            <div class="cta-box" style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
+                <h3>Inconsistent data everywhere?</h3>
+                <p>We'll standardize your entire database so every field uses the same format, every time.</p>
+                <a href="/#contact" class="btn btn-primary">See What We'll Find</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+    <script src="/js/components.js"></script>
+</body>
+</html>

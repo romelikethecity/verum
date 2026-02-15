@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://veruminc.com/glossary/data-migration/">
+    <title>What Is Data Migration? | Verum</title>
+    <meta name="description" content="Data migration moves data from one system to another. Learn why migrations fail, how to prepare your data, and what cleaning to do before and after the move.">
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <meta name="theme-color" content="#00b894">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css?v=6">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R416JZ91B1');</script>
+    <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","uzzgoxxnof");</script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What Is Data Migration? | Verum">
+    <meta property="og:description" content="Data migration moves data from one system to another. Learn why migrations fail, how to prepare your data, and what cleaning to do before and after the move.">
+    <meta property="og:url" content="https://veruminc.com/glossary/data-migration/">
+    <meta property="og:site_name" content="Verum">
+    <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is Data Migration? | Verum">
+    <meta name="twitter:description" content="Data migration moves data from one system to another. Learn why migrations fail, how to prepare your data, and what cleaning to do before and after the move.">
+    <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://veruminc.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Glossary",
+        "item": "https://veruminc.com/glossary/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Data Migration"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTerm",
+      "name": "Data Migration",
+      "description": "Data migration moves data from one system to another. Learn why migrations fail, how to prepare your data, and what cleaning to do before and after the move.",
+      "inDefinedTermSet": "https://veruminc.com/glossary/"
+    }
+    </script>
+</head>
+<body>
+    <noscript>
+        <nav style="padding: 1rem; background: #f5f5f5; text-align: center;">
+            <a href="/" style="margin: 0 1rem;">Home</a>
+            <a href="/services/" style="margin: 0 1rem;">Services</a>
+            <a href="/resources/" style="margin: 0 1rem;">Resources</a>
+            <a href="/#contact" style="margin: 0 1rem;">Contact</a>
+        </nav>
+    </noscript>
+
+    <header id="site-header"></header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Data Migration</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container" style="max-width: 800px;">
+            <p><strong>Data migration</strong> is the process of moving data from one system to another, typically during a CRM switch, platform upgrade, or system consolidation. It involves extracting data from the old system, transforming it to match the new system's schema, cleaning it, and loading it into the new environment. Migrations are high-stakes: if you bring dirty data into a new system, you've just paid for a clean start and filled it with the same problems.</p>
+
+            <h2>Why It Matters</h2>
+            <p>CRM migrations are the single best opportunity to fix years of accumulated data problems. You're moving everything anyway. This is the time to deduplicate, standardize, verify emails, update job titles, and purge records that should have been deleted years ago. Teams that skip this step spend the first 6 months in their new CRM fighting the same data quality issues they had in the old one.</p>
+
+            <h2>Migration Data Prep Steps</h2>
+            <ul>
+                <li><strong>Audit before you move:</strong> Profile your existing data to understand completeness, duplication rates, and decay. Know what you're working with</li>
+                <li><strong>Deduplicate first:</strong> Merge duplicates before migration. It's much harder to deduplicate after records are in a new system with new IDs</li>
+                <li><strong>Standardize fields:</strong> Map field names, picklist values, and formats between old and new systems. 'Industry' in system A needs to match 'Sector' in system B</li>
+                <li><strong>Verify contact data:</strong> Run email verification and phone validation. Don't migrate bounced emails or disconnected numbers</li>
+                <li><strong>Test with a sample:</strong> Migrate 1,000 records first. Check field mapping, data integrity, and automation triggers before doing the full load</li>
+            </ul>
+
+            <h3>Example</h3>
+            <p>A company migrates from Salesforce to HubSpot. Their Salesforce has 85,000 contacts. Pre-migration cleaning removes 12,000 duplicates, flags 8,000 bounced emails for removal, and standardizes 15,000 inconsistent job titles. They migrate 65,000 clean records. Their HubSpot starts with higher data quality than their Salesforce ever had.</p>
+
+            <h3>Related Terms</h3>
+            <ul>
+                <li><a href="/glossary/data-integration/">Data Integration</a></li>
+                <li><a href="/glossary/data-deduplication/">Data Deduplication</a></li>
+                <li><a href="/glossary/data-normalization/">Data Normalization</a></li>
+            </ul>
+
+            <h3>Related Resources</h3>
+            <ul>
+                <li><a href="/resources/crm-migration-data-cleanup.html">CRM Migration Data Cleanup</a></li>
+                <li><a href="/use-cases/data-migration/">Data Migration Use Case</a></li>
+                <li><a href="/use-cases/crm-migration/">CRM Migration</a></li>
+            </ul>
+
+            <div class="cta-box" style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
+                <h3>Migrating CRMs?</h3>
+                <p>Don't bring dirty data into a clean system. We'll prep your database before the move so you start fresh.</p>
+                <a href="/#contact" class="btn btn-primary">See What We'll Find</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+    <script src="/js/components.js"></script>
+</body>
+</html>

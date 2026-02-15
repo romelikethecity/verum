@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://veruminc.com/glossary/fuzzy-matching/">
+    <title>What Is Fuzzy Matching? | Verum</title>
+    <meta name="description" content="Fuzzy matching finds records that are similar but not identical. Learn the algorithms behind it and why exact matching misses most duplicates.">
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <meta name="theme-color" content="#00b894">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css?v=6">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R416JZ91B1');</script>
+    <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","uzzgoxxnof");</script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What Is Fuzzy Matching? | Verum">
+    <meta property="og:description" content="Fuzzy matching finds records that are similar but not identical. Learn the algorithms behind it and why exact matching misses most duplicates.">
+    <meta property="og:url" content="https://veruminc.com/glossary/fuzzy-matching/">
+    <meta property="og:site_name" content="Verum">
+    <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is Fuzzy Matching? | Verum">
+    <meta name="twitter:description" content="Fuzzy matching finds records that are similar but not identical. Learn the algorithms behind it and why exact matching misses most duplicates.">
+    <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://veruminc.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Glossary",
+        "item": "https://veruminc.com/glossary/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Fuzzy Matching"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTerm",
+      "name": "Fuzzy Matching",
+      "description": "Fuzzy matching finds records that are similar but not identical. Learn the algorithms behind it and why exact matching misses most duplicates.",
+      "inDefinedTermSet": "https://veruminc.com/glossary/"
+    }
+    </script>
+</head>
+<body>
+    <noscript>
+        <nav style="padding: 1rem; background: #f5f5f5; text-align: center;">
+            <a href="/" style="margin: 0 1rem;">Home</a>
+            <a href="/services/" style="margin: 0 1rem;">Services</a>
+            <a href="/resources/" style="margin: 0 1rem;">Resources</a>
+            <a href="/#contact" style="margin: 0 1rem;">Contact</a>
+        </nav>
+    </noscript>
+
+    <header id="site-header"></header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Fuzzy Matching</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container" style="max-width: 800px;">
+            <p><strong>Fuzzy matching</strong> identifies records that are similar but not exactly the same. While exact matching only catches identical values ("John Smith" = "John Smith"), fuzzy matching catches variations: "John Smith" matches "Jon Smith," "J. Smith," "Jonathan Smith," and "John P. Smith." It uses algorithms that measure how similar two strings are and returns a confidence score for each potential match.</p>
+
+            <h2>Why It Matters</h2>
+            <p>Exact matching catches less than half of real duplicates. People abbreviate names, misspell companies, use different email formats, and enter phone numbers in different formats. If you only match on exact values, "Acme Corporation" and "Acme Corp" look like two different companies. Fuzzy matching closes this gap and catches the near-duplicates that exact matching misses entirely.</p>
+
+            <h2>Common Fuzzy Matching Algorithms</h2>
+            <ul>
+                <li><strong>Levenshtein distance:</strong> Counts the minimum number of single-character edits needed to turn one string into another. 'Smith' to 'Smyth' = distance of 1</li>
+                <li><strong>Jaro-Winkler:</strong> Measures character-level similarity with extra weight on matching prefixes. Good for names where the beginning is most reliable</li>
+                <li><strong>Soundex/Metaphone:</strong> Encodes names by how they sound, not how they're spelled. Catches 'Smith' and 'Smythe' as phonetic matches</li>
+                <li><strong>Token-based matching:</strong> Compares sets of words regardless of order. 'Acme Inc' and 'Inc Acme' get a high score because the same words are present</li>
+                <li><strong>Composite scoring:</strong> Combine multiple algorithms and multiple fields for an overall match confidence score</li>
+            </ul>
+
+            <h3>Example</h3>
+            <p>A database has "Robert Johnson, Acme Corp" and "Bob Johnson, Acme Corporation" with different email addresses. Exact matching finds nothing. Fuzzy matching detects: name similarity 78% (Robert/Bob are known nicknames), company similarity 92% (Corp/Corporation), same area code on phone numbers. Composite score: 87% match probability. Flagged for review.</p>
+
+            <h3>Related Terms</h3>
+            <ul>
+                <li><a href="/glossary/duplicate-detection/">Duplicate Detection</a></li>
+                <li><a href="/glossary/entity-resolution/">Entity Resolution</a></li>
+                <li><a href="/glossary/record-matching/">Record Matching</a></li>
+            </ul>
+
+            <h3>Related Resources</h3>
+            <ul>
+                <li><a href="/cleaning/record-matching/">Record Matching Service</a></li>
+                <li><a href="/cleaning/duplicate-detection/">Duplicate Detection</a></li>
+                <li><a href="/cleaning/data-deduplication/">Data Deduplication</a></li>
+            </ul>
+
+            <div class="cta-box" style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
+                <h3>Duplicates slipping through exact matching?</h3>
+                <p>We use fuzzy matching across name, company, email, and phone to catch the near-duplicates your CRM misses.</p>
+                <a href="/#contact" class="btn btn-primary">See What We'll Find</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+    <script src="/js/components.js"></script>
+</body>
+</html>

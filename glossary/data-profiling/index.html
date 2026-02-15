@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://veruminc.com/glossary/data-profiling/">
+    <title>What Is Data Profiling? | Verum</title>
+    <meta name="description" content="Data profiling analyzes your database to assess completeness, accuracy, consistency, and duplication rates. Learn what profiling reveals and when to do it.">
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <meta name="theme-color" content="#00b894">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css?v=6">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R416JZ91B1');</script>
+    <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","uzzgoxxnof");</script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What Is Data Profiling? | Verum">
+    <meta property="og:description" content="Data profiling analyzes your database to assess completeness, accuracy, consistency, and duplication rates. Learn what profiling reveals and when to do it.">
+    <meta property="og:url" content="https://veruminc.com/glossary/data-profiling/">
+    <meta property="og:site_name" content="Verum">
+    <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is Data Profiling? | Verum">
+    <meta name="twitter:description" content="Data profiling analyzes your database to assess completeness, accuracy, consistency, and duplication rates. Learn what profiling reveals and when to do it.">
+    <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://veruminc.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Glossary",
+        "item": "https://veruminc.com/glossary/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Data Profiling"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTerm",
+      "name": "Data Profiling",
+      "description": "Data profiling analyzes your database to assess completeness, accuracy, consistency, and duplication rates. Learn what profiling reveals and when to do it.",
+      "inDefinedTermSet": "https://veruminc.com/glossary/"
+    }
+    </script>
+</head>
+<body>
+    <noscript>
+        <nav style="padding: 1rem; background: #f5f5f5; text-align: center;">
+            <a href="/" style="margin: 0 1rem;">Home</a>
+            <a href="/services/" style="margin: 0 1rem;">Services</a>
+            <a href="/resources/" style="margin: 0 1rem;">Resources</a>
+            <a href="/#contact" style="margin: 0 1rem;">Contact</a>
+        </nav>
+    </noscript>
+
+    <header id="site-header"></header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Data Profiling</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container" style="max-width: 800px;">
+            <p><strong>Data profiling</strong> is the process of examining your database to understand its quality, structure, and content. It answers fundamental questions: What percentage of records have email addresses? How many duplicates exist? Are phone numbers formatted consistently? Which fields have the most gaps? Profiling gives you the diagnostic picture before you start cleaning, like getting an X-ray before surgery.</p>
+
+            <h2>Why It Matters</h2>
+            <p>You can't fix what you haven't measured. Most teams assume their data is "pretty good" until profiling reveals that 40% of records are missing phone numbers, 18% of emails bounce, and 12% of accounts are duplicates. Profiling quantifies the problem and tells you where to focus cleaning efforts first. It also establishes a baseline so you can measure improvement after cleaning.</p>
+
+            <h2>What Profiling Measures</h2>
+            <ul>
+                <li><strong>Completeness:</strong> What percentage of records have values in each field? Which fields have the most gaps?</li>
+                <li><strong>Accuracy:</strong> Do email addresses actually deliver? Do phone numbers connect? Are job titles current?</li>
+                <li><strong>Consistency:</strong> Are formats standardized? Does 'New York' appear as 'NY,' 'New York,' 'new york,' and 'NYC'?</li>
+                <li><strong>Duplication:</strong> What's the duplicate rate? How many records share the same email, phone, or name+company combination?</li>
+                <li><strong>Freshness:</strong> When were records last updated? What percentage haven't been touched in over a year?</li>
+            </ul>
+
+            <h3>Example</h3>
+            <p>A company profiles their 50,000-record CRM before a migration. Results: 72% have emails (but 15% of those bounce), 45% have phone numbers, 88% have company names, 12% are duplicates, and 8,000 records haven't been updated in two years. They now know exactly what needs fixing and can estimate the effort before starting.</p>
+
+            <h3>Related Terms</h3>
+            <ul>
+                <li><a href="/glossary/data-quality-management/">Data Quality Management</a></li>
+                <li><a href="/glossary/data-governance/">Data Governance</a></li>
+                <li><a href="/glossary/fill-rate/">Fill Rate</a></li>
+            </ul>
+
+            <h3>Related Resources</h3>
+            <ul>
+                <li><a href="/resources/data-quality-metrics.html">Data Quality Metrics</a></li>
+                <li><a href="/resources/data-quality-roadmap.html">Data Quality Roadmap</a></li>
+                <li><a href="/assessment/">Data Quality Assessment</a></li>
+            </ul>
+
+            <div class="cta-box" style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
+                <h3>Don't know the state of your data?</h3>
+                <p>We'll profile your database and show you exactly where the problems are before we fix them.</p>
+                <a href="/#contact" class="btn btn-primary">See What We'll Find</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+    <script src="/js/components.js"></script>
+</body>
+</html>

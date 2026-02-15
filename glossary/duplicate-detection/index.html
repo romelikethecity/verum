@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://veruminc.com/glossary/duplicate-detection/">
+    <title>What Is Duplicate Detection? | Verum</title>
+    <meta name="description" content="Duplicate detection identifies records in your database that represent the same person or company. Learn matching techniques and how to prevent duplicates.">
+
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <meta name="theme-color" content="#00b894">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css?v=6">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R416JZ91B1');</script>
+    <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","uzzgoxxnof");</script>
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What Is Duplicate Detection? | Verum">
+    <meta property="og:description" content="Duplicate detection identifies records in your database that represent the same person or company. Learn matching techniques and how to prevent duplicates.">
+    <meta property="og:url" content="https://veruminc.com/glossary/duplicate-detection/">
+    <meta property="og:site_name" content="Verum">
+    <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is Duplicate Detection? | Verum">
+    <meta name="twitter:description" content="Duplicate detection identifies records in your database that represent the same person or company. Learn matching techniques and how to prevent duplicates.">
+    <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://veruminc.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Glossary",
+        "item": "https://veruminc.com/glossary/"
+      },{
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Duplicate Detection"
+      }]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTerm",
+      "name": "Duplicate Detection",
+      "description": "Duplicate detection identifies records in your database that represent the same person or company. Learn matching techniques and how to prevent duplicates.",
+      "inDefinedTermSet": "https://veruminc.com/glossary/"
+    }
+    </script>
+</head>
+<body>
+    <noscript>
+        <nav style="padding: 1rem; background: #f5f5f5; text-align: center;">
+            <a href="/" style="margin: 0 1rem;">Home</a>
+            <a href="/services/" style="margin: 0 1rem;">Services</a>
+            <a href="/resources/" style="margin: 0 1rem;">Resources</a>
+            <a href="/#contact" style="margin: 0 1rem;">Contact</a>
+        </nav>
+    </noscript>
+
+    <header id="site-header"></header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Duplicate Detection</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container" style="max-width: 800px;">
+            <p><strong>Duplicate detection</strong> identifies records in your database that represent the same person, company, or entity. It goes beyond exact matching (same email = same person) to fuzzy matching that catches near-duplicates: "Robert Smith" vs "Bob Smith," "Acme Corp" vs "Acme Corporation," or two records with different emails but the same phone number. Detection is the first step; merging or resolving the duplicates is the second.</p>
+
+            <h2>Why It Matters</h2>
+            <p>The average CRM contains 10-25% duplicate records. Every duplicate means reps might call the same person twice, marketing sends redundant emails, pipeline reports are inflated, and customer 360 views are fragmented. One company discovered their pipeline was overstated by $2M because 400 opportunities were duplicated across territories. Duplicates also break automation: a lead enters two nurture streams simultaneously and gets conflicting messages.</p>
+
+            <h2>Detection Techniques</h2>
+            <ul>
+                <li><strong>Exact matching:</strong> Compare emails, phone numbers, or other unique identifiers for identical values</li>
+                <li><strong>Fuzzy name matching:</strong> Use algorithms like Levenshtein distance, Soundex, or Jaro-Winkler to catch spelling variations and nicknames</li>
+                <li><strong>Company normalization:</strong> Standardize company names before matching so 'Acme Inc' and 'ACME Corporation' get caught</li>
+                <li><strong>Cross-field matching:</strong> Different email but same phone? Different name but same LinkedIn URL? Match across multiple fields for higher confidence</li>
+                <li><strong>Confidence scoring:</strong> Score each potential match. Auto-merge high-confidence pairs and flag low-confidence for human review</li>
+            </ul>
+
+            <h3>Example</h3>
+            <p>A database scan of 60,000 contacts finds 7,200 potential duplicate pairs. 4,800 are high-confidence (same email or phone) and merge automatically. 2,400 are medium-confidence (similar name + same company) and go to a review queue. An analyst confirms 1,900 are real duplicates and rejects 500 that are different people with similar names.</p>
+
+            <h3>Related Terms</h3>
+            <ul>
+                <li><a href="/glossary/data-deduplication/">Data Deduplication</a></li>
+                <li><a href="/glossary/fuzzy-matching/">Fuzzy Matching</a></li>
+                <li><a href="/glossary/record-matching/">Record Matching</a></li>
+            </ul>
+
+            <h3>Related Resources</h3>
+            <ul>
+                <li><a href="/cleaning/duplicate-detection/">Duplicate Detection Service</a></li>
+                <li><a href="/validation/duplicate-detection/">Duplicate Detection Validation</a></li>
+                <li><a href="/resources/salesforce-duplicate-contacts.html">Salesforce Duplicate Contacts</a></li>
+            </ul>
+
+            <div class="cta-box" style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
+                <h3>How many duplicates are hiding in your CRM?</h3>
+                <p>We'll scan your database, find the duplicates, and merge them into clean, consolidated records.</p>
+                <a href="/#contact" class="btn btn-primary">See What We'll Find</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="site-footer"></footer>
+    <script src="/js/components.js"></script>
+</body>
+</html>
