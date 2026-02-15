@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you recommend segmentation criteria or just clean the data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We primarily clean and enrich the data. However, we can identify which fields in your enriched data have the most variance and clustering potential, which helps you decide which criteria to use for segmentation. For full segmentation strategy, pair our data services with your analytics team."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle companies that have changed size or industry since they became customers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We update records with current data. If a customer was a 50-person startup when they signed up and is now a 500-person company, we update the employee count. Your segmentation should reflect who they are now, not who they were when you first met them."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if our segmentation needs custom fields that don't exist in standard enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can build custom enrichment fields. If you need something specific like 'number of retail locations' or 'SaaS vs on-premise vs hybrid deployment model,' we can research and append those custom fields for your customer base. It takes longer than standard enrichment but the data is just as accurate."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Customer Segmentation</h1>
+        <p class="page-hero__subtitle">Segmentation is only as precise as the data behind it. We make the data precise.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Customer Segmentation</h2>
-<p>Segment customers for targeted engagement. Verum provides the clean, enriched data you need for effective customer segmentation.</p>
+<p>Customer segmentation divides your customer base into meaningful groups based on shared characteristics. But segmentation based on incomplete or inaccurate data creates segments that don't reflect reality. We clean and enrich customer data so your segments are built on solid ground.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with customer segmentation because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>You're trying to segment by company size, but 35% of your accounts are missing employee count data. You want to segment by industry, but your industry field has 200 free-text variations of the same 15 industries. Your segments are unreliable because the data they're built on is unreliable.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Improve Segmentation Data</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for customer segmentation</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Field completion.</strong> We fill in the firmographic fields your segmentation depends on: company size, revenue, industry, location, and whatever custom fields your model uses.</li>
+    <li><strong>Value standardization.</strong> Free-text fields get mapped to standardized values. Your 200 industry variations become 15 clean categories that segment cleanly.</li>
+    <li><strong>Data verification.</strong> We confirm that the data driving your segments is current. A company that was a startup two years ago might be mid-market now.</li>
+    <li><strong>Enrichment with new dimensions.</strong> We add fields you don't have yet — tech stack, funding stage, growth rate — that can power more sophisticated segmentation.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your customer segmentation challenges and we'll show you how clean data can transform your results.</p>
+<h2>Segmentation Outcomes</h2>
+<ul>
+    <li>Segments that accurately represent distinct groups because the underlying data is complete and standardized</li>
+    <li>New segmentation dimensions you couldn't use before because the data didn't exist in your CRM</li>
+    <li>Consistent segment membership over time because field values are standardized and regularly refreshed</li>
+    <li>Marketing campaigns that perform better because each segment is truly homogeneous</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you recommend segmentation criteria or just clean the data?</h3>
+            <p style="color: var(--color-text-secondary);">We primarily clean and enrich the data. However, we can identify which fields in your enriched data have the most variance and clustering potential, which helps you decide which criteria to use for segmentation. For full segmentation strategy, pair our data services with your analytics team.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle companies that have changed size or industry since they became customers?</h3>
+            <p style="color: var(--color-text-secondary);">We update records with current data. If a customer was a 50-person startup when they signed up and is now a 500-person company, we update the employee count. Your segmentation should reflect who they are now, not who they were when you first met them.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if our segmentation needs custom fields that don't exist in standard enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">We can build custom enrichment fields. If you need something specific like 'number of retail locations' or 'SaaS vs on-premise vs hybrid deployment model,' we can research and append those custom fields for your customer base. It takes longer than standard enrichment but the data is just as accurate.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How much of my list will be removed?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on list age and source. Lists that have never been cleaned typically lose 15-30% of records. Lists sourced from purchased databases lose more. Lists built organically from inbound leads lose less. We provide a breakdown before removing anything so you can review."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Will cleaning my list hurt my total addressable audience?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Removing bad addresses improves your reach because it protects your sender reputation. A list of 8,000 verified contacts will outperform a list of 10,000 mixed contacts every time because more of your emails actually arrive in inboxes."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you clean my list without deleting records from my CRM?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We work with exports. You send us a file, we clean it, you get the cleaned file back with flags indicating which records are bad and why. You decide what to delete, suppress, or keep. We never touch your CRM directly."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Email List Cleaning</h1>
+        <p class="page-hero__subtitle">Your email list is a liability until it is cleaned. We fix that.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Email List Cleaning</h2>
-<p>Clean email lists for better deliverability. Verum helps you maintain accurate, reliable email lists across your entire database.</p>
+<p>Email list cleaning removes invalid, outdated, and risky addresses from your marketing and sales databases. It combines verification, deduplication, and enrichment to turn a messy contact list into a reliable outreach asset.</p>
 
-<h2>What We Do</h2>
+<p>Most B2B email lists are 20-40% junk by the time they are two years old. Role-based addresses, former employees, merged companies, and typos accumulate silently until a campaign bounces hard enough to damage your domain.</p>
+
+<h2>What We Clean</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Invalid and bounced addresses.</strong> Hard bounces, expired domains, and mailboxes that no longer exist get removed permanently.</li>
+    <li><strong>Duplicates.</strong> Same person, three records with slightly different email addresses. We merge them into one clean record with the best data from each.</li>
+    <li><strong>Role-based addresses.</strong> info@, sales@, team@ addresses that dilute your metrics and never convert get flagged or removed based on your preference.</li>
+    <li><strong>Spam traps and honeypots.</strong> Known spam trap addresses that ISPs plant to catch senders with dirty lists get identified and removed.</li>
+    <li><strong>Formatting issues.</strong> Extra spaces, missing TLDs, double dots, and other formatting problems that cause silent delivery failures get corrected.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Clean List Results</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>A verified contact list where every address is real and deliverable</li>
+    <li>Duplicate-free records with merged data so nothing valuable is lost</li>
+    <li>Better open and click rates because you are measuring real human engagement</li>
+    <li>Protected sender reputation that keeps future emails out of spam folders</li>
+    <li>Confidence to run large campaigns without worrying about bounce-triggered blacklisting</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How much of my list will be removed?</h3>
+            <p style="color: var(--color-text-secondary);">It depends on list age and source. Lists that have never been cleaned typically lose 15-30% of records. Lists sourced from purchased databases lose more. Lists built organically from inbound leads lose less. We provide a breakdown before removing anything so you can review.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Will cleaning my list hurt my total addressable audience?</h3>
+            <p style="color: var(--color-text-secondary);">No. Removing bad addresses improves your reach because it protects your sender reputation. A list of 8,000 verified contacts will outperform a list of 10,000 mixed contacts every time because more of your emails actually arrive in inboxes.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you clean my list without deleting records from my CRM?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We work with exports. You send us a file, we clean it, you get the cleaned file back with flags indicating which records are bad and why. You decide what to delete, suppress, or keep. We never touch your CRM directly.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

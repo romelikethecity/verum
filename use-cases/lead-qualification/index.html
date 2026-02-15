@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you enrich leads in real time as they come in?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We focus on batch enrichment of existing leads rather than real-time API integration. For real-time enrichment at the point of form submission, we recommend pairing our batch services with a tool like Clearbit Reveal or HubSpot's Breeze. We handle the periodic bulk cleanup and enrichment of your lead database."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle leads from competitors or students?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We flag them. If a lead's email domain matches a known competitor, or their title suggests they're a student or academic researcher, we add a flag to the record. Your qualification rules can then auto-disqualify these leads before a rep ever sees them."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What qualification frameworks do you support?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We're framework-agnostic. Whether you use BANT, MEDDIC, CHAMP, or a custom qualification framework, the underlying need is the same: complete, accurate data fields that your framework's criteria depend on. We make sure those fields are filled and standardized."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Lead Qualification</h1>
+        <p class="page-hero__subtitle">Your reps are qualifying leads with incomplete data. We fix the data so qualification is instant.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Lead Qualification</h2>
-<p>Qualify leads with enriched firmographics. Verum provides the clean, enriched data you need for effective lead qualification.</p>
+<p>Lead qualification determines which leads deserve sales attention and which don't. When the data behind qualification is incomplete — missing company size, unknown industry, blank title field — your qualification is guesswork. Complete data makes qualification fast and accurate.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with lead qualification because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>A lead comes in with a name and email. Your SDR spends 10 minutes looking up the company, figuring out the title, checking if they're in your target market. That's 10 minutes per lead that could be automated if the data fields were filled. Multiply by 50 leads a day and that's an entire day of research, not selling.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How Clean Data Powers Qualification</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for lead qualification</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Instant firmographic context.</strong> We enrich leads with company size, revenue, industry, and location so your scoring model can evaluate fit the moment a lead arrives.</li>
+    <li><strong>Title and seniority standardization.</strong> We normalize job titles to standard seniority and function levels so your qualification criteria work consistently across all title variations.</li>
+    <li><strong>Duplicate checking.</strong> We flag leads that already exist in your CRM as contacts or previous leads, preventing your team from qualifying someone they've already spoken to.</li>
+    <li><strong>Account matching.</strong> We match new leads to existing accounts so your team knows immediately whether this is a new logo opportunity or an expansion play at a current customer.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your lead qualification challenges and we'll show you how clean data can transform your results.</p>
+<h2>Qualification Outcomes</h2>
+<ul>
+    <li>Leads qualified in seconds instead of minutes because every data field needed for scoring is pre-filled</li>
+    <li>Consistent qualification criteria across all leads because title and firmographic data is standardized</li>
+    <li>No wasted effort on duplicate leads because matches are flagged before a rep picks up the phone</li>
+    <li>Higher pipeline quality because qualification is based on verified data, not form fills and assumptions</li>
+    <li>Faster speed-to-lead because reps can start outreach immediately instead of researching</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you enrich leads in real time as they come in?</h3>
+            <p style="color: var(--color-text-secondary);">We focus on batch enrichment of existing leads rather than real-time API integration. For real-time enrichment at the point of form submission, we recommend pairing our batch services with a tool like Clearbit Reveal or HubSpot's Breeze. We handle the periodic bulk cleanup and enrichment of your lead database.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle leads from competitors or students?</h3>
+            <p style="color: var(--color-text-secondary);">We flag them. If a lead's email domain matches a known competitor, or their title suggests they're a student or academic researcher, we add a flag to the record. Your qualification rules can then auto-disqualify these leads before a rep ever sees them.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What qualification frameworks do you support?</h3>
+            <p style="color: var(--color-text-secondary);">We're framework-agnostic. Whether you use BANT, MEDDIC, CHAMP, or a custom qualification framework, the underlying need is the same: complete, accurate data fields that your framework's criteria depend on. We make sure those fields are filled and standardized.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

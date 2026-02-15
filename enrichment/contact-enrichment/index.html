@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How often should we re-enrich our contact database?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every 6 months at minimum, quarterly if your database is large and actively used for outreach. Contact data decays at about 2-3% per month, so a 6-month refresh catches most changes before they cause significant deliverability or outreach problems."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between contact enrichment and a data provider subscription?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A subscription gives you access to a database you search on demand. Enrichment takes your existing records and improves them. Enrichment is better for maintaining your CRM because it preserves your account history, activity data, and custom fields while updating the contact details."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you enrich contacts from business cards or event scans?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Event-sourced contacts typically have name, title, company, and maybe email. We verify the information, fill in missing fields, and add direct phone numbers and LinkedIn URLs. Event leads benefit from fast enrichment because timeliness matters for follow-up."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,54 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Contact Enrichment</h1>
+        <p class="page-hero__subtitle">Half the contacts in your CRM are missing phone numbers, have old job titles, or have bounced email addresses.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Contact Enrichment</h2>
-<p>Complete contact record enrichment with all available data points. Verum helps you append accurate contact data to your B2B database from 50+ trusted sources.</p>
+<p>Contact enrichment updates and completes the people records in your database. We verify current job titles, append direct phone numbers and email addresses, add LinkedIn profile URLs, and flag contacts who have changed companies. This keeps your outreach data accurate and complete.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends contact data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Contact data decays at 25-30% per year. People change jobs, get promoted, switch companies, and update their email addresses. A database that was 90% accurate when you built it has maybe 65% accuracy two years later. Every bad record wastes rep time and hurts deliverability.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich Contact Data</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Identity matching.</strong> We match your contacts against multiple data sources using name, email, company, and title combinations to find the right person.</li>
+    <li><strong>Employment verification.</strong> We check whether each contact is still at the company you have them listed under and flag those who've moved.</li>
+    <li><strong>Contact info refresh.</strong> For verified contacts, we update direct phone numbers, email addresses, and LinkedIn URLs with the most current data available.</li>
+    <li><strong>Title and seniority update.</strong> Job titles get refreshed and normalized, and seniority level (C-suite, VP, Director, Manager, Individual Contributor) is appended.</li>
+    <li><strong>Net-new contact append.</strong> If contacts have left their companies, we can identify their replacements so your records stay current.</li>
 </ul>
+
+<h2>What Enriched Contact Records Include</h2>
+<ul>
+    <li>Verified current job title and company for each contact</li>
+    <li>Direct email address and phone number with verification status</li>
+    <li>LinkedIn profile URL for social selling and research</li>
+    <li>Seniority level and department classification for segmentation</li>
+    <li>Change flags showing which contacts moved companies since your last update</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How often should we re-enrich our contact database?</h3>
+            <p style="color: var(--color-text-secondary);">Every 6 months at minimum, quarterly if your database is large and actively used for outreach. Contact data decays at about 2-3% per month, so a 6-month refresh catches most changes before they cause significant deliverability or outreach problems.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the difference between contact enrichment and a data provider subscription?</h3>
+            <p style="color: var(--color-text-secondary);">A subscription gives you access to a database you search on demand. Enrichment takes your existing records and improves them. Enrichment is better for maintaining your CRM because it preserves your account history, activity data, and custom fields while updating the contact details.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you enrich contacts from business cards or event scans?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Event-sourced contacts typically have name, title, company, and maybe email. We verify the information, fill in missing fields, and add direct phone numbers and LinkedIn URLs. Event leads benefit from fast enrichment because timeliness matters for follow-up.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

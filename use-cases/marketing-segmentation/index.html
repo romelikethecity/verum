@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you handle contacts that don't fit neatly into one segment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We tag them with all applicable segment values and flag the overlap. Your team decides whether a contact belongs in one segment or multiple. We make sure the underlying data is accurate so the segmentation logic works correctly regardless of how you handle overlaps."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you create segments for us or just clean the data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We primarily clean and enrich the data so your segmentation works. If you need help defining segments based on the enriched data, we can provide analysis showing natural groupings in your audience. But the strategic decisions about how to segment and what messages each segment receives are yours."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the minimum data quality for useful segmentation?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You need at least 80% completeness on the fields you're using for segmentation. If your industry field is only filled on 50% of records, any segment based on industry will miss half your audience. We focus on getting the fields your segmentation depends on above that 80% threshold."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Marketing Segmentation</h1>
+        <p class="page-hero__subtitle">Your segments are only as good as the data defining them. We make the data definitive.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Marketing Segmentation</h2>
-<p>Segment audiences with rich data attributes. Verum provides the clean, enriched data you need for effective marketing segmentation.</p>
+<p>Marketing segmentation groups your audience into distinct segments for targeted messaging, content, and campaigns. When the data fields used for segmentation are incomplete, inconsistent, or wrong, your segments don't represent real audience groups — they represent data quality accidents.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with marketing segmentation because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>You want to run a campaign for mid-market financial services companies. But 'Financial Services' appears as 12 different values in your industry field. Company size is missing on a third of records. Your segment either catches too much or too little because the filters can't work with messy data.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Fix Segmentation Data</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for marketing segmentation</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Industry standardization.</strong> We map all industry field values to a clean taxonomy so 'Financial Services,' 'Finance,' 'Banking,' and 'FinServ' all map to the same segment filter.</li>
+    <li><strong>Firmographic completion.</strong> We fill in company size, revenue, and location fields so your segmentation criteria have the data they need to work.</li>
+    <li><strong>Title normalization.</strong> We standardize job titles to consistent seniority and function levels so persona-based segments capture everyone they should.</li>
+    <li><strong>Custom field enrichment.</strong> We add data fields that enable new segmentation dimensions: tech stack, funding stage, growth rate, and other attributes your current data doesn't include.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your marketing segmentation challenges and we'll show you how clean data can transform your results.</p>
+<h2>Better Segments</h2>
+<ul>
+    <li>Segments that accurately represent your target audience because every defining field is clean and complete</li>
+    <li>New segmentation possibilities from enrichment data you didn't have before</li>
+    <li>Higher campaign performance because each segment receives truly relevant messaging</li>
+    <li>Confidence that segment-level reporting reflects real audience behavior, not data quality noise</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle contacts that don't fit neatly into one segment?</h3>
+            <p style="color: var(--color-text-secondary);">We tag them with all applicable segment values and flag the overlap. Your team decides whether a contact belongs in one segment or multiple. We make sure the underlying data is accurate so the segmentation logic works correctly regardless of how you handle overlaps.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you create segments for us or just clean the data?</h3>
+            <p style="color: var(--color-text-secondary);">We primarily clean and enrich the data so your segmentation works. If you need help defining segments based on the enriched data, we can provide analysis showing natural groupings in your audience. But the strategic decisions about how to segment and what messages each segment receives are yours.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the minimum data quality for useful segmentation?</h3>
+            <p style="color: var(--color-text-secondary);">You need at least 80% completeness on the fields you're using for segmentation. If your industry field is only filled on 50% of records, any segment based on industry will miss half your audience. We focus on getting the fields your segmentation depends on above that 80% threshold.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

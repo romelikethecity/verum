@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is the difference between email validation and email verification?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Validation checks whether an email address is properly formatted and the domain exists. Verification goes further by confirming the specific mailbox is active and accepting messages. Think of validation as checking the address format and verification as knocking on the door to see if someone is home."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you verify emails without sending a message?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We use SMTP handshake verification, which initiates a connection with the mail server and checks if the mailbox exists without actually delivering a message. The server confirms whether the address is valid before we disconnect. No email is sent, no content is delivered."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What happens to emails that fail verification?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Failed addresses are categorized by reason: invalid mailbox, expired domain, full inbox, or temporary server error. You get each category separately so you can handle them differently. Temporary failures might be worth retrying in a week. Invalid mailboxes should be removed permanently."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Email Verification</h1>
+        <p class="page-hero__subtitle">Confirm every email address in your database can actually receive mail.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Email Verification</h2>
-<p>Check email deliverability and remove invalid addresses. Verum helps you maintain accurate, reliable email verification across your entire database.</p>
+<p>Email verification confirms that an email address is real, belongs to an active mailbox, and can receive messages. While validation checks formatting rules, verification goes a step further by confirming deliverability with the receiving mail server.</p>
 
-<h2>What We Do</h2>
+<p>Sending campaigns to unverified lists is a gamble. One bad batch with a 10% bounce rate can drop your sender score from trusted to flagged, and recovering takes weeks of careful sending to rebuild trust with ISPs.</p>
+
+<h2>Our Verification Process</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>List ingestion.</strong> Upload your contacts in any format. We normalize the data and prepare it for verification regardless of how messy the source file is.</li>
+    <li><strong>Multi-layer verification.</strong> Each address goes through syntax checks, DNS lookups, SMTP handshake verification, and known-bad-address matching in sequence.</li>
+    <li><strong>Risk scoring.</strong> Every email gets a confidence score. High-confidence addresses are safe to send. Low-confidence addresses get flagged with specific reasons so you can decide what to do.</li>
+    <li><strong>Deliverability report.</strong> You get a breakdown of your list health: what percentage is safe, risky, or dead. Most teams are surprised how much of their list is undeliverable.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>After Verification</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>A clean list segmented by deliverability confidence so you can send with precision</li>
+    <li>Bounce rates that stay well under ISP thresholds, protecting your domain reputation</li>
+    <li>Marketing metrics that reflect actual engagement instead of delivery noise</li>
+    <li>Sales reps who trust the contact data because every email they send actually arrives</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What is the difference between email validation and email verification?</h3>
+            <p style="color: var(--color-text-secondary);">Validation checks whether an email address is properly formatted and the domain exists. Verification goes further by confirming the specific mailbox is active and accepting messages. Think of validation as checking the address format and verification as knocking on the door to see if someone is home.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you verify emails without sending a message?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We use SMTP handshake verification, which initiates a connection with the mail server and checks if the mailbox exists without actually delivering a message. The server confirms whether the address is valid before we disconnect. No email is sent, no content is delivered.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What happens to emails that fail verification?</h3>
+            <p style="color: var(--color-text-secondary);">Failed addresses are categorized by reason: invalid mailbox, expired domain, full inbox, or temporary server error. You get each category separately so you can handle them differently. Temporary failures might be worth retrying in a week. Invalid mailboxes should be removed permanently.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

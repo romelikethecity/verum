@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you filter law firm partners by practice area?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We tag partners by practice area using bar association records and firm bio data. You can filter for litigation partners, corporate/M&A, IP, real estate, labor and employment, tax, healthcare, or any other specialty. This is useful if your product specifically serves one practice area."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you find managing partners versus other partners?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Managing partners are identified through firm websites, legal directories (Martindale-Hubbell, Chambers), and press releases. We also flag practice group leaders and hiring partners, since each role controls different budgets and decisions."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you build lists of partners at specific firm sizes?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We classify firms by size: Am Law 100, Am Law 200, midsize (20-100 attorneys), small (5-20), and boutique/solo. Your selling motion to a BigLaw managing partner is different from a small firm owner, and our lists reflect that."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Law Firm Partners</h1>
+      <p class="page-hero__subtitle">Law firm websites list partners, but they don't list direct emails or tell you who actually manages the budget.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Law Firm Partners</h2>
-<p>Find and contact law firm partners. Verum helps you build targeted lists of law firm partners with complete, accurate contact information.</p>
+<p>Verum identifies law firm partners and the specific roles they play: managing partner, practice group leader, hiring partner, or of counsel. We deliver direct contact info that gets you past the receptionist and the marketing coordinator who screens vendor emails.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Law firm partner directories are easy to find on firm websites. Getting their direct email address and phone number is the hard part. Most firms route everything through a main number and generic email. Partners at Am Law 100 firms are especially insulated behind layers of staff.</p>
+
+<h2>How We Find Law Firm Partner Contacts</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>State bar association records.</strong> Active bar membership records confirm partner status, admission dates, practice areas, and disciplinary history across all jurisdictions where they're licensed.</li>
+  <li><strong>Firm website and bio scraping.</strong> We pull partner names, practice areas, education, and notable matters from firm websites, then match this against our contact databases.</li>
+  <li><strong>Role and authority identification.</strong> We determine whether each partner is a managing partner (budget authority), practice group leader (hiring authority), or equity vs. non-equity partner (investment authority).</li>
+  <li><strong>Direct email pattern analysis.</strong> Law firms use predictable email formats. We identify the pattern for each firm and verify individual partner emails through deliverability testing.</li>
+  <li><strong>Direct dial and mobile discovery.</strong> We find direct office extensions and personal mobile numbers that bypass the firm's main switchboard.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Law Firm Partner List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Partner name and role.</strong> Managing partner, practice group head, hiring partner, equity partner, or of counsel, so you know who to pitch what.</li>
+  <li><strong>Direct email and phone.</strong> Verified personal email at the firm domain and direct dial extension or mobile number.</li>
+  <li><strong>Practice areas.</strong> Litigation, corporate/M&A, real estate, IP, labor and employment, tax, and other specialties from bar records and firm bio data.</li>
+  <li><strong>Bar admissions.</strong> Which states they're admitted in, admission year, and bar number for each jurisdiction.</li>
+  <li><strong>Firm details.</strong> Firm name, size tier (Am Law 100/200, midsize, boutique, solo), and office location for that partner.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you filter law firm partners by practice area?</h3>
+<p>Yes. We tag partners by practice area using bar association records and firm bio data. You can filter for litigation partners, corporate/M&A, IP, real estate, labor and employment, tax, healthcare, or any other specialty. This is useful if your product specifically serves one practice area.</p>
+
+<h3>How do you find managing partners versus other partners?</h3>
+<p>Managing partners are identified through firm websites, legal directories (Martindale-Hubbell, Chambers), and press releases. We also flag practice group leaders and hiring partners, since each role controls different budgets and decisions.</p>
+
+<h3>Can you build lists of partners at specific firm sizes?</h3>
+<p>Yes. We classify firms by size: Am Law 100, Am Law 200, midsize (20-100 attorneys), small (5-20), and boutique/solo. Your selling motion to a BigLaw managing partner is different from a small firm owner, and our lists reflect that.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

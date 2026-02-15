@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is bottom-up TAM analysis different from top-down?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Top-down starts with total industry revenue and estimates your share. Bottom-up counts actual companies that match your ICP criteria. Top-down usually overestimates because it includes companies that would never buy your product. Bottom-up gives you a realistic count that you can actually turn into a prospect list."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can we use the TAM/SAM data as a prospect list?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. The companies counted in your SAM analysis can be delivered as an enriched prospect list. This is one of the key advantages of data-driven sizing: the analysis doubles as pipeline. The SAM isn't just a number in a deck \u2014 it's a list of companies you can start selling to."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How long does a TAM/SAM/SOM analysis take?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically 1-2 weeks. The time depends on how complex your ICP criteria are and how many sub-segments you want analyzed. A straightforward single-product, single-geography analysis can be done in a few days. Multi-product, multi-geography analyses with detailed segment breakdowns take longer."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">TAM SAM SOM Analysis</h1>
+        <p class="page-hero__subtitle">TAM/SAM/SOM built on actual company counts, not analyst report estimates.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
-<h2>TAM SAM SOM Analysis</h2>
-<p>Calculate your market opportunity. Verum provides the clean, enriched data you need for effective market analysis.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with market analysis because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<h2>Tam Sam Som Analysis</h2>
+<p>TAM/SAM/SOM analysis quantifies your market opportunity at three levels: total addressable market, serviceable addressable market, and serviceable obtainable market. We build this analysis from actual company and contact data rather than top-down revenue estimates from industry reports.</p>
 
-<h2>How Verum Helps</h2>
+<p>Your board deck says your TAM is $5 billion. The number came from an analyst report about your broader industry. But how many actual companies fit your ICP? How many of those can you realistically reach? How many can you win this year? Top-down TAM numbers don't answer these operational questions.</p>
+
+<h2>How We Build TAM/SAM/SOM</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for market analysis</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>TAM definition.</strong> We count every company that could theoretically use your product based on broad criteria: industry, minimum company size, and geographic market.</li>
+    <li><strong>SAM filtering.</strong> We narrow to companies you can realistically serve based on your product's requirements, pricing model, geographic reach, and sales capacity.</li>
+    <li><strong>SOM estimation.</strong> We estimate what portion of the SAM you can capture in a given timeframe based on competition density, sales cycle length, and your current win rate.</li>
+    <li><strong>Segment decomposition.</strong> We break each tier into sub-segments by industry, geography, and company size so you can see where the concentration of opportunity is highest.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your market analysis challenges and we'll show you how clean data can transform your results.</p>
+<h2>TAM/SAM/SOM Deliverables</h2>
+<ul>
+    <li>Bottom-up market sizing backed by actual company counts at each level</li>
+    <li>Segment-level breakdown showing which sub-markets have the highest density of target companies</li>
+    <li>Contact-level sizing showing how many decision-makers exist in your addressable market</li>
+    <li>A data-backed market analysis that stands up to investor and board scrutiny</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is bottom-up TAM analysis different from top-down?</h3>
+            <p style="color: var(--color-text-secondary);">Top-down starts with total industry revenue and estimates your share. Bottom-up counts actual companies that match your ICP criteria. Top-down usually overestimates because it includes companies that would never buy your product. Bottom-up gives you a realistic count that you can actually turn into a prospect list.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can we use the TAM/SAM data as a prospect list?</h3>
+            <p style="color: var(--color-text-secondary);">Absolutely. The companies counted in your SAM analysis can be delivered as an enriched prospect list. This is one of the key advantages of data-driven sizing: the analysis doubles as pipeline. The SAM isn't just a number in a deck — it's a list of companies you can start selling to.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How long does a TAM/SAM/SOM analysis take?</h3>
+            <p style="color: var(--color-text-secondary);">Typically 1-2 weeks. The time depends on how complex your ICP criteria are and how many sub-segments you want analyzed. A straightforward single-product, single-geography analysis can be done in a few days. Multi-product, multi-geography analyses with detailed segment breakdowns take longer.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

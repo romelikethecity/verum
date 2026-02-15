@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How clean does our CRM data need to be before you can analyze it?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can work with messy data \u2014 in fact, cleaning the data is often the first step of our analysis engagement. We'll flag quality issues during the audit and clean enough to make the analysis reliable. You don't need to have perfect data before starting. That said, the cleaner the data, the faster we get to insights."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you compare our sales performance to industry benchmarks?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can compare your metrics to general B2B SaaS or industry benchmarks for common metrics like win rates, sales cycle length, and average deal size. These benchmarks are directional since every company's definition of 'stage 3' and 'qualified opportunity' is different. Internal trend analysis is usually more actionable than external benchmarks."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you make recommendations or just present data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We present patterns and their implications. If the data shows that deals with 3+ stakeholder meetings close at 2x the rate of single-thread deals, we'll recommend multi-threading as a process change. The recommendations are grounded in your data, not generic sales advice."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Sales Data Analysis</h1>
+        <p class="page-hero__subtitle">Your sales data has answers you haven't asked yet. We extract them.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Sales Data Analysis</h2>
-<p>Sales performance analytics. Verum helps you understand your data and make better decisions with sales analytics.</p>
+<p>Sales data analysis examines your CRM data — opportunities, activities, contacts, and outcomes — to identify patterns that improve sales performance. Combined with enriched firmographic data, it reveals which deals are most likely to close, which activities predict success, and where your sales process breaks down.</p>
+
+<p>Your CRM has years of sales data: thousands of opportunities, millions of activities, and hundreds of outcomes. But nobody's analyzing it because the data is messy. Win rates are calculated on inconsistent stage definitions. Activity data is incomplete. Firmographic data is missing from half the opportunities.</p>
 
 <h2>What We Analyze</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Win/loss patterns.</strong> We identify firmographic and behavioral patterns that distinguish won deals from lost ones so your team can focus on the best opportunities.</li>
+    <li><strong>Sales cycle analysis.</strong> We measure average sales cycle length by segment, deal size, and entry point to identify where deals stall and what accelerates them.</li>
+    <li><strong>Activity correlation.</strong> We correlate sales activities (calls, emails, meetings, demos) with outcomes to identify which activities most strongly predict close.</li>
+    <li><strong>Pipeline analysis.</strong> We analyze pipeline conversion rates by stage, segment, and rep to find bottlenecks and best practices.</li>
+    <li><strong>Rep performance analysis.</strong> We compare rep performance normalized for territory quality and deal distribution so performance differences reflect skill, not assignment.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>Sales Analysis Deliverables</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>Win/loss profiles showing which deal characteristics predict success and which predict failure</li>
+    <li>Sales cycle benchmarks by segment so reps and managers know what 'normal' looks like</li>
+    <li>Activity playbooks based on what winning reps actually do differently in data, not anecdote</li>
+    <li>Pipeline health assessment identifying conversion bottlenecks and stage-specific drop-off points</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How clean does our CRM data need to be before you can analyze it?</h3>
+            <p style="color: var(--color-text-secondary);">We can work with messy data — in fact, cleaning the data is often the first step of our analysis engagement. We'll flag quality issues during the audit and clean enough to make the analysis reliable. You don't need to have perfect data before starting. That said, the cleaner the data, the faster we get to insights.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you compare our sales performance to industry benchmarks?</h3>
+            <p style="color: var(--color-text-secondary);">We can compare your metrics to general B2B SaaS or industry benchmarks for common metrics like win rates, sales cycle length, and average deal size. These benchmarks are directional since every company's definition of 'stage 3' and 'qualified opportunity' is different. Internal trend analysis is usually more actionable than external benchmarks.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you make recommendations or just present data?</h3>
+            <p style="color: var(--color-text-secondary);">We present patterns and their implications. If the data shows that deals with 3+ stakeholder meetings close at 2x the rate of single-thread deals, we'll recommend multi-threading as a process change. The recommendations are grounded in your data, not generic sales advice.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

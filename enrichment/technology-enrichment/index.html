@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Is technology enrichment the same as technographic enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Technology enrichment, technographic enrichment, and tech stack enrichment all refer to the same service: identifying which software and platforms a company uses. Different teams use different terminology, so we have pages for each to help people find what they're looking for."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about technologies that aren't visible on the website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Website scanning catches client-side technologies and many server-side tools that leave web-facing signatures. Purely internal tools (project management, internal communications, databases) are harder to detect. We supplement website scanning with job posting analysis, which often reveals internal technology choices."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you filter our prospect list by technology?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, that's a primary use case. After enrichment, you can filter your database to show only companies using (or not using) specific technologies. This is how teams selling Salesforce integrations find Salesforce customers, or how companies replacing Marketo find Marketo users."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Technology Enrichment</h1>
+        <p class="page-hero__subtitle">The technologies a company uses are the strongest signal of what they'll buy next.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Technology Enrichment</h2>
-<p>Append technology usage data for better targeting. Verum helps you append accurate technology data to your B2B database from 50+ trusted sources.</p>
+<p>Technology enrichment identifies and appends the software and technology platforms each company in your database uses. From web frameworks to CRM to cloud infrastructure, we detect thousands of technologies by scanning websites, analyzing DNS records, and cross-referencing job postings and marketplace data.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends technology data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Your product works with specific technology ecosystems. Without knowing what your prospects already use, your reps discover incompatibility or irrelevance mid-conversation. Technology enrichment pre-qualifies accounts by their tech stack so you only pursue companies where your product fits.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Identify Technologies</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Website fingerprinting.</strong> JavaScript libraries, tracking pixels, CSS frameworks, and meta tags on company websites reveal their frontend technology choices.</li>
+    <li><strong>Infrastructure detection.</strong> DNS records, SSL certificates, and hosting information reveal backend infrastructure and cloud provider.</li>
+    <li><strong>Application detection.</strong> We identify business applications (CRM, marketing, support, analytics) through their unique web signatures.</li>
+    <li><strong>Cross-reference validation.</strong> We validate detections against job postings and marketplace reviews for higher accuracy.</li>
 </ul>
+
+<h2>What Technology Enrichment Delivers</h2>
+<ul>
+    <li>Technologies detected across categories: CRM, marketing, analytics, cloud, e-commerce, support, and development</li>
+    <li>Category-level view showing which slots in the tech stack are filled</li>
+    <li>Detection source and confidence level for each technology</li>
+    <li>ICP-relevant technology flags based on your product's ecosystem requirements</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Is technology enrichment the same as technographic enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Technology enrichment, technographic enrichment, and tech stack enrichment all refer to the same service: identifying which software and platforms a company uses. Different teams use different terminology, so we have pages for each to help people find what they're looking for.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about technologies that aren't visible on the website?</h3>
+            <p style="color: var(--color-text-secondary);">Website scanning catches client-side technologies and many server-side tools that leave web-facing signatures. Purely internal tools (project management, internal communications, databases) are harder to detect. We supplement website scanning with job posting analysis, which often reveals internal technology choices.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you filter our prospect list by technology?</h3>
+            <p style="color: var(--color-text-secondary);">Yes, that's a primary use case. After enrichment, you can filter your database to show only companies using (or not using) specific technologies. This is how teams selling Salesforce integrations find Salesforce customers, or how companies replacing Marketo find Marketo users.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

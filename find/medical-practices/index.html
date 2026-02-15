@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many medical practices can you find in a given area?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The NPI database contains over 1 million organizational records. After filtering for active practices and removing duplicates, you're looking at roughly 300,000-400,000 unique medical practice locations in the US. We can build lists for any geography, from a single ZIP code to nationwide."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you filter medical practices by specialty?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. NPI taxonomy codes let us filter by any medical specialty or sub-specialty. We can find all cardiology practices in Florida, or all primary care practices within 50 miles of a specific ZIP code. We handle the taxonomy code mapping so you don't have to."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle practices that are part of a hospital system?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We flag practices that are hospital-owned or health system-affiliated based on Medicare reassignment data and organizational NPI relationships. You can include or exclude them depending on whether your product is relevant to system-affiliated practices or only independents."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Medical Practices</h1>
+      <p class="page-hero__subtitle">The NPI database has 8 million records, but turning that into a usable prospect list takes serious data work.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Medical Practices</h2>
-<p>Find medical practices and physician data. Verum helps you build targeted lists of medical practices with complete, accurate contact information.</p>
+<p>Verum turns raw NPI data, state medical board records, and CMS enrollment files into clean, targeted medical practice lists. We handle the deduplication, address verification, and contact enrichment so you get a list of real practices with real contacts, not a messy data dump.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>The NPI registry is technically a database of every healthcare provider in the country. In practice, it's a mess of duplicate records, deactivated entries, wrong addresses, and no email or phone information. Building a usable medical practice list from NPI data alone takes weeks of cleaning and enrichment.</p>
+
+<h2>How We Build Medical Practice Lists</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>NPI registry filtering and deduplication.</strong> We start with the full NPI dataset and filter for active Type 2 (organizational) records in your target specialties and geographies, removing deactivated and duplicate entries.</li>
+  <li><strong>Address verification and geocoding.</strong> NPI addresses are often outdated. We verify every address against USPS records and Google Maps data, updating locations for practices that have moved.</li>
+  <li><strong>Specialty taxonomy standardization.</strong> NPI taxonomy codes are granular (2,000+ codes). We map them to the specialty categories that matter for your targeting: primary care, cardiology, orthopedics, dermatology, etc.</li>
+  <li><strong>Contact enrichment.</strong> NPI records don't include email addresses or owner names. We add owner/managing physician contacts, direct emails, and phone numbers through website scraping, domain analysis, and multi-source verification.</li>
+  <li><strong>Practice size estimation.</strong> By counting individual NPI records linked to each organizational NPI, we estimate provider count per practice and flag solo vs. group practice status.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Medical Practice List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Practice name and verified address.</strong> USPS-validated address with suite/floor detail, mapped to county, MSA, and congressional district for geographic targeting.</li>
+  <li><strong>Specialty and taxonomy.</strong> Primary and secondary specialties with NPI taxonomy codes, standardized into the categories your team actually uses.</li>
+  <li><strong>Provider count.</strong> Number of individual providers linked to the practice, giving you a reliable size estimate.</li>
+  <li><strong>Owner or managing physician contact.</strong> Name, email, and direct phone number for the key decision-maker at each practice.</li>
+  <li><strong>Medicare and Medicaid participation.</strong> Whether the practice is enrolled in Medicare, Medicaid, or both, based on CMS enrollment data.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>How many medical practices can you find in a given area?</h3>
+<p>The NPI database contains over 1 million organizational records. After filtering for active practices and removing duplicates, you're looking at roughly 300,000-400,000 unique medical practice locations in the US. We can build lists for any geography, from a single ZIP code to nationwide.</p>
+
+<h3>Can you filter medical practices by specialty?</h3>
+<p>Yes. NPI taxonomy codes let us filter by any medical specialty or sub-specialty. We can find all cardiology practices in Florida, or all primary care practices within 50 miles of a specific ZIP code. We handle the taxonomy code mapping so you don't have to.</p>
+
+<h3>How do you handle practices that are part of a hospital system?</h3>
+<p>We flag practices that are hospital-owned or health system-affiliated based on Medicare reassignment data and organizational NPI relationships. You can include or exclude them depending on whether your product is relevant to system-affiliated practices or only independents.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

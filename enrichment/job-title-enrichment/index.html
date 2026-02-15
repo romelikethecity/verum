@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many unique titles can you standardize?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We've mapped over 500,000 unique job title variations to our canonical taxonomy. But new creative titles appear constantly \u2014 'Chief Happiness Officer,' 'Revenue Ninja,' 'Growth Hacker.' Our system handles most novel titles through pattern matching, and truly unusual ones get flagged for manual classification."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about titles that span multiple departments?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Titles like 'VP of Sales and Marketing' or 'Director of IT and Security' get classified under their primary department with a secondary department flag. For lead routing, we use the primary department. For campaign targeting, you can use either or both."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you use our custom seniority levels instead of yours?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. If your lead scoring uses custom seniority tiers (e.g., you distinguish between 'Head of' and 'VP'), we can map to your taxonomy. We do this by building a translation layer between our standard levels and your custom ones."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Job Title Enrichment</h1>
+        <p class="page-hero__subtitle">Your CRM has 500 versions of 'Vice President of Marketing.' Standardize them so your routing and scoring actually work.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Job Title Enrichment</h2>
-<p>Standardize and enrich job titles for targeting. Verum helps you append accurate job titles to your B2B database from 50+ trusted sources.</p>
+<p>Job title enrichment standardizes and enhances the job title data in your contact records. We normalize inconsistent titles to a common taxonomy, assign seniority levels, map to departments, and identify the functional role behind creative or non-standard titles. This makes your lead scoring, routing, and segmentation rules work consistently.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends job titles</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Job titles are entered inconsistently and creatively. 'VP Marketing,' 'Vice President, Marketing,' 'VP of Growth & Marketing,' and 'Head of Marketing' all mean roughly the same thing. Without normalization, your lead scoring rules miss half the matches and your routing sends leads to the wrong team.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Standardize Job Titles</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Title parsing.</strong> We break each title into components: seniority level, department, and functional role. 'Senior Vice President of Revenue Operations' becomes VP / Revenue / Operations.</li>
+    <li><strong>Canonical mapping.</strong> We map every title variation to a canonical title in our taxonomy. All 50 versions of 'VP Marketing' map to one standard title.</li>
+    <li><strong>Seniority assignment.</strong> Each contact gets a seniority level: C-suite, VP, Director, Manager, Senior IC, IC, or Intern. This enables scoring by seniority regardless of title wording.</li>
+    <li><strong>Department classification.</strong> Titles are mapped to functional departments: Sales, Marketing, Engineering, Finance, HR, Operations, IT, Legal, and more.</li>
 </ul>
+
+<h2>What Title-Enriched Data Enables</h2>
+<ul>
+    <li>Standardized job titles for consistent lead scoring and routing</li>
+    <li>Seniority level (C-suite, VP, Director, Manager, IC) for every contact</li>
+    <li>Department classification for every contact</li>
+    <li>Original title preserved alongside the standardized version for reference</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many unique titles can you standardize?</h3>
+            <p style="color: var(--color-text-secondary);">We've mapped over 500,000 unique job title variations to our canonical taxonomy. But new creative titles appear constantly — 'Chief Happiness Officer,' 'Revenue Ninja,' 'Growth Hacker.' Our system handles most novel titles through pattern matching, and truly unusual ones get flagged for manual classification.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about titles that span multiple departments?</h3>
+            <p style="color: var(--color-text-secondary);">Titles like 'VP of Sales and Marketing' or 'Director of IT and Security' get classified under their primary department with a secondary department flag. For lead routing, we use the primary department. For campaign targeting, you can use either or both.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you use our custom seniority levels instead of yours?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. If your lead scoring uses custom seniority tiers (e.g., you distinguish between 'Head of' and 'VP'), we can map to your taxonomy. We do this by building a translation layer between our standard levels and your custom ones.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

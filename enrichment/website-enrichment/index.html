@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is this different from just visiting their website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The value is scale and structure. Visiting one website takes 5 minutes. Visiting 10,000 takes a team. Website enrichment extracts the same intelligence your reps would gather manually, but does it for your entire database and returns structured data you can filter, segment, and score on."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if a company's website is sparse or a single page?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We work with whatever is available. A minimal website still reveals the company name, basic description, contact information, and technology choices. Sparse websites often indicate early-stage companies or businesses that rely on referrals rather than web presence. We note website complexity as a data point."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you extract pricing information from websites?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When pricing is publicly listed on the website, yes. We can extract pricing tiers, plan names, and listed prices. Many B2B companies don't publish pricing, in which case we note 'pricing not publicly available.' Publicly listed pricing is a useful competitive intelligence data point."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Website Enrichment</h1>
+        <p class="page-hero__subtitle">A company's website is the most information-dense data source you're not using systematically.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Website Enrichment</h2>
-<p>Extract and enrich data from company websites. Verum helps you append accurate website data to your B2B database from 50+ trusted sources.</p>
+<p>Website enrichment extracts structured data from company websites and appends it to your records: what the company does, how they describe their products, who their customers are, what their messaging emphasizes, and what technologies power the site. This goes beyond firmographic databases to capture what the company says about itself.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends website data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Before every call, your reps visit the prospect's website. They spend 3-5 minutes scanning the homepage, about page, and product pages to figure out what the company does and how to position your pitch. Website enrichment automates this research step across your entire database.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Extract Website Intelligence</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Homepage and about page analysis.</strong> We extract the company's self-description, mission statement, and key messaging from their primary web pages.</li>
+    <li><strong>Product and service identification.</strong> We identify what products or services the company offers based on their website content and navigation structure.</li>
+    <li><strong>Customer signals.</strong> We detect case studies, testimonials, and customer logos that reveal the company's target market and customer base.</li>
+    <li><strong>Website metadata extraction.</strong> We capture meta descriptions, page titles, and structured data (schema.org) that companies use to describe themselves to search engines.</li>
 </ul>
+
+<h2>What Website Enrichment Delivers</h2>
+<ul>
+    <li>Company description extracted from their own website content</li>
+    <li>Products and services identified from website navigation and content</li>
+    <li>Customer segment indicators based on case studies and testimonials</li>
+    <li>Website technology stack detected from the site's infrastructure</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is this different from just visiting their website?</h3>
+            <p style="color: var(--color-text-secondary);">The value is scale and structure. Visiting one website takes 5 minutes. Visiting 10,000 takes a team. Website enrichment extracts the same intelligence your reps would gather manually, but does it for your entire database and returns structured data you can filter, segment, and score on.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if a company's website is sparse or a single page?</h3>
+            <p style="color: var(--color-text-secondary);">We work with whatever is available. A minimal website still reveals the company name, basic description, contact information, and technology choices. Sparse websites often indicate early-stage companies or businesses that rely on referrals rather than web presence. We note website complexity as a data point.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you extract pricing information from websites?</h3>
+            <p style="color: var(--color-text-secondary);">When pricing is publicly listed on the website, yes. We can extract pricing tiers, plan names, and listed prices. Many B2B companies don't publish pricing, in which case we note 'pricing not publicly available.' Publicly listed pricing is a useful competitive intelligence data point.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is data-driven market sizing different from a top-down estimate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Top-down estimates start with total industry revenue and divide down. Bottom-up data-driven sizing counts actual companies that match your criteria. Top-down often overestimates because it includes companies that would never buy your product. Bottom-up gives you a realistic count of prospects, not a theoretical revenue number."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you size a market for a product that doesn't exist yet?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, as long as you can define the target customer profile. We size markets based on firmographic criteria like industry, company size, geography, and technology usage. We need to know who would buy the product, not what the product does. If you can describe your target customer, we can count how many exist."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle market sizing for niche segments?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We use the same data sources and methodology. Niche markets just produce smaller numbers. If your ICP is 'orthopedic medical device companies with 50-200 employees in the US,' we'll count exactly how many exist. The number might be 150 companies instead of 15,000, but it's an accurate 150."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Market Sizing</h1>
+        <p class="page-hero__subtitle">How big is your addressable market? We count it for you.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Market Sizing</h2>
-<p>Size your total addressable market. Verum provides the clean, enriched data you need for effective market sizing.</p>
+<p>Market sizing quantifies the total addressable market (TAM), serviceable addressable market (SAM), and serviceable obtainable market (SOM) for your product or service. Accurate sizing requires clean data on companies, contacts, and market segments — not back-of-envelope estimates.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with market sizing because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>Your investor deck says your TAM is $10 billion based on an industry report. But you can't tell them how many actual companies fit your ICP, how many decision-makers exist at those companies, or what percentage of the market you can realistically capture. You have a number but not the data behind it.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Size Markets With Data</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for market sizing</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>TAM quantification.</strong> We count the total number of companies and contacts in your market based on firmographic criteria: industry, size, geography, and other filters you define.</li>
+    <li><strong>SAM narrowing.</strong> We filter down to companies you can actually serve based on your product's requirements, geographic reach, and go-to-market capabilities.</li>
+    <li><strong>Contact density.</strong> We estimate how many decision-makers exist per company in your target segment, giving you a realistic view of the contact-level market.</li>
+    <li><strong>Segment breakdown.</strong> We break the market into sub-segments by industry, geography, company size, and other dimensions so you can prioritize where to focus.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your market sizing challenges and we'll show you how clean data can transform your results.</p>
+<h2>Market Sizing Deliverables</h2>
+<ul>
+    <li>A concrete TAM, SAM, and SOM backed by actual company counts rather than revenue estimates from analyst reports</li>
+    <li>Market breakdown by segment showing where the density of target companies is highest</li>
+    <li>Contact-level sizing showing how many decision-makers exist in your target market</li>
+    <li>Data you can use in investor presentations, board meetings, and strategic planning with confidence</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is data-driven market sizing different from a top-down estimate?</h3>
+            <p style="color: var(--color-text-secondary);">Top-down estimates start with total industry revenue and divide down. Bottom-up data-driven sizing counts actual companies that match your criteria. Top-down often overestimates because it includes companies that would never buy your product. Bottom-up gives you a realistic count of prospects, not a theoretical revenue number.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you size a market for a product that doesn't exist yet?</h3>
+            <p style="color: var(--color-text-secondary);">Yes, as long as you can define the target customer profile. We size markets based on firmographic criteria like industry, company size, geography, and technology usage. We need to know who would buy the product, not what the product does. If you can describe your target customer, we can count how many exist.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle market sizing for niche segments?</h3>
+            <p style="color: var(--color-text-secondary);">We use the same data sources and methodology. Niche markets just produce smaller numbers. If your ICP is 'orthopedic medical device companies with 50-200 employees in the US,' we'll count exactly how many exist. The number might be 150 companies instead of 15,000, but it's an accurate 150.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

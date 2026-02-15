@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you handle titles that span multiple functions?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Titles like 'VP of Sales and Marketing' or 'Director of RevOps' get tagged with both functions. Your scoring can weight the primary function more heavily if needed. We also flag multi-function titles so you can review the classification if your routing needs to pick one path."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about industry-specific titles?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We maintain mapping tables for common industry-specific titles. 'Managing Director' means something different in banking than in consulting. 'Partner' at a law firm is different from 'Partner' at an accounting firm. We classify based on the industry context in the record when available."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can we define custom seniority levels beyond C-suite, VP, Director?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. If your scoring model distinguishes between SVP and VP, or between Senior Director and Director, we can create as many seniority tiers as you need. We map every title in your database to your custom hierarchy and deliver the results as a new standardized field alongside the original."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Job Title Normalization</h1>
+        <p class="page-hero__subtitle">VP Sales, Vice President of Sales, Sales VP. We make them match.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Job Title Normalization</h2>
-<p>Normalize job titles to standard categories. Verum helps you maintain accurate, reliable job titles across your entire database.</p>
+<p>Job title normalization maps the hundreds of variations in how people describe the same role to standardized categories that your routing, scoring, and reporting can rely on. Without it, lead routing misses half your VP-level contacts because they used a different abbreviation.</p>
 
-<h2>What We Do</h2>
+<p>People describe their roles in wildly different ways. Your lead scoring gives 50 points to 'VP of Sales' but zero to 'Vice President, Revenue' even though they are the same buyer. Your routing sends 'Head of Marketing' to the marketing specialist queue because it does not recognize the seniority level.</p>
+
+<h2>How We Normalize Titles</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Seniority mapping.</strong> We classify every title into a seniority level: C-suite, VP, Director, Manager, Individual Contributor, Intern. Regardless of how the title is worded.</li>
+    <li><strong>Function mapping.</strong> We identify the department: Sales, Marketing, Engineering, Finance, Operations, HR, IT. Even when the title is ambiguous like 'Head of Growth' or 'Chief Revenue Officer'.</li>
+    <li><strong>Abbreviation expansion.</strong> VP, SVP, EVP, CTO, CMO, COO. We expand abbreviations consistently so matching and filtering work across your entire database.</li>
+    <li><strong>Custom title mapping.</strong> If your ICP targets a specific set of titles, we build a custom mapping that reflects your buyer personas and scoring criteria.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>What Normalized Titles Enable</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Lead scoring that correctly identifies decision-makers regardless of title wording</li>
+    <li>Routing rules that work because seniority and function are standardized fields, not free text</li>
+    <li>ABM targeting that reaches the right persona across every account</li>
+    <li>Reporting that shows pipeline by buyer persona instead of by 500 unique title strings</li>
+    <li>Segmentation that groups contacts by actual role instead of arbitrary keyword matches</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle titles that span multiple functions?</h3>
+            <p style="color: var(--color-text-secondary);">Titles like 'VP of Sales and Marketing' or 'Director of RevOps' get tagged with both functions. Your scoring can weight the primary function more heavily if needed. We also flag multi-function titles so you can review the classification if your routing needs to pick one path.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about industry-specific titles?</h3>
+            <p style="color: var(--color-text-secondary);">We maintain mapping tables for common industry-specific titles. 'Managing Director' means something different in banking than in consulting. 'Partner' at a law firm is different from 'Partner' at an accounting firm. We classify based on the industry context in the record when available.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can we define custom seniority levels beyond C-suite, VP, Director?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. If your scoring model distinguishes between SVP and VP, or between Senior Director and Director, we can create as many seniority tiers as you need. We map every title in your database to your custom hierarchy and deliver the results as a new standardized field alongside the original.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

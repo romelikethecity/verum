@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the difference between email enrichment and email verification?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Email verification checks addresses you already have. Email enrichment finds new addresses you don't have. If you have contacts without email addresses, you need enrichment. If you have email addresses and want to check if they're valid, you need verification. We do both."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the typical hit rate for finding email addresses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For B2B contacts with a known company domain, we typically find verified email addresses for 60-75% of contacts. Hit rates are higher for larger companies with established domains and lower for very small businesses or companies with unusual email configurations."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you find personal emails or just business emails?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Business emails only. We don't append personal email addresses (Gmail, Yahoo, etc.) because they create compliance issues and aren't appropriate for B2B outreach. If we can only find a personal email, we flag the contact as 'no business email found.'"
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Email Enrichment</h1>
+        <p class="page-hero__subtitle">You have contacts without email addresses. We find the right ones and verify they won't bounce.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Email Enrichment</h2>
-<p>Find and verify email addresses for your contacts. Verum helps you append accurate email addresses to your B2B database from 50+ trusted sources.</p>
+<p>Email enrichment discovers and appends verified business email addresses to your contact records. We find direct email addresses (not generic info@ aliases) using name-to-email pattern matching, domain analysis, and multi-source verification. Every address is validated before delivery so you get emails that reach inboxes, not bounce folders.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends email addresses</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Missing email addresses mean contacts you can't reach through digital channels. Your reps resort to cold calling, which has its place, but email lets you scale outreach and nurture over time. The problem is that guessed email formats (first.last@company.com) bounce 15-25% of the time. Verified enrichment reduces that to under 3%.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Find and Verify Emails</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Email pattern detection.</strong> We identify each company's email naming convention (first.last, firstinitial.last, first, etc.) by analyzing known email addresses at that domain.</li>
+    <li><strong>Multi-source discovery.</strong> Beyond pattern matching, we search professional databases, business registrations, and public records to find email addresses associated with each contact.</li>
+    <li><strong>SMTP-level verification.</strong> Every discovered email is verified at the mail server level to confirm the address exists and can receive mail — without actually sending a message.</li>
+    <li><strong>Catch-all domain detection.</strong> We identify domains with catch-all configurations (where any address is accepted) and flag these separately since SMTP verification can't confirm individual addresses on catch-all domains.</li>
 </ul>
+
+<h2>What Email Enrichment Delivers</h2>
+<ul>
+    <li>Verified business email addresses appended to your contact records</li>
+    <li>Verification status for each email (verified, catch-all, unverifiable)</li>
+    <li>Email format detected at each company domain for future prospecting</li>
+    <li>Bounce risk score so you can decide which emails to include in campaigns</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the difference between email enrichment and email verification?</h3>
+            <p style="color: var(--color-text-secondary);">Email verification checks addresses you already have. Email enrichment finds new addresses you don't have. If you have contacts without email addresses, you need enrichment. If you have email addresses and want to check if they're valid, you need verification. We do both.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the typical hit rate for finding email addresses?</h3>
+            <p style="color: var(--color-text-secondary);">For B2B contacts with a known company domain, we typically find verified email addresses for 60-75% of contacts. Hit rates are higher for larger companies with established domains and lower for very small businesses or companies with unusual email configurations.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you find personal emails or just business emails?</h3>
+            <p style="color: var(--color-text-secondary);">Business emails only. We don't append personal email addresses (Gmail, Yahoo, etc.) because they create compliance issues and aren't appropriate for B2B outreach. If we can only find a personal email, we flag the contact as 'no business email found.'</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

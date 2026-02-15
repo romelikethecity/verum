@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you handle companies with legitimate multiple entities?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We map subsidiaries and divisions to their parent company but keep them as separate records with a parent-child relationship. Salesforce West and Salesforce East are separate entities under the Salesforce parent. You get the hierarchy without losing the distinction between operating units."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about companies in non-English languages?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We handle common transliterations and international company suffixes like GmbH, S.A., and KK. For companies with both an English and local-language name, we standardize to whichever form your team uses most commonly, and keep the alternate name as an alias field."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you update our CRM directly?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We work with your exported data and deliver a standardized file. You review the changes and import what you want. This gives you control over the mapping rules and prevents accidental overwrites. Most teams import same-day after a quick review."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Company Name Standardization</h1>
+        <p class="page-hero__subtitle">Acme Corp, ACME, Acme Inc. Same company, four records. We fix that.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Company Name Standardization</h2>
-<p>Standardize company names and legal entities. Verum helps you maintain accurate, reliable company names across your entire database.</p>
+<p>Company name standardization normalizes the way company names appear in your database so that every variation of a company name maps to a single, canonical form. This is the foundation of accurate deduplication, reporting, and account-based operations.</p>
 
-<h2>What We Do</h2>
+<p>When sales reps type company names manually, you get variations. When you import data from different sources, you get more variations. When companies rebrand or get acquired, existing records go stale. The result: your account list has 3-5 entries for the same company and no one knows which is authoritative.</p>
+
+<h2>What We Standardize</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Legal suffixes.</strong> Inc, Inc., Incorporated, LLC, Ltd, L.L.C. We normalize to a consistent format or remove them entirely based on your preference.</li>
+    <li><strong>Abbreviations and acronyms.</strong> IBM vs International Business Machines, GE vs General Electric. We map known abbreviations to their full names or vice versa.</li>
+    <li><strong>Capitalization and formatting.</strong> ACME CORP, acme corp, Acme Corp. We apply consistent title case formatting across all records.</li>
+    <li><strong>DBA and subsidiary mapping.</strong> When a company operates under a different name than its legal entity, we map them together so you can see the full account hierarchy.</li>
+    <li><strong>Acquisition and rebrand tracking.</strong> Company was Segment, now it is Twilio Segment. We update names based on known M&A activity so your records stay current.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Why Standardization Matters</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Deduplication that actually works because matching runs against normalized names, not raw variants</li>
+    <li>Account-based reporting that shows one row per company instead of five</li>
+    <li>Territory assignment that correctly groups all contacts under the right account</li>
+    <li>Integration sync that matches records across systems instead of creating new duplicates</li>
+    <li>Sales reps who can find the right account on the first search instead of guessing which spelling was used</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle companies with legitimate multiple entities?</h3>
+            <p style="color: var(--color-text-secondary);">We map subsidiaries and divisions to their parent company but keep them as separate records with a parent-child relationship. Salesforce West and Salesforce East are separate entities under the Salesforce parent. You get the hierarchy without losing the distinction between operating units.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about companies in non-English languages?</h3>
+            <p style="color: var(--color-text-secondary);">We handle common transliterations and international company suffixes like GmbH, S.A., and KK. For companies with both an English and local-language name, we standardize to whichever form your team uses most commonly, and keep the alternate name as an alias field.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you update our CRM directly?</h3>
+            <p style="color: var(--color-text-secondary);">No. We work with your exported data and deliver a standardized file. You review the changes and import what you want. This gives you control over the mapping rules and prevents accidental overwrites. Most teams import same-day after a quick review.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you find owners of specific types of retail stores?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We can filter by retail category: apparel and fashion, home and furniture, pet supplies, sporting goods, electronics, health and beauty, gifts and specialty, grocery and specialty food, hardware, and more. We use business classification codes and product category signals to ensure accurate tagging."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you differentiate independent retailers from chain stores?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We flag national and regional chains separately from independent stores. If you're selling to independent retailers who make their own merchandising and vendor decisions, we exclude chain locations where those decisions are made at corporate. Multi-location independents (local chains) are identified and grouped."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about online-only retailers or stores that also sell online?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our retail store lists focus on businesses with physical storefronts. If a store also sells online, we note their e-commerce presence. If you specifically need online-only retailers, that's a different list-building process using e-commerce platform detection and online marketplace data."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Retail Store Owners</h1>
+      <p class="page-hero__subtitle">Retail store ownership is hidden behind management companies and multi-location operators who use a different LLC for every storefront.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Retail Store Owners</h2>
-<p>Find retail business owners. Verum helps you build targeted lists of retail store owners with complete, accurate contact information.</p>
+<p>Verum identifies the individuals who own and operate retail stores, cutting through the LLC structures and management companies to find the person who makes buying decisions. We deliver direct contact info for independent shop owners and multi-location operators alike.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Independent retail stores are the hardest small businesses to catalog because they rarely appear in industry-specific databases. A boutique clothing store, a hardware store, and a pet shop have nothing in common except that they're all retail. There's no equivalent of the NPI database or state bar for retail stores.</p>
+
+<h2>How We Find Retail Store Owners</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>Sales tax permit databases.</strong> Most states require retail businesses to hold a sales tax permit or reseller certificate. These records list the business owner or responsible party and are updated when ownership changes.</li>
+  <li><strong>Secretary of State filings.</strong> LLC and corporation filings reveal the individuals behind retail store entities, including registered agents and officers who are often the owner.</li>
+  <li><strong>Local business license records.</strong> Municipal business licenses and occupancy permits add another ownership data point, especially for stores in downtown districts and shopping centers.</li>
+  <li><strong>Multi-location operator detection.</strong> We link stores owned by the same individual or entity across different locations and brand names, identifying operators who run 3, 10, or 50+ retail locations.</li>
+  <li><strong>Direct contact discovery and verification.</strong> We find the owner's personal email and phone number through domain records, social media, and professional databases, then verify every contact before delivery.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Retail Store Owner List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Owner name and direct contact.</strong> Personal email and phone number for the store owner, not the shop's customer service line.</li>
+  <li><strong>Store type and category.</strong> Apparel, home goods, sporting goods, pet supplies, electronics, grocery/specialty food, hardware, and other retail categories.</li>
+  <li><strong>Location details.</strong> Street address, shopping center or strip mall name, and whether it's a standalone location.</li>
+  <li><strong>Multi-store footprint.</strong> Total locations owned by this individual, across all their brands and store names.</li>
+  <li><strong>Years in business.</strong> Based on business registration dates and permit history, indicating store maturity and stability.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you find owners of specific types of retail stores?</h3>
+<p>Yes. We can filter by retail category: apparel and fashion, home and furniture, pet supplies, sporting goods, electronics, health and beauty, gifts and specialty, grocery and specialty food, hardware, and more. We use business classification codes and product category signals to ensure accurate tagging.</p>
+
+<h3>How do you differentiate independent retailers from chain stores?</h3>
+<p>We flag national and regional chains separately from independent stores. If you're selling to independent retailers who make their own merchandising and vendor decisions, we exclude chain locations where those decisions are made at corporate. Multi-location independents (local chains) are identified and grouped.</p>
+
+<h3>What about online-only retailers or stores that also sell online?</h3>
+<p>Our retail store lists focus on businesses with physical storefronts. If a store also sells online, we note their e-commerce presence. If you specifically need online-only retailers, that's a different list-building process using e-commerce platform detection and online marketplace data.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

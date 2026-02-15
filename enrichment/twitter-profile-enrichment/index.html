@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the match rate for Twitter profiles?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For B2B executives and professionals, 30-50% match rates are typical. Twitter usage is lower than LinkedIn in the B2B world. Senior executives in tech, media, and consulting have higher match rates. Contacts in industries like manufacturing and healthcare use Twitter less frequently."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you pull tweet content or just the profile URL?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We return the profile URL, handle, follower count, bio, and activity status. We don't scrape individual tweet content. Your team can click through to the profile to read recent posts for conversation prep and engagement opportunities."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Has the Twitter/X rebrand affected your detection?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The platform transition from Twitter to X hasn't affected our matching methodology. Profile URLs and API access remain functional under both domains. We reference both names (Twitter/X) since many users and systems still use 'Twitter' as the common name."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Twitter Profile Enrichment</h1>
+        <p class="page-hero__subtitle">For executives, thought leaders, and B2B brands, Twitter is where the conversations happen before deals start.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Twitter Profile Enrichment</h2>
-<p>Match Twitter/X handles to your contact database. Verum helps you append accurate twitter profiles to your B2B database from 50+ trusted sources.</p>
+<p>Twitter/X profile enrichment appends verified Twitter handles to your contact and company records. For B2B sales, executive Twitter accounts are a source of talking points, engagement opportunities, and insight into a prospect's priorities and opinions that LinkedIn doesn't always surface.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends twitter profiles</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Finding the right Twitter handle for a business contact is harder than it sounds. Common names have dozens of accounts. Many professionals use handles that don't include their name. Some have inactive accounts that haven't been used in years. Manual searching is unreliable at scale.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Match Twitter Profiles</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Multi-signal matching.</strong> We match contacts to Twitter profiles using name, company, bio content, and linked websites to find the right account.</li>
+    <li><strong>Verification and disambiguation.</strong> For common names, we use company and title context from your CRM to identify the correct profile among multiple candidates.</li>
+    <li><strong>Activity assessment.</strong> We check recent posting activity to distinguish active users from dormant accounts, so your team engages where there's activity.</li>
+    <li><strong>Company account matching.</strong> For company records, we find the official business Twitter account and distinguish it from personal accounts of employees.</li>
 </ul>
+
+<h2>What Twitter Enrichment Provides</h2>
+<ul>
+    <li>Verified Twitter/X handle and profile URL for contacts and companies</li>
+    <li>Follower count and activity status (active, occasional, dormant)</li>
+    <li>Bio description for conversation context and personalization</li>
+    <li>Match confidence score for each profile assignment</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the match rate for Twitter profiles?</h3>
+            <p style="color: var(--color-text-secondary);">For B2B executives and professionals, 30-50% match rates are typical. Twitter usage is lower than LinkedIn in the B2B world. Senior executives in tech, media, and consulting have higher match rates. Contacts in industries like manufacturing and healthcare use Twitter less frequently.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you pull tweet content or just the profile URL?</h3>
+            <p style="color: var(--color-text-secondary);">We return the profile URL, handle, follower count, bio, and activity status. We don't scrape individual tweet content. Your team can click through to the profile to read recent posts for conversation prep and engagement opportunities.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Has the Twitter/X rebrand affected your detection?</h3>
+            <p style="color: var(--color-text-secondary);">The platform transition from Twitter to X hasn't affected our matching methodology. Profile URLs and API access remain functional under both domains. We reference both names (Twitter/X) since many users and systems still use 'Twitter' as the common name.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

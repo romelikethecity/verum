@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Which marketing platforms can you detect?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We reliably detect HubSpot, Marketo, Pardot (Salesforce Marketing Cloud Account Engagement), Mailchimp, ActiveCampaign, Klaviyo, Braze, Iterable, Customer.io, Drip, ConvertKit, Constant Contact, Campaign Monitor, and most other web-based platforms. Detection rates are highest for platforms that embed tracking code on the company's website."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you tell how actively a company uses their marketing platform?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can see signals of active use: tracking pixels on multiple pages, form implementations, and landing pages. But we can't measure email send volume, automation complexity, or feature utilization from the outside. Active use signals are directional \u2014 they show the platform is deployed, not how sophisticated the implementation is."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if a company is in the process of switching platforms?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "During migrations, we may detect both the old and new platform. We flag cases where multiple competing platforms are detected simultaneously, which often indicates a transition. This can actually be useful intelligence \u2014 a company mid-migration may need implementation services or complementary tools."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Marketing Automation Detection</h1>
+        <p class="page-hero__subtitle">Know what marketing stack your prospects use — it determines whether your product integrates, competes, or complements.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Marketing Automation Detection</h2>
-<p>Discover marketing automation platforms in use. Verum helps you append accurate martech usage to your B2B database from 50+ trusted sources.</p>
+<p>Marketing automation detection identifies which marketing platforms each company in your database uses: HubSpot, Marketo, Pardot, Mailchimp, ActiveCampaign, Klaviyo, and dozens of others. This technographic data is essential for companies selling marketing integrations, competitive products, or services that complement specific marketing stacks.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends martech usage</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>If you sell a Marketo integration, your entire addressable market is Marketo customers. If you sell email deliverability services, Mailchimp users are a different conversation than Pardot users. Without marketing stack data, you're pitching blindly — and finding out mid-call that the prospect uses a platform you don't support.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Detect Marketing Platforms</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Website technology scanning.</strong> We scan company websites for tracking pixels, form handlers, and JavaScript snippets that identify their marketing automation platform.</li>
+    <li><strong>Email header analysis.</strong> Marketing platform signatures in email headers reveal which tool is sending a company's email campaigns.</li>
+    <li><strong>Integration fingerprinting.</strong> We detect platform-specific integrations with CRMs, analytics tools, and ad platforms that confirm the marketing stack.</li>
+    <li><strong>Multi-tool detection.</strong> Many companies use multiple marketing tools. We identify the full stack, not just the primary platform.</li>
 </ul>
+
+<h2>What Marketing Automation Detection Shows</h2>
+<ul>
+    <li>Primary marketing automation platform identified for each company</li>
+    <li>Additional marketing tools detected (email, analytics, ads, social, SEO)</li>
+    <li>Platform tier or edition where detectable (HubSpot Free vs Enterprise, Marketo Standard vs Enterprise)</li>
+    <li>Detection confidence level based on number of confirming signals</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Which marketing platforms can you detect?</h3>
+            <p style="color: var(--color-text-secondary);">We reliably detect HubSpot, Marketo, Pardot (Salesforce Marketing Cloud Account Engagement), Mailchimp, ActiveCampaign, Klaviyo, Braze, Iterable, Customer.io, Drip, ConvertKit, Constant Contact, Campaign Monitor, and most other web-based platforms. Detection rates are highest for platforms that embed tracking code on the company's website.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you tell how actively a company uses their marketing platform?</h3>
+            <p style="color: var(--color-text-secondary);">We can see signals of active use: tracking pixels on multiple pages, form implementations, and landing pages. But we can't measure email send volume, automation complexity, or feature utilization from the outside. Active use signals are directional — they show the platform is deployed, not how sophisticated the implementation is.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if a company is in the process of switching platforms?</h3>
+            <p style="color: var(--color-text-secondary);">During migrations, we may detect both the old and new platform. We flag cases where multiple competing platforms are detected simultaneously, which often indicates a transition. This can actually be useful intelligence — a company mid-migration may need implementation services or complementary tools.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

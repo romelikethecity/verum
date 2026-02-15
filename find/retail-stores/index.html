@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How granular is your retail store categorization?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Very. Instead of \"clothing store,\" we'd tag a location as \"women's contemporary fashion boutique\" or \"outdoor and hiking apparel.\" Instead of \"food store,\" we distinguish between natural/organic grocery, specialty cheese shop, wine and spirits, and ethnic grocery. The level of detail depends on your targeting needs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you identify which POS system each store uses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In many cases, yes. We detect POS systems through web technology analysis (for stores with e-commerce integration), job postings mentioning specific systems, and hardware vendor signals. This is useful if you sell POS peripherals, payment processing, or integrations."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you build lists for niche retail categories?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We combine multiple data signals: business descriptions, product keywords from web presence, merchant category codes from payment processing, and specialty association memberships. If you need every fly fishing shop in Colorado or every organic baby clothing store on the East Coast, we can build that list."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Retail Stores</h1>
+      <p class="page-hero__subtitle">Generic business directories lump retail stores into broad categories. You need granular segmentation by what they actually sell.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Retail Stores</h2>
-<p>Discover retail businesses and store owners. Verum helps you build targeted lists of retail stores with complete, accurate contact information.</p>
+<p>Verum builds retail store lists with the granular categorization that generic business directories lack. We don't just give you "retail" as a category. We identify the specific store type, product focus, and operational details that let you target the right stores for your product or service.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Business databases classify retail stores into broad buckets like "Retail Trade" that are useless for targeting. A luxury boutique and a dollar store are both "retail," but they have nothing in common as prospects. Building a useful retail list requires product-level categorization that standard NAICS codes don't provide.</p>
+
+<h2>How We Build Retail Store Lists</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>Granular product category classification.</strong> We go beyond NAICS codes to classify stores by what they actually sell: women's apparel, outdoor gear, organic groceries, craft supplies, premium pet food, etc.</li>
+  <li><strong>Multi-source location verification.</strong> We cross-reference Google Maps, Yelp, local business directories, and sales tax records to build a complete, deduplicated list of retail locations in your target market.</li>
+  <li><strong>Chain vs. independent flagging.</strong> Each store is tagged as national chain, regional chain, local multi-store, or independent single-location. This determines who makes purchasing decisions and how to reach them.</li>
+  <li><strong>Storefront and format identification.</strong> Mall anchor, strip mall, standalone, downtown main street, pop-up, or marketplace/bazaar. Store format affects everything from fixtures to signage to POS needs.</li>
+  <li><strong>Contact enrichment.</strong> We find the store owner or manager's direct contact info, not just the store's customer phone number that rings to a sales associate.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Retail Store List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Store name and full address.</strong> Verified physical location with shopping center name, latitude/longitude, and territory mapping data.</li>
+  <li><strong>Product category and subcategory.</strong> Granular classification by merchandise type, not just "retail." This is the differentiator.</li>
+  <li><strong>Owner or manager contact.</strong> Name, email, and direct phone for the person who makes vendor and purchasing decisions at that location.</li>
+  <li><strong>Store format.</strong> Mall, strip mall, standalone, downtown, or online-only. Includes estimated square footage where available.</li>
+  <li><strong>Chain affiliation.</strong> National chain, regional chain, local multi-store, or independent. For chains, the parent brand is identified.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>How granular is your retail store categorization?</h3>
+<p>Very. Instead of "clothing store," we'd tag a location as "women's contemporary fashion boutique" or "outdoor and hiking apparel." Instead of "food store," we distinguish between natural/organic grocery, specialty cheese shop, wine and spirits, and ethnic grocery. The level of detail depends on your targeting needs.</p>
+
+<h3>Can you identify which POS system each store uses?</h3>
+<p>In many cases, yes. We detect POS systems through web technology analysis (for stores with e-commerce integration), job postings mentioning specific systems, and hardware vendor signals. This is useful if you sell POS peripherals, payment processing, or integrations.</p>
+
+<h3>How do you build lists for niche retail categories?</h3>
+<p>We combine multiple data signals: business descriptions, product keywords from web presence, merchant category codes from payment processing, and specialty association memberships. If you need every fly fishing shop in Colorado or every organic baby clothing store on the East Coast, we can build that list.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

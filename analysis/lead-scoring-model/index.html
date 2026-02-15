@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do you build the scoring model or just provide the data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We provide the clean, enriched data that the model needs, and we can help identify which attributes should carry the most weight based on historical conversion patterns. Building the actual model in your marketing automation platform is typically done by your marketing ops team. We make sure they have accurate inputs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How often should we re-enrich data for lead scoring?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Monthly is ideal for teams with high lead volume. Quarterly works for teams with slower growth. At minimum, re-enrich before any major changes to your scoring model so you're evaluating model changes against accurate data, not reacting to data quality artifacts."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you help us validate an existing scoring model?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We enrich your historical leads with current firmographic data and check whether high-scoring leads actually converted at higher rates than low-scoring ones. This validation often reveals that scoring models need recalibration because the data they were built on was incomplete or has changed."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Lead Scoring Model</h1>
+        <p class="page-hero__subtitle">Build a lead scoring model that works because it's built on clean, complete data.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Lead Scoring Model</h2>
-<p>Build data-driven lead scoring. Verum helps you understand your data and make better decisions with lead scoring.</p>
+<p>A lead scoring model assigns points to leads based on firmographic fit and behavioral engagement. The model is only as good as the data feeding it. We provide the clean, enriched data that makes scoring models accurate: standardized titles, verified firmographic fields, and complete records.</p>
 
-<h2>What We Analyze</h2>
+<p>You built a scoring model that assigns 20 points for 'VP or above' and 15 points for 'company size 200+'. But your title field has 500 unstandardized variations, and company size is blank on 40% of records. Half your MQLs are either false positives (scored high on bad data) or false negatives (scored low because data was missing).</p>
+
+<h2>How We Support Lead Scoring Models</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Data completion.</strong> We fill in the firmographic fields your scoring model depends on: company size, revenue, industry, geography. No more zero-score leads that are actually a perfect fit.</li>
+    <li><strong>Title standardization.</strong> We map every title to consistent seniority and function levels so your seniority-based scoring rules capture all the variations they should.</li>
+    <li><strong>Historical analysis.</strong> We enrich your historical closed-won and closed-lost data to help you identify which firmographic attributes should carry the most points in your model.</li>
+    <li><strong>Ongoing enrichment.</strong> We provide periodic re-enrichment to keep scoring inputs current as contacts change jobs and companies change size.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>Better Scoring Model Results</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>Fewer false positives because scoring inputs are verified and accurate, not guessed or missing</li>
+    <li>Fewer false negatives because complete data means good leads don't get scored low due to blank fields</li>
+    <li>Data-backed point assignments because historical analysis shows which attributes actually predict conversion</li>
+    <li>Consistent scoring across all lead sources because data is standardized before scoring runs</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you build the scoring model or just provide the data?</h3>
+            <p style="color: var(--color-text-secondary);">We provide the clean, enriched data that the model needs, and we can help identify which attributes should carry the most weight based on historical conversion patterns. Building the actual model in your marketing automation platform is typically done by your marketing ops team. We make sure they have accurate inputs.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How often should we re-enrich data for lead scoring?</h3>
+            <p style="color: var(--color-text-secondary);">Monthly is ideal for teams with high lead volume. Quarterly works for teams with slower growth. At minimum, re-enrich before any major changes to your scoring model so you're evaluating model changes against accurate data, not reacting to data quality artifacts.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you help us validate an existing scoring model?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We enrich your historical leads with current firmographic data and check whether high-scoring leads actually converted at higher rates than low-scoring ones. This validation often reveals that scoring models need recalibration because the data they were built on was incomplete or has changed.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

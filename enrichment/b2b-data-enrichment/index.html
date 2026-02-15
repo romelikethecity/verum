@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's your typical match rate for B2B enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on what you send us. If you have company domains, match rates are typically 70-85%. Company names alone match at 50-65% because of variations in how companies are named. Adding any second identifier (domain, phone, address) jumps match rates significantly. We report exact match rates for your specific file."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How is this different from buying a new list?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enrichment builds on your existing data \u2014 your CRM contacts, your pipeline accounts, your customer list. A new list gives you new records but doesn't improve what you already have. Enrichment fills gaps in records you're already working, which means your reps and campaigns get better data on accounts they're already touching."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you enrich data in our CRM directly?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We work with exported files (CSV, Excel) and return enriched files in the same format. We don't connect directly to your CRM because direct API integrations risk overwriting data your team entered manually. You control what gets imported back and what doesn't."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,54 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">B2B Data Enrichment</h1>
+        <p class="page-hero__subtitle">Your CRM has names and emails. It's missing everything you need to actually prioritize and sell.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>B2B Data Enrichment</h2>
-<p>Full-service B2B data enrichment for every use case. Verum helps you append accurate B2B data to your B2B database from 50+ trusted sources.</p>
+<p>B2B data enrichment appends firmographic, technographic, and contact-level data to your existing business records. We take what you have — often just a company name or domain — and return a complete profile with revenue, employee count, industry, technology stack, and decision-maker contacts.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends B2B data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Most B2B databases start strong and decay fast. Reps enter the minimum to log a deal. Marketing imports lists with just names and emails. Within a year, 30% of contacts change jobs and company data goes stale. Enrichment fills the gaps and refreshes what's outdated.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich B2B Data</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Company matching and identification.</strong> We match your records to our commercial databases using company name, domain, and fuzzy matching to find the right entity even with typos or abbreviations.</li>
+    <li><strong>Firmographic append.</strong> We add revenue range, employee count, founding year, headquarters location, industry codes (NAICS/SIC), and ownership structure.</li>
+    <li><strong>Technographic append.</strong> We identify the technology stack each company uses: CRM, marketing automation, analytics, e-commerce platform, and more.</li>
+    <li><strong>Contact-level enrichment.</strong> For existing contacts, we verify and update job titles, direct phone numbers, and email addresses. For new contacts, we identify decision-makers by role.</li>
+    <li><strong>Data quality scoring.</strong> Every enriched field gets a confidence score so you know which data points are verified and which are estimated.</li>
 </ul>
+
+<h2>What Enriched B2B Data Includes</h2>
+<ul>
+    <li>Complete company profiles with revenue, headcount, industry, and location data</li>
+    <li>Technology stack detection showing which tools each company uses</li>
+    <li>Verified contact information for decision-makers including direct dials and emails</li>
+    <li>Confidence scores on every enriched field so you can trust the data</li>
+    <li>Duplicate flagging where multiple records match the same company</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's your typical match rate for B2B enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">It depends on what you send us. If you have company domains, match rates are typically 70-85%. Company names alone match at 50-65% because of variations in how companies are named. Adding any second identifier (domain, phone, address) jumps match rates significantly. We report exact match rates for your specific file.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is this different from buying a new list?</h3>
+            <p style="color: var(--color-text-secondary);">Enrichment builds on your existing data — your CRM contacts, your pipeline accounts, your customer list. A new list gives you new records but doesn't improve what you already have. Enrichment fills gaps in records you're already working, which means your reps and campaigns get better data on accounts they're already touching.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you enrich data in our CRM directly?</h3>
+            <p style="color: var(--color-text-secondary);">We work with exported files (CSV, Excel) and return enriched files in the same format. We don't connect directly to your CRM because direct API integrations risk overwriting data your team entered manually. You control what gets imported back and what doesn't.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

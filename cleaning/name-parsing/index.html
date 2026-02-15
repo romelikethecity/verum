@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you handle international names?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We support naming conventions beyond Western first-last patterns. For East Asian names where family name comes first, we can parse to either convention based on your preference. For Spanish and Portuguese names with maternal and paternal surnames, we keep both in the last name field. We handle mononyms, patronymics, and other conventions as well."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if the source data has names in all caps?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We normalize capitalization as part of parsing. JOHN SMITH becomes John Smith. SARAH MCDONALD becomes Sarah McDonald with proper camelCase. We handle edge cases like McAllister, O'Brien, and DeLuca that trip up simple capitalization rules."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you parse names from a single combined field?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. That is the most common scenario. Whether your data has 'Smith, John' or 'John Smith' or 'Dr. John A. Smith Jr.', we parse it into separate first, middle, last, prefix, and suffix fields. We also handle concatenated fields where email addresses or full address blocks are mixed in with the name."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Name Parsing</h1>
+        <p class="page-hero__subtitle">First name, last name, prefix, suffix. We split them correctly every time.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Name Parsing</h2>
-<p>Parse and structure name fields correctly. Verum helps you maintain accurate, reliable name parsing across your entire database.</p>
+<p>Name parsing splits full name strings into their component parts: first name, middle name, last name, prefix, and suffix. It handles edge cases that break simple split-on-space logic, including multi-part last names, professional suffixes, and international naming conventions.</p>
 
-<h2>What We Do</h2>
+<p>Your data has 'John Smith MD' in one field, 'Dr. Sarah Van Der Berg' in another, and 'Robert Johnson Jr.' in a third. Splitting on spaces puts 'Van' in the first name field and 'MD' in the last name field. Your personalization emails open with 'Hi Van' and your deduplication fails because it is matching on mangled names.</p>
+
+<h2>What We Parse</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Standard names.</strong> First and last names get separated cleanly, even when the source data has no delimiter or uses inconsistent formatting.</li>
+    <li><strong>Multi-part surnames.</strong> Van Der Berg, De La Cruz, O'Brien, McDonald. We recognize compound surnames and keep them intact in the last name field.</li>
+    <li><strong>Professional suffixes.</strong> MD, PhD, CPA, Esq, RN. We extract these to a separate suffix field so they do not corrupt the last name.</li>
+    <li><strong>Generational suffixes.</strong> Jr., Sr., III, IV. We separate these from the last name while preserving the full legal name for formal contexts.</li>
+    <li><strong>Prefixes and titles.</strong> Dr., Mr., Mrs., Prof. We extract honorifics to a prefix field and strip them from the name fields used for personalization.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Clean Name Data</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Personalization that actually works because the first name field contains a first name, not a title or middle initial</li>
+    <li>Deduplication that matches correctly because last names are parsed consistently across all records</li>
+    <li>Mail merge and direct mail that formats names properly with correct salutations</li>
+    <li>Data imports that do not break because name components are in the right fields from the start</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle international names?</h3>
+            <p style="color: var(--color-text-secondary);">We support naming conventions beyond Western first-last patterns. For East Asian names where family name comes first, we can parse to either convention based on your preference. For Spanish and Portuguese names with maternal and paternal surnames, we keep both in the last name field. We handle mononyms, patronymics, and other conventions as well.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if the source data has names in all caps?</h3>
+            <p style="color: var(--color-text-secondary);">We normalize capitalization as part of parsing. JOHN SMITH becomes John Smith. SARAH MCDONALD becomes Sarah McDonald with proper camelCase. We handle edge cases like McAllister, O'Brien, and DeLuca that trip up simple capitalization rules.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you parse names from a single combined field?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. That is the most common scenario. Whether your data has 'Smith, John' or 'John Smith' or 'Dr. John A. Smith Jr.', we parse it into separate first, middle, last, prefix, and suffix fields. We also handle concatenated fields where email addresses or full address blocks are mixed in with the name.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

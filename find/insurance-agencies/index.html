@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you filter insurance agencies by lines of business?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. State licensing data includes lines of authority for each agency. We can filter by property and casualty, commercial lines, personal lines, life, health, benefits, surplus lines, crop, title, and other specialty lines. If you sell a benefits administration platform, we'll find agencies that write group health business."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you distinguish independent agencies from captive agents?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Captive agents are appointed with a single carrier (State Farm, Allstate, Farmers, etc.). Independent agencies have appointments with multiple carriers. We identify this through carrier appointment data and agency branding signals. This distinction is critical because independents and captives have completely different technology and vendor needs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you identify agencies by premium volume or book size?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Direct premium volume isn't publicly available for most agencies, but we can estimate size using producer counts, office locations, years in business, and carrier appointment breadth. For MGAs and larger agencies, industry ranking lists and AM Best data provide additional sizing signals."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Insurance Agencies</h1>
+      <p class="page-hero__subtitle">State insurance department producer databases are public but scattered across 50 different systems with 50 different formats.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Insurance Agencies</h2>
-<p>Locate insurance agencies and agents. Verum helps you build targeted lists of insurance agencies with complete, accurate contact information.</p>
+<p>Verum builds insurance agency lists by pulling from state Department of Insurance producer databases, NAIC records, and carrier appointment data. We identify independent agencies, captive agents, MGAs, and the principals who run them, with direct contact info that bypasses the CSR who answers the phone.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Insurance agencies are registered with state DOIs, but each state formats their data differently and searching is limited to one-at-a-time lookups. National databases like NIPR have the data but charge per query. And most agency directories don't distinguish between independent agents, captive agents, and brokers.</p>
+
+<h2>How We Build Insurance Agency Lists</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>State DOI producer database extraction.</strong> We pull active agency and individual producer licenses from all 50 state insurance departments, capturing agency name, license lines, and principal contacts.</li>
+  <li><strong>Channel classification.</strong> We tag each agency as independent, captive (State Farm, Allstate, Farmers), MGA/MGU, wholesaler, or direct writer based on carrier appointment patterns and organizational signals.</li>
+  <li><strong>Lines of business identification.</strong> License data tells us which lines each agency writes: P&C, life, health, benefits, surplus lines, crop, title, or specialty. We can filter to exactly the lines you care about.</li>
+  <li><strong>Agency principal and owner identification.</strong> We find the agency owner, not just the licensed producers. For independent agencies, this is the person who decides on E&O coverage, agency management systems, and carrier appointments.</li>
+  <li><strong>Carrier appointment mapping.</strong> Where available, we identify which carriers each agency is appointed with, revealing their book composition and market focus.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Insurance Agency List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Agency name and principal.</strong> The agency owner or managing principal with their direct email and phone number.</li>
+  <li><strong>Channel and business model.</strong> Independent, captive, MGA, wholesaler, or direct writer classification.</li>
+  <li><strong>Lines of authority.</strong> Which insurance lines they're licensed to write and which ones they actually focus on.</li>
+  <li><strong>Geographic footprint.</strong> States where they hold licenses, office locations, and primary service territory.</li>
+  <li><strong>Agency size indicators.</strong> Producer count, office count, and estimated premium volume where available.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you filter insurance agencies by lines of business?</h3>
+<p>Yes. State licensing data includes lines of authority for each agency. We can filter by property and casualty, commercial lines, personal lines, life, health, benefits, surplus lines, crop, title, and other specialty lines. If you sell a benefits administration platform, we'll find agencies that write group health business.</p>
+
+<h3>How do you distinguish independent agencies from captive agents?</h3>
+<p>Captive agents are appointed with a single carrier (State Farm, Allstate, Farmers, etc.). Independent agencies have appointments with multiple carriers. We identify this through carrier appointment data and agency branding signals. This distinction is critical because independents and captives have completely different technology and vendor needs.</p>
+
+<h3>Can you identify agencies by premium volume or book size?</h3>
+<p>Direct premium volume isn't publicly available for most agencies, but we can estimate size using producer counts, office locations, years in business, and carrier appointment breadth. For MGAs and larger agencies, industry ranking lists and AM Best data provide additional sizing signals.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

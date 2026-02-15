@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do you work directly in our CRM?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We work with exported data for safety and control. You export your CRM data, we clean it, you import the cleaned data back. This approach lets you review changes before they go live and avoids any risk of accidental data loss in your production CRM."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much does CRM data cleaning cost?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pricing is per record processed, starting at a few cents per record depending on what services you need. A typical mid-market CRM with 25,000 contacts runs a few hundred dollars for full cleaning. We will give you a specific quote after reviewing your data."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Will cleaning break our CRM automations?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It should fix them. Most automation failures are caused by dirty data: incorrect formatting, missing fields, duplicate triggers. We document every change we make so you can update any automation rules that depend on specific formatting. Most automations work better after cleaning."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">CRM Data Cleaning</h1>
+        <p class="page-hero__subtitle">Your CRM has years of accumulated problems. We fix them systematically.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
-<h2>CRM Data Cleaning</h2>
-<p>Complete CRM data cleanup and optimization. Verum helps you maintain accurate, reliable CRM data across your entire database.</p>
 
-<h2>What We Do</h2>
+<h2>Crm Data Cleaning</h2>
+<p>CRM data cleaning is a structured cleanup of your Salesforce, HubSpot, or other CRM database. It addresses the specific data quality issues that build up over time in CRM systems: duplicate records, inconsistent formatting, stale contact info, and incomplete fields that break your automation and reporting.</p>
+
+<p>CRM data degrades at 25-30% per year. Every rep who enters data slightly differently, every import that creates duplicates, every contact who changes jobs without updating your records. After two or three years, most CRMs are working against you more than for you.</p>
+
+<h2>How We Clean CRM Data</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Data audit.</strong> We analyze your CRM export to identify the scope and severity of data quality issues. You get a report before any cleaning starts.</li>
+    <li><strong>Standardization.</strong> Company names, titles, addresses, phone numbers, and industry fields all get normalized to consistent formats.</li>
+    <li><strong>Deduplication.</strong> Contacts, leads, accounts, and opportunities get deduplicated across CRM objects. Cross-object matches get flagged.</li>
+    <li><strong>Verification.</strong> Email addresses and phone numbers get verified against live sources to identify stale contact information.</li>
+    <li><strong>Enrichment.</strong> Missing fields get filled from external sources: company size, industry, revenue, direct phone numbers, LinkedIn profiles.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Clean CRM Benefits</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Reports and dashboards that reflect reality instead of duplicate-inflated numbers</li>
+    <li>Automation that fires correctly because the underlying data fields are clean and consistent</li>
+    <li>Sales reps who trust the CRM because the data they see is accurate and current</li>
+    <li>Marketing campaigns that reach the right person once, not the wrong person three times</li>
+    <li>A foundation for AI and automation features that require clean data to function</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you work directly in our CRM?</h3>
+            <p style="color: var(--color-text-secondary);">No. We work with exported data for safety and control. You export your CRM data, we clean it, you import the cleaned data back. This approach lets you review changes before they go live and avoids any risk of accidental data loss in your production CRM.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How much does CRM data cleaning cost?</h3>
+            <p style="color: var(--color-text-secondary);">Pricing is per record processed, starting at a few cents per record depending on what services you need. A typical mid-market CRM with 25,000 contacts runs a few hundred dollars for full cleaning. We will give you a specific quote after reviewing your data.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Will cleaning break our CRM automations?</h3>
+            <p style="color: var(--color-text-secondary);">It should fix them. Most automation failures are caused by dirty data: incorrect formatting, missing fields, duplicate triggers. We document every change we make so you can update any automation rules that depend on specific formatting. Most automations work better after cleaning.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

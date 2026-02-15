@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How much will my list shrink after cleaning?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically 15-30% for lists that haven't been cleaned in over a year. Purchased or rented lists shrink more. Organic lists from double opt-in forms shrink less. The contacts you lose are ones that were costing you money without any possibility of conversion."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Will cleaning affect my email marketing reporting?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, positively. Your open rates and click rates will increase because you're dividing by a smaller, real audience instead of an inflated total. Your actual reach hasn't changed \u2014 you just stopped counting phantom contacts. Most teams see a 15-25% improvement in apparent engagement rates after cleaning."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should I clean my list before or after switching ESPs?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Before. ESPs judge your sender reputation from the very first send. If your first campaign in a new ESP bounces 10%, you start with a damaged reputation that takes weeks to rebuild. Clean your list first so your first send on the new platform establishes a strong sender score."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Email Marketing Cleanup</h1>
+        <p class="page-hero__subtitle">Your email list is costing you money. Bad addresses, duplicates, and spam traps are hiding in it.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Email Marketing Cleanup</h2>
-<p>Clean email lists for better deliverability. Verum provides the clean, enriched data you need for effective email marketing.</p>
+<p>Email marketing cleanup removes the records from your marketing database that are hurting your performance: invalid emails, duplicate contacts, spam traps, role-based addresses, and disengaged subscribers. Every bad record in your list drags down deliverability and inflates your costs.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with email marketing because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>You're paying your ESP for 50,000 contacts but only 30,000 are real, engaged people. The other 20,000 are bounced addresses, duplicates, spam traps, and people who haven't opened an email in two years. They're costing you money every month and damaging your sender reputation with every send.</p>
 
-<h2>How Verum Helps</h2>
+<h2>What We Clean From Marketing Lists</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for email marketing</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Email verification.</strong> Every address gets validated for deliverability. Hard bounces, defunct domains, and nonexistent mailboxes get removed.</li>
+    <li><strong>Spam trap removal.</strong> Known spam trap addresses that ISPs use to catch senders with dirty lists get identified and removed before they damage your reputation.</li>
+    <li><strong>Duplicate removal.</strong> The same person receiving your email three times isn't engagement — it's annoyance. We deduplicate across email variants and typo corrections.</li>
+    <li><strong>Role address filtering.</strong> info@, sales@, team@ addresses that never convert get flagged for removal or separate treatment.</li>
+    <li><strong>Engagement analysis.</strong> Contacts who haven't opened or clicked in 12+ months get flagged as candidates for re-engagement campaigns or removal.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your email marketing challenges and we'll show you how clean data can transform your results.</p>
+<h2>Clean Marketing List Benefits</h2>
+<ul>
+    <li>Lower ESP costs because you're only paying for contacts who can actually receive your emails</li>
+    <li>Better deliverability because your sender reputation improves when bounce rates drop</li>
+    <li>More accurate marketing metrics because opens and clicks are measured against a real audience</li>
+    <li>Higher engagement rates because inactive contacts aren't diluting your performance numbers</li>
+    <li>Compliance with email regulations because suppressions and opt-outs are properly handled</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How much will my list shrink after cleaning?</h3>
+            <p style="color: var(--color-text-secondary);">Typically 15-30% for lists that haven't been cleaned in over a year. Purchased or rented lists shrink more. Organic lists from double opt-in forms shrink less. The contacts you lose are ones that were costing you money without any possibility of conversion.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Will cleaning affect my email marketing reporting?</h3>
+            <p style="color: var(--color-text-secondary);">Yes, positively. Your open rates and click rates will increase because you're dividing by a smaller, real audience instead of an inflated total. Your actual reach hasn't changed — you just stopped counting phantom contacts. Most teams see a 15-25% improvement in apparent engagement rates after cleaning.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Should I clean my list before or after switching ESPs?</h3>
+            <p style="color: var(--color-text-secondary);">Before. ESPs judge your sender reputation from the very first send. If your first campaign in a new ESP bounces 10%, you start with a damaged reputation that takes weeks to rebuild. Clean your list first so your first send on the new platform establishes a strong sender score.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

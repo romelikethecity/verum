@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do you need access to our financial systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We work with exported data. A CSV with customer name, revenue by period, product, and basic deal attributes is enough. We enrich the customer data on our end to add firmographic dimensions. Your financial data stays in your export and never enters our systems permanently."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you do revenue analysis without individual customer revenue data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It's less precise without customer-level revenue. We can analyze customer counts, deal counts, and win rates by segment, which are useful proxies. But the full value of revenue analysis comes from knowing what each customer actually pays so we can calculate segment-level revenue and LTV."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How does revenue analysis differ from what our finance team already does?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your finance team analyzes revenue by product and period. We add the customer dimension by enriching revenue data with firmographic attributes. This shows revenue by industry, company size, tech stack, and other dimensions that finance typically doesn't track because those fields aren't in the billing system."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Revenue Analysis</h1>
+        <p class="page-hero__subtitle">Where is your revenue coming from? Where should it come from? We answer both.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Revenue Analysis</h2>
-<p>Revenue trends and forecasting. Verum helps you understand your data and make better decisions with revenue analysis.</p>
+<p>Revenue analysis examines your revenue streams by customer segment, product, geography, and time period to identify patterns, opportunities, and risks. Combined with enriched customer data, it reveals which customer types generate the most revenue and where growth potential exists.</p>
 
-<h2>What We Analyze</h2>
+<p>Your top-line revenue is growing 20% year-over-year. But is that growth coming from one large customer or broad-based expansion? Are certain segments growing while others shrink? Is expansion revenue masking new business slowdowns? Without segment-level revenue analysis, you're steering with aggregate numbers.</p>
+
+<h2>How We Analyze Revenue</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Revenue segmentation.</strong> We break down revenue by customer segment, product line, geography, and cohort to show where growth is coming from.</li>
+    <li><strong>Customer enrichment.</strong> We append firmographic data to revenue records so you can analyze revenue by industry, company size, and other dimensions you don't currently track.</li>
+    <li><strong>Trend analysis.</strong> We identify revenue trends by segment over time: which segments are growing, plateauing, or declining.</li>
+    <li><strong>Concentration risk.</strong> We measure revenue concentration to identify dependence on specific customers, segments, or products that represent risk.</li>
+    <li><strong>Expansion opportunity.</strong> We identify customer segments with the highest expansion potential based on current penetration versus total available spend.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>Revenue Analysis Outcomes</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>Revenue breakdown by customer segment showing where your money actually comes from</li>
+    <li>Growth trend analysis by segment revealing which parts of your business are accelerating or decelerating</li>
+    <li>Concentration risk assessment highlighting dependence on specific customers or segments</li>
+    <li>Expansion opportunity ranking showing which segments have the most room to grow</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you need access to our financial systems?</h3>
+            <p style="color: var(--color-text-secondary);">No. We work with exported data. A CSV with customer name, revenue by period, product, and basic deal attributes is enough. We enrich the customer data on our end to add firmographic dimensions. Your financial data stays in your export and never enters our systems permanently.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you do revenue analysis without individual customer revenue data?</h3>
+            <p style="color: var(--color-text-secondary);">It's less precise without customer-level revenue. We can analyze customer counts, deal counts, and win rates by segment, which are useful proxies. But the full value of revenue analysis comes from knowing what each customer actually pays so we can calculate segment-level revenue and LTV.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How does revenue analysis differ from what our finance team already does?</h3>
+            <p style="color: var(--color-text-secondary);">Your finance team analyzes revenue by product and period. We add the customer dimension by enriching revenue data with firmographic attributes. This shows revenue by industry, company size, tech stack, and other dimensions that finance typically doesn't track because those fields aren't in the billing system.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

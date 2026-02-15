@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Why do sales teams care about investor data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Three reasons: (1) Investors influence vendor decisions, especially at early-stage companies. (2) Portfolio patterns predict technology adoption \u2014 if an investor's other companies all use Salesforce, the new portfolio company probably will too. (3) Investor introductions can open doors that cold outreach can't."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you identify which board member has the most influence?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can identify board composition and which firm each member represents, but we can't determine internal influence dynamics from public data. Generally, the lead investor from the most recent round has the most influence, but this isn't always the case. We provide the data \u2014 your team interprets the relationships."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you cover angel investors and individual investors?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When publicly disclosed, yes. Angel investors are harder to track because many investments aren't announced. We capture named angel investors from press releases and SEC filings. Undisclosed angel rounds appear as 'angel round' without named investors."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Investor Enrichment</h1>
+        <p class="page-hero__subtitle">Know who funds your target accounts — and what that tells you about their priorities and budget.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Investor Enrichment</h2>
-<p>Discover investors and board members for target accounts. Verum helps you append accurate investor data to your B2B database from 50+ trusted sources.</p>
+<p>Investor enrichment appends investor and board member data to your company records: who invested, which firms are on the board, and what those investors' portfolio patterns suggest about the company's priorities. This data is valuable for sales teams selling to VC-backed companies and for competitive intelligence.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends investor data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>The investor behind a company shapes its strategy. A company backed by a growth equity firm focused on efficiency will behave differently than one backed by an aggressive expansion-stage VC. Knowing who the investors are gives your sales team context about budget, priorities, and decision-making dynamics.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich Investor Data</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Investor identification.</strong> We identify all known investors for each company using Crunchbase, PitchBook, SEC filings, and press coverage.</li>
+    <li><strong>Board member mapping.</strong> We identify board members and board observers appointed by investors, who often influence vendor and technology decisions.</li>
+    <li><strong>Portfolio pattern analysis.</strong> We analyze each investor's portfolio to identify patterns — if they invest in companies using a specific technology, their new portfolio companies likely will too.</li>
+    <li><strong>Investor tier classification.</strong> We classify investors by type (angel, seed fund, Series A-C fund, growth equity, PE, corporate venture) and reputation tier.</li>
 </ul>
+
+<h2>What Investor Enrichment Reveals</h2>
+<ul>
+    <li>All known investors and investment firms associated with each company</li>
+    <li>Board members and board observers identified by their investing firm</li>
+    <li>Investor type classification (angel, VC, PE, corporate) for each backer</li>
+    <li>Portfolio patterns showing common technology adoption across an investor's companies</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Why do sales teams care about investor data?</h3>
+            <p style="color: var(--color-text-secondary);">Three reasons: (1) Investors influence vendor decisions, especially at early-stage companies. (2) Portfolio patterns predict technology adoption — if an investor's other companies all use Salesforce, the new portfolio company probably will too. (3) Investor introductions can open doors that cold outreach can't.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you identify which board member has the most influence?</h3>
+            <p style="color: var(--color-text-secondary);">We can identify board composition and which firm each member represents, but we can't determine internal influence dynamics from public data. Generally, the lead investor from the most recent round has the most influence, but this isn't always the case. We provide the data — your team interprets the relationships.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you cover angel investors and individual investors?</h3>
+            <p style="color: var(--color-text-secondary);">When publicly disclosed, yes. Angel investors are harder to track because many investments aren't announced. We capture named angel investors from press releases and SEC filings. Undisclosed angel rounds appear as 'angel round' without named investors.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How accurate is email validation?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our validation catches 95%+ of invalid addresses. The remaining edge cases are mostly catch-all domains where the server accepts everything, making it impossible to verify individual mailboxes. We flag these separately so you can decide how to handle them."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Will validation trigger spam filters or get us blacklisted?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We use SMTP-level verification that checks whether a mailbox exists without sending an actual email. There is no message content, no subject line, nothing that could trigger a spam filter. The receiving server sees a connection attempt, not a marketing email."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How often should we validate our email list?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At minimum, before every major campaign. For databases over 10,000 contacts, quarterly validation catches the natural 6-8% decay per quarter. If you are doing heavy outbound, monthly validation pays for itself in protected deliverability."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,54 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Email Validation</h1>
+        <p class="page-hero__subtitle">Bad emails tank your sender reputation. We catch them before they bounce.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Email Validation</h2>
-<p>Verify email addresses are real and deliverable. Verum helps you maintain accurate, reliable email validation across your entire database.</p>
+<p>Email validation checks whether addresses in your database are real, active, and capable of receiving mail. It goes beyond format checks to verify the mailbox actually exists at the receiving server.</p>
 
-<h2>What We Do</h2>
+<p>B2B databases decay at 25-30% per year as people change jobs, companies rebrand, and domains expire. Every bounced email hurts your sender score, and once that drops, even your good emails start landing in spam.</p>
+
+<h2>How We Validate Emails</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Syntax and format check.</strong> Catch typos, missing domains, and malformed addresses before they ever hit a mail server.</li>
+    <li><strong>Domain and MX verification.</strong> Confirm the domain exists, has active mail exchange records, and is configured to receive email.</li>
+    <li><strong>Mailbox verification.</strong> Ping the mail server to confirm the specific mailbox exists without sending an actual email.</li>
+    <li><strong>Role address detection.</strong> Flag generic addresses like info@, sales@, and support@ that rarely convert and often trigger spam filters.</li>
+    <li><strong>Disposable and temporary detection.</strong> Identify throwaway email services that people use to avoid giving their real address.</li>
+    <li><strong>Catch-all domain handling.</strong> Detect domains that accept all emails regardless of whether the mailbox exists, and flag them for manual review.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>What Clean Email Data Gets You</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Bounce rates under 2%, protecting your sender reputation and deliverability</li>
+    <li>Higher inbox placement rates across Gmail, Outlook, and corporate mail servers</li>
+    <li>Accurate campaign metrics that reflect real engagement, not delivery failures</li>
+    <li>Sales teams spending time on reachable contacts instead of dead addresses</li>
+    <li>Marketing automation that works because the underlying data is trustworthy</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How accurate is email validation?</h3>
+            <p style="color: var(--color-text-secondary);">Our validation catches 95%+ of invalid addresses. The remaining edge cases are mostly catch-all domains where the server accepts everything, making it impossible to verify individual mailboxes. We flag these separately so you can decide how to handle them.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Will validation trigger spam filters or get us blacklisted?</h3>
+            <p style="color: var(--color-text-secondary);">No. We use SMTP-level verification that checks whether a mailbox exists without sending an actual email. There is no message content, no subject line, nothing that could trigger a spam filter. The receiving server sees a connection attempt, not a marketing email.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How often should we validate our email list?</h3>
+            <p style="color: var(--color-text-secondary);">At minimum, before every major campaign. For databases over 10,000 contacts, quarterly validation catches the natural 6-8% decay per quarter. If you are doing heavy outbound, monthly validation pays for itself in protected deliverability.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

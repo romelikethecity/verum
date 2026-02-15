@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you tell us which companies moved recently?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If we have a previous version of your data, we can compare and flag address changes. Otherwise, we verify current addresses against USPS and Google Maps \u2014 if your address doesn't match what these sources show, the company likely moved. We flag discrepancies for review."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you provide all office locations or just headquarters?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "By default, we verify and enrich the addresses you already have. If you need a full list of all office locations for each company, we can append that as an additional enrichment step. This is most useful for enterprise accounts where you want to identify every office for field sales coverage."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle companies with virtual office addresses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We flag virtual office addresses (Regus, WeWork, etc.) so you know the listed address may not represent the company's actual working location. For companies using virtual offices, we try to identify their real operating location through other signals like job postings and employee LinkedIn locations."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Company Location Enrichment</h1>
+        <p class="page-hero__subtitle">Your company records have cities but no states, ZIP codes but wrong cities, and addresses from three years ago.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Company Location Enrichment</h2>
-<p>Append headquarters and office locations. Verum helps you append accurate location data to your B2B database from 50+ trusted sources.</p>
+<p>Company location enrichment verifies and completes the geographic data on your company records. We standardize addresses, add missing components (city, state, ZIP, county), geocode locations, and identify headquarters versus branch offices so your data works for territory planning and geographic targeting.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends location data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Location data gets messy because it's entered inconsistently and changes frequently. Companies move, open new offices, and close old ones. Your CRM might show a company in San Francisco when they relocated to Austin two years ago. Inaccurate location data breaks territory assignments and regional reporting.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich Location Data</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Address verification.</strong> We validate each company address against USPS and Google Maps to confirm it exists and is current.</li>
+    <li><strong>Missing field completion.</strong> If your records have a city but no state, or a ZIP but no county, we fill in every missing geographic component.</li>
+    <li><strong>HQ identification.</strong> We distinguish headquarters from branch offices, regional offices, and remote/virtual addresses.</li>
+    <li><strong>Metro area and territory mapping.</strong> Each address gets mapped to its MSA, DMA, county, and state for flexible geographic segmentation.</li>
 </ul>
+
+<h2>What Location-Enriched Records Include</h2>
+<ul>
+    <li>Complete standardized addresses with ZIP+4 for every company location</li>
+    <li>Headquarters flag distinguishing HQ from branch and satellite offices</li>
+    <li>Metro area (MSA), DMA, county, and state codes for territory assignment</li>
+    <li>Geocoded coordinates (lat/long) for proximity analysis and mapping</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you tell us which companies moved recently?</h3>
+            <p style="color: var(--color-text-secondary);">If we have a previous version of your data, we can compare and flag address changes. Otherwise, we verify current addresses against USPS and Google Maps — if your address doesn't match what these sources show, the company likely moved. We flag discrepancies for review.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you provide all office locations or just headquarters?</h3>
+            <p style="color: var(--color-text-secondary);">By default, we verify and enrich the addresses you already have. If you need a full list of all office locations for each company, we can append that as an additional enrichment step. This is most useful for enterprise accounts where you want to identify every office for field sales coverage.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle companies with virtual office addresses?</h3>
+            <p style="color: var(--color-text-secondary);">We flag virtual office addresses (Regus, WeWork, etc.) so you know the listed address may not represent the company's actual working location. For companies using virtual offices, we try to identify their real operating location through other signals like job postings and employee LinkedIn locations.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you filter financial advisors by AUM or practice size?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For RIA firms, yes. SEC filings (Form ADV) include reported AUM, which we use as a direct filter. For individual reps at broker-dealers, exact AUM isn't publicly disclosed, but we can estimate practice size using team size, branch location, and production signals."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle advisors who are dually registered?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We identify dual-registration (advisors holding both B-D and RIA registrations) and tag it in the data. This matters for compliance and product suitability conversations. About 30% of advisors operate in a hybrid model, and we flag exactly which registrations they hold."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you separate fee-only RIAs from commission-based advisors?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Form ADV disclosures include compensation structure. We tag advisors as fee-only, commission-only, or fee-and-commission. This is important if you sell products or services that only work within specific compensation models."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Financial Advisors</h1>
+      <p class="page-hero__subtitle">FINRA BrokerCheck and SEC IAPD are public, but extracting clean lists from them is a nightmare.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Financial Advisors</h2>
-<p>Find financial advisors and wealth managers. Verum helps you build targeted lists of financial advisors with complete, accurate contact information.</p>
+<p>Verum builds financial advisor lists by pulling from FINRA BrokerCheck, SEC Investment Adviser Public Disclosure, state securities regulators, and professional association databases. We deliver verified contact info for RIAs, broker-dealer reps, CFPs, and independent advisors that you can actually reach.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Financial advisor data is technically public through regulatory databases, but those systems are designed for compliance lookups, not list building. You can search one advisor at a time on BrokerCheck, but you can't export a list of every RIA in Texas with over $50M AUM. That's where we come in.</p>
+
+<h2>How We Build Financial Advisor Lists</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>FINRA BrokerCheck extraction.</strong> We systematically pull registered representative data including firm affiliations, license types (Series 7, 66, 65), and disclosed customer complaints.</li>
+  <li><strong>SEC IAPD mining.</strong> Investment Adviser Public Disclosure records give us RIA firm details, AUM figures, fee structures, and the individual Investment Adviser Representatives at each firm.</li>
+  <li><strong>CFP Board and designation matching.</strong> We cross-reference CFP, CFA, ChFC, and other designation holders to identify advisors with specific credentials you're targeting.</li>
+  <li><strong>Independent vs. wirehouse classification.</strong> We tag whether advisors work at wirehouses (Merrill, Morgan Stanley, UBS, Wells), regional B-Ds, or independent RIAs, since these segments buy differently.</li>
+  <li><strong>Direct contact discovery.</strong> We find personal emails and direct phone lines, not the branch receptionist number that rings to a compliance-monitored line.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Financial Advisor List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Advisor name and CRD number.</strong> Unique Central Registration Depository number that links to their full regulatory history.</li>
+  <li><strong>Firm and channel.</strong> Which firm they're registered through and whether it's a wirehouse, independent B-D, RIA, or hybrid.</li>
+  <li><strong>Licenses and designations.</strong> Series 7, 66, 65, CFP, CFA, ChFC, CLU, and other credentials that indicate their practice type.</li>
+  <li><strong>AUM and client indicators.</strong> For RIA firms, we include reported assets under management. For individual reps, we estimate practice size from available signals.</li>
+  <li><strong>Direct contact information.</strong> Verified email and phone number for the advisor, not the branch or compliance department.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you filter financial advisors by AUM or practice size?</h3>
+<p>For RIA firms, yes. SEC filings (Form ADV) include reported AUM, which we use as a direct filter. For individual reps at broker-dealers, exact AUM isn't publicly disclosed, but we can estimate practice size using team size, branch location, and production signals.</p>
+
+<h3>How do you handle advisors who are dually registered?</h3>
+<p>We identify dual-registration (advisors holding both B-D and RIA registrations) and tag it in the data. This matters for compliance and product suitability conversations. About 30% of advisors operate in a hybrid model, and we flag exactly which registrations they hold.</p>
+
+<h3>Can you separate fee-only RIAs from commission-based advisors?</h3>
+<p>Yes. Form ADV disclosures include compensation structure. We tag advisors as fee-only, commission-only, or fee-and-commission. This is important if you sell products or services that only work within specific compensation models.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

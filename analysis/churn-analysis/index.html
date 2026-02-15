@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How much historical data do we need for churn analysis?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At least 12 months of customer data with enough churned customers to identify patterns \u2014 typically 30+ churned accounts. If you have fewer churn events, the patterns will be directional but less statistically significant. More data generally produces stronger and more actionable patterns."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you predict which customers will churn next quarter?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can score customers for churn risk based on historical patterns. Customers scoring high on risk factors should get proactive attention from your CS team. We don't predict exact churn dates, but we identify which customers match the profile of previous churners."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you need our product usage data or just CRM data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CRM data alone can reveal firmographic churn patterns. But product usage data makes the analysis significantly more powerful because declining engagement is one of the strongest churn predictors. If you can share login frequency, feature adoption, or support ticket data, the analysis will be more actionable."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Churn Analysis</h1>
+        <p class="page-hero__subtitle">Your churned customers are telling you something. We help you hear it.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Churn Analysis</h2>
-<p>Identify churn patterns and prevention strategies. Verum helps you understand your data and make better decisions with churn analysis.</p>
+<p>Churn analysis examines why customers leave by identifying the firmographic, behavioral, and engagement patterns that precede cancellation. The goal isn't just to measure churn — it's to predict which current customers are at risk and what you can do about it before they decide to leave.</p>
 
-<h2>What We Analyze</h2>
+<p>Your churn rate is 15% annually. You know the number. But you don't know why certain customers leave and others stay for years. Is it company size? Industry? The persona who championed the purchase? Without understanding the pattern, every renewal is a coin flip.</p>
+
+<h2>How We Analyze Churn</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Churned customer enrichment.</strong> We append firmographic data to churned customer records so we can compare their profiles against retained customers across 20+ attributes.</li>
+    <li><strong>Pattern identification.</strong> We identify which firmographic and behavioral characteristics appear significantly more often in churned accounts than in retained ones.</li>
+    <li><strong>Risk scoring.</strong> We score your current customer base for churn risk based on the patterns found in historical churners.</li>
+    <li><strong>Cohort comparison.</strong> We compare cohorts by sign-up date, deal size, sales rep, and onboarding path to identify operational factors that influence retention.</li>
+    <li><strong>Leading indicator identification.</strong> We look for signals that precede churn by 3-6 months so your CS team has time to intervene.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>Churn Analysis Outcomes</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>A churn risk profile identifying the firmographic and behavioral attributes that predict customer departure</li>
+    <li>Risk scores for every current customer so your CS team can prioritize proactive retention efforts</li>
+    <li>Specific, actionable factors your team can address — not just 'these customers are at risk' but why</li>
+    <li>Input data for your lead scoring and qualification process to filter out prospects likely to churn</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How much historical data do we need for churn analysis?</h3>
+            <p style="color: var(--color-text-secondary);">At least 12 months of customer data with enough churned customers to identify patterns — typically 30+ churned accounts. If you have fewer churn events, the patterns will be directional but less statistically significant. More data generally produces stronger and more actionable patterns.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you predict which customers will churn next quarter?</h3>
+            <p style="color: var(--color-text-secondary);">We can score customers for churn risk based on historical patterns. Customers scoring high on risk factors should get proactive attention from your CS team. We don't predict exact churn dates, but we identify which customers match the profile of previous churners.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you need our product usage data or just CRM data?</h3>
+            <p style="color: var(--color-text-secondary);">CRM data alone can reveal firmographic churn patterns. But product usage data makes the analysis significantly more powerful because declining engagement is one of the strongest churn predictors. If you can share login frequency, feature adoption, or support ticket data, the analysis will be more actionable.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

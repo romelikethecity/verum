@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you handle ghost kitchens and virtual brands?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ghost kitchens and virtual brands are a growing segment and we track them. These locations often operate under multiple brand names from a single facility. We identify the physical location, the operating entity, and the various brands running out of each kitchen."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you filter restaurants by delivery availability?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We check for presence on DoorDash, Uber Eats, Grubhub, and other delivery platforms, as well as native online ordering on the restaurant's own website. This is useful if you sell delivery packaging, kitchen display systems, or delivery management tools."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How many restaurants can you find in a given market?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There are roughly 1 million restaurant locations in the US. In a major metro area, you're looking at 10,000-30,000+ restaurants. We can build lists for any geography from a single neighborhood to nationwide, filtered by whatever cuisine, size, and operational criteria matter to you."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Restaurants</h1>
+      <p class="page-hero__subtitle">Google Maps shows restaurants, but it doesn't tell you who owns them, what POS they run, or whether they're part of a larger group.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Restaurants</h2>
-<p>Find restaurants and food service businesses. Verum helps you build targeted lists of restaurants with complete, accurate contact information.</p>
+<p>Verum builds restaurant lists that go beyond what you'd get from a Google Maps scrape. We add owner information, operational details, and technology signals to every listing so you can actually segment and prioritize your outreach.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Restaurant lists from data vendors are typically just name, address, and phone number pulled from Google or Yelp. That's not enough to sell effectively. You need to know if it's owner-operated or part of a chain, what kind of food they serve, and whether they're the right size and type for your product.</p>
+
+<h2>How We Build Restaurant Lists</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>Health department permit data.</strong> Every restaurant needs a food service permit. County health department records give us the legal entity name, responsible party, and permit status that Google Maps doesn't have.</li>
+  <li><strong>Multi-source location matching.</strong> We cross-reference Google Maps, Yelp, health department records, and Secretary of State filings to build a single clean record per restaurant with no duplicates.</li>
+  <li><strong>Cuisine and service style classification.</strong> We tag restaurants by cuisine type (Italian, Mexican, American, Asian, etc.) and service model (QSR, fast casual, casual dining, fine dining, food truck, ghost kitchen).</li>
+  <li><strong>Chain vs. independent identification.</strong> We flag whether each location is an independent restaurant, part of a local multi-unit group, or a national/regional chain, and identify the parent brand.</li>
+  <li><strong>Operational enrichment.</strong> We add data points like years in business, liquor license status, estimated seat count, delivery platform availability, and online ordering capability.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Restaurant List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Restaurant name and verified address.</strong> USPS-validated location with latitude/longitude for mapping and territory assignment.</li>
+  <li><strong>Cuisine type and service model.</strong> Specific cuisine classification and whether it's QSR, fast casual, casual dining, fine dining, or another model.</li>
+  <li><strong>Owner or operator contact.</strong> Name, email, and phone number for the individual who makes purchasing decisions.</li>
+  <li><strong>Chain and brand affiliation.</strong> Independent, local chain, regional chain, or national chain, with parent brand identified for multi-location operations.</li>
+  <li><strong>Operational details.</strong> Liquor license, health permit status, estimated seat count, delivery availability, and years in operation.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>How do you handle ghost kitchens and virtual brands?</h3>
+<p>Ghost kitchens and virtual brands are a growing segment and we track them. These locations often operate under multiple brand names from a single facility. We identify the physical location, the operating entity, and the various brands running out of each kitchen.</p>
+
+<h3>Can you filter restaurants by delivery availability?</h3>
+<p>Yes. We check for presence on DoorDash, Uber Eats, Grubhub, and other delivery platforms, as well as native online ordering on the restaurant's own website. This is useful if you sell delivery packaging, kitchen display systems, or delivery management tools.</p>
+
+<h3>How many restaurants can you find in a given market?</h3>
+<p>There are roughly 1 million restaurant locations in the US. In a major metro area, you're looking at 10,000-30,000+ restaurants. We can build lists for any geography from a single neighborhood to nationwide, filtered by whatever cuisine, size, and operational criteria matter to you.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

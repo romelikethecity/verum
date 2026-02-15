@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you handle remote-first companies?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Remote-first companies typically still have a legal headquarters \u2014 usually where the company is incorporated or where the founder is located. We identify that address and flag the company as likely remote-first based on signals like job postings mentioning 'remote' and employees distributed across many locations on LinkedIn."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you provide time zones for each company?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We map each headquarters address to its time zone, which is useful for sales teams coordinating outreach timing. For companies with multiple offices, we provide the HQ time zone by default but can include all office time zones if needed."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about companies incorporated in Delaware but operating elsewhere?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Very common. We don't use incorporation address as headquarters \u2014 we identify the actual operating headquarters where the leadership team works. A company incorporated in Delaware but with their team in Austin gets listed with Austin as their HQ."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Headquarters Enrichment</h1>
+        <p class="page-hero__subtitle">Your CRM says they're in 'New York' — but is that Manhattan, Brooklyn, or a WeWork in Jersey City?</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Headquarters Enrichment</h2>
-<p>Find company HQ addresses for territory mapping. Verum helps you append accurate HQ addresses to your B2B database from 50+ trusted sources.</p>
+<p>Headquarters enrichment identifies and verifies the primary office location for each company in your database. We distinguish headquarters from branch offices, validate addresses against postal records, and append geographic metadata (metro area, county, state, time zone) for territory planning.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends HQ addresses</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Company location data in CRMs is notoriously unreliable. Addresses are entered inconsistently, companies list their registered agent's address instead of their actual office, and relocations go untracked. For territory assignment and geographic targeting, you need accurate HQ data — not whatever was typed into a form three years ago.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Verify Headquarters</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Multi-source verification.</strong> We cross-reference SEC filings, Google Maps, LinkedIn, and company websites to identify the real headquarters location.</li>
+    <li><strong>Branch vs HQ classification.</strong> We distinguish headquarters from regional offices, satellite locations, and registered agent addresses.</li>
+    <li><strong>Address standardization.</strong> HQ addresses are formatted to USPS standards with ZIP+4, geocoded, and mapped to metro area and county.</li>
+    <li><strong>Virtual office detection.</strong> We flag companies using virtual office providers (Regus, WeWork, etc.) so you know when the listed HQ may not be the real operating location.</li>
 </ul>
+
+<h2>What HQ-Enriched Records Include</h2>
+<ul>
+    <li>Verified headquarters address formatted to USPS standards</li>
+    <li>Metro area, county, state, and time zone for territory mapping</li>
+    <li>HQ confidence level based on source agreement</li>
+    <li>Virtual office flag for addresses at known virtual office providers</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle remote-first companies?</h3>
+            <p style="color: var(--color-text-secondary);">Remote-first companies typically still have a legal headquarters — usually where the company is incorporated or where the founder is located. We identify that address and flag the company as likely remote-first based on signals like job postings mentioning 'remote' and employees distributed across many locations on LinkedIn.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you provide time zones for each company?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We map each headquarters address to its time zone, which is useful for sales teams coordinating outreach timing. For companies with multiple offices, we provide the HQ time zone by default but can include all office time zones if needed.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about companies incorporated in Delaware but operating elsewhere?</h3>
+            <p style="color: var(--color-text-secondary);">Very common. We don't use incorporation address as headquarters — we identify the actual operating headquarters where the leadership team works. A company incorporated in Delaware but with their team in Austin gets listed with Austin as their HQ.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

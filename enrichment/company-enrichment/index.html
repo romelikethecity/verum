@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What if our company names are messy or abbreviated?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "That's normal. We use fuzzy matching, domain lookup, and multiple reference databases to resolve company names even when they're abbreviated, misspelled, or use a DBA instead of the legal name. Match rates on messy data are lower (50-65%) but including a website domain or phone number significantly improves resolution."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you determine revenue for private companies?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Revenue for private companies is estimated using models that factor in employee count, industry benchmarks, technology spend signals, and other proxy data. We report these as ranges (e.g., $10M-$25M) rather than exact figures, and flag them as estimates so you know the confidence level."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you distinguish between a company's HQ and branch offices?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We identify the headquarters address separately from branch and regional office locations. For companies with multiple locations, we can provide the full location list or just the HQ, depending on your use case."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Company Enrichment</h1>
+        <p class="page-hero__subtitle">Turn a list of company names into complete firmographic profiles with revenue, headcount, and industry data.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Company Enrichment</h2>
-<p>Append firmographic data to your account records. Verum helps you append accurate company data to your B2B database from 50+ trusted sources.</p>
+<p>Company enrichment appends detailed firmographic data to your business records. Starting from a company name or domain, we return revenue range, employee count, industry classification, headquarters location, founding year, ownership type, and subsidiary relationships.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends company data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Your CRM has thousands of company records with just a name and maybe a website. You can't segment, score, or route leads without knowing company size, industry, and location. Manual research takes 5-10 minutes per company. At scale, enrichment is the only way to fill these gaps.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich Company Data</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Entity resolution.</strong> We match your company names and domains to our reference databases, handling abbreviations, DBAs, and subsidiaries to find the right entity.</li>
+    <li><strong>Firmographic append.</strong> Each matched company gets revenue range, employee count, NAICS/SIC codes, founding year, and headquarters address.</li>
+    <li><strong>Ownership and hierarchy.</strong> We identify parent companies, subsidiaries, and franchise relationships so you can see the full corporate structure.</li>
+    <li><strong>Website and social profiles.</strong> We append the company's primary domain, LinkedIn company page, and other social media presence.</li>
 </ul>
+
+<h2>What Enriched Company Records Include</h2>
+<ul>
+    <li>Revenue range and employee count for sizing and segmentation</li>
+    <li>Industry codes (NAICS and SIC) for vertical targeting</li>
+    <li>Headquarters location with full address for territory planning</li>
+    <li>Parent/subsidiary relationships showing corporate hierarchy</li>
+    <li>Company LinkedIn URL and primary website domain</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if our company names are messy or abbreviated?</h3>
+            <p style="color: var(--color-text-secondary);">That's normal. We use fuzzy matching, domain lookup, and multiple reference databases to resolve company names even when they're abbreviated, misspelled, or use a DBA instead of the legal name. Match rates on messy data are lower (50-65%) but including a website domain or phone number significantly improves resolution.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you determine revenue for private companies?</h3>
+            <p style="color: var(--color-text-secondary);">Revenue for private companies is estimated using models that factor in employee count, industry benchmarks, technology spend signals, and other proxy data. We report these as ranges (e.g., $10M-$25M) rather than exact figures, and flag them as estimates so you know the confidence level.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you distinguish between a company's HQ and branch offices?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We identify the headquarters address separately from branch and regional office locations. For companies with multiple locations, we can provide the full location list or just the HQ, depending on your use case.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

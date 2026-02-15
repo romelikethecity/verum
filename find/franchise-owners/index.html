@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you find owners for any franchise brand?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can find franchisees for most major franchise systems. Some brands are easier than others depending on how their franchise agreements and local business filings are structured. QSR, fitness, automotive services, and hotel franchises tend to have the highest match rates."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you identify multi-unit franchise operators?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We link franchise locations by matching ownership entities across state filings. A single operator might own McDonald's locations under five different LLCs, but the registered agent or manager is the same person. We connect those dots and flag multi-unit operators with their total unit count."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you separate franchise locations from corporate-owned stores?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We distinguish between franchisee-owned locations and corporate-owned stores. If you only want to reach independent franchisees (not the brand's corporate operations team), we filter those out. This is important since the buying process is totally different."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Franchise Owners</h1>
+      <p class="page-hero__subtitle">Franchise directories list corporate headquarters, not the local franchisee who actually runs (and buys for) each location.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Franchise Owners</h2>
-<p>Locate franchise owners across brands. Verum helps you build targeted lists of franchise owners with complete, accurate contact information.</p>
+<p>Verum finds the individual franchisees behind the brand. We identify who owns each franchise location, how many units they operate, and how to reach them directly, bypassing corporate gatekeepers and the franchise brand's generic contact channels.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Franchise ownership is hidden by design. The franchisor's website shows location addresses but never the franchisee's name. Multi-unit operators control dozens of locations under different LLCs. And corporate marketing departments block vendors from contacting their franchisees directly.</p>
+
+<h2>How We Find Franchise Owners</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>FDD and state franchise filing analysis.</strong> Franchise Disclosure Documents filed with state regulators sometimes list franchisee names and territories, giving us a starting point for ownership identification.</li>
+  <li><strong>State business entity matching.</strong> Each franchise location is typically its own LLC. We match location addresses against Secretary of State filings to identify the individual owner behind each entity.</li>
+  <li><strong>Multi-unit operator grouping.</strong> We link franchise locations owned by the same person or entity, revealing the multi-unit operators who control 5, 10, or 50+ locations and have real purchasing power.</li>
+  <li><strong>Local business record cross-referencing.</strong> Property tax records, liquor licenses, health permits, and other local filings often list the franchisee's name when corporate directories don't.</li>
+  <li><strong>Direct contact verification.</strong> We find the franchisee's personal email and phone number, not the store's customer-facing line or corporate's vendor intake form.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Franchise Owner List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Franchisee name and contact info.</strong> The individual who owns and operates the location, with their personal email and direct phone number.</li>
+  <li><strong>Brand and concept.</strong> Which franchise system they operate under, and whether it's a QSR, retail, service, fitness, or other category.</li>
+  <li><strong>Unit count.</strong> How many locations they own and operate, which directly correlates with their purchasing budget and decision-making authority.</li>
+  <li><strong>Territory and location details.</strong> Physical addresses of all their locations, mapped to DMAs and metro areas.</li>
+  <li><strong>Ownership entity.</strong> The LLC or corporation name that holds the franchise agreement, useful for contract and legal purposes.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you find owners for any franchise brand?</h3>
+<p>We can find franchisees for most major franchise systems. Some brands are easier than others depending on how their franchise agreements and local business filings are structured. QSR, fitness, automotive services, and hotel franchises tend to have the highest match rates.</p>
+
+<h3>How do you identify multi-unit franchise operators?</h3>
+<p>We link franchise locations by matching ownership entities across state filings. A single operator might own McDonald's locations under five different LLCs, but the registered agent or manager is the same person. We connect those dots and flag multi-unit operators with their total unit count.</p>
+
+<h3>Can you separate franchise locations from corporate-owned stores?</h3>
+<p>Yes. We distinguish between franchisee-owned locations and corporate-owned stores. If you only want to reach independent franchisees (not the brand's corporate operations team), we filter those out. This is important since the buying process is totally different.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

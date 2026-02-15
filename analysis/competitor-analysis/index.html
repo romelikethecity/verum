@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you identify who uses a competitor's product?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Multiple methods: website technology scanning detects installed software, job postings mention required tools, integration marketplace profiles show active users, and review sites publish customer lists. No single source is complete, but combined they provide a useful picture of competitor install bases."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you tell us why we're losing to specific competitors?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can identify patterns in lost deals \u2014 if you lose more often to Competitor X in the healthcare vertical but win against them in technology, that's a targeting insight. The 'why' behind individual losses requires win/loss interview data, which is outside our scope, but the firmographic patterns are within it."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How current is competitive intelligence data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Technology detection is near real-time. Job postings reflect current hiring (last 30-90 days). Review site data is typically 6-12 months old. We timestamp all data sources so you know the freshness of each signal. We recommend refreshing competitive analysis every 6-12 months."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Competitor Analysis</h1>
+        <p class="page-hero__subtitle">Know who your prospects are comparing you to. We analyze the competitive landscape with data.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Competitor Analysis</h2>
-<p>Understand your competitive landscape. Verum helps you understand your data and make better decisions with competitor analysis.</p>
+<p>Competitor analysis examines your competitors' customer base, market positioning, and coverage to identify where you have advantages and where you're vulnerable. We use firmographic data, technographic signals, and market analysis to provide concrete competitive intelligence.</p>
 
-<h2>What We Analyze</h2>
+<p>You know your top 3 competitors by name. But you don't know which industries they're strongest in, what company size they dominate, or where they have gaps in coverage. Without data, your competitive strategy is based on what your sales team hears anecdotally in deal cycles.</p>
+
+<h2>How We Analyze Competitors</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Competitor customer identification.</strong> We identify companies that use your competitors' products through technographic detection, job posting analysis, and other signals.</li>
+    <li><strong>Segment comparison.</strong> We compare your customer base against competitors' customer bases by industry, company size, geography, and tech stack to see where each player is strongest.</li>
+    <li><strong>Gap analysis.</strong> We identify market segments where competitors are weak or absent — whitespace opportunities for your go-to-market strategy.</li>
+    <li><strong>Win/loss enrichment.</strong> If you share win/loss data, we enrich lost deals to identify whether you're losing to specific competitors in specific segments.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>Competitive Intelligence Deliverables</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>Competitor customer profiles showing which industries and company sizes each competitor serves best</li>
+    <li>Market coverage maps showing where competitors are concentrated and where gaps exist</li>
+    <li>Whitespace opportunities in segments where no competitor has strong coverage</li>
+    <li>Competitive positioning recommendations based on where your ICP overlaps with competitors and where it doesn't</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you identify who uses a competitor's product?</h3>
+            <p style="color: var(--color-text-secondary);">Multiple methods: website technology scanning detects installed software, job postings mention required tools, integration marketplace profiles show active users, and review sites publish customer lists. No single source is complete, but combined they provide a useful picture of competitor install bases.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you tell us why we're losing to specific competitors?</h3>
+            <p style="color: var(--color-text-secondary);">We can identify patterns in lost deals — if you lose more often to Competitor X in the healthcare vertical but win against them in technology, that's a targeting insight. The 'why' behind individual losses requires win/loss interview data, which is outside our scope, but the firmographic patterns are within it.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How current is competitive intelligence data?</h3>
+            <p style="color: var(--color-text-secondary);">Technology detection is near real-time. Job postings reflect current hiring (last 30-90 days). Review site data is typically 6-12 months old. We timestamp all data sources so you know the freshness of each signal. We recommend refreshing competitive analysis every 6-12 months.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the typical hit rate for C-suite contact data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For companies with 50+ employees, we typically find verified C-suite contacts for 70-80% of accounts. Smaller companies are harder because executives may not have a public digital footprint. Hit rates also vary by title \u2014 CEO and CTO are easier to find than COO or Chief Revenue Officer."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you verify that an executive is still in their role?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We cross-reference multiple sources: LinkedIn profile (current position), company website leadership page, recent press mentions, and SEC filings for public companies. If sources conflict, we flag the record as unverified rather than guess. Executive turnover is high enough that single-source verification isn't reliable."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you find executives below the C-suite?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. VP-level, Director-level, and other senior leadership contacts are available through our standard contact enrichment. C-suite enrichment specifically focuses on the top executive tier, but we can expand the scope to include VPs and Directors in specific departments."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">C-Suite Enrichment</h1>
+        <p class="page-hero__subtitle">Your database has company names. You need the CEO's direct line.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>C-Suite Enrichment</h2>
-<p>Find and enrich C-level executive contacts. Verum helps you append accurate C-suite contacts to your B2B database from 50+ trusted sources.</p>
+<p>C-suite enrichment identifies and appends contact information for executive-level decision-makers at your target companies. We find CEOs, CFOs, CTOs, COOs, CMOs, and other C-level executives with their direct email addresses, phone numbers, and LinkedIn profiles.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends C-suite contacts</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Enterprise sales requires reaching executives, but executive contact data is the hardest to find and fastest to go stale. C-suite turnover averages 15-20% annually. The CEO email in your CRM from last year might belong to someone who's been gone for six months. Generic info@ addresses don't reach decision-makers.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Find C-Suite Contacts</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Executive identification.</strong> We identify current C-suite members at each target company using SEC filings, LinkedIn, press releases, and company website leadership pages.</li>
+    <li><strong>Contact discovery.</strong> For each executive, we find direct email addresses (not generic company emails), direct phone numbers, and LinkedIn profile URLs.</li>
+    <li><strong>Verification and recency check.</strong> We verify that each executive is still in their role and that contact information is current — not leftover from a previous position.</li>
+    <li><strong>Reporting structure context.</strong> Where available, we identify the executive's direct reports and board relationships to map the decision-making structure.</li>
 </ul>
+
+<h2>What C-Suite Enrichment Delivers</h2>
+<ul>
+    <li>Verified names and titles for C-level executives at each target company</li>
+    <li>Direct email addresses (personal business email, not info@ or generic aliases)</li>
+    <li>Direct phone numbers and LinkedIn profile URLs</li>
+    <li>Tenure data showing how long each executive has been in their current role</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the typical hit rate for C-suite contact data?</h3>
+            <p style="color: var(--color-text-secondary);">For companies with 50+ employees, we typically find verified C-suite contacts for 70-80% of accounts. Smaller companies are harder because executives may not have a public digital footprint. Hit rates also vary by title — CEO and CTO are easier to find than COO or Chief Revenue Officer.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you verify that an executive is still in their role?</h3>
+            <p style="color: var(--color-text-secondary);">We cross-reference multiple sources: LinkedIn profile (current position), company website leadership page, recent press mentions, and SEC filings for public companies. If sources conflict, we flag the record as unverified rather than guess. Executive turnover is high enough that single-source verification isn't reliable.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you find executives below the C-suite?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. VP-level, Director-level, and other senior leadership contacts are available through our standard contact enrichment. C-suite enrichment specifically focuses on the top executive tier, but we can expand the scope to include VPs and Directors in specific departments.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

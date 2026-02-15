@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How accurate is intent data really?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Intent data is directional, not precise. It reliably identifies companies showing above-average research activity on relevant topics, but it can't tell you exactly who at the company is researching or how far along they are. Teams that treat it as a prioritization signal (work these accounts first) see better results than those who treat it as a lead (this person wants to buy)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What intent data sources do you use?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We aggregate from multiple providers rather than relying on one source. This includes Bombora, G2, TrustRadius review activity, and content consumption data. Each source has different coverage and methodology, so combining them gives a more complete picture than any single provider."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you show intent for accounts not already in our CRM?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, but it works best as an enrichment layer on your existing account list. We can also run intent analysis against your total addressable market to identify net-new accounts showing purchase signals, then add those to your target list with full firmographic data."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Buyer Intent Enrichment</h1>
+        <p class="page-hero__subtitle">Know which companies are actively researching your category before they fill out a form.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Buyer Intent Enrichment</h2>
-<p>Track in-market buyers for timely outreach. Verum helps you append accurate buyer intent to your B2B database from 50+ trusted sources.</p>
+<p>Buyer intent enrichment identifies companies showing active purchase signals for your product category. We append intent scores and topic signals to your account list so your team can prioritize companies that are in-market right now, not just companies that fit your ICP on paper.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends buyer intent</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Your ICP list has 5,000 accounts. Your team can only work 500 this quarter. Without intent data, you're prioritizing by gut feeling or company size. Intent signals tell you which of those 5,000 are actually researching solutions like yours this month — so your outreach arrives when buyers are ready to talk.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich with Intent Data</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Topic definition.</strong> We define the intent topics that matter for your business: your product category, competitor names, problem keywords, and related technology terms.</li>
+    <li><strong>Signal matching.</strong> We match your account list against intent data providers to identify which accounts are showing above-baseline research activity on your topics.</li>
+    <li><strong>Surge scoring.</strong> Accounts get scored based on how much their research activity exceeds their normal baseline — a company researching 3x more than usual is a stronger signal than one doing 1.2x.</li>
+    <li><strong>Timeline tracking.</strong> We flag when intent surges started and whether they're increasing or declining, so you can see buying cycle momentum.</li>
 </ul>
+
+<h2>What Intent-Enriched Data Reveals</h2>
+<ul>
+    <li>Intent scores for every account on your list showing who's actively researching your category</li>
+    <li>Topic-level breakdown showing which specific subjects each account is researching</li>
+    <li>Surge trend data showing whether buying interest is increasing or cooling</li>
+    <li>Competitive intent signals showing which accounts are also researching your competitors</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How accurate is intent data really?</h3>
+            <p style="color: var(--color-text-secondary);">Intent data is directional, not precise. It reliably identifies companies showing above-average research activity on relevant topics, but it can't tell you exactly who at the company is researching or how far along they are. Teams that treat it as a prioritization signal (work these accounts first) see better results than those who treat it as a lead (this person wants to buy).</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What intent data sources do you use?</h3>
+            <p style="color: var(--color-text-secondary);">We aggregate from multiple providers rather than relying on one source. This includes Bombora, G2, TrustRadius review activity, and content consumption data. Each source has different coverage and methodology, so combining them gives a more complete picture than any single provider.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you show intent for accounts not already in our CRM?</h3>
+            <p style="color: var(--color-text-secondary);">Yes, but it works best as an enrichment layer on your existing account list. We can also run intent analysis against your total addressable market to identify net-new accounts showing purchase signals, then add those to your target list with full firmographic data.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

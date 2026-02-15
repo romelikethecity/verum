@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you know who the decision-maker is?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We don't guess \u2014 you tell us which titles and roles make purchasing decisions for your product, and we find those people. If you sell marketing software, we find the VP of Marketing and CMO. If you sell IT infrastructure, we find the CTO and VP of Engineering. The definition comes from your ICP and sales process."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if our buyer persona varies by company size?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "That's common. At a 50-person company, the CEO might buy your product. At a 5,000-person company, it's a department head. We adjust our targeting criteria by company size segment so you get the right level of contact for each account."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you find decision-makers at companies outside the US?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, though coverage varies by country. LinkedIn-based identification works globally. Email and phone number verification has the best coverage in the US, Canada, UK, and Western Europe. For other regions, hit rates on contact details are lower but company and title data is still available."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Decision Maker Enrichment</h1>
+        <p class="page-hero__subtitle">Your prospects list has companies. You need the people who sign the purchase order.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Decision Maker Enrichment</h2>
-<p>Identify decision makers within accounts. Verum helps you append accurate decision makers to your B2B database from 50+ trusted sources.</p>
+<p>Decision-maker enrichment identifies and appends contact information for the people who make purchasing decisions at your target accounts. We find the right contacts by role and seniority — not just anyone at the company, but the specific titles that match your buyer personas.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends decision makers</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Selling to companies means selling to people, and the wrong person can't buy. Most databases have contacts, but not decision-makers. Your rep spends three weeks nurturing a manager who has to 'check with their boss.' Decision-maker enrichment puts your team in front of buyers, not influencers.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Find Decision-Makers</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Buyer persona mapping.</strong> We define which titles and roles are your primary decision-makers, influencers, and champions based on your sales process and ICP.</li>
+    <li><strong>Contact identification.</strong> For each target account, we identify people matching your buyer personas using LinkedIn, company websites, and organizational databases.</li>
+    <li><strong>Contact verification.</strong> Each identified decision-maker gets verified: is this person still in this role at this company with a working email and phone number?</li>
+    <li><strong>Buying committee mapping.</strong> Where possible, we identify multiple stakeholders per account to map the full buying committee, not just one contact.</li>
 </ul>
+
+<h2>What Decision-Maker Enrichment Delivers</h2>
+<ul>
+    <li>Named contacts matching your buyer personas at each target account</li>
+    <li>Verified direct email addresses and phone numbers for each decision-maker</li>
+    <li>Title, department, and seniority classification for every contact</li>
+    <li>Buying committee context showing multiple stakeholders per account where identified</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you know who the decision-maker is?</h3>
+            <p style="color: var(--color-text-secondary);">We don't guess — you tell us which titles and roles make purchasing decisions for your product, and we find those people. If you sell marketing software, we find the VP of Marketing and CMO. If you sell IT infrastructure, we find the CTO and VP of Engineering. The definition comes from your ICP and sales process.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if our buyer persona varies by company size?</h3>
+            <p style="color: var(--color-text-secondary);">That's common. At a 50-person company, the CEO might buy your product. At a 5,000-person company, it's a department head. We adjust our targeting criteria by company size segment so you get the right level of contact for each account.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you find decision-makers at companies outside the US?</h3>
+            <p style="color: var(--color-text-secondary);">Yes, though coverage varies by country. LinkedIn-based identification works globally. Email and phone number verification has the best coverage in the US, Canada, UK, and Western Europe. For other regions, hit rates on contact details are lower but company and title data is still available.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

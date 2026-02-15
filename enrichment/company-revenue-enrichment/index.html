@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How accurate are revenue estimates for private companies?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Revenue estimates are accurate to within one range band about 70% of the time. A company we estimate at $10M-$25M is very likely between $5M and $50M, but could be outside that range. The estimates are reliable enough for segmentation (SMB vs mid-market vs enterprise) but not for financial modeling."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you report a single number or a range?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ranges. We report revenue ranges (e.g., $10M-$25M) because single-number estimates imply a precision we can't deliver for private companies. The ranges are wide enough to be reliable and narrow enough to be useful for segmentation and lead scoring."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you estimate revenue for very small businesses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Small businesses (under $1M revenue) are the hardest to estimate accurately because they have fewer public signals. We can usually distinguish sub-$1M businesses from $1M-$5M businesses using employee count and website complexity, but finer granularity below $1M isn't reliable."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Company Revenue Enrichment</h1>
+        <p class="page-hero__subtitle">You can't prioritize accounts without knowing which ones can actually afford your product.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Company Revenue Enrichment</h2>
-<p>Append estimated annual revenue to accounts. Verum helps you append accurate revenue data to your B2B database from 50+ trusted sources.</p>
+<p>Company revenue enrichment appends estimated annual revenue data to your company records. For public companies, we use reported financials. For private companies, we estimate revenue using employee count, industry benchmarks, technology signals, and other proxy data to give you actionable size segmentation.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends revenue data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Revenue is the most requested and hardest to get firmographic data point. Private companies don't disclose it. Self-reported data on forms is unreliable. Without revenue data, you can't segment your market by company size, set pricing tiers, or calculate TAM. You end up treating a $5M company the same as a $500M company.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Estimate Company Revenue</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Public company financials.</strong> For public companies, we append actual reported revenue from SEC filings and financial databases.</li>
+    <li><strong>Private company estimation.</strong> We estimate private company revenue using models based on employee count, industry revenue-per-employee benchmarks, and technology spend signals.</li>
+    <li><strong>Revenue range assignment.</strong> Each company gets a revenue range (e.g., $1M-$5M, $5M-$10M, $10M-$25M) rather than a false-precision single number.</li>
+    <li><strong>Growth signal detection.</strong> Where possible, we flag companies showing revenue growth signals: hiring velocity, office expansion, and funding activity.</li>
 </ul>
+
+<h2>What Revenue-Enriched Data Shows</h2>
+<ul>
+    <li>Revenue range estimates for both public and private companies</li>
+    <li>Source flag indicating whether revenue is reported (public) or estimated (private)</li>
+    <li>Confidence scoring on estimates so you know how reliable each data point is</li>
+    <li>Revenue-based size segmentation (SMB, mid-market, enterprise) for targeting</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How accurate are revenue estimates for private companies?</h3>
+            <p style="color: var(--color-text-secondary);">Revenue estimates are accurate to within one range band about 70% of the time. A company we estimate at $10M-$25M is very likely between $5M and $50M, but could be outside that range. The estimates are reliable enough for segmentation (SMB vs mid-market vs enterprise) but not for financial modeling.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you report a single number or a range?</h3>
+            <p style="color: var(--color-text-secondary);">Ranges. We report revenue ranges (e.g., $10M-$25M) because single-number estimates imply a precision we can't deliver for private companies. The ranges are wide enough to be reliable and narrow enough to be useful for segmentation and lead scoring.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you estimate revenue for very small businesses?</h3>
+            <p style="color: var(--color-text-secondary);">Small businesses (under $1M revenue) are the hardest to estimate accurately because they have fewer public signals. We can usually distinguish sub-$1M businesses from $1M-$5M businesses using employee count and website complexity, but finer granularity below $1M isn't reliable.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

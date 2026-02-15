@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Will standardization lose any of our original data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We can preserve the original value in a separate field while adding the standardized version alongside it. This gives you the clean version for operations and the original for reference. Most teams eventually drop the originals once they confirm the standardization is correct."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How long does standardization take?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most standardization projects finish in 2-3 business days for databases under 50,000 records. The time is mostly in building and reviewing the mapping rules for your custom fields. Once the rules are approved, the actual transformation is fast."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you standardize data across multiple systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We take exports from all your systems, standardize them to the same rules, and deliver unified files. This is especially valuable before a system migration or integration project where data from different sources needs to match."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Data Standardization</h1>
+        <p class="page-hero__subtitle">Same data, different formats in every record. We make it consistent.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Data Standardization</h2>
-<p>Standardize formats across your entire database. Verum helps you maintain accurate, reliable data formats across your entire database.</p>
+<p>Data standardization transforms inconsistent field values across your database into uniform formats that your systems can process reliably. It covers everything from phone number formatting to industry categorization to address abbreviations, creating a consistent data layer that makes every downstream operation work better.</p>
 
-<h2>What We Do</h2>
+<p>Every data source, every sales rep, and every form submission applies different formatting conventions. The result is a database where the same information looks different in every record. Your systems cannot match them, your automation cannot filter them, and your reports cannot aggregate them.</p>
+
+<h2>What We Standardize</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Contact fields.</strong> Names get proper casing, phone numbers get E.164 format, emails get lowercase normalization, and titles get mapped to standard roles.</li>
+    <li><strong>Company fields.</strong> Company names get suffix normalization, industries get mapped to standard taxonomies, and revenue and employee counts get standardized ranges.</li>
+    <li><strong>Address fields.</strong> Street abbreviations follow USPS standards, states use two-letter codes, ZIP codes get +4 extensions, and international addresses follow local postal standards.</li>
+    <li><strong>Custom and picklist fields.</strong> Free-text entries that should be picklist values get mapped to your approved options. Misspellings and abbreviations get corrected.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Standardization Outcomes</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Consistent formatting across every record that makes your data look and function professionally</li>
+    <li>Automation triggers that fire correctly because field values match expected patterns</li>
+    <li>Accurate reports and dashboards because aggregation works when values are standardized</li>
+    <li>Faster data processing because downstream systems receive data in the format they expect</li>
+    <li>Better deduplication results because matching runs against standardized values</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Will standardization lose any of our original data?</h3>
+            <p style="color: var(--color-text-secondary);">No. We can preserve the original value in a separate field while adding the standardized version alongside it. This gives you the clean version for operations and the original for reference. Most teams eventually drop the originals once they confirm the standardization is correct.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How long does standardization take?</h3>
+            <p style="color: var(--color-text-secondary);">Most standardization projects finish in 2-3 business days for databases under 50,000 records. The time is mostly in building and reviewing the mapping rules for your custom fields. Once the rules are approved, the actual transformation is fast.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you standardize data across multiple systems?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We take exports from all your systems, standardize them to the same rules, and deliver unified files. This is especially valuable before a system migration or integration project where data from different sources needs to match.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

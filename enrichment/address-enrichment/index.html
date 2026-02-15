@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What address formats can you process?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Any format. We handle free-form single-line addresses, multi-field structured addresses, international formats, PO boxes, and military addresses. The messier your input, the more value standardization adds. We've processed addresses copied from handwritten forms, scraped from websites, and exported from legacy systems."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you tell if an address is a virtual office or coworking space?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We maintain a database of known virtual office providers (Regus, WeWork, Davinci, etc.) and flag addresses that match. This matters for B2B prospecting because a virtual office address often means the company is very small or doesn't have a physical presence in that location."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle international addresses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We support address standardization for most countries, though coverage depth varies. US and Canada have the highest accuracy because of USPS and Canada Post databases. European addresses use local postal authority standards. For other regions, we validate against Google Maps and commercial databases."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Address Enrichment</h1>
+        <p class="page-hero__subtitle">Bad addresses mean returned mail, wasted shipping costs, and CRM records you can't trust. We fix that.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Address Enrichment</h2>
-<p>Standardize and complete address information. Verum helps you append accurate address data to your B2B database from 50+ trusted sources.</p>
+<p>Address enrichment standardizes, validates, and completes the mailing addresses in your database. We match your records against USPS, Google Maps, and commercial address databases to correct typos, fill in missing ZIP+4 codes, and flag addresses that don't exist.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends address data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Your CRM has addresses in a dozen formats: some with suite numbers, some without. Some use abbreviations, some spell everything out. Some are just wrong. When 15-20% of business addresses change every year due to moves, closures, and new construction, even recently collected data degrades fast.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich Addresses</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>USPS standardization.</strong> We format every address to USPS CASS standards: proper abbreviations, correct ZIP+4, and delivery point validation.</li>
+    <li><strong>Geocoding and coordinates.</strong> Each address gets latitude/longitude coordinates for mapping, territory planning, and proximity analysis.</li>
+    <li><strong>Missing component completion.</strong> If your records have a city but no state, or a ZIP but no city, we fill in the missing pieces from postal databases.</li>
+    <li><strong>Commercial vs residential flagging.</strong> We identify whether each address is a commercial office, home-based business, or virtual office — important for B2B targeting.</li>
+    <li><strong>Multi-location linking.</strong> For companies with multiple addresses, we link all locations to the parent entity so you can see the full footprint.</li>
 </ul>
+
+<h2>What Enriched Address Data Looks Like</h2>
+<ul>
+    <li>Every address formatted to a single standard with ZIP+4 and delivery point barcode</li>
+    <li>Geocoded coordinates for mapping and territory assignment</li>
+    <li>Commercial/residential/virtual office classification for each location</li>
+    <li>County, metro area, and congressional district appended for geographic analysis</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What address formats can you process?</h3>
+            <p style="color: var(--color-text-secondary);">Any format. We handle free-form single-line addresses, multi-field structured addresses, international formats, PO boxes, and military addresses. The messier your input, the more value standardization adds. We've processed addresses copied from handwritten forms, scraped from websites, and exported from legacy systems.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you tell if an address is a virtual office or coworking space?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We maintain a database of known virtual office providers (Regus, WeWork, Davinci, etc.) and flag addresses that match. This matters for B2B prospecting because a virtual office address often means the company is very small or doesn't have a physical presence in that location.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle international addresses?</h3>
+            <p style="color: var(--color-text-secondary);">We support address standardization for most countries, though coverage depth varies. US and Canada have the highest accuracy because of USPS and Canada Post databases. European addresses use local postal authority standards. For other regions, we validate against Google Maps and commercial databases.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

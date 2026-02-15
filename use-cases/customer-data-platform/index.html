@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Should we clean data before loading it into the CDP or after?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Before. CDPs are designed to unify and activate data, not clean it. If you load dirty data, the CDP faithfully unifies the mess. Clean each source system's data before it flows into the CDP, and establish ongoing hygiene to keep quality high as new data enters."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Which CDPs do you work with?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We're data-agnostic. We clean and prepare data for Segment, mParticle, Tealium, Adobe CDP, Salesforce CDP, and any other platform. Since we work with exported files rather than direct integrations, the target CDP doesn't change our process."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you help with identity resolution across our source systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Cross-system identity resolution is one of our core capabilities. We match records across your CRM, marketing platform, support tool, and other systems using multiple matching strategies. The result is a master identity map that tells your CDP which records across systems belong to the same person."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Customer Data Platform</h1>
+        <p class="page-hero__subtitle">A CDP is only as good as the data you feed it. We make that data reliable.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Customer Data Platform</h2>
-<p>Feed your CDP with clean, enriched data. Verum provides the clean, enriched data you need for effective CDP data.</p>
+<p>Customer data platforms promise a unified customer view, but they can't fix dirty inputs. If your source systems have duplicates, inconsistent formatting, and missing fields, your CDP just consolidates the mess into one place. Clean data going in means useful insights coming out.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with CDP data because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>You invested in a CDP to unify customer data from your CRM, marketing platform, support tool, and product analytics. Now you have a unified view of a customer that shows three different email addresses, two different company names, and a title from 2021. The CDP unified the records but not the quality.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Prepare Data for CDPs</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for CDP data</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Cross-system deduplication.</strong> We deduplicate across all source systems before data enters the CDP, so the 'unified view' truly represents one record per person.</li>
+    <li><strong>Identity resolution.</strong> We match records across systems using email, phone, name, company, and behavioral data to create a single identity graph for each customer.</li>
+    <li><strong>Field standardization.</strong> We normalize field values across source systems so 'Enterprise' in Salesforce and 'ENT' in your marketing platform map to the same segment.</li>
+    <li><strong>Enrichment.</strong> Missing fields get filled from external sources so your CDP profiles are complete enough for meaningful segmentation and personalization.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your CDP data challenges and we'll show you how clean data can transform your results.</p>
+<h2>Clean CDP Data Results</h2>
+<ul>
+    <li>A unified customer view that's actually unified, not just multiple dirty records stitched together</li>
+    <li>Segmentation that works because the fields your rules depend on are standardized across sources</li>
+    <li>Personalization that's accurate because customer profiles reflect current, verified information</li>
+    <li>ROI on your CDP investment because the platform can do what it was designed to do with clean inputs</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Should we clean data before loading it into the CDP or after?</h3>
+            <p style="color: var(--color-text-secondary);">Before. CDPs are designed to unify and activate data, not clean it. If you load dirty data, the CDP faithfully unifies the mess. Clean each source system's data before it flows into the CDP, and establish ongoing hygiene to keep quality high as new data enters.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Which CDPs do you work with?</h3>
+            <p style="color: var(--color-text-secondary);">We're data-agnostic. We clean and prepare data for Segment, mParticle, Tealium, Adobe CDP, Salesforce CDP, and any other platform. Since we work with exported files rather than direct integrations, the target CDP doesn't change our process.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you help with identity resolution across our source systems?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Cross-system identity resolution is one of our core capabilities. We match records across your CRM, marketing platform, support tool, and other systems using multiple matching strategies. The result is a master identity map that tells your CDP which records across systems belong to the same person.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

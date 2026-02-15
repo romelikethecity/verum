@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many customers do we need for ICP analysis?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At least 50 for basic pattern identification, ideally 200+ for statistically significant insights. If you have fewer than 50, we can still enrich and analyze the data, but the patterns will be directional rather than definitive. We'll tell you the confidence level of each finding."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How long does an ICP analysis take?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically 1-2 weeks. The time is split between enriching your customer data (2-3 days) and running the analysis (3-5 days). You get a working session to review findings and refine the profile before we deliver the final report."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if our ICP analysis contradicts what our sales team believes?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It often does. That's the value. Data frequently reveals that the customers your team thinks are ideal aren't actually your highest-value or lowest-churn accounts. We present the data and the patterns. Your team decides how much to adjust their targeting based on the evidence."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">ICP Analysis</h1>
+        <p class="page-hero__subtitle">Your ideal customer profile should come from data, not guesswork. We do the analysis.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
-<h2>ICP Analysis</h2>
-<p>Build your Ideal Customer Profile with data. Verum helps you understand your data and make better decisions with ICP analysis.</p>
 
-<h2>What We Analyze</h2>
+<h2>Icp Analysis</h2>
+<p>ICP analysis examines your existing customer base to identify the firmographic, technographic, and behavioral patterns that distinguish your best customers from the rest. The result is a data-driven profile that tells you exactly who to target — and who to avoid.</p>
+
+<p>Most ICPs are built on assumptions: 'We sell to mid-market SaaS companies.' But when you analyze your actual closed-won deals, the pattern might be different. Maybe your best customers are 200-500 employee companies that recently raised Series B funding and use Salesforce. Without data, you're guessing.</p>
+
+<h2>How We Build Your ICP</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Customer data enrichment.</strong> We append 20+ firmographic and technographic fields to every customer record so there's enough data to find meaningful patterns.</li>
+    <li><strong>Cohort analysis.</strong> We segment your customers by value — top quartile, average, churned — and compare the firmographic profiles of each group.</li>
+    <li><strong>Pattern identification.</strong> We identify which attributes correlate with your best customers: industry, size, tech stack, growth stage, geography, and other factors.</li>
+    <li><strong>Negative ICP mapping.</strong> We identify patterns in churned or low-value customers so you know who to avoid, not just who to target.</li>
+    <li><strong>Deliverable profile.</strong> You get a documented ICP with specific criteria, confidence levels, and the data to back every recommendation.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>What You Get From ICP Analysis</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>A specific, data-backed customer profile with firmographic and technographic criteria your team can use immediately</li>
+    <li>Clear scoring criteria for lead qualification and prioritization based on ICP fit</li>
+    <li>A negative ICP that helps your team disqualify poor-fit prospects early in the sales cycle</li>
+    <li>Confidence that your targeting is based on what actually works, not what your team assumes works</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many customers do we need for ICP analysis?</h3>
+            <p style="color: var(--color-text-secondary);">At least 50 for basic pattern identification, ideally 200+ for statistically significant insights. If you have fewer than 50, we can still enrich and analyze the data, but the patterns will be directional rather than definitive. We'll tell you the confidence level of each finding.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How long does an ICP analysis take?</h3>
+            <p style="color: var(--color-text-secondary);">Typically 1-2 weeks. The time is split between enriching your customer data (2-3 days) and running the analysis (3-5 days). You get a working session to review findings and refine the profile before we deliver the final report.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if our ICP analysis contradicts what our sales team believes?</h3>
+            <p style="color: var(--color-text-secondary);">It often does. That's the value. Data frequently reveals that the customers your team thinks are ideal aren't actually your highest-value or lowest-churn accounts. We present the data and the patterns. Your team decides how much to adjust their targeting based on the evidence.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

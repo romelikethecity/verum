@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Does funding data only cover VC-backed startups?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Primarily, yes. Funding databases are strongest for venture-backed companies. We also capture PE acquisitions, debt financing rounds, and public company capital raises where reported. Bootstrapped companies won't appear in funding databases, but we can flag them as 'no known funding' so you can filter accordingly."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How quickly do new funding rounds show up?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most rounds appear in databases within 1-2 weeks of public announcement. Some rounds are announced months after closing. We use the most recent data available, but there's inherently a lag between when money changes hands and when it's publicly reported."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you filter our list to only show recently funded companies?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, that's one of the most common uses. We can enrich your full account list and then flag or segment by companies that raised in the last 3, 6, or 12 months. This gives your sales team a prioritized outbound list of accounts with confirmed budget."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Company Funding Enrichment</h1>
+        <p class="page-hero__subtitle">Append funding history to your accounts so you can prioritize companies with fresh capital to spend.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Company Funding Enrichment</h2>
-<p>Track funding rounds, amounts, and investors. Verum helps you append accurate funding data to your B2B database from 50+ trusted sources.</p>
+<p>Company funding enrichment adds investment history to your company records: total funding raised, most recent round, round size, investors, and valuation where available. This data helps sales teams prioritize accounts that have recently raised capital and are likely scaling their vendor spend.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends funding data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>A company that raised $50M in Series C last quarter is a very different prospect than one that's been bootstrapped for 10 years. Without funding data, they look identical in your CRM. Funding enrichment separates companies with budget and growth mandates from those that aren't spending.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich Funding Data</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Funding database matching.</strong> We match your company list against Crunchbase, PitchBook, and other funding databases to find investment history.</li>
+    <li><strong>Round-level detail.</strong> For each company, we append every known funding round: date, round type (seed, A, B, etc.), amount raised, and lead investors.</li>
+    <li><strong>Recency scoring.</strong> Companies are flagged by how recently they raised — last 3 months, 6 months, or 12 months — since recent funding is the strongest spending signal.</li>
+    <li><strong>Investor context.</strong> We identify the lead investors and their portfolio patterns, which can indicate what the company will spend on next.</li>
 </ul>
+
+<h2>What Funding Enrichment Reveals</h2>
+<ul>
+    <li>Total funding raised and most recent round details for each company</li>
+    <li>Round type, amount, date, and lead investors for targeting by growth stage</li>
+    <li>Recency flags showing which companies raised in the last 90 days</li>
+    <li>Funding stage classification (bootstrapped, seed, early, growth, late, public)</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Does funding data only cover VC-backed startups?</h3>
+            <p style="color: var(--color-text-secondary);">Primarily, yes. Funding databases are strongest for venture-backed companies. We also capture PE acquisitions, debt financing rounds, and public company capital raises where reported. Bootstrapped companies won't appear in funding databases, but we can flag them as 'no known funding' so you can filter accordingly.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How quickly do new funding rounds show up?</h3>
+            <p style="color: var(--color-text-secondary);">Most rounds appear in databases within 1-2 weeks of public announcement. Some rounds are announced months after closing. We use the most recent data available, but there's inherently a lag between when money changes hands and when it's publicly reported.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you filter our list to only show recently funded companies?</h3>
+            <p style="color: var(--color-text-secondary);">Yes, that's one of the most common uses. We can enrich your full account list and then flag or segment by companies that raised in the last 3, 6, or 12 months. This gives your sales team a prioritized outbound list of accounts with confirmed budget.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

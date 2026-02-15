@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you distinguish practice owners from associate dentists?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We cross-reference the business entity's registered agent and officers with the dentists listed at that practice location in NPI and state board records. Associate dentists list the practice as their work address but aren't on the corporate filings. Owner-dentists appear on both."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you flag which practices are owned by DSOs?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We track the major dental service organizations and their acquisition activity. We flag DSO-affiliated practices and identify the parent company, which is important because the buying process is completely different at a DSO practice versus an independent one."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about dental practices with multiple owners or partners?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We identify all partners listed on corporate filings and flag the managing partner or majority owner. For group practices, we can also identify the office manager or practice administrator who handles vendor relationships day-to-day."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Dental Practice Owners</h1>
+      <p class="page-hero__subtitle">You need the dentist who owns the practice, not the receptionist who answers the phone.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Dental Practice Owners</h2>
-<p>Contact dental practice owners directly. Verum helps you build targeted lists of dental practice owners with complete, accurate contact information.</p>
+<p>Verum identifies the actual owners of dental practices by cross-referencing state dental board records, NPI databases, and corporate filings. We separate the owner-dentists from the associates, and we find DSO affiliations that change who you should actually be pitching.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Dental practice ownership has gotten complicated. DSOs now control about 10% of all practices, and that number keeps climbing. A practice might have the founding dentist's name on the sign but be owned by a private equity-backed group. If you're selling to the wrong person, you're wasting every call.</p>
+
+<h2>How We Identify Dental Practice Owners</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>State dental board license matching.</strong> We pull active dental licenses and match them against practice registrations to identify which dentist holds ownership, not just which ones practice there.</li>
+  <li><strong>Corporate entity analysis.</strong> Secretary of State filings reveal the LLC or PC structure behind the practice name, showing us the actual ownership entity and registered agents.</li>
+  <li><strong>DSO affiliation detection.</strong> We flag practices owned by dental service organizations using acquisition records, management agreement signals, and brand network mapping.</li>
+  <li><strong>NPI database enrichment.</strong> National Provider Identifier records give us the owner-dentist's specialty, practice address, and taxonomy codes that indicate their service mix.</li>
+  <li><strong>Direct contact verification.</strong> We find and verify the owner's personal email and direct phone line, bypassing the front desk and office manager gatekeepers.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Dental Practice Owner List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Owner-dentist name and credentials.</strong> DDS/DMD designation, specialty certifications, and years in practice based on license issue dates.</li>
+  <li><strong>Ownership structure.</strong> Solo owner, partnership, or DSO-affiliated. If DSO-owned, which group and who the local decision-maker is.</li>
+  <li><strong>Direct contact info.</strong> Personal email and direct phone number for the owner, not the practice's general line.</li>
+  <li><strong>Practice details.</strong> Number of locations, operatories (where available), specialties offered, and whether they accept Medicaid/Medicare.</li>
+  <li><strong>NPI and license numbers.</strong> Useful for compliance verification and cross-referencing with insurance and benefits databases.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>How do you distinguish practice owners from associate dentists?</h3>
+<p>We cross-reference the business entity's registered agent and officers with the dentists listed at that practice location in NPI and state board records. Associate dentists list the practice as their work address but aren't on the corporate filings. Owner-dentists appear on both.</p>
+
+<h3>Can you flag which practices are owned by DSOs?</h3>
+<p>Yes. We track the major dental service organizations and their acquisition activity. We flag DSO-affiliated practices and identify the parent company, which is important because the buying process is completely different at a DSO practice versus an independent one.</p>
+
+<h3>What about dental practices with multiple owners or partners?</h3>
+<p>We identify all partners listed on corporate filings and flag the managing partner or majority owner. For group practices, we can also identify the office manager or practice administrator who handles vendor relationships day-to-day.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

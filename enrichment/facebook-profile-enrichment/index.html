@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Why Facebook and not just LinkedIn?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For B2B enterprise companies, LinkedIn is more relevant. But for local businesses, restaurants, retail stores, healthcare practices, and B2C companies, Facebook is where they're most active. If you sell to SMBs or local businesses, Facebook presence data is more valuable than LinkedIn for those segments."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you get data from Facebook pages or just the URL?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We extract publicly available data: page URL, follower count, category, posting frequency, and whether the page is verified. We can't access private page analytics or advertising data \u2014 that requires the business's own Facebook access."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about personal Facebook profiles of business owners?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We only match to Facebook business pages, not personal profiles. Personal profile matching creates privacy concerns and isn't appropriate for B2B outreach. If you need to reach a specific person, LinkedIn profile enrichment is the better approach."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Facebook Profile Enrichment</h1>
+        <p class="page-hero__subtitle">For local businesses and B2C companies, Facebook is where the decision-maker actually is.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Facebook Profile Enrichment</h2>
-<p>Find and match Facebook profiles for your B2B contacts. Verum helps you append accurate facebook profiles to your B2B database from 50+ trusted sources.</p>
+<p>Facebook profile enrichment appends Facebook business page URLs and key metrics to your company records. For B2C companies, local businesses, and SMBs, Facebook is often the primary marketing channel and the best way to research a company before outreach. We find and link the right Facebook page to each business in your database.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends facebook profiles</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Facebook pages are easy to find one at a time but painful at scale. Many businesses have multiple pages, inactive pages, or pages under different names than their legal entity. Manual searching takes 3-5 minutes per company and often links to the wrong page. Automated matching handles the scale problem.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Find Facebook Profiles</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Name and domain matching.</strong> We search Facebook's business directory using company name, domain, and location to find the most likely official page.</li>
+    <li><strong>Page verification.</strong> We validate that the found page belongs to the right company by cross-referencing address, phone number, and website links on the page.</li>
+    <li><strong>Metrics extraction.</strong> For each matched page, we extract follower count, posting frequency, and page category to give you engagement context.</li>
+    <li><strong>Deduplication.</strong> We identify and flag businesses with multiple Facebook pages, linking to the primary active page.</li>
 </ul>
+
+<h2>What Facebook Enrichment Provides</h2>
+<ul>
+    <li>Facebook business page URL matched and verified for each company</li>
+    <li>Follower count and page category for audience sizing</li>
+    <li>Activity level indicator (active, inactive, abandoned) based on posting frequency</li>
+    <li>Page verification status (verified badge, claimed, unclaimed)</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Why Facebook and not just LinkedIn?</h3>
+            <p style="color: var(--color-text-secondary);">For B2B enterprise companies, LinkedIn is more relevant. But for local businesses, restaurants, retail stores, healthcare practices, and B2C companies, Facebook is where they're most active. If you sell to SMBs or local businesses, Facebook presence data is more valuable than LinkedIn for those segments.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you get data from Facebook pages or just the URL?</h3>
+            <p style="color: var(--color-text-secondary);">We extract publicly available data: page URL, follower count, category, posting frequency, and whether the page is verified. We can't access private page analytics or advertising data — that requires the business's own Facebook access.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about personal Facebook profiles of business owners?</h3>
+            <p style="color: var(--color-text-secondary);">We only match to Facebook business pages, not personal profiles. Personal profile matching creates privacy concerns and isn't appropriate for B2B outreach. If you need to reach a specific person, LinkedIn profile enrichment is the better approach.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

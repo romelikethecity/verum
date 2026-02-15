@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many firmographic fields do you append?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our standard firmographic enrichment includes 15+ fields: company name (legal and DBA), revenue range, employee count, NAICS code, SIC code, founding year, headquarters address, city, state, ZIP, metro area, parent company, ownership type, company LinkedIn URL, and primary website domain. We can add custom fields based on your specific needs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the match rate for firmographic enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For B2B companies with a website domain in your data, expect 70-85% match rates. Company name alone matches at 50-65% due to name variations. Adding any second identifier (domain, phone, address, LinkedIn URL) significantly improves matching. We report exact match rates for your file."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you enrich our data on an ongoing basis?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our standard delivery is a one-time enrichment of a file you send us. For ongoing enrichment, we can schedule quarterly or monthly refresh passes where we re-enrich your database to catch changes. This is recommended for large, actively-used databases where data freshness matters."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,54 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Firmographic Enrichment</h1>
+        <p class="page-hero__subtitle">Revenue, headcount, industry, location, ownership — the five fields that turn a name into a prospect.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Firmographic Enrichment</h2>
-<p>Add company size, revenue, industry, and location data. Verum helps you append accurate firmographics to your B2B database from 50+ trusted sources.</p>
+<p>Firmographic enrichment appends the core company attributes that make B2B targeting possible: revenue range, employee count, industry classification, headquarters location, founding year, ownership type, and corporate hierarchy. These are the fields your lead scoring, territory assignment, and ICP matching depend on.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends firmographics</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Your CRM has 50,000 company records. Without firmographic data, they're just names. You can't segment by size, filter by industry, or assign territories. Your reps treat a 20-person startup the same as a Fortune 500 division. Firmographic enrichment gives every record the data points needed for intelligent prioritization.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich Firmographic Data</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Company identification.</strong> We resolve your company names and domains to specific entities in our reference databases, handling DBAs, subsidiaries, and name variations.</li>
+    <li><strong>Revenue and sizing.</strong> Each company gets a revenue range estimate and employee count from a combination of public filings, LinkedIn, and commercial databases.</li>
+    <li><strong>Industry classification.</strong> We assign NAICS and SIC codes based on the company's primary business activity, not just what they self-report.</li>
+    <li><strong>Location and hierarchy.</strong> Headquarters address, parent company identification, and subsidiary relationships complete the firmographic profile.</li>
+    <li><strong>Ownership type.</strong> We classify ownership as public, private, PE-backed, non-profit, or government entity — each has different buying behaviors.</li>
 </ul>
+
+<h2>What a Firmographic-Enriched Record Looks Like</h2>
+<ul>
+    <li>Revenue range and employee count for size-based segmentation and lead scoring</li>
+    <li>NAICS and SIC codes for industry targeting and vertical campaigns</li>
+    <li>Headquarters address with metro area and region for territory assignment</li>
+    <li>Parent company and subsidiary relationships for enterprise account mapping</li>
+    <li>Ownership type (public, private, PE-backed, non-profit) for go-to-market strategy</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many firmographic fields do you append?</h3>
+            <p style="color: var(--color-text-secondary);">Our standard firmographic enrichment includes 15+ fields: company name (legal and DBA), revenue range, employee count, NAICS code, SIC code, founding year, headquarters address, city, state, ZIP, metro area, parent company, ownership type, company LinkedIn URL, and primary website domain. We can add custom fields based on your specific needs.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the match rate for firmographic enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">For B2B companies with a website domain in your data, expect 70-85% match rates. Company name alone matches at 50-65% due to name variations. Adding any second identifier (domain, phone, address, LinkedIn URL) significantly improves matching. We report exact match rates for your file.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you enrich our data on an ongoing basis?</h3>
+            <p style="color: var(--color-text-secondary);">Our standard delivery is a one-time enrichment of a file you send us. For ongoing enrichment, we can schedule quarterly or monthly refresh passes where we re-enrich your database to catch changes. This is recommended for large, actively-used databases where data freshness matters.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

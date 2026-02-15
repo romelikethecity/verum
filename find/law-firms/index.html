@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you separate solo practitioners from multi-attorney firms?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We classify every firm by size tier. If you're selling practice management software for solo attorneys, we'll build a list of just solos. If you're targeting Am Law 200 firms with enterprise solutions, we'll filter for those. The buying process is totally different at each tier."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle firms with multiple offices?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Each office location gets its own entry with the correct local address and phone number. We link offices to the parent firm entity and identify which office is the headquarters. For multi-office targeting, we can also identify the office managing partner at each location."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you include in-house legal departments?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our law firm lists focus on private practice firms, not corporate legal departments. If you're targeting in-house counsel (general counsel, CLOs, associate general counsel), that's a different list-building process that we can also do, but it's built from corporate org charts rather than bar records."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Law Firms</h1>
+      <p class="page-hero__subtitle">Every state bar has a lawyer directory, but none of them will give you a clean list of firms with decision-maker contacts.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Law Firms</h2>
-<p>Find law firms and attorney contact data. Verum helps you build targeted lists of law firms with complete, accurate contact information.</p>
+<p>Verum builds law firm lists from state bar records, legal directories, and court filing data. We go beyond firm name and address to deliver the managing partner's contact info, practice area breakdown, and firm size indicators that help you segment your outreach.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Law firm data is fragmented across 50+ state bars, each with their own search interface and data format. National legal directories like Martindale-Hubbell and Avvo exist, but they're geared toward consumers finding lawyers, not B2B companies building prospect lists. And firm sizes range from solo practitioners to 5,000-attorney mega firms, requiring very different sales approaches.</p>
+
+<h2>How We Build Law Firm Lists</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>Multi-state bar record aggregation.</strong> We pull active attorney records from state bar databases and group them by firm affiliation to build a firm-level view of the legal market.</li>
+  <li><strong>Firm size and structure classification.</strong> By counting active attorneys per firm and cross-referencing Am Law and NLJ rankings, we classify firms into tiers: mega (500+), large (100-499), midsize (20-99), small (5-19), and solo.</li>
+  <li><strong>Practice area mapping.</strong> We identify each firm's practice areas from attorney specializations, website data, and court filing patterns, tagging firms by their primary focus areas.</li>
+  <li><strong>Managing partner and decision-maker identification.</strong> We pinpoint who makes vendor and purchasing decisions at each firm, which varies by firm size from the sole practitioner to a COO or director of administration.</li>
+  <li><strong>Contact verification.</strong> Direct email addresses and phone numbers are verified for the key decision-maker at each firm, not just the main office switchboard.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Law Firm List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Firm name, address, and size.</strong> Verified office location with attorney headcount and firm tier classification.</li>
+  <li><strong>Practice area breakdown.</strong> Primary and secondary practice areas based on attorney specializations and firm marketing.</li>
+  <li><strong>Key decision-maker contact.</strong> Managing partner, office administrator, or director of operations with direct email and phone number.</li>
+  <li><strong>Firm structure.</strong> Single office vs. multi-office, partnership vs. PC, and any known affiliations with legal networks or alliances.</li>
+  <li><strong>Technology indicators.</strong> Where detectable, we identify the firm's practice management software, document management system, and other tech stack signals.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you separate solo practitioners from multi-attorney firms?</h3>
+<p>Yes. We classify every firm by size tier. If you're selling practice management software for solo attorneys, we'll build a list of just solos. If you're targeting Am Law 200 firms with enterprise solutions, we'll filter for those. The buying process is totally different at each tier.</p>
+
+<h3>How do you handle firms with multiple offices?</h3>
+<p>Each office location gets its own entry with the correct local address and phone number. We link offices to the parent firm entity and identify which office is the headquarters. For multi-office targeting, we can also identify the office managing partner at each location.</p>
+
+<h3>Do you include in-house legal departments?</h3>
+<p>Our law firm lists focus on private practice firms, not corporate legal departments. If you're targeting in-house counsel (general counsel, CLOs, associate general counsel), that's a different list-building process that we can also do, but it's built from corporate org charts rather than bar records.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

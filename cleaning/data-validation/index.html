@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Is data validation the same as data cleaning?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Validation is one step within data cleaning. Cleaning is the broader process that includes validation, deduplication, normalization, and enrichment. Validation specifically answers the question: is this data point real and correct? Cleaning answers: how do we fix everything that is wrong?"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you validate data in real time as it enters our CRM?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We focus on batch validation of existing data rather than real-time API integration. For real-time validation at the point of entry, we can recommend tools that integrate with your forms and CRM. Batch validation is better for cleaning existing databases. Many teams use both."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle data that cannot be validated?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Records that cannot be confirmed one way or another get marked as unverifiable rather than invalid. For example, a catch-all email domain accepts all messages so we cannot confirm individual mailboxes. We flag these separately so you can decide whether to include them in campaigns."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Data Validation</h1>
+        <p class="page-hero__subtitle">Bad data looks real until you try to use it. We check every field.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Data Validation</h2>
-<p>Validate data accuracy and completeness. Verum helps you maintain accurate, reliable data validation across your entire database.</p>
+<p>Data validation confirms that the values in your database are real, correct, and usable. It goes beyond format checks to verify that email addresses deliver, phone numbers connect, addresses are real locations, and company information matches reality.</p>
 
-<h2>What We Do</h2>
+<p>Your database is full of data that looks right but is not. An email address with proper formatting but a nonexistent mailbox. A phone number with 10 digits that is actually a fax line. A company name that matches a real business but the address is in the wrong state. Validation catches these problems before they waste your team's time.</p>
+
+<h2>What We Validate</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Email deliverability.</strong> We confirm every email address can receive mail by verifying against the receiving mail server. Not just format checking.</li>
+    <li><strong>Phone connectivity.</strong> Numbers are checked for active service, line type (mobile vs landline vs VoIP), and carrier information.</li>
+    <li><strong>Address accuracy.</strong> Addresses are validated against postal databases to confirm they are real, deliverable locations.</li>
+    <li><strong>Company verification.</strong> Company names are cross-referenced with business registries and firmographic databases to confirm they are real, active businesses.</li>
+    <li><strong>Field-level rules.</strong> Custom validation rules check that values make sense in context: revenue ranges are plausible, dates are not in the future, and required fields are not filled with placeholder text.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Validation Outcomes</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Confidence that every record in your database represents a real, reachable contact at a real business</li>
+    <li>Reduced wasted outreach because invalid contacts are caught before campaigns launch</li>
+    <li>Better deliverability rates because bad emails are removed before they bounce</li>
+    <li>Clean data imports because validation catches problems at the point of entry</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Is data validation the same as data cleaning?</h3>
+            <p style="color: var(--color-text-secondary);">Validation is one step within data cleaning. Cleaning is the broader process that includes validation, deduplication, normalization, and enrichment. Validation specifically answers the question: is this data point real and correct? Cleaning answers: how do we fix everything that is wrong?</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you validate data in real time as it enters our CRM?</h3>
+            <p style="color: var(--color-text-secondary);">We focus on batch validation of existing data rather than real-time API integration. For real-time validation at the point of entry, we can recommend tools that integrate with your forms and CRM. Batch validation is better for cleaning existing databases. Many teams use both.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle data that cannot be validated?</h3>
+            <p style="color: var(--color-text-secondary);">Records that cannot be confirmed one way or another get marked as unverifiable rather than invalid. For example, a catch-all email domain accepts all messages so we cannot confirm individual mailboxes. We flag these separately so you can decide whether to include them in campaigns.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

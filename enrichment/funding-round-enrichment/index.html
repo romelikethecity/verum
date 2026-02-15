@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How quickly do new rounds appear in your data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most publicly announced rounds appear within 1-2 weeks. Some rounds are announced months after closing. SEC filings for equity raises are captured faster. Our data is as current as the sources \u2014 there's always some lag between when money moves and when it's publicly reported."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you track debt funding and credit facilities?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We capture publicly reported debt rounds, credit facilities, and revenue-based financing. These are less consistently reported than equity rounds, so coverage is lower. We include them when available because debt financing also signals growth and spending capacity."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you identify companies likely to raise soon?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We don't predict future fundraising, but we can flag patterns that correlate with upcoming rounds: rapid hiring, increasing press mentions, expiring runway estimates based on burn rate and last round size. These are directional signals, not predictions."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Funding Round Enrichment</h1>
+        <p class="page-hero__subtitle">A company that raised $30M last month has different buying behavior than one that's been flat for five years.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Funding Round Enrichment</h2>
-<p>Identify recent funding rounds and investment activity. Verum helps you append accurate funding rounds to your B2B database from 50+ trusted sources.</p>
+<p>Funding round enrichment appends detailed investment round data to your company records: round type, amount raised, date, lead investors, and post-money valuation where available. This gives your sales and marketing teams the context to prioritize accounts by growth trajectory and spending capacity.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends funding rounds</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Funding announcements are scattered across press releases, Crunchbase, PitchBook, and SEC filings. Manually checking each company in your pipeline takes forever. Without funding context, your team treats a bootstrapped lifestyle business the same as a company that just closed a $50M growth round — even though their buying behavior is completely different.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich Funding Round Data</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Database aggregation.</strong> We pull from Crunchbase, PitchBook, SEC filings, and press databases to build a comprehensive funding history for each company.</li>
+    <li><strong>Round classification.</strong> Each round gets classified by type: pre-seed, seed, Series A through F, growth equity, bridge, convertible note, PE buyout, and IPO.</li>
+    <li><strong>Investor identification.</strong> Lead investors and notable participants are identified for each round, which can indicate the company's strategic direction.</li>
+    <li><strong>Recency and trajectory scoring.</strong> We score companies by how recently they raised and whether their funding trajectory is accelerating or plateau.</li>
 </ul>
+
+<h2>What Funding Round Data Reveals</h2>
+<ul>
+    <li>Complete funding history with round type, amount, date, and lead investors</li>
+    <li>Total capital raised to date for each company</li>
+    <li>Most recent round details with recency flag (last 90 days, 6 months, 12 months)</li>
+    <li>Funding stage classification for segmentation (early, growth, late, public)</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How quickly do new rounds appear in your data?</h3>
+            <p style="color: var(--color-text-secondary);">Most publicly announced rounds appear within 1-2 weeks. Some rounds are announced months after closing. SEC filings for equity raises are captured faster. Our data is as current as the sources — there's always some lag between when money moves and when it's publicly reported.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you track debt funding and credit facilities?</h3>
+            <p style="color: var(--color-text-secondary);">We capture publicly reported debt rounds, credit facilities, and revenue-based financing. These are less consistently reported than equity rounds, so coverage is lower. We include them when available because debt financing also signals growth and spending capacity.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you identify companies likely to raise soon?</h3>
+            <p style="color: var(--color-text-secondary);">We don't predict future fundraising, but we can flag patterns that correlate with upcoming rounds: rapid hiring, increasing press mentions, expiring runway estimates based on burn rate and last round size. These are directional signals, not predictions.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

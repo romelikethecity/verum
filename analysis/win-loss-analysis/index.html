@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many closed opportunities do we need?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At least 100 closed opportunities (combining wins and losses) for basic pattern identification. Ideally 300+ for statistically significant insights. If you have fewer than 100, we can still do the analysis, but patterns will be directional. The more data, the more specific and confident the findings."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you interview buyers as part of win/loss analysis?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Our analysis is purely data-driven: we analyze the firmographic attributes and sales process data associated with your closed opportunities. Buyer interviews are a complementary qualitative approach that adds the 'why' behind the patterns we find. Some teams pair our quantitative analysis with a qualitative win/loss interview program."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you tell us what to do differently to win more?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can tell you where and against whom you win most, which is a targeting recommendation. We can tell you which sales behaviors correlate with winning, which is a process recommendation. What we can't tell you from data alone is whether your pricing or product needs to change \u2014 that requires market context that goes beyond CRM data."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Win-Loss Analysis</h1>
+        <p class="page-hero__subtitle">Why do you win some deals and lose others? The pattern is in the data.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
-<h2>Win-Loss Analysis</h2>
-<p>Learn from won and lost deals. Verum helps you understand your data and make better decisions with win-loss analysis.</p>
 
-<h2>What We Analyze</h2>
+<h2>Win Loss Analysis</h2>
+<p>Win/loss analysis examines your closed opportunities — both won and lost — to identify the firmographic, behavioral, and process patterns that predict outcomes. It reveals which deals you should be pursuing, which you should be avoiding, and what your team can do differently to improve win rates.</p>
+
+<p>Your win rate is 25%. That means 75% of the effort your sales team puts into pipeline results in nothing. Are you losing because of price, product, process, or fit? Without systematic analysis of lost deals, every loss is a one-off story rather than a pattern you can fix.</p>
+
+<h2>How We Analyze Win/Loss</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Opportunity enrichment.</strong> We append firmographic data to both won and lost opportunities so we can compare them across 20+ attributes.</li>
+    <li><strong>Pattern comparison.</strong> We identify which attributes appear significantly more often in won deals versus lost deals: industry, company size, buying committee size, deal stage velocity, and more.</li>
+    <li><strong>Competitive loss analysis.</strong> For deals lost to competitors, we identify patterns in which competitor wins against you in which segments.</li>
+    <li><strong>Process analysis.</strong> We examine the sales activities and process steps on won vs lost deals to identify behavioral differences that predict outcomes.</li>
+    <li><strong>Segment win rate calculation.</strong> We calculate win rates by market segment so your team can focus effort where close rates are highest.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>Win/Loss Analysis Deliverables</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>A win profile and loss profile showing the firmographic attributes that predict each outcome</li>
+    <li>Segment-level win rates so your team knows where they win most often and can prioritize accordingly</li>
+    <li>Competitive loss patterns identifying which competitors beat you in which segments</li>
+    <li>Process recommendations based on behavioral differences between won and lost deals</li>
+    <li>An updated ICP that incorporates win/loss patterns, not just customer-only analysis</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many closed opportunities do we need?</h3>
+            <p style="color: var(--color-text-secondary);">At least 100 closed opportunities (combining wins and losses) for basic pattern identification. Ideally 300+ for statistically significant insights. If you have fewer than 100, we can still do the analysis, but patterns will be directional. The more data, the more specific and confident the findings.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you interview buyers as part of win/loss analysis?</h3>
+            <p style="color: var(--color-text-secondary);">No. Our analysis is purely data-driven: we analyze the firmographic attributes and sales process data associated with your closed opportunities. Buyer interviews are a complementary qualitative approach that adds the 'why' behind the patterns we find. Some teams pair our quantitative analysis with a qualitative win/loss interview program.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you tell us what to do differently to win more?</h3>
+            <p style="color: var(--color-text-secondary);">We can tell you where and against whom you win most, which is a targeting recommendation. We can tell you which sales behaviors correlate with winning, which is a process recommendation. What we can't tell you from data alone is whether your pricing or product needs to change — that requires market context that goes beyond CRM data.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you fix our attribution model or just clean the data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We clean and reconcile the data that feeds your attribution model. If lead source fields are inconsistent, campaign tags are missing, or CRM data doesn't match marketing platform data, we fix those issues. The attribution model itself \u2014 first touch, last touch, multi-touch \u2014 is your team's strategic decision."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "We use multiple marketing platforms. Can you reconcile the data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We take exports from HubSpot, Marketo, Google Ads, LinkedIn, Salesforce, and whatever else you're using, then clean and reconcile them into a unified dataset. Cross-platform reconciliation is one of the most common reasons CMOs engage us \u2014 no single platform shows the full picture."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle the 'marketing influenced vs marketing sourced' debate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We provide clean data for both views. We tag every opportunity with its original source (marketing sourced) and every marketing touchpoint that occurred during the deal cycle (marketing influenced). Your CMO and CRO can then agree on which view to use for reporting \u2014 we just make sure the underlying data is accurate."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">CMO Data Analysis</h1>
+        <p class="page-hero__subtitle">Data your CMO can actually use: pipeline attribution, channel performance, and audience insights.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
-<h2>CMO Data Analysis</h2>
-<p>Marketing analytics for CMOs. Verum helps you understand your data and make better decisions with CMO analytics.</p>
 
-<h2>What We Analyze</h2>
+<h2>Cmo Data Analysis</h2>
+<p>CMO data analysis focuses on the metrics and patterns that marketing leaders need to make strategic decisions: pipeline attribution, channel ROI, audience composition, and campaign effectiveness. We clean and analyze the data that sits between your marketing platforms and your CRM to give your CMO a clear picture.</p>
+
+<p>Your CMO asks 'which channels are driving pipeline?' and gets a different answer from marketing ops, sales, and finance. The data is fragmented across platforms, attribution is inconsistent, and nobody trusts the numbers. Strategic decisions get made on gut feel because the data isn't reliable.</p>
+
+<h2>What We Analyze for CMOs</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Pipeline attribution.</strong> We clean and reconcile lead source, campaign, and channel data to produce reliable pipeline attribution that your CMO can trust.</li>
+    <li><strong>Channel performance.</strong> We analyze cost, volume, and quality by channel to show which channels produce the most qualified pipeline, not just the most leads.</li>
+    <li><strong>Audience analysis.</strong> We enrich lead and customer data to show which audience segments respond to which channels and campaigns.</li>
+    <li><strong>Content performance.</strong> We correlate content engagement with pipeline outcomes to identify which content actually drives revenue, not just traffic.</li>
+    <li><strong>Forecast inputs.</strong> We provide clean data for marketing forecasting models: lead volume trends, conversion rates by segment, and seasonal patterns.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>CMO-Ready Insights</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>Reliable pipeline attribution that both marketing and sales agree on because the underlying data is clean</li>
+    <li>Channel ROI analysis showing true cost per qualified opportunity, not just cost per lead</li>
+    <li>Audience composition reports showing the firmographic profile of leads by channel and campaign</li>
+    <li>Data-backed budget allocation recommendations based on which channels produce the best pipeline</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you fix our attribution model or just clean the data?</h3>
+            <p style="color: var(--color-text-secondary);">We clean and reconcile the data that feeds your attribution model. If lead source fields are inconsistent, campaign tags are missing, or CRM data doesn't match marketing platform data, we fix those issues. The attribution model itself — first touch, last touch, multi-touch — is your team's strategic decision.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">We use multiple marketing platforms. Can you reconcile the data?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We take exports from HubSpot, Marketo, Google Ads, LinkedIn, Salesforce, and whatever else you're using, then clean and reconcile them into a unified dataset. Cross-platform reconciliation is one of the most common reasons CMOs engage us — no single platform shows the full picture.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle the 'marketing influenced vs marketing sourced' debate?</h3>
+            <p style="color: var(--color-text-secondary);">We provide clean data for both views. We tag every opportunity with its original source (marketing sourced) and every marketing touchpoint that occurred during the deal cycle (marketing influenced). Your CMO and CRO can then agree on which view to use for reporting — we just make sure the underlying data is accurate.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

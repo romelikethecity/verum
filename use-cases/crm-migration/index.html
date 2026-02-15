@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Should we clean before or after migrating?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Before. Always before. Cleaning after migration means you've already paid to move bad data, and now you're paying again to fix it in the new system. Cleaning before migration reduces the volume of records to move, prevents import errors, and gives your team a clean start. We've seen teams save 30-50% on migration costs by cleaning first."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "We're migrating from Salesforce to HubSpot. Can you help?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We handle data cleaning and preparation for migrations between any CRM platforms. Salesforce to HubSpot is one of the most common. We clean the data, standardize fields to match HubSpot's structure, and deliver a migration-ready file. We don't do the actual CRM configuration, but we make sure the data is perfect for import."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How long does pre-migration cleaning take?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most projects finish in 1-2 weeks depending on database size and complexity. We recommend starting the data cleaning as soon as you've decided to migrate, in parallel with your CRM configuration work. The cleaned data will be ready when your new system is ready to receive it."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,54 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">CRM Migration</h1>
+        <p class="page-hero__subtitle">Migrating CRMs? Clean your data first or you'll just move the mess.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
-<h2>CRM Migration</h2>
-<p>Prepare data for CRM migrations. Verum provides the clean, enriched data you need for effective CRM migration.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with CRM migration because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<h2>Crm Migration</h2>
+<p>CRM migration is the perfect time to clean your data — and the worst time to skip it. Every data quality problem you have in your old CRM will follow you to the new one. Cleaning before migration means your new system starts with accurate, standardized data instead of inheriting years of accumulated problems.</p>
 
-<h2>How Verum Helps</h2>
+<p>Teams spend months planning a CRM migration, mapping fields and configuring workflows. Then they import 50,000 records with 15% duplicates, 25% stale emails, and inconsistent formatting across every field. The new CRM works perfectly — with terrible data.</p>
+
+<h2>Pre-Migration Data Preparation</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for CRM migration</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Data audit.</strong> We analyze your current CRM export and show you exactly what's wrong: duplicate rates, invalid contact rates, field completeness, and formatting inconsistencies.</li>
+    <li><strong>Deduplication.</strong> Duplicates get merged before migration so you're not moving three records for the same person into a clean system.</li>
+    <li><strong>Verification.</strong> Email and phone validation removes contacts that are no longer reachable. No point migrating dead records.</li>
+    <li><strong>Standardization.</strong> Fields get formatted to match the new CRM's structure and picklist values. This prevents import errors and post-migration cleanup.</li>
+    <li><strong>Enrichment.</strong> Missing data gets filled before migration so your new CRM starts with complete records, not the same gaps you've been working around.</li>
+    <li><strong>Field mapping assistance.</strong> We help map your old CRM's fields to the new system's schema, handling transformations and data type conversions.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your CRM migration challenges and we'll show you how clean data can transform your results.</p>
+<h2>Migration Outcomes</h2>
+<ul>
+    <li>A new CRM that starts with clean, complete, standardized data from day one</li>
+    <li>Fewer records to migrate because duplicates and dead contacts are removed beforehand</li>
+    <li>Lower migration costs because clean data imports faster with fewer errors to fix</li>
+    <li>Faster user adoption because the new system immediately shows accurate, trustworthy data</li>
+    <li>No post-migration cleanup project because the data was cleaned before it went in</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Should we clean before or after migrating?</h3>
+            <p style="color: var(--color-text-secondary);">Before. Always before. Cleaning after migration means you've already paid to move bad data, and now you're paying again to fix it in the new system. Cleaning before migration reduces the volume of records to move, prevents import errors, and gives your team a clean start. We've seen teams save 30-50% on migration costs by cleaning first.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">We're migrating from Salesforce to HubSpot. Can you help?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We handle data cleaning and preparation for migrations between any CRM platforms. Salesforce to HubSpot is one of the most common. We clean the data, standardize fields to match HubSpot's structure, and deliver a migration-ready file. We don't do the actual CRM configuration, but we make sure the data is perfect for import.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How long does pre-migration cleaning take?</h3>
+            <p style="color: var(--color-text-secondary);">Most projects finish in 1-2 weeks depending on database size and complexity. We recommend starting the data cleaning as soon as you've decided to migrate, in parallel with your CRM configuration work. The cleaned data will be ready when your new system is ready to receive it.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

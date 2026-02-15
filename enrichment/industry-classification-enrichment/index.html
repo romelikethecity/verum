@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Why NAICS and SIC? Aren't they outdated?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SIC codes were last updated in 1987 and miss modern industries like SaaS and social media. NAICS (updated every 5 years, most recently 2022) is more current but still has gaps for emerging sectors. We assign both because different tools and databases use different systems. We also add our own descriptive tags for industries that the government codes miss."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you use our custom industry taxonomy instead?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. If you have your own industry categories (common in specialized verticals), we can map companies to your taxonomy instead of or in addition to NAICS/SIC. We do this by building a mapping between your categories and standard codes, then applying it to your full database."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle companies that don't fit neatly into one industry?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Companies often span multiple industries. A company selling HR software to restaurants could be classified as 'Software' or 'Restaurant Technology.' We assign a primary code based on what they do most and add secondary codes for other activities. We also add descriptive tags that capture the intersection."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Industry Classification Enrichment</h1>
+        <p class="page-hero__subtitle">Your prospect says they're in 'technology.' That could mean anything from a SaaS startup to a hardware manufacturer.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Industry Classification Enrichment</h2>
-<p>Standardize industry codes across your database. Verum helps you append accurate industry codes to your B2B database from 50+ trusted sources.</p>
+<p>Industry classification enrichment assigns standardized NAICS and SIC codes to your company records based on their primary business activity. We go beyond self-reported industry labels to classify companies using their product descriptions, website content, and revenue composition so you can segment and target by vertical.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends industry codes</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Self-reported industry data is useless for targeting. Companies select 'Technology' from a dropdown when they should be 'Financial Technology.' Your CRM has 200 different industry values, half of them free-text. Without standardized codes, you can't segment by vertical, run industry-specific campaigns, or calculate TAM by sector.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Classify Industries</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Website and product analysis.</strong> We analyze company websites and product descriptions to determine what each company actually does, not what they claim on forms.</li>
+    <li><strong>NAICS and SIC code assignment.</strong> Each company gets a primary NAICS code (6-digit) and SIC code (4-digit) based on their core business activity.</li>
+    <li><strong>Sub-industry tagging.</strong> Beyond standard codes, we apply descriptive sub-industry tags (e.g., 'martech' within software, 'orthopedics' within healthcare) for finer segmentation.</li>
+    <li><strong>Multi-industry handling.</strong> Diversified companies get tagged with primary and secondary industry codes weighted by revenue contribution.</li>
 </ul>
+
+<h2>What Industry Classification Delivers</h2>
+<ul>
+    <li>Primary NAICS code (6-digit) and SIC code (4-digit) for each company</li>
+    <li>Industry name and sub-industry description in plain text</li>
+    <li>Secondary industry codes for diversified companies</li>
+    <li>Standardized vertical categories for campaign targeting</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Why NAICS and SIC? Aren't they outdated?</h3>
+            <p style="color: var(--color-text-secondary);">SIC codes were last updated in 1987 and miss modern industries like SaaS and social media. NAICS (updated every 5 years, most recently 2022) is more current but still has gaps for emerging sectors. We assign both because different tools and databases use different systems. We also add our own descriptive tags for industries that the government codes miss.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you use our custom industry taxonomy instead?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. If you have your own industry categories (common in specialized verticals), we can map companies to your taxonomy instead of or in addition to NAICS/SIC. We do this by building a mapping between your categories and standard codes, then applying it to your full database.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle companies that don't fit neatly into one industry?</h3>
+            <p style="color: var(--color-text-secondary);">Companies often span multiple industries. A company selling HR software to restaurants could be classified as 'Software' or 'Restaurant Technology.' We assign a primary code based on what they do most and add secondary codes for other activities. We also add descriptive tags that capture the intersection.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

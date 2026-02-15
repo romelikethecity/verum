@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is data hygiene different from data cleaning?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Data cleaning is the one-time project that fixes existing problems. Data hygiene is the ongoing practice that prevents problems from recurring. Think of cleaning as the deep clean and hygiene as the daily maintenance. Most teams need the initial cleaning first, then transition to a hygiene program."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How often should we run data hygiene checks?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Monthly is ideal for high-volume teams that import data frequently. Quarterly works for teams with slower data growth. We recommend at minimum running verification before every major campaign and deduplication after every bulk import."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can we do data hygiene ourselves?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can implement some hygiene practices internally, like validation rules and import standards. But verification, enrichment, and deduplication at scale require specialized tools and data sources. Most teams handle prevention internally and outsource the periodic deep scans to us."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Data Hygiene</h1>
+        <p class="page-hero__subtitle">Data quality is not a one-time project. We make it an ongoing practice.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Data Hygiene</h2>
-<p>Maintain clean, accurate data over time. Verum helps you maintain accurate, reliable data hygiene across your entire database.</p>
+<p>Data hygiene is the ongoing practice of keeping your database clean, accurate, and useful. Unlike a one-time cleanup, data hygiene establishes processes and standards that prevent quality from degrading again after you clean it. It is the difference between mopping the floor once and keeping it clean.</p>
 
-<h2>What We Do</h2>
+<p>You cleaned your database six months ago. It was perfect. Then sales reps started entering data without standards. Marketing imported three purchased lists. Two integrations synced in duplicates. Now you are back where you started. Without data hygiene practices, every cleanup is temporary.</p>
+
+<h2>What Data Hygiene Includes</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Quality baseline.</strong> We measure your current data quality across dimensions: completeness, accuracy, consistency, and freshness. This becomes your benchmark.</li>
+    <li><strong>Ongoing monitoring.</strong> Regular scans identify new quality issues before they compound. Monthly or quarterly depending on your data volume and change rate.</li>
+    <li><strong>Validation rules.</strong> We recommend field-level validation rules for your CRM that prevent bad data from entering in the first place.</li>
+    <li><strong>Enrichment refresh.</strong> Contact information goes stale. Periodic re-enrichment catches job changes, company updates, and new phone numbers.</li>
+    <li><strong>Decay reporting.</strong> You get regular reports showing how your data quality is trending so you can see whether hygiene practices are working.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Hygiene Program Outcomes</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Data quality that stays above your baseline instead of degrading between cleanups</li>
+    <li>Fewer emergency cleanup projects because problems are caught early when they are small</li>
+    <li>Higher adoption of CRM and automation tools because users trust the data</li>
+    <li>Lower cost per cleanup because regular maintenance prevents large-scale accumulation</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is data hygiene different from data cleaning?</h3>
+            <p style="color: var(--color-text-secondary);">Data cleaning is the one-time project that fixes existing problems. Data hygiene is the ongoing practice that prevents problems from recurring. Think of cleaning as the deep clean and hygiene as the daily maintenance. Most teams need the initial cleaning first, then transition to a hygiene program.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How often should we run data hygiene checks?</h3>
+            <p style="color: var(--color-text-secondary);">Monthly is ideal for high-volume teams that import data frequently. Quarterly works for teams with slower data growth. We recommend at minimum running verification before every major campaign and deduplication after every bulk import.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can we do data hygiene ourselves?</h3>
+            <p style="color: var(--color-text-secondary);">You can implement some hygiene practices internally, like validation rules and import standards. But verification, enrichment, and deduplication at scale require specialized tools and data sources. Most teams handle prevention internally and outsource the periodic deep scans to us.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

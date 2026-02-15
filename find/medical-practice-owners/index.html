@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you tell the difference between a practice owner and an employed physician?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We cross-reference NPI organizational records (which list authorized officials) with state corporate filings (which list LLC/PC members and officers) and Medicare reassignment data (which shows billing relationships). An employed physician bills through the practice but isn't on the corporate documents as an owner or officer."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you filter for independently owned practices only?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We flag practices that are hospital-owned, PE-backed, or part of a management company. If you only want to reach independent practice owners who make their own vendor decisions, we filter out all the affiliated practices."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What medical specialties can you find practice owners for?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "All of them. NPI taxonomy codes cover every medical specialty: primary care, cardiology, orthopedics, dermatology, OB/GYN, psychiatry, ophthalmology, gastroenterology, and dozens more. We can build lists for any specialty or combination of specialties."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Medical Practice Owners</h1>
+      <p class="page-hero__subtitle">NPI databases list every provider, but they don't tell you which doctor owns the practice versus who's just employed there.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Medical Practice Owners</h2>
-<p>Contact medical practice owners. Verum helps you build targeted lists of medical practice owners with complete, accurate contact information.</p>
+<p>Verum identifies the actual owners of medical practices by combining NPI data, state medical board records, corporate filings, and Medicare enrollment information. We separate the owner-physicians from the employed providers and find direct contact info that gets past the office staff.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Medical practice ownership is increasingly complex. Hospital systems have acquired thousands of formerly independent practices. PE-backed management companies operate under the practice's original name. And even in genuinely independent practices, the NPI database lists every provider at the address without indicating who owns the business.</p>
+
+<h2>How We Identify Medical Practice Owners</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>NPI Type 2 (organizational) analysis.</strong> Organizational NPI records list authorized officials and delegated officials, giving us a starting point for ownership identification at each practice.</li>
+  <li><strong>State medical board cross-referencing.</strong> Active license records and practice registrations help us confirm which physicians are practice owners versus employed or contracted providers.</li>
+  <li><strong>Corporate filing analysis.</strong> Secretary of State records reveal the ownership structure behind the practice name: sole proprietorship, professional corporation, or management company.</li>
+  <li><strong>Medicare reassignment tracking.</strong> CMS reassignment data shows which physicians have reassigned their billing to which organizations, revealing employment versus ownership relationships.</li>
+  <li><strong>PE and health system affiliation detection.</strong> We flag practices that have been acquired by hospital systems, PE-backed groups, or management companies, identifying the actual decision-maker at each.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Medical Practice Owner List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Owner-physician name and credentials.</strong> MD/DO designation, board certifications, specialty, and years in practice based on license issue dates.</li>
+  <li><strong>Ownership verification.</strong> Confirmed independent owner, partner, or employed by a larger entity. If acquired, we identify the parent organization.</li>
+  <li><strong>Direct contact information.</strong> Verified personal email and direct phone number for the owner, not the practice's patient line.</li>
+  <li><strong>Practice details.</strong> Specialty, provider count, location(s), and NPI numbers for the practice and individual owner.</li>
+  <li><strong>Billing and payer information.</strong> Medicare enrollment status, group vs. solo practice designation, and accepting new patients status where available.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>How do you tell the difference between a practice owner and an employed physician?</h3>
+<p>We cross-reference NPI organizational records (which list authorized officials) with state corporate filings (which list LLC/PC members and officers) and Medicare reassignment data (which shows billing relationships). An employed physician bills through the practice but isn't on the corporate documents as an owner or officer.</p>
+
+<h3>Can you filter for independently owned practices only?</h3>
+<p>Yes. We flag practices that are hospital-owned, PE-backed, or part of a management company. If you only want to reach independent practice owners who make their own vendor decisions, we filter out all the affiliated practices.</p>
+
+<h3>What medical specialties can you find practice owners for?</h3>
+<p>All of them. NPI taxonomy codes cover every medical specialty: primary care, cardiology, orthopedics, dermatology, OB/GYN, psychiatry, ophthalmology, gastroenterology, and dozens more. We can build lists for any specialty or combination of specialties.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

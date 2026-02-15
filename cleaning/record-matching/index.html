@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is record matching different from deduplication?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Record matching identifies the connections. Deduplication merges the records. Matching tells you that these five records are the same person. Deduplication decides which fields to keep and creates the single merged record. We typically run matching first, present the results for review, and then merge approved matches."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What match rate should we expect?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on your data quality. Databases that have never been deduplicated typically have 10-30% of records that match other records. We see the highest match rates in databases that have been built from multiple sources like purchased lists, event data, and web forms over several years."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you match records across different systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Cross-system matching is one of our most common use cases. Send us exports from Salesforce, HubSpot, your marketing platform, and your support system. We match across all of them to build a unified entity map. This is especially valuable before integrations and migrations where cross-system duplicates need to be resolved."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Record Matching</h1>
+        <p class="page-hero__subtitle">Different records, same entity. We find the connections your CRM misses.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Record Matching</h2>
-<p>Match and merge records across multiple data sources. Verum helps you maintain accurate, reliable record matching across your entire database.</p>
+<p>Record matching identifies records across your database that refer to the same person, company, or entity, even when the data looks different. It uses multiple matching strategies beyond simple email or name matching to catch relationships that standard CRM duplicate detection cannot see.</p>
 
-<h2>What We Do</h2>
+<p>Your CRM has John Smith at Google and Jonathan Smith at Alphabet and J. Smith at google.com. These are probably the same person but your system treats them as three separate contacts. Standard matching on exact email catches none of these. You need smarter matching to unify your data.</p>
+
+<h2>Matching Methods</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Probabilistic matching.</strong> We calculate the probability that two records refer to the same entity based on multiple field comparisons weighted by reliability. A strong email match plus a weak name match still produces a high confidence score.</li>
+    <li><strong>Transitive matching.</strong> If Record A matches Record B, and Record B matches Record C, then A and C are likely the same entity even if they do not match directly.</li>
+    <li><strong>Cross-reference matching.</strong> We match using external data sources. Two records with different emails but the same LinkedIn profile URL are the same person.</li>
+    <li><strong>Hierarchical matching.</strong> We identify parent-child relationships between companies to match contacts at subsidiaries with accounts at parent companies.</li>
+    <li><strong>Temporal matching.</strong> We account for changes over time. A contact who changed jobs and has a new email at a new company can be matched to their old record through intermediate data points.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Matching Outcomes</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>A unified view of every entity in your database with all records linked together</li>
+    <li>Higher match rates than CRM-native duplicate detection because of multi-strategy matching</li>
+    <li>Accurate pipeline reporting because duplicate opportunities and contacts are identified</li>
+    <li>Better ABM execution because all contacts at a target account are linked to the right account</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is record matching different from deduplication?</h3>
+            <p style="color: var(--color-text-secondary);">Record matching identifies the connections. Deduplication merges the records. Matching tells you that these five records are the same person. Deduplication decides which fields to keep and creates the single merged record. We typically run matching first, present the results for review, and then merge approved matches.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What match rate should we expect?</h3>
+            <p style="color: var(--color-text-secondary);">It depends on your data quality. Databases that have never been deduplicated typically have 10-30% of records that match other records. We see the highest match rates in databases that have been built from multiple sources like purchased lists, event data, and web forms over several years.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you match records across different systems?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Cross-system matching is one of our most common use cases. Send us exports from Salesforce, HubSpot, your marketing platform, and your support system. We match across all of them to build a unified entity map. This is especially valuable before integrations and migrations where cross-system duplicates need to be resolved.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

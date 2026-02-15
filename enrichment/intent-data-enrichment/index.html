@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is this different from buyer intent enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "They're the same concept. 'Buyer intent' and 'intent data' enrichment both refer to identifying companies showing research activity related to your product category. We use the terms interchangeably. The deliverable is the same: a scored account list showing who's in-market."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can intent data tell me who at the company is researching?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Intent data identifies companies, not individuals. It shows that someone at Acme Corp is researching 'CRM software,' but it can't tell you whether that's the VP of Sales or an intern. You combine intent data with contact enrichment to reach the right person at the right company."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How long does an intent signal remain valid?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Intent signals are most actionable within 2-4 weeks of detection. After that, the buying window may have passed \u2014 the company either purchased a solution or deprioritized the initiative. We recommend acting on high-intent signals within 1-2 weeks of receiving the data."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Intent Data Enrichment</h1>
+        <p class="page-hero__subtitle">Your ICP has 10,000 companies. Intent data tells you which 500 are actually in-market right now.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Intent Data Enrichment</h2>
-<p>Identify accounts showing buying intent signals. Verum helps you append accurate intent signals to your B2B database from 50+ trusted sources.</p>
+<p>Intent data enrichment identifies which companies on your target account list are actively researching topics related to your product or service. We aggregate research activity signals from content consumption, search behavior, and review site visits to score accounts by their likelihood of being in an active buying cycle.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends intent signals</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Without intent signals, outbound outreach is a volume game — contact enough accounts and some will happen to be in-market. Intent data flips this from random to targeted. Teams using intent data report 2-3x higher conversion rates because they're reaching companies during active evaluation, not interrupting companies with no current need.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Add Intent Signals</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Topic taxonomy definition.</strong> We define the topics that indicate purchase intent for your product: category keywords, competitor names, and problem-related terms.</li>
+    <li><strong>Signal aggregation.</strong> We match your account list against multiple intent data providers to identify companies showing above-baseline research activity.</li>
+    <li><strong>Surge detection.</strong> Accounts get scored by how much their research activity exceeds their normal baseline — separating genuine buying signals from routine browsing.</li>
+    <li><strong>Competitive intent identification.</strong> We flag accounts researching your competitors specifically, which indicates active vendor evaluation.</li>
 </ul>
+
+<h2>What Intent Data Enrichment Shows</h2>
+<ul>
+    <li>Intent scores for each account based on topic research activity</li>
+    <li>Specific topics being researched at each company for personalized outreach</li>
+    <li>Surge indicators showing whether intent is increasing, stable, or declining</li>
+    <li>Competitive intent flags showing which accounts are evaluating competitors</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is this different from buyer intent enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">They're the same concept. 'Buyer intent' and 'intent data' enrichment both refer to identifying companies showing research activity related to your product category. We use the terms interchangeably. The deliverable is the same: a scored account list showing who's in-market.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can intent data tell me who at the company is researching?</h3>
+            <p style="color: var(--color-text-secondary);">No. Intent data identifies companies, not individuals. It shows that someone at Acme Corp is researching 'CRM software,' but it can't tell you whether that's the VP of Sales or an intern. You combine intent data with contact enrichment to reach the right person at the right company.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How long does an intent signal remain valid?</h3>
+            <p style="color: var(--color-text-secondary);">Intent signals are most actionable within 2-4 weeks of detection. After that, the buying window may have passed — the company either purchased a solution or deprioritized the initiative. We recommend acting on high-intent signals within 1-2 weeks of receiving the data.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

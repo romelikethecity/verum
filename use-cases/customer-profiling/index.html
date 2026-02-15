@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many data points do you typically add to customer profiles?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We typically append 15-25 fields per record depending on what's already there. Common additions include employee count, revenue range, industry sub-category, tech stack, funding status, headquarters location, and growth signals. The specific fields depend on what your profiling analysis needs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you profile our customers without us sharing revenue data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We don't need your internal revenue data to enrich customer profiles. We work with your customer list \u2014 company names and contact info \u2014 and append external data from our sources. Your internal metrics stay internal. We add the external context."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How is customer profiling different from ICP analysis?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Customer profiling enriches individual records with detailed data. ICP analysis looks across those enriched profiles to identify patterns in your best customers. Profiling is the data preparation step. ICP analysis is the pattern recognition step. We do both."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Customer Profiling</h1>
+        <p class="page-hero__subtitle">You can't profile customers you don't understand. We fill in what your CRM doesn't know.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Customer Profiling</h2>
-<p>Build detailed customer profiles. Verum provides the clean, enriched data you need for effective customer profiling.</p>
+<p>Customer profiling builds detailed profiles of your existing customers to identify patterns, preferences, and characteristics that predict who will buy, expand, or churn. It requires complete, accurate data across firmographic, technographic, and behavioral dimensions.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with customer profiling because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>Your customer records have the basics: company name, one contact, and revenue. But you're missing the firmographic depth needed for real profiling: tech stack, growth stage, employee growth rate, funding history. Without these fields, your profiles are too thin to be actionable.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Enable Customer Profiling</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for customer profiling</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Customer data enrichment.</strong> We append firmographic, technographic, and demographic data to every customer record so profiles have depth beyond the basics.</li>
+    <li><strong>Contact expansion.</strong> We identify additional stakeholders at each customer account so you understand who else is involved, not just your primary contact.</li>
+    <li><strong>Data verification.</strong> We confirm that existing data is current. A customer profile built on outdated information leads to wrong conclusions about your customer base.</li>
+    <li><strong>Segment identification.</strong> With enriched data, we help identify natural clusters in your customer base that reveal patterns in who buys, who expands, and who churns.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your customer profiling challenges and we'll show you how clean data can transform your results.</p>
+<h2>Profiling Outcomes</h2>
+<ul>
+    <li>Customer profiles with 20+ data points instead of 5, enabling meaningful pattern recognition</li>
+    <li>ICP definition based on actual customer data rather than assumptions about who your best customers are</li>
+    <li>Churn risk indicators that surface before the renewal conversation, not after</li>
+    <li>Upsell targeting based on customer characteristics that correlate with expansion revenue</li>
+    <li>Marketing personas grounded in real customer data instead of imagined buyer archetypes</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many data points do you typically add to customer profiles?</h3>
+            <p style="color: var(--color-text-secondary);">We typically append 15-25 fields per record depending on what's already there. Common additions include employee count, revenue range, industry sub-category, tech stack, funding status, headquarters location, and growth signals. The specific fields depend on what your profiling analysis needs.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you profile our customers without us sharing revenue data?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We don't need your internal revenue data to enrich customer profiles. We work with your customer list — company names and contact info — and append external data from our sources. Your internal metrics stay internal. We add the external context.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is customer profiling different from ICP analysis?</h3>
+            <p style="color: var(--color-text-secondary);">Customer profiling enriches individual records with detailed data. ICP analysis looks across those enriched profiles to identify patterns in your best customers. Profiling is the data preparation step. ICP analysis is the pattern recognition step. We do both.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

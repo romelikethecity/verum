@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How accurate are employee count estimates?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For companies with a LinkedIn presence (most B2B companies with 20+ employees), employee counts are accurate to within 20-30%. The counts come from how many people list that company as their employer on LinkedIn, which undercounts companies with many non-desk workers. We adjust for industry-specific patterns."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you show employee count by department?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For larger companies (200+ employees), we can estimate department-level headcount based on LinkedIn job title distributions. This is most useful for targeting by department \u2014 for example, identifying companies with large engineering teams if you sell developer tools."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about companies with mostly hourly or field workers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LinkedIn-based employee counts undercount these companies because many hourly and field workers don't maintain LinkedIn profiles. For industries like construction, retail, and food service, we use industry-specific multipliers and other data sources to provide more realistic estimates."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Company Size Enrichment</h1>
+        <p class="page-hero__subtitle">Employee count is the most reliable sizing metric for B2B targeting — and most of your records don't have it.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Company Size Enrichment</h2>
-<p>Append employee count and company size ranges. Verum helps you append accurate company size data to your B2B database from 50+ trusted sources.</p>
+<p>Company size enrichment appends employee count data to your company records. We use LinkedIn employee counts, job posting volume, and other signals to estimate how many people work at each company. This is the foundation for size-based segmentation, lead scoring, and TAM calculation.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends company size data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Without employee count, you can't separate a 10-person startup from a 10,000-person enterprise. They both show up as 'company' in your CRM. Size determines pricing, sales process, buying committee complexity, and product fit. It's the single most useful firmographic field for B2B targeting.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Determine Company Size</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>LinkedIn employee count.</strong> LinkedIn company pages show employee counts that are directionally accurate for most companies with 20+ employees.</li>
+    <li><strong>Multi-source validation.</strong> We cross-reference LinkedIn data with job posting volume, office size indicators, and industry databases to validate and improve accuracy.</li>
+    <li><strong>Size band assignment.</strong> Each company gets placed in a size band: 1-10, 11-50, 51-200, 201-500, 501-1000, 1001-5000, 5001+ employees.</li>
+    <li><strong>Growth rate flagging.</strong> We compare current employee count to historical data to flag companies that are growing or shrinking rapidly.</li>
 </ul>
+
+<h2>What Size-Enriched Records Include</h2>
+<ul>
+    <li>Employee count estimate and size band for every company in your database</li>
+    <li>Growth indicator showing whether headcount is increasing, stable, or declining</li>
+    <li>Department-level sizing where available (engineering, sales, marketing headcount)</li>
+    <li>Source and confidence score for each estimate</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How accurate are employee count estimates?</h3>
+            <p style="color: var(--color-text-secondary);">For companies with a LinkedIn presence (most B2B companies with 20+ employees), employee counts are accurate to within 20-30%. The counts come from how many people list that company as their employer on LinkedIn, which undercounts companies with many non-desk workers. We adjust for industry-specific patterns.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you show employee count by department?</h3>
+            <p style="color: var(--color-text-secondary);">For larger companies (200+ employees), we can estimate department-level headcount based on LinkedIn job title distributions. This is most useful for targeting by department — for example, identifying companies with large engineering teams if you sell developer tools.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about companies with mostly hourly or field workers?</h3>
+            <p style="color: var(--color-text-secondary);">LinkedIn-based employee counts undercount these companies because many hourly and field workers don't maintain LinkedIn profiles. For industries like construction, retail, and food service, we use industry-specific multipliers and other data sources to provide more realistic estimates.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

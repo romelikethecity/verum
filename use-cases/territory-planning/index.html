@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you help us define territories or just provide the data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We provide the clean data that makes territory planning possible: accurate geographic data, complete firmographic fields, and account hierarchy mapping. The strategic decisions about how to draw territory lines are typically made by your sales ops team using our data as the input."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How often should territory data be refreshed?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At minimum, before annual territory planning. Companies with high account churn or rapid market changes should refresh quarterly. We recommend a full data refresh any time you're rebalancing territories, hiring new reps, or expanding into new markets."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you provide data for territories we haven't entered yet?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We can build market maps for new geographies showing the volume and profile of potential accounts. This helps you decide where to expand and how to size new territories before committing headcount. It's market sizing applied to territory planning."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Territory Planning</h1>
+        <p class="page-hero__subtitle">Balanced territories need accurate geographic and firmographic data. We provide both.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Territory Planning</h2>
-<p>Plan territories with accurate company data. Verum provides the clean, enriched data you need for effective territory planning.</p>
+<p>Territory planning divides your market into geographic or account-based territories for your sales team. Balanced territories — where each rep has similar opportunity potential — require accurate firmographic and geographic data for every account and prospect. Dirty data creates lopsided territories.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with territory planning because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>Your territories look balanced on paper: each rep has 500 accounts. But 40% of the accounts in Territory A are missing revenue data, so you can't tell if they're $1M or $100M opportunities. Territory B has 200 accounts with wrong ZIP codes, so they're actually in Territory C. Your balanced plan is built on imbalanced data.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How Clean Data Enables Territory Planning</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for territory planning</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Geographic standardization.</strong> We normalize addresses, correct ZIP codes, and add geocoding so every account maps to the right territory.</li>
+    <li><strong>Firmographic completion.</strong> We fill in revenue, employee count, and industry data so territory potential can be accurately calculated and compared.</li>
+    <li><strong>Account hierarchy mapping.</strong> We link subsidiaries to parent companies so territory assignments account for the full relationship, not just individual locations.</li>
+    <li><strong>White space analysis.</strong> We identify geographic areas and segments within territories that have prospects but no assigned accounts, revealing untapped potential.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your territory planning challenges and we'll show you how clean data can transform your results.</p>
+<h2>Territory Planning Results</h2>
+<ul>
+    <li>Balanced territories based on accurate potential, not inflated account counts with missing data</li>
+    <li>Correct geographic assignments because addresses and ZIP codes are validated and standardized</li>
+    <li>Visibility into white space opportunities within each territory for expansion planning</li>
+    <li>Fair quota setting because territory potential is calculated from complete, verified firmographic data</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you help us define territories or just provide the data?</h3>
+            <p style="color: var(--color-text-secondary);">We provide the clean data that makes territory planning possible: accurate geographic data, complete firmographic fields, and account hierarchy mapping. The strategic decisions about how to draw territory lines are typically made by your sales ops team using our data as the input.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How often should territory data be refreshed?</h3>
+            <p style="color: var(--color-text-secondary);">At minimum, before annual territory planning. Companies with high account churn or rapid market changes should refresh quarterly. We recommend a full data refresh any time you're rebalancing territories, hiring new reps, or expanding into new markets.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you provide data for territories we haven't entered yet?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We can build market maps for new geographies showing the volume and profile of potential accounts. This helps you decide where to expand and how to size new territories before committing headcount. It's market sizing applied to territory planning.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

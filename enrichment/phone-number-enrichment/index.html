@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the typical coverage improvement from phone enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Starting from a database with 50-60% phone coverage, enrichment typically adds numbers for an additional 20-30% of records, bringing total coverage to 70-85%. The remaining 15-30% are contacts whose phone numbers aren't available in any commercial database."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you verify numbers that are already in our database?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We verify your existing phone numbers alongside finding new ones. Existing numbers that are disconnected, reassigned, or invalid get flagged so your reps stop wasting time dialing bad numbers. Typically 10-15% of existing phone numbers in a B2B database need updating."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you provide phone numbers for international contacts?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Coverage varies significantly by country. US and Canada have the deepest phone databases. UK and Western Europe have moderate coverage. For other regions, phone number availability in commercial databases is limited. We report coverage rates by country for international lists."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Phone Number Enrichment</h1>
+        <p class="page-hero__subtitle">Half your contact records are missing phone numbers. The other half might be outdated.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Phone Number Enrichment</h2>
-<p>Append direct phone numbers to your contact records. Verum helps you append accurate phone numbers to your B2B database from 50+ trusted sources.</p>
+<p>Phone number enrichment appends and verifies business phone numbers for your contact and company records. We find direct lines, mobile numbers, and main office numbers, then verify each one is active and correctly assigned. This gives your outbound team more numbers to dial and higher confidence in the numbers they have.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends phone numbers</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Phone data is the most requested enrichment type and one of the hardest to deliver accurately. Numbers change, companies switch phone systems, and people block unknown callers. A database with a 60% phone coverage rate is typical — which means 40% of your contacts can't be reached by phone. Enrichment closes that gap.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich Phone Numbers</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Multi-source discovery.</strong> We search across phone databases, business directories, company websites, and public records to find numbers for each contact and company.</li>
+    <li><strong>Number type classification.</strong> Each number is classified as direct line, mobile, main office, or shared line so your reps know what to expect.</li>
+    <li><strong>Active line verification.</strong> We verify that each number is currently active and assigned — not disconnected, reassigned, or out of service.</li>
+    <li><strong>DNC screening.</strong> Every number is checked against national and state Do-Not-Call registries for compliance.</li>
 </ul>
+
+<h2>What Phone Enrichment Delivers</h2>
+<ul>
+    <li>Verified phone numbers appended to contact and company records</li>
+    <li>Number type (direct, mobile, main, shared) for each number</li>
+    <li>Active/inactive status and DNC registry flag</li>
+    <li>Coverage rate reporting showing what percentage of your records now have phone data</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the typical coverage improvement from phone enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">Starting from a database with 50-60% phone coverage, enrichment typically adds numbers for an additional 20-30% of records, bringing total coverage to 70-85%. The remaining 15-30% are contacts whose phone numbers aren't available in any commercial database.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you verify numbers that are already in our database?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We verify your existing phone numbers alongside finding new ones. Existing numbers that are disconnected, reassigned, or invalid get flagged so your reps stop wasting time dialing bad numbers. Typically 10-15% of existing phone numbers in a B2B database need updating.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you provide phone numbers for international contacts?</h3>
+            <p style="color: var(--color-text-secondary);">Coverage varies significantly by country. US and Canada have the deepest phone databases. UK and Western Europe have moderate coverage. For other regions, phone number availability in commercial databases is limited. We report coverage rates by country for international lists.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

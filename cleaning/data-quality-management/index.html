@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you measure data quality?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We measure four dimensions: accuracy (verified against external sources), completeness (percentage of fields filled), consistency (formatting and value standardization), and freshness (how recently the data was verified). Each record gets a composite score, and your database gets an overall health grade."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is a good data quality score?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An overall completeness rate above 80% and an accuracy rate above 90% are strong. Most databases we assess fall in the 50-70% completeness range. Duplicates under 5% is excellent. Over 15% is common and problematic. We provide industry benchmarks so you can see how your data compares to peers."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much does data quality cost my business?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gartner estimates poor data quality costs organizations an average of $12.9 million per year. For sales teams specifically, Salesforce research shows reps spend 27% of their time on data-related tasks instead of selling. We can calculate your specific cost based on your team size and data volume."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Data Quality Management</h1>
+        <p class="page-hero__subtitle">Measure, monitor, and improve your data quality across every dimension.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Data Quality Management</h2>
-<p>Ongoing data quality monitoring and improvement. Verum helps you maintain accurate, reliable data quality across your entire database.</p>
+<p>Data quality management is the practice of measuring and improving the accuracy, completeness, consistency, and freshness of your business data. It combines initial assessment, cleanup, and ongoing monitoring into a program that treats data quality as a continuous process rather than a one-time project.</p>
 
-<h2>What We Do</h2>
+<p>You know your data has problems, but you do not know how bad they are or where to start. Is it a 10% duplicate rate or a 40% duplicate rate? Are 5% of emails invalid or 30%? Without measurement, you are guessing at the problem and cannot prove the ROI of fixing it.</p>
+
+<h2>Our Data Quality Framework</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Assessment.</strong> We audit your data across four dimensions: accuracy (is it correct?), completeness (are fields filled?), consistency (are formats standard?), and freshness (is it current?).</li>
+    <li><strong>Scoring.</strong> Every record gets a quality score based on how well it performs across these dimensions. Your overall database gets an aggregate health score.</li>
+    <li><strong>Remediation.</strong> We fix the issues identified in the assessment: cleaning, normalizing, deduplicating, and enriching to bring quality scores up.</li>
+    <li><strong>Monitoring.</strong> Ongoing scans track quality over time so you can see trends and catch new issues early.</li>
+    <li><strong>Reporting.</strong> Regular dashboards show data quality KPIs: completeness rates, accuracy trends, duplicate growth, and decay velocity.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Quality Management Outcomes</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>A measurable baseline for data quality that you can track and improve over time</li>
+    <li>Executive-level reporting on data quality that ties directly to business outcomes</li>
+    <li>Prioritized action plans that focus cleanup effort where it has the most impact</li>
+    <li>Prevention through monitoring that catches problems at 1% instead of 30%</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you measure data quality?</h3>
+            <p style="color: var(--color-text-secondary);">We measure four dimensions: accuracy (verified against external sources), completeness (percentage of fields filled), consistency (formatting and value standardization), and freshness (how recently the data was verified). Each record gets a composite score, and your database gets an overall health grade.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What is a good data quality score?</h3>
+            <p style="color: var(--color-text-secondary);">An overall completeness rate above 80% and an accuracy rate above 90% are strong. Most databases we assess fall in the 50-70% completeness range. Duplicates under 5% is excellent. Over 15% is common and problematic. We provide industry benchmarks so you can see how your data compares to peers.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How much does data quality cost my business?</h3>
+            <p style="color: var(--color-text-secondary);">Gartner estimates poor data quality costs organizations an average of $12.9 million per year. For sales teams specifically, Salesforce research shows reps spend 27% of their time on data-related tasks instead of selling. We can calculate your specific cost based on your team size and data volume.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

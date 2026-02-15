@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the typical hit rate for direct dials?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It varies by seniority and industry. For senior executives at mid-market and enterprise companies, expect 30-50% hit rates. For managers and individual contributors, 20-35%. Some industries (tech, professional services) have higher direct dial availability than others (healthcare, government)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are these mobile numbers or desk phones?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Both. We find whatever direct number is available and classify each one. Mobile numbers are increasingly common, especially for senior contacts who may not have a desk phone. We don't distinguish between the two in terms of priority \u2014 both connect you directly to the person."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle TCPA and DNC compliance?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We screen every number against the National DNC Registry and state-level registries. We flag numbers that appear on DNC lists so your team can handle them according to your compliance policies. We provide the data and compliance flags \u2014 your legal team determines your calling policies."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Direct Dial Enrichment</h1>
+        <p class="page-hero__subtitle">The main office number gets you a receptionist. A direct dial gets you a conversation.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Direct Dial Enrichment</h2>
-<p>Find direct dial numbers that bypass the front desk. Verum helps you append accurate direct dials to your B2B database from 50+ trusted sources.</p>
+<p>Direct dial enrichment appends personal direct phone numbers to your contact records — numbers that ring on a specific person's desk or mobile, bypassing the company switchboard. For outbound sales teams, direct dials are the difference between connecting with decision-makers and leaving voicemails with gatekeepers.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends direct dials</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Your contact records have company main lines, not direct dials. Calling the main number means navigating an IVR, explaining yourself to a receptionist, and hoping to get transferred. Connection rates on main lines average 2-5%. Direct dials connect at 15-25%. That's a 5x improvement in conversations per hour.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Find Direct Dials</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Multi-source search.</strong> We search across phone databases, business registrations, and proprietary sources to find numbers associated with each specific contact.</li>
+    <li><strong>Number type verification.</strong> Each number is classified as direct dial, mobile, company main line, or shared line so your reps know what to expect when they call.</li>
+    <li><strong>Do-not-call screening.</strong> We check every number against national and state DNC registries so your team stays compliant.</li>
+    <li><strong>Recency validation.</strong> We verify that numbers are currently assigned and active, filtering out disconnected and reassigned numbers.</li>
 </ul>
+
+<h2>What Direct Dial Enrichment Delivers</h2>
+<ul>
+    <li>Direct phone numbers for individual contacts, not company switchboards</li>
+    <li>Number type classification (direct line, mobile, shared) for each result</li>
+    <li>DNC registry check status for compliance</li>
+    <li>Hit rate reporting showing what percentage of your contacts got direct dials</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the typical hit rate for direct dials?</h3>
+            <p style="color: var(--color-text-secondary);">It varies by seniority and industry. For senior executives at mid-market and enterprise companies, expect 30-50% hit rates. For managers and individual contributors, 20-35%. Some industries (tech, professional services) have higher direct dial availability than others (healthcare, government).</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Are these mobile numbers or desk phones?</h3>
+            <p style="color: var(--color-text-secondary);">Both. We find whatever direct number is available and classify each one. Mobile numbers are increasingly common, especially for senior contacts who may not have a desk phone. We don't distinguish between the two in terms of priority — both connect you directly to the person.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle TCPA and DNC compliance?</h3>
+            <p style="color: var(--color-text-secondary);">We screen every number against the National DNC Registry and state-level registries. We flag numbers that appear on DNC lists so your team can handle them according to your compliance policies. We provide the data and compliance flags — your legal team determines your calling policies.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

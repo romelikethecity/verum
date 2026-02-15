@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many department categories do you use?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our standard taxonomy has 12 departments: Sales, Marketing, Engineering/Product, Finance/Accounting, HR/People, Operations, IT/Information Security, Legal, Customer Success/Support, Executive/General Management, Research/R&D, and Other. We can consolidate or expand these categories based on your needs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about contacts with titles that span departments?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Titles like 'VP of Sales and Marketing' or 'Director of IT and Operations' get classified under their primary function or tagged with both departments if your system supports multi-value fields. We handle hybrid titles rather than forcing them into a single bucket."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you identify which department is growing at a company?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If we have job posting data for the company, yes. Hiring patterns by department reveal which functions are growing. This can be combined with department enrichment to identify, for example, companies that are rapidly expanding their engineering teams \u2014 a buying signal for developer tools."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Department Enrichment</h1>
+        <p class="page-hero__subtitle">You need to reach the marketing team, but half your contacts don't have a department field at all.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Department Enrichment</h2>
-<p>Identify departments for better routing. Verum helps you append accurate department data to your B2B database from 50+ trusted sources.</p>
+<p>Department enrichment classifies your contacts into functional departments based on their job titles: marketing, sales, engineering, finance, HR, operations, IT, legal, and more. This lets you segment your outreach by department, route leads to the right sales team, and measure penetration by function within target accounts.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends department data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Job titles are messy and inconsistent. 'Growth Marketing Manager' and 'Digital Marketing Specialist' both belong in marketing, but your CRM can't tell without a standardized department field. Without department data, you can't filter your database by function or route leads to the rep who handles that buyer persona.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Classify Departments</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Title parsing and normalization.</strong> We parse every job title in your database and map it to a standardized department classification using NLP and pattern matching.</li>
+    <li><strong>Seniority layer.</strong> Each contact gets both a department and a seniority level, so you can filter for 'VP-level in Marketing' or 'Director-level in Engineering.'</li>
+    <li><strong>Department-level account mapping.</strong> For target accounts, we show how many contacts you have in each department to identify gaps in buying committee coverage.</li>
+    <li><strong>Custom taxonomy support.</strong> If your business uses non-standard department names or needs custom groupings, we map to your taxonomy instead of a generic one.</li>
 </ul>
+
+<h2>What Department-Enriched Data Enables</h2>
+<ul>
+    <li>Standardized department classification for every contact in your database</li>
+    <li>Seniority level (C-suite, VP, Director, Manager, IC) paired with department</li>
+    <li>Account-level department coverage showing where you have contacts and where you don't</li>
+    <li>Custom department mapping aligned to your sales team structure and buyer personas</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many department categories do you use?</h3>
+            <p style="color: var(--color-text-secondary);">Our standard taxonomy has 12 departments: Sales, Marketing, Engineering/Product, Finance/Accounting, HR/People, Operations, IT/Information Security, Legal, Customer Success/Support, Executive/General Management, Research/R&D, and Other. We can consolidate or expand these categories based on your needs.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about contacts with titles that span departments?</h3>
+            <p style="color: var(--color-text-secondary);">Titles like 'VP of Sales and Marketing' or 'Director of IT and Operations' get classified under their primary function or tagged with both departments if your system supports multi-value fields. We handle hybrid titles rather than forcing them into a single bucket.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you identify which department is growing at a company?</h3>
+            <p style="color: var(--color-text-secondary);">If we have job posting data for the company, yes. Hiring patterns by department reveal which functions are growing. This can be combined with department enrichment to identify, for example, companies that are rapidly expanding their engineering teams — a buying signal for developer tools.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

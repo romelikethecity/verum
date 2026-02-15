@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is this different from my CRM's built-in duplicate detection?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "CRM duplicate detection typically matches on exact email or exact name plus company. We use fuzzy matching, cross-field matching, and cross-object matching that catches 3-5x more duplicates. We also normalize data before matching, so 'IBM' and 'International Business Machines' get flagged as the same company."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you automatically merge duplicates or just flag them?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We flag and recommend. You get a report showing every duplicate pair with a confidence score and suggested merge action. High-confidence duplicates can be auto-merged if you choose, but we never merge without your approval. You stay in control of what happens to your data."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How long does duplicate detection take for a large database?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most databases under 100,000 records are scanned within 24-48 hours. Larger databases take proportionally longer because the matching comparison grows with record count. We prioritize by confidence so you can start reviewing high-confidence matches while we finish scanning the full dataset."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Duplicate Detection</h1>
+        <p class="page-hero__subtitle">Find every duplicate in your database, including the ones hiding in plain sight.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Duplicate Detection</h2>
-<p>Identify and flag duplicate contacts and accounts. Verum helps you maintain accurate, reliable duplicates across your entire database.</p>
+<p>Duplicate detection scans your database to identify records that represent the same person, company, or entity. It catches exact matches as well as near-matches where data entry variations, imports from different sources, and inconsistent formatting have created multiple records for the same entity.</p>
 
-<h2>What We Do</h2>
+<p>Most CRMs have a 10-30% duplicate rate and the number grows with every list import, web form submission, and integration sync. Built-in CRM duplicate detection catches obvious matches but misses the subtle ones that cause the most damage to reporting and outreach.</p>
+
+<h2>What We Detect</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Exact matches.</strong> Identical emails, phone numbers, or company names across records. The easy ones that still slip through CRM detection.</li>
+    <li><strong>Fuzzy matches.</strong> Robert vs Bob, Deloitte vs Deloitte Consulting LLP, (612) 555-1234 vs 6125551234. Variations in formatting and naming that represent the same entity.</li>
+    <li><strong>Cross-object matches.</strong> A lead and a contact that are the same person. An account and a lead company that are the same business. Duplicates hiding across different CRM objects.</li>
+    <li><strong>Household and company-level matches.</strong> Multiple contacts at the same company with slightly different company name spellings, or the same person appearing as both a personal and work contact.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Detection Deliverables</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>A complete duplicate report with match confidence scores and recommended merge actions</li>
+    <li>Grouped duplicate clusters so you can see all records that match before deciding what to merge</li>
+    <li>Match reasoning that shows exactly why two records were flagged as potential duplicates</li>
+    <li>Priority ranking so you can tackle high-confidence duplicates first and review edge cases later</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is this different from my CRM's built-in duplicate detection?</h3>
+            <p style="color: var(--color-text-secondary);">CRM duplicate detection typically matches on exact email or exact name plus company. We use fuzzy matching, cross-field matching, and cross-object matching that catches 3-5x more duplicates. We also normalize data before matching, so 'IBM' and 'International Business Machines' get flagged as the same company.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you automatically merge duplicates or just flag them?</h3>
+            <p style="color: var(--color-text-secondary);">We flag and recommend. You get a report showing every duplicate pair with a confidence score and suggested merge action. High-confidence duplicates can be auto-merged if you choose, but we never merge without your approval. You stay in control of what happens to your data.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How long does duplicate detection take for a large database?</h3>
+            <p style="color: var(--color-text-secondary);">Most databases under 100,000 records are scanned within 24-48 hours. Larger databases take proportionally longer because the matching comparison grows with record count. We prioritize by confidence so you can start reviewing high-confidence matches while we finish scanning the full dataset.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

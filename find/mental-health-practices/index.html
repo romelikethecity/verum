@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you find mental health practices that accept specific insurance?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We pull insurance panel participation data from provider directories and credentialing databases. If you need group practices that accept Blue Cross, or solo therapists who are on Aetna's panel in California, we can filter for that."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle the telehealth-only providers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Telehealth providers are flagged separately in our data. They might be licensed in multiple states but operate from a single location. We capture their practice state (where they're located), license states (where they can treat patients), and their virtual practice contact information."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you distinguish between prescribers and non-prescribers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Psychiatrists (MD/DO), psychiatric NPs (PMHNPs), and psychiatric PAs can prescribe medication. Psychologists (in most states), LCSWs, LMFTs, and LPCs can't. We tag license type clearly so you can filter for prescribers if your product is prescriber-specific."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Mental Health Practices</h1>
+      <p class="page-hero__subtitle">Mental health provider directories are a maze of solo therapists, group practices, and clinicians who've moved to telehealth-only.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Mental Health Practices</h2>
-<p>Locate mental health providers and practices. Verum helps you build targeted lists of mental health practices with complete, accurate contact information.</p>
+<p>Verum builds mental health practice lists using state licensing board data for psychologists, LCSWs, LMFTs, and LPCs, combined with NPI records and Psychology Today directory data. We identify which providers run their own practice versus working for someone else, and we find direct contact info that telehealth-only providers don't advertise.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Mental health practices are harder to catalog than other medical specialties because so many providers are solo practitioners working from home offices or shared spaces. The shift to telehealth made this worse: a therapist might be licensed in 5 states but only have a virtual office. Traditional address-based lists miss most of them.</p>
+
+<h2>How We Find Mental Health Practices</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>Multi-credential license board aggregation.</strong> Mental health involves multiple license types: psychologists, LCSWs, LMFTs, LPCs, and psychiatric NPs. We pull from all relevant state boards and combine them into a single dataset.</li>
+  <li><strong>Practice vs. employee distinction.</strong> Many licensed clinicians are employed by hospitals, community mental health centers, or group practices. We identify who runs their own practice using NPI organizational records and business entity filings.</li>
+  <li><strong>Telehealth and virtual practice detection.</strong> We flag providers who operate telehealth-only practices and identify which states they're licensed to serve, which matters for geographic targeting.</li>
+  <li><strong>Psychology Today and directory enrichment.</strong> Provider directories add specialization data (anxiety, depression, PTSD, couples therapy, etc.), accepted insurance panels, and therapy modalities that licensing boards don't capture.</li>
+  <li><strong>Contact verification for virtual providers.</strong> Telehealth providers are especially hard to reach because they don't have a physical office number. We find their business email and phone through domain registration, EHR platform data, and professional association records.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Mental Health Practice List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Provider name and license type.</strong> Psychologist (PhD/PsyD), LCSW, LMFT, LPC, PMHNP, or psychiatrist, with license numbers and status.</li>
+  <li><strong>Practice model.</strong> Solo practice, group practice, community mental health center, hospital-based, or telehealth-only. This changes your pitch entirely.</li>
+  <li><strong>Specializations and modalities.</strong> What they treat (anxiety, depression, trauma, substance abuse, eating disorders) and how (CBT, EMDR, DBT, psychodynamic, etc.).</li>
+  <li><strong>Insurance panels.</strong> Which insurance networks they're in-network with, or whether they're cash-pay/private-pay only.</li>
+  <li><strong>Direct contact information.</strong> Verified email and phone number for the provider or practice owner, not the directory listing's generic form.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you find mental health practices that accept specific insurance?</h3>
+<p>Yes. We pull insurance panel participation data from provider directories and credentialing databases. If you need group practices that accept Blue Cross, or solo therapists who are on Aetna's panel in California, we can filter for that.</p>
+
+<h3>How do you handle the telehealth-only providers?</h3>
+<p>Telehealth providers are flagged separately in our data. They might be licensed in multiple states but operate from a single location. We capture their practice state (where they're located), license states (where they can treat patients), and their virtual practice contact information.</p>
+
+<h3>Can you distinguish between prescribers and non-prescribers?</h3>
+<p>Yes. Psychiatrists (MD/DO), psychiatric NPs (PMHNPs), and psychiatric PAs can prescribe medication. Psychologists (in most states), LCSWs, LMFTs, and LPCs can't. We tag license type clearly so you can filter for prescribers if your product is prescriber-specific.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

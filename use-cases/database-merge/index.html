@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you decide which record to keep when there are conflicts?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We apply configurable precedence rules. By default, we prefer the most recently updated value, then the most complete record, then the record from the designated primary system. You can customize these rules before we merge. Every conflict resolution is documented so you can audit decisions."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if the two databases have completely different field structures?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We handle field mapping as part of the merge. If Database A has 'Company Revenue' and Database B has 'Annual Revenue' and 'Revenue Range,' we map them together and standardize the values. You approve the field mapping before we execute the merge."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you merge more than two databases at once?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We regularly merge three or more databases in a single project, typically during multi-company acquisitions or when consolidating regional databases. The process is the same \u2014 overlap analysis, deduplication, conflict resolution, standardization \u2014 just applied across more sources."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Database Merge</h1>
+        <p class="page-hero__subtitle">Merging databases from an acquisition or consolidation? We prevent the data collision.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Database Merge</h2>
-<p>Merge databases after acquisitions. Verum provides the clean, enriched data you need for effective database merging.</p>
+<p>Database merging combines records from multiple databases into a single system, typically after an acquisition, a department consolidation, or a CRM unification project. Without proper deduplication and standardization, merging databases just doubles your data problems.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with database merging because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>Company A has 30,000 contacts in Salesforce. Company B has 20,000 contacts in HubSpot. There's 8,000 records of overlap that no one has mapped. If you just import B into A, you now have 50,000 records with 8,000 duplicates, conflicting data on shared contacts, and two different formatting standards mixed together.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Merge Databases</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for database merging</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Overlap analysis.</strong> We identify which records exist in both databases and how they differ. You get a clear picture of the overlap before any merging happens.</li>
+    <li><strong>Cross-database deduplication.</strong> We match records across databases using fuzzy matching on name, email, phone, and company to find duplicates that exact matching would miss.</li>
+    <li><strong>Conflict resolution.</strong> When both databases have different data for the same person, we determine which values to keep based on recency, completeness, and source reliability.</li>
+    <li><strong>Standardization.</strong> Fields from both databases get normalized to the same format, picklist values, and conventions before merging.</li>
+    <li><strong>Golden record creation.</strong> For every duplicate pair, we build one master record that preserves the best data from both sources.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your database merging challenges and we'll show you how clean data can transform your results.</p>
+<h2>Merged Database Results</h2>
+<ul>
+    <li>A single, deduplicated database with the best data from both sources</li>
+    <li>Clear audit trail showing where each data point came from and why it was chosen</li>
+    <li>No lost data because merge rules preserve the most complete and recent information from each source</li>
+    <li>Consistent formatting across all records regardless of their original source system</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you decide which record to keep when there are conflicts?</h3>
+            <p style="color: var(--color-text-secondary);">We apply configurable precedence rules. By default, we prefer the most recently updated value, then the most complete record, then the record from the designated primary system. You can customize these rules before we merge. Every conflict resolution is documented so you can audit decisions.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if the two databases have completely different field structures?</h3>
+            <p style="color: var(--color-text-secondary);">We handle field mapping as part of the merge. If Database A has 'Company Revenue' and Database B has 'Annual Revenue' and 'Revenue Range,' we map them together and standardize the values. You approve the field mapping before we execute the merge.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you merge more than two databases at once?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We regularly merge three or more databases in a single project, typically during multi-company acquisitions or when consolidating regional databases. The process is the same — overlap analysis, deduplication, conflict resolution, standardization — just applied across more sources.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many contacts per account do you typically find?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on the company size and how specific your persona requirements are. For mid-market companies (100-1000 employees), we typically identify 3-8 contacts matching your target personas. For enterprise accounts, 10-20+. We verify each contact's email and title before including them."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you enrich our existing ABM target list or do we need to start fresh?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We work with your existing list. Send us your target accounts and we'll fill in missing firmographic data, add new contacts at each account, and verify what's already there. No need to rebuild from scratch."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle accounts where we already have some data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We merge intelligently. If you have a contact's name and email but are missing their phone and title, we append the missing fields without overwriting what you already have. You get a report showing exactly what was added and changed."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">ABM Targeting</h1>
+        <p class="page-hero__subtitle">ABM only works when you know exactly who you're targeting. We fill in the blanks.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
-<h2>ABM Targeting</h2>
-<p>Target accounts with complete firmographic data. Verum provides the clean, enriched data you need for effective ABM targeting.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with ABM targeting because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<h2>Abm Targeting</h2>
+<p>Account-based marketing depends on having complete, accurate data for every target account. Without firmographic details, verified contacts, and buying committee information, your ABM campaigns are just expensive spray-and-pray with a fancier label.</p>
 
-<h2>How Verum Helps</h2>
+<p>Most ABM programs fail because the account data is incomplete. You have a company name and maybe one contact, but you're missing employee count, revenue, tech stack, and the other four people on the buying committee. Your personalization falls flat because you don't know enough to be relevant.</p>
+
+<h2>How Clean Data Powers ABM</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for ABM targeting</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Account enrichment.</strong> We fill in firmographic fields — employee count, revenue, industry, tech stack, headquarters — so your ICP scoring can actually differentiate good-fit accounts from bad ones.</li>
+    <li><strong>Contact discovery.</strong> We identify and verify contacts across the buying committee: the economic buyer, the champion, the technical evaluator, and the end user. Not just one name per account.</li>
+    <li><strong>Data verification.</strong> Every email, phone number, and title gets verified against current sources. Stale data from two years ago gets updated or flagged.</li>
+    <li><strong>Account hierarchy mapping.</strong> We connect subsidiaries to parent companies so you're not accidentally running ABM against three different entities that are all the same customer.</li>
+    <li><strong>Ongoing refresh.</strong> People change roles. Companies get acquired. We keep your target account data current so your ABM program doesn't degrade over time.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your ABM targeting challenges and we'll show you how clean data can transform your results.</p>
+<h2>What Better ABM Data Delivers</h2>
+<ul>
+    <li>Higher engagement rates because your messaging is based on accurate firmographic and persona data</li>
+    <li>Multi-threaded outreach from day one because you have the full buying committee, not just one contact</li>
+    <li>Fewer wasted impressions on accounts that don't fit your ICP because scoring uses real data</li>
+    <li>Sales and marketing alignment because both teams are working from the same verified account records</li>
+    <li>Measurable pipeline from ABM instead of vanity metrics about accounts reached</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many contacts per account do you typically find?</h3>
+            <p style="color: var(--color-text-secondary);">It depends on the company size and how specific your persona requirements are. For mid-market companies (100-1000 employees), we typically identify 3-8 contacts matching your target personas. For enterprise accounts, 10-20+. We verify each contact's email and title before including them.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you enrich our existing ABM target list or do we need to start fresh?</h3>
+            <p style="color: var(--color-text-secondary);">We work with your existing list. Send us your target accounts and we'll fill in missing firmographic data, add new contacts at each account, and verify what's already there. No need to rebuild from scratch.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle accounts where we already have some data?</h3>
+            <p style="color: var(--color-text-secondary);">We merge intelligently. If you have a contact's name and email but are missing their phone and title, we append the missing fields without overwriting what you already have. You get a report showing exactly what was added and changed.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

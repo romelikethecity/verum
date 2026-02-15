@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Will enriching data retroactively change existing lead scores?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. When missing fields get filled, leads that scored low due to missing data may score higher. We recommend running a lead re-score after enrichment and flagging any leads whose score changed significantly. Your hottest leads might have been hiding behind incomplete data."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much of a scoring improvement should we expect?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Teams typically see MQL-to-SQL conversion rates improve by 15-30% after enrichment because scoring accuracy improves. The exact improvement depends on how incomplete your data was before. If 40% of leads were missing key scoring fields, the improvement will be larger than if only 10% were."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you help us build a scoring model or just improve the data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We focus on the data. We make sure every field your scoring model uses is filled, accurate, and standardized. Building the scoring model itself \u2014 deciding weights, thresholds, and MQL definitions \u2014 is best done by your marketing ops team who understands your sales process."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Lead Scoring</h1>
+        <p class="page-hero__subtitle">Your scoring model is only as accurate as the data feeding it. We make the data accurate.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Lead Scoring</h2>
-<p>Score leads accurately with complete data. Verum provides the clean, enriched data you need for effective lead scoring.</p>
+<p>Lead scoring assigns a value to each lead based on how well they match your ideal customer profile and how engaged they are with your content. Scoring breaks down when the profile data is incomplete — you can't score on company size if half your leads are missing that field.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with lead scoring because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>You built a lead scoring model that weights industry (20 points), company size (15 points), title seniority (15 points), and engagement (50 points). But 40% of leads are missing industry. Title is unstandardized so 'VP' gets points but 'Vice President' doesn't. Your model scores 60% of leads incorrectly because the data inputs are unreliable.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Fix Scoring Data</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for lead scoring</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Firmographic completion.</strong> We fill in company size, industry, revenue, and location fields that your scoring model uses for fit scoring. No more zero-score leads that are actually a perfect fit.</li>
+    <li><strong>Title standardization.</strong> We map every title to consistent seniority and function values so VP and Vice President both score the same points. No more scoring gaps from title variations.</li>
+    <li><strong>Data verification.</strong> We confirm that existing data is accurate. A lead scored as enterprise because someone typed '5000' instead of '50' for employee count is a costly scoring error.</li>
+    <li><strong>Enrichment with scoring dimensions.</strong> We add fields like tech stack, funding status, and growth signals that can power more sophisticated scoring models.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your lead scoring challenges and we'll show you how clean data can transform your results.</p>
+<h2>Better Scoring Outcomes</h2>
+<ul>
+    <li>Scoring that accurately predicts fit because every firmographic field in the model is filled and verified</li>
+    <li>Consistent scoring across all leads because title and industry values are standardized</li>
+    <li>More nuanced scoring models because enrichment adds new dimensions beyond basic firmographics</li>
+    <li>Sales confidence in lead scores because the data behind them is verifiably accurate</li>
+    <li>Higher conversion rates from MQLs to SQLs because scoring correctly identifies the best leads</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Will enriching data retroactively change existing lead scores?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. When missing fields get filled, leads that scored low due to missing data may score higher. We recommend running a lead re-score after enrichment and flagging any leads whose score changed significantly. Your hottest leads might have been hiding behind incomplete data.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How much of a scoring improvement should we expect?</h3>
+            <p style="color: var(--color-text-secondary);">Teams typically see MQL-to-SQL conversion rates improve by 15-30% after enrichment because scoring accuracy improves. The exact improvement depends on how incomplete your data was before. If 40% of leads were missing key scoring fields, the improvement will be larger than if only 10% were.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you help us build a scoring model or just improve the data?</h3>
+            <p style="color: var(--color-text-secondary);">We focus on the data. We make sure every field your scoring model uses is filled, accurate, and standardized. Building the scoring model itself — deciding weights, thresholds, and MQL definitions — is best done by your marketing ops team who understands your sales process.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

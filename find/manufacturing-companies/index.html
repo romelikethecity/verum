@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you find manufacturers by what they produce?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We use detailed NAICS codes (6-digit level) and product description matching to find manufacturers of specific products. If you need every injection molder in the Midwest that does automotive parts, or every food manufacturer with SQF certification, we can build that list."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you find plant-level contacts versus corporate contacts?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We identify individual facilities through EPA registrations, state manufacturing directories, and OSHA records. Then we find contacts at each facility through LinkedIn, industry directories, and direct research. A plant manager at a facility in Ohio has different needs than the VP of Procurement at headquarters in New York."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you identify manufacturers with specific certifications?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We check certification body databases for ISO 9001, ISO 14001, AS9100, IATF 16949 (automotive), SQF and BRC (food safety), GMP, and NADCAP (aerospace). Certifications tell you a lot about what markets a manufacturer serves and what standards they meet."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Manufacturing Companies</h1>
+      <p class="page-hero__subtitle">Manufacturing company databases are full of corporate headquarters entries and missing the plant managers who make purchasing decisions on the floor.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Manufacturing Companies</h2>
-<p>Locate manufacturers and suppliers. Verum helps you build targeted lists of manufacturing companies with complete, accurate contact information.</p>
+<p>Verum builds manufacturing company lists that include actual plant locations, not just corporate HQ addresses. We identify plant managers, purchasing directors, and operations leads at each facility and deliver direct contact info that gets past the front office.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Manufacturing is decentralized. A single company might operate 15 plants across 8 states, each with its own purchasing manager who buys different things. National databases list the corporate headquarters, but if you're selling to the plant floor, you need the facility-level contact. Those are hard to find.</p>
+
+<h2>How We Build Manufacturing Company Lists</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>NAICS/SIC code classification.</strong> We use detailed manufacturing NAICS codes (311-339) to find companies in specific sub-sectors: food processing, plastics, metals, electronics, automotive parts, chemicals, and more.</li>
+  <li><strong>Plant-level identification.</strong> EPA facility registrations, state environmental permits, and OSHA inspection records reveal individual manufacturing locations that corporate directories don't list separately.</li>
+  <li><strong>Decision-maker mapping by role.</strong> At each facility, we identify the plant manager, purchasing/procurement director, maintenance manager, and operations manager, since different products get bought by different roles.</li>
+  <li><strong>Supply chain and vendor signals.</strong> Trade show attendance, industry association memberships, and supplier database listings help us understand what each manufacturer buys and from whom.</li>
+  <li><strong>Size and production indicators.</strong> Employee count per facility, SQF/ISO certifications, and EPA reporting thresholds give us sizing data that goes beyond revenue estimates.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Manufacturing Company List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Facility-level records.</strong> Individual plant addresses, not just corporate HQ. Each location is a separate entry with its own contacts and details.</li>
+  <li><strong>NAICS codes and product categories.</strong> What they manufacture, at a granular level. Not just "manufacturing" but "injection-molded plastic components" or "frozen prepared foods."</li>
+  <li><strong>Key contacts by role.</strong> Plant manager, purchasing director, maintenance manager, or operations lead with direct email and phone number for each facility.</li>
+  <li><strong>Certifications and compliance.</strong> ISO 9001, AS9100, IATF 16949, SQF, GMP, and other quality certifications that indicate the types of work they do.</li>
+  <li><strong>Employee count and facility size.</strong> Headcount at each location and estimated facility square footage from property records.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you find manufacturers by what they produce?</h3>
+<p>Yes. We use detailed NAICS codes (6-digit level) and product description matching to find manufacturers of specific products. If you need every injection molder in the Midwest that does automotive parts, or every food manufacturer with SQF certification, we can build that list.</p>
+
+<h3>How do you find plant-level contacts versus corporate contacts?</h3>
+<p>We identify individual facilities through EPA registrations, state manufacturing directories, and OSHA records. Then we find contacts at each facility through LinkedIn, industry directories, and direct research. A plant manager at a facility in Ohio has different needs than the VP of Procurement at headquarters in New York.</p>
+
+<h3>Can you identify manufacturers with specific certifications?</h3>
+<p>Yes. We check certification body databases for ISO 9001, ISO 14001, AS9100, IATF 16949 (automotive), SQF and BRC (food safety), GMP, and NADCAP (aerospace). Certifications tell you a lot about what markets a manufacturer serves and what standards they meet.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

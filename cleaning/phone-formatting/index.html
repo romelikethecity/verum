@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What format do you standardize to?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We deliver two formats: E.164 for systems (+16125551234) and a display format for humans ((612) 555-1234). Most CRMs and dialers work with E.164. We can also deliver in any custom format you need if your systems expect something specific."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you tell if a phone number is still active?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can identify numbers that are disconnected, out of service, or assigned to a fax line. For mobile numbers in the US, we can also check carrier information. Full real-time line status checking is available as an add-on for teams that need the highest confidence."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle phone numbers without country codes?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We default to the country associated with the contact record. If the contact has a US address, we assume US country code. For ambiguous cases where the number could belong to multiple countries, we flag it for review rather than guessing."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Phone Formatting</h1>
+        <p class="page-hero__subtitle">Ten formats for the same phone number. We standardize to one.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Phone Formatting</h2>
-<p>Standardize phone number formats across regions. Verum helps you maintain accurate, reliable phone formats across your entire database.</p>
+<p>Phone formatting standardizes phone numbers in your database to a consistent format so they work with your dialer, CRM integrations, and outbound campaigns. It also identifies invalid numbers, landlines vs mobile, and numbers that have been disconnected.</p>
 
-<h2>What We Do</h2>
+<p>(612) 555-1234, 612-555-1234, 6125551234, +1-612-555-1234, 612.555.1234. These are all the same number stored five different ways. Your dialer cannot parse half of them. Your deduplication does not match any of them. Your reporting thinks you have five different contacts.</p>
+
+<h2>How We Format Phone Numbers</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Standardization.</strong> Every number gets formatted to E.164 international standard (+16125551234) with a display format alongside it for human readability.</li>
+    <li><strong>Validation.</strong> We check that the number has the right digit count for its country, that the area code exists, and that the number follows the numbering plan for its region.</li>
+    <li><strong>Line type detection.</strong> We identify whether a number is mobile, landline, VoIP, or toll-free so your outbound team knows whether to call or text.</li>
+    <li><strong>Extension parsing.</strong> Numbers with extensions like '612-555-1234 x567' get the extension extracted to a separate field so your dialer can handle it properly.</li>
+    <li><strong>Country code handling.</strong> US, UK, Australian, and international numbers all get standardized with proper country codes and validated against the numbering rules for that country.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Formatted Phone Data</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Dialers that work because every number is in a format the system can parse</li>
+    <li>Deduplication that catches phone number matches across different formatting styles</li>
+    <li>SMS campaigns that only target mobile numbers, not landlines that will reject the message</li>
+    <li>Clean reporting on call outcomes because you are not counting format errors as failed calls</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What format do you standardize to?</h3>
+            <p style="color: var(--color-text-secondary);">We deliver two formats: E.164 for systems (+16125551234) and a display format for humans ((612) 555-1234). Most CRMs and dialers work with E.164. We can also deliver in any custom format you need if your systems expect something specific.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you tell if a phone number is still active?</h3>
+            <p style="color: var(--color-text-secondary);">We can identify numbers that are disconnected, out of service, or assigned to a fax line. For mobile numbers in the US, we can also check carrier information. Full real-time line status checking is available as an add-on for teams that need the highest confidence.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle phone numbers without country codes?</h3>
+            <p style="color: var(--color-text-secondary);">We default to the country associated with the contact record. If the contact has a US address, we assume US country code. For ambiguous cases where the number could belong to multiple countries, we flag it for review rather than guessing.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

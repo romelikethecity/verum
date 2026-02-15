@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many seniority levels do you use?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our standard taxonomy has 7 levels: C-suite (CEO, CFO, CTO), VP (Vice President, SVP, EVP), Director, Manager, Senior IC (Senior Engineer, Senior Analyst), IC (Individual Contributor), and Intern/Entry Level. We can consolidate these to fewer levels or add custom tiers if your lead scoring model requires it."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle inflated titles at small companies?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We use company size as a modifier. A 'VP of Sales' at a 10-person company is flagged as 'VP (small company context)' so your lead scoring can treat it differently than a VP at a 10,000-person company. The person may genuinely be the senior sales leader, but the budget and buying authority are very different."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can seniority data help with multi-threading into accounts?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Seniority enrichment shows you which levels you've penetrated at each account. If you only have IC-level contacts at a target account, you know you need to find VP or Director-level contacts to reach decision-makers. It's a simple but effective way to identify account coverage gaps."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Seniority Enrichment</h1>
+        <p class="page-hero__subtitle">A Director title at a startup means something very different than a Director title at a Fortune 500.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Seniority Enrichment</h2>
-<p>Classify contacts by seniority level. Verum helps you append accurate seniority data to your B2B database from 50+ trusted sources.</p>
+<p>Seniority enrichment assigns standardized seniority levels to your contacts based on their job titles: C-suite, VP, Director, Manager, Senior Individual Contributor, Individual Contributor, and Intern. This enables lead scoring by seniority, routing to the right sales team, and measuring your penetration at the right level within target accounts.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends seniority data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Companies use wildly different title conventions. A 'Director' at a 30-person startup might be equivalent to a 'Manager' at a 10,000-person enterprise. Without seniority normalization, your lead scoring treats all 'Directors' the same and your routing sends a junior IC to your enterprise team because their title says 'Director.'</p>
 
-<h2>Use Cases</h2>
+<h2>How We Determine Seniority</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Title analysis.</strong> We parse each job title to extract seniority indicators: words like 'Chief,' 'Vice President,' 'Senior,' 'Lead,' 'Associate,' and 'Junior.'</li>
+    <li><strong>Company size context.</strong> We adjust seniority interpretation based on company size. A 'Director' at a 20-person company gets flagged differently than a 'Director' at a 20,000-person company.</li>
+    <li><strong>Hierarchical mapping.</strong> Each contact is mapped to a standardized seniority level: C-suite, VP, Director, Manager, Senior IC, IC, or Intern.</li>
+    <li><strong>Buying authority flagging.</strong> We flag contacts likely to have direct purchasing authority based on their seniority level and company size.</li>
 </ul>
+
+<h2>What Seniority Enrichment Enables</h2>
+<ul>
+    <li>Standardized seniority level for every contact in your database</li>
+    <li>Company-size-adjusted seniority for more accurate lead scoring</li>
+    <li>Buying authority indicator based on seniority and company size</li>
+    <li>Seniority distribution analysis showing your database composition by level</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many seniority levels do you use?</h3>
+            <p style="color: var(--color-text-secondary);">Our standard taxonomy has 7 levels: C-suite (CEO, CFO, CTO), VP (Vice President, SVP, EVP), Director, Manager, Senior IC (Senior Engineer, Senior Analyst), IC (Individual Contributor), and Intern/Entry Level. We can consolidate these to fewer levels or add custom tiers if your lead scoring model requires it.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle inflated titles at small companies?</h3>
+            <p style="color: var(--color-text-secondary);">We use company size as a modifier. A 'VP of Sales' at a 10-person company is flagged as 'VP (small company context)' so your lead scoring can treat it differently than a VP at a 10,000-person company. The person may genuinely be the senior sales leader, but the budget and buying authority are very different.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can seniority data help with multi-threading into accounts?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Seniority enrichment shows you which levels you've penetrated at each account. If you only have IC-level contacts at a target account, you know you need to find VP or Director-level contacts to reach decision-makers. It's a simple but effective way to identify account coverage gaps.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

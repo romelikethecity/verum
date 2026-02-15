@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How long does a full list cleaning take?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most lists under 50,000 contacts are cleaned within 3-5 business days. Larger lists take proportionally longer. Rush processing is available if you have a campaign deadline. We will give you a specific timeline after reviewing your data."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if I only need email cleaning, not the full service?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer individual services too. Email verification, phone validation, and deduplication can each be done standalone. Full list cleaning bundles everything together at a lower per-record cost than running each service separately."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I send you my contact list?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Export from your CRM or marketing platform in CSV, Excel, or any tabular format. Upload through our secure portal or email directly. We work with whatever format you have and handle all the data mapping on our end. No reformatting required on your part."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Contact List Cleaning</h1>
+        <p class="page-hero__subtitle">Old contacts, bad emails, wrong titles. We clean the whole list at once.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Contact List Cleaning</h2>
-<p>Clean and validate your contact lists. Verum helps you maintain accurate, reliable contact lists across your entire database.</p>
+<p>Contact list cleaning is a full-service cleanup of your B2B contact database. It combines email verification, phone validation, title normalization, deduplication, and record enrichment into a single pass that transforms a messy export into a reliable outreach list.</p>
 
-<h2>What We Do</h2>
+<p>Your contact list has been accumulating problems for years. People changed jobs and their emails bounce. Phone numbers are disconnected. Titles are outdated. Duplicates multiplied through imports. No single tool fixes all of this, and doing it manually takes hundreds of hours.</p>
+
+<h2>What a Full List Cleaning Includes</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Email verification.</strong> Every email address gets validated against the receiving mail server. Bad addresses get removed, risky ones get flagged.</li>
+    <li><strong>Phone number validation.</strong> Numbers are formatted, checked for line type, and tested for connectivity. Disconnected numbers get flagged.</li>
+    <li><strong>Title and role updates.</strong> Job titles are checked against LinkedIn and other sources to catch people who have changed roles or companies since they entered your database.</li>
+    <li><strong>Deduplication.</strong> Fuzzy matching across name, email, phone, and company to find and merge duplicate records.</li>
+    <li><strong>Record enrichment.</strong> Missing fields like company size, industry, and direct phone numbers get appended from our data sources to fill gaps.</li>
+    <li><strong>Do-not-contact scrubbing.</strong> Opted-out contacts, known litigators, and compliance risks get flagged before you accidentally contact them.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>What You Get Back</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>A contact list where every record is verified, current, and complete</li>
+    <li>Confidence scores on each record so you can prioritize your best contacts</li>
+    <li>A suppression list of records that should not be contacted with reasons for each</li>
+    <li>Summary report showing the health of your original data and what was fixed</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How long does a full list cleaning take?</h3>
+            <p style="color: var(--color-text-secondary);">Most lists under 50,000 contacts are cleaned within 3-5 business days. Larger lists take proportionally longer. Rush processing is available if you have a campaign deadline. We will give you a specific timeline after reviewing your data.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if I only need email cleaning, not the full service?</h3>
+            <p style="color: var(--color-text-secondary);">We offer individual services too. Email verification, phone validation, and deduplication can each be done standalone. Full list cleaning bundles everything together at a lower per-record cost than running each service separately.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do I send you my contact list?</h3>
+            <p style="color: var(--color-text-secondary);">Export from your CRM or marketing platform in CSV, Excel, or any tabular format. Upload through our secure portal or email directly. We work with whatever format you have and handle all the data mapping on our end. No reformatting required on your part.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do you need access to our billing system?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We work with exported data. A CSV with customer name, start date, monthly or annual revenue, expansion events, and churn date (if applicable) is enough. We don't need real-time billing access. Most teams can pull this from their CRM or billing platform in a few minutes."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How far back should revenue data go?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At least 2 years for meaningful LTV analysis. With less than 2 years, you're extrapolating heavily. With 3-5 years of data, the patterns are robust enough for confident decision-making. If your company is younger than 2 years, we can still do the analysis but will note the shorter observation window."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can LTV analysis help with pricing decisions?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Indirectly. If LTV analysis shows that enterprise customers generate 5x more lifetime revenue than SMB customers, but your pricing only charges 2x more, that's a signal to evaluate your pricing tiers. We provide the data. Your team makes the pricing decisions based on what the LTV patterns reveal."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Customer Lifetime Value</h1>
+        <p class="page-hero__subtitle">Which customers are actually worth the most? The answer is in the data.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Customer Lifetime Value</h2>
-<p>Calculate and optimize CLV. Verum helps you understand your data and make better decisions with customer lifetime value.</p>
+<p>Customer lifetime value analysis calculates the total revenue each customer generates over their entire relationship with you, then identifies what firmographic and behavioral characteristics predict high-LTV outcomes. It tells you not just what a customer is worth, but what makes certain customers more valuable than others.</p>
 
-<h2>What We Analyze</h2>
+<p>You know your average customer pays $24K per year. But 'average' hides the reality that some customers are worth $200K over five years while others churn after 6 months having paid $12K total. Without LTV analysis by segment, you can't optimize acquisition, retention, or expansion efforts.</p>
+
+<h2>How We Analyze LTV</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Revenue data mapping.</strong> We map your revenue data — initial deal, expansions, renewals, and churn — to build a complete LTV picture for each customer.</li>
+    <li><strong>Customer enrichment.</strong> We append firmographic and technographic data to customer records so LTV can be analyzed by company characteristics.</li>
+    <li><strong>Segment LTV calculation.</strong> We calculate average and median LTV by segment: industry, company size, product tier, sales channel, and other dimensions.</li>
+    <li><strong>LTV predictor identification.</strong> We identify which attributes at the time of acquisition most strongly predict whether a customer will be high-LTV or low-LTV.</li>
+    <li><strong>Payback period analysis.</strong> We calculate how long it takes to recover customer acquisition cost by segment, revealing which segments are most capital-efficient to acquire.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>LTV Analysis Deliverables</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>LTV calculations by customer segment showing which groups generate the most long-term revenue</li>
+    <li>Acquisition cost payback periods by segment for capital allocation decisions</li>
+    <li>Predictive attributes that identify high-LTV customers at the time of acquisition</li>
+    <li>Revenue optimization recommendations: which segments to invest in, which to deprioritize</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you need access to our billing system?</h3>
+            <p style="color: var(--color-text-secondary);">No. We work with exported data. A CSV with customer name, start date, monthly or annual revenue, expansion events, and churn date (if applicable) is enough. We don't need real-time billing access. Most teams can pull this from their CRM or billing platform in a few minutes.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How far back should revenue data go?</h3>
+            <p style="color: var(--color-text-secondary);">At least 2 years for meaningful LTV analysis. With less than 2 years, you're extrapolating heavily. With 3-5 years of data, the patterns are robust enough for confident decision-making. If your company is younger than 2 years, we can still do the analysis but will note the shorter observation window.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can LTV analysis help with pricing decisions?</h3>
+            <p style="color: var(--color-text-secondary);">Indirectly. If LTV analysis shows that enterprise customers generate 5x more lifetime revenue than SMB customers, but your pricing only charges 2x more, that's a signal to evaluate your pricing tiers. We provide the data. Your team makes the pricing decisions based on what the LTV patterns reveal.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

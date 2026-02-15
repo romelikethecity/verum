@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the match rate for LinkedIn profile enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For B2B professionals at companies with 50+ employees, expect 65-80% match rates. Senior executives have higher match rates (80%+) because they're more likely to have complete LinkedIn profiles. Junior employees and contacts at very small businesses match at lower rates."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you scrape data from LinkedIn profiles?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We match your contacts to their LinkedIn profiles and return the profile URL. We extract the current headline and basic profile data that LinkedIn makes publicly accessible. We don't scrape private profile sections, connection lists, or activity feeds. Our matching complies with LinkedIn's data access policies."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you also find LinkedIn company page URLs?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Company-level LinkedIn URLs can be appended alongside individual profile URLs. Company pages are easier to match (company name to LinkedIn page) and have a higher hit rate than individual profiles."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">LinkedIn Profile Enrichment</h1>
+        <p class="page-hero__subtitle">LinkedIn profiles are the richest source of B2B contact data — if you can match them at scale.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>LinkedIn Profile Enrichment</h2>
-<p>Append LinkedIn profile URLs and data to your contact records. Verum helps you append accurate linkedin profiles to your B2B database from 50+ trusted sources.</p>
+<p>LinkedIn profile enrichment appends LinkedIn profile URLs to your contact records by matching people in your database to their LinkedIn profiles. We verify that each match is correct (right person, right company) before returning results. This gives your sales team direct access to prospect research and social selling without manual searching.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends linkedin profiles</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Your reps search LinkedIn before every call — it's where they research prospects, find talking points, and send connection requests. But searching LinkedIn for each prospect takes 2-3 minutes and often returns multiple results for common names. At scale, manual LinkedIn matching isn't sustainable. Enrichment automates this research step.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Match LinkedIn Profiles</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Identity matching.</strong> We match your contacts to LinkedIn profiles using full name, company, title, and location to find the right person among potential matches.</li>
+    <li><strong>Disambiguation.</strong> For common names with multiple LinkedIn results, we use company, title, and location data from your records to identify the correct profile.</li>
+    <li><strong>Profile verification.</strong> Each match is verified to ensure the LinkedIn profile belongs to the right person at the right company — not a name-match at a different company.</li>
+    <li><strong>Data extraction.</strong> From matched profiles, we extract the profile URL, current headline, and profile completeness indicator.</li>
 </ul>
+
+<h2>What LinkedIn Enrichment Delivers</h2>
+<ul>
+    <li>Verified LinkedIn profile URL for each matched contact</li>
+    <li>Current LinkedIn headline showing how the person describes themselves</li>
+    <li>Match confidence score indicating how certain we are this is the right person</li>
+    <li>Flag for contacts where no match could be reliably made</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the match rate for LinkedIn profile enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">For B2B professionals at companies with 50+ employees, expect 65-80% match rates. Senior executives have higher match rates (80%+) because they're more likely to have complete LinkedIn profiles. Junior employees and contacts at very small businesses match at lower rates.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you scrape data from LinkedIn profiles?</h3>
+            <p style="color: var(--color-text-secondary);">We match your contacts to their LinkedIn profiles and return the profile URL. We extract the current headline and basic profile data that LinkedIn makes publicly accessible. We don't scrape private profile sections, connection lists, or activity feeds. Our matching complies with LinkedIn's data access policies.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you also find LinkedIn company page URLs?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Company-level LinkedIn URLs can be appended alongside individual profile URLs. Company pages are easier to match (company name to LinkedIn page) and have a higher hit rate than individual profiles.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

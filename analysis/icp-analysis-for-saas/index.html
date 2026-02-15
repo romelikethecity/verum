@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is SaaS ICP analysis different from regular ICP analysis?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The difference is what we optimize for. Regular ICP analysis focuses on close rates. SaaS ICP analysis factors in LTV, churn, expansion revenue, and product adoption. A company that closes quickly but churns in 6 months is a bad SaaS customer even if they look great at the top of the funnel."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do we need to share revenue and churn data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It produces better results if you do. Revenue and churn data let us analyze customer quality, not just customer count. If you can't share revenue data, we can still build an ICP from firmographic patterns in your customer list, but the analysis won't account for customer value differences."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you analyze product usage data alongside firmographic data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. If you provide product usage metrics (DAU, feature adoption, seats used), we correlate them with firmographic profiles. This reveals which company types get the most value from your product, which is the strongest predictor of retention and expansion. Not all companies need to share this \u2014 it's optional but powerful."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">ICP Analysis for SaaS</h1>
+        <p class="page-hero__subtitle">SaaS ICP analysis: find the firmographic and technographic patterns behind your best ARR.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
-<h2>ICP Analysis for SaaS</h2>
-<p>SaaS-specific ICP development. Verum helps you understand your data and make better decisions with SaaS ICP.</p>
 
-<h2>What We Analyze</h2>
+<h2>Icp Analysis For Saas</h2>
+<p>SaaS companies have unique ICP considerations: recurring revenue makes customer quality matter more than one-time deal size, tech stack compatibility indicates fit, and usage patterns predict expansion potential. We build SaaS ICPs that account for LTV, churn, and expansion — not just initial close.</p>
+
+<p>Your sales team closes everything they can. Some customers expand 3x in year one. Others churn at renewal. Your blended churn rate hides the fact that certain customer profiles have near-zero churn while others churn at 40%. Without an ICP that accounts for post-sale performance, you're optimizing for the wrong outcome.</p>
+
+<h2>SaaS-Specific ICP Methodology</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>LTV-based segmentation.</strong> We rank customers by lifetime value, not just initial deal size. The best SaaS customers aren't always the biggest initial contracts — they're the ones who stay and expand.</li>
+    <li><strong>Technographic analysis.</strong> We identify which technologies in your customers' stacks correlate with retention and expansion. Tech stack fit often predicts SaaS success better than company size.</li>
+    <li><strong>Usage pattern correlation.</strong> If you share product usage data, we correlate firmographic profiles with adoption and engagement patterns to identify which company types get the most value.</li>
+    <li><strong>Churn predictor identification.</strong> We analyze churned customers to identify firmographic red flags that predict failure, so your team can either avoid these customers or onboard them differently.</li>
+    <li><strong>Expansion indicator mapping.</strong> We identify which customer attributes correlate with upsell and cross-sell, helping your CS team prioritize expansion efforts.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>SaaS ICP Outcomes</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>An ICP optimized for LTV and retention, not just initial close rates</li>
+    <li>Technographic criteria that predict product-customer fit better than firmographics alone</li>
+    <li>A churn risk profile that helps your team qualify prospects against retention likelihood</li>
+    <li>Expansion indicators that help CS prioritize accounts most likely to grow</li>
+    <li>Net revenue retention improvement because new customers fit the profile that predicts long-term success</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is SaaS ICP analysis different from regular ICP analysis?</h3>
+            <p style="color: var(--color-text-secondary);">The difference is what we optimize for. Regular ICP analysis focuses on close rates. SaaS ICP analysis factors in LTV, churn, expansion revenue, and product adoption. A company that closes quickly but churns in 6 months is a bad SaaS customer even if they look great at the top of the funnel.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do we need to share revenue and churn data?</h3>
+            <p style="color: var(--color-text-secondary);">It produces better results if you do. Revenue and churn data let us analyze customer quality, not just customer count. If you can't share revenue data, we can still build an ICP from firmographic patterns in your customer list, but the analysis won't account for customer value differences.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you analyze product usage data alongside firmographic data?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. If you provide product usage metrics (DAU, feature adoption, seats used), we correlate them with firmographic profiles. This reveals which company types get the most value from your product, which is the strongest predictor of retention and expansion. Not all companies need to share this — it's optional but powerful.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

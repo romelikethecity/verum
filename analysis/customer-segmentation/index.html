@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many segments should we have?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most B2B companies find 3-5 meaningful segments. Fewer than 3 and you're not differentiating enough to be useful. More than 5 and the segments become too granular for your team to act on differently. The right number emerges from the data \u2014 we don't force a predefined count."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if a customer doesn't fit neatly into one segment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every customer gets assigned to their best-fit segment based on similarity scoring. Some customers sit near the boundary between segments, and we flag those so you know they could go either way. In practice, even boundary cases benefit from being treated like their assigned segment rather than having no segment at all."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can we segment by product usage or just firmographics?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Both. If you share product usage data (feature adoption, login frequency, seats used), we incorporate it into the segmentation alongside firmographic data. Usage-based segments often reveal more actionable patterns than firmographics alone because they reflect how customers actually engage with your product."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Customer Segmentation Analysis</h1>
+        <p class="page-hero__subtitle">Divide your customer base into meaningful groups, not arbitrary buckets.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
-<h2>Customer Segmentation Analysis</h2>
-<p>Segment your customers for targeted strategies. Verum helps you understand your data and make better decisions with customer segmentation.</p>
 
-<h2>What We Analyze</h2>
+<h2>Customer Segmentation</h2>
+<p>Customer segmentation analysis identifies natural groupings in your customer base based on shared characteristics. Unlike marketing segmentation (which groups prospects), customer segmentation groups existing customers to optimize retention, expansion, and product strategy.</p>
+
+<p>You treat all customers the same because you can't see the differences. But your database has customers ranging from 10-person startups to 5,000-person enterprises, across 8 industries, with wildly different usage patterns. One-size-fits-all onboarding, support, and renewal processes can't serve all of them well.</p>
+
+<h2>Our Segmentation Process</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Data enrichment.</strong> We append firmographic and technographic data to every customer record to ensure there's enough depth for meaningful clustering.</li>
+    <li><strong>Cluster analysis.</strong> We apply statistical clustering methods to your enriched data to identify natural groupings that represent distinct customer types.</li>
+    <li><strong>Segment profiling.</strong> Each segment gets a profile describing its shared characteristics, typical deal size, retention rate, and expansion potential.</li>
+    <li><strong>Strategic mapping.</strong> We map segments to business implications: which segments deserve premium support, which need different onboarding, and which represent the best expansion opportunity.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>Segmentation Deliverables</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>Clearly defined customer segments with firmographic profiles for each group</li>
+    <li>Performance metrics by segment: average deal size, retention rate, time to close, expansion revenue</li>
+    <li>Strategic recommendations for how to serve each segment differently for better outcomes</li>
+    <li>Segment assignment for every current customer so your team can start acting on the analysis immediately</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many segments should we have?</h3>
+            <p style="color: var(--color-text-secondary);">Most B2B companies find 3-5 meaningful segments. Fewer than 3 and you're not differentiating enough to be useful. More than 5 and the segments become too granular for your team to act on differently. The right number emerges from the data — we don't force a predefined count.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if a customer doesn't fit neatly into one segment?</h3>
+            <p style="color: var(--color-text-secondary);">Every customer gets assigned to their best-fit segment based on similarity scoring. Some customers sit near the boundary between segments, and we flag those so you know they could go either way. In practice, even boundary cases benefit from being treated like their assigned segment rather than having no segment at all.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can we segment by product usage or just firmographics?</h3>
+            <p style="color: var(--color-text-secondary);">Both. If you share product usage data (feature adoption, login frequency, seats used), we incorporate it into the segmentation alongside firmographic data. Usage-based segments often reveal more actionable patterns than firmographics alone because they reflect how customers actually engage with your product.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the difference between NAICS and SIC codes?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "NAICS replaced SIC as the US government standard in 1997. NAICS is more detailed (6 digits vs 4), covers modern industries better (it includes 'Internet Publishing' while SIC predates the commercial internet), and is updated every 5 years. Some systems still require SIC codes, which is why we offer both."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How accurate is automated NAICS code assignment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At the 2-digit sector level (e.g., 'Manufacturing'), accuracy exceeds 95%. At the 6-digit level (e.g., 'Chocolate and Confectionery Manufacturing from Cacao Beans'), accuracy is typically 80-85%. The challenge is companies whose primary activity is ambiguous or that have changed their business model since the code was assigned."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you map NAICS codes to our custom industry categories?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We frequently build mapping tables between NAICS codes and client-specific industry taxonomies. This lets you use standardized codes for external systems while maintaining your internal industry categories for CRM segmentation and reporting."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">NAICS Code Enrichment</h1>
+        <p class="page-hero__subtitle">NAICS codes are the standard for industry classification — and most of your CRM records don't have them.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>NAICS Code Enrichment</h2>
-<p>Add NAICS codes for precise industry classification. Verum helps you append accurate NAICS codes to your B2B database from 50+ trusted sources.</p>
+<p>NAICS code enrichment assigns North American Industry Classification System codes to your company records. NAICS codes are the US government standard for classifying businesses by industry, used in market sizing, TAM calculation, regulatory compliance, and programmatic ad targeting.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends NAICS codes</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Without NAICS codes, you can't run your company data through any system that requires standardized industry classification: government contracting databases, programmatic ad platforms, census data for market sizing, or industry benchmarking tools. Your CRM's free-text industry field doesn't work for any of these use cases.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Assign NAICS Codes</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Business activity analysis.</strong> We analyze each company's primary business activity using website content, product descriptions, and business registration data.</li>
+    <li><strong>6-digit code assignment.</strong> Each company gets a full 6-digit NAICS code (the most specific level) plus higher-level rollups at the 4-digit and 2-digit levels.</li>
+    <li><strong>Multi-code handling.</strong> Diversified companies get primary and secondary NAICS codes to capture their full business scope.</li>
+    <li><strong>Code validation.</strong> We validate against the official 2022 NAICS code list to ensure every assigned code is current and valid.</li>
 </ul>
+
+<h2>What NAICS-Enriched Data Provides</h2>
+<ul>
+    <li>6-digit NAICS code with sector, subsector, and industry description for each company</li>
+    <li>Primary and secondary codes for diversified companies</li>
+    <li>Plain-text industry description alongside the numeric code</li>
+    <li>Compatibility with census data, SBA databases, and programmatic ad platforms</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the difference between NAICS and SIC codes?</h3>
+            <p style="color: var(--color-text-secondary);">NAICS replaced SIC as the US government standard in 1997. NAICS is more detailed (6 digits vs 4), covers modern industries better (it includes 'Internet Publishing' while SIC predates the commercial internet), and is updated every 5 years. Some systems still require SIC codes, which is why we offer both.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How accurate is automated NAICS code assignment?</h3>
+            <p style="color: var(--color-text-secondary);">At the 2-digit sector level (e.g., 'Manufacturing'), accuracy exceeds 95%. At the 6-digit level (e.g., 'Chocolate and Confectionery Manufacturing from Cacao Beans'), accuracy is typically 80-85%. The challenge is companies whose primary activity is ambiguous or that have changed their business model since the code was assigned.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you map NAICS codes to our custom industry categories?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We frequently build mapping tables between NAICS codes and client-specific industry taxonomies. This lets you use standardized codes for external systems while maintaining your internal industry categories for CRM segmentation and reporting.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

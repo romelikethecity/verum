@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Which CMS platforms can you detect?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We reliably detect WordPress, Shopify, Squarespace, Wix, Webflow, Drupal, Joomla, Magento, BigCommerce, Ghost, HubSpot CMS, and most other web-based platforms. Custom-built sites are identified as 'custom' when no known CMS signature is found. WordPress is by far the most common (powering ~40% of all websites)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you tell which WordPress plugins or themes a company uses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some plugins leave detectable signatures (specific CSS classes, JavaScript files, or meta tags). We can identify popular plugins like Yoast SEO, WooCommerce, Elementor, and others. Theme detection is possible for popular commercial themes. Custom themes and plugins without public signatures aren't detectable."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How often does website technology change?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most companies don't change their CMS or core web platform frequently \u2014 a major platform migration happens every 3-5 years on average. But marketing tools, analytics, and third-party scripts change more often. We recommend annual technology re-scans for stable platforms and quarterly for marketing tool tracking."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Website Technology Enrichment</h1>
+        <p class="page-hero__subtitle">What's powering their website tells you what they've committed to — and what they might need next.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Website Technology Enrichment</h2>
-<p>Analyze websites to identify technologies used. Verum helps you append accurate web technologies to your B2B database from 50+ trusted sources.</p>
+<p>Website technology enrichment identifies the specific technologies powering each company's website: content management systems, e-commerce platforms, analytics tools, hosting providers, JavaScript frameworks, and marketing pixels. This focused technographic analysis targets the most visible and detectable layer of a company's technology stack.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends web technologies</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Your product integrates with WordPress, Shopify, or specific web technologies. Without knowing what platform each prospect's site runs on, you can't pre-qualify or personalize outreach. Website technology detection gives you this data for every company in your database.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Detect Website Technologies</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Client-side scanning.</strong> We analyze the HTML, CSS, and JavaScript on company websites to identify frameworks, libraries, and third-party tools.</li>
+    <li><strong>Server header analysis.</strong> HTTP response headers reveal web servers, CDN providers, and server-side technologies.</li>
+    <li><strong>CMS and platform identification.</strong> We identify whether a site runs on WordPress, Shopify, Drupal, Squarespace, Webflow, custom code, or other platforms.</li>
+    <li><strong>Marketing and analytics tool detection.</strong> We detect Google Analytics, Tag Manager, Facebook Pixel, Hotjar, and dozens of other marketing and analytics tools.</li>
 </ul>
+
+<h2>What Website Technology Data Shows</h2>
+<ul>
+    <li>CMS or website platform identified (WordPress, Shopify, Squarespace, custom, etc.)</li>
+    <li>Analytics and marketing tools installed on the site</li>
+    <li>JavaScript frameworks and libraries in use</li>
+    <li>CDN, hosting provider, and SSL certificate details</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Which CMS platforms can you detect?</h3>
+            <p style="color: var(--color-text-secondary);">We reliably detect WordPress, Shopify, Squarespace, Wix, Webflow, Drupal, Joomla, Magento, BigCommerce, Ghost, HubSpot CMS, and most other web-based platforms. Custom-built sites are identified as 'custom' when no known CMS signature is found. WordPress is by far the most common (powering ~40% of all websites).</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you tell which WordPress plugins or themes a company uses?</h3>
+            <p style="color: var(--color-text-secondary);">Some plugins leave detectable signatures (specific CSS classes, JavaScript files, or meta tags). We can identify popular plugins like Yoast SEO, WooCommerce, Elementor, and others. Theme detection is possible for popular commercial themes. Custom themes and plugins without public signatures aren't detectable.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How often does website technology change?</h3>
+            <p style="color: var(--color-text-secondary);">Most companies don't change their CMS or core web platform frequently — a major platform migration happens every 3-5 years on average. But marketing tools, analytics, and third-party scripts change more often. We recommend annual technology re-scans for stable platforms and quarterly for marketing tool tracking.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

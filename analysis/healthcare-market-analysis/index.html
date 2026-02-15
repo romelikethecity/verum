@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Which healthcare specialties can you cover?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "All of them. NPI and state licensing data covers every medical specialty. We've done deep analysis in dental, mental health, orthopedics, dermatology, optometry, veterinary, and primary care. If the specialty has a licensing body or NPI taxonomy code, we can map it."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you distinguish independent practices from hospital-owned ones?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Ownership structure is one of the most important targeting dimensions in healthcare and one of the hardest to determine. We use tax ID analysis, CMS affiliation data, and business registration records to identify whether a practice is truly independent, part of a hospital system, or owned by a private equity group."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How current is healthcare provider data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "NPI data is updated monthly. State licensing data varies by state but is generally refreshed quarterly. We cross-reference multiple sources to identify providers who have retired, relocated, or changed affiliations. Healthcare provider data is more volatile than general B2B data because of frequent practice acquisitions and provider turnover."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Healthcare Market Analysis</h1>
+        <p class="page-hero__subtitle">Map the healthcare market by practice type, provider count, and geography with real data.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Healthcare Market Analysis</h2>
-<p>Healthcare industry market insights. Verum helps you understand your data and make better decisions with healthcare market.</p>
+<p>Healthcare market analysis provides a data-driven view of the healthcare provider landscape: hospitals, practices, clinics, and provider groups by specialty, size, geography, and ownership structure. We use provider databases, licensing data, and business registrations to build accurate market maps.</p>
 
-<h2>What We Analyze</h2>
+<p>Healthcare is one of the largest markets in the US, but it's also one of the hardest to map. Practices operate under different legal entities. Provider counts don't match practice counts. Hospital systems own independent-looking clinics. Without specialized data sources, your market analysis misses half the picture.</p>
+
+<h2>Healthcare Market Mapping</h2>
 <ul>
-  <li>Customer patterns and segments</li>
-  <li>Market opportunities</li>
-  <li>Competitive positioning</li>
-  <li>Growth potential</li>
+    <li><strong>Provider enumeration.</strong> We count practices and providers in your target specialty using NPI databases, state licensing boards, and CMS data.</li>
+    <li><strong>Practice profiling.</strong> We identify practice type (independent, group, hospital-owned), size (provider count, patient volume), and ownership structure.</li>
+    <li><strong>Geographic mapping.</strong> We map practice density by geography to identify where target practices are concentrated and where coverage gaps exist.</li>
+    <li><strong>Decision-maker identification.</strong> We identify practice owners, managing partners, and administrators — the people who make purchasing decisions, not just the providers.</li>
 </ul>
 
-<h2>What You Get</h2>
+<h2>Healthcare Market Intelligence</h2>
 <ul>
-  <li>Data-driven insights</li>
-  <li>Actionable recommendations</li>
-  <li>Clear visualization of findings</li>
-  <li>Strategic guidance</li>
+    <li>Accurate practice and provider counts by specialty and geography, not estimates from outdated directories</li>
+    <li>Practice profiles showing size, ownership type, and affiliations for targeting and prioritization</li>
+    <li>Geographic density maps for territory planning and field sales deployment</li>
+    <li>Decision-maker identification because selling to healthcare requires reaching the right person, not just the right practice</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Which healthcare specialties can you cover?</h3>
+            <p style="color: var(--color-text-secondary);">All of them. NPI and state licensing data covers every medical specialty. We've done deep analysis in dental, mental health, orthopedics, dermatology, optometry, veterinary, and primary care. If the specialty has a licensing body or NPI taxonomy code, we can map it.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you distinguish independent practices from hospital-owned ones?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Ownership structure is one of the most important targeting dimensions in healthcare and one of the hardest to determine. We use tax ID analysis, CMS affiliation data, and business registration records to identify whether a practice is truly independent, part of a hospital system, or owned by a private equity group.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How current is healthcare provider data?</h3>
+            <p style="color: var(--color-text-secondary);">NPI data is updated monthly. State licensing data varies by state but is generally refreshed quarterly. We cross-reference multiple sources to identify providers who have retired, relocated, or changed affiliations. Healthcare provider data is more volatile than general B2B data because of frequent practice acquisitions and provider turnover.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Analyze My Data</a>

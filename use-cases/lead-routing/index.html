@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Which CRMs and routing tools do you support?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We work with the data, not the routing tool. Whether you route through Salesforce assignment rules, LeanData, Chili Piper, or custom logic, we make sure the data fields those rules depend on are filled and standardized. Better data makes any routing tool work better."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How fast can you enrich new leads for routing?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We specialize in batch enrichment of existing databases. For real-time enrichment of individual leads as they arrive, you'd pair our service with a real-time enrichment tool. We handle the periodic bulk cleanup that keeps your overall database clean, which prevents routing issues at scale."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the most common cause of misrouted leads?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Missing company size data. It's the single field most routing rules depend on and the field most often missing from form fills. When a lead has no company size, it can't route to the right segment. We see this field missing on 30-50% of form-fill leads in most databases."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Lead Routing</h1>
+        <p class="page-hero__subtitle">Leads going to the wrong rep? Your routing rules aren't the problem. Your data is.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Lead Routing</h2>
-<p>Route leads accurately based on complete data. Verum provides the clean, enriched data you need for effective lead routing.</p>
+<p>Lead routing sends new leads to the right sales rep based on criteria like geography, company size, industry, or account ownership. When those fields are missing, inconsistent, or wrong, leads get misrouted. The fix isn't better routing rules — it's better data.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with lead routing because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>Your routing is set up perfectly: enterprise leads go to enterprise reps, SMB leads go to SMB reps, West Coast goes to the West Coast team. But 30% of leads are missing the company size field, industry has 50 different unstandardized values, and addresses are incomplete. Your routing logic is fine. Your data is broken.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How Clean Data Fixes Routing</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for lead routing</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Field completion.</strong> We fill in the fields your routing depends on: company size, industry, location, seniority level. No more leads going to the default queue because a key field is blank.</li>
+    <li><strong>Value standardization.</strong> We normalize field values so 'Financial Services' and 'Finance' and 'Banking' map to the same routing rule instead of creating three different routing paths.</li>
+    <li><strong>Account matching.</strong> We match incoming leads to existing accounts so leads at current customers route to the account owner instead of an SDR who doesn't know the relationship exists.</li>
+    <li><strong>Territory mapping.</strong> We standardize geographic data — state, region, country — so territory-based routing works consistently across all lead sources.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your lead routing challenges and we'll show you how clean data can transform your results.</p>
+<h2>Routing Results</h2>
+<ul>
+    <li>Fewer misrouted leads because the fields your routing rules depend on are actually filled in and correct</li>
+    <li>Faster speed-to-lead because leads go directly to the right rep without manual reassignment</li>
+    <li>Better sales experience for prospects because they're connected with a rep who understands their segment</li>
+    <li>Less time wasted on routing corrections by ops teams who manually fix misassigned leads</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Which CRMs and routing tools do you support?</h3>
+            <p style="color: var(--color-text-secondary);">We work with the data, not the routing tool. Whether you route through Salesforce assignment rules, LeanData, Chili Piper, or custom logic, we make sure the data fields those rules depend on are filled and standardized. Better data makes any routing tool work better.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How fast can you enrich new leads for routing?</h3>
+            <p style="color: var(--color-text-secondary);">We specialize in batch enrichment of existing databases. For real-time enrichment of individual leads as they arrive, you'd pair our service with a real-time enrichment tool. We handle the periodic bulk cleanup that keeps your overall database clean, which prevents routing issues at scale.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the most common cause of misrouted leads?</h3>
+            <p style="color: var(--color-text-secondary);">Missing company size data. It's the single field most routing rules depend on and the field most often missing from form fills. When a lead has no company size, it can't route to the right segment. We see this field missing on 30-50% of form-fill leads in most databases.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

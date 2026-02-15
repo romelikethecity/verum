@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you separate franchise dealers from independent lots?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We tag every dealership by type: new franchise, independent used, buy-here-pay-here, certified pre-owned only, and specialty. You can filter for exactly the segment you sell to. If you need independent used car lots with 50+ vehicles on the lot, we can build that list."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you find buy-here-pay-here dealerships?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "BHPH lots don't show up in most databases because they're not affiliated with any manufacturer. We find them through state dealer license records, BHPH industry association memberships, and subprime lending network data. These are some of the hardest dealerships to find and we specialize in them."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you identify which DMS each dealership uses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In many cases, yes. We detect dealer management system usage through web technology analysis, job postings that mention specific platforms, and vendor relationship signals. This is useful if you sell tools that integrate with specific DMS platforms like CDK, Reynolds and Reynolds, or DealerSocket."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Auto Dealerships</h1>
+      <p class="page-hero__subtitle">Dealership data is dominated by franchise lists that miss independent lots and buy-here-pay-here operations entirely.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Auto Dealerships</h2>
-<p>Find auto dealers and their leadership. Verum helps you build targeted lists of auto dealerships with complete, accurate contact information.</p>
+<p>Verum builds dealership lists that go beyond the franchise directories. We find independent used car lots, buy-here-pay-here operations, specialty dealers, and the general managers and owners who actually run day-to-day operations at franchise stores.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Auto dealership databases are heavily skewed toward new car franchises because those are easy to find through OEM dealer locators. But the independent lots, used car operations, and specialty dealers (RV, motorcycle, powersports) are where a huge chunk of the market sits, and they're much harder to catalog.</p>
+
+<h2>How We Build Dealership Contact Lists</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>State DMV dealer license records.</strong> Every dealership needs a state dealer license. We pull these records to capture independents and used-only lots that don't show up in franchise directories.</li>
+  <li><strong>OEM franchise network mapping.</strong> For new car dealers, we map franchise relationships and identify multi-rooftop ownership groups that control dozens of locations under different names.</li>
+  <li><strong>DMS and vendor data signals.</strong> We identify what dealer management system each lot runs, which tells you about their tech sophistication and opens specific selling angles.</li>
+  <li><strong>Owner vs. GM identification.</strong> At franchise dealers, the owner is often a holding company. We find the general manager who makes vendor decisions and the dealer principal who signs contracts.</li>
+  <li><strong>Lot size and inventory estimation.</strong> Using satellite imagery data and listing aggregator counts, we estimate lot size and typical inventory volume for each location.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Dealership List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Dealer principal and GM contacts.</strong> Direct emails and phone numbers for the people who make purchasing decisions, not the receptionist.</li>
+  <li><strong>Dealership type classification.</strong> New franchise, independent used, buy-here-pay-here, specialty (RV, motorcycle, powersports), or wholesale operation.</li>
+  <li><strong>Brand affiliations.</strong> Which OEM franchises they carry and whether they're single-brand or multi-brand locations.</li>
+  <li><strong>Ownership group mapping.</strong> Which dealerships belong to the same ownership group, so you can pitch at the group level.</li>
+  <li><strong>Location and lot details.</strong> Physical address, estimated lot size, and whether they have a service department.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you separate franchise dealers from independent lots?</h3>
+<p>Yes. We tag every dealership by type: new franchise, independent used, buy-here-pay-here, certified pre-owned only, and specialty. You can filter for exactly the segment you sell to. If you need independent used car lots with 50+ vehicles on the lot, we can build that list.</p>
+
+<h3>How do you find buy-here-pay-here dealerships?</h3>
+<p>BHPH lots don't show up in most databases because they're not affiliated with any manufacturer. We find them through state dealer license records, BHPH industry association memberships, and subprime lending network data. These are some of the hardest dealerships to find and we specialize in them.</p>
+
+<h3>Can you identify which DMS each dealership uses?</h3>
+<p>In many cases, yes. We detect dealer management system usage through web technology analysis, job postings that mention specific platforms, and vendor relationship signals. This is useful if you sell tools that integrate with specific DMS platforms like CDK, Reynolds and Reynolds, or DealerSocket.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

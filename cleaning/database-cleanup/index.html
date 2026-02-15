@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How much data will we lose in a cleanup?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You will not lose data. You will lose bad records. A typical cleanup removes 15-25% of records that are duplicates, invalid, or unreachable. The remaining records are cleaner and more complete than before. Your usable database actually gets more valuable even as the record count drops."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Should we clean our database before or after a CRM migration?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Before. Migrating dirty data to a new CRM just moves the problems. Clean first so your new system starts with accurate data. It also makes the migration simpler because you are moving fewer, cleaner records. We see teams save 30-50% on migration costs by cleaning first."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What format do we need to send our data in?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Any tabular format works: CSV, Excel, TSV, or direct CRM export. We handle the data mapping and normalization on our end. You do not need to reformat anything before sending. If your data is in multiple files or formats, send them all and we will consolidate."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Database Cleanup</h1>
+        <p class="page-hero__subtitle">Years of accumulated data problems. We clean the entire database in one pass.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Database Cleanup</h2>
-<p>Full database cleanup and quality improvement. Verum helps you maintain accurate, reliable database cleanup across your entire database.</p>
+<p>Database cleanup is a full-scope cleaning of your business database that addresses every type of data quality problem in a single project. Duplicates, invalid contacts, inconsistent formatting, missing fields, and stale information all get fixed together rather than through separate, piecemeal efforts.</p>
 
-<h2>What We Do</h2>
+<p>Your database has been accumulating problems since the day it was created. Every manual entry, every import, every integration added a little more inconsistency. Now you have a database where 20% of emails bounce, 15% of records are duplicates, and half the contacts have changed jobs since their record was created.</p>
+
+<h2>Cleanup Process</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Audit and assessment.</strong> We scan your database and deliver a health report: duplicate rates, invalid contact rates, completeness scores, and priority areas for cleanup.</li>
+    <li><strong>Deduplication.</strong> Fuzzy matching across all records to find and merge duplicates with intelligent data preservation.</li>
+    <li><strong>Verification.</strong> Email, phone, and address validation to identify and remove contacts that are no longer reachable.</li>
+    <li><strong>Standardization.</strong> Every field gets formatted consistently: names, titles, companies, phones, addresses, industries, and custom fields.</li>
+    <li><strong>Enrichment.</strong> Missing data gets filled from external sources: company size, industry, revenue, direct phone numbers, and LinkedIn profiles.</li>
+    <li><strong>Quality report.</strong> Final report showing before and after metrics so you can measure the improvement.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>After Cleanup</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>A database you can trust for outreach, reporting, and automation</li>
+    <li>Measurable improvement in email deliverability, call connect rates, and campaign performance</li>
+    <li>A clean foundation for your next CRM migration, integration, or automation project</li>
+    <li>Time back for your sales and marketing teams who were working around bad data</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How much data will we lose in a cleanup?</h3>
+            <p style="color: var(--color-text-secondary);">You will not lose data. You will lose bad records. A typical cleanup removes 15-25% of records that are duplicates, invalid, or unreachable. The remaining records are cleaner and more complete than before. Your usable database actually gets more valuable even as the record count drops.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Should we clean our database before or after a CRM migration?</h3>
+            <p style="color: var(--color-text-secondary);">Before. Migrating dirty data to a new CRM just moves the problems. Clean first so your new system starts with accurate data. It also makes the migration simpler because you are moving fewer, cleaner records. We see teams save 30-50% on migration costs by cleaning first.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What format do we need to send our data in?</h3>
+            <p style="color: var(--color-text-secondary);">Any tabular format works: CSV, Excel, TSV, or direct CRM export. We handle the data mapping and normalization on our end. You do not need to reformat anything before sending. If your data is in multiple files or formats, send them all and we will consolidate.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

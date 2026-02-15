@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How often should pipeline data be cleaned?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "At minimum, before every forecast review. Monthly cleaning catches stale contacts and outdated account data before they distort your forecast. Some teams run weekly checks on opportunities closing within the quarter for the highest accuracy on near-term pipeline."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you flag deals that are at risk based on the data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can flag signals that correlate with risk: key contacts who've left the company, companies going through layoffs or restructuring, and accounts with declining firmographic indicators. These flags give your reps and managers early warning to take action before the deal stalls or dies."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you work with opportunity data or just contact and account data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We primarily clean and enrich contact and account data. We don't modify opportunity fields like stage, amount, or close date. But accurate contact and account data directly improves pipeline reliability because it's the foundation those opportunity fields sit on."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,51 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Pipeline Management</h1>
+        <p class="page-hero__subtitle">Your pipeline is only as reliable as the data behind the deals. We make the data reliable.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Pipeline Management</h2>
-<p>Manage pipeline with clean, enriched data. Verum provides the clean, enriched data you need for effective pipeline management.</p>
+<p>Pipeline management depends on having accurate, complete data on every deal in your pipeline. When contact info is stale, account data is incomplete, and opportunity fields are inconsistently filled, your pipeline forecast is fiction. Clean data makes pipeline management a planning tool, not a guessing game.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with pipeline management because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>Your pipeline report says $2M in Q2 deals. But 20% of those opportunities have contacts who've changed jobs. 15% are at companies too small to actually buy. Some are duplicates of the same deal entered by different reps. Your real pipeline is $1.2M, but you won't know that until the quarter is over.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How Clean Data Improves Pipeline</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for pipeline management</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Contact verification.</strong> We verify that the contacts on open opportunities are still at those companies and in those roles. Deals attached to departed champions get flagged early.</li>
+    <li><strong>Account enrichment.</strong> We fill in firmographic fields on opportunity accounts so pipeline can be accurately segmented by company size, industry, and potential deal size.</li>
+    <li><strong>Duplicate detection.</strong> We identify duplicate opportunities that inflate pipeline: same company entered by different reps, or a renewal that's also logged as a new business deal.</li>
+    <li><strong>Data completeness.</strong> We ensure key pipeline fields — close date, stage, amount, decision criteria — are filled consistently so forecasting models have reliable inputs.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your pipeline management challenges and we'll show you how clean data can transform your results.</p>
+<h2>Pipeline Data Outcomes</h2>
+<ul>
+    <li>Pipeline forecasts that reflect reality because the deals and contacts behind them are verified</li>
+    <li>Earlier warning on at-risk deals because contact changes and company signals surface proactively</li>
+    <li>Accurate pipeline segmentation by company size, industry, and deal stage for strategic planning</li>
+    <li>Trust in pipeline numbers from leadership because the data is demonstrably clean</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How often should pipeline data be cleaned?</h3>
+            <p style="color: var(--color-text-secondary);">At minimum, before every forecast review. Monthly cleaning catches stale contacts and outdated account data before they distort your forecast. Some teams run weekly checks on opportunities closing within the quarter for the highest accuracy on near-term pipeline.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you flag deals that are at risk based on the data?</h3>
+            <p style="color: var(--color-text-secondary);">We can flag signals that correlate with risk: key contacts who've left the company, companies going through layoffs or restructuring, and accounts with declining firmographic indicators. These flags give your reps and managers early warning to take action before the deal stalls or dies.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you work with opportunity data or just contact and account data?</h3>
+            <p style="color: var(--color-text-secondary);">We primarily clean and enrich contact and account data. We don't modify opportunity fields like stage, amount, or close date. But accurate contact and account data directly improves pipeline reliability because it's the foundation those opportunity fields sit on.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

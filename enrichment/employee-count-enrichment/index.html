@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Is LinkedIn employee count accurate?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Directionally, yes. For companies with 50+ employees in knowledge-worker industries (tech, professional services, finance), LinkedIn counts are typically within 20% of actual headcount. For companies with many hourly or field workers (restaurants, construction, manufacturing), LinkedIn significantly undercounts because those employees don't maintain LinkedIn profiles."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you show employee count changes over time?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If we've enriched your data before, we can compare current vs previous counts to show growth or decline. For first-time enrichment, we can append historical snapshots from our databases to show the trajectory over the past 1-2 years where data is available."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between this and company size enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "They're closely related. Employee count enrichment focuses specifically on headcount numbers. Company size enrichment is broader \u2014 it includes employee count plus revenue estimation and other size indicators. If you only need headcount, employee count enrichment is more focused and faster."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Employee Count Enrichment</h1>
+        <p class="page-hero__subtitle">Employee count separates the 5-person startup from the 5,000-person enterprise. Your CRM can't tell the difference.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Employee Count Enrichment</h2>
-<p>Get accurate employee counts for lead scoring. Verum helps you append accurate employee counts to your B2B database from 50+ trusted sources.</p>
+<p>Employee count enrichment appends headcount data to your company records so you can segment by company size. We source employee counts from LinkedIn, HR databases, and public filings, then validate using cross-referencing to provide the most accurate headcount available for each company.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends employee counts</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Without employee count, every company in your CRM looks the same size. You can't set up lead scoring rules, assign territories by company size, or focus your reps on accounts big enough to afford your product. Employee count is the most reliable and available sizing metric for B2B companies — more accurate than revenue estimates and easier to verify.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Determine Employee Counts</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>LinkedIn analysis.</strong> We pull employee counts from LinkedIn company pages, which reflect how many people currently list that company as their employer.</li>
+    <li><strong>Public data cross-reference.</strong> For public companies and large private companies, we cross-reference against SEC filings, annual reports, and public databases.</li>
+    <li><strong>Industry adjustment.</strong> LinkedIn undercounts in industries with many non-desk workers. We apply industry-specific adjustments for sectors like healthcare, construction, and retail.</li>
+    <li><strong>Historical trend tracking.</strong> We compare current counts against historical data to identify growth or contraction trends.</li>
 </ul>
+
+<h2>What Employee Count Enrichment Provides</h2>
+<ul>
+    <li>Current employee count estimate for each company</li>
+    <li>Size band classification (1-10, 11-50, 51-200, 201-500, 501-1000, 1001-5000, 5001+)</li>
+    <li>Growth trend indicator (growing, stable, declining) based on historical comparison</li>
+    <li>Confidence level and primary data source for each estimate</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Is LinkedIn employee count accurate?</h3>
+            <p style="color: var(--color-text-secondary);">Directionally, yes. For companies with 50+ employees in knowledge-worker industries (tech, professional services, finance), LinkedIn counts are typically within 20% of actual headcount. For companies with many hourly or field workers (restaurants, construction, manufacturing), LinkedIn significantly undercounts because those employees don't maintain LinkedIn profiles.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you show employee count changes over time?</h3>
+            <p style="color: var(--color-text-secondary);">If we've enriched your data before, we can compare current vs previous counts to show growth or decline. For first-time enrichment, we can append historical snapshots from our databases to show the trajectory over the past 1-2 years where data is available.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the difference between this and company size enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">They're closely related. Employee count enrichment focuses specifically on headcount numbers. Company size enrichment is broader — it includes employee count plus revenue estimation and other size indicators. If you only need headcount, employee count enrichment is more focused and faster.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

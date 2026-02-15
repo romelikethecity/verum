@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you update our accounts on a recurring schedule?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Most account management teams run quarterly refreshes of their top accounts. We re-enrich and re-verify account data every quarter so your team always has current information. We can also do event-triggered updates when we detect significant changes."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you identify expansion opportunities?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We look for signals: new departments, new locations, headcount growth in specific functions, new technology adoption, and leadership hires in areas relevant to your product. These signals are delivered as enrichment fields on your account records, not as a separate report."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What CRMs do you work with?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We work with exports from any CRM \u2014 Salesforce, HubSpot, Dynamics, Pipedrive, or even spreadsheets. We don't integrate directly into your CRM. You export, we enrich, you import. This gives you full control over what gets updated."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Account Management</h1>
+        <p class="page-hero__subtitle">You can't manage accounts you don't understand. We give you the full picture.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Account Management</h2>
-<p>Maintain complete account records. Verum provides the clean, enriched data you need for effective account management.</p>
+<p>Effective account management requires knowing everything about your accounts: who the stakeholders are, how the company is structured, what's changed recently, and where expansion opportunities exist. Most account managers are working with outdated records and incomplete org charts.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with account management because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>Your accounts have grown since you first won them. New divisions, new decision-makers, new locations. But your CRM still shows the original contact from the initial deal. Your account managers are flying blind on 60% of the account's current reality.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Support Account Management</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for account management</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Stakeholder mapping.</strong> We identify current decision-makers, influencers, and end users across your accounts so your team knows who matters now, not who mattered two years ago.</li>
+    <li><strong>Org chart updates.</strong> People change roles, get promoted, or leave. We update contact records to reflect the current organizational reality at each account.</li>
+    <li><strong>Firmographic refresh.</strong> Company size, revenue, locations, and subsidiaries change. We update account records with current data so your team understands the account's current scope.</li>
+    <li><strong>Expansion signals.</strong> New office openings, headcount growth, funding rounds, and technology changes that indicate upsell or cross-sell opportunities.</li>
+    <li><strong>Risk signals.</strong> Layoffs, leadership changes, and financial indicators that your CSM team should know about before renewal conversations.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your account management challenges and we'll show you how clean data can transform your results.</p>
+<h2>Better Account Intelligence</h2>
+<ul>
+    <li>Account managers who walk into QBRs knowing more about the account than the customer expects</li>
+    <li>Expansion revenue from contacts and departments you didn't know existed in your accounts</li>
+    <li>Earlier risk detection because firmographic and personnel changes surface automatically</li>
+    <li>Higher net retention because your team is proactive instead of reactive</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you update our accounts on a recurring schedule?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Most account management teams run quarterly refreshes of their top accounts. We re-enrich and re-verify account data every quarter so your team always has current information. We can also do event-triggered updates when we detect significant changes.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you identify expansion opportunities?</h3>
+            <p style="color: var(--color-text-secondary);">We look for signals: new departments, new locations, headcount growth in specific functions, new technology adoption, and leadership hires in areas relevant to your product. These signals are delivered as enrichment fields on your account records, not as a separate report.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What CRMs do you work with?</h3>
+            <p style="color: var(--color-text-secondary);">We work with exports from any CRM — Salesforce, HubSpot, Dynamics, Pipedrive, or even spreadsheets. We don't integrate directly into your CRM. You export, we enrich, you import. This gives you full control over what gets updated.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

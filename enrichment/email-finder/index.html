@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is this different from email guessing tools?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Email guessing tools generate an address based on a pattern (first.last@company.com) and give it to you without verifying it exists. Our email finder verifies at the mail server level before returning results. The difference shows up in your bounce rate: guessing tools produce 15-25% bounces, verified results produce under 3%."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if you can't find an email for someone?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We tell you. Not every contact has a findable business email \u2014 some companies have no web presence, some use unusual email systems, and some people don't have a business email that appears in any database. We report the exact hit rate for your batch so you know the coverage."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I submit a bulk list or is this one at a time?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Bulk is our standard. You send us a CSV or Excel file with names and companies, and we return the file with verified email addresses appended. Typical turnaround is 1-3 business days depending on list size. We don't charge for contacts where we can't find a verified email."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Email Finder</h1>
+        <p class="page-hero__subtitle">Give us a name and company, get back a verified email address that reaches the right inbox.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Email Finder</h2>
-<p>Discover email addresses from names and company domains. Verum helps you append accurate email addresses to your B2B database from 50+ trusted sources.</p>
+<p>Our email finder service takes a person's name and company and returns their verified business email address. Unlike email guessing tools that generate a format and hope for the best, we verify every address at the mail server level before returning it. This means lower bounce rates and better deliverability for your outreach.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends email addresses</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>You found the right person on LinkedIn. You know their name and company. But LinkedIn InMail has a 15% response rate on a good day, and connection requests go ignored. You need their email address. Manual searching takes 5-10 minutes per contact and often fails. At scale, an email finder service is the only practical option.</p>
 
-<h2>Use Cases</h2>
+<h2>How Our Email Finder Works</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Input matching.</strong> You provide the person's name, company name or domain, and optionally their title. We use all available identifiers to find the right person.</li>
+    <li><strong>Pattern-based discovery.</strong> We identify the email naming convention at their company and generate the most likely email address based on that pattern.</li>
+    <li><strong>Database cross-reference.</strong> We check our multi-source database for known email addresses associated with that person and company combination.</li>
+    <li><strong>Server-level verification.</strong> Every candidate email address is verified through SMTP validation to confirm it exists and can receive mail before we return it.</li>
 </ul>
+
+<h2>What You Get from Email Finder</h2>
+<ul>
+    <li>Verified email address for each contact you submit</li>
+    <li>Confidence score based on verification method and source quality</li>
+    <li>Catch-all domain flag for domains where individual verification isn't possible</li>
+    <li>Alternative email suggestions when the primary address can't be verified</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is this different from email guessing tools?</h3>
+            <p style="color: var(--color-text-secondary);">Email guessing tools generate an address based on a pattern (first.last@company.com) and give it to you without verifying it exists. Our email finder verifies at the mail server level before returning results. The difference shows up in your bounce rate: guessing tools produce 15-25% bounces, verified results produce under 3%.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if you can't find an email for someone?</h3>
+            <p style="color: var(--color-text-secondary);">We tell you. Not every contact has a findable business email — some companies have no web presence, some use unusual email systems, and some people don't have a business email that appears in any database. We report the exact hit rate for your batch so you know the coverage.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can I submit a bulk list or is this one at a time?</h3>
+            <p style="color: var(--color-text-secondary);">Bulk is our standard. You send us a CSV or Excel file with names and companies, and we return the file with verified email addresses appended. Typical turnaround is 1-3 business days depending on list size. We don't charge for contacts where we can't find a verified email.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

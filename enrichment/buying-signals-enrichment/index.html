@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How recent are the buying signals you detect?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most signals are detected within 1-2 weeks of the event. Funding rounds and executive changes are typically captured within days through press monitoring and SEC filings. Technology changes are detected through periodic website scanning, so the lag can be 1-4 weeks depending on when we last scanned."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Which buying signals are most predictive?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It varies by what you sell. For enterprise software, executive changes and funding events are strongest. For marketing tools, technology stack changes and hiring in marketing roles are better predictors. We can help you identify which signals matter most for your specific product and ICP."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you set up ongoing monitoring for buying signals?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our standard enrichment is a point-in-time snapshot. For ongoing monitoring, we can set up periodic re-scans of your account list (monthly or quarterly) and flag new signals as they appear. This works well for ABM programs where you have a defined target account list."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Buying Signals Enrichment</h1>
+        <p class="page-hero__subtitle">Hiring, funding, tech changes, and leadership moves — the signals that predict when companies buy.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Buying Signals Enrichment</h2>
-<p>Detect signals indicating purchase readiness. Verum helps you append accurate buying signals to your B2B database from 50+ trusted sources.</p>
+<p>Buying signals enrichment appends event-based triggers to your account data: recent funding rounds, executive hires, technology changes, office expansions, and other indicators that a company is likely to make a purchase decision soon. These signals complement intent data by showing concrete business changes, not just research activity.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends buying signals</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Intent data tells you a company is researching your category. Buying signals tell you why. A company that just raised a Series B, hired a VP of Sales, and switched CRM platforms isn't browsing — they're building infrastructure and have budget to spend. Without event data, you miss the context that makes outreach relevant.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Detect Buying Signals</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Funding event tracking.</strong> We monitor funding announcements to flag companies that recently raised capital — a strong indicator of upcoming technology and vendor purchases.</li>
+    <li><strong>Leadership change detection.</strong> New executives in relevant roles (CTO, VP Sales, CMO) often trigger vendor reviews and new purchases within their first 6 months.</li>
+    <li><strong>Technology change monitoring.</strong> We detect when companies add or remove technologies from their stack, signaling evaluation cycles and potential displacement opportunities.</li>
+    <li><strong>Job posting analysis.</strong> Hiring patterns reveal growth areas and priorities. A company posting 10 sales roles is scaling — and likely needs the tools to support that growth.</li>
 </ul>
+
+<h2>What Buying Signal Data Shows</h2>
+<ul>
+    <li>Recent funding events with round size and investor details for each account</li>
+    <li>Executive changes in roles relevant to your product's buying committee</li>
+    <li>Technology stack changes showing recent additions and removals</li>
+    <li>Hiring velocity data showing which departments are growing fastest</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How recent are the buying signals you detect?</h3>
+            <p style="color: var(--color-text-secondary);">Most signals are detected within 1-2 weeks of the event. Funding rounds and executive changes are typically captured within days through press monitoring and SEC filings. Technology changes are detected through periodic website scanning, so the lag can be 1-4 weeks depending on when we last scanned.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Which buying signals are most predictive?</h3>
+            <p style="color: var(--color-text-secondary);">It varies by what you sell. For enterprise software, executive changes and funding events are strongest. For marketing tools, technology stack changes and hiring in marketing roles are better predictors. We can help you identify which signals matter most for your specific product and ICP.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you set up ongoing monitoring for buying signals?</h3>
+            <p style="color: var(--color-text-secondary);">Our standard enrichment is a point-in-time snapshot. For ongoing monitoring, we can set up periodic re-scans of your account list (monthly or quarterly) and flag new signals as they appear. This works well for ABM programs where you have a defined target account list.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

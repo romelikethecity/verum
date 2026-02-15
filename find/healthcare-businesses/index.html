@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What types of healthcare businesses do you cover?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We cover physician practices, hospitals, ambulatory surgery centers, urgent care centers, imaging/radiology centers, clinical laboratories, home health agencies, hospices, skilled nursing facilities, behavioral health centers, rehabilitation facilities, pharmacies, medical equipment suppliers, and dental practices."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you filter healthcare businesses by Medicare/Medicaid participation?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. CMS enrollment data tells us which facilities participate in Medicare, Medicaid, or both. We also flag facilities that are cash-pay or private-insurance only. This filter is useful if your product relates to government payer compliance or billing."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle healthcare businesses that have closed or merged?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We verify active status through multiple channels: state license renewal records, CMS enrollment updates, NPI deactivation checks, and website/phone verification. Closed or merged facilities are removed from your list before delivery."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Healthcare Businesses</h1>
+      <p class="page-hero__subtitle">The healthcare business directory space is fragmented between CMS databases, state licensing boards, and commercial directories that are all incomplete.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Healthcare Businesses</h2>
-<p>Find and enrich healthcare company data. Verum helps you build targeted lists of healthcare businesses with complete, accurate contact information.</p>
+<p>Verum builds healthcare business lists by aggregating data from CMS provider enrollment, state licensing boards, NPI databases, and accreditation organizations. We cover everything from physician practices to imaging centers to home health agencies, with verified contact info for each.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>No single database covers all healthcare businesses. CMS has Medicare providers but misses cash-pay clinics. State boards have licensed facilities but different states use different classifications. And the NPI database is comprehensive but full of stale addresses and inactive records.</p>
+
+<h2>How We Map Healthcare Businesses</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>Multi-source aggregation.</strong> We pull from CMS provider enrollment files, NPI registry, state licensing boards, accreditation body directories (Joint Commission, AAAHC), and professional association databases to build a complete picture.</li>
+  <li><strong>Facility type classification.</strong> We standardize healthcare business types across sources: physician practices, hospitals, ambulatory surgery centers, imaging centers, home health, hospice, SNFs, behavioral health, urgent care, and retail clinics.</li>
+  <li><strong>Active status verification.</strong> We check license status, Medicare certification, and NPI deactivation records to ensure every business on your list is currently operating.</li>
+  <li><strong>Contact enrichment.</strong> Beyond the main phone number, we find administrator names, office manager contacts, and owner/operator information with verified emails and direct lines.</li>
+  <li><strong>Service line and specialty tagging.</strong> We classify each business by the services they provide, specialties on staff, and patient populations they serve.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Healthcare Business List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Business name and facility type.</strong> Standardized classification across all healthcare business categories with NPI organizational number.</li>
+  <li><strong>Full address and service area.</strong> Verified physical location, mapped to county, health service area, and metropolitan statistical area for geographic targeting.</li>
+  <li><strong>Key contacts.</strong> Administrator, office manager, medical director, or owner with verified email and direct phone number.</li>
+  <li><strong>Licensing and certification.</strong> State license numbers, Medicare/Medicaid certification status, and accreditation body affiliations.</li>
+  <li><strong>Size and scope indicators.</strong> Provider count, bed count (where applicable), and estimated patient volume based on available data.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>What types of healthcare businesses do you cover?</h3>
+<p>We cover physician practices, hospitals, ambulatory surgery centers, urgent care centers, imaging/radiology centers, clinical laboratories, home health agencies, hospices, skilled nursing facilities, behavioral health centers, rehabilitation facilities, pharmacies, medical equipment suppliers, and dental practices.</p>
+
+<h3>Can you filter healthcare businesses by Medicare/Medicaid participation?</h3>
+<p>Yes. CMS enrollment data tells us which facilities participate in Medicare, Medicaid, or both. We also flag facilities that are cash-pay or private-insurance only. This filter is useful if your product relates to government payer compliance or billing.</p>
+
+<h3>How do you handle healthcare businesses that have closed or merged?</h3>
+<p>We verify active status through multiple channels: state license renewal records, CMS enrollment updates, NPI deactivation checks, and website/phone verification. Closed or merged facilities are removed from your list before delivery.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

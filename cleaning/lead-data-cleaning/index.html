@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Should we clean leads before or after they enter our CRM?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Both. We recommend validation rules on forms to prevent bad data from entering, and periodic batch cleaning to fix what slips through. Most teams start with a batch cleanup of existing leads and then add prevention measures to keep quality high going forward."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you prioritize which leads to clean first?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We can focus on leads that are actively in pipeline, leads from your highest-value sources, or leads that match your ICP criteria. Cleaning your most valuable leads first means your sales team gets immediate benefit while we work through the rest of the database."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What about leads from purchased lists?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Purchased lists are typically the dirtiest data source. We see 30-50% invalid rates on purchased lists compared to 10-15% on organic inbound. We recommend always cleaning purchased lists before loading them into your CRM to avoid contaminating your existing data."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Lead Data Cleaning</h1>
+        <p class="page-hero__subtitle">Your leads are only as good as the data behind them. We make both better.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Lead Data Cleaning</h2>
-<p>Clean inbound leads for better conversion. Verum helps you maintain accurate, reliable lead data across your entire database.</p>
+<p>Lead data cleaning verifies and corrects the contact, company, and firmographic data attached to your inbound and outbound leads. It ensures that every lead your sales team works has accurate contact information, correct company details, and complete fields for scoring and routing.</p>
 
-<h2>What We Do</h2>
+<p>Leads enter your system through web forms, list purchases, event scans, and integrations. Each source has different data quality. Form fills are incomplete. Purchased lists are outdated. Event scans are messy. Your sales team ends up researching every lead manually because they cannot trust what is in the CRM.</p>
+
+<h2>What We Clean on Leads</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Contact verification.</strong> Email addresses, phone numbers, and mailing addresses are validated against live sources to confirm they are deliverable and current.</li>
+    <li><strong>Company matching.</strong> Company names entered on forms are matched to authoritative company records. 'Ggl' becomes 'Google LLC' with full firmographic data attached.</li>
+    <li><strong>Title standardization.</strong> Free-text job titles are mapped to standard seniority levels and functions so your scoring model can evaluate them consistently.</li>
+    <li><strong>Source deduplication.</strong> Leads that entered from multiple sources get deduplicated so each person is only worked once.</li>
+    <li><strong>Field completion.</strong> Missing fields like industry, company size, and revenue range get filled from external data sources.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Clean Lead Data Outcomes</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Lead scoring that accurately reflects fit because the underlying data fields are complete and correct</li>
+    <li>Routing that sends leads to the right rep based on clean firmographic data, not guesswork</li>
+    <li>Higher connect rates on outbound because email and phone data are verified before reps start calling</li>
+    <li>Less SDR time wasted on research because leads arrive with complete, accurate information</li>
+    <li>Better conversion tracking because duplicate leads are merged and attribution is clean</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Should we clean leads before or after they enter our CRM?</h3>
+            <p style="color: var(--color-text-secondary);">Both. We recommend validation rules on forms to prevent bad data from entering, and periodic batch cleaning to fix what slips through. Most teams start with a batch cleanup of existing leads and then add prevention measures to keep quality high going forward.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you prioritize which leads to clean first?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We can focus on leads that are actively in pipeline, leads from your highest-value sources, or leads that match your ICP criteria. Cleaning your most valuable leads first means your sales team gets immediate benefit while we work through the rest of the database.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about leads from purchased lists?</h3>
+            <p style="color: var(--color-text-secondary);">Purchased lists are typically the dirtiest data source. We see 30-50% invalid rates on purchased lists compared to 10-15% on organic inbound. We recommend always cleaning purchased lists before loading them into your CRM to avoid contaminating your existing data.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What about free email domains like gmail.com?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We filter out consumer email domains (Gmail, Yahoo, Outlook, etc.) since they don't map to a company. We can flag contacts using free email addresses so you can handle them separately \u2014 some companies deprioritize free email sign-ups, others ask for a business email on follow-up."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you handle domains that redirect to another domain?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We follow redirects to the final destination domain and match against that. This catches companies that have rebranded, acquired a new domain, or use a vanity URL that redirects to their main site."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the match rate for domain enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically 70-85% for B2B company domains. Consumer-focused businesses, very small businesses, and newly registered domains have lower match rates. We report the exact match rate for your specific list along with the unmatched domains so you can review them."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Domain Enrichment</h1>
+        <p class="page-hero__subtitle">A company domain tells you more about a business than any form fill ever will.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Domain Enrichment</h2>
-<p>Append company data from domain lookups. Verum helps you append accurate domain data to your B2B database from 50+ trusted sources.</p>
+<p>Domain enrichment takes a list of website domains and returns complete company profiles: company name, revenue, employee count, industry, technology stack, headquarters location, and social media presence. It's the fastest way to turn anonymous website traffic or email sign-ups into identified, enriched accounts.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends domain data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>When someone signs up with jane@acmecorp.com, you have a domain. That domain is a key to unlock everything about the company — if you have the right data sources. Without domain enrichment, your marketing team is staring at an email address and guessing who the company is.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Enrich from Domains</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Domain-to-company matching.</strong> We match each domain to a company record in our database, handling redirects, subdomains, and companies with multiple domains.</li>
+    <li><strong>Full firmographic append.</strong> Matched companies get the complete profile: name, revenue range, employee count, NAICS/SIC codes, founding year, and location.</li>
+    <li><strong>Technology detection.</strong> We scan the domain to identify the company's technology stack: CRM, marketing automation, analytics, hosting, and more.</li>
+    <li><strong>Social presence mapping.</strong> We link each domain to the company's LinkedIn, Twitter, Facebook, and other social profiles.</li>
 </ul>
+
+<h2>What Domain Enrichment Returns</h2>
+<ul>
+    <li>Company name, revenue range, and employee count for each domain</li>
+    <li>Industry classification and headquarters location</li>
+    <li>Technology stack detected from the website</li>
+    <li>Social media profiles linked to the domain</li>
+    <li>Match confidence score for each domain-to-company resolution</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about free email domains like gmail.com?</h3>
+            <p style="color: var(--color-text-secondary);">We filter out consumer email domains (Gmail, Yahoo, Outlook, etc.) since they don't map to a company. We can flag contacts using free email addresses so you can handle them separately — some companies deprioritize free email sign-ups, others ask for a business email on follow-up.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you handle domains that redirect to another domain?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We follow redirects to the final destination domain and match against that. This catches companies that have rebranded, acquired a new domain, or use a vanity URL that redirects to their main site.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the match rate for domain enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">Typically 70-85% for B2B company domains. Consumer-focused businesses, very small businesses, and newly registered domains have lower match rates. We report the exact match rate for your specific list along with the unmatched domains so you can review them.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

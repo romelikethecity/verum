@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you handle duplicates where each record has different data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We merge them intelligently. If Record A has the best email and Record B has the best phone number, the merged record gets both. We use recency, completeness, and source reliability to decide which value wins when there is a conflict. You get a report showing what was merged and why."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if your system merges two records that are actually different people?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Low-confidence matches are always flagged for human review rather than auto-merged. We set confidence thresholds conservatively. It is better to leave a potential duplicate unflagged than to merge two real people. You can also set custom rules for your specific data."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you deduplicate across multiple systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Send us exports from Salesforce, HubSpot, your marketing platform, and your support tool. We deduplicate across all sources and deliver a unified file that you can use as your master record set. Cross-system deduplication catches duplicates that no single system can see."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Data Deduplication</h1>
+        <p class="page-hero__subtitle">Same contact, four records. We merge them into one with the best data from each.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Data Deduplication</h2>
-<p>Remove duplicate records and merge the best data. Verum helps you maintain accurate, reliable duplicate records across your entire database.</p>
+<p>Data deduplication identifies duplicate records in your database and merges them into single, authoritative entries. It goes beyond exact matching to catch near-duplicates where names are spelled differently, companies use multiple domains, or the same person appears with different email addresses.</p>
 
-<h2>What We Do</h2>
+<p>Duplicates create real business problems. Sales reps call the same prospect twice. Marketing sends the same person three emails. Reports overcount pipeline by 15-20%. And every integration or import makes it worse because each system brings its own copy of the same contacts.</p>
+
+<h2>How We Find and Merge Duplicates</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Fuzzy name matching.</strong> John Smith, Jon Smith, J. Smith, and Jonathan Smith are probably the same person. Our matching handles nicknames, abbreviations, middle names, and common misspellings.</li>
+    <li><strong>Company normalization.</strong> Acme Corp, ACME Inc., Acme Corporation, and acme.com all point to the same company. We normalize before matching so variants get caught.</li>
+    <li><strong>Cross-field matching.</strong> Different email but same phone number? Different name but same LinkedIn URL? We match across multiple fields to catch duplicates that single-field matching misses.</li>
+    <li><strong>Intelligent merge rules.</strong> When we find duplicates, we do not just pick one and delete the rest. We merge the best data from each record: the most recent email, the most complete address, the most accurate job title.</li>
+    <li><strong>Confidence scoring.</strong> Every potential match gets a confidence score. High-confidence matches merge automatically. Low-confidence matches get flagged for your review so we never merge records that should stay separate.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>After Deduplication</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>A single source of truth for every contact and company in your database</li>
+    <li>Accurate pipeline and revenue reporting without inflated counts</li>
+    <li>Sales teams that never accidentally contact the same person twice</li>
+    <li>Marketing campaigns that send one message per person, not three</li>
+    <li>Clean data for integrations so new tools start with accurate records</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle duplicates where each record has different data?</h3>
+            <p style="color: var(--color-text-secondary);">We merge them intelligently. If Record A has the best email and Record B has the best phone number, the merged record gets both. We use recency, completeness, and source reliability to decide which value wins when there is a conflict. You get a report showing what was merged and why.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if your system merges two records that are actually different people?</h3>
+            <p style="color: var(--color-text-secondary);">Low-confidence matches are always flagged for human review rather than auto-merged. We set confidence thresholds conservatively. It is better to leave a potential duplicate unflagged than to merge two real people. You can also set custom rules for your specific data.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you deduplicate across multiple systems?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Send us exports from Salesforce, HubSpot, your marketing platform, and your support tool. We deduplicate across all sources and deliver a unified file that you can use as your master record set. Cross-system deduplication catches duplicates that no single system can see.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

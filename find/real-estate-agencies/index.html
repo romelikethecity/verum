@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you separate franchise brokerages from independents?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We identify franchise affiliations (Keller Williams, RE/MAX, Coldwell Banker, Century 21, eXp, Compass, etc.) and tag them. Independent brokerages are flagged separately. This matters because franchise offices often have mandated tools while independents choose their own."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you estimate brokerage size?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We count active agent licenses affiliated with each brokerage through state licensing board data. A brokerage with 200 agents is a very different prospect than one with 5 agents. We also check for multiple office locations under the same brokerage entity."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you find commercial real estate brokerages specifically?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We distinguish between residential and commercial brokerages based on license type, listing activity, and website analysis. We can also identify brokerages that do both. If you're selling commercial real estate software, we'll exclude the residential-only shops."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Real Estate Agencies</h1>
+      <p class="page-hero__subtitle">MLS and state licensing boards track individual agents, not the brokerage owners who decide which tools and vendors the office uses.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Real Estate Agencies</h2>
-<p>Find real estate agencies and agents. Verum helps you build targeted lists of real estate agencies with complete, accurate contact information.</p>
+<p>Verum builds real estate agency lists focused on the brokerage level, not individual agents. We identify the broker/owner or managing broker at each office and deliver their direct contact information, along with brokerage size, franchise affiliation, and market focus.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Real estate databases are overwhelmingly agent-centric. Zillow, Realtor.com, and state licensing boards all organize by individual agent. But if you're selling technology, services, or tools to real estate companies, you need the brokerage owner or managing broker. That person is buried in the data.</p>
+
+<h2>How We Build Real Estate Agency Lists</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>State real estate commission records.</strong> We pull brokerage registrations and designated broker records from state licensing boards to identify the broker of record at each office.</li>
+  <li><strong>Franchise vs. independent classification.</strong> We tag brokerages as franchise (Keller Williams, RE/MAX, Coldwell Banker, etc.) or independent, and for franchises, identify the local franchisee who owns that office.</li>
+  <li><strong>Brokerage size estimation.</strong> By counting active agent licenses affiliated with each brokerage, we estimate the office size and rank brokerages by agent count in each market.</li>
+  <li><strong>Managing broker identification.</strong> The broker of record and the managing broker aren't always the same person. We identify who actually runs day-to-day operations and makes vendor decisions.</li>
+  <li><strong>Market specialization tagging.</strong> We identify whether brokerages focus on residential, commercial, luxury, property management, or mixed portfolios based on listing data and website analysis.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Real Estate Agency List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Brokerage name and office address.</strong> Physical office location verified and mapped to market area and MLS region.</li>
+  <li><strong>Broker/owner and managing broker contacts.</strong> Direct email and phone number for the decision-maker, not the office's general line.</li>
+  <li><strong>Franchise affiliation.</strong> Which franchise brand (if any) and whether it's a franchise, company-owned, or independent brokerage.</li>
+  <li><strong>Agent count.</strong> Number of licensed agents affiliated with the brokerage, which directly indicates office size and technology budget.</li>
+  <li><strong>Market focus.</strong> Residential, commercial, luxury, rental/property management, or new construction specialization.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>Can you separate franchise brokerages from independents?</h3>
+<p>Yes. We identify franchise affiliations (Keller Williams, RE/MAX, Coldwell Banker, Century 21, eXp, Compass, etc.) and tag them. Independent brokerages are flagged separately. This matters because franchise offices often have mandated tools while independents choose their own.</p>
+
+<h3>How do you estimate brokerage size?</h3>
+<p>We count active agent licenses affiliated with each brokerage through state licensing board data. A brokerage with 200 agents is a very different prospect than one with 5 agents. We also check for multiple office locations under the same brokerage entity.</p>
+
+<h3>Can you find commercial real estate brokerages specifically?</h3>
+<p>Yes. We distinguish between residential and commercial brokerages based on license type, listing activity, and website analysis. We can also identify brokerages that do both. If you're selling commercial real estate software, we'll exclude the residential-only shops.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

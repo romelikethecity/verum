@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Why would I need SIC codes if NAICS replaced them?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Many systems still require SIC codes: SEC filings use SIC, insurance underwriting platforms use SIC, some advertising and data platforms use SIC, and financial databases index by SIC. If you work with any of these systems, you need SIC codes even though NAICS is the newer standard."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you classify modern companies that didn't exist when SIC was created?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SIC was last updated in 1987, so it has no codes for SaaS, social media, e-commerce, or other modern industries. We map these to the closest analogous codes: SaaS companies typically get 7372 (Prepackaged Software) and e-commerce companies get the retail code matching their product category. We document our mapping logic so you can review it."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you assign SIC codes to international companies?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SIC is a US classification system, but it can be applied to international companies based on their business activity. The codes describe what a company does, not where it's located. We assign SIC codes to international companies using the same business-activity analysis we use for US companies."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">SIC Code Enrichment</h1>
+        <p class="page-hero__subtitle">SIC codes are 40 years old and still required by half the B2B tools you use.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>SIC Code Enrichment</h2>
-<p>Append SIC codes for accurate industry targeting. Verum helps you append accurate SIC codes to your B2B database from 50+ trusted sources.</p>
+<p>SIC code enrichment assigns Standard Industrial Classification codes to your company records. While SIC was officially replaced by NAICS in 1997, many business databases, financial systems, insurance platforms, and legacy applications still require SIC codes. We assign accurate 4-digit SIC codes based on each company's actual business activity.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends SIC codes</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>You need SIC codes to run your company data through insurance quoting systems, financial compliance tools, SEC databases, and many B2B data platforms. But SIC codes are rarely included in CRM data, and the system is old enough that many modern business types (SaaS, fintech, social media) don't have intuitive mappings. Automated assignment handles the translation.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Assign SIC Codes</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Business activity classification.</strong> We analyze each company's primary business activity to determine the correct SIC division, major group, and industry code.</li>
+    <li><strong>4-digit code assignment.</strong> Each company gets a full 4-digit SIC code (the most specific level) plus 2-digit major group for broader categorization.</li>
+    <li><strong>NAICS cross-reference.</strong> We provide NAICS-to-SIC mappings so you can use either system interchangeably.</li>
+    <li><strong>Modern business mapping.</strong> For business types that didn't exist when SIC was created (SaaS, cryptocurrency, social media marketing), we apply the most appropriate analogous codes.</li>
 </ul>
+
+<h2>What SIC-Enriched Data Includes</h2>
+<ul>
+    <li>4-digit SIC code with division and major group for each company</li>
+    <li>Plain-text industry description for the assigned code</li>
+    <li>Corresponding NAICS code for cross-reference</li>
+    <li>Primary and secondary codes for diversified companies</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Why would I need SIC codes if NAICS replaced them?</h3>
+            <p style="color: var(--color-text-secondary);">Many systems still require SIC codes: SEC filings use SIC, insurance underwriting platforms use SIC, some advertising and data platforms use SIC, and financial databases index by SIC. If you work with any of these systems, you need SIC codes even though NAICS is the newer standard.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you classify modern companies that didn't exist when SIC was created?</h3>
+            <p style="color: var(--color-text-secondary);">SIC was last updated in 1987, so it has no codes for SaaS, social media, e-commerce, or other modern industries. We map these to the closest analogous codes: SaaS companies typically get 7372 (Prepackaged Software) and e-commerce companies get the retail code matching their product category. We document our mapping logic so you can review it.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you assign SIC codes to international companies?</h3>
+            <p style="color: var(--color-text-secondary);">SIC is a US classification system, but it can be applied to international companies based on their business activity. The codes describe what a company does, not where it's located. We assign SIC codes to international companies using the same business-activity analysis we use for US companies.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

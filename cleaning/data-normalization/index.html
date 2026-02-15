@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Is data normalization the same as data standardization?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "They overlap significantly. Normalization focuses on making values consistent within a field, like standardizing state names to two-letter codes. Standardization is a broader term that also covers field naming conventions, data type consistency, and structural changes. In practice, we do both as part of the same project."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Will normalization change data we want to keep?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We never modify your original data in place. We work with an export, normalize it, and deliver the result. You review the mapping rules before anything gets imported back. If you want to keep certain original values alongside the normalized versions, we can deliver both as separate fields."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle fields with thousands of unique values?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We build a mapping table. If your industry field has 500 unique values, we map each one to your target taxonomy. We show you the mapping for review before applying it. Common values get mapped automatically. Edge cases get flagged for your decision."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Data Normalization</h1>
+        <p class="page-hero__subtitle">Inconsistent formats across every field. We make your data speak the same language.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Data Normalization</h2>
-<p>Normalize data fields for consistent reporting. Verum helps you maintain accurate, reliable data normalization across your entire database.</p>
+<p>Data normalization transforms values across your database into consistent, standardized formats. When every field follows the same rules for formatting, abbreviations, and categorization, your data becomes usable for analysis, automation, and reporting.</p>
 
-<h2>What We Do</h2>
+<p>Your industry field has 47 different values for the same 12 industries. Your state field has 'California' and 'CA' and 'Cal' and 'Calif.' Your revenue field has '$1M' and '1000000' and '1M' and 'One Million'. Nothing matches, nothing filters correctly, and every report requires manual cleanup.</p>
+
+<h2>Fields We Normalize</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Industry and vertical.</strong> We map your free-text industry values to a standardized taxonomy (SIC, NAICS, or your custom categories) so filtering and reporting work.</li>
+    <li><strong>Geographic data.</strong> States, countries, and regions get standardized to consistent codes. 'California' and 'CA' become the same value everywhere.</li>
+    <li><strong>Revenue and employee count.</strong> We standardize numeric fields to consistent formats and ranges so your segmentation and scoring use reliable values.</li>
+    <li><strong>Dates.</strong> MM/DD/YYYY, DD-MM-YYYY, January 5 2024. We normalize all dates to a single format that your systems expect.</li>
+    <li><strong>Custom fields.</strong> Whatever free-text fields your team has been filling in without standards, we map to a controlled vocabulary.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Normalized Data Results</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Filters and reports that return accurate results because field values are consistent</li>
+    <li>Segmentation that groups records correctly instead of splitting them across formatting variants</li>
+    <li>Lead scoring that evaluates the same criteria for every record in your database</li>
+    <li>Integration sync that works because field formats match what the receiving system expects</li>
+    <li>AI and analytics tools that produce reliable outputs because they are working with clean inputs</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Is data normalization the same as data standardization?</h3>
+            <p style="color: var(--color-text-secondary);">They overlap significantly. Normalization focuses on making values consistent within a field, like standardizing state names to two-letter codes. Standardization is a broader term that also covers field naming conventions, data type consistency, and structural changes. In practice, we do both as part of the same project.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Will normalization change data we want to keep?</h3>
+            <p style="color: var(--color-text-secondary);">We never modify your original data in place. We work with an export, normalize it, and deliver the result. You review the mapping rules before anything gets imported back. If you want to keep certain original values alongside the normalized versions, we can deliver both as separate fields.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle fields with thousands of unique values?</h3>
+            <p style="color: var(--color-text-secondary);">We build a mapping table. If your industry field has 500 unique values, we map each one to your target taxonomy. We show you the mapping for review before applying it. Common values get mapped automatically. Edge cases get flagged for your decision.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

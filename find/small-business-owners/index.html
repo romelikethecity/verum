@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What counts as a 'small business' in your data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We typically define small businesses as companies with fewer than 100 employees and under $10M in annual revenue, but we can adjust the definition to match your ICP. SBA uses 500 employees as the cutoff for most industries. Tell us your criteria and we'll build to match."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What match rates should I expect for owner contact info?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For businesses with an active website and some web presence, we typically deliver 70-85% match rates on owner name plus email. For very small businesses with minimal online footprint (home-based, no website), rates drop to 40-60%. We're transparent about these numbers upfront."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you build small business owner lists filtered by industry?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We can filter by any industry: restaurants, retail, professional services, construction, healthcare, manufacturing, and dozens of sub-categories. We can also filter by geography, employee count, years in business, and other firmographic criteria."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,47 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Small Business Owners</h1>
+      <p class="page-hero__subtitle">33 million small businesses in the US, and no single database has accurate owner contact info for more than a fraction of them.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
       
-<h2>Small Business Owners</h2>
-<p>Locate and contact small business owners. Verum helps you build targeted lists of small business owners with complete, accurate contact information.</p>
+<p>Verum finds small business owners across every industry and gives you their direct contact information. We combine Secretary of State filings, professional license records, property data, and web research to identify and verify the actual owner of each business on your list.</p>
 
-<h2>What You Get</h2>
+<h2>The Problem</h2>
+<p>Small business owner data is the most requested and the most unreliable data in B2B. Every list vendor claims millions of records, but match rates for owner name plus verified email hover around 30-40% at best. The rest is guessed, outdated, or flat-out wrong. We take a different approach.</p>
+
+<h2>How We Find Small Business Owners</h2>
 <ul>
-  <li>Verified business information</li>
-  <li>Owner and decision-maker contacts</li>
-  <li>Email addresses and phone numbers</li>
-  <li>Company firmographics</li>
+  <li><strong>Secretary of State and county clerk records.</strong> Business registration filings are the most reliable source for owner names. We pull from all 50 states and normalize the data into a clean format.</li>
+  <li><strong>Professional license matching.</strong> For licensed businesses (contractors, restaurants, salons, healthcare), state license records provide the owner or responsible party name and often additional contact details.</li>
+  <li><strong>Property and tax record cross-referencing.</strong> Commercial property records and business personal property tax filings add another ownership verification layer, especially for businesses that own their building.</li>
+  <li><strong>Web and social media research.</strong> LinkedIn profiles, company About pages, and local news mentions help us confirm ownership and find email addresses and phone numbers that public records lack.</li>
+  <li><strong>Multi-channel contact verification.</strong> Every email is tested for deliverability and every phone number is carrier-verified. We indicate confidence levels so you can prioritize your outreach.</li>
 </ul>
 
-<h2>Use Cases</h2>
+<h2>What Your Small Business Owner List Includes</h2>
 <ul>
-  <li>Sales prospecting</li>
-  <li>Direct mail campaigns</li>
-  <li>Local marketing</li>
-  <li>Partnership development</li>
+  <li><strong>Owner full name and title.</strong> The individual who owns and operates the business, confirmed through public records and web research.</li>
+  <li><strong>Verified email address.</strong> Personal or business email tested for deliverability. We mark whether it's a business domain email or personal account.</li>
+  <li><strong>Direct phone number.</strong> Mobile or direct business line, carrier-verified as active. We indicate line type (mobile, landline, VoIP).</li>
+  <li><strong>Business details.</strong> Company name, address, industry, estimated employee count, and years in operation.</li>
+  <li><strong>LinkedIn profile.</strong> Matched owner LinkedIn URL where available, confirmed as the correct individual at the correct business.</li>
 </ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-section">
+<h3>What counts as a 'small business' in your data?</h3>
+<p>We typically define small businesses as companies with fewer than 100 employees and under $10M in annual revenue, but we can adjust the definition to match your ICP. SBA uses 500 employees as the cutoff for most industries. Tell us your criteria and we'll build to match.</p>
+
+<h3>What match rates should I expect for owner contact info?</h3>
+<p>For businesses with an active website and some web presence, we typically deliver 70-85% match rates on owner name plus email. For very small businesses with minimal online footprint (home-based, no website), rates drop to 40-60%. We're transparent about these numbers upfront.</p>
+
+<h3>Can you build small business owner lists filtered by industry?</h3>
+<p>Yes. We can filter by any industry: restaurants, retail, professional services, construction, healthcare, manufacturing, and dozens of sub-categories. We can also filter by geography, employee count, years in business, and other firmographic criteria.</p>
+</div>
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Build My List</a>

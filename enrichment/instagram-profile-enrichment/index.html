@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Which industries benefit most from Instagram enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fashion, beauty, food and beverage, fitness, travel, hospitality, and D2C retail. Any industry where visual marketing matters and businesses use Instagram as a primary customer acquisition or brand building channel. B2B SaaS companies rarely have meaningful Instagram presence, so this enrichment is less useful for B2B tech targeting."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you get data beyond what's publicly visible?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We extract publicly available data: handle, follower count, bio, post count, and recent post engagement. Private accounts and detailed analytics (reach, impressions, story views) require the business's own Instagram access. What we provide is enough to assess brand presence and marketing activity."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle companies with multiple Instagram accounts?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We identify the primary business account and link to that. If a company has separate accounts for different brands or product lines, we note the additional handles and let you decide which to include in your data."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Instagram Profile Enrichment</h1>
+        <p class="page-hero__subtitle">For consumer brands, D2C companies, and lifestyle businesses, Instagram presence tells you more than their website.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Instagram Profile Enrichment</h2>
-<p>Discover Instagram profiles linked to business contacts. Verum helps you append accurate instagram profiles to your B2B database from 50+ trusted sources.</p>
+<p>Instagram profile enrichment appends Instagram business account URLs and engagement metrics to your company records. For brands in fashion, food, beauty, fitness, travel, and retail, Instagram is a primary marketing channel and a strong indicator of brand strength and marketing sophistication.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends instagram profiles</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Finding the right Instagram handle for a business isn't straightforward. Companies use different names on Instagram than their legal entity. Some have multiple accounts. Some have an account but haven't posted in two years. Manual searching and verification doesn't scale beyond a few hundred companies.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Find Instagram Profiles</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Handle discovery.</strong> We search for each company's Instagram handle using their business name, domain, and known social links from their website.</li>
+    <li><strong>Account verification.</strong> We verify that the discovered account belongs to the right business by checking bio links, post content, and tagged locations.</li>
+    <li><strong>Engagement metrics.</strong> For each matched account, we extract follower count, posting frequency, and engagement rate as indicators of activity level.</li>
+    <li><strong>Business vs personal distinction.</strong> We identify whether the account is a business account, creator account, or personal account, which affects what data is publicly available.</li>
 </ul>
+
+<h2>What Instagram Enrichment Provides</h2>
+<ul>
+    <li>Verified Instagram handle and profile URL for each company</li>
+    <li>Follower count and engagement rate for audience sizing</li>
+    <li>Posting frequency and last post date to gauge activity level</li>
+    <li>Account type (business, creator, personal) and verification status</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Which industries benefit most from Instagram enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">Fashion, beauty, food and beverage, fitness, travel, hospitality, and D2C retail. Any industry where visual marketing matters and businesses use Instagram as a primary customer acquisition or brand building channel. B2B SaaS companies rarely have meaningful Instagram presence, so this enrichment is less useful for B2B tech targeting.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you get data beyond what's publicly visible?</h3>
+            <p style="color: var(--color-text-secondary);">No. We extract publicly available data: handle, follower count, bio, post count, and recent post engagement. Private accounts and detailed analytics (reach, impressions, story views) require the business's own Instagram access. What we provide is enough to assess brand presence and marketing activity.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle companies with multiple Instagram accounts?</h3>
+            <p style="color: var(--color-text-secondary);">We identify the primary business account and link to that. If a company has separate accounts for different brands or product lines, we note the additional handles and let you decide which to include in your data.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

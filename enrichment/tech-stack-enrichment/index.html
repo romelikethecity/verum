@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How many technologies can you detect?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We detect over 20,000 web technologies across 200+ categories. Coverage is strongest for client-side technologies (JavaScript frameworks, analytics, marketing tools) that leave fingerprints on company websites. Server-side and internal tools (databases, project management, internal communications) are harder to detect from outside."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How current is tech stack data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Website scanning happens regularly, but there's a lag between when a company adopts or removes a technology and when we detect the change. Typically 2-8 weeks. If you need real-time tech change alerts, we can set up more frequent scanning of your target account list."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you detect internal tools that aren't visible on the website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some internal tools leave traces in job postings, developer documentation, and employee LinkedIn profiles that we can identify. But technologies with no external visibility (internal databases, project management tools, custom-built systems) can't be reliably detected from outside the company."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Tech Stack Enrichment</h1>
+        <p class="page-hero__subtitle">What tools a company uses tells you more about their needs than their industry or size ever will.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Tech Stack Enrichment</h2>
-<p>Identify software and tools companies use. Verum helps you append accurate tech stack data to your B2B database from 50+ trusted sources.</p>
+<p>Tech stack enrichment identifies and appends the technology tools each company in your database uses across categories: CRM, marketing automation, analytics, e-commerce, customer support, development tools, and more. This technographic data is critical for companies selling integrations, migrations, or complementary products.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends tech stack data</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>If your product integrates with Salesforce, your addressable market is Salesforce customers. If you're replacing Marketo, your target is Marketo users unhappy with their current tool. Without tech stack data, you're guessing which prospects can actually use your product — and discovering incompatibility mid-demo.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Detect Technology Stacks</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Website technology scanning.</strong> We scan company websites for JavaScript libraries, tracking pixels, meta tags, and API calls that reveal installed technologies.</li>
+    <li><strong>DNS and infrastructure analysis.</strong> Domain records, email headers, and hosting configurations reveal backend infrastructure choices.</li>
+    <li><strong>Job posting analysis.</strong> Job descriptions listing required technologies reveal which tools the company uses internally.</li>
+    <li><strong>App marketplace cross-reference.</strong> We check app marketplace reviews and integrations for additional technology signals.</li>
 </ul>
+
+<h2>What Tech Stack Enrichment Reveals</h2>
+<ul>
+    <li>Technologies detected across 50+ categories (CRM, marketing, analytics, e-commerce, support, dev tools)</li>
+    <li>Category-level summary showing which tech category slots are filled and by which vendor</li>
+    <li>Detection confidence level for each technology</li>
+    <li>Technology change alerts for companies that recently added or removed tools</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many technologies can you detect?</h3>
+            <p style="color: var(--color-text-secondary);">We detect over 20,000 web technologies across 200+ categories. Coverage is strongest for client-side technologies (JavaScript frameworks, analytics, marketing tools) that leave fingerprints on company websites. Server-side and internal tools (databases, project management, internal communications) are harder to detect from outside.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How current is tech stack data?</h3>
+            <p style="color: var(--color-text-secondary);">Website scanning happens regularly, but there's a lag between when a company adopts or removes a technology and when we detect the change. Typically 2-8 weeks. If you need real-time tech change alerts, we can set up more frequent scanning of your target account list.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you detect internal tools that aren't visible on the website?</h3>
+            <p style="color: var(--color-text-secondary);">Some internal tools leave traces in job postings, developer documentation, and employee LinkedIn profiles that we can identify. But technologies with no external visibility (internal databases, project management tools, custom-built systems) can't be reliably detected from outside the company.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

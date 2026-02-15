@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What CRM platforms can you detect?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We reliably detect Salesforce, HubSpot, Microsoft Dynamics 365, Zoho CRM, Pipedrive, Freshsales, Monday Sales CRM, Close, Copper, and most other web-based CRMs. On-premise CRMs like older Dynamics versions or Sugar are harder to detect from outside but can sometimes be inferred from job postings and integration patterns."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How accurate is CRM detection?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When we detect a CRM, accuracy is typically 85-90%. The main source of error is companies that have migrated recently \u2014 their old CRM's tracking scripts may still be on the website. We reduce this by combining multiple detection methods and flagging conflicting signals for review."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you tell us which CRM edition or tier a company uses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sometimes. Salesforce editions can often be distinguished by the features visible in their web presence. HubSpot's free vs paid tiers have different capabilities we can detect. But tier detection is less reliable than platform detection \u2014 we get it right about 60% of the time when we attempt it."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">CRM Detection</h1>
+        <p class="page-hero__subtitle">Know what CRM your prospects use before you pitch — it changes everything about your approach.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>CRM Detection</h2>
-<p>Identify which CRM systems companies are using. Verum helps you append accurate CRM usage to your B2B database from 50+ trusted sources.</p>
+<p>CRM detection identifies which customer relationship management platform each company in your database uses: Salesforce, HubSpot, Microsoft Dynamics, Zoho, Pipedrive, or one of dozens of others. This technographic data point is critical for companies selling CRM integrations, add-ons, migration services, or competing CRM products.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends CRM usage</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>If you sell a Salesforce integration, pitching a HubSpot shop wastes everyone's time. If you sell CRM migration services, you need to know who's on legacy platforms. Without CRM detection, you're guessing which prospects can actually use your product — and guessing wrong 60-70% of the time.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Detect CRM Platforms</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Website technology scanning.</strong> We scan company websites for CRM-specific tracking scripts, form handlers, and API calls that reveal which platform they use.</li>
+    <li><strong>Job posting analysis.</strong> Companies hiring for 'Salesforce Admin' or 'HubSpot Specialist' reveal their CRM choice in job descriptions.</li>
+    <li><strong>Integration fingerprinting.</strong> We detect CRM-specific integrations with other tools (email, marketing automation, support) that confirm the platform.</li>
+    <li><strong>Multi-source validation.</strong> We cross-reference technology detection with job postings and app marketplace data for higher confidence.</li>
 </ul>
+
+<h2>What CRM Detection Data Includes</h2>
+<ul>
+    <li>CRM platform identified for each company (Salesforce, HubSpot, Dynamics, Zoho, Pipedrive, etc.)</li>
+    <li>Confidence level based on how many detection signals confirmed the finding</li>
+    <li>Edition/tier detection where possible (Salesforce Enterprise vs Professional, HubSpot Free vs Enterprise)</li>
+    <li>Complementary marketing automation platform detection (Marketo, Pardot, Mailchimp, etc.)</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What CRM platforms can you detect?</h3>
+            <p style="color: var(--color-text-secondary);">We reliably detect Salesforce, HubSpot, Microsoft Dynamics 365, Zoho CRM, Pipedrive, Freshsales, Monday Sales CRM, Close, Copper, and most other web-based CRMs. On-premise CRMs like older Dynamics versions or Sugar are harder to detect from outside but can sometimes be inferred from job postings and integration patterns.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How accurate is CRM detection?</h3>
+            <p style="color: var(--color-text-secondary);">When we detect a CRM, accuracy is typically 85-90%. The main source of error is companies that have migrated recently — their old CRM's tracking scripts may still be on the website. We reduce this by combining multiple detection methods and flagging conflicting signals for review.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you tell us which CRM edition or tier a company uses?</h3>
+            <p style="color: var(--color-text-secondary);">Sometimes. Salesforce editions can often be distinguished by the features visible in their web presence. HubSpot's free vs paid tiers have different capabilities we can detect. But tier detection is less reliable than platform detection — we get it right about 60% of the time when we attempt it.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

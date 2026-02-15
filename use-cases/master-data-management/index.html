@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do you implement MDM software?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. We handle the data quality work that MDM software depends on: entity resolution, golden record creation, and data standardization. If you're implementing an MDM platform (Informatica, Reltio, Semarchy), we prepare the data so the platform works correctly from day one. Clean data in means accurate mastering out."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you start MDM without dedicated software?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Many mid-market companies start with a 'poor man's MDM' approach: clean the data, create master records in a spreadsheet or simple database, and use it as a reference for manual data governance. We can build and maintain that master reference for you as a service without requiring enterprise MDM software."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How often should master data be refreshed?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It depends on your data change rate. Companies with frequent acquisitions, high employee turnover, or rapid growth need monthly refreshes. More stable organizations can refresh quarterly. We recommend at minimum refreshing before any major reporting cycle, system integration, or strategic planning exercise."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Master Data Management</h1>
+        <p class="page-hero__subtitle">One version of the truth, across every system. We build the foundation.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Master Data Management</h2>
-<p>Maintain a single source of truth. Verum provides the clean, enriched data you need for effective master data.</p>
+<p>Master data management creates a single, authoritative source of truth for your business entities — accounts, contacts, products — across all systems. It ensures that every system in your stack references the same clean, consistent data rather than maintaining its own conflicting version.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with master data because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>Your CRM says the customer has 200 employees. Your ERP says 180. Your marketing platform says 250. Which is right? When every system maintains its own copy of entity data, discrepancies are inevitable. Without a master record, every system is both right and wrong at the same time.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Support MDM</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for master data</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Entity resolution.</strong> We identify which records across systems represent the same entity: same company, same person, same account. This is the foundation of any MDM program.</li>
+    <li><strong>Golden record creation.</strong> For each entity, we build one authoritative record using the best data from all sources. This becomes the master that all systems reference.</li>
+    <li><strong>Data quality rules.</strong> We establish standards for how entity data should be formatted, validated, and maintained going forward.</li>
+    <li><strong>Cross-system mapping.</strong> We create reference tables that link entity IDs across systems so updates to the master record can propagate correctly.</li>
+    <li><strong>Ongoing maintenance.</strong> We provide periodic re-matching and quality checks to keep master data current as records change and new data enters your systems.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your master data challenges and we'll show you how clean data can transform your results.</p>
+<h2>MDM Outcomes</h2>
+<ul>
+    <li>A single source of truth for every business entity referenced across your systems</li>
+    <li>Consistent data across CRM, ERP, marketing, and support platforms because all reference the same master</li>
+    <li>Accurate cross-system reporting because entity data matches everywhere</li>
+    <li>Reduced time spent reconciling conflicting data between teams and systems</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you implement MDM software?</h3>
+            <p style="color: var(--color-text-secondary);">No. We handle the data quality work that MDM software depends on: entity resolution, golden record creation, and data standardization. If you're implementing an MDM platform (Informatica, Reltio, Semarchy), we prepare the data so the platform works correctly from day one. Clean data in means accurate mastering out.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you start MDM without dedicated software?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. Many mid-market companies start with a 'poor man's MDM' approach: clean the data, create master records in a spreadsheet or simple database, and use it as a reference for manual data governance. We can build and maintain that master reference for you as a service without requiring enterprise MDM software.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How often should master data be refreshed?</h3>
+            <p style="color: var(--color-text-secondary);">It depends on your data change rate. Companies with frequent acquisitions, high employee turnover, or rapid growth need monthly refreshes. More stable organizations can refresh quarterly. We recommend at minimum refreshing before any major reporting cycle, system integration, or strategic planning exercise.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

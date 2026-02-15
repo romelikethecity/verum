@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Can you build targeting segments for us or just clean the data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Both. We can clean your existing data so your own segmentation works better, or we can build custom audience segments based on your campaign criteria. Most teams start with data cleaning and then realize they can do their own targeting once the fields are reliable."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle contacts that match multiple segments?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We flag multi-segment contacts so you can decide how to handle them. Some teams want contacts in only one segment to avoid duplicate outreach. Others want contacts in every relevant segment. We set the flags and you apply the logic that fits your campaign strategy."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you clean data specifically for paid advertising audiences?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We format cleaned contact data for upload to LinkedIn, Facebook, and Google Customer Match audiences. Standardized company names and titles dramatically improve match rates on these platforms compared to uploading raw CRM data."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Campaign Targeting</h1>
+        <p class="page-hero__subtitle">Your campaigns are only as targeted as your data allows. We make the data match your ambition.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Campaign Targeting</h2>
-<p>Target campaigns with accurate data. Verum provides the clean, enriched data you need for effective campaign targeting.</p>
+<p>Campaign targeting depends on having accurate segmentation fields for every contact in your database. When industry codes are wrong, titles are unstandardized, and firmographic fields are blank, your targeting is guesswork. We clean and enrich the fields that make precise targeting possible.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with campaign targeting because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>You built a campaign targeting VP-level contacts at mid-market SaaS companies. But your database has 'Vice President' and 'VP' and 'V.P.' as different values. Company size is blank on 40% of records. Industry is wrong on 15%. Your 'targeted' campaign is hitting the wrong audience.</p>
 
-<h2>How Verum Helps</h2>
+<h2>How We Improve Targeting Data</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for campaign targeting</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Title standardization.</strong> We map every title variation to standardized seniority and function fields so your targeting filters actually capture the audience you want.</li>
+    <li><strong>Firmographic completion.</strong> Company size, revenue, industry, and location fields get filled from verified sources so your segmentation has the data it needs.</li>
+    <li><strong>Audience segmentation.</strong> We build custom segments based on your campaign criteria and deliver audience-ready lists with consistent, filterable fields.</li>
+    <li><strong>Suppression list creation.</strong> We identify contacts who should be excluded: existing customers, competitors, opted-out addresses, and bad data that would waste impressions.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your campaign targeting challenges and we'll show you how clean data can transform your results.</p>
+<h2>Targeting Results</h2>
+<ul>
+    <li>Campaign segments that accurately represent your intended audience because the underlying fields are clean</li>
+    <li>Higher conversion rates because you're reaching the right people at the right companies</li>
+    <li>Lower cost per acquisition because ad spend and outreach effort aren't wasted on mismatched contacts</li>
+    <li>Consistent targeting across channels because email, ads, and direct mail all use the same clean data</li>
+    <li>Reliable A/B testing because your test groups are based on accurate segments, not random data errors</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you build targeting segments for us or just clean the data?</h3>
+            <p style="color: var(--color-text-secondary);">Both. We can clean your existing data so your own segmentation works better, or we can build custom audience segments based on your campaign criteria. Most teams start with data cleaning and then realize they can do their own targeting once the fields are reliable.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle contacts that match multiple segments?</h3>
+            <p style="color: var(--color-text-secondary);">We flag multi-segment contacts so you can decide how to handle them. Some teams want contacts in only one segment to avoid duplicate outreach. Others want contacts in every relevant segment. We set the flags and you apply the logic that fits your campaign strategy.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you clean data specifically for paid advertising audiences?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We format cleaned contact data for upload to LinkedIn, Facebook, and Google Customer Match audiences. Standardized company names and titles dramatically improve match rates on these platforms compared to uploading raw CRM data.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>

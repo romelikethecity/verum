@@ -60,6 +60,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What's the difference between technographic and tech stack enrichment?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "They're the same thing. 'Technographic enrichment' and 'tech stack enrichment' both refer to identifying which technologies a company uses. Technographic is the industry term (analogous to 'firmographic' for company data and 'demographic' for person data). We use both terms because different teams search for different phrases."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you track technology adoption over time?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If we've enriched your data before, we can compare current vs previous tech stacks to show additions and removals. For first-time enrichment, we provide a point-in-time snapshot. Ongoing quarterly enrichment allows us to track technology changes and alert you to adoption and churn patterns."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you handle companies that build custom technology?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Custom-built technology is largely invisible from outside. We can detect that a company uses custom frameworks or proprietary systems based on certain code patterns, but we can't determine what those systems do or replace. We flag custom technology signals when we detect them."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,29 +110,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Technographic Enrichment</h1>
+        <p class="page-hero__subtitle">Firmographics tell you who to sell to. Technographics tell you what to say.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Technographic Enrichment</h2>
-<p>Discover the technology stack of target companies. Verum helps you append accurate technographics to your B2B database from 50+ trusted sources.</p>
+<p>Technographic enrichment adds technology adoption data to your company records, revealing which software, platforms, and infrastructure each company uses. This intelligence shapes your pitch, identifies integration opportunities, and segments your market by the tools your prospects have already adopted.</p>
 
-<h2>How It Works</h2>
-<ol>
-  <li><strong>Send us your data</strong> - Share your contact or company records</li>
-  <li><strong>We match and enrich</strong> - Our system finds and appends technographics</li>
-  <li><strong>Get enriched data back</strong> - Receive complete records ready to use</li>
-</ol>
+<p>Two companies with identical firmographic profiles (same size, industry, location) can have completely different technology needs. One runs on Salesforce, AWS, and Marketo. The other uses HubSpot, Google Cloud, and Mailchimp. Without technographic data, you're making the same pitch to both — and it's wrong for at least one.</p>
 
-<h2>Use Cases</h2>
+<h2>How We Build Technographic Profiles</h2>
 <ul>
-  <li>Sales prospecting and outreach</li>
-  <li>Lead scoring and routing</li>
-  <li>ABM targeting</li>
-  <li>Marketing personalization</li>
+    <li><strong>Multi-method detection.</strong> We combine website scanning, DNS analysis, job posting data, and app marketplace signals to build a comprehensive technology profile for each company.</li>
+    <li><strong>Category mapping.</strong> Detected technologies are organized into functional categories: CRM, marketing, analytics, cloud infrastructure, development, security, and more.</li>
+    <li><strong>Stack completeness scoring.</strong> We score how complete our detection is for each company — a company with many client-side technologies detected may still have unknown server-side tools.</li>
+    <li><strong>Competitive technology flagging.</strong> We flag when companies use technologies that compete with or complement your product for targeted messaging.</li>
 </ul>
+
+<h2>What Technographic Data Enables</h2>
+<ul>
+    <li>Complete technology profiles organized by category for each company</li>
+    <li>Competitor and complement flags showing which accounts use rival or compatible products</li>
+    <li>Technology sophistication score based on the breadth and depth of their tech stack</li>
+    <li>Segment-level technology adoption patterns showing which tools are most common in your target market</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the difference between technographic and tech stack enrichment?</h3>
+            <p style="color: var(--color-text-secondary);">They're the same thing. 'Technographic enrichment' and 'tech stack enrichment' both refer to identifying which technologies a company uses. Technographic is the industry term (analogous to 'firmographic' for company data and 'demographic' for person data). We use both terms because different teams search for different phrases.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you track technology adoption over time?</h3>
+            <p style="color: var(--color-text-secondary);">If we've enriched your data before, we can compare current vs previous tech stacks to show additions and removals. For first-time enrichment, we provide a point-in-time snapshot. Ongoing quarterly enrichment allows us to track technology changes and alert you to adoption and churn patterns.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How do you handle companies that build custom technology?</h3>
+            <p style="color: var(--color-text-secondary);">Custom-built technology is largely invisible from outside. We can detect that a company uses custom frameworks or proprietary systems based on certain code patterns, but we can't determine what those systems do or replace. We flag custom technology signals when we detect them.</p>
+          </div>
+</div>
+
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>

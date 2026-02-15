@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do you validate international addresses?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We support address validation for Canada, UK, Australia, Germany, France, and most other countries with structured postal systems. International addresses get normalized to each country's postal standard. We flag addresses in countries where we cannot validate so you know what has been confirmed."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can address normalization help with deduplication?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Address variations are one of the top reasons duplicates slip through. Once '123 Main Street Suite 4' and '123 Main St #4' are both normalized to the same format, deduplication catches them as matching records. We recommend normalizing addresses before running any dedup process."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you update addresses for people who have moved?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can run NCOA (National Change of Address) processing against the USPS database to identify contacts who have filed a change of address. This is separate from normalization but often done at the same time for maximum data freshness."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,30 +111,53 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Address Normalization</h1>
+        <p class="page-hero__subtitle">USPS-standardized addresses that match, merge, and mail correctly.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Address Normalization</h2>
-<p>Standardize and validate address information. Verum helps you maintain accurate, reliable address formats across your entire database.</p>
+<p>Address normalization standardizes mailing addresses to the official USPS format for US addresses and equivalent standards for international addresses. It corrects abbreviations, fills in missing components, and validates against postal databases to confirm deliverability.</p>
 
-<h2>What We Do</h2>
+<p>Your database has 'Street' and 'St.' and 'ST' and 'Str' for the same abbreviation. Suite numbers are in the wrong field. ZIP codes are missing the +4 extension. City names are misspelled. These inconsistencies break direct mail campaigns, territory assignment, and location-based analytics.</p>
+
+<h2>What We Normalize</h2>
 <ul>
-  <li>Identify and fix data quality issues</li>
-  <li>Standardize formats and values</li>
-  <li>Validate accuracy and completeness</li>
-  <li>Merge and deduplicate records</li>
+    <li><strong>Street abbreviation standardization.</strong> Street, St, Str, Ave, Avenue, Blvd, Boulevard. We apply USPS Publication 28 standards consistently.</li>
+    <li><strong>Unit and suite parsing.</strong> Apartment, Suite, Unit, Floor, and # designations get extracted to the proper address line 2 field.</li>
+    <li><strong>ZIP code completion.</strong> We fill in missing +4 ZIP code extensions and correct transposed digits by validating against USPS databases.</li>
+    <li><strong>City and state verification.</strong> We cross-reference city, state, and ZIP combinations to catch mismatches where the wrong city name is paired with a ZIP code.</li>
+    <li><strong>Geocoding.</strong> We append latitude and longitude coordinates so you can use addresses for territory mapping and proximity analysis.</li>
 </ul>
 
-<h2>Results</h2>
+<h2>Standardized Address Benefits</h2>
 <ul>
-  <li>Cleaner, more reliable data</li>
-  <li>Better reporting and analytics</li>
-  <li>Improved campaign performance</li>
-  <li>Higher team productivity</li>
+    <li>Direct mail that arrives because addresses match USPS delivery standards</li>
+    <li>Territory assignment that works because addresses map to consistent geographic boundaries</li>
+    <li>Deduplication that catches address-based matches across formatting variations</li>
+    <li>Compliance with USPS CASS certification requirements for bulk mailing discounts</li>
+    <li>Location analytics that work because every address has clean coordinates</li>
 </ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you validate international addresses?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We support address validation for Canada, UK, Australia, Germany, France, and most other countries with structured postal systems. International addresses get normalized to each country's postal standard. We flag addresses in countries where we cannot validate so you know what has been confirmed.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can address normalization help with deduplication?</h3>
+            <p style="color: var(--color-text-secondary);">Absolutely. Address variations are one of the top reasons duplicates slip through. Once '123 Main Street Suite 4' and '123 Main St #4' are both normalized to the same format, deduplication catches them as matching records. We recommend normalizing addresses before running any dedup process.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you update addresses for people who have moved?</h3>
+            <p style="color: var(--color-text-secondary);">We can run NCOA (National Change of Address) processing against the USPS database to identify contacts who have filed a change of address. This is separate from normalization but often done at the same time for maximum data freshness.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>

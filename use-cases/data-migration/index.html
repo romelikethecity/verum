@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How long should we plan for pre-migration data cleaning?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Plan for 1-3 weeks depending on database size and complexity. We recommend starting cleaning as soon as you commit to the migration, in parallel with system configuration. The cleaned data will be ready when the new system is ready to receive it."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you handle migrations between specific platforms?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We handle the data preparation for migration between any platforms. Salesforce to HubSpot, Dynamics to Salesforce, custom database to CRM \u2014 the source and destination don't change our process. We clean the data and format it for the target system."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What if we discover data problems after migration?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can clean data that's already been migrated. But it's significantly cheaper and faster to clean before migration. Post-migration cleaning requires an export, cleanup, and re-import cycle that's more complex than pre-migration preparation."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
@@ -78,28 +111,52 @@
   <section class="page-hero">
     <div class="container">
       <h1 class="page-hero__title">Data Migration</h1>
+        <p class="page-hero__subtitle">Don't migrate your data problems to a new system. Fix them first.</p>
     </div>
   </section>
 
   <section class="content">
     <div class="container" style="max-width: 800px;">
-      
+
 <h2>Data Migration</h2>
-<p>Clean data before migrating to new systems. Verum provides the clean, enriched data you need for effective data migration.</p>
+<p>Data migration moves your data from one system to another, whether that's a CRM switch, a database consolidation, or a platform upgrade. Clean data migrates smoothly and works immediately in the new system. Dirty data causes import errors, broken automations, and a frustrating first experience.</p>
 
-<h2>The Challenge</h2>
-<p>Most teams struggle with data migration because their data is incomplete, outdated, or inconsistent. This leads to wasted effort and poor results.</p>
+<p>Every hour spent fixing data after migration is an hour of lost productivity in the new system. When 10,000 records have formatting incompatibilities, 3,000 are duplicates, and 5,000 have invalid emails, your migration becomes a multi-week cleanup project instead of a clean cutover.</p>
 
-<h2>How Verum Helps</h2>
+<h2>Pre-Migration Cleaning Process</h2>
 <ul>
-  <li>Clean and deduplicate your existing data</li>
-  <li>Enrich records with missing information</li>
-  <li>Provide complete, accurate data for data migration</li>
-  <li>Enable better targeting and personalization</li>
+    <li><strong>Source assessment.</strong> We audit your current data to identify everything that needs fixing before migration: duplicates, format issues, invalid contacts, and incomplete records.</li>
+    <li><strong>Schema mapping.</strong> We map fields from your old system's structure to the new system's requirements, handling data type conversions and picklist translations.</li>
+    <li><strong>Data transformation.</strong> We clean, standardize, and enrich records so they meet the new system's data model and validation rules.</li>
+    <li><strong>Migration testing.</strong> We prepare a test batch for trial import so you can verify the data loads correctly before committing to the full migration.</li>
+    <li><strong>Post-migration validation.</strong> After import, we compare source and destination to confirm record counts, field completeness, and data integrity.</li>
 </ul>
 
-<h2>Ready to Get Started?</h2>
-<p>Tell us about your data migration challenges and we'll show you how clean data can transform your results.</p>
+<h2>Clean Migration Results</h2>
+<ul>
+    <li>Smooth imports with minimal errors because data matches the new system's requirements</li>
+    <li>Immediate productivity in the new system because data is accurate and complete from the start</li>
+    <li>No post-migration cleanup project because problems were fixed before the move</li>
+    <li>Fewer records to migrate because duplicates and dead contacts were removed first</li>
+</ul>
+
+<h2>Common Questions</h2>
+<div style="max-width: 700px;">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How long should we plan for pre-migration data cleaning?</h3>
+            <p style="color: var(--color-text-secondary);">Plan for 1-3 weeks depending on database size and complexity. We recommend starting cleaning as soon as you commit to the migration, in parallel with system configuration. The cleaned data will be ready when the new system is ready to receive it.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you handle migrations between specific platforms?</h3>
+            <p style="color: var(--color-text-secondary);">We handle the data preparation for migration between any platforms. Salesforce to HubSpot, Dynamics to Salesforce, custom database to CRM — the source and destination don't change our process. We clean the data and format it for the target system.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What if we discover data problems after migration?</h3>
+            <p style="color: var(--color-text-secondary);">We can clean data that's already been migrated. But it's significantly cheaper and faster to clean before migration. Post-migration cleaning requires an export, cleanup, and re-import cycle that's more complex than pre-migration preparation.</p>
+          </div>
+</div>
+
+
 
       <div class="text-center mt-xl">
         <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
