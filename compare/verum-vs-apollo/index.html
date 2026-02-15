@@ -60,6 +60,47 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I use Verum to clean data I exported from Apollo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. This is a common use case. Teams export lists from Apollo, send them to Verum for verification and enrichment, and end up with much higher-quality contact data than what Apollo provided out of the box. We'll deduplicate, validate emails, verify titles, and fill in missing fields from our own sources."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apollo has a free plan. Why would I pay for Verum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Apollo's free plan gives you access to their database, but the contacts you pull still need verification. If you're sending outreach to unverified Apollo contacts, you're likely dealing with 15-25% bounce rates and outdated information. Verum charges per record, but every record is verified. For teams where reputation and deliverability matter, the per-record cost is easily justified by better results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Verum offer email sequencing like Apollo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Verum is a data service, not an outreach platform. We clean, enrich, and verify data. You then use that data in whatever outreach tool you prefer: Apollo, Outreach, Salesloft, HubSpot sequences, or even plain email. Some clients use Apollo for sequencing with Verum-verified data, getting the best of both worlds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about Apollo's intent data and buying signals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Apollo has added intent signals and job change alerts to its platform. These are useful features for timing outreach. Verum doesn't provide real-time intent data because that's not what we do. We focus on making sure the contacts in your database are accurate, complete, and reachable. Intent signals are only useful if the underlying contact data is correct, so many teams use Verum to ensure data quality and Apollo or similar tools for timing and signals."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->

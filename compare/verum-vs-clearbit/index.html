@@ -60,6 +60,47 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "I already use HubSpot and Breeze Intelligence. Why would I also need Verum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Breeze enriches records as they enter HubSpot, but it doesn't clean your existing database. If you have years of accumulated contacts with duplicates, outdated information, and missing fields, Breeze won't fix that. Many HubSpot teams use Verum for periodic deep-cleans of their CRM, then let Breeze handle ongoing enrichment for new inbound leads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Verum replace Clearbit for real-time enrichment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Verum is a project-based service, not a real-time API. If you need instant enrichment the moment a lead fills out a form, that's what Breeze does. Verum is better for bulk projects: cleaning 20,000 records, enriching a purchased list before import, or identifying business owners across your entire database. Different tools for different jobs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Clearbit still available as a standalone product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The standalone Clearbit product has been largely absorbed into HubSpot as Breeze Intelligence. Some legacy API access may still work for existing customers, but new signups are directed to HubSpot's ecosystem. If you were considering Clearbit specifically because it was CRM-agnostic, that's no longer the case."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I'm migrating away from HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is where the lock-in becomes a real issue. If you leave HubSpot, you lose Breeze Intelligence. Your enrichment workflow disappears. Verum's data is delivered as files you own permanently, independent of any platform. Many teams going through CRM migrations use Verum to clean and enrich their data as part of the transition, ensuring they start fresh in the new system with accurate records."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->

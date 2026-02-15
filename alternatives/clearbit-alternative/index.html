@@ -60,6 +60,39 @@
     ]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "I'm on HubSpot. Should I just use Breeze Intelligence instead?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you only need basic company enrichment (employee count, industry, revenue) and you're already paying for a HubSpot tier that includes it, Breeze might cover your needs. But if you need data cleaning, owner identification, or deeper enrichment than HubSpot's built-in credits provide, Verum fills those gaps. Many HubSpot teams use both: Breeze for real-time form enrichment, Verum for bulk cleaning and deeper projects."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Verum replicate Clearbit's real-time enrichment API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, and we don't try to. If you need instant enrichment the moment a form is submitted, that's a real-time API use case and there are good tools for it. Verum is built for batch operations: cleaning your database, enriching thousands of records, building prospect lists, identifying business owners. Different problem, different solution. Teams that need both often pair Verum with a lightweight real-time tool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to my data if I stop using Verum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nothing. It's yours. Every record we clean or enrich gets delivered to you in your format of choice. It lives in your CRM, your spreadsheet, your data warehouse. There's no license that expires, no deletion clause, no \"you must maintain your subscription to keep accessing the data.\" That was actually one of the cleaner things about old Clearbit too, and we kept the same philosophy."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Header (injected by components.js) -->
