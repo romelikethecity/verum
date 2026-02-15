@@ -98,7 +98,8 @@
             <li><a href="/use-cases/">Use Cases</a></li>
             <li><a href="/find/">Find Businesses</a></li>
             <li><a href="/healthcare/">Healthcare</a></li>
-            <li><a href="/compare/verum-vs-zoominfo/">Compare</a></li>
+            <li><a href="/compare/">Compare</a></li>
+            <li><a href="/alternatives/">Alternatives</a></li>
           </ul>
         </div>
 
