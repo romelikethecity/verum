@@ -216,6 +216,9 @@
       font-weight: 700;
       color: var(--color-teal);
     }
+    .stats-bar__value--bad {
+      color: #ff6b6b;
+    }
     .stats-bar__label {
       font-size: 0.75rem;
       color: var(--color-text-muted);
@@ -612,23 +615,23 @@
           <h1 class="hero__title">Sales data you actually trust</h1>
           <p class="hero__subtitle"><span class="hero__subtitle-line">Every record validated. Every gap filled.</span><span class="hero__subtitle-line">Your reps spend time selling, not researching.</span></p>
           <div class="hero__buttons">
-            <a href="#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
-            <a href="#old-vs-new" class="btn btn--secondary btn--lg">See the Difference</a>
+            <a href="/assessment/" class="btn btn--primary btn--lg">Get Your Data Score</a>
+            <a href="#contact" class="btn btn--secondary btn--lg">See What We'll Find</a>
           </div>
 
-          <!-- Stats inline with hero -->
+          <!-- Pain stats inline with hero -->
           <div class="stats-bar">
             <div class="stats-bar__item">
-              <div class="stats-bar__value">300K+</div>
-              <div class="stats-bar__label">Records per month</div>
+              <div class="stats-bar__value stats-bar__value--bad">27%</div>
+              <div class="stats-bar__label">of your database decays every year</div>
             </div>
             <div class="stats-bar__item">
-              <div class="stats-bar__value">91%</div>
-              <div class="stats-bar__label">Owner match accuracy</div>
+              <div class="stats-bar__value stats-bar__value--bad">71%</div>
+              <div class="stats-bar__label">of CRM data is outdated or incomplete</div>
             </div>
             <div class="stats-bar__item">
-              <div class="stats-bar__value">Hours</div>
-              <div class="stats-bar__label">Not weeks</div>
+              <div class="stats-bar__value stats-bar__value--bad">$14.8K</div>
+              <div class="stats-bar__label">lost per rep per month to bad data</div>
             </div>
           </div>
         </div>
@@ -704,19 +707,6 @@
         <img src="/assets/logos/customers/snapdocs-logo.svg" alt="Snapdocs" width="120" height="28">
         <img src="/assets/logos/customers/btl-logo.svg" alt="BTL" width="80" height="28">
       </div>
-    </div>
-  </section>
-
-  <!-- Assessment CTA -->
-  <section class="section" style="padding: 2rem 0;">
-    <div class="container">
-      <a href="/assessment/" class="assessment-banner" style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.25rem 2rem; background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%); border: 1px solid var(--color-teal); border-radius: var(--radius-lg); text-decoration: none; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 200px;">
-          <div style="font-weight: 600; color: var(--color-text-primary); margin-bottom: 0.25rem;">Free Data Quality Assessment</div>
-          <div style="font-size: 0.875rem; color: var(--color-text-secondary);">Find out what bad data is costing you in under 2 minutes</div>
-        </div>
-        <span class="btn btn--primary btn--sm" style="white-space: nowrap;">Get Your Score</span>
-      </a>
     </div>
   </section>
 
@@ -921,6 +911,24 @@
       </div>
     </div>
   </section>
+
+  <!-- Capability stats -->
+  <div style="max-width: 700px; margin: 0 auto; padding-bottom: var(--space-xl);">
+    <div class="stats-bar" style="border-top: none; margin-top: 0;">
+      <div class="stats-bar__item">
+        <div class="stats-bar__value">300K+</div>
+        <div class="stats-bar__label">Records processed per month</div>
+      </div>
+      <div class="stats-bar__item">
+        <div class="stats-bar__value">91%</div>
+        <div class="stats-bar__label">Owner match accuracy</div>
+      </div>
+      <div class="stats-bar__item">
+        <div class="stats-bar__value">Hours</div>
+        <div class="stats-bar__label">Not weeks</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Pipeline CTA -->
   <div class="text-center" style="padding-bottom: var(--space-2xl);">
