@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HubSpot Hard Bounce "Reason is Known" Filter: What It Means & How to Fix It | Verum</title>
+  <meta name="description" content="What HubSpot's 'email hard bounce reason is known' filter means, how to create it, and what to do with bounced contacts. Step-by-step guide to fixing bounce problems.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/hubspot-hard-bounce-filter.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/hubspot-hard-bounce-filter.html">
+  <meta property="og:title" content="HubSpot Hard Bounce Filter: What 'Reason is Known' Means">
+  <meta property="og:description" content="How to filter and fix hard bounced contacts in HubSpot. Step-by-step guide.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HubSpot Hard Bounce Filter: What 'Reason is Known' Means">
+  <meta name="twitter:description" content="How to filter and fix hard bounced contacts in HubSpot. Step-by-step guide.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "HubSpot Hard Bounce Filter"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "HubSpot Hard Bounce 'Reason is Known' Filter: What It Means & How to Fix It",
+    "description": "What HubSpot's 'email hard bounce reason is known' filter means, how to create it, and what to do with bounced contacts.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-02-18",
+    "dateModified": "2026-02-18",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/hubspot-hard-bounce-filter.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does 'email hard bounce reason is known' mean in HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It means HubSpot attempted to deliver an email to this contact and received a permanent rejection from the mail server. 'Reason is known' indicates HubSpot has a specific SMTP error code explaining why: the mailbox doesn't exist, the domain is invalid, or the server permanently rejected the message. This is different from a soft bounce, which is temporary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I send emails to hard bounced contacts in HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. HubSpot automatically blocks email sends to contacts with hard bounces. This is permanent and protects your sender reputation. You cannot override this for the bounced email address. To re-engage the contact, you need to find and update their email address to a valid one, which clears the bounce status."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I create a filter for hard bounced contacts in HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go to Contacts > Lists > Create List. Add a filter using 'Email hard bounce reason' > 'is known.' This creates a list of all contacts who have permanently bounced. You can refine further by filtering for specific bounce reasons or combining with other criteria like lifecycle stage or last activity date."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I delete hard bounced contacts from HubSpot?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not necessarily. If the contact is valuable, try to find their updated email address first. People change jobs and emails, but they're still potential customers. Delete or archive contacts where the bounce is combined with no other engagement and no strategic value. If you're on a Marketing Hub plan, removing hard bounces from marketing contacts saves on your billing tier."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .step-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .step-box__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--color-teal);
+      color: var(--color-bg-primary);
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: var(--space-md);
+    }
+    .step-box__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-sm);
+    }
+    .step-box__text {
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">HubSpot</p>
+      <h1 class="page-hero__title">HubSpot Email Hard Bounce "Reason is Known" Filter: What It Means & What to Do</h1>
+      <p class="page-hero__subtitle">Your HubSpot email health shows hard bounces with "reason is known." Here's what that means, how to filter for these contacts, and how to fix the problem.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">February 2026 &middot; 10 min read</div>
+
+      <div class="blog-content">
+
+        <p>You're looking at your HubSpot email health report. Under bounce reasons, you see contacts flagged with <strong>"Email hard bounce reason is known."</strong> You're trying to create a filter or list to find all of these contacts, figure out what went wrong, and decide what to do with them.</p>
+
+        <p>This is one of the most common HubSpot data hygiene issues, and how you handle it has real consequences for your sender reputation, your marketing contact billing, and your ability to reach people who might still want to hear from you.</p>
+
+        <h2>What "Email Hard Bounce Reason is Known" Means</h2>
+
+        <p>A <strong>hard bounce</strong> happens when HubSpot sends an email and the receiving mail server permanently rejects it. "Reason is known" means HubSpot received a specific SMTP error code explaining why the delivery failed.</p>
+
+        <p>The most common reasons:</p>
+
+        <p><strong>Mailbox doesn't exist.</strong> The person left the company and their email was deactivated. Or the address was entered incorrectly. Either way, there's no mailbox to deliver to. This is the most frequent cause, and it accounts for the bulk of hard bounces in most HubSpot portals.</p>
+
+        <p><strong>Domain doesn't exist.</strong> The entire domain is invalid. The company changed their email domain, the domain expired, or someone typed "gmial.com" instead of "gmail.com." Less common but straightforward to identify.</p>
+
+        <p><strong>Server permanently rejected.</strong> The mail server exists but explicitly refused delivery. This can happen when the recipient's organization blocks your sending domain, or when the server is configured to reject mail from certain senders.</p>
+
+        <p><strong>Policy rejection.</strong> The receiving server blocked the email based on their spam or security policy. Your domain or IP might be on a blocklist, or the content triggered a policy filter.</p>
+
+        <div class="callout-box">
+          <p><strong>Hard bounce vs. soft bounce:</strong> A hard bounce is permanent. HubSpot will never attempt delivery to that address again. A soft bounce is temporary (mailbox full, server down, message too large) and HubSpot will retry. If a soft bounce persists, HubSpot eventually converts it to a hard bounce.</p>
+        </div>
+
+        <h2>How to Create a Hard Bounce Filter in HubSpot</h2>
+
+        <p>HubSpot gives you several ways to find hard bounced contacts.</p>
+
+        <h3>Method 1: Active List with Bounce Filter</h3>
+
+        <div class="step-box">
+          <div class="step-box__number">1</div>
+          <div class="step-box__title">Go to Contacts > Lists > Create List</div>
+          <p class="step-box__text">Choose "Active list" so it updates automatically as new bounces occur.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-box__number">2</div>
+          <div class="step-box__title">Add Filter: Contact Properties</div>
+          <p class="step-box__text">Search for "Email hard bounce reason" and select it. Set the condition to "is known." This captures all contacts where HubSpot has recorded a hard bounce reason, regardless of the specific error.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-box__number">3</div>
+          <div class="step-box__title">Optional: Refine with Additional Filters</div>
+          <p class="step-box__text">Add "Became a marketing contact date" to identify how long they've been billing you. Add "Last activity date" to see if they had any engagement before bouncing. Add "Lifecycle stage" to prioritize valuable contacts for re-engagement.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-box__number">4</div>
+          <div class="step-box__title">Save the List</div>
+          <p class="step-box__text">Name it something clear like "Hard Bounced Contacts - Active." This list now auto-updates as new bounces come in.</p>
+        </div>
+
+        <h3>Method 2: Contact View Filter</h3>
+
+        <p>For a quick view without creating a saved list: go to Contacts, click "Advanced filters," search for "Email hard bounce reason," and set it to "is known." This gives you the same results in the contact table view.</p>
+
+        <h3>Method 3: Email Health Dashboard</h3>
+
+        <p>Go to Marketing > Email > Health tab. HubSpot shows your overall bounce rate, recent bounces, and problematic contacts. This is a good starting point for understanding the scope of the problem, but it doesn't give you the filtering flexibility of a list.</p>
+
+        <h2>What to Do with Hard Bounced Contacts</h2>
+
+        <p>Finding them is the easy part. Deciding what to do with them requires some judgment.</p>
+
+        <h3>Triage by Value</h3>
+
+        <p>Not all bounced contacts are equal. A bounced email on a contact who was a qualified lead in an active deal is worth recovering. A bounced email on someone who downloaded a whitepaper three years ago and never opened another email is not.</p>
+
+        <p>Sort your bounced contacts by lifecycle stage, deal amount, and last engagement. Focus recovery efforts on the contacts that matter to revenue.</p>
+
+        <h3>Find Updated Email Addresses</h3>
+
+        <p>The most common reason for a hard bounce is job change. The person still exists; their email address changed. For valuable contacts:</p>
+
+        <ul>
+          <li>Check LinkedIn for their current company and role</li>
+          <li>Use an email finder tool (Hunter, Apollo, or an enrichment service) to locate their new address</li>
+          <li>Update the email in HubSpot, which clears the hard bounce status and makes the contact sendable again</li>
+        </ul>
+
+        <p>This is worth doing for contacts in active deals, high-value accounts, and anyone in your target ICP. For the rest, it's probably not worth the manual effort.</p>
+
+        <h3>Remove from Marketing Contacts</h3>
+
+        <p>If you're on HubSpot Marketing Hub, you're billed by marketing contact tier. Hard bounced contacts count toward your limit even though you can't email them. Setting them to non-marketing contacts stops the billing without deleting the record.</p>
+
+        <p>Go to Contacts > select your bounced contacts > Actions > Set as non-marketing contacts. Or do this in bulk using your hard bounce list.</p>
+
+        <div class="warning-box">
+          <div class="warning-box__title">Don't Mass Delete Without Checking</div>
+          <p>Bounced contacts may still have valuable associated data: deal history, notes, meeting records, form submissions. Deleting the contact deletes all of it. Set as non-marketing first. Only delete if the contact has zero strategic value and no associated records worth preserving.</p>
+        </div>
+
+        <h3>Exclude from Workflows and Sequences</h3>
+
+        <p>Check your active workflows and sequences. Hard bounced contacts should be suppressed from email sends (HubSpot handles this automatically) but they can still trigger workflow actions like task creation, property updates, or list membership changes. Review whether those actions are useful for a contact you can't email.</p>
+
+        <h2>How to Prevent Hard Bounces</h2>
+
+        <p><strong>Validate emails before they enter HubSpot.</strong> If you're importing lists, run them through an email validation service first. NeverBounce, ZeroBounce, or Kickbox will catch invalid addresses before they create hard bounce records in your portal.</p>
+
+        <p><strong>Use double opt-in for form submissions.</strong> A confirmation email catches typos and fake addresses before they become contacts. This is also a GDPR best practice if you have European subscribers.</p>
+
+        <p><strong>Clean regularly.</strong> Don't wait for bounces to accumulate. Run your contact database through validation quarterly. Proactive cleaning catches addresses that have gone stale before you send to them and damage your sender reputation.</p>
+
+        <p><strong>Monitor your bounce rate.</strong> HubSpot flags you when your bounce rate exceeds their threshold (around 5%). If you're trending upward, investigate before you hit the limit. A sudden spike usually means a recently imported list had quality problems.</p>
+
+        <p><strong>Enrich contacts with updated data.</strong> <a href="/resources/hubspot-data-enrichment.html">Data enrichment services</a> can update contact records with current email addresses, catching job changes before they result in bounces.</p>
+
+        <h2>How Hard Bounces Affect Sender Reputation</h2>
+
+        <p>High bounce rates don't just waste your marketing contact tier. They signal to ISPs (Gmail, Microsoft, Yahoo) that you're sending to dirty lists. The consequences compound:</p>
+
+        <p>Bounce rates above 2% start degrading deliverability. Above 5%, emails start landing in spam folders even for valid recipients. Above 10%, HubSpot may suspend your email sending to protect their shared sending infrastructure.</p>
+
+        <p>Every hard bounce you prevent protects deliverability for the contacts who are still valid and engaged. Cleaning isn't just about removing bad records; it's about making sure your emails reach the people who want them.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>What does "email hard bounce reason is known" mean in HubSpot?</h3>
+          <p>HubSpot attempted to deliver an email and the mail server permanently rejected it. "Reason is known" means HubSpot has a specific SMTP error code: mailbox doesn't exist, domain invalid, or server permanently refused delivery.</p>
+
+          <h3>Can I send emails to hard bounced contacts?</h3>
+          <p>No. HubSpot permanently blocks sends to hard bounced addresses. The only way to re-enable sending is to update the contact's email to a valid address, which clears the bounce status.</p>
+
+          <h3>How do I create a filter for hard bounced contacts?</h3>
+          <p>Contacts > Lists > Create List. Filter by "Email hard bounce reason" > "is known." Save as an active list to automatically capture new bounces. You can also use Advanced Filters in the contact table for a quick view.</p>
+
+          <h3>Should I delete hard bounced contacts?</h3>
+          <p>Not automatically. Check for associated deals, notes, and engagement history first. Set them as non-marketing contacts to stop billing. Only delete if the contact has no strategic value and no records worth preserving. For valuable contacts, try to find their updated email address instead.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Need help cleaning up your HubSpot data? We can identify bounces, validate your contacts, and find updated emails for your most valuable records.</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">See What We'll Find</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/hubspot-data-cleaning.html">How to Clean HubSpot Data</a> | <a href="/resources/hubspot-email-validation.html">Email Validation in HubSpot</a> | <a href="/resources/hubspot-marketing-contacts-cleanup.html">Reduce Marketing Contacts</a> | <a href="/resources/email-deliverability-data-quality.html">Email Deliverability & Data Quality</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their CRM data.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Normalize Company Names in Salesforce | Verum</title>
-  <meta name="description" content="Acme Corp, ACME, Acme Inc., Acme Corporation. Same company, four different records. Here's how to normalize company names so deduplication and reporting work.">
+  <title>Salesforce Company Name Normalization Rules & Best Practices | Verum</title>
+  <meta name="description" content="Complete Salesforce CRM company name normalization rules and best practices. How to standardize company names, remove suffixes, prevent duplicates, and automate ongoing normalization.">
 
   <link rel="canonical" href="https://veruminc.com/resources/salesforce-company-name-normalization.html">
   <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
@@ -21,16 +21,16 @@
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/salesforce-company-name-normalization.html">
-  <meta property="og:title" content="How to Normalize Company Names in Salesforce">
-  <meta property="og:description" content="Acme Corp, ACME, Acme Inc. Same company, four records. Here's how to fix it.">
+  <meta property="og:title" content="Salesforce Company Name Normalization Rules & Best Practices">
+  <meta property="og:description" content="Complete normalization rules for Salesforce CRM. Standardize company names, remove suffixes, prevent duplicates.">
   <meta property="og:site_name" content="Verum">
   <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How to Normalize Company Names in Salesforce">
-  <meta name="twitter:description" content="Acme Corp, ACME, Acme Inc. Same company, four records. Here's how to fix it.">
+  <meta name="twitter:title" content="Salesforce Company Name Normalization Rules & Best Practices">
+  <meta name="twitter:description" content="Complete normalization rules for Salesforce CRM. Standardize company names, remove suffixes, prevent duplicates.">
   <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
@@ -55,7 +55,7 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
       {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
-      {"@type": "ListItem", "position": 3, "name": "How to Normalize Company Names in Salesforce"}
+      {"@type": "ListItem", "position": 3, "name": "Salesforce Company Name Normalization Rules & Best Practices"}
     ]
   }
   </script>
@@ -64,8 +64,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How to Normalize Company Names in Salesforce",
-    "description": "Acme Corp, ACME, Acme Inc., Acme Corporation. Same company, four different records. Here's how to normalize company names so deduplication and reporting work.",
+    "headline": "Salesforce Company Name Normalization Rules & Best Practices",
+    "description": "Complete Salesforce CRM company name normalization rules and best practices. How to standardize company names, remove suffixes, prevent duplicates, and automate ongoing normalization.",
     "author": {
       "@type": "Person",
       "@id": "https://veruminc.com/team/#rome"
@@ -74,7 +74,7 @@
       "@id": "https://veruminc.com/#organization"
     },
     "datePublished": "2026-01-17",
-    "dateModified": "2026-01-17",
+    "dateModified": "2026-02-18",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://veruminc.com/resources/salesforce-company-name-normalization.html"
@@ -117,6 +117,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Normalize to the official English name when one exists. For companies that primarily operate under a foreign name, transliterate to Latin characters consistently. Add the native language name as an alias."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the basic rules for company name normalization in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The five core normalization rules are: (1) Remove legal suffixes like Inc., Corp., LLC, Ltd., GmbH. (2) Standardize punctuation by replacing ampersands, removing commas and periods, trimming whitespace. (3) Standardize capitalization using uppercase for matching or title case for display. (4) Handle abbreviations consistently, either always expanding or always abbreviating. (5) Create an alias field for companies with multiple legitimate names like acquisitions or DBAs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I normalize company names manually or use automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use both. Batch-process existing records with a script or cleaning tool to apply normalization rules across your database. Then set up a Salesforce Flow or Apex trigger to normalize automatically at point of entry. Without automation, new messy data enters faster than you can clean it manually."
         }
       }
     ]
@@ -235,14 +251,16 @@
   <main>
     <article class="section">
       <div class="article-content">
-        <h1>How to Normalize Company Names in Salesforce</h1>
-        <p class="article-meta">January 2026 · 9 min read</p>
+        <h1>Salesforce Company Name Normalization: Rules & Best Practices</h1>
+        <p class="article-meta">Updated February 2026 · 14 min read</p>
+
+        <p><strong>Salesforce company name normalization</strong> is the process of applying a consistent set of rules to standardize how company names appear in your CRM. It covers removing legal suffixes (Inc., Corp., LLC), standardizing punctuation and capitalization, handling abbreviations, and managing aliases. When done right, normalization is the foundation of deduplication, account matching, and accurate reporting in Salesforce.</p>
 
         <p>Your sales rep closes a deal with "Acme Corporation." Finance creates an invoice for "Acme Corp." Marketing imported a list with "ACME, Inc." The CEO filled out a web form as just "Acme."</p>
 
         <p>Same company. Four Account records in Salesforce. Four contacts scattered across them. No unified view of the customer relationship. This happens more than you'd think.</p>
 
-        <p>Company name normalization is the process of standardizing company names so that variations of the same company match each other. It's foundational to deduplication, account matching, and clean reporting.</p>
+        <p>This guide covers the specific normalization rules you should implement, the best practices that separate one-time cleanups from sustainable data quality, and how to automate the whole thing inside Salesforce.</p>
 
         <h2>Why Company Names Get Messy</h2>
 
@@ -278,9 +296,9 @@
           <p><strong>Reality check:</strong> We typically find 10-15% duplicate accounts in Salesforce instances, and the majority of them are name variations rather than truly duplicate entries.</p>
         </div>
 
-        <h2>Building a Normalization Strategy</h2>
+        <h2>Salesforce CRM Company Name Normalization Rules</h2>
 
-        <p>Effective normalization follows a consistent set of rules. Here's a framework that works for most B2B companies:</p>
+        <p>Effective normalization follows a consistent set of rules applied in order. These are the five core rules we use for every Salesforce cleanup. Apply them sequentially to get deterministic, repeatable results:</p>
 
         <h3>Rule 1: Remove Legal Suffixes</h3>
 
@@ -469,6 +487,38 @@
           <li>Set appropriate action (alert, block, or auto-merge based on your process)</li>
         </ul>
 
+        <h2>Company Name Normalization Best Practices</h2>
+
+        <p>The rules above handle the mechanics. These best practices determine whether your normalization effort lasts or falls apart within a quarter.</p>
+
+        <h3>Normalize at Point of Entry</h3>
+
+        <p>Batch cleanup is necessary for existing data, but the real win is preventing messy data from ever entering Salesforce. Set up a Flow or Apex trigger that normalizes company names on Account create and update. If your sales team adds "Acme Corp." via manual entry, the normalized field should populate automatically.</p>
+
+        <h3>Never Overwrite the Original</h3>
+
+        <p>Store the normalized version in a dedicated field (Normalized_Company_Name__c). Keep the original Account Name untouched. Your legal team needs the actual entity name. Your sales team needs the name the customer uses. The normalized version is for matching and deduplication only.</p>
+
+        <h3>Normalize Leads and Accounts Together</h3>
+
+        <p>Most companies normalize Account names but forget about Lead Company. When a Lead comes in as "Salesforce.com, Inc." and your Account says "Salesforce," your duplicate rules won't catch the match. Apply identical normalization rules to both objects.</p>
+
+        <h3>Build a Known Alias Table</h3>
+
+        <p>Some normalization can't be automated with pattern rules. "Google" vs "Alphabet" vs "Google Cloud Platform" requires business logic. Maintain a lookup table of known aliases and map them during normalization. Start with your top 100 accounts and expand from there.</p>
+
+        <h3>Test Rules Before Batch Applying</h3>
+
+        <p>Run your normalization rules against a sample of 500 records first. Review the output manually. Edge cases you didn't anticipate will surface: "First National Bank" normalizing the same as 50 different banks, "AT&T" losing its identity when you strip special characters, abbreviations creating false matches.</p>
+
+        <h3>Schedule Regular Re-Normalization</h3>
+
+        <p>New data enters your CRM through imports, integrations, and manual entry. Run a normalization pass monthly on any records created or modified since the last pass. This catches records that bypassed your automation (bulk imports, API writes, data migration).</p>
+
+        <h3>Document Your Rules</h3>
+
+        <p>Write down every normalization rule, including the order they're applied. When someone else inherits this process (or you need to debug a false match), the documentation saves hours. Include examples of edge cases and how they're handled.</p>
+
         <h2>Handling Special Cases</h2>
 
         <p>Some company names require extra logic:</p>
@@ -551,18 +601,34 @@
 
         <p>At Verum, <a href="/cleaning/data-normalization/">data normalization</a> is one of our core services. We've built normalization rules that handle edge cases most automated tools miss, and we can set up the Salesforce automation to keep your data clean going forward.</p>
 
-        <div class="article-cta">
-          <p><strong>Messy company names in your CRM?</strong></p>
-          <p>We can audit your Salesforce Accounts and show you exactly how many duplicates are hiding behind name variations.</p>
-          <p><a href="/contact.html" class="btn btn--primary">Normalize My Data</a></p>
+        <h2>Common Questions About Salesforce Company Name Normalization</h2>
+
+        <div class="faq-section">
+          <h3>Should I replace the original company name or create a new field?</h3>
+          <p>Create a new Normalized_Company_Name__c field. Keep the original for reference and searching. Use the normalized version for deduplication, matching, and reporting.</p>
+
+          <h3>How do I handle subsidiaries and parent companies?</h3>
+          <p>Use <a href="https://help.salesforce.com/s/articleView?id=sf.account_hierarchy.htm" target="_blank" rel="noopener">Salesforce's Account Hierarchy feature</a> to create parent and child account relationships rather than trying to merge subsidiaries into one record. This preserves the ability to report on both levels.</p>
+
+          <h3>What are the basic rules for company name normalization in Salesforce?</h3>
+          <p>The five core rules: (1) Remove legal suffixes (Inc., Corp., LLC, Ltd., GmbH). (2) Standardize punctuation (ampersands, commas, periods, whitespace). (3) Standardize capitalization (uppercase for matching, title case for display). (4) Handle abbreviations consistently. (5) Create an alias field for companies with multiple legitimate names.</p>
+
+          <h3>What about company name changes after acquisitions?</h3>
+          <p>Update the normalized name to the acquiring company, but keep the original name and add an alias field. This way, historical data makes sense and searches for the old name still find the record.</p>
+
+          <h3>How do I handle company names in other languages?</h3>
+          <p>Normalize to the official English name when one exists. For companies that primarily operate under a foreign name, transliterate to Latin characters consistently. Add the native language name as an alias.</p>
+
+          <h3>Should I normalize company names manually or use automation?</h3>
+          <p>Use both. Batch-process existing records with a script or cleaning tool first. Then set up a Salesforce Flow or Apex trigger to normalize at point of entry. Without automation, new messy data enters faster than you can clean it manually.</p>
         </div>
 
-        
-        <div style="margin-top: 3rem; padding: 2rem; background: var(--color-bg-secondary, #f0faf7); border-radius: 12px; text-align: center;">
-          <h3 style="margin-bottom: 0.5rem;">Need help with your data?</h3>
-          <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Tell us about your data challenges and we'll show you what clean, enriched data looks like.</p>
-          <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Messy company names in your CRM? We can audit your Salesforce Accounts and show you exactly how many duplicates are hiding behind name variations.</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">See What We'll Find</a>
         </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data</a> | <a href="/resources/salesforce-job-title-standardization.html">Job Title Standardization</a> | <a href="/resources/salesforce-duplicate-contacts.html">Duplicate Contacts</a> | <a href="/cleaning/data-normalization/">Data Normalization Services</a></p>
 
 <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
           <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
