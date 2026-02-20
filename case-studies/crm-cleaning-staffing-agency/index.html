@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Data Cleaning: How a Staffing Agency Cut 42% of Dead Records and Doubled Email Response Rates | Verum</title>
+  <meta name="description" content="A staffing agency had 85,000 CRM records with duplicate contacts, outdated emails, and inconsistent formatting. Verum cleaned the entire database in 5 days.">
+
+  <link rel="canonical" href="https://veruminc.com/case-studies/crm-cleaning-staffing-agency/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/case-studies/crm-cleaning-staffing-agency/">
+  <meta property="og:title" content="CRM Data Cleaning: How a Staffing Agency Cut 42% of Dead Records and Doubled Email Response Rates">
+  <meta property="og:description" content="A staffing agency had 85,000 CRM records with duplicate contacts, outdated emails, and inconsistent formatting. Verum cleaned the entire database in 5 days.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CRM Data Cleaning: How a Staffing Agency Cut 42% of Dead Records and Doubled Email Response Rates">
+  <meta name="twitter:description" content="A staffing agency had 85,000 CRM records with duplicate contacts, outdated emails, and inconsistent formatting. Verum cleaned the entire database in 5 days.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://veruminc.com/case-studies/"},
+      {"@type": "ListItem", "position": 3, "name": "CRM Cleaning for Staffing Agency"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CRM Data Cleaning: How a Staffing Agency Cut 42% of Dead Records and Doubled Email Response Rates",
+    "description": "A staffing agency had 85,000 CRM records with duplicate contacts, outdated emails, and inconsistent formatting. Verum cleaned the entire database in 5 days.",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum"
+    }
+  }
+  </script>
+
+  <style>
+    .case-study-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-2xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .case-study-meta__item {
+      flex: 1;
+      min-width: 150px;
+    }
+    .case-study-meta__label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .case-study-meta__value {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .result-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      text-align: center;
+    }
+    .result-card__value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-teal);
+      line-height: 1;
+    }
+    .result-card__label {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: var(--space-sm);
+    }
+    .insight-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border: 1px solid var(--color-teal);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+    }
+    .insight-box__title {
+      font-weight: 600;
+      color: var(--color-teal);
+      margin-bottom: var(--space-sm);
+    }
+    .segment-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-lg) 0;
+    }
+    .segment-table th,
+    .segment-table td {
+      padding: var(--space-md);
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .segment-table th {
+      font-weight: 600;
+      color: var(--color-text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .segment-table td {
+      color: var(--color-text-secondary);
+    }
+    .segment-table tr:hover td {
+      background: var(--color-bg-card);
+    }
+    .highlight-row td {
+      background: rgba(0, 184, 148, 0.1);
+      color: var(--color-text-primary);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Case Study</p>
+      <h1 class="page-hero__title">CRM Data Cleaning: How a Staffing Agency Cut 42% of Dead Records and Doubled Email Response Rates</h1>
+      <p class="page-hero__subtitle">85,000 records cleaned in 5 days. Duplicate contacts merged, dead emails removed, and job titles standardized across three acquired company databases.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 800px;">
+
+      <div class="case-study-meta">
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Industry</div>
+          <div class="case-study-meta__value">Staffing & Recruiting</div>
+        </div>
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Service</div>
+          <div class="case-study-meta__value">Data Cleaning</div>
+        </div>
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Records Processed</div>
+          <div class="case-study-meta__value">85,000</div>
+        </div>
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Turnaround</div>
+          <div class="case-study-meta__value">5 days</div>
+        </div>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-card__value">42%</div>
+          <div class="result-card__label">Duplicate and dead records removed</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card__value">2x</div>
+          <div class="result-card__label">Email response rate after cleaning</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card__value">91%</div>
+          <div class="result-card__label">Email deliverability (up from 62%)</div>
+        </div>
+      </div>
+
+      <h2>The Challenge</h2>
+      <p>A regional staffing agency had acquired two smaller firms over the previous 18 months. Each acquisition brought a separate CRM database with its own formatting conventions, duplicate records, and data quality issues.</p>
+
+      <p>The combined database held 85,000 contact records. The sales team had stopped trusting it. Reps were calling the same candidate twice, emailing addresses that bounced, and finding three different records for a single hiring manager with slightly different name spellings.</p>
+
+      <p>They tried assigning an intern to clean it manually. After two weeks, the intern had processed 1,200 records and quit.</p>
+
+      <h2>Our Approach</h2>
+      <p>We ran the full database through a four-stage cleaning pipeline:</p>
+
+      <h3>Stage 1: Deduplication</h3>
+      <p>Fuzzy matching across name, email, phone, and company identified 18,400 duplicate clusters. Each cluster was merged into a single golden record, preserving the most recent contact information and the most complete field set.</p>
+
+      <h3>Stage 2: Email Validation</h3>
+      <p>Every email address was checked via SMTP verification. We flagged bounced addresses, catch-all domains, and role-based emails (info@, admin@). 23% of emails were invalid.</p>
+
+      <h3>Stage 3: Phone Verification</h3>
+      <p>Phone numbers were validated against carrier databases. Landlines, disconnected numbers, and VoIP lines were flagged separately so the team could prioritize direct dials and mobile numbers.</p>
+
+      <h3>Stage 4: Standardization</h3>
+      <p>Job titles were normalized to a consistent taxonomy (e.g., "VP of HR," "Vice President Human Resources," and "VP, People" all became "VP of Human Resources"). Company names, addresses, and industry codes were standardized to match.</p>
+
+      <h2>The Key Finding</h2>
+
+      <div class="insight-box">
+        <div class="insight-box__title">35,700 records were actively harming outreach performance</div>
+        <p style="margin: 0;">Of the 85,000 records, 18,400 were duplicates, 12,300 had invalid emails, and 5,000 had disconnected phone numbers. The sales team was spending roughly 40% of their outreach effort on records that could never convert.</p>
+      </div>
+
+      <table class="segment-table">
+        <thead>
+          <tr>
+            <th>Issue Type</th>
+            <th>Records</th>
+            <th>% of Total</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Duplicate clusters</td>
+            <td>18,400</td>
+            <td>21.6%</td>
+            <td>Same person contacted multiple times</td>
+          </tr>
+          <tr>
+            <td>Invalid emails</td>
+            <td>12,300</td>
+            <td>14.5%</td>
+            <td>Bounces hurting sender reputation</td>
+          </tr>
+          <tr>
+            <td>Disconnected phones</td>
+            <td>5,000</td>
+            <td>5.9%</td>
+            <td>Wasted call time</td>
+          </tr>
+          <tr>
+            <td>Non-standard titles</td>
+            <td>31,200</td>
+            <td>36.7%</td>
+            <td>Broken list segmentation</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>Clean, usable records</td>
+            <td>49,300</td>
+            <td>58%</td>
+            <td>Ready for outreach</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Results After 30 Days</h2>
+      <p>Within a month of deploying the cleaned database, the staffing agency saw measurable improvements:</p>
+      <ul>
+        <li><strong>Email deliverability jumped from 62% to 91%</strong> after removing invalid addresses</li>
+        <li><strong>Response rates doubled</strong> because reps were reaching real people at correct addresses</li>
+        <li><strong>Call connect rates improved 35%</strong> with verified phone numbers</li>
+        <li><strong>List segmentation started working</strong> because job titles were consistent enough to filter</li>
+      </ul>
+
+      <p>The sales manager reported that reps stopped complaining about "bad data" within the first week. They went from dreading CRM updates to actually using the system for territory planning.</p>
+
+      <h2>What We Recommended Next</h2>
+      <ol>
+        <li><strong>Quarterly cleaning cycles</strong> to catch data decay before it compounds</li>
+        <li><strong>Standardized import rules</strong> for future acquisitions</li>
+        <li><strong>Email validation on inbound forms</strong> to prevent bad data from entering the CRM</li>
+        <li><strong>Enrichment pass</strong> to fill missing fields on the 49,300 clean records</li>
+      </ol>
+
+      <h2>Your CRM Probably Has the Same Problems</h2>
+      <p>B2B databases decay at roughly 30% per year. If you haven't cleaned your CRM in the last 12 months, you're likely spending a significant portion of outreach effort on records that will never convert.</p>
+
+      <div class="text-center mt-xl">
+        <a href="/#contact" class="btn btn--primary btn--lg">Get a Free Data Audit</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Migration: How a Manufacturer Moved 120K Records to HubSpot Without Losing a Single Contact | Verum</title>
+  <meta name="description" content="A manufacturing company migrated 120,000 records from Salesforce to HubSpot. Verum cleaned, deduplicated, and reformatted every record before import. Zero data loss.">
+
+  <link rel="canonical" href="https://veruminc.com/case-studies/crm-migration-data-prep-manufacturing/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/case-studies/crm-migration-data-prep-manufacturing/">
+  <meta property="og:title" content="CRM Migration: How a Manufacturer Moved 120K Records to HubSpot Without Losing a Single Contact">
+  <meta property="og:description" content="A manufacturing company migrated 120,000 records from Salesforce to HubSpot. Verum cleaned, deduplicated, and reformatted every record before import. Zero data loss.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CRM Migration: How a Manufacturer Moved 120K Records to HubSpot Without Losing a Single Contact">
+  <meta name="twitter:description" content="A manufacturing company migrated 120,000 records from Salesforce to HubSpot. Verum cleaned, deduplicated, and reformatted every record before import. Zero data loss.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://veruminc.com/case-studies/"},
+      {"@type": "ListItem", "position": 3, "name": "CRM Migration for Manufacturer"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "CRM Migration: How a Manufacturer Moved 120K Records to HubSpot Without Losing a Single Contact",
+    "description": "A manufacturing company migrated 120,000 records from Salesforce to HubSpot. Verum cleaned, deduplicated, and reformatted every record before import. Zero data loss.",
+    "author": {
+      "@type": "Organization",
+      "name": "Verum"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Verum"
+    }
+  }
+  </script>
+
+  <style>
+    .case-study-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-2xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .case-study-meta__item {
+      flex: 1;
+      min-width: 150px;
+    }
+    .case-study-meta__label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .case-study-meta__value {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .result-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      text-align: center;
+    }
+    .result-card__value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--color-teal);
+      line-height: 1;
+    }
+    .result-card__label {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-top: var(--space-sm);
+    }
+    .insight-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border: 1px solid var(--color-teal);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-xl) 0;
+    }
+    .insight-box__title {
+      font-weight: 600;
+      color: var(--color-teal);
+      margin-bottom: var(--space-sm);
+    }
+    .segment-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-lg) 0;
+    }
+    .segment-table th,
+    .segment-table td {
+      padding: var(--space-md);
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .segment-table th {
+      font-weight: 600;
+      color: var(--color-text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .segment-table td {
+      color: var(--color-text-secondary);
+    }
+    .segment-table tr:hover td {
+      background: var(--color-bg-card);
+    }
+    .highlight-row td {
+      background: rgba(0, 184, 148, 0.1);
+      color: var(--color-text-primary);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Case Study</p>
+      <h1 class="page-hero__title">CRM Migration: How a Manufacturer Moved 120K Records to HubSpot Without Losing a Single Contact</h1>
+      <p class="page-hero__subtitle">120,000 records cleaned, deduplicated, and reformatted for a Salesforce-to-HubSpot migration. Zero contacts lost. 14 custom field mappings preserved.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 800px;">
+
+      <div class="case-study-meta">
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Industry</div>
+          <div class="case-study-meta__value">Manufacturing</div>
+        </div>
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Service</div>
+          <div class="case-study-meta__value">Data Cleaning & Validation</div>
+        </div>
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Records Migrated</div>
+          <div class="case-study-meta__value">120,000</div>
+        </div>
+        <div class="case-study-meta__item">
+          <div class="case-study-meta__label">Turnaround</div>
+          <div class="case-study-meta__value">8 days</div>
+        </div>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-card__value">0</div>
+          <div class="result-card__label">Records lost during migration</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card__value">28%</div>
+          <div class="result-card__label">Duplicates removed pre-migration</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card__value">14</div>
+          <div class="result-card__label">Custom field mappings preserved</div>
+        </div>
+      </div>
+
+      <h2>The Challenge</h2>
+      <p>A mid-market industrial parts manufacturer was switching from Salesforce to HubSpot. Their Salesforce instance had been in use for 7 years and contained 120,000 contact and company records across 14 custom fields.</p>
+
+      <p>The problem wasn't the migration tool. HubSpot's import works fine for clean data. The problem was that the data wasn't clean. Seven years of manual entry by dozens of sales reps had created a mess:</p>
+
+      <ul>
+        <li>Company names entered inconsistently ("ABC Manufacturing" vs. "ABC Mfg" vs. "A.B.C. Manufacturing Inc.")</li>
+        <li>Phone numbers in 8 different formats</li>
+        <li>34,000 duplicate records from years of trade show lead imports</li>
+        <li>Custom picklist values that didn't match HubSpot's field types</li>
+        <li>5,200 contacts with no email or phone (just a name and company)</li>
+      </ul>
+
+      <p>Their IT team estimated the cleanup would take 3-4 months of manual work. The HubSpot contract was starting in 3 weeks.</p>
+
+      <h2>Our Approach</h2>
+      <p>We ran the migration prep in three parallel workstreams:</p>
+
+      <h3>Workstream 1: Deduplication</h3>
+      <p>Fuzzy matching on company names, contact names, emails, and phone numbers identified 34,000 duplicate records in 15,200 clusters. We built merge rules that preserved the most recent activity date, the most complete field set, and all associated deal history.</p>
+
+      <h3>Workstream 2: Standardization & Field Mapping</h3>
+      <p>We mapped all 14 Salesforce custom fields to their HubSpot equivalents. Picklist values were translated. Phone numbers were reformatted to E.164. Company names were standardized. State abbreviations were normalized. Every record was validated against HubSpot's import requirements before export.</p>
+
+      <h3>Workstream 3: Enrichment of Skeleton Records</h3>
+      <p>The 5,200 name-only records were enriched to add email addresses and phone numbers where possible. We recovered usable contact data for 3,800 of them (73%), turning dead records into reachable contacts.</p>
+
+      <h2>The Key Finding</h2>
+
+      <div class="insight-box">
+        <div class="insight-box__title">28% of all records were duplicates that would have created chaos in HubSpot</div>
+        <p style="margin: 0;">Importing 34,000 duplicates into a fresh CRM would have immediately recreated the same data quality problems they were trying to escape. Cleaning before migration meant the HubSpot instance started with a trustworthy foundation instead of inheriting seven years of accumulated data debt.</p>
+      </div>
+
+      <table class="segment-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Before</th>
+            <th>After</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Total records</td>
+            <td>120,000</td>
+            <td>89,600</td>
+            <td>Duplicates merged, dead records removed</td>
+          </tr>
+          <tr>
+            <td>Duplicate clusters</td>
+            <td>15,200</td>
+            <td>0</td>
+            <td>Merged into golden records</td>
+          </tr>
+          <tr>
+            <td>Skeleton records (name only)</td>
+            <td>5,200</td>
+            <td>1,400</td>
+            <td>73% enriched with contact data</td>
+          </tr>
+          <tr class="highlight-row">
+            <td>Migration-ready records</td>
+            <td>0</td>
+            <td>89,600</td>
+            <td>Clean, standardized, HubSpot-formatted</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Migration Outcome</h2>
+      <p>The cleaned dataset was imported into HubSpot over a single weekend:</p>
+      <ul>
+        <li><strong>Zero records lost</strong> during import. Every legitimate contact was preserved.</li>
+        <li><strong>All 14 custom fields mapped correctly</strong> with matching picklist values</li>
+        <li><strong>Sales team was productive on Day 1</strong> instead of spending weeks fixing data in the new CRM</li>
+        <li><strong>HubSpot deduplication tools confirmed 0 duplicates</strong> on the imported dataset</li>
+      </ul>
+
+      <h3>The Hidden Benefit</h3>
+      <p>By recovering 3,800 skeleton records through enrichment, the migration actually increased the company's usable contact count. They moved to HubSpot with fewer total records but more actionable contacts than they'd ever had in Salesforce.</p>
+
+      <p>The VP of Sales said it was the first time in years that a rep could search the CRM and trust what came back.</p>
+
+      <h2>What We Recommended Next</h2>
+      <ol>
+        <li><strong>Set up HubSpot deduplication rules</strong> to prevent new duplicates from forming</li>
+        <li><strong>Implement required field validation</strong> on new contact creation</li>
+        <li><strong>Schedule quarterly data hygiene reviews</strong> to maintain the clean baseline</li>
+        <li><strong>Enrich the remaining 1,400 skeleton records</strong> as more data becomes available</li>
+      </ol>
+
+      <h2>Migrating Your CRM?</h2>
+      <p>Don't import dirty data into a clean system. We'll deduplicate, standardize, and validate every record before it touches your new CRM.</p>
+
+      <div class="text-center mt-xl">
+        <a href="/#contact" class="btn btn--primary btn--lg">Get Migration-Ready Data</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
