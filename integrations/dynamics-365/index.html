@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verum + Dynamics 365: Data Cleaning and Enrichment for Microsoft CRM | Verum</title>
+  <meta name="description" content="Clean and enrich your Dynamics 365 data. Deduplication, email validation, contact enrichment, and field standardization for Microsoft CRM users.">
+
+  <link rel="canonical" href="https://veruminc.com/integrations/dynamics-365/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veruminc.com/integrations/dynamics-365/">
+  <meta property="og:title" content="Verum + Dynamics 365: Data Cleaning and Enrichment for Microsoft CRM">
+  <meta property="og:description" content="Clean and enrich your Dynamics 365 data. Deduplication, email validation, contact enrichment, and field standardization for Microsoft CRM users.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Verum + Dynamics 365: Data Cleaning and Enrichment for Microsoft CRM">
+  <meta name="twitter:description" content="Clean and enrich your Dynamics 365 data. Deduplication, email validation, contact enrichment, and field standardization for Microsoft CRM users.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://veruminc.com/integrations/"},
+      {"@type": "ListItem", "position": 3, "name": "Verum + Dynamics 365"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you work with Dynamics 365 on-premises?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Since we work with CSV exports rather than API integrations, it doesn't matter whether your Dynamics instance is cloud (online) or on-premises. Export your data, send it to us, and import the cleaned file back."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What fields can you enrich in Dynamics 365?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can fill any standard or custom field: email, phone, job title, company size, industry (NAICS/SIC), revenue range, technology stack, LinkedIn URL, and company address. We format the output to match your Dynamics entity structure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does pricing compare to Dynamics-specific tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Dynamics data quality tools charge $500-2,000/month for ongoing subscriptions. A one-time Verum cleaning project for 50,000 records typically costs $2,500-5,000 with no recurring fees. For periodic needs, per-project pricing is significantly cheaper."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Verum + Dynamics 365: Data Cleaning and Enrichment for Microsoft CRM</h1>
+        <p class="page-hero__subtitle">Dynamics 365 data quality doesn't require another Microsoft product. We clean and enrich your CRM data on a per-project basis.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <p>Dynamics 365 users have fewer third-party data quality options than Salesforce or HubSpot users. Most enrichment tools prioritize those two CRMs, leaving Dynamics teams to rely on manual processes or Microsoft's own ecosystem (which doesn't include a built-in enrichment solution).</p>
+
+        <p>The result: Dynamics databases often accumulate data quality issues faster because there are fewer tools catching them. Duplicates grow unchecked. Email addresses go stale. Job titles drift into hundreds of unstandardized variations.</p>
+
+        <p>Verum is CRM-agnostic. We clean and enrich data from any system, including Dynamics 365, using CSV exports and imports. No Dynamics marketplace app required, no Azure integration, and no Microsoft-specific tooling.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="text-center mb-xl">What We Do for Dynamics 365 Users</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Deduplication</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">Fuzzy matching across contacts, accounts, and leads finds duplicates that Dynamics' native detection rules miss. Merged into golden records preserving the most complete data.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Email Validation</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">SMTP verification on every email address. Catch-all domains, role-based addresses, and invalid mailboxes identified. Bounce rates drop to under 3%.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Contact Enrichment</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">Missing phone numbers, job titles, company size, and industry data filled from 50+ sources. Coverage matches what Salesforce and HubSpot users get from premium tools.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Field Standardization</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">Company names, job titles, addresses, and industry codes standardized to consistent formats. Your Dynamics views and reports return accurate, filterable results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h2>How It Works</h2>
+        <ol class="feature-list">
+        <li><strong>Export.</strong> Export your contacts, accounts, or leads from Dynamics 365 using Advanced Find or the Excel export feature.</li>
+        <li><strong>Clean and enrich.</strong> We process the full dataset: deduplication, validation, standardization, and enrichment. 3-7 business days.</li>
+        <li><strong>Review.</strong> You receive the cleaned file with a detailed change log. Review before importing.</li>
+        <li><strong>Import.</strong> Upload back into Dynamics using the Import Wizard or Data Management workspace. We format the file to match your entity fields.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container" style="max-width: 800px;">
+        <h2>Why Dynamics 365 Teams Choose Verum</h2>
+        <ul class="feature-list">
+          <li><strong>CRM-agnostic approach:</strong> We don't require a Dynamics-specific integration. CSV in, cleaned CSV out. Works with any Dynamics deployment (online or on-premises).</li>
+          <li><strong>Same quality as premium CRM tools:</strong> Dynamics users get the same multi-source enrichment, SMTP validation, and fuzzy deduplication that Salesforce and HubSpot users access through $15K+ annual platforms.</li>
+          <li><strong>No Azure dependency:</strong> No Azure Data Factory pipeline, no Power Automate flow, no Dataverse connector. Simple file exchange.</li>
+          <li><strong>Per-project pricing:</strong> Clean your Dynamics CRM once without an annual commitment. Pay for the project, not the platform.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h2>Frequently Asked Questions</h2>
+        <h3>Do you work with Dynamics 365 on-premises?</h3>
+        <p>Yes. Since we work with CSV exports rather than API integrations, it doesn't matter whether your Dynamics instance is cloud (online) or on-premises. Export your data, send it to us, and import the cleaned file back.</p>
+        <h3>What fields can you enrich in Dynamics 365?</h3>
+        <p>We can fill any standard or custom field: email, phone, job title, company size, industry (NAICS/SIC), revenue range, technology stack, LinkedIn URL, and company address. We format the output to match your Dynamics entity structure.</p>
+        <h3>How does pricing compare to Dynamics-specific tools?</h3>
+        <p>Most Dynamics data quality tools charge $500-2,000/month for ongoing subscriptions. A one-time Verum cleaning project for 50,000 records typically costs $2,500-5,000 with no recurring fees. For periodic needs, per-project pricing is significantly cheaper.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container text-center">
+        <h2>Get the Same Data Quality as Salesforce Teams</h2>
+        <p class="mb-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">Your CRM shouldn't determine your data quality. Tell us what you need and we'll deliver the same results regardless of platform.</p>
+        <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <p class="text-muted">Related: <a href="/services/data-cleaning.html">Data Cleaning Services</a> | <a href="/services/data-enrichment.html">Data Enrichment Services</a> | <a href="/case-studies/crm-migration-data-prep-manufacturing/">CRM Migration Case Study</a> | <a href="/resources/multi-crm-data-sync.html">Multi-CRM Data Sync</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

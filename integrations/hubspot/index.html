@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verum + HubSpot: Data Cleaning and Enrichment for HubSpot CRM | Verum</title>
+  <meta name="description" content="Clean and enrich your HubSpot data. Remove duplicates, validate emails, reduce marketing contacts, and fill missing fields. No Operations Hub required.">
+
+  <link rel="canonical" href="https://veruminc.com/integrations/hubspot/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veruminc.com/integrations/hubspot/">
+  <meta property="og:title" content="Verum + HubSpot: Data Cleaning and Enrichment for HubSpot CRM">
+  <meta property="og:description" content="Clean and enrich your HubSpot data. Remove duplicates, validate emails, reduce marketing contacts, and fill missing fields. No Operations Hub required.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Verum + HubSpot: Data Cleaning and Enrichment for HubSpot CRM">
+  <meta name="twitter:description" content="Clean and enrich your HubSpot data. Remove duplicates, validate emails, reduce marketing contacts, and fill missing fields. No Operations Hub required.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://veruminc.com/integrations/"},
+      {"@type": "ListItem", "position": 3, "name": "Verum + HubSpot"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need HubSpot Operations Hub for this?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We work with CSV exports and imports, which are available on every HubSpot tier including Free. No Operations Hub, no additional HubSpot product, and no integration to install."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can I save on HubSpot marketing contacts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most companies find 15-25% of their marketing contacts are dead weight. For a company paying for 50,000 marketing contacts, dropping to a lower tier can save $3,000-6,000/year. The cleaning project often pays for itself through contact tier savings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work with HubSpot Breeze Intelligence?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Breeze handles real-time enrichment on inbound leads. We handle bulk operations: deduplication across your entire database, email validation, legacy data cleanup, and multi-source enrichment that covers contacts Breeze can't match."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Verum + HubSpot: Data Cleaning and Enrichment for HubSpot CRM</h1>
+        <p class="page-hero__subtitle">Cut your marketing contact costs, fix your deliverability, and fill the fields that make automation work.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <p>HubSpot is great at marketing automation. It's not great at data quality. Duplicate contacts split your engagement history. Invalid emails tank your deliverability. Missing fields break your lead scoring and routing. And every bad contact in your marketing tier costs you money.</p>
+
+        <p>HubSpot Operations Hub helps with some of these problems, but it requires a $800+/month upgrade and technical resources to configure. Breeze Intelligence (formerly Clearbit) adds enrichment but ties you to HubSpot's data sources and pricing.</p>
+
+        <p>Verum cleans and enriches your HubSpot data without additional software. We export, clean, enrich, and deliver import-ready files that work with any HubSpot tier.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="text-center mb-xl">What We Do for HubSpot Users</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Marketing Contact Optimization</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">Identify contacts you're paying for but shouldn't be: hard bounces, competitors, unsubscribes, and long-unengaged records. Most companies save 15-25% on their contact tier.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Duplicate Merging</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">HubSpot's built-in dedup tool only catches exact matches. We use fuzzy matching to find near-duplicates that split your engagement data and inflate your database.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Email Validation</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">SMTP verification on every email. Invalid addresses suppressed before your next send. Protect your sender reputation and keep bounce rates under 2%.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Contact Enrichment</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">Fill missing job titles, phone numbers, company size, and industry from 50+ sources. Your lead scoring and lifecycle stages work with complete data.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Contact-Company Association Fix</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">Contacts without company associations are invisible to account-based reporting. We match orphaned contacts to their companies and create the associations.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Lifecycle Stage Cleanup</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">Contacts stuck in wrong lifecycle stages break your funnel metrics. We audit and correct stage assignments based on actual engagement and deal history.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h2>How It Works</h2>
+        <ol class="feature-list">
+        <li><strong>Export.</strong> Export your contacts and companies from HubSpot (we provide step-by-step instructions for your tier).</li>
+        <li><strong>Clean and enrich.</strong> We run the full cleaning and enrichment process. Typically 3-7 days.</li>
+        <li><strong>Review and approve.</strong> You receive the cleaned file with a change summary showing what was modified and why.</li>
+        <li><strong>Import.</strong> Upload the cleaned file back into HubSpot using native import. We format to match your HubSpot properties exactly.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container" style="max-width: 800px;">
+        <h2>Why HubSpot Teams Choose Verum</h2>
+        <ul class="feature-list">
+          <li><strong>No Operations Hub required:</strong> Our cleaning and enrichment works with any HubSpot tier: Free, Starter, Professional, or Enterprise. No additional HubSpot product needed.</li>
+          <li><strong>Save on marketing contacts:</strong> By identifying and removing dead weight from your marketing contacts, we often save companies more than the cost of the cleaning project.</li>
+          <li><strong>Works alongside Breeze Intelligence:</strong> If you already use Breeze for real-time enrichment, we complement it with bulk cleaning, deduplication, and multi-source enrichment that Breeze doesn't do.</li>
+          <li><strong>Per-project, not per-month:</strong> No monthly subscription on top of your HubSpot costs. Use us once for a cleanup or quarterly for maintenance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h2>Frequently Asked Questions</h2>
+        <h3>Do I need HubSpot Operations Hub for this?</h3>
+        <p>No. We work with CSV exports and imports, which are available on every HubSpot tier including Free. No Operations Hub, no additional HubSpot product, and no integration to install.</p>
+        <h3>How much can I save on HubSpot marketing contacts?</h3>
+        <p>Most companies find 15-25% of their marketing contacts are dead weight. For a company paying for 50,000 marketing contacts, dropping to a lower tier can save $3,000-6,000/year. The cleaning project often pays for itself through contact tier savings.</p>
+        <h3>Does this work with HubSpot Breeze Intelligence?</h3>
+        <p>Yes. Breeze handles real-time enrichment on inbound leads. We handle bulk operations: deduplication across your entire database, email validation, legacy data cleanup, and multi-source enrichment that covers contacts Breeze can't match.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container text-center">
+        <h2>Clean Your HubSpot Without Upgrading</h2>
+        <p class="mb-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">Tell us about your HubSpot database and we'll tell you how much dead weight you're carrying.</p>
+        <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <p class="text-muted">Related: <a href="/resources/hubspot-data-cleaning.html">How to Clean HubSpot Data</a> | <a href="/resources/hubspot-duplicate-contacts.html">HubSpot Duplicate Contacts</a> | <a href="/resources/hubspot-marketing-contacts-cleanup.html">HubSpot Marketing Contacts Cleanup</a> | <a href="/resources/hubspot-email-validation.html">HubSpot Email Validation</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

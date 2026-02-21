@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verum + Salesforce: Data Cleaning and Enrichment for Salesforce CRM | Verum</title>
+  <meta name="description" content="Clean, enrich, and maintain your Salesforce data. Deduplication, email validation, contact enrichment, and field standardization. Import-ready results in days.">
+
+  <link rel="canonical" href="https://veruminc.com/integrations/salesforce/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://veruminc.com/integrations/salesforce/">
+  <meta property="og:title" content="Verum + Salesforce: Data Cleaning and Enrichment for Salesforce CRM">
+  <meta property="og:description" content="Clean, enrich, and maintain your Salesforce data. Deduplication, email validation, contact enrichment, and field standardization. Import-ready results in days.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Verum + Salesforce: Data Cleaning and Enrichment for Salesforce CRM">
+  <meta name="twitter:description" content="Clean, enrich, and maintain your Salesforce data. Deduplication, email validation, contact enrichment, and field standardization. Import-ready results in days.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Integrations", "item": "https://veruminc.com/integrations/"},
+      {"@type": "ListItem", "position": 3, "name": "Verum + Salesforce"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need to install anything in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We work with standard CSV exports. No managed package, connected app, or AppExchange installation required. You export your data, we clean it, and you import the cleaned file back using Data Loader or Salesforce native import."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does Salesforce data cleaning take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most projects are delivered in 3-7 business days. A typical 50,000-record Salesforce cleaning (dedup, email validation, phone verification, title standardization) takes about 5 days. Enrichment-only projects are faster at 2-3 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will cleaning affect our Salesforce automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cleaning improves automation by fixing the data it depends on. Lead routing works better with standardized fields. Lead scoring improves with complete firmographic data. Email sequences get higher deliverability with validated addresses."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Verum + Salesforce: Data Cleaning and Enrichment for Salesforce CRM</h1>
+        <p class="page-hero__subtitle">Clean data in your Salesforce, not another platform to manage. We export, clean, enrich, and deliver import-ready files.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <p>Salesforce is powerful. But it's only as good as the data inside it. After a few years of use, most Salesforce instances accumulate duplicates, outdated contacts, inconsistent job titles, and missing fields that break automation and reporting.</p>
+
+        <p>You've probably looked at Salesforce-native tools like Duplicate Rules and Data.com (now retired). They help with prevention but don't fix the existing mess. Third-party enrichment tools like ZoomInfo require $15K+ annual contracts and another platform to manage.</p>
+
+        <p>Verum takes a simpler approach: we export your Salesforce data, clean and enrich it, and deliver an import-ready file. No integration to maintain. No platform to learn. No annual contract.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <h2 class="text-center mb-xl">What We Do for Salesforce Users</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto;">
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Duplicate Contact Merging</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">Fuzzy matching across name, email, phone, and account finds duplicates that Salesforce's native rules miss. Records merged into golden records preserving the most complete data.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Email Validation</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">SMTP verification on every email address. Hard bounces, role-based addresses, and catch-all domains flagged. Deliverability typically jumps from 70% to 93%.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Contact Enrichment</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">Missing phone numbers, job titles, and company data filled from 50+ sources. Direct dials prioritized over main lines. Titles verified for accuracy.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Company Name Standardization</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">ABC Corp, A.B.C. Corporation, and abc corp all become one canonical format. Prevents duplicate accounts and fixes account-contact associations.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Job Title Normalization</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">VP Sales, Vice President of Sales, and Sales VP standardized into a consistent taxonomy. Makes territory assignment, lead routing, and reporting reliable.</p>
+          </div>
+          <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="font-size: 1.125rem; margin-bottom: var(--space-sm);">Field Standardization</h3>
+            <p style="color: var(--color-text-secondary); margin: 0;">State abbreviations, phone formats, industry codes, and address fields cleaned to consistent formats. Your Salesforce reports return accurate results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h2>How It Works</h2>
+        <ol class="feature-list">
+        <li><strong>Export.</strong> You export contacts, accounts, or leads from Salesforce (we can walk you through it or do it via API).</li>
+        <li><strong>Clean and enrich.</strong> We run deduplication, validation, standardization, and enrichment. Typically takes 3-7 days.</li>
+        <li><strong>Review.</strong> You receive the cleaned file with a summary of changes. Review before importing.</li>
+        <li><strong>Import.</strong> Upload the cleaned file back into Salesforce using Data Loader or native import. We format for direct import with your field mapping.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container" style="max-width: 800px;">
+        <h2>Why Salesforce Teams Choose Verum</h2>
+        <ul class="feature-list">
+          <li><strong>No integration required:</strong> We work with CSV exports and imports. No connected app, no API credentials, no managed package to install or maintain.</li>
+          <li><strong>Handles the full stack:</strong> Most enrichment tools only add data. We also clean, deduplicate, and standardize. One vendor for the complete data quality lifecycle.</li>
+          <li><strong>Per-project pricing:</strong> Clean your Salesforce once for a flat fee. No annual contract tying you to a tool you use twice a year.</li>
+          <li><strong>Import-ready delivery:</strong> We match your Salesforce field structure and naming. The import file is ready to load without manual field mapping.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h2>Frequently Asked Questions</h2>
+        <h3>Do I need to install anything in Salesforce?</h3>
+        <p>No. We work with standard CSV exports. No managed package, connected app, or AppExchange installation required. You export your data, we clean it, and you import the cleaned file back using Data Loader or Salesforce native import.</p>
+        <h3>How long does Salesforce data cleaning take?</h3>
+        <p>Most projects are delivered in 3-7 business days. A typical 50,000-record Salesforce cleaning (dedup, email validation, phone verification, title standardization) takes about 5 days. Enrichment-only projects are faster at 2-3 days.</p>
+        <h3>Will cleaning affect our Salesforce automation?</h3>
+        <p>Cleaning improves automation by fixing the data it depends on. Lead routing works better with standardized fields. Lead scoring improves with complete firmographic data. Email sequences get higher deliverability with validated addresses.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container text-center">
+        <h2>Clean Your Salesforce in Days, Not Months</h2>
+        <p class="mb-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">Tell us how many records you have and what problems you're seeing. We'll scope a project and give you a fixed price.</p>
+        <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <p class="text-muted">Related: <a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data</a> | <a href="/resources/salesforce-duplicate-contacts.html">Salesforce Duplicate Contacts</a> | <a href="/resources/salesforce-data-enrichment.html">Salesforce Data Enrichment</a> | <a href="/case-studies/crm-cleaning-staffing-agency/">CRM Cleaning Case Study</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
