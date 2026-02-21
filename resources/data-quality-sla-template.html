@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Quality SLAs: What to Include in Your Vendor Agreement | Verum</title>
+  <meta name="description" content="A practical guide to data quality SLAs for enrichment and cleaning vendors. Covers match rates, accuracy thresholds, turnaround times, and remediation terms.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-quality-sla-template.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-quality-sla-template.html">
+  <meta property="og:title" content="Data Quality SLAs: What to Include in Your Vendor Agreement">
+  <meta property="og:description" content="A practical guide to data quality SLAs for enrichment and cleaning vendors. Covers match rates, accuracy thresholds, turnaround times, and remediation terms.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Quality SLAs: What to Include in Your Vendor Agreement">
+  <meta name="twitter:description" content="A practical guide to data quality SLAs for enrichment and cleaning vendors. Covers match rates, accuracy thresholds, turnaround times, and remediation terms.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Quality SLAs: What to Include in Your Vendor Agreement"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data Quality SLAs: What to Include in Your Vendor Agreement",
+    "description": "A practical guide to data quality SLAs for enrichment and cleaning vendors. Covers match rates, accuracy thresholds, turnaround times, and remediation terms.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-02-15",
+    "dateModified": "2026-02-15",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-quality-sla-template.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What SLAs should I include in a data enrichment contract?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Key SLAs include: minimum match rate (percentage of records enriched), email deliverability guarantee (typically 90%+), phone accuracy threshold (percentage connecting to the named contact), turnaround time commitment, and remediation process for data that falls below thresholds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a reasonable email deliverability SLA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For SMTP-verified emails, expect a deliverability SLA of 90-95%. Anything below 90% suggests the vendor is pattern-guessing rather than verifying. The SLA should specify how deliverability is measured and what happens if the threshold is missed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you enforce data quality SLAs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Build measurement and remediation into the contract. Specify how quality is measured (sample audit, full validation), who measures it (you or a third party), the measurement timeline (within 30 days of delivery), and the remedy (re-enrichment, credit, or refund for records below threshold)."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border-left: 4px solid var(--color-teal);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Implementation Guide</p>
+      <h1 class="page-hero__title">Data Quality SLAs for Vendor Agreements</h1>
+      <p class="page-hero__subtitle">What to put in writing before your data vendor starts work. Protect your investment with measurable quality commitments.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+      <div class="blog-meta">2026-02-15 &middot; 9 min read</div>
+
+      <div class="blog-content">
+        <p>Most data enrichment and cleaning contracts don't include meaningful quality commitments. The vendor promises "high quality data" and you discover what that means after you've paid.</p>
+
+        <p>A good SLA turns vague promises into measurable obligations. It protects both sides: the vendor knows exactly what's expected, and you have recourse if the data doesn't perform.</p>
+
+        <p>Here's what to include.</p>
+
+        <h2>Match Rate SLAs</h2>
+
+        <p>The match rate is the percentage of your submitted records that the vendor can successfully enrich. This should be defined per field, not as an overall average.</p>
+
+        <h3>Typical thresholds:</h3>
+        <ul>
+          <li><strong>Email addresses:</strong> 75-85% match rate (US mid-market)</li>
+          <li><strong>Direct dial phone:</strong> 55-70% match rate</li>
+          <li><strong>Job title:</strong> 80-90% match rate</li>
+          <li><strong>Company firmographics:</strong> 85-95% match rate</li>
+        </ul>
+
+        <p>Match rates vary by market. SMB and niche industries will be lower. Enterprise and well-known companies will be higher. Set thresholds based on your test batch results, not the vendor's general claims.</p>
+
+        <div class="callout-box">
+          <p><strong>Important:</strong> Specify whether the match rate is measured against all submitted records or only records where the vendor had enough information to attempt a match. These produce very different numbers.</p>
+        </div>
+
+        <h2>Accuracy SLAs</h2>
+
+        <p>A match isn't useful if it's wrong. Accuracy measures whether enriched data is correct, not just present.</p>
+
+        <h3>How to define accuracy:</h3>
+        <ul>
+          <li><strong>Email accuracy:</strong> % of delivered emails that are deliverable (measured via SMTP verification or test campaign). Target: 90-95%.</li>
+          <li><strong>Phone accuracy:</strong> % of delivered phone numbers that connect to the named contact. Target: 80-85%.</li>
+          <li><strong>Title accuracy:</strong> % of delivered titles that match the contact's current role. Target: 85-90%.</li>
+        </ul>
+
+        <h3>Measurement method:</h3>
+        <p>Specify how accuracy is measured. Options include:</p>
+        <ul>
+          <li><strong>Random sample audit:</strong> You manually verify 50-100 records within 30 days of delivery</li>
+          <li><strong>Full email validation:</strong> Run all delivered emails through a third-party verification tool</li>
+          <li><strong>Call test:</strong> Attempt to reach 25-50 delivered phone contacts</li>
+        </ul>
+
+        <h2>Turnaround Time SLAs</h2>
+
+        <p>Define when the clock starts and what the delivery commitment is:</p>
+
+        <ul>
+          <li><strong>Start trigger:</strong> When the vendor receives your complete data file (not when the contract is signed)</li>
+          <li><strong>Delivery commitment:</strong> X business days for Y records (e.g., 5 business days for up to 50,000 records)</li>
+          <li><strong>Rush options:</strong> If you need faster delivery, define the premium and timeline</li>
+          <li><strong>Delay notification:</strong> Vendor must notify you within 24 hours if delivery will be delayed</li>
+        </ul>
+
+        <h2>Remediation Terms</h2>
+
+        <p>What happens when data doesn't meet the SLA? Define this upfront:</p>
+
+        <h3>Tiered remediation:</h3>
+        <ul>
+          <li><strong>Minor miss (within 5% of threshold):</strong> Vendor re-enriches or re-cleans the shortfall at no cost</li>
+          <li><strong>Significant miss (5-15% below threshold):</strong> Vendor re-processes affected records and provides credit toward future work</li>
+          <li><strong>Major miss (15%+ below threshold):</strong> Partial or full refund for the affected portion of the project</li>
+        </ul>
+
+        <h3>Measurement timeline:</h3>
+        <p>You should have 30 days from delivery to identify quality issues and invoke the SLA. This gives you time to import, test, and audit without feeling rushed.</p>
+
+        <h2>Data Freshness SLAs</h2>
+
+        <p>For ongoing enrichment or maintenance contracts, define freshness requirements:</p>
+
+        <ul>
+          <li><strong>Re-verification frequency:</strong> How often are records re-checked? (Monthly, quarterly)</li>
+          <li><strong>Staleness threshold:</strong> What's the maximum age of a delivered record? (e.g., verified within the last 90 days)</li>
+          <li><strong>Change detection:</strong> Does the vendor proactively flag records where the contact has changed jobs?</li>
+        </ul>
+
+        <h2>What Not to Include</h2>
+
+        <p>Avoid SLAs that are unmeasurable or create perverse incentives:</p>
+
+        <ul>
+          <li><strong>Don't SLA on database size.</strong> "Access to 200M contacts" doesn't mean 200M contacts in your market.</li>
+          <li><strong>Don't SLA on response rates.</strong> The vendor controls data quality, not your messaging or timing.</li>
+          <li><strong>Don't SLA on revenue impact.</strong> Too many variables between data quality and closed deals.</li>
+        </ul>
+
+        <p>Focus SLAs on what the vendor can directly control: match rates, accuracy, deliverability, turnaround time, and freshness.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What SLAs should I include in a data enrichment contract?</h3>
+        <p>Minimum match rate per field, email deliverability guarantee (90%+), phone accuracy threshold, turnaround time, and remediation terms for data below thresholds.</p>
+
+        <h3>What is a reasonable email deliverability SLA?</h3>
+        <p>90-95% for SMTP-verified emails. Below 90% suggests pattern-guessing. Specify how deliverability is measured and what happens if the threshold is missed.</p>
+
+        <h3>How do you enforce data quality SLAs?</h3>
+        <p>Build measurement into the contract: who measures quality, how, within what timeline, and what remedy applies. A 30-day measurement window after delivery is standard.</p>
+      </div>
+
+      <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">
+        <a href="/#contact" class="btn btn--primary btn--lg">See What We\'ll Find</a>
+      </div>
+
+      <p class="text-muted" style="font-size: 0.875rem;">Related: <a href="/resources/data-enrichment-rfp-template.html">Data Enrichment RFP Template</a> | <a href="/resources/evaluate-data-enrichment-vendors.html">How to Evaluate Vendors</a> | <a href="/resources/data-vendor-negotiation.html">Data Vendor Negotiation</a> | <a href="/resources/data-quality-metrics.html">Data Quality Metrics</a></p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

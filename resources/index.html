@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>B2B Data Guides, Buying Guides & Resources | Verum</title>
-  <meta name="description" content="87 practical guides on CRM data cleaning, enrichment, and quality. Buying guides, Salesforce tips, HubSpot guides, data migration best practices, and RevOps insights.">
+  <meta name="description" content="90 practical guides on CRM data cleaning, enrichment, and quality. Implementation guides, buying guides, Salesforce tips, HubSpot guides, and RevOps insights.">
 
   <link rel="canonical" href="https://veruminc.com/resources/">
   <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
@@ -158,6 +158,10 @@
       background: rgba(251, 191, 36, 0.15);
       color: #f59e0b;
     }
+    .blog-card__category--implementation {
+      background: rgba(139, 92, 246, 0.15);
+      color: #a78bfa;
+    }
     .blog-card__title {
       font-size: 1.0625rem;
       font-weight: 600;
@@ -218,7 +222,8 @@
       <div class="container">
 
         <div class="filter-tabs">
-          <button class="filter-tab active" data-filter="all">All<span class="count">87</span></button>
+          <button class="filter-tab active" data-filter="all">All<span class="count">90</span></button>
+          <button class="filter-tab" data-filter="implementation">Implementation<span class="count">3</span></button>
           <button class="filter-tab" data-filter="buying-guide">Buying Guides<span class="count">5</span></button>
           <button class="filter-tab" data-filter="salesforce">Salesforce<span class="count">8</span></button>
           <button class="filter-tab" data-filter="hubspot">HubSpot<span class="count">8</span></button>
@@ -228,6 +233,28 @@
         <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-top: var(--space-sm);">Browse by category: <a href="/resources/salesforce/" style="color: var(--color-teal);">Salesforce Guides</a> | <a href="/resources/hubspot/" style="color: var(--color-teal);">HubSpot Guides</a></p>
 
         <div class="blog-grid">
+
+          <!-- Implementation Guides -->
+          <article class="blog-card" data-category="implementation">
+            <span class="blog-card__category blog-card__category--implementation">Implementation Guide</span>
+            <h2 class="blog-card__title"><a href="/resources/what-to-expect-data-cleaning-project.html">What to Expect from a Data Cleaning Project</a></h2>
+            <p class="blog-card__excerpt">Timeline, process, and deliverables for a managed data cleanup. What happens from kickoff to delivery.</p>
+            <p class="blog-card__meta">8 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="implementation">
+            <span class="blog-card__category blog-card__category--implementation">Implementation Guide</span>
+            <h2 class="blog-card__title"><a href="/resources/prepare-crm-for-enrichment.html">How to Prepare Your CRM for Data Enrichment</a></h2>
+            <p class="blog-card__excerpt">7 steps to complete before sending your database for enrichment. Skip these and you'll pay to enrich junk.</p>
+            <p class="blog-card__meta">7 min read</p>
+          </article>
+
+          <article class="blog-card" data-category="implementation">
+            <span class="blog-card__category blog-card__category--implementation">Implementation Guide</span>
+            <h2 class="blog-card__title"><a href="/resources/data-quality-sla-template.html">Data Quality SLA Template: What to Include in Your Vendor Agreement</a></h2>
+            <p class="blog-card__excerpt">The accuracy guarantees, turnaround commitments, and validation standards your data vendor should put in writing.</p>
+            <p class="blog-card__meta">9 min read</p>
+          </article>
 
           <!-- Buying Guides - Decision Stage -->
           <article class="blog-card" data-category="buying-guide">

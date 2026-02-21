@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Prepare Your CRM for Data Enrichment: A Pre-Project Checklist | Verum</title>
+  <meta name="description" content="Before enriching your CRM, clean it first. A pre-enrichment checklist covering deduplication, field mapping, record selection, and quality thresholds.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/prepare-crm-for-enrichment.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/prepare-crm-for-enrichment.html">
+  <meta property="og:title" content="How to Prepare Your CRM for Data Enrichment">
+  <meta property="og:description" content="Before enriching your CRM, clean it first. A pre-enrichment checklist covering deduplication, field mapping, record selection, and quality thresholds.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Prepare Your CRM for Data Enrichment">
+  <meta name="twitter:description" content="Before enriching your CRM, clean it first. A pre-enrichment checklist covering deduplication, field mapping, record selection, and quality thresholds.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Prepare Your CRM for Data Enrichment"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Prepare Your CRM for Data Enrichment",
+    "description": "Before enriching your CRM, clean it first. A pre-enrichment checklist covering deduplication, field mapping, record selection, and quality thresholds.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-02-15",
+    "dateModified": "2026-02-15",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/prepare-crm-for-enrichment.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I clean my CRM before enrichment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Enriching before cleaning means appending data to duplicate records (making deduplication harder), filling fields on records that should have been deleted, and standardizing the new data differently from the old. Clean first, then enrich."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What fields should I prioritize for enrichment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prioritize fields that drive revenue operations: email (for outreach), phone (for calls), job title (for routing and scoring), company size (for territory assignment), and industry (for segmentation). These fields have the highest impact on sales and marketing effectiveness."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many records should I enrich at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with a batch of 1,000-5,000 records to validate quality before committing to a full database enrichment. Check match rates, accuracy, and fill rates on the test batch. If results meet your thresholds, proceed with the full dataset."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border-left: 4px solid var(--color-teal);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Implementation Guide</p>
+      <h1 class="page-hero__title">How to Prepare Your CRM for Data Enrichment</h1>
+      <p class="page-hero__subtitle">Enriching dirty data makes it dirtier. Here's what to do before you start filling in missing fields.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+      <div class="blog-meta">2026-02-15 &middot; 7 min read</div>
+
+      <div class="blog-content">
+        <p>You've decided to enrich your CRM data. You want to fill in missing phone numbers, add company firmographics, and get verified emails for contacts that only have a name and company.</p>
+
+        <p>Before you submit your database to an enrichment provider, there's prep work that will dramatically improve your results. Enriching a messy database is like painting over rust. It looks better briefly but the underlying problems will surface quickly.</p>
+
+        <h2>Step 1: Deduplicate First</h2>
+
+        <p>This is the most important step and the one most companies skip.</p>
+
+        <p>If you have 3 records for John Smith at ABC Corp and you enrich all three, you now have 3 enriched duplicates. You've paid three times for the same data and made deduplication harder because each record now has more fields to reconcile during merging.</p>
+
+        <p><strong>Action:</strong> Run deduplication before enrichment. Merge duplicates into golden records. Then enrich the deduplicated dataset.</p>
+
+        <h2>Step 2: Remove Records That Shouldn't Be Enriched</h2>
+
+        <p>Not every record in your CRM needs enrichment. Remove or exclude:</p>
+
+        <ul>
+          <li><strong>Competitors</strong> you're tracking for intelligence (enrich separately if needed)</li>
+          <li><strong>Do-not-contact records</strong> that should never receive outreach</li>
+          <li><strong>Test records</strong> created by admins or during onboarding</li>
+          <li><strong>Completely stale records</strong> from years-old imports that are no longer in your target market</li>
+          <li><strong>Records with no identifiable information</strong> (no name, no email, no company) that can't be matched by an enrichment provider</li>
+        </ul>
+
+        <p>Every record you exclude saves money and keeps your enriched dataset focused on contacts that matter.</p>
+
+        <h2>Step 3: Standardize Key Matching Fields</h2>
+
+        <p>Enrichment providers match your records against their database using fields like company name, email domain, and person name. If these fields are inconsistent, match rates suffer.</p>
+
+        <p>Before submission, standardize:</p>
+        <ul>
+          <li><strong>Company names:</strong> Remove Inc., LLC, Corp. variations. Pick one format.</li>
+          <li><strong>Email domains:</strong> Lowercase everything. Remove trailing spaces.</li>
+          <li><strong>Names:</strong> Fix obvious issues (ALL CAPS, name in wrong field, initials instead of names)</li>
+        </ul>
+
+        <div class="callout-box">
+          <p><strong>Why this matters:</strong> A provider might fail to match "ABC MANUFACTURING INC." but successfully match "ABC Manufacturing." Clean inputs produce better match rates.</p>
+        </div>
+
+        <h2>Step 4: Define Which Fields You Need</h2>
+
+        <p>Don't enrich everything. Focus on the fields that drive your revenue operations:</p>
+
+        <ul>
+          <li><strong>For outbound sales:</strong> Email, direct dial phone, job title</li>
+          <li><strong>For lead scoring:</strong> Company size, industry, revenue range</li>
+          <li><strong>For territory assignment:</strong> Company HQ location, employee count</li>
+          <li><strong>For ABM:</strong> Technology stack, funding stage, growth signals</li>
+        </ul>
+
+        <p>More fields cost more. Prioritize the ones your team will actually use in the next 90 days.</p>
+
+        <h2>Step 5: Set Quality Thresholds</h2>
+
+        <p>Before the project starts, decide what "good enough" looks like:</p>
+
+        <ul>
+          <li><strong>Email match rate:</strong> What percentage of records need verified emails? (80%+ is typical)</li>
+          <li><strong>Phone match rate:</strong> What direct dial coverage do you expect? (60-70% is realistic for most markets)</li>
+          <li><strong>Accuracy standard:</strong> How will you spot-check results?</li>
+        </ul>
+
+        <p>Setting thresholds before the project prevents disagreements about quality after delivery.</p>
+
+        <h2>Step 6: Run a Test Batch</h2>
+
+        <p>Don't enrich your entire database on the first try. Start with 1,000-5,000 records:</p>
+
+        <ol>
+          <li>Submit the test batch to your enrichment provider</li>
+          <li>Review match rates per field</li>
+          <li>Spot-check 50 records for accuracy (verify titles, phone numbers, company data manually)</li>
+          <li>Check email deliverability on a sample (send a small campaign)</li>
+          <li>If quality meets your thresholds, proceed with the full dataset</li>
+        </ol>
+
+        <h2>Step 7: Plan the Import</h2>
+
+        <p>Before you get the enriched data back, plan how you'll import it:</p>
+
+        <ul>
+          <li><strong>Field mapping:</strong> Which enriched fields map to which CRM properties?</li>
+          <li><strong>Overwrite rules:</strong> Should enriched data overwrite existing values or only fill empty fields?</li>
+          <li><strong>Backup:</strong> Back up your CRM before importing. Always have a rollback point.</li>
+          <li><strong>Automation check:</strong> After import, test lead scoring, routing, and any automation that uses the enriched fields.</li>
+        </ul>
+
+        <h2>The Checklist</h2>
+
+        <ol>
+          <li>Deduplicate your database</li>
+          <li>Remove records that shouldn't be enriched</li>
+          <li>Standardize company names, emails, and contact names</li>
+          <li>Define which fields you need enriched</li>
+          <li>Set match rate and accuracy thresholds</li>
+          <li>Run a test batch of 1,000-5,000 records</li>
+          <li>Plan your import (field mapping, overwrite rules, backup)</li>
+        </ol>
+
+        <p>Spending 2-3 hours on this prep work will improve your match rates, reduce your costs, and give you cleaner results when the enriched data comes back.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Should I clean my CRM before enrichment?</h3>
+        <p>Yes. Enriching before cleaning means appending data to duplicate records and filling fields on records that should have been deleted. Clean first, then enrich.</p>
+
+        <h3>What fields should I prioritize for enrichment?</h3>
+        <p>Email, phone, job title, company size, and industry. These fields have the highest impact on sales and marketing operations.</p>
+
+        <h3>How many records should I enrich at once?</h3>
+        <p>Start with 1,000-5,000 records to validate quality. Check match rates and accuracy before committing to a full database enrichment.</p>
+      </div>
+
+      <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">
+        <a href="/#contact" class="btn btn--primary btn--lg">See What We\'ll Find</a>
+      </div>
+
+      <p class="text-muted" style="font-size: 0.875rem;">Related: <a href="/services/data-enrichment.html">Data Enrichment Services</a> | <a href="/resources/data-cleaning-vs-data-enrichment.html">Data Cleaning vs. Data Enrichment</a> | <a href="/case-studies/contact-enrichment-insurance-brokerage/">Contact Enrichment Case Study</a> | <a href="/resources/how-to-choose-data-enrichment-provider.html">How to Choose an Enrichment Provider</a></p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
