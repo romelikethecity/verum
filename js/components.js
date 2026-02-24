@@ -123,6 +123,14 @@
             <li><a href="https://www.linkedin.com/company/verumai/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
         </div>
+
+        <div>
+          <h4 class="footer__heading">Publications</h4>
+          <ul class="footer__links">
+            <li><a href="https://thecroreport.com" target="_blank" rel="noopener noreferrer">The CRO Report</a></li>
+            <li><a href="https://theaimarketpulse.com" target="_blank" rel="noopener noreferrer">AI Market Pulse</a></li>
+          </ul>
+        </div>
       </div>
 
       <div class="footer__bottom">
