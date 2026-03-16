@@ -68,7 +68,7 @@ def full_page(title, meta_desc, canonical, breadcrumbs, svc_schema, faq_schema,
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{esc(title)}</title>
+  <title>{esc(title)} | Verum</title>
   <meta name="description" content="{esc(meta_desc)}">
   <link rel="canonical" href="{url}">
   <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
@@ -83,14 +83,14 @@ def full_page(title, meta_desc, canonical, breadcrumbs, svc_schema, faq_schema,
   <link rel="stylesheet" href="/css/styles.css?v=6">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{url}">
-  <meta property="og:title" content="{esc(title)}">
+  <meta property="og:title" content="{esc(title)} | Verum">
   <meta property="og:description" content="{esc(meta_desc)}">
   <meta property="og:site_name" content="Verum">
   <meta property="og:image" content="{BASE_URL}/assets/social/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{esc(title)}">
+  <meta name="twitter:title" content="{esc(title)} | Verum">
   <meta name="twitter:description" content="{esc(meta_desc)}">
   <meta name="twitter:image" content="{BASE_URL}/assets/social/twitter-card.png">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
@@ -2056,7 +2056,7 @@ def _glossary_page_html(slug, term, definition, category, related_slugs):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{esc(title)}</title>
+  <title>{esc(title)} | Verum</title>
   <meta name="description" content="{esc(meta_desc)}">
   <link rel="canonical" href="{url}">
   <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
@@ -2071,12 +2071,12 @@ def _glossary_page_html(slug, term, definition, category, related_slugs):
   <link rel="stylesheet" href="/css/styles.css?v=6">
   <meta property="og:type" content="article">
   <meta property="og:url" content="{url}">
-  <meta property="og:title" content="{esc(title)}">
+  <meta property="og:title" content="{esc(title)} | Verum">
   <meta property="og:description" content="{esc(meta_desc)}">
   <meta property="og:site_name" content="Verum">
   <meta property="og:image" content="{BASE_URL}/assets/social/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{esc(title)}">
+  <meta name="twitter:title" content="{esc(title)} | Verum">
   <meta name="twitter:description" content="{esc(meta_desc)}">
   <meta name="twitter:image" content="{BASE_URL}/assets/social/twitter-card.png">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
@@ -2201,44 +2201,105 @@ def generate_glossary_pages():
 # ============================================================
 
 def generate_sitemap(all_paths):
+    """Generate sitemap.xml by discovering ALL .html pages on disk.
+
+    Walks the entire site directory, converts file paths to URLs,
+    skips noindex pages, and assigns priority/changefreq based on path.
+    """
+    import re
+
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 
-    core_pages = [
-        ("/", "1.0", "weekly"),
-        ("/about.html", "0.8", "monthly"),
-        ("/contact.html", "0.8", "monthly"),
-        ("/pricing.html", "0.8", "monthly"),
-        ("/services/", "0.9", "weekly"),
-        ("/services/data-cleaning.html", "0.9", "weekly"),
-        ("/services/data-enrichment.html", "0.9", "weekly"),
-        ("/services/data-analysis.html", "0.9", "weekly"),
-        ("/services/icp-analysis.html", "0.8", "monthly"),
-        ("/team/", "0.7", "monthly"),
-        ("/resources/", "0.8", "weekly"),
-        ("/enrichment/", "0.8", "monthly"),
-        ("/cleaning/", "0.8", "monthly"),
-        ("/find/", "0.8", "monthly"),
-        ("/use-cases/", "0.8", "monthly"),
-        ("/analysis/", "0.8", "monthly"),
-        ("/alternatives/", "0.8", "monthly"),
-        ("/compare/", "0.8", "monthly"),
-        ("/glossary/", "0.8", "monthly"),
-        ("/solutions/", "0.9", "weekly"),
-    ]
+    # Collect all URLs already tracked by the generator (to avoid duplicates)
+    generated_urls = set(all_paths)
 
-    for p, pri, freq in core_pages:
-        sitemap += f'  <url>\n    <loc>{BASE_URL}{p}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{pri}</priority>\n  </url>\n'
+    # High-priority paths (exact match)
+    high_priority = {
+        "/": ("1.0", "weekly"),
+        "/services/": ("0.9", "weekly"),
+        "/services/data-cleaning.html": ("0.9", "weekly"),
+        "/services/data-enrichment.html": ("0.9", "weekly"),
+        "/services/data-analysis.html": ("0.9", "weekly"),
+        "/solutions/": ("0.9", "weekly"),
+    }
 
-    # Add solutions pages (already exist, not regenerated)
-    solutions_dir = os.path.join(OUTPUT_DIR, 'solutions')
-    if os.path.isdir(solutions_dir):
-        for d in sorted(os.listdir(solutions_dir)):
-            dp = os.path.join(solutions_dir, d, 'index.html')
-            if os.path.isfile(dp) and d != 'index.html':
-                sitemap += f'  <url>\n    <loc>{BASE_URL}/solutions/{d}/</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n'
+    # Hub/top-level pages get 0.8
+    hub_prefixes = (
+        "/services/", "/enrichment/", "/cleaning/", "/find/",
+        "/use-cases/", "/analysis/", "/alternatives/", "/compare/",
+        "/glossary/", "/solutions/", "/resources/",
+    )
 
-    for path in all_paths:
-        sitemap += f'  <url>\n    <loc>{BASE_URL}{path}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n'
+    top_level_pages = {
+        "/about.html", "/contact.html", "/pricing.html",
+    }
+
+    # Noindex pages to exclude (checked by reading file content)
+    noindex_cache = {}
+
+    def has_noindex(filepath):
+        if filepath not in noindex_cache:
+            try:
+                with open(filepath, 'r', errors='ignore') as f:
+                    head = f.read(4096)
+                noindex_cache[filepath] = bool(re.search(r'<meta\s[^>]*noindex', head, re.IGNORECASE))
+            except Exception:
+                noindex_cache[filepath] = False
+        return noindex_cache[filepath]
+
+    def file_to_url(filepath):
+        rel = os.path.relpath(filepath, OUTPUT_DIR)
+        if rel == 'index.html':
+            return '/'
+        elif rel.endswith('/index.html'):
+            return '/' + rel[:-len('index.html')]
+        else:
+            return '/' + rel
+
+    def get_priority_freq(url_path):
+        if url_path in high_priority:
+            return high_priority[url_path]
+        if url_path in top_level_pages:
+            return ("0.8", "monthly")
+        # Hub index pages (e.g., /enrichment/, /cleaning/)
+        parts = url_path.strip('/').split('/')
+        if len(parts) == 1 and url_path.endswith('/'):
+            return ("0.8", "monthly")
+        # Services sub-pages
+        if url_path.startswith('/services/'):
+            return ("0.8", "monthly")
+        # Solutions pages
+        if url_path.startswith('/solutions/'):
+            return ("0.8", "monthly")
+        # Resources pages
+        if url_path.startswith('/resources/'):
+            return ("0.7", "monthly")
+        return ("0.7", "monthly")
+
+    # Walk the entire directory tree for .html files
+    all_urls = set()
+    skip_dirs = {'node_modules', '__pycache__', '.git', 'assets', 'css', 'js', 'docs'}
+
+    for root, dirs, files in os.walk(OUTPUT_DIR):
+        # Skip non-content directories
+        dirs[:] = [d for d in dirs if d not in skip_dirs]
+        for fname in files:
+            if not fname.endswith('.html'):
+                continue
+            filepath = os.path.join(root, fname)
+            # Skip 404
+            if fname == '404.html':
+                continue
+            # Skip noindex pages
+            if has_noindex(filepath):
+                continue
+            url_path = file_to_url(filepath)
+            all_urls.add(url_path)
+
+    # Sort for deterministic output
+    for url_path in sorted(all_urls):
+        pri, freq = get_priority_freq(url_path)
+        sitemap += f'  <url>\n    <loc>{BASE_URL}{url_path}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{pri}</priority>\n  </url>\n'
 
     sitemap += '</urlset>'
     return sitemap
