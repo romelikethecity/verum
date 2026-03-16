@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salesforce Data Quality Guides | Verum</title>
-  <meta name="description" content="Practical guides for cleaning, enriching, and auditing Salesforce CRM data. Fix duplicates, validate emails, standardize fields, and enrich records.">
+  <title>Salesforce Data Guides: Cleanup, Enrichment & Standardization | Verum</title>
+  <meta name="description" content="Practical guides for Salesforce data quality and data cleaning. Deduplication, email validation, field standardization, enrichment, and CRM migration prep.">
 
   <link rel="canonical" href="https://veruminc.com/resources/salesforce/">
   <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
@@ -21,16 +21,16 @@
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veruminc.com/resources/salesforce/">
-  <meta property="og:title" content="Salesforce Data Quality Guides | Verum">
-  <meta property="og:description" content="Practical guides for cleaning, enriching, and auditing Salesforce CRM data.">
+  <meta property="og:title" content="Salesforce Data Guides: Cleanup, Enrichment & Standardization">
+  <meta property="og:description" content="Practical guides for Salesforce data quality and data cleaning.">
   <meta property="og:site_name" content="Verum">
   <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Salesforce Data Quality Guides | Verum">
-  <meta name="twitter:description" content="Practical guides for cleaning, enriching, and auditing Salesforce CRM data.">
+  <meta name="twitter:title" content="Salesforce Data Guides: Cleanup, Enrichment & Standardization">
+  <meta name="twitter:description" content="Practical guides for Salesforce data quality and data cleaning.">
   <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
@@ -55,25 +55,55 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
       {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
-      {"@type": "ListItem", "position": 3, "name": "Salesforce Guides"}
+      {"@type": "ListItem", "position": 3, "name": "Salesforce"}
     ]
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Salesforce Data Quality Guides",
-    "description": "Practical guides for cleaning, enriching, and auditing Salesforce CRM data.",
-    "url": "https://veruminc.com/resources/salesforce/",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Verum",
-      "url": "https://veruminc.com"
+  <style>
+    .guides-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
-  }
-  </script>
+    @media (min-width: 640px) {
+      .guides-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .guides-grid a {
+      display: block;
+      padding: 1.25rem 1.5rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      color: var(--color-text-primary);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+    .guides-grid a span {
+      display: block;
+      color: var(--color-text-secondary);
+      font-weight: 400;
+      font-size: 0.8125rem;
+      margin-top: 0.375rem;
+    }
+    .guides-grid a:hover {
+      border-color: var(--color-teal);
+      color: var(--color-teal);
+      transform: translateY(-2px);
+    }
+    .category-section {
+      margin-bottom: 3rem;
+    }
+    .category-section h2 {
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+  </style>
 </head>
 <body>
   <header id="site-header"></header>
@@ -88,90 +118,105 @@
     </nav>
   </noscript>
 
-  <section class="page-hero">
-    <div class="container">
-      <h1 class="page-hero__title">Salesforce Data Quality Guides</h1>
-      <p class="page-hero__subtitle">Practical guides for cleaning, enriching, and maintaining your Salesforce CRM data. Written by a former Salesforce employee who's seen these problems from the inside.</p>
-    </div>
-  </section>
-
-  <section class="content">
-    <div class="container" style="max-width: 900px;">
-
-      <div class="blog-grid">
-        <article class="blog-card">
-          <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
-          <h2 class="blog-card__title"><a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data: The Complete Guide</a></h2>
-          <p class="blog-card__excerpt">Your Salesforce instance has years of accumulated data problems. Here's how to systematically clean it up.</p>
-          <p class="blog-card__meta">12 min read</p>
-        </article>
-
-        <article class="blog-card">
-          <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
-          <h2 class="blog-card__title"><a href="/resources/salesforce-duplicate-contacts.html">How to Find and Merge Duplicate Contacts in Salesforce</a></h2>
-          <p class="blog-card__excerpt">Duplicates waste sales time, mess up reporting, and make automation unreliable. Here's how to fix them.</p>
-          <p class="blog-card__meta">10 min read</p>
-        </article>
-
-        <article class="blog-card">
-          <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
-          <h2 class="blog-card__title"><a href="/resources/salesforce-email-validation.html">How to Validate Email Addresses in Salesforce</a></h2>
-          <p class="blog-card__excerpt">Bad emails destroy deliverability and waste sales time. Here's how to validate and keep your database clean.</p>
-          <p class="blog-card__meta">9 min read</p>
-        </article>
-
-        <article class="blog-card">
-          <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
-          <h2 class="blog-card__title"><a href="/resources/salesforce-data-enrichment.html">How to Enrich Salesforce Records Without ZoomInfo</a></h2>
-          <p class="blog-card__excerpt">ZoomInfo costs $30K+/year. Here are practical alternatives for enriching your contacts and accounts.</p>
-          <p class="blog-card__meta">10 min read</p>
-        </article>
-
-        <article class="blog-card">
-          <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
-          <h2 class="blog-card__title"><a href="/resources/salesforce-data-quality-audit.html">How to Audit Your Salesforce Data Quality</a></h2>
-          <p class="blog-card__excerpt">You suspect your CRM data has problems, but how bad is it? Here's how to run a full audit.</p>
-          <p class="blog-card__meta">10 min read</p>
-        </article>
-
-        <article class="blog-card">
-          <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
-          <h2 class="blog-card__title"><a href="/resources/salesforce-job-title-standardization.html">How to Standardize Job Titles in Salesforce</a></h2>
-          <p class="blog-card__excerpt">VP Sales, Vice President of Sales, Sales VP. Here's how to standardize so routing and reporting work.</p>
-          <p class="blog-card__meta">8 min read</p>
-        </article>
-
-        <article class="blog-card">
-          <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
-          <h2 class="blog-card__title"><a href="/resources/salesforce-company-name-normalization.html">How to Normalize Company Names in Salesforce</a></h2>
-          <p class="blog-card__excerpt">Acme Corp, ACME, Acme Inc. Same company, four records. Here's how to normalize for deduplication.</p>
-          <p class="blog-card__meta">9 min read</p>
-        </article>
-
-        <article class="blog-card">
-          <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
-          <h2 class="blog-card__title"><a href="/resources/crm-migration-data-cleanup.html">Switching CRMs? Clean Your Data First</a></h2>
-          <p class="blog-card__excerpt">Migrating to a new CRM is the perfect time to clean your data. Don't bring your mess with you.</p>
-          <p class="blog-card__meta">11 min read</p>
-        </article>
-
-        <article class="blog-card">
-          <span class="blog-card__category blog-card__category--salesforce">Salesforce</span>
-          <h2 class="blog-card__title"><a href="/resources/salesforce-vs-hubspot-data-quality.html">Salesforce vs HubSpot: Data Quality Comparison</a></h2>
-          <p class="blog-card__excerpt">Each platform handles data quality differently. Here's what matters for your CRM decision.</p>
-          <p class="blog-card__meta">10 min read</p>
-        </article>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Salesforce Data Guides</h1>
+        <p class="page-hero__subtitle">Cleanup, enrichment, and standardization for your Salesforce org. These guides cover the most common data quality problems we see, from duplicate contacts to field standardization to pre-migration cleanup.</p>
       </div>
+    </section>
 
-      <div class="text-center mt-xl">
-        <p class="text-muted">Need help cleaning your Salesforce data? <a href="/#contact">Get a free assessment</a>.</p>
-        <p class="text-muted" style="margin-top: var(--space-sm);"><a href="/resources/">← All Resources</a> | <a href="/resources/hubspot/">HubSpot Guides</a></p>
+    <section class="section">
+      <div class="container">
+
+        <div class="category-section">
+          <h2>Data Cleaning</h2>
+          <div class="guides-grid">
+            <a href="/resources/how-to-clean-salesforce-data.html">
+              How to Clean Salesforce Data: The Complete Guide
+              <span>Duplicates, bad emails, stale contacts, inconsistent formatting. Step-by-step cleanup process.</span>
+            </a>
+            <a href="/resources/salesforce-data-quality-audit.html">
+              How to Audit Your Salesforce Data Quality
+              <span>Measure completeness, accuracy, consistency, and timeliness with specific metrics and benchmarks.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="category-section">
+          <h2>Deduplication</h2>
+          <div class="guides-grid">
+            <a href="/resources/salesforce-duplicate-contacts.html">
+              How to Find and Merge Duplicate Contacts
+              <span>Find duplicates with native tools or third-party apps, merge without losing data, and prevent recurrence.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="category-section">
+          <h2>Enrichment</h2>
+          <div class="guides-grid">
+            <a href="/resources/salesforce-data-enrichment.html">
+              How to Enrich Salesforce Data
+              <span>Fill missing fields with firmographic, contact, and technographic data from external sources.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="category-section">
+          <h2>Standardization</h2>
+          <div class="guides-grid">
+            <a href="/resources/salesforce-company-name-normalization.html">
+              Company Name Normalization in Salesforce
+              <span>Standardize company names to fix deduplication, reporting, and ABM targeting.</span>
+            </a>
+            <a href="/resources/salesforce-job-title-standardization.html">
+              Job Title Standardization in Salesforce
+              <span>Map VP, Director, Chief to seniority levels. Formula fields, Flow rules, and Apex examples.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="category-section">
+          <h2>Validation</h2>
+          <div class="guides-grid">
+            <a href="/resources/salesforce-email-validation.html">
+              How to Validate Email Addresses in Salesforce
+              <span>Find and fix bad emails before they damage your sender reputation and waste outreach.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="category-section">
+          <h2>Migration</h2>
+          <div class="guides-grid">
+            <a href="/resources/crm-migration-data-cleanup.html">
+              Switching CRMs? Clean Your Data First
+              <span>How to prepare your data for a CRM migration without bringing your mess with you.</span>
+            </a>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="section section--alt">
+      <div class="container text-center">
+        <h2>Need help with your Salesforce data?</h2>
+        <p class="mb-lg" style="max-width: 600px; margin-left: auto; margin-right: auto;">Send us a sample and we'll show you exactly what's wrong with your data and how to fix it.</p>
+        <a href="/contact.html" class="btn btn--primary btn--lg">Get a Free Assessment</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="mt-lg text-muted">Related: <a href="/resources/">All Resources</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a> | <a href="/services/data-enrichment.html">Data Enrichment Services</a> | <a href="/use-cases/crm-hygiene/">CRM Hygiene</a></p>
+      </div>
+    </section>
+  </main>
 
   <footer id="site-footer"></footer>
+
   <script src="/js/components.js"></script>
   <script src="/js/main.js"></script>
 </body>
