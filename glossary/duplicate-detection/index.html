@@ -1,131 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://veruminc.com/glossary/duplicate-detection/">
-    <title>What Is Duplicate Detection? | Verum</title>
-    <meta name="description" content="Duplicate detection identifies records in your database that represent the same person or company. Learn matching techniques and how to prevent duplicates.">
-
-    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
-    <meta name="theme-color" content="#00b894">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles.css?v=6">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R416JZ91B1');</script>
-    <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","uzzgoxxnof");</script>
-
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="What Is Duplicate Detection? | Verum">
-    <meta property="og:description" content="Duplicate detection identifies records in your database that represent the same person or company. Learn matching techniques and how to prevent duplicates.">
-    <meta property="og:url" content="https://veruminc.com/glossary/duplicate-detection/">
-    <meta property="og:site_name" content="Verum">
-    <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="What Is Duplicate Detection? | Verum">
-    <meta name="twitter:description" content="Duplicate detection identifies records in your database that represent the same person or company. Learn matching techniques and how to prevent duplicates.">
-    <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://veruminc.com/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Glossary",
-        "item": "https://veruminc.com/glossary/"
-      },{
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Duplicate Detection"
-      }]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "DefinedTerm",
-      "name": "Duplicate Detection",
-      "description": "Duplicate detection identifies records in your database that represent the same person or company. Learn matching techniques and how to prevent duplicates.",
-      "inDefinedTermSet": "https://veruminc.com/glossary/"
-    }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Duplicate Detection?</title>
+  <meta name="description" content="Identifying records in a database that represent the same entity, even when fields don&#39;t match exactly.">
+  <link rel="canonical" href="https://veruminc.com/glossary/duplicate-detection/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/glossary/duplicate-detection/">
+  <meta property="og:title" content="What Is Duplicate Detection?">
+  <meta property="og:description" content="Identifying records in a database that represent the same entity, even when fields don&#39;t match exactly.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Is Duplicate Detection?">
+  <meta name="twitter:description" content="Identifying records in a database that represent the same entity, even when fields don&#39;t match exactly.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://veruminc.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Glossary",
+            "item": "https://veruminc.com/glossary/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Duplicate Detection"
+        }
+    ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Duplicate Detection",
+    "description": "Identifying records in a database that represent the same entity, even when fields don't match exactly.",
+    "inDefinedTermSet": "https://veruminc.com/glossary/"
+}
+  </script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is duplicate detection?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Identifying records in a database that represent the same entity, even when fields don't match exactly."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why does duplicate detection matter for B2B teams?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "B2B data decays at 30% per year. Without duplicate detection, your database loses accuracy every month. Clean, complete data drives better targeting, higher conversion rates, and more accurate reporting. The average cost of poor data quality is $15M per year for large organizations."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How does Verum help with duplicate detection?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We handle duplicate detection as part of our data cleaning and enrichment services. Send us your data, and we'll apply duplicate detection best practices using 50+ sources with human QA. Most projects complete in 24-48 hours."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
-    <noscript>
-        <nav style="padding: 1rem; background: #f5f5f5; text-align: center;">
-            <a href="/" style="margin: 0 1rem;">Home</a>
-            <a href="/services/" style="margin: 0 1rem;">Services</a>
-            <a href="/resources/" style="margin: 0 1rem;">Resources</a>
-            <a href="/#contact" style="margin: 0 1rem;">Contact</a>
-        </nav>
-    </noscript>
-
-    <header id="site-header"></header>
-
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+  <main>
     <section class="page-hero">
-        <div class="container">
-            <h1>Duplicate Detection</h1>
-        </div>
+      <div class="container">
+        <h1 class="page-hero__title">Duplicate Detection</h1>
+        <p class="page-hero__subtitle">Identifying records in a database that represent the same entity, even when fields don't match exactly.</p>
+      </div>
     </section>
-
     <section class="content">
-        <div class="container" style="max-width: 800px;">
-            <p><strong>Duplicate detection</strong> identifies records in your database that represent the same person, company, or entity. It goes beyond exact matching (same email = same person) to fuzzy matching that catches near-duplicates: "Robert Smith" vs "Bob Smith," "Acme Corp" vs "Acme Corporation," or two records with different emails but the same phone number. Detection is the first step; merging or resolving the duplicates is the second.</p>
+      <div class="container" style="max-width: 800px;">
+        <h2>Definition</h2>
+        <p><strong>Duplicate Detection</strong> is identifying records in a database that represent the same entity, even when fields don't match exactly.</p>
 
-            <h2>Why It Matters</h2>
-            <p>The average CRM contains 10-25% duplicate records. Every duplicate means reps might call the same person twice, marketing sends redundant emails, pipeline reports are inflated, and customer 360 views are fragmented. One company discovered their pipeline was overstated by $2M because 400 opportunities were duplicated across territories. Duplicates also break automation: a lead enters two nurture streams simultaneously and gets conflicting messages.</p>
+        <h2>Why It Matters</h2>
+        <p>B2B databases decay at 30% per year. Without proper attention to duplicate detection, your CRM loses accuracy every quarter. Gartner estimates the average cost of poor data quality at $15 million per year for large organizations. Even for smaller teams, the impact shows up in bounced emails, misrouted leads, and wasted selling time.</p>
+        <p>Duplicate Detection directly affects your team's ability to target the right accounts, personalize outreach, and report accurately. When this area of your data strategy breaks down, everything downstream, from lead scoring to pipeline forecasting, produces unreliable results.</p>
 
-            <h2>Detection Techniques</h2>
-            <ul>
-                <li><strong>Exact matching:</strong> Compare emails, phone numbers, or other unique identifiers for identical values</li>
-                <li><strong>Fuzzy name matching:</strong> Use algorithms like Levenshtein distance, Soundex, or Jaro-Winkler to catch spelling variations and nicknames</li>
-                <li><strong>Company normalization:</strong> Standardize company names before matching so 'Acme Inc' and 'ACME Corporation' get caught</li>
-                <li><strong>Cross-field matching:</strong> Different email but same phone? Different name but same LinkedIn URL? Match across multiple fields for higher confidence</li>
-                <li><strong>Confidence scoring:</strong> Score each potential match. Auto-merge high-confidence pairs and flag low-confidence for human review</li>
-            </ul>
+        <h2>How It Works</h2>
+        <p>Duplicate Detection involves several steps depending on your specific data challenges. At a high level:</p>
+        <ul>
+            <li><strong>Assessment:</strong> Analyze your current data to identify gaps, inconsistencies, and quality issues related to duplicate detection.</li>
+            <li><strong>Processing:</strong> Apply the relevant techniques, whether that's enrichment from external sources, validation against reference data, or normalization to standard formats.</li>
+            <li><strong>Verification:</strong> Cross-reference results against multiple sources and apply human QA to catch edge cases that automated processes miss.</li>
+            <li><strong>Delivery:</strong> Return cleaned, enriched data to your CRM in a format ready for immediate use.</li>
+            <li><strong>Maintenance:</strong> Schedule periodic refreshes to prevent data decay from undoing the improvements.</li>
+        </ul>
 
-            <h3>Example</h3>
-            <p>A database scan of 60,000 contacts finds 7,200 potential duplicate pairs. 4,800 are high-confidence (same email or phone) and merge automatically. 2,400 are medium-confidence (similar name + same company) and go to a review queue. An analyst confirms 1,900 are real duplicates and rejects 500 that are different people with similar names.</p>
+        <h2>Example</h2>
+        <p>Your CRM has 50,000 records. After applying duplicate detection, you discover that 15% need attention. Fixing those 7,500 records before your next campaign prevents bounces, misroutes, and wasted spend.</p>
 
-            <h3>Related Terms</h3>
-            <ul>
+        <h2>Common Mistakes</h2>
+        <ul>
+            <li><strong>Treating it as a one-time project.</strong> Data decays continuously. A one-time effort buys you a few months of clean data, then quality degrades right back to where it started.</li>
+            <li><strong>Relying on a single data source.</strong> No single vendor has complete or perfectly accurate data. Cross-referencing 50+ sources produces significantly better results than relying on one.</li>
+            <li><strong>Skipping human QA.</strong> Automated processes handle 90% of cases well. The remaining 10%, the edge cases and ambiguous matches, need human review to prevent errors from entering your database.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-section">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What is duplicate detection?</h3>
+            <p style="color: var(--color-text-secondary);">Identifying records in a database that represent the same entity, even when fields don't match exactly.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Why does duplicate detection matter for B2B teams?</h3>
+            <p style="color: var(--color-text-secondary);">B2B data decays at 30% per year. Without duplicate detection, your database loses accuracy every month. Clean, complete data drives better targeting, higher conversion rates, and more accurate reporting.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How does Verum help with duplicate detection?</h3>
+            <p style="color: var(--color-text-secondary);">We handle duplicate detection as part of our data cleaning and enrichment services. Send us your data, and we'll apply best practices using 50+ sources with human QA. Most projects complete in 24-48 hours.</p>
+          </div>
+        </div>
+
+        <h2>Related Terms</h2>
+        <ul>
                 <li><a href="/glossary/data-deduplication/">Data Deduplication</a></li>
                 <li><a href="/glossary/fuzzy-matching/">Fuzzy Matching</a></li>
                 <li><a href="/glossary/record-matching/">Record Matching</a></li>
-            </ul>
+        </ul>
 
-            <h3>Related Resources</h3>
-            <ul>
-                <li><a href="/cleaning/duplicate-detection/">Duplicate Detection Service</a></li>
-                <li><a href="/validation/duplicate-detection/">Duplicate Detection Validation</a></li>
-                <li><a href="/resources/salesforce-duplicate-contacts.html">Salesforce Duplicate Contacts</a></li>
-            </ul>
-
-            <div class="cta-box" style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
-                <h3>How many duplicates are hiding in your CRM?</h3>
-                <p>We'll scan your database, find the duplicates, and merge them into clean, consolidated records.</p>
-                <a href="/#contact" class="btn btn-primary">See What We'll Find</a>
-            </div>
+        <div class="cta-group mt-xl">
+          <a href="/#contact" class="btn btn--secondary btn--lg">Get Free Assessment</a>
+          <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
         </div>
-    </section>
 
-    <footer id="site-footer"></footer>
-    <script src="/js/components.js"></script>
+        <p class="mt-lg text-muted">Related: <a href="/glossary/">All Glossary Terms</a> | <a href="/services/data-enrichment.html">Enrichment Services</a> | <a href="/services/data-cleaning.html">Cleaning Services</a></p>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

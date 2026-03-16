@@ -1,304 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://veruminc.com/glossary/data-deduplication/">
-    <title>Data Deduplication: How to Find and Merge Duplicate Records</title>
-    <meta name="description" content="Learn how to deduplicate customer data in your CRM. Covers matching types, merge strategies, and common mistakes in CRM deduplication.">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
-    <meta name="theme-color" content="#00b894">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="/css/styles.css?v=6">
-
-    <!-- Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R416JZ91B1');</script>
-    <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","uzzgoxxnof");</script>
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Data Deduplication: How to Find and Merge Duplicate Records">
-    <meta property="og:description" content="Learn how to deduplicate customer data in your CRM. Covers matching types, merge strategies, and common mistakes in CRM deduplication.">
-    <meta property="og:url" content="https://veruminc.com/glossary/data-deduplication/">
-    <meta property="og:site_name" content="Verum">
-    <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Data Deduplication: How to Find and Merge Duplicate Records">
-    <meta name="twitter:description" content="Learn how to deduplicate customer data in your CRM. Covers matching types, merge strategies, and common mistakes in CRM deduplication.">
-    <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
-
-    <!-- Schema.org Breadcrumbs -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://veruminc.com/"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Glossary",
-        "item": "https://veruminc.com/glossary/"
-      },{
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Data Deduplication"
-      }]
-    }
-    </script>
-
-    <!-- Schema.org DefinedTerm -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "DefinedTerm",
-      "name": "Data Deduplication",
-      "description": "The process of identifying and removing duplicate records from a database to improve data quality and prevent redundant outreach.",
-      "inDefinedTermSet": "https://veruminc.com/glossary/"
-    }
-    </script>
-
-    <!-- Schema.org FAQPage -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Is Data Deduplication?</title>
+  <meta name="description" content="The process of identifying and removing or merging duplicate records within a database.">
+  <link rel="canonical" href="https://veruminc.com/glossary/data-deduplication/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/glossary/data-deduplication/">
+  <meta property="og:title" content="What Is Data Deduplication?">
+  <meta property="og:description" content="The process of identifying and removing or merging duplicate records within a database.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Is Data Deduplication?">
+  <meta name="twitter:description" content="The process of identifying and removing or merging duplicate records within a database.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
         {
-          "@type": "Question",
-          "name": "How many duplicate records does a typical CRM have?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most B2B CRMs have between 10% and 30% duplicate records. The rate depends on how many data sources feed into the system, whether duplicate-prevention rules are in place, and how long the database has been accumulating records. Databases that pull from multiple integrations, web forms, and manual entry tend to be on the higher end."
-          }
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://veruminc.com/"
         },
         {
-          "@type": "Question",
-          "name": "What is the difference between exact matching and fuzzy matching?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Exact matching finds records where a specific field is identical, like two contacts sharing the same email address. Fuzzy matching catches near-duplicates where the data is similar but not identical, such as 'Robert Smith' versus 'Bob Smith' or 'Acme Corp' versus 'Acme Corporation.' Fuzzy matching uses algorithms like Levenshtein distance, Jaro-Winkler, or phonetic encoding (Soundex, Metaphone) to score how similar two values are."
-          }
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Glossary",
+            "item": "https://veruminc.com/glossary/"
         },
         {
-          "@type": "Question",
-          "name": "Can I deduplicate my CRM without losing data?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, but it requires careful merge logic. The standard approach is to designate one record as the 'master' and pull in any non-empty fields from the duplicate before deleting it. Activity history, notes, and associated deals should transfer to the surviving record. Always export a backup before running any merge operation, and test your merge rules on a small batch first."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How often should I deduplicate my database?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Run a full deduplication pass at least quarterly. If your database has high-volume inbound sources like web forms, event imports, or third-party integrations, monthly is better. The real fix is combining periodic bulk dedup with real-time prevention rules that catch duplicates at the point of entry."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I deduplicate manually or use a service?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "For databases under 5,000 records, manual deduplication in your CRM's built-in tools is often sufficient. Above that, the volume of potential matches makes manual review impractical. A professional service or dedicated dedup tool can process tens of thousands of records in hours, apply consistent merge logic, and set up prevention rules so the problem doesn't come back."
-          }
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Data Deduplication"
         }
-      ]
-    }
-    </script>
+    ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    "name": "Data Deduplication",
+    "description": "The process of identifying and removing or merging duplicate records within a database.",
+    "inDefinedTermSet": "https://veruminc.com/glossary/"
+}
+  </script>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is data deduplication?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The process of identifying and removing or merging duplicate records within a database."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why does data deduplication matter for B2B teams?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "B2B data decays at 30% per year. Without data deduplication, your database loses accuracy every month. Clean, complete data drives better targeting, higher conversion rates, and more accurate reporting. The average cost of poor data quality is $15M per year for large organizations."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How does Verum help with data deduplication?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We handle data deduplication as part of our data cleaning and enrichment services. Send us your data, and we'll apply data deduplication best practices using 50+ sources with human QA. Most projects complete in 24-48 hours."
+            }
+        }
+    ]
+}
+  </script>
 </head>
 <body>
-    <noscript>
-        <nav style="padding: 1rem; background: #f5f5f5; text-align: center;">
-            <a href="/" style="margin: 0 1rem;">Home</a>
-            <a href="/services/" style="margin: 0 1rem;">Services</a>
-            <a href="/resources/" style="margin: 0 1rem;">Resources</a>
-            <a href="/#contact" style="margin: 0 1rem;">Contact</a>
-        </nav>
-    </noscript>
-
-    <header id="site-header"></header>
-
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+  <main>
     <section class="page-hero">
-        <div class="container">
-            <h1>Data Deduplication: How to Find and Merge Duplicate Records</h1>
-        </div>
+      <div class="container">
+        <h1 class="page-hero__title">Data Deduplication</h1>
+        <p class="page-hero__subtitle">The process of identifying and removing or merging duplicate records within a database.</p>
+      </div>
     </section>
-
     <section class="content">
-        <div class="container" style="max-width: 800px;">
+      <div class="container" style="max-width: 800px;">
+        <h2>Definition</h2>
+        <p><strong>Data Deduplication</strong> is the process of identifying and removing or merging duplicate records within a database.</p>
 
-            <p><strong>Data deduplication</strong> is the process of identifying duplicate records in a CRM or database and merging them into single, accurate entries. It involves matching records by shared fields like email, phone, or company name, then consolidating the best data from each duplicate into one surviving record while discarding the rest.</p>
+        <h2>Why It Matters</h2>
+        <p>B2B databases decay at 30% per year. Without proper attention to data deduplication, your CRM loses accuracy every quarter. Gartner estimates the average cost of poor data quality at $15 million per year for large organizations. Even for smaller teams, the impact shows up in bounced emails, misrouted leads, and wasted selling time.</p>
+        <p>Data Deduplication directly affects your team's ability to target the right accounts, personalize outreach, and report accurately. When this area of your data strategy breaks down, everything downstream, from lead scoring to pipeline forecasting, produces unreliable results.</p>
 
-            <p>If you've ever pulled a report and noticed the same person listed three times with slightly different names, you already know the problem. Duplicates don't just clutter your database. They actively mislead your team. Pipeline looks bigger than it is. Reps step on each other's accounts. Marketing blasts the same person twice in one week. The downstream effects compound fast.</p>
+        <h2>How It Works</h2>
+        <p>Data Deduplication involves several steps depending on your specific data challenges. At a high level:</p>
+        <ul>
+            <li><strong>Assessment:</strong> Analyze your current data to identify gaps, inconsistencies, and quality issues related to data deduplication.</li>
+            <li><strong>Processing:</strong> Apply the relevant techniques, whether that's enrichment from external sources, validation against reference data, or normalization to standard formats.</li>
+            <li><strong>Verification:</strong> Cross-reference results against multiple sources and apply human QA to catch edge cases that automated processes miss.</li>
+            <li><strong>Delivery:</strong> Return cleaned, enriched data to your CRM in a format ready for immediate use.</li>
+            <li><strong>Maintenance:</strong> Schedule periodic refreshes to prevent data decay from undoing the improvements.</li>
+        </ul>
 
-            <div class="cta-box" style="margin-top: var(--space-xl); padding: var(--space-xl); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
-                <h3>Want to know how many duplicates you have?</h3>
-                <p>Send us an export. We'll run a duplicate analysis and show you exactly what's in there.</p>
-                <a href="/#contact" class="btn btn-primary">Get a Free Duplicate Audit</a>
-            </div>
+        <h2>Example</h2>
+        <p>Your CRM has 50,000 records. After applying data deduplication, you discover that 15% need attention. Fixing those 7,500 records before your next campaign prevents bounces, misroutes, and wasted spend.</p>
 
-            <h2>Why Duplicates Form in the First Place</h2>
+        <h2>Common Mistakes</h2>
+        <ul>
+            <li><strong>Treating it as a one-time project.</strong> Data decays continuously. A one-time effort buys you a few months of clean data, then quality degrades right back to where it started.</li>
+            <li><strong>Relying on a single data source.</strong> No single vendor has complete or perfectly accurate data. Cross-referencing 50+ sources produces significantly better results than relying on one.</li>
+            <li><strong>Skipping human QA.</strong> Automated processes handle 90% of cases well. The remaining 10%, the edge cases and ambiguous matches, need human review to prevent errors from entering your database.</li>
+        </ul>
 
-            <p>Duplicates rarely happen because someone made a mistake. They happen because of how modern CRMs collect data from multiple sources simultaneously.</p>
-
-            <h3>CSV imports without dedup checks</h3>
-            <p>Someone uploads a conference attendee list or a purchased contact list. The CRM creates new records for everyone, even if half of them already exist. Most import tools don't check for duplicates by default, or they only match on exact email, which misses a lot.</p>
-
-            <h3>Web forms creating new contacts</h3>
-            <p>A prospect fills out your demo form using their work email. Three months later they download a whitepaper using a personal Gmail. That's two records for one person, and your CRM has no way to know they're the same human.</p>
-
-            <h3>Integration sync issues</h3>
-            <p>Your marketing automation platform syncs contacts to your CRM. Your sales engagement tool does the same. Your support ticketing system pushes customer data over. Each integration creates records independently. If the email format differs even slightly between systems, you get duplicates.</p>
-
-            <h3>Manual entry by sales reps</h3>
-            <p>A rep meets someone at a trade show and creates a new contact. They don't search first, or they search by last name and don't find "Bob" because the existing record says "Robert." Now you've got two records that'll live side by side until someone catches it.</p>
-
-            <p>Most databases accumulate duplicates at a rate of 10&#8209;30% over time. The more data sources feeding into the system, the faster the rate climbs.</p>
-
-            <h2>Types of Duplicate Matching</h2>
-
-            <p>Not all duplicates are obvious. Finding them requires different matching strategies depending on how messy the data is.</p>
-
-            <h3>Exact matching</h3>
-            <p>The simplest approach. Two records share an identical value in a key field like email address, phone number, or company domain. If john@acme.com appears on two contact records, that's a match. Exact matching is fast and reliable, but it only catches the easy ones.</p>
-
-            <h3>Fuzzy matching</h3>
-            <p>This is where it gets interesting. Fuzzy matching uses algorithms to score how similar two field values are, even when they're not identical. "Acme Corporation" and "Acme Corp" aren't an exact match, but a fuzzy algorithm like Jaro&#8209;Winkler or Levenshtein distance will flag them as a probable duplicate. Same with "123 Main St" vs "123 Main Street." Fuzzy matching catches the bulk of duplicates that exact matching misses.</p>
-
-            <h3>Phonetic matching</h3>
-            <p>Algorithms like Soundex and Metaphone encode names by how they sound rather than how they're spelled. "Smith" and "Smyth" get the same phonetic code. "Catherine" and "Katherine" do too. Phonetic matching is especially useful for name fields where the same person might be entered with different spellings.</p>
-
-            <h3>Composite matching</h3>
-            <p>The most effective dedup processes combine multiple match types. You might run exact matching on email, fuzzy matching on company name, and phonetic matching on contact name, then score each potential duplicate pair based on how many criteria they hit. A match on email alone is high confidence. A match on name plus company plus city, but different email, is still worth reviewing.</p>
-
-            <h2>The Deduplication Process, Step by Step</h2>
-
-            <p>Whether you're cleaning up 5,000 records or 500,000, the process follows the same basic sequence.</p>
-
-            <p><strong>Step 1: Export and backup.</strong> Before you touch anything, pull a full export of your database. Store it somewhere safe. Dedup operations involve deleting records, and you want a safety net if something goes wrong.</p>
-
-            <p><strong>Step 2: Define your match keys.</strong> Decide which fields to match on. Email is the strongest single key for contacts. For companies, domain name works well. You'll typically use a combination: email + last name, or company domain + company name.</p>
-
-            <p><strong>Step 3: Run matching.</strong> Process your records through exact, fuzzy, and phonetic matching. This produces a list of potential duplicate pairs, each with a confidence score.</p>
-
-            <p><strong>Step 4: Review and confirm.</strong> High&#8209;confidence pairs (exact email match) can usually be auto&#8209;merged. Lower&#8209;confidence pairs need a human to look at them. "John Smith at Acme" and "J. Smith at Acme Inc" are probably the same person. "John Smith at Acme" and "John Smith at Apex" probably aren't.</p>
-
-            <p><strong>Step 5: Merge.</strong> For each confirmed duplicate set, designate one record as the master. Pull in any non&#8209;empty fields from the duplicate. Transfer activity history, notes, deals, and tasks to the surviving record. Then delete the duplicate.</p>
-
-            <p><strong>Step 6: Set up prevention.</strong> Dedup is pointless if you don't stop new duplicates from forming. Configure duplicate detection rules in your CRM, add validation logic to web forms, and establish import procedures that include a dedup check.</p>
-
-            <h2>Common Mistakes That Make Dedup Worse</h2>
-
-            <p>Deduplication sounds straightforward. But the ways it goes wrong are surprisingly consistent.</p>
-
-            <p><strong>Merging without reviewing.</strong> Auto&#8209;merging everything above a certain confidence threshold sounds efficient until you merge two different people named "David Chen" who happen to work at companies with similar names. False positives in dedup destroy real data. Always human&#8209;review anything below a high&#8209;confidence threshold.</p>
-
-            <p><strong>Losing activity history.</strong> The whole point of merging is to get a complete picture. If your merge process deletes the duplicate without transferring its notes, emails, tasks, and deal associations to the surviving record, you've lost context your team needs. Check that your merge logic handles associated objects, not just field values.</p>
-
-            <p><strong>Deduping once and calling it done.</strong> A one&#8209;time cleanup is nice. But if you don't fix the sources creating duplicates, you'll be back in the same spot in six months. Prevention rules, import checks, and form validation need to go in alongside the cleanup.</p>
-
-            <p><strong>Matching on the wrong fields.</strong> Using first name + last name as your primary match key will generate massive false&#8209;positive rates. There are a lot of people named "Mike Johnson" in the world. Match keys need to be specific enough to minimize false positives while broad enough to catch real duplicates. Email plus name is a better starting point than name alone.</p>
-
-            <h2>Manual Dedup vs. Professional Service</h2>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Manual / DIY</th>
-                        <th>Professional Service</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Use built&#8209;in CRM dedup tools (Salesforce, HubSpot)</td>
-                        <td>Custom matching logic tuned to your data</td>
-                    </tr>
-                    <tr>
-                        <td>Exact matching only in most cases</td>
-                        <td>Exact + fuzzy + phonetic + composite</td>
-                    </tr>
-                    <tr>
-                        <td>Manual review of every potential match</td>
-                        <td>Auto&#8209;merge high confidence, human review on edge cases</td>
-                    </tr>
-                    <tr>
-                        <td>Hours of clicking for large databases</td>
-                        <td>Bulk processing in 24&#8209;48 hours</td>
-                    </tr>
-                    <tr>
-                        <td>No prevention rules set up after</td>
-                        <td>Prevention rules configured to stop future dupes</td>
-                    </tr>
-                    <tr>
-                        <td>Works for under 5,000 records</td>
-                        <td>Scales to hundreds of thousands of records</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>Frequently Asked Questions</h2>
-
-            <div class="faq-section">
-                <h3>How many duplicate records does a typical CRM have?</h3>
-                <p>Most B2B CRMs have between 10% and 30% duplicate records. The rate depends on how many data sources feed into the system, whether duplicate&#8209;prevention rules are in place, and how long the database has been accumulating records. Databases that pull from multiple integrations, web forms, and manual entry tend to be on the higher end.</p>
-
-                <h3>What's the difference between exact matching and fuzzy matching?</h3>
-                <p>Exact matching finds records where a specific field is identical, like two contacts sharing the same email address. Fuzzy matching catches near&#8209;duplicates where the data is similar but not identical, like "Robert Smith" versus "Bob Smith" or "Acme Corp" versus "Acme Corporation." Fuzzy matching uses algorithms like Levenshtein distance, Jaro&#8209;Winkler, or phonetic encoding (Soundex, Metaphone) to score how similar two values are.</p>
-
-                <h3>Can I deduplicate my CRM without losing data?</h3>
-                <p>Yes, but it requires careful merge logic. The standard approach is to designate one record as the "master" and pull in any non&#8209;empty fields from the duplicate before deleting it. Activity history, notes, and associated deals should transfer to the surviving record. Always export a backup before running any merge operation, and test your merge rules on a small batch first.</p>
-
-                <h3>How often should I deduplicate my database?</h3>
-                <p>Run a full deduplication pass at least quarterly. If your database has high&#8209;volume inbound sources like web forms, event imports, or third&#8209;party integrations, monthly is better. The real fix is combining periodic bulk dedup with real&#8209;time prevention rules that catch duplicates at the point of entry.</p>
-
-                <h3>Should I deduplicate manually or use a service?</h3>
-                <p>For databases under 5,000 records, manual dedup in your CRM's built&#8209;in tools is often sufficient. Above that, the volume of potential matches makes manual review impractical. A professional service can process tens of thousands of records in hours, apply consistent merge logic, and set up prevention rules so the problem doesn't come back.</p>
-            </div>
-
-            <div class="cta-box" style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-secondary); border-radius: var(--radius-lg);">
-                <h3>Buried in duplicate records?</h3>
-                <p>We'll dedupe your database, merge records cleanly, and set up rules to keep it that way. Most projects finish in 24&#8209;48 hours.</p>
-                <a href="/#contact" class="btn btn-primary">See What We'll Find</a>
-            </div>
-
-            <h3>Related Terms</h3>
-            <ul>
-                <li><a href="/glossary/data-enrichment/">Data Enrichment</a></li>
-                <li><a href="/glossary/data-decay/">Data Decay</a></li>
-                <li><a href="/glossary/ideal-customer-profile/">Ideal Customer Profile (ICP)</a></li>
-            </ul>
-
-            <h3>Related Resources</h3>
-            <ul>
-                <li><a href="/resources/salesforce-duplicate-contacts.html">How to Find and Merge Duplicate Contacts in Salesforce</a></li>
-                <li><a href="/resources/hubspot-duplicate-contacts.html">How to Clean Up Duplicate Contacts in HubSpot</a></li>
-                <li><a href="/use-cases/crm-hygiene/">CRM Hygiene</a></li>
-                <li><a href="/cleaning/lead-data-cleaning/">Lead Data Cleaning</a></li>
-            </ul>
-
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-section">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What is data deduplication?</h3>
+            <p style="color: var(--color-text-secondary);">The process of identifying and removing or merging duplicate records within a database.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Why does data deduplication matter for B2B teams?</h3>
+            <p style="color: var(--color-text-secondary);">B2B data decays at 30% per year. Without data deduplication, your database loses accuracy every month. Clean, complete data drives better targeting, higher conversion rates, and more accurate reporting.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How does Verum help with data deduplication?</h3>
+            <p style="color: var(--color-text-secondary);">We handle data deduplication as part of our data cleaning and enrichment services. Send us your data, and we'll apply best practices using 50+ sources with human QA. Most projects complete in 24-48 hours.</p>
+          </div>
         </div>
-    </section>
 
-    <footer id="site-footer"></footer>
-    <script src="/js/components.js"></script>
+        <h2>Related Terms</h2>
+        <ul>
+                <li><a href="/glossary/duplicate-detection/">Duplicate Detection</a></li>
+                <li><a href="/glossary/fuzzy-matching/">Fuzzy Matching</a></li>
+                <li><a href="/glossary/golden-record/">Golden Record</a></li>
+        </ul>
+
+        <div class="cta-group mt-xl">
+          <a href="/#contact" class="btn btn--secondary btn--lg">Get Free Assessment</a>
+          <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
+        </div>
+
+        <p class="mt-lg text-muted">Related: <a href="/glossary/">All Glossary Terms</a> | <a href="/services/data-enrichment.html">Enrichment Services</a> | <a href="/services/data-cleaning.html">Cleaning Services</a></p>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

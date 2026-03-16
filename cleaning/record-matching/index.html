@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Record Matching: Find & Link Related Records | Verum</title>
-  <meta name="description" content="Match and merge records across multiple data sources. Automated and human-reviewed cleanup for B2B databases. Clean data delivered in days, not weeks.">
-  <meta name="keywords" content="record matching, fuzzy record matching, entity resolution, record linkage, deterministic matching">
-
+  <title>Record Matching</title>
+  <meta name="description" content="Match and merge records across multiple data sources. Human-verified quality. 24-48hr turnaround, no contracts.">
   <link rel="canonical" href="https://veruminc.com/cleaning/record-matching/">
   <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
@@ -14,26 +12,22 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#00b894">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css?v=6">
-
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veruminc.com/cleaning/record-matching/">
-  <meta property="og:title" content="Record Matching: Find & Link Related Records | Verum">
-  <meta property="og:description" content="Match and merge records across multiple data sources. Automated and human-reviewed cleanup for B2B databases. Clean data delivered in days, not weeks.">
+  <meta property="og:title" content="Record Matching">
+  <meta property="og:description" content="Match and merge records across multiple data sources. Human-verified quality. 24-48hr turnaround, no contracts.">
   <meta property="og:site_name" content="Verum">
   <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Record Matching: Find & Link Related Records | Verum">
-  <meta name="twitter:description" content="Match and merge records across multiple data sources. Automated and human-reviewed cleanup for B2B databases. Clean data delivered in days, not weeks.">
+  <meta name="twitter:title" content="Record Matching">
+  <meta name="twitter:description" content="Match and merge records across multiple data sources. Human-verified quality. 24-48hr turnaround, no contracts.">
   <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -48,46 +42,80 @@
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "uzzgoxxnof");
   </script>
-
   <script type="application/ld+json">
-  {
+{
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
-      {"@type": "ListItem", "position": 2, "name": "Data Cleaning", "item": "https://veruminc.com/cleaning/"},
-      {"@type": "ListItem", "position": 3, "name": "Record Matching"}
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://veruminc.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Data Cleaning",
+            "item": "https://veruminc.com/cleaning/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Record Matching"
+        }
     ]
-  }
+}
   </script>
-
   <script type="application/ld+json">
-  {
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Record Matching",
+    "provider": {
+        "@id": "https://veruminc.com/#organization"
+    },
+    "description": "Match and merge records across multiple data sources",
+    "serviceType": "Data Cleaning",
+    "areaServed": "Worldwide",
+    "url": "https://veruminc.com/cleaning/record-matching/"
+}
+  </script>
+  <script type="application/ld+json">
+{
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "How is record matching different from deduplication?",
+            "name": "How long does record matching take?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Record matching identifies the connections. Deduplication merges the records. Matching tells you that these five records are the same person. Deduplication decides which fields to keep and creates the single merged record. We typically run matching first, present the results for review, and then merge approved matches."
+                "text": "Most projects complete in 24-48 hours for databases under 100,000 records. Larger databases may take 3-5 business days. We'll give you an exact timeline after reviewing your data."
             }
         },
         {
             "@type": "Question",
-            "name": "What match rate should we expect?",
+            "name": "Will merging duplicates lose any data?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "It depends on your data quality. Databases that have never been deduplicated typically have 10-30% of records that match other records. We see the highest match rates in databases that have been built from multiple sources like purchased lists, event data, and web forms over several years."
+                "text": "No. Our merge logic preserves the most complete and most recent value for every field. Before any merges execute, you review and approve the merge rules and see a preview of the results."
             }
         },
         {
             "@type": "Question",
-            "name": "Can you match records across different systems?",
+            "name": "Can I review duplicates before they're merged?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Cross-system matching is one of our most common use cases. Send us exports from Salesforce, HubSpot, your marketing platform, and your support system. We match across all of them to build a unified entity map. This is especially valuable before integrations and migrations where cross-system duplicates need to be resolved."
+                "text": "Absolutely. We provide a dedup report showing every match pair with confidence scores. You approve which pairs to merge and which to keep separate. Nothing merges without your approval."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How is this different from buying a ZoomInfo license?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Three differences. First, different problem: ZoomInfo sells net-new contacts, Verum enriches your existing records. Second, different pricing: ZoomInfo runs $15K-$50K+ per year, Verum charges per project. Third, different ownership: ZoomInfo requires data deletion when you cancel. Verum data is yours forever."
             }
         }
     ]
@@ -95,7 +123,6 @@
   </script>
 </head>
 <body>
-  <!-- Header (injected by components.js) -->
   <header id="site-header"></header>
   <noscript>
     <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
@@ -107,68 +134,154 @@
       <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
     </nav>
   </noscript>
-
-  <section class="page-hero">
-    <div class="container">
-      <h1 class="page-hero__title">Record Matching</h1>
-        <p class="page-hero__subtitle">Different records, same entity. We find the connections your CRM misses.</p>
-    </div>
-  </section>
-
-  <section class="content">
-    <div class="container" style="max-width: 800px;">
-
-<h2>Record Matching</h2>
-<p>Record matching identifies records across your database that refer to the same person, company, or entity, even when the data looks different. It uses multiple matching strategies beyond simple email or name matching to catch relationships that standard CRM duplicate detection cannot see.</p>
-
-<p>Your CRM has John Smith at Google and Jonathan Smith at Alphabet and J. Smith at google.com. These are probably the same person but your system treats them as three separate contacts. Standard matching on exact email catches none of these. You need smarter matching to unify your data.</p>
-
-<h2>Matching Methods</h2>
-<ul>
-    <li><strong>Probabilistic matching.</strong> We calculate the probability that two records refer to the same entity based on multiple field comparisons weighted by reliability. A strong email match plus a weak name match still produces a high confidence score.</li>
-    <li><strong>Transitive matching.</strong> If Record A matches Record B, and Record B matches Record C, then A and C are likely the same entity even if they do not match directly.</li>
-    <li><strong>Cross-reference matching.</strong> We match using external data sources. Two records with different emails but the same LinkedIn profile URL are the same person.</li>
-    <li><strong>Hierarchical matching.</strong> We identify parent-child relationships between companies to match contacts at subsidiaries with accounts at parent companies.</li>
-    <li><strong>Temporal matching.</strong> We account for changes over time. A contact who changed jobs and has a new email at a new company can be matched to their old record through intermediate data points.</li>
-</ul>
-
-<h2>Matching Outcomes</h2>
-<ul>
-    <li>A unified view of every entity in your database with all records linked together</li>
-    <li>Higher match rates than CRM-native duplicate detection because of multi-strategy matching</li>
-    <li>Accurate pipeline reporting because duplicate opportunities and contacts are identified</li>
-    <li>Better ABM execution because all contacts at a target account are linked to the right account</li>
-</ul>
-
-<h2>Common Questions</h2>
-<div style="max-width: 700px;">
-          <div class="faq-item" style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is record matching different from deduplication?</h3>
-            <p style="color: var(--color-text-secondary);">Record matching identifies the connections. Deduplication merges the records. Matching tells you that these five records are the same person. Deduplication decides which fields to keep and creates the single merged record. We typically run matching first, present the results for review, and then merge approved matches.</p>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Record Matching</h1>
+        <p class="page-hero__subtitle">Match and merge records across multiple data sources. Bad data costs the average company $15M per year. We fix it in 24-48 hours.</p>
+        <div class="pain-stats">
+          <div class="pain-stat">
+            <span class="pain-stat__number">25%</span>
+            <span class="pain-stat__label">Avg duplicate rate in B2B databases</span>
           </div>
-          <div class="faq-item" style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What match rate should we expect?</h3>
-            <p style="color: var(--color-text-secondary);">It depends on your data quality. Databases that have never been deduplicated typically have 10-30% of records that match other records. We see the highest match rates in databases that have been built from multiple sources like purchased lists, event data, and web forms over several years.</p>
+          <div class="pain-stat">
+            <span class="pain-stat__number">27%</span>
+            <span class="pain-stat__label">Revenue impacted by bad data</span>
           </div>
-          <div class="faq-item" style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can you match records across different systems?</h3>
-            <p style="color: var(--color-text-secondary);">Yes. Cross-system matching is one of our most common use cases. Send us exports from Salesforce, HubSpot, your marketing platform, and your support system. We match across all of them to build a unified entity map. This is especially valuable before integrations and migrations where cross-system duplicates need to be resolved.</p>
+          <div class="pain-stat">
+            <span class="pain-stat__number">24&#8209;48hr</span>
+            <span class="pain-stat__label">Typical turnaround</span>
           </div>
-</div>
-
-
-
-      <div class="text-center mt-xl">
-        <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
+        </div>
+        <div class="hero-cta-group">
+          <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
+          <a href="/#contact" class="btn btn--secondary btn--lg">Get Free Assessment</a>
+        </div>
       </div>
-    
-      <p class="mt-lg text-muted">Related: <a href="/cleaning/">All Data Cleaning</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a> | <a href="/cleaning/data-quality-management/">Data Quality Management</a> | <a href="/cleaning/company-name-standardization/">Company Name Standardization</a></p>
-    </div>
-  </section>
+    </section>
+    <section class="content">
+      <div class="container" style="max-width: 800px;">
+        <h2>The Duplicate Records Problem</h2>
+        <p>B2B databases have 25% duplicate records on average. That means a quarter of your CRM is noise. Reps call the same prospect twice. Marketing sends the same person three emails. Reports inflate pipeline by counting the same deal under different spellings of the company name.</p>
+        <h3>Duplicates Erode Trust in Your Data</h3>
+        <p>When reps encounter duplicate records, they stop trusting the CRM. They build their own spreadsheets. They stop logging activities. The CRM becomes a reporting tool nobody believes in, and your investment in it drops in value every quarter.</p>
+        <h3>Lead Routing Breaks Down</h3>
+        <p>Duplicate leads get assigned to different reps. Two people on your team call the same prospect the same week. The prospect is confused, your reps are annoyed, and you look disorganized. D&B found that 27% of revenue is impacted by data quality issues like this.</p>
+        <h3>Marketing Metrics Become Unreliable</h3>
+        <p>Duplicates inflate list sizes, skew engagement rates, and make segmentation unreliable. If 20% of your email list is duplicates, your open rate is actually 20% higher than reported because the denominator is wrong. Every metric downstream is distorted.</p>
+        <h3>Merging Is Harder Than It Looks</h3>
+        <p>Finding duplicates is only half the problem. Merging them requires deciding which record has the best email, the most recent title, the correct phone number. Manual merge projects take weeks and introduce new errors. Automated dedup without rules loses data.</p>
 
-  <!-- Footer (injected by components.js) -->
+        <div class="text-center mt-xl">
+          <a href="/#contact" class="btn btn--secondary">See How Clean Data Transforms Operations</a>
+        </div>
+
+        <h2>How Verum Handles Record Matching</h2>
+        <p>We find, flag, and merge duplicate records across your entire database. Our matching algorithm handles spelling variations, abbreviations, and format differences that simple exact-match dedup misses. You choose the merge rules. We execute them at scale.</p>
+        <h3>Fuzzy Matching That Actually Works</h3>
+        <p>Exact-match dedup catches 'John Smith' duplicated twice. Fuzzy matching catches 'John Smith' and 'Jon Smith' and 'J. Smith' at the same company. Our algorithms use name, company, email, phone, and address data to identify duplicates that simpler tools miss.</p>
+        <p><strong>For your team:</strong> We present a dedup report showing every match pair with confidence scores before merging anything. You approve the rules. We execute at scale.</p>
+        <h3>Smart Merge Logic</h3>
+        <p>When two duplicate records have conflicting data, which email do you keep? Which phone number? Which title? We use recency, source reliability, and completeness scores to pick the best value for every field. No data loss. No guesswork.</p>
+        <h3>Human QA on Everything</h3>
+        <p>Automated dedup catches most duplicates. But edge cases (parent company vs. subsidiary, same person at two companies, shared office addresses) need human judgment. Our team reviews flagged pairs before any merge is executed.</p>
+
+        <div class="solution-stats">
+          <div class="solution-stat">
+            <span class="solution-stat__number">93%</span>
+            <span class="solution-stat__label">Deliverability guarantee</span>
+          </div>
+          <div class="solution-stat">
+            <span class="solution-stat__number">24&#8209;48hr</span>
+            <span class="solution-stat__label">Typical turnaround</span>
+          </div>
+          <div class="solution-stat">
+            <span class="solution-stat__number">50+</span>
+            <span class="solution-stat__label">Data sources</span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="/#contact" class="btn btn--primary btn--lg">Ready to Get Started?</a>
+        </div>
+
+        <h2>What Teams Do With Record Matching</h2>
+        <ul class="feature-list">
+          <li><strong>CRM accuracy.</strong> Remove duplicates before they confuse reps, distort reports, or cause embarrassing double-outreach to prospects.</li>
+          <li><strong>Pre-migration cleanup.</strong> Deduplicate before migrating to a new CRM so you start fresh instead of moving the mess.</li>
+          <li><strong>Post-import dedup.</strong> After importing a purchased list or event leads, deduplicate against your existing database to avoid duplicates.</li>
+          <li><strong>Accurate pipeline reporting.</strong> Eliminate duplicated opportunities and contacts that inflate pipeline numbers and distort forecasting.</li>
+          <li><strong>Marketing list hygiene.</strong> Remove duplicates from email lists so contacts don't receive the same campaign multiple times.</li>
+        </ul>
+
+        <h2>Getting Started Takes Less Time Than Your Average Meeting</h2>
+        <p><strong>Step 1: Free Assessment (5 minutes)</strong><br>Upload a sample file or tell us what you need. We'll review your data and tell you exactly what we can do, with expected match rates and timelines for record matching.</p>
+        <p><strong>Step 2: Discovery Call (30 minutes)</strong><br>We'll walk through your current stack, data sources, and goals. No sales pitch. Just a technical conversation about your data.</p>
+        <p><strong>Step 3: Data Analysis (on us)</strong><br>We run a free analysis on a sample of your records so you can see results before committing to anything.</p>
+        <p><strong>Step 4: Full Engagement</strong><br>Once you approve the sample results, we process your full dataset. Most projects complete in 24&#8209;48 hours.</p>
+        <p><strong>Step 5: Ongoing (if you want it)</strong><br>Data decays at 30% per year. We offer quarterly or monthly re&#8209;enrichment to keep your records current. No long&#8209;term contracts required.</p>
+
+        <h2>Why Teams Choose Verum for Record Matching</h2>
+        <ul class="feature-list">
+          <li><strong>We do the work.</strong> You don't log into a self-serve tool. Send us your data, we send it back clean.</li>
+          <li><strong>Fast turnaround.</strong> Most cleaning projects complete in 24-48 hours.</li>
+          <li><strong>Human verification.</strong> Every project gets human QA before delivery.</li>
+          <li><strong>No long-term contracts.</strong> Per-project pricing. No annual commitments required.</li>
+          <li><strong>We know record matching.</strong> We've cleaned millions of records. Our team handles the edge cases that automated tools get wrong.</li>
+        </ul>
+
+        <h2>The Old Way vs. With Verum</h2>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>The Old Way</th>
+              <th>With Verum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Manual dedup, record by record</td><td>Automated fuzzy matching across your entire database</td></tr>
+            <tr><td>Merge logic based on whoever gets there first</td><td>Smart merge rules that preserve the best data</td></tr>
+            <tr><td>Duplicates reappear after every import</td><td>Ongoing dedup catches new duplicates as they enter</td></tr>
+            <tr><td>25% of your database is noise</td><td>Clean, unique records you can trust</td></tr>
+            <tr><td>Reporting inflated by duplicate counts</td><td>Accurate metrics based on deduplicated data</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Common Questions About Record Matching</h2>
+        <div class="faq-section">
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How long does record matching take?</h3>
+            <p style="color: var(--color-text-secondary);">Most projects complete in 24-48 hours for databases under 100,000 records. Larger databases may take 3-5 business days. We'll give you an exact timeline after reviewing your data.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Will merging duplicates lose any data?</h3>
+            <p style="color: var(--color-text-secondary);">No. Our merge logic preserves the most complete and most recent value for every field. Before any merges execute, you review and approve the merge rules and see a preview of the results.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Can I review duplicates before they're merged?</h3>
+            <p style="color: var(--color-text-secondary);">Absolutely. We provide a dedup report showing every match pair with confidence scores. You approve which pairs to merge and which to keep separate. Nothing merges without your approval.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is this different from buying a ZoomInfo license?</h3>
+            <p style="color: var(--color-text-secondary);">Three differences. First, different problem: ZoomInfo sells net-new contacts, Verum enriches your existing records. Second, different pricing: ZoomInfo runs $15K-$50K+ per year, Verum charges per project. Third, different ownership: ZoomInfo requires data deletion when you cancel. Verum data is yours forever.</p>
+          </div>
+        </div>
+
+        <h2>Ready to Clean Your Data?</h2>
+        <p><strong>Not sure yet?</strong> Send us a sample. We'll run a free quality assessment showing duplicates, invalid emails, and format issues. No commitment.</p>
+        <p><strong>Ready to go?</strong> We'll have clean data back to you in 24-48 hours.</p>
+
+        <div class="cta-group mt-xl">
+          <a href="/#contact" class="btn btn--secondary btn--lg">Get Free Assessment</a>
+          <a href="/#contact" class="btn btn--primary btn--lg">Clean My Data</a>
+        </div>
+
+
+        <p class="mt-lg text-muted">Related: <a href="/cleaning/">All Cleaning</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a> | <a href="/cleaning/email-validation/">Email Validation</a> | <a href="/cleaning/crm-data-cleaning/">CRM Cleaning</a></p>
+      </div>
+    </section>
+  </main>
   <footer id="site-footer"></footer>
-
   <script src="/js/components.js"></script>
   <script src="/js/main.js"></script>
 </body>
