@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salesforce Account Hierarchy: Setup, Parent-Child & Normalization</title>
+  <meta name="description" content="How to set up Salesforce account hierarchies. Parent-child relationships, Ultimate Parent field, D-U-N-S numbers, company name normalization, and reporting.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://veruminc.com/resources/salesforce-account-hierarchy.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/salesforce-account-hierarchy.html">
+  <meta property="og:title" content="Salesforce Account Hierarchy: Setup, Parent-Child & Normalization">
+  <meta property="og:description" content="Set up parent-child account hierarchies in Salesforce. D-U-N-S numbers, name normalization, and reporting.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Salesforce Account Hierarchy: Setup, Parent-Child & Normalization">
+  <meta name="twitter:description" content="Parent-child account setup, D-U-N-S hierarchy, name normalization, and multi-level reporting in Salesforce.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Salesforce Account Hierarchy: Setup, Parent-Child & Normalization"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Salesforce Account Hierarchy: Setup, Parent-Child & Normalization",
+    "description": "How to set up and maintain account hierarchies in Salesforce. Parent-child relationships, Ultimate Parent, D-U-N-S numbers, and normalization.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-17",
+    "dateModified": "2026-03-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/salesforce-account-hierarchy.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many levels can a Salesforce account hierarchy have?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salesforce supports up to 10,000 accounts in a single hierarchy, but there's no hard limit on the number of levels (depth). In practice, most B2B organizations use 2-4 levels: Ultimate Parent, Parent, and Child (sometimes with a regional or division layer in between). Going deeper than 4 levels makes reporting and navigation unwieldy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between Parent Account and Ultimate Parent in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Parent Account is a standard Salesforce field that creates a direct parent-child link (one level up). Ultimate Parent refers to the top-most account in a hierarchy chain. Salesforce doesn't have a native Ultimate Parent field, so you need to create a custom field and populate it with a Flow, Apex trigger, or enrichment tool. The Ultimate Parent is critical for roll-up reporting across all subsidiaries."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use D-U-N-S numbers for Salesforce account hierarchies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "D-U-N-S numbers from Dun & Bradstreet are the gold standard for identifying corporate hierarchies because they track parent-subsidiary-branch relationships globally. If your sales motion involves enterprise accounts with multiple divisions, D-U-N-S numbers are worth the investment. For smaller databases or SMB-focused sales teams, manual hierarchy management or enrichment tools that include hierarchy data may be sufficient."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I report on account hierarchies in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard Salesforce reports don't roll up data across hierarchies natively. You need to either create a custom Ultimate Parent field and report on that, use SOQL with parent-child relationship queries, or implement roll-up summary fields with Apex. The simplest approach is adding an Ultimate_Parent_Account__c lookup field to every Account and grouping reports by that field to see total pipeline, revenue, or contacts across an entire corporate family."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .example-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .example-table th,
+    .example-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .example-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .example-table td {
+      color: var(--color-text-secondary);
+    }
+    code {
+      background: var(--color-bg-card);
+      padding: 0.125rem 0.375rem;
+      border-radius: 3px;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>Salesforce Account Hierarchy: Setup, Parent-Child & Normalization</h1>
+        <p class="article-meta">March 2026 · 12 min read</p>
+
+        <p>Your biggest customer is a Fortune 500 with three divisions, each operating under a slightly different name. Your sales team has created separate Account records for each: "Acme Industries," "Acme Healthcare Solutions," and "Acme Digital." Three different owners. Three separate pipelines. Nobody realizes the company just spent $400K across those three accounts combined, which would make them your largest customer by a wide margin.</p>
+
+        <p>This is what happens when you don't have a <strong>Salesforce account hierarchy</strong> in place. The data exists. The relationships don't. And without relationships, you can't see the full picture of your customer, your pipeline, or your revenue.</p>
+
+        <p>Setting up account hierarchies isn't complicated, but doing it well requires planning. This guide covers how to structure parent-child relationships, when to use D-U-N-S numbers, how company name normalization fits in, and how to actually report on hierarchies once they're built.</p>
+
+        <h2>How Parent-Child Accounts Work in Salesforce</h2>
+
+        <p>Salesforce has a native <code>ParentId</code> field on the Account object. It's a lookup to another Account record. That's all a hierarchy is: Account records linked together through this field.</p>
+
+        <p><strong>Parent Account:</strong> The company one level up. "Acme Healthcare Solutions" has Parent Account set to "Acme Industries."</p>
+
+        <p><strong>Child Account:</strong> Any account that points to another account as its parent. "Acme Digital" is a child of "Acme Industries."</p>
+
+        <p><strong>Ultimate Parent:</strong> The top of the chain. The account with no parent of its own. In a hierarchy like Alphabet > Google > Google Cloud, Alphabet is the Ultimate Parent.</p>
+
+        <p>Salesforce displays these relationships in the Account Hierarchy view, which you can access from any Account record by clicking "View Account Hierarchy" in the action menu. It shows the full tree: parent, siblings, and children.</p>
+
+        <h3>When to create child accounts vs. merge</h3>
+
+        <p>Not every related company should be a child account. The decision depends on your sales motion.</p>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Recommendation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>You sell to divisions separately (different buyers, different contracts)</td>
+              <td>Create child accounts under a parent</td>
+            </tr>
+            <tr>
+              <td>Different office locations for the same company</td>
+              <td>Create child accounts if each location has its own buying authority</td>
+            </tr>
+            <tr>
+              <td>Same company entered twice with different name variations</td>
+              <td>Merge, don't create a hierarchy</td>
+            </tr>
+            <tr>
+              <td>Acquired company still operating independently</td>
+              <td>Child account under the acquiring company</td>
+            </tr>
+            <tr>
+              <td>Franchise locations</td>
+              <td>Child accounts if you sell to individual franchisees</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The key question: do these entities buy independently? If yes, separate accounts in a hierarchy. If no, merge them.</p>
+
+        <h2>Setting Up Your Hierarchy</h2>
+
+        <h3>Step 1: Define your hierarchy model</h3>
+
+        <p>Before you start linking accounts, decide on your structure. Most B2B organizations use one of these models:</p>
+
+        <p><strong>Two-level (Parent/Child):</strong> Simple. Works for companies where you care about the corporate parent and individual operating entities. Example: "Microsoft" (parent) > "LinkedIn" (child), "GitHub" (child).</p>
+
+        <p><strong>Three-level (Ultimate Parent/Region or Division/Operating Entity):</strong> Common in enterprise sales. Example: "Alphabet" > "Google" > "Google Cloud Platform." The middle tier represents a business unit or geographic region.</p>
+
+        <p><strong>Four-level (Global Parent/Region/Country/Local Entity):</strong> Needed for global enterprises with complex structures. Example: "Siemens AG" > "Siemens North America" > "Siemens USA" > "Siemens Healthineers USA." Only go this deep if your sales team actually sells at these different levels.</p>
+
+        <div class="stat-box">
+          <p><strong>Keep it simple.</strong> Every additional level adds maintenance overhead. If your reps never sell to regional entities separately, don't create regional accounts just because the corporate structure exists. Match your hierarchy to your go-to-market, not to the org chart.</p>
+        </div>
+
+        <h3>Step 2: Create custom fields</h3>
+
+        <p>The native ParentId field handles the direct link, but you'll want additional fields for reporting and automation:</p>
+
+        <ul>
+          <li><strong>Ultimate_Parent_Account__c</strong> (Lookup to Account): Points to the top of the hierarchy chain. Critical for roll-up reporting.</li>
+          <li><strong>Hierarchy_Level__c</strong> (Picklist: Ultimate Parent / Parent / Child): Makes filtering and reporting easier.</li>
+          <li><strong>DUNS_Number__c</strong> (Text, 9): If using D&B data for hierarchy.</li>
+          <li><strong>Global_Ultimate_DUNS__c</strong> (Text, 9): The D-U-N-S of the ultimate parent entity.</li>
+        </ul>
+
+        <h3>Step 3: Populate the Ultimate Parent field</h3>
+
+        <p>Salesforce doesn't automatically calculate the Ultimate Parent. You need to build that logic. Three approaches:</p>
+
+        <p><strong>Flow (no-code):</strong> Create a Record-Triggered Flow on Account that fires on create and update. When ParentId changes, walk up the hierarchy by querying the parent's parent until you find an Account where ParentId is null. Set that as Ultimate_Parent_Account__c. This works but can hit governor limits on deep hierarchies.</p>
+
+        <p><strong>Apex trigger (code):</strong> More efficient for large orgs. Write a trigger that recursively traverses the hierarchy on insert/update of ParentId. Handle bulkification properly since a mass update could fire this for thousands of records.</p>
+
+        <p><strong>Enrichment tool:</strong> Services like Dun & Bradstreet, ZoomInfo, or Clearbit can provide hierarchy data that includes the ultimate parent. Import their hierarchy and let the data source handle the linking. This is often the fastest approach for initial setup.</p>
+
+        <h3>Step 4: Link existing accounts</h3>
+
+        <p>If you already have accounts that should be linked, you'll need to identify the relationships and populate ParentId in bulk.</p>
+
+        <ol>
+          <li><strong>Export all Accounts</strong> with Id, Name, Website, and any existing hierarchy fields.</li>
+          <li><strong>Identify parent-child relationships.</strong> Group by domain/website to find accounts that belong to the same company. Use <a href="/resources/salesforce-company-name-normalization.html">normalized company names</a> to catch variations.</li>
+          <li><strong>Build a mapping file.</strong> Create a CSV with the child Account Id and the parent Account Id.</li>
+          <li><strong>Import via Data Loader.</strong> Update the ParentId field using your mapping file.</li>
+          <li><strong>Run your Ultimate Parent automation</strong> to populate the Ultimate Parent field on all affected records.</li>
+        </ol>
+
+        <h2>Using D-U-N-S Numbers for Hierarchy</h2>
+
+        <p>D-U-N-S numbers from Dun & Bradstreet are nine-digit identifiers assigned to every business entity worldwide. Each entity gets its own number, and D&B tracks the relationships between them: which entities are subsidiaries, branches, divisions, and headquarters.</p>
+
+        <p>This solves the hardest part of hierarchy management: figuring out which companies are actually related. When "Acme Healthcare Solutions" and "Acme Digital" both have D-U-N-S numbers that link to the same Global Ultimate, you know they belong together without guessing.</p>
+
+        <h3>How to use D-U-N-S in Salesforce</h3>
+
+        <ol>
+          <li><strong>Get D&B data.</strong> Through Salesforce's native Data.com (if available in your edition), D&B Direct, or a third-party enrichment provider that includes D-U-N-S numbers.</li>
+          <li><strong>Store three D-U-N-S fields:</strong> Entity D-U-N-S (this specific company), Domestic Ultimate D-U-N-S (highest parent in this country), and Global Ultimate D-U-N-S (highest parent worldwide).</li>
+          <li><strong>Build hierarchy from D-U-N-S.</strong> Accounts sharing the same Global Ultimate D-U-N-S belong in the same hierarchy. The entity with its own D-U-N-S matching the Global Ultimate is the top-level parent.</li>
+        </ol>
+
+        <h3>When D-U-N-S is worth the investment</h3>
+
+        <p>D&B data isn't cheap. A D-U-N-S enrichment project for 10,000 accounts can cost several thousand dollars depending on your provider. It's worth it when:</p>
+
+        <ul>
+          <li>You sell to enterprise accounts with complex corporate structures</li>
+          <li>You need to track subsidiaries across countries for territory planning</li>
+          <li>Your ABM strategy targets corporate families, not individual entities</li>
+          <li>You're doing M&A analysis and need to understand who owns what</li>
+        </ul>
+
+        <p>For SMB-focused sales teams, manual hierarchy management or simpler enrichment tools are usually sufficient.</p>
+
+        <h2>Company Name Normalization and Hierarchies</h2>
+
+        <p>Account hierarchies and <a href="/resources/salesforce-company-name-normalization.html">company name normalization</a> are deeply connected. You can't build clean hierarchies if your account names are a mess.</p>
+
+        <p>Consider these real examples:</p>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Account Name in Salesforce</th>
+              <th>Actual Company</th>
+              <th>Should Be Child Of</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Google LLC</td>
+              <td>Google</td>
+              <td>Alphabet Inc.</td>
+            </tr>
+            <tr>
+              <td>google</td>
+              <td>Google</td>
+              <td>Duplicate, merge with above</td>
+            </tr>
+            <tr>
+              <td>Google Cloud</td>
+              <td>Google Cloud Platform</td>
+              <td>Google LLC (or Alphabet)</td>
+            </tr>
+            <tr>
+              <td>YouTube</td>
+              <td>YouTube</td>
+              <td>Google LLC (or Alphabet)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Before you build hierarchies, normalize your account names. Remove suffixes, standardize capitalization, and resolve obvious duplicates. Then you can identify parent-child relationships with much less noise.</p>
+
+        <p>The workflow: normalize first, deduplicate second, build hierarchy third. Trying to build a hierarchy on top of messy, duplicated data just creates a messy, duplicated hierarchy.</p>
+
+        <h2>Handling Subsidiaries and Divisions</h2>
+
+        <p>Subsidiaries are the most common hierarchy use case, and they come in a few flavors.</p>
+
+        <h3>Wholly-owned subsidiaries</h3>
+
+        <p>Clear parent-child. "Instagram" is a child of "Meta Platforms." These are straightforward to model because the ownership is unambiguous.</p>
+
+        <h3>Joint ventures and partial ownership</h3>
+
+        <p>Company A owns 50% of Company C, and Company B owns the other 50%. Salesforce hierarchies don't handle shared ownership natively. Pick the primary parent (usually the operating partner) or keep the joint venture as a standalone with notes about the relationship.</p>
+
+        <h3>Divisions without separate legal entities</h3>
+
+        <p>A company has a "Commercial" division and a "Government" division, but they're not separate legal entities. Whether to create child accounts depends on whether you sell to them separately. If the commercial team and the government team have different buyers, different procurement processes, and different contracts, treat them as separate accounts in a hierarchy. If they share a single procurement team, one account is enough.</p>
+
+        <h3>Recently acquired companies</h3>
+
+        <p>When Company A acquires Company B, don't rush to merge records. Create the parent-child relationship first. Keep both accounts active for 6-12 months while the integration settles. Contacts and Opportunities on the acquired company's account stay attached to that account. You can always merge later, but splitting a merged account is much harder than maintaining a hierarchy.</p>
+
+        <h2>Reporting on Hierarchies</h2>
+
+        <p>Building the hierarchy is only useful if you can report on it. Unfortunately, Salesforce's standard reports don't roll up data across parent-child relationships automatically.</p>
+
+        <h3>The Ultimate Parent approach</h3>
+
+        <p>This is the simplest and most common solution. With the <code>Ultimate_Parent_Account__c</code> field populated on every account, you can:</p>
+
+        <ul>
+          <li>Group any report by Ultimate Parent to see total pipeline across a corporate family</li>
+          <li>Sum revenue across all child accounts</li>
+          <li>Count total contacts across the hierarchy</li>
+          <li>Build dashboards that show your top corporate relationships</li>
+        </ul>
+
+        <h3>Roll-up summary fields</h3>
+
+        <p>Salesforce doesn't support native roll-up summary fields on Account-to-Account (only master-detail, which Account hierarchies are not). You'll need Apex, Flow, or a tool like Rollup Helper to aggregate child account data on the parent.</p>
+
+        <p>Common roll-ups:</p>
+
+        <ul>
+          <li><strong>Total Open Pipeline:</strong> Sum of all open Opportunity amounts across child accounts</li>
+          <li><strong>Total Closed Won (Last 12 Months):</strong> Revenue across the hierarchy</li>
+          <li><strong>Total Contacts:</strong> Count of contacts across all child accounts</li>
+          <li><strong>Number of Child Accounts:</strong> Quick indicator of hierarchy complexity</li>
+        </ul>
+
+        <h3>SOQL for hierarchy queries</h3>
+
+        <p>If you're comfortable with SOQL, you can query parent-child relationships directly:</p>
+
+        <p>Find all child accounts for a parent:</p>
+        <p><code>SELECT Id, Name FROM Account WHERE ParentId = '001XXXXXXXXXXXX'</code></p>
+
+        <p>Find accounts and their parent names (one level):</p>
+        <p><code>SELECT Id, Name, Parent.Name FROM Account WHERE ParentId != null</code></p>
+
+        <p>SOQL doesn't support recursive queries, so you can't walk an entire hierarchy in one query. For deep hierarchies, you'll need Apex to traverse levels programmatically.</p>
+
+        <h2>Common Hierarchy Mistakes</h2>
+
+        <p><strong>Building hierarchy before cleaning data.</strong> If "Acme Corp" and "Acme Corporation" are separate accounts, and you make "Acme Corp" a child of "Acme Industries" but miss "Acme Corporation," you've got a broken hierarchy. <a href="/resources/salesforce-company-name-normalization.html">Normalize names</a> and <a href="/resources/salesforce-duplicate-management.html">merge duplicates</a> first.</p>
+
+        <p><strong>Making hierarchy too deep.</strong> Five levels of hierarchy means five levels of maintenance. Every time a company restructures, you have to update the chain. Keep it as shallow as your sales motion allows.</p>
+
+        <p><strong>Not maintaining the Ultimate Parent field.</strong> If you populate Ultimate Parent once and never update it, it'll go stale as hierarchies change. Automate it with a Flow or trigger that fires when ParentId changes.</p>
+
+        <p><strong>Confusing hierarchy with territory.</strong> Account hierarchies represent corporate structure. Territories represent sales coverage. A parent account and its child accounts might be in different territories. Don't use hierarchy to solve a territory assignment problem.</p>
+
+        <p><strong>Forgetting about reporting.</strong> Building a beautiful hierarchy that nobody can report on is wasted effort. Plan your reporting approach (Ultimate Parent field, roll-ups, custom reports) before you build the hierarchy, not after.</p>
+
+        <h2>When to DIY vs. Get Help</h2>
+
+        <p>If you have fewer than 500 accounts and a straightforward sales motion, you can set up hierarchies manually. Create the custom fields, link accounts through ParentId, and build a simple Flow for Ultimate Parent. A few days of work.</p>
+
+        <p>For larger databases, the challenge is identifying which accounts belong together. That requires normalization, deduplication, and often external data (D-U-N-S or similar) to map corporate structures. If you've got 10,000+ accounts and no existing hierarchy, it's a meaningful data project.</p>
+
+        <p>We help companies build account hierarchies as part of larger data cleanup engagements. The normalization and deduplication we do as part of our <a href="/services/data-cleaning.html">data cleaning services</a> naturally surfaces the relationships that hierarchies need. If you're staring at a messy Account list and don't know which companies are related to which, reach out.</p>
+
+        <h2>Common Questions About Salesforce Account Hierarchies</h2>
+
+        <div class="faq-section">
+          <h3>How many levels can a Salesforce account hierarchy have?</h3>
+          <p>Salesforce supports up to 10,000 accounts in a single hierarchy with no hard limit on depth. Most organizations use 2-4 levels: Ultimate Parent, Parent, and Child. Going deeper than 4 levels makes reporting and navigation unwieldy.</p>
+
+          <h3>What's the difference between Parent Account and Ultimate Parent?</h3>
+          <p>Parent Account is a native Salesforce field that links one level up. Ultimate Parent is the top of the entire chain. Salesforce doesn't have a built-in Ultimate Parent field. You need to create a custom <code>Ultimate_Parent_Account__c</code> field and populate it with a Flow, Apex, or enrichment data. The Ultimate Parent is what you group reports by to see full corporate relationships.</p>
+
+          <h3>Should I use D-U-N-S numbers for account hierarchies?</h3>
+          <p>If you sell to enterprise accounts with multiple divisions and subsidiaries, D-U-N-S numbers are the most reliable way to map corporate structures. They're especially valuable for global companies. For SMB-focused teams, manual hierarchy management or simpler enrichment tools are usually enough.</p>
+
+          <h3>How do I report on account hierarchies in Salesforce?</h3>
+          <p>Standard reports don't roll up across hierarchies. The simplest approach: create an Ultimate_Parent_Account__c field on every account and group reports by it. For aggregate metrics (total pipeline, total revenue across subsidiaries), use roll-up tools like Rollup Helper or custom Apex to sum child account data on the parent.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Messy accounts with no hierarchy? We can normalize your company names, deduplicate, and build the parent-child relationships so your reporting actually works.</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">Get a Free Account Assessment</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/salesforce/">All Salesforce Guides</a> | <a href="/resources/salesforce-company-name-normalization.html">Company Name Normalization</a> | <a href="/resources/salesforce-duplicate-management.html">Duplicate Management</a> | <a href="/resources/salesforce-data-enrichment.html">Data Enrichment</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

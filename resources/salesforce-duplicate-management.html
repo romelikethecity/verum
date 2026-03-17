@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salesforce Duplicate Management: Rules, Matching & Merge Guide</title>
+  <meta name="description" content="Complete guide to Salesforce duplicate management. Set up matching rules, configure duplicate rules, merge records safely, and handle duplicates at scale.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://veruminc.com/resources/salesforce-duplicate-management.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/salesforce-duplicate-management.html">
+  <meta property="og:title" content="Salesforce Duplicate Management: Rules, Matching & Merge Guide">
+  <meta property="og:description" content="Set up matching rules, configure duplicate rules, and merge Salesforce records without losing data.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Salesforce Duplicate Management: Rules, Matching & Merge Guide">
+  <meta name="twitter:description" content="Set up matching rules, duplicate rules, and merge strategies for Leads, Contacts, and Accounts.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Salesforce Duplicate Management: Rules, Matching & Merge Guide"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Salesforce Duplicate Management: Rules, Matching & Merge Guide",
+    "description": "Complete guide to Salesforce's built-in duplicate management. Matching rules, duplicate rules, merge strategies, and third-party tools for handling duplicates at scale.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-17",
+    "dateModified": "2026-03-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/salesforce-duplicate-management.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What's the difference between matching rules and duplicate rules in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Matching rules define HOW Salesforce identifies duplicates. They specify which fields to compare and what matching algorithm to use (exact match, fuzzy match, etc.). Duplicate rules define WHAT HAPPENS when a match is found. They control whether users see an alert, are blocked from saving, or whether a duplicate report is generated. You need both: matching rules without duplicate rules won't do anything, and duplicate rules need matching rules to know what to look for."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I merge Salesforce records in bulk?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salesforce's native merge tool only handles records one set at a time, up to 3 records per merge. For bulk merging, you need third-party tools like Validity DemandTools, Cloudingo, or DataGroomr. These tools let you create merge rules, preview results, and process thousands of duplicate pairs in a single batch. Always test with a small batch first and back up your data before any bulk merge operation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will merging Salesforce records lose data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you merge records in Salesforce, you choose a 'master' record and one or two records to merge into it. The master record keeps its field values by default, but you can select individual field values from any of the records being merged. Related records (Activities, Opportunities, Cases) from all merged records are reassigned to the master. The non-master records are moved to the Recycle Bin for 15 days, so merges are reversible in the short term."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I prevent duplicates from entering Salesforce in the first place?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Set up duplicate rules with the action set to 'Block' instead of 'Alert.' This prevents users from saving a record that matches an existing record. For web-to-lead and API imports, enable duplicate rules on those channels as well. Combine this with matching rules that check Email for Contacts and Leads, and Company Name plus Website for Accounts. No system catches 100% of duplicates, but this setup prevents the most obvious ones."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .example-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .example-table th,
+    .example-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .example-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .example-table td {
+      color: var(--color-text-secondary);
+    }
+    code {
+      background: var(--color-bg-card);
+      padding: 0.125rem 0.375rem;
+      border-radius: 3px;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>Salesforce Duplicate Management: Rules, Matching & Merge Guide</h1>
+        <p class="article-meta">March 2026 · 14 min read</p>
+
+        <p>A sales rep spends 20 minutes researching an account, crafting a personalized email, and hitting send. Thirty seconds later, a colleague on the same team pings them: "Hey, that's my account." They check Salesforce. Two Account records for the same company, one created by marketing from a webinar list, the other entered manually by sales. Different owners, different activity histories, different Contact records attached to each. Neither one has the full picture.</p>
+
+        <p>This happens constantly. And it's not a discipline problem. It's a <strong>Salesforce duplicate management</strong> problem. Without the right rules configured, duplicates enter your CRM faster than your team can find and merge them.</p>
+
+        <p>Salesforce has built-in tools for this. Matching rules, duplicate rules, and a native merge feature. Most orgs either don't use them or use them so loosely that they might as well not be there. This guide covers how to actually set them up, what to do with the duplicates you already have, and how to keep them from coming back.</p>
+
+        <h2>How Salesforce Duplicate Detection Works</h2>
+
+        <p>Salesforce's duplicate management system has two layers, and you need to understand both to configure it correctly.</p>
+
+        <h3>Matching Rules</h3>
+
+        <p>A matching rule tells Salesforce how to compare records and determine if they're potential duplicates. It specifies which fields to compare, what matching method to use for each field, and how to combine those field-level comparisons into an overall match score.</p>
+
+        <p>Salesforce includes standard matching rules for Accounts, Contacts, and Leads. They're decent starting points but usually need customization.</p>
+
+        <p><strong>Standard Account matching rule:</strong> Compares Account Name and Billing Street using fuzzy matching. This catches "Acme Corp" vs "Acme Corporation" but misses "Acme Inc." vs "ACME" because the fuzzy threshold isn't aggressive enough by default.</p>
+
+        <p><strong>Standard Contact matching rule:</strong> Compares First Name, Last Name, Email, and Phone. Email is the strongest signal here. If two contacts have the same email address, they're almost certainly the same person.</p>
+
+        <p><strong>Standard Lead matching rule:</strong> Compares Company, First Name, Last Name, Email, and Title. Similar logic to Contacts but applied to the Lead object.</p>
+
+        <h3>Duplicate Rules</h3>
+
+        <p>A duplicate rule defines what happens when a matching rule finds a potential duplicate. You have three action options:</p>
+
+        <ul>
+          <li><strong>Allow (with alert):</strong> The user sees a warning that a potential duplicate exists but can still save the record. Most orgs start here.</li>
+          <li><strong>Block:</strong> The user cannot save the record if a match is found. Stricter, but prevents duplicates more effectively.</li>
+          <li><strong>Report:</strong> Salesforce silently logs the potential duplicate in a Duplicate Record Set for later review. No user-facing alert.</li>
+        </ul>
+
+        <p>You can also control which channels the rule applies to: user interface, API, or both. This matters because a lot of duplicates enter through integrations and imports that bypass the UI entirely.</p>
+
+        <div class="stat-box">
+          <p><strong>Common mistake:</strong> Setting duplicate rules to "Allow with alert" and wondering why duplicates keep appearing. Most reps click through the warning without reading it. If you're serious about prevention, use "Block" for clear-cut matches (same email) and "Allow with alert" for fuzzier matches (similar names).</p>
+        </div>
+
+        <h2>Setting Up Matching Rules</h2>
+
+        <p>Go to Setup, search for "Matching Rules," and either edit the standard rules or create custom ones. Custom rules give you more control over which fields to compare and how.</p>
+
+        <h3>Recommended matching rules for Contacts</h3>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Matching Method</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Email</td>
+              <td>Exact</td>
+              <td>Strongest dedup signal. Same email = same person, almost always.</td>
+            </tr>
+            <tr>
+              <td>First Name</td>
+              <td>Fuzzy: First Name</td>
+              <td>Handles "Bob" vs "Robert," "Mike" vs "Michael"</td>
+            </tr>
+            <tr>
+              <td>Last Name</td>
+              <td>Exact</td>
+              <td>Last names rarely have legitimate variations</td>
+            </tr>
+            <tr>
+              <td>Account Name</td>
+              <td>Fuzzy: Company Name</td>
+              <td>Catches contacts at the same company with different account spellings</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Create two matching rules for Contacts: one that matches on Email alone (high confidence), and one that matches on First Name + Last Name + Account Name (medium confidence). This lets you set different actions for each confidence level.</p>
+
+        <h3>Recommended matching rules for Accounts</h3>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Matching Method</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Account Name</td>
+              <td>Fuzzy: Company Name</td>
+              <td>Core comparison. Handles suffix and abbreviation variations.</td>
+            </tr>
+            <tr>
+              <td>Website</td>
+              <td>Exact</td>
+              <td>If two accounts share a domain, they're likely the same company</td>
+            </tr>
+            <tr>
+              <td>Billing City</td>
+              <td>Exact</td>
+              <td>Disambiguates franchises and companies with generic names</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Account matching is trickier than Contact matching. Company names have endless variations. Adding Website as a matching field dramatically improves accuracy because domains are unique. If you have a <a href="/resources/salesforce-company-name-normalization.html">normalized company name field</a>, use that instead of the raw Account Name for even better results.</p>
+
+        <h3>Recommended matching rules for Leads</h3>
+
+        <p>Mirror your Contact matching rules on the Lead object. Same email match, same name + company match. This catches duplicates both within Leads and across Leads and Contacts (cross-object matching).</p>
+
+        <p>Cross-object matching is particularly important. A new Lead comes in from a webinar, but that person already exists as a Contact on an Account. Without Lead-to-Contact matching, nobody knows. The Lead gets assigned to an SDR while the existing Account Owner has no idea their contact just raised their hand.</p>
+
+        <h2>Configuring Duplicate Rules</h2>
+
+        <p>Once your matching rules are active, create duplicate rules that reference them.</p>
+
+        <h3>Recommended configuration</h3>
+
+        <ol>
+          <li><strong>Create a "Block" rule for exact email matches.</strong> If a Contact or Lead has the same email as an existing record, block the save. There's almost no legitimate reason to have two records with the same email address.</li>
+          <li><strong>Create an "Alert" rule for fuzzy name matches.</strong> Fuzzy matching catches more duplicates but also produces false positives. Let users override these with a click, but make sure they see the warning.</li>
+          <li><strong>Enable rules for API and bulk imports.</strong> Under the duplicate rule settings, check the boxes for when records are created via API. Most orgs leave this off by default, which means every integration and data import bypasses duplicate checking entirely.</li>
+          <li><strong>Create Duplicate Record Sets.</strong> Even when you allow duplicates through, configure the rule to create a Duplicate Record Set. This gives you a queue to review later.</li>
+        </ol>
+
+        <h2>Merging Records: Object by Object</h2>
+
+        <p>Finding duplicates is half the battle. Merging them without losing data is the other half.</p>
+
+        <h3>Account to Account Merge</h3>
+
+        <p>Account merges are the most complex because Accounts have the most related records: Contacts, Opportunities, Cases, Activities, Notes, Attachments, and custom child objects.</p>
+
+        <p><strong>How to merge Accounts natively:</strong></p>
+        <ol>
+          <li>Go to the Account you want to keep (the "master")</li>
+          <li>Click "Merge Accounts" from the action menu</li>
+          <li>Search for and select the duplicate(s), up to 3 total</li>
+          <li>Choose which field values to keep from each record</li>
+          <li>Click Merge</li>
+        </ol>
+
+        <p><strong>What happens to related records:</strong> All Contacts, Opportunities, Cases, and Activities from the merged records move to the master Account. The duplicate Account records go to the Recycle Bin.</p>
+
+        <p><strong>Watch out for:</strong> Account Team members, sharing rules, and custom lookup relationships. These don't always merge cleanly. Check your master Account after merging to make sure nothing was lost.</p>
+
+        <h3>Contact to Contact Merge</h3>
+
+        <p>Contact merges are simpler but still need care.</p>
+
+        <ol>
+          <li>Navigate to the Account that contains the duplicate Contacts</li>
+          <li>Select "Merge Contacts" from the related list or use the Duplicate Record Set</li>
+          <li>Choose the master record</li>
+          <li>Select field values from each record</li>
+          <li>Merge</li>
+        </ol>
+
+        <p>Activities from all merged Contacts transfer to the master. Campaign Member records are preserved. If both Contacts were in the same Campaign, the earliest membership date is kept.</p>
+
+        <h3>Lead to Lead Merge</h3>
+
+        <p>Lead merges work the same way as Contact merges. Go to the Leads tab, find the duplicates, choose a master, select field values, merge.</p>
+
+        <p>One thing to watch: Lead conversion history. If one Lead was previously converted and then re-created (it happens), merging the duplicate into it may produce unexpected results. Always check the Lead History after merging.</p>
+
+        <div class="stat-box">
+          <p><strong>Pro tip:</strong> Before any merge, take a screenshot of both records or export them to a spreadsheet. Salesforce keeps merged records in the Recycle Bin for 15 days, but having your own backup means you can verify nothing was lost even after that window closes.</p>
+        </div>
+
+        <h2>Handling Duplicates at Scale</h2>
+
+        <p>Salesforce's native merge works fine for small numbers. If you've got 50 duplicate pairs, you can knock those out manually in an afternoon. But if your <a href="/resources/salesforce-data-quality-audit.html">data quality audit</a> revealed 5,000 potential duplicate sets, you need a different approach.</p>
+
+        <h3>Third-party tools</h3>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Strengths</th>
+              <th>Pricing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Validity DemandTools</td>
+              <td>Mature, powerful merge rules, bulk operations, good for large orgs</td>
+              <td>Subscription, contact vendor</td>
+            </tr>
+            <tr>
+              <td>Cloudingo</td>
+              <td>AppExchange native, good UI, automated scheduling</td>
+              <td>Starting ~$1,000/year</td>
+            </tr>
+            <tr>
+              <td>DataGroomr</td>
+              <td>AI-powered matching, good for complex duplicates</td>
+              <td>Starting ~$99/month</td>
+            </tr>
+            <tr>
+              <td>Duplicate Check</td>
+              <td>Real-time and batch, cross-object matching</td>
+              <td>Free tier available</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>These tools all do roughly the same thing: identify duplicate sets with configurable matching logic, let you preview merges before executing, and process merges in bulk. The differences are in UI quality, matching algorithm sophistication, and price.</p>
+
+        <h3>Bulk merge process</h3>
+
+        <ol>
+          <li><strong>Export your duplicate sets.</strong> Use your tool to identify all potential matches and export them to a spreadsheet for review.</li>
+          <li><strong>Review a sample.</strong> Check the first 100 pairs manually to make sure the matching logic is right. False positives are expensive to undo.</li>
+          <li><strong>Define merge rules.</strong> Which record survives? Usually the one with the most recent activity, or the one with more complete data. Define this as a rule, not a case-by-case decision.</li>
+          <li><strong>Run a test batch.</strong> Merge 50-100 pairs and verify the results. Check that related records transferred, field values are correct, and nothing disappeared.</li>
+          <li><strong>Process the rest.</strong> Once you're confident in the rules, run the full batch. Most tools process 500-1,000 merges per hour.</li>
+          <li><strong>Verify.</strong> Spot-check 20-30 merged records to confirm everything looks right.</li>
+        </ol>
+
+        <h2>Common Duplicate Management Mistakes</h2>
+
+        <p><strong>Setting rules to "Alert" when you mean "Block."</strong> Users click through alerts. Every time. If you want to actually prevent duplicates, block the save for high-confidence matches. Save alerts for lower-confidence fuzzy matches where human judgment is needed.</p>
+
+        <p><strong>Not enabling rules for API and imports.</strong> This is the single most common oversight. Your web forms, integrations, and CSV imports are probably your biggest source of duplicates, and they bypass UI-based duplicate rules by default. Enable API enforcement.</p>
+
+        <p><strong>Merging without a master record strategy.</strong> If your team doesn't know which record to keep as the master, they'll make inconsistent choices. Some keep the older record, some keep the newer one, some pick randomly. Define a policy: master record is the one with the most recent Activity, or the one owned by the Account Owner, or the one with the most complete data. Pick one and stick with it.</p>
+
+        <p><strong>Ignoring cross-object duplicates.</strong> A person can exist as both a Lead and a Contact in Salesforce simultaneously. These are technically on different objects, but they're still duplicates. Use cross-object matching rules to catch Lead-to-Contact matches.</p>
+
+        <p><strong>Treating deduplication as a one-time project.</strong> You cleaned up 3,000 duplicates last quarter. Great. But without prevention rules in place, you'll have 1,000 new duplicates by next quarter. Deduplication without prevention is an expensive treadmill.</p>
+
+        <h2>When to DIY vs. Outsource</h2>
+
+        <p>If you have fewer than 500 duplicate pairs, you can handle this with Salesforce's native tools in a few days. Standard matching rules, a duplicate rule set to Block, and manual merging.</p>
+
+        <p>Between 500 and 5,000 duplicates, a third-party tool pays for itself. The time savings from bulk merging alone justifies the cost.</p>
+
+        <p>Above 5,000 duplicates, or if your matching logic needs to be complex (handling subsidiaries, international entities, multiple name variations), it's worth bringing in help. We do this kind of cleanup regularly. The tricky part isn't the merging itself, it's building the matching logic that catches real duplicates without creating false positives that merge records that shouldn't be merged.</p>
+
+        <h2>Common Questions About Salesforce Duplicate Management</h2>
+
+        <div class="faq-section">
+          <h3>What's the difference between matching rules and duplicate rules?</h3>
+          <p>Matching rules define how Salesforce compares records (which fields, what algorithm). Duplicate rules define what happens when a match is found (alert, block, or log). You need both. A matching rule without a duplicate rule does nothing visible. A duplicate rule without a matching rule has nothing to trigger on.</p>
+
+          <h3>Can I merge records in bulk?</h3>
+          <p>Not with native Salesforce tools. The built-in merge handles up to 3 records at a time. For bulk operations, use third-party tools like Validity DemandTools, Cloudingo, or DataGroomr. These let you define merge rules and process thousands of pairs in batch.</p>
+
+          <h3>Will merging records lose data?</h3>
+          <p>When you merge, you choose a master record and select which field values to keep. Related records (Opportunities, Activities, Cases) from all merged records transfer to the master. The non-master records go to the Recycle Bin for 15 days. So merges are reversible in the short term, and you can recover data if something goes wrong.</p>
+
+          <h3>How do I prevent duplicates from entering Salesforce?</h3>
+          <p>Configure duplicate rules with the "Block" action for high-confidence matches (same email). Enable the rules for API and import channels, not just the UI. For Leads, enable cross-object matching to catch Lead-to-Contact duplicates. No system is perfect, but this setup catches the majority of incoming duplicates.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Thousands of duplicates in your Salesforce? We can identify, review, and merge them without losing a single Activity or Opportunity. We do this every week.</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">Get a Free Duplicate Assessment</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/salesforce/">All Salesforce Guides</a> | <a href="/resources/salesforce-duplicate-contacts.html">Duplicate Contacts Guide</a> | <a href="/resources/salesforce-company-name-normalization.html">Company Name Normalization</a> | <a href="/resources/salesforce-data-quality-audit.html">Data Quality Audit</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Clean Data Before a Salesforce Migration</title>
+  <meta name="description" content="Pre-migration data cleanup guide for Salesforce. What to clean first, field mapping prep, sandbox testing, and post-migration verification checklist.">
+
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://veruminc.com/resources/salesforce-data-migration-cleanup.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/salesforce-data-migration-cleanup.html">
+  <meta property="og:title" content="How to Clean Data Before a Salesforce Migration">
+  <meta property="og:description" content="Pre-migration cleanup guide: duplicates, incomplete records, field mapping, sandbox testing, and verification.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Clean Data Before a Salesforce Migration">
+  <meta name="twitter:description" content="Don't migrate dirty data. Here's how to clean your CRM data before moving to Salesforce.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Clean Data Before a Salesforce Migration"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Clean Data Before a Salesforce Migration",
+    "description": "Pre-migration data cleanup guide for Salesforce. What to clean first, field mapping prep, sandbox testing, and post-migration verification.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-17",
+    "dateModified": "2026-03-17",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/salesforce-data-migration-cleanup.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does pre-migration data cleanup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a database of 50,000-100,000 records, plan 2-4 weeks for cleanup before migration begins. Smaller databases (under 10,000 records) can usually be cleaned in a week. The time depends on how messy the data is. If you have thousands of duplicates, extensive field mapping issues, and inconsistent formatting, budget toward the longer end."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I clean data before or after migrating to Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Before. Always before. Cleaning after migration means your users start working with dirty data from day one, which erodes trust in the new system. It's also harder to clean data in a live Salesforce org where users are actively creating and modifying records. Clean it in your source system or in a staging environment before the final import."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data should I NOT migrate to Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Don't migrate records with no activity in 2+ years and no open opportunities. Don't migrate contacts with bounced emails and no other valid contact information. Don't migrate test records, junk entries, or personal accounts used for internal testing. Don't migrate custom fields from your old CRM that have no equivalent use in Salesforce. Less data migrated means faster migration, cleaner reports, and lower storage costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I handle field mapping between CRMs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Export your source CRM's field list with field names, data types, and sample values. Do the same for your target Salesforce fields. Map them in a spreadsheet, noting which fields have a direct match, which need transformation (like splitting a full name into first and last), and which have no equivalent and need new custom fields. Test the mapping with 100 records in a Salesforce sandbox before running the full migration."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .example-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .example-table th,
+    .example-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .example-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .example-table td {
+      color: var(--color-text-secondary);
+    }
+    code {
+      background: var(--color-bg-card);
+      padding: 0.125rem 0.375rem;
+      border-radius: 3px;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>How to Clean Data Before a Salesforce Migration</h1>
+        <p class="article-meta">March 2026 · 12 min read</p>
+
+        <p>Your company just decided to move to Salesforce. Maybe you're coming from HubSpot. Maybe it's a legacy CRM that nobody remembers choosing. Maybe it's a collection of spreadsheets that everyone pretends is a CRM. Whatever the source, the instinct is always the same: export everything, import everything, figure it out later.</p>
+
+        <p>That instinct is wrong. And it's expensive to recover from.</p>
+
+        <p>Migrating dirty data into a clean Salesforce instance is like moving to a new house and bringing every bag of junk from your garage. You had a chance to start fresh. Instead, you paid movers to haul garbage across town. Your reps open Salesforce on day one, see the same duplicates and missing fields they dealt with in the old system, and immediately lose confidence in the new platform.</p>
+
+        <p>A <strong>Salesforce data migration</strong> done right starts with cleanup. This guide walks through what to clean, in what order, and how to verify it actually worked.</p>
+
+        <h2>What to Clean First</h2>
+
+        <p>Don't try to fix everything. Focus on the problems that will cause the most damage if they make it into Salesforce. Clean in this order.</p>
+
+        <h3>1. Remove Dead Records</h3>
+
+        <p>Before you think about fixing data, get rid of the data you don't need. Every record you don't migrate is a record you don't have to clean, map, or maintain.</p>
+
+        <p>Candidates for removal:</p>
+
+        <ul>
+          <li><strong>No activity in 2+ years</strong> and no open Opportunities. These people have probably changed roles or companies.</li>
+          <li><strong>Bounced emails with no other contact info.</strong> If you can't reach them, there's no point migrating them.</li>
+          <li><strong>Test records and junk entries.</strong> "Test Test" at "test@test.com." Every CRM has them.</li>
+          <li><strong>Competitors and vendors.</strong> Unless you track these intentionally, they don't belong in your sales pipeline.</li>
+          <li><strong>Personal email addresses</strong> for B2B records (gmail, yahoo, hotmail). These are usually low-quality leads that never converted.</li>
+        </ul>
+
+        <p>Be aggressive here. We typically see 20-40% of a database qualify for archival or deletion before migration. That's 20-40% less data to clean, map, and verify.</p>
+
+        <h3>2. Merge Duplicates</h3>
+
+        <p>Duplicates are the single biggest mess you can bring into a new CRM. They cause split pipelines, double outreach, and confused territory assignments from day one.</p>
+
+        <p>Run deduplication in your source system before exporting. It's easier to merge records in a system you know than in Salesforce on day one. See our <a href="/resources/salesforce-duplicate-management.html">duplicate management guide</a> for the full process.</p>
+
+        <p>If you can't merge in the source system (some legacy CRMs make this painful), export your data and deduplicate in a staging environment. A spreadsheet works for small datasets. For larger volumes, use a tool like Cloudingo, DemandTools, or even a Python script that groups records by email or <a href="/resources/salesforce-company-name-normalization.html">normalized company name</a>.</p>
+
+        <h3>3. Standardize Key Fields</h3>
+
+        <p>Your old CRM probably has free-text fields where Salesforce expects picklist values. Clean these before migration so they map cleanly.</p>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Common Problems</th>
+              <th>Fix Before Migration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Country</td>
+              <td>"US", "USA", "United States", "U.S."</td>
+              <td>Standardize to Salesforce's country picklist values</td>
+            </tr>
+            <tr>
+              <td>State/Province</td>
+              <td>"California", "CA", "Calif", "calif."</td>
+              <td>Use 2-letter abbreviations consistently</td>
+            </tr>
+            <tr>
+              <td>Industry</td>
+              <td>Free text with hundreds of variations</td>
+              <td>Map to Salesforce's standard Industry picklist</td>
+            </tr>
+            <tr>
+              <td>Lead Source</td>
+              <td>"Web", "Website", "Inbound", "Web Form"</td>
+              <td>Consolidate to your planned Salesforce picklist values</td>
+            </tr>
+            <tr>
+              <td>Job Title</td>
+              <td>Inconsistent abbreviations and formats</td>
+              <td><a href="/resources/salesforce-job-title-standardization.html">Standardize seniority and function</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>4. Fix Incomplete Records</h3>
+
+        <p>For records you're keeping, fill in the critical gaps. At minimum, every Account should have Industry, Website, and location data. Every Contact should have a valid Email and Title.</p>
+
+        <p>You don't need to <a href="/resources/salesforce-data-enrichment.html">enrich every field</a> before migration. But the fields that drive routing, scoring, and segmentation should be as complete as possible. Starting with clean, complete data in Salesforce is much easier than trying to backfill after your team is already using the system.</p>
+
+        <h3>5. Validate Email Addresses</h3>
+
+        <p>Run your contact emails through a validation service (ZeroBounce, NeverBounce, BriteVerify) before migration. Remove or flag hard bounces. This saves you from importing thousands of dead emails that will hurt your sender reputation the moment you start sending from Salesforce or a connected marketing platform.</p>
+
+        <div class="stat-box">
+          <p><strong>Migration math:</strong> If your source system has 100,000 contacts and you remove 30% dead records, merge 10% duplicates, and the remaining 60,000 have a 15% invalid email rate, you're looking at migrating roughly 51,000 clean, contactable records. That's a much more useful database than 100,000 records of questionable quality.</p>
+        </div>
+
+        <h2>Field Mapping: The Tedious Part That Matters</h2>
+
+        <p>Every CRM structures data differently. HubSpot properties don't map 1:1 to Salesforce fields. Legacy CRMs have custom fields with no obvious Salesforce equivalent. Spreadsheets have column names that mean something to one person and nothing to anyone else.</p>
+
+        <h3>How to build a field map</h3>
+
+        <ol>
+          <li><strong>Export your source field list.</strong> Every field name, data type, and a few sample values. If your source is a spreadsheet, this is just the column headers plus example rows.</li>
+          <li><strong>List your Salesforce target fields.</strong> Standard fields plus any custom fields you've created. Note the data type and any picklist values.</li>
+          <li><strong>Map source to target.</strong> In a spreadsheet, put source fields in column A and Salesforce target fields in column B. Mark each row as Direct Match, Needs Transformation, No Equivalent, or Don't Migrate.</li>
+        </ol>
+
+        <h3>Common mapping challenges</h3>
+
+        <p><strong>Migrating from HubSpot.</strong> HubSpot uses "Company" as a property on Contacts. Salesforce separates Contacts and Accounts. You'll need to extract unique companies from your HubSpot contacts, create Account records, then link Contacts to Accounts via AccountId. HubSpot's Lifecycle Stage maps loosely to Salesforce's Lead Status or Opportunity Stage, but not perfectly. Plan for manual mapping.</p>
+
+        <p><strong>Migrating from spreadsheets.</strong> The biggest challenge is relationships. A spreadsheet is flat. Salesforce is relational. You need to figure out which rows become Accounts, which become Contacts, which become Leads, and how they connect. If your spreadsheet has "Company Name" and "Contact Name" on the same row, you'll need to split that into two records and create the lookup relationship.</p>
+
+        <p><strong>Migrating from a legacy CRM.</strong> Older systems often store data in unexpected places. Notes fields might contain critical information that should be structured data. Custom fields may have been repurposed from their original intent ("Phone 2" is actually used for mobile numbers). Interview your team to understand what fields actually mean before mapping them.</p>
+
+        <h3>Fields that need transformation</h3>
+
+        <ul>
+          <li><strong>Full Name to First + Last:</strong> Split on the last space. Handle edge cases like "Mary Jane Watson" (first: "Mary Jane", last: "Watson").</li>
+          <li><strong>Address to Street + City + State + Zip:</strong> Parse carefully. Regex works for US addresses but gets complicated for international.</li>
+          <li><strong>Date formats:</strong> "03/17/2026" vs "2026-03-17" vs "March 17, 2026". Standardize to ISO format before import.</li>
+          <li><strong>Currency:</strong> If your source stores revenue as text ("$1.5M"), you'll need to convert to a number (1500000) for Salesforce's currency field.</li>
+          <li><strong>Multi-select values:</strong> If your source uses a semicolon-separated list in one field, and Salesforce uses a multi-select picklist, make sure the values match exactly.</li>
+        </ul>
+
+        <h2>Testing in Sandbox</h2>
+
+        <p>Do not import directly into your production Salesforce org. Ever. Use a sandbox.</p>
+
+        <h3>Test migration process</h3>
+
+        <ol>
+          <li><strong>Import a small batch (100-500 records)</strong> into your sandbox using Data Loader or Salesforce's import wizard.</li>
+          <li><strong>Verify field mapping.</strong> Open 10-15 records and compare them against the source data. Are values in the right fields? Are picklists populated correctly? Are dates formatted right?</li>
+          <li><strong>Check relationships.</strong> Are Contacts linked to the right Accounts? Are Opportunities associated with the correct Account and Contact?</li>
+          <li><strong>Test automation.</strong> If you've built Flows, validation rules, or Apex triggers in Salesforce, make sure imported data doesn't break them. A trigger that fires on record creation might behave unexpectedly when 50,000 records are imported at once.</li>
+          <li><strong>Run reports.</strong> Pull the reports your sales team will use on day one. Pipeline by stage, accounts by industry, contacts by account. Do they look right?</li>
+          <li><strong>Fix issues, re-import.</strong> You'll find problems. That's the point of testing. Fix the field mapping, clean the data further, and import another test batch until it's right.</li>
+        </ol>
+
+        <h2>Post-Migration Verification</h2>
+
+        <p>After the production import, run these checks before telling your team the new system is ready.</p>
+
+        <h3>Record count verification</h3>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Check</th>
+              <th>Expected Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Total Accounts in Salesforce</td>
+              <td>Matches your cleaned source count</td>
+            </tr>
+            <tr>
+              <td>Total Contacts in Salesforce</td>
+              <td>Matches your cleaned source count</td>
+            </tr>
+            <tr>
+              <td>Contacts without Accounts</td>
+              <td>Zero (unless intentional)</td>
+            </tr>
+            <tr>
+              <td>Opportunities without Accounts</td>
+              <td>Zero</td>
+            </tr>
+            <tr>
+              <td>Records with blank required fields</td>
+              <td>Minimal, matches pre-migration expectations</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Data quality spot check</h3>
+
+        <p>Pull 25-50 random records and compare them against your source system, field by field. Look for:</p>
+
+        <ul>
+          <li>Truncated values (fields that exceeded Salesforce's character limit)</li>
+          <li>Encoding issues (special characters showing as garbled text)</li>
+          <li>Date shifts (timezone conversions can move dates by a day)</li>
+          <li>Missing related records (Activities, Notes that didn't migrate)</li>
+        </ul>
+
+        <h3>User acceptance</h3>
+
+        <p>Have 3-5 reps open their accounts in Salesforce and tell you if the data looks right. They know their accounts. They'll spot problems that automated checks miss. "This account was acquired six months ago" or "This contact left the company" are things only your team knows.</p>
+
+        <h2>Common Migration Cleanup Mistakes</h2>
+
+        <p><strong>Migrating everything "just in case."</strong> The data you don't migrate doesn't need to be cleaned, mapped, verified, or maintained. Be ruthless about what makes the cut. You can always import archived records later if someone actually needs them. They almost never do.</p>
+
+        <p><strong>Cleaning after migration.</strong> Once your team is using Salesforce, they're creating new records, logging activities, and building pipeline on top of dirty data. Cleaning it after the fact means disrupting live workflows. Clean before.</p>
+
+        <p><strong>Skipping the sandbox test.</strong> "We'll just fix it in production" is how you end up with 50,000 records where the First Name and Last Name fields are swapped. Test first.</p>
+
+        <p><strong>Not involving your sales team.</strong> RevOps and IT can handle the technical migration, but your reps know the data. They know which accounts are actually active, which contacts are stale, and which custom fields matter. Get their input during the cleanup phase, not after.</p>
+
+        <p><strong>Forgetting about Activities and Notes.</strong> Everyone focuses on Accounts, Contacts, and Opportunities. But Activities (calls, emails, meetings) and Notes contain critical context. If your reps open an Account in Salesforce and all the historical Activity is gone, they've lost months of relationship context. Plan for Activity migration or accept that history starts fresh.</p>
+
+        <h2>When to Get Help</h2>
+
+        <p>Small migrations (under 10,000 records from a known CRM like HubSpot) are manageable in-house with Data Loader and some spreadsheet work. You can follow this guide step by step and get it done in a week.</p>
+
+        <p>Larger migrations get complicated fast. Complex field mappings, multiple source systems, Activity migration, custom object relationships, and deduplication across hundreds of thousands of records. These are the projects where a mistake in the field mapping or a missed deduplication step costs weeks of rework.</p>
+
+        <p>We handle pre-migration cleanup regularly. It's one of the most common reasons companies reach out to us, usually 2-4 weeks before their planned go-live when they realize their data isn't ready. If you're in that situation, we can help. We clean data for a living, and migration prep is one of our specialties.</p>
+
+        <h2>Common Questions About Salesforce Migration Cleanup</h2>
+
+        <div class="faq-section">
+          <h3>How long does pre-migration cleanup take?</h3>
+          <p>Two to four weeks for a database of 50,000-100,000 records. Smaller databases (under 10,000) can be cleaned in about a week. The timeline depends on how messy the data is. Thousands of duplicates and inconsistent formatting push you toward the longer end.</p>
+
+          <h3>Should I clean data before or after migrating?</h3>
+          <p>Before. Users start working with whatever data they see on day one. If they see duplicates and missing fields, they lose trust in the new system immediately. Cleaning in your source system or a staging environment is much easier than cleaning a live Salesforce org where people are actively creating records.</p>
+
+          <h3>What data should I NOT migrate?</h3>
+          <p>Records with no activity in 2+ years and no open Opportunities. Contacts with bounced emails and no other contact info. Test records and junk entries. Custom fields from your old CRM that have no use in Salesforce. Every record you don't migrate is one less record to clean, map, and maintain.</p>
+
+          <h3>How do I handle field mapping between CRMs?</h3>
+          <p>Export your source field list with names, data types, and sample values. Map each to a Salesforce field in a spreadsheet. Flag fields that need transformation (name splitting, date formatting, currency conversion) and fields with no equivalent that need custom fields in Salesforce. Test the mapping with 100-500 records in a sandbox before the full import.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Migrating to Salesforce and worried about your data? Send us a sample export and we'll tell you exactly what needs cleaning before you move.</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">Get a Free Migration Assessment</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/salesforce/">All Salesforce Guides</a> | <a href="/resources/crm-migration-data-cleanup.html">CRM Migration Cleanup</a> | <a href="/resources/salesforce-duplicate-management.html">Duplicate Management</a> | <a href="/resources/salesforce-data-quality-audit.html">Data Quality Audit</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

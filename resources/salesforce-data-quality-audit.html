@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to Audit Your Salesforce Data Quality | Verum</title>
-  <meta name="description" content="You suspect your CRM data has problems, but how bad is it really? Here's how to run a comprehensive Salesforce data quality audit with metrics that matter.">
+  <title>Salesforce Data Quality Audit: A Step-by-Step Checklist</title>
+  <meta name="description" content="How to audit Salesforce data quality with SOQL queries, a field-level checklist, scoring framework, and action plan. Measure completeness, accuracy, and decay.">
 
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://veruminc.com/resources/salesforce-data-quality-audit.html">
   <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
@@ -21,16 +22,16 @@
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/resources/salesforce-data-quality-audit.html">
-  <meta property="og:title" content="How to Audit Your Salesforce Data Quality">
-  <meta property="og:description" content="You suspect your CRM data has problems. Here's how to measure exactly how bad it is.">
+  <meta property="og:title" content="Salesforce Data Quality Audit: A Step-by-Step Checklist">
+  <meta property="og:description" content="How to audit Salesforce data quality with SOQL queries, a scoring framework, and an action plan.">
   <meta property="og:site_name" content="Verum">
   <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="How to Audit Your Salesforce Data Quality">
-  <meta name="twitter:description" content="You suspect your CRM data has problems. Here's how to measure exactly how bad it is.">
+  <meta name="twitter:title" content="Salesforce Data Quality Audit: A Step-by-Step Checklist">
+  <meta name="twitter:description" content="Run a full data quality audit on your Salesforce org. SOQL queries, field-level checklist, scoring framework.">
   <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
@@ -55,7 +56,7 @@
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
       {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
-      {"@type": "ListItem", "position": 3, "name": "How to Audit Your Salesforce Data Quality"}
+      {"@type": "ListItem", "position": 3, "name": "Salesforce Data Quality Audit: A Step-by-Step Checklist"}
     ]
   }
   </script>
@@ -64,8 +65,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How to Audit Your Salesforce Data Quality",
-    "description": "You suspect your CRM data has problems, but how bad is it really? Here's how to run a comprehensive Salesforce data quality audit with metrics that matter.",
+    "headline": "Salesforce Data Quality Audit: A Step-by-Step Checklist",
+    "description": "How to audit your Salesforce data quality. Includes SOQL queries, field-level checklist, scoring framework, and action plan template.",
     "author": {
       "@type": "Person",
       "@id": "https://veruminc.com/team/#rome"
@@ -74,7 +75,7 @@
       "@id": "https://veruminc.com/#organization"
     },
     "datePublished": "2026-01-17",
-    "dateModified": "2026-01-17",
+    "dateModified": "2026-03-17",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://veruminc.com/resources/salesforce-data-quality-audit.html"
@@ -89,34 +90,34 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How often should I audit my Salesforce data quality?",
+        "name": "How often should I audit Salesforce data quality?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Quarterly is ideal for most companies. This catches problems before they compound significantly. At minimum, audit before any major initiative: CRM migration, new marketing automation launch, or territory realignment."
+          "text": "Run a full audit quarterly and monitor key metrics (completeness, duplicate rate, bounce rate) monthly. If you're preparing for a migration or major campaign, run an audit immediately beforehand regardless of your regular schedule."
         }
       },
       {
         "@type": "Question",
-        "name": "What's an acceptable duplicate rate in Salesforce?",
+        "name": "What's a good data quality score for Salesforce?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Industry benchmarks suggest under 5% is good, under 10% is acceptable, above 15% needs immediate attention. These numbers apply to both Accounts and Contacts. Higher rates indicate broken data entry processes or a history of unconsolidated imports."
+          "text": "Most Salesforce orgs score between 40-60% on their first audit. A score above 80% is strong. Above 90% is exceptional and usually only happens with active data governance. The score matters less than the trend, though. Improving from 45% to 65% in a quarter is more meaningful than sitting at 75% for a year."
         }
       },
       {
         "@type": "Question",
-        "name": "What's the most important data quality metric?",
+        "name": "Can I automate a Salesforce data quality audit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It depends on your business, but email validity usually has the most direct revenue impact. Invalid emails mean failed campaigns, wasted outreach, and damaged sender reputation. Start there if you can only fix one thing."
+          "text": "Partially. You can automate the measurement side with scheduled reports, SOQL queries, and dashboards that track completeness and duplicate rates over time. The interpretation and action planning still requires a human. Tools like Validity DemandTools or Cloudingo can automate ongoing monitoring, but the initial audit should be hands-on."
         }
       },
       {
         "@type": "Question",
-        "name": "Should I audit all records or just a sample?",
+        "name": "What SOQL queries are most useful for a data quality audit?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For quantitative metrics (completeness, duplication rates), analyze all records. For qualitative assessments (accuracy of specific values), a statistically valid sample works. For databases under 100K records, auditing everything is usually feasible."
+          "text": "The most useful SOQL queries count records missing key fields (Email, Phone, Industry, AnnualRevenue), identify records with no activity in 12+ months, find duplicate patterns using GROUP BY on normalized fields, and measure field fill rates across objects. Start with completeness queries since they're the fastest way to quantify your data gaps."
         }
       }
     ]
@@ -191,44 +192,45 @@
     .stat-box p {
       margin: 0;
     }
-    .metrics-table {
+    .example-table {
       width: 100%;
       border-collapse: collapse;
       margin: 1.5rem 0;
       font-size: 0.9375rem;
     }
-    .metrics-table th,
-    .metrics-table td {
+    .example-table th,
+    .example-table td {
       padding: 0.75rem 1rem;
       text-align: left;
       border-bottom: 1px solid var(--color-border);
     }
-    .metrics-table th {
+    .example-table th {
       background: var(--color-bg-card);
       font-weight: 600;
       color: var(--color-text-primary);
     }
-    .metrics-table td {
+    .example-table td {
       color: var(--color-text-secondary);
     }
-    .benchmark {
-      display: inline-block;
-      padding: 0.125rem 0.5rem;
+    code {
+      background: var(--color-bg-card);
+      padding: 0.125rem 0.375rem;
       border-radius: 3px;
-      font-size: 0.75rem;
-      font-weight: 600;
+      font-size: 0.875rem;
     }
-    .benchmark--good {
-      background: rgba(16, 185, 129, 0.1);
-      color: #10b981;
+    pre {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+      margin: 1.25rem 0;
     }
-    .benchmark--okay {
-      background: rgba(245, 158, 11, 0.1);
-      color: #f59e0b;
-    }
-    .benchmark--bad {
-      background: rgba(239, 68, 68, 0.1);
-      color: #ef4444;
+    pre code {
+      background: none;
+      padding: 0;
     }
   </style>
 </head>
@@ -248,379 +250,334 @@
   <main>
     <article class="section">
       <div class="article-content">
-        <h1>How to Audit Your Salesforce Data Quality</h1>
-        <p class="article-meta">January 2026 · 10 min read</p>
+        <h1>Salesforce Data Quality Audit: A Step-by-Step Checklist</h1>
+        <p class="article-meta">Updated March 2026 · 13 min read</p>
 
-        <p>Everyone knows their CRM data has problems. Nobody knows exactly how bad those problems are. "We probably have some duplicates" and "I think a lot of emails are outdated" aren't actionable statements.</p>
+        <p>Your VP of Sales just asked you how many active accounts are in the pipeline. You pull a report, and the number looks wrong. Too high. You dig in and find accounts with no activity in two years, contacts with bounced emails still marked as valid, and a handful of records where the Industry field says "Other" because nobody bothered to fill it in properly. You don't have a pipeline problem. You have a <strong>Salesforce data quality</strong> problem, and you don't know how deep it goes.</p>
 
-        <p>A data quality audit gives you specific numbers: your duplicate rate is 14%, 23% of emails are invalid, 67% of accounts are missing industry data. With numbers, you can prioritize. You can calculate ROI on cleanup. You can make the case for investment.</p>
+        <p>A <strong>Salesforce data audit</strong> gives you that answer. Not a vague sense of "our data could be better," but actual numbers. What percentage of your records are complete. How many duplicates are hiding behind name variations. How fast your data is decaying. And most importantly, where to focus your cleanup effort for the biggest impact.</p>
 
-        <p>Here's how to run a comprehensive Salesforce data quality audit.</p>
+        <p>This guide walks you through a full audit with specific SOQL queries, a field-level checklist, a scoring framework, and an action plan template you can start using today.</p>
 
-        <h2>The Five Dimensions of Data Quality</h2>
+        <h2>What You're Measuring</h2>
 
-        <p>Data quality isn't a single metric. It breaks down into measurable dimensions:</p>
+        <p>Data quality isn't one thing. It's four dimensions, and you need to measure each separately because they have different causes and different fixes.</p>
 
-        <p><strong>Completeness:</strong> What percentage of records have values for required fields? If 40% of your Contacts are missing phone numbers, that's a completeness problem.</p>
+        <h3>1. Completeness</h3>
 
-        <p><strong>Accuracy:</strong> Are the values that exist correct? An email that's formatted properly but bounces is an accuracy problem. A company listed as "Tech" when it's actually healthcare is an accuracy problem.</p>
+        <p>What percentage of records have values in key fields? This is the easiest dimension to measure and usually the worst offender. An Account record without Industry, AnnualRevenue, or NumberOfEmployees is essentially invisible to your lead scoring, routing, and segmentation.</p>
 
-        <p><strong>Consistency:</strong> Are similar values formatted the same way? "United States", "US", "USA", and "U.S.A." all in your Country field is a consistency problem.</p>
+        <h3>2. Accuracy</h3>
 
-        <p><strong>Uniqueness:</strong> How many duplicate records exist? If the same company appears as three different Accounts, that's a uniqueness problem.</p>
+        <p>Are the values that do exist actually correct? A Contact with an email that bounces has a value in the Email field, but it's useless. An Account with "Technology" as the industry when they're actually a healthcare company is worse than blank, because it's actively misleading your sales team.</p>
 
-        <p><strong>Timeliness:</strong> How current is the data? A contact's job title from three years ago might be wrong now. Contact data <a href="https://www.marketingprofs.com/charts/2019/41083/how-fast-does-b2b-marketing-data-decay" target="_blank" rel="noopener">decays at roughly 30% per year</a>.</p>
+        <h3>3. Consistency</h3>
 
-        <h2>Account-Level Audit</h2>
+        <p>Are the same things represented the same way? "US" vs "United States" vs "USA" in the Country field. "VP Sales" vs "Vice President of Sales" vs "VP, Sales" in Title. Inconsistent values break filters, reports, and automation rules.</p>
 
-        <p>Start with Accounts since they're the foundation of your B2B data model.</p>
+        <h3>4. Decay Rate</h3>
 
-        <h3>Completeness Metrics</h3>
+        <p>How fast is your data going stale? B2B contact data decays at roughly 2-3% per month. That means about 25-30% of your database becomes inaccurate every year through job changes, company moves, email changes, and phone number turnover. If you haven't touched your data in 18 months, nearly half of it could be wrong.</p>
 
-        <p>Create a report that counts records with null/empty values for each key field:</p>
+        <h2>Step 1: Measure Completeness with SOQL</h2>
 
-        <table class="metrics-table">
-          <thead>
-            <tr>
-              <th>Field</th>
-              <th>Why It Matters</th>
-              <th>Target Fill Rate</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Account Name</strong></td>
-              <td>Basic identification</td>
-              <td>100%</td>
-            </tr>
-            <tr>
-              <td><strong>Website/Domain</strong></td>
-              <td>Deduplication, enrichment matching</td>
-              <td>>95%</td>
-            </tr>
-            <tr>
-              <td><strong>Industry</strong></td>
-              <td>Segmentation, ICP filtering</td>
-              <td>>85%</td>
-            </tr>
-            <tr>
-              <td><strong>Employee Count</strong></td>
-              <td>Company size for routing/scoring</td>
-              <td>>80%</td>
-            </tr>
-            <tr>
-              <td><strong>Annual Revenue</strong></td>
-              <td>Budget qualification</td>
-              <td>>60%</td>
-            </tr>
-            <tr>
-              <td><strong>Billing Address</strong></td>
-              <td>Territory assignment</td>
-              <td>>90%</td>
-            </tr>
-            <tr>
-              <td><strong>Account Owner</strong></td>
-              <td>Sales coverage</td>
-              <td>100%</td>
-            </tr>
-          </tbody>
-        </table>
+        <p>Open Developer Console or use a tool like Workbench to run these queries. They'll give you hard numbers on where your gaps are.</p>
 
-        <h3>Uniqueness Metrics</h3>
+        <h3>Contact completeness</h3>
 
-        <p>Duplicate Accounts cause significant problems. Here's how to measure your duplicate rate:</p>
+        <pre><code>SELECT COUNT(Id) FROM Contact WHERE Email = null
+SELECT COUNT(Id) FROM Contact WHERE Phone = null
+SELECT COUNT(Id) FROM Contact WHERE Title = null
+SELECT COUNT(Id) FROM Contact WHERE MailingCity = null</code></pre>
 
-        <ol>
-          <li><strong>Exact domain matches:</strong> How many Accounts share the same website/domain?</li>
-          <li><strong>Fuzzy name matches:</strong> How many Account names are similar enough to be duplicates? (Requires fuzzy matching logic)</li>
-          <li><strong>Orphan Accounts:</strong> How many Accounts have zero Contacts? (May indicate data entry errors or abandonded records)</li>
-        </ol>
+        <p>Compare each result against your total Contact count. If 40% of your Contacts don't have a Title, that's a problem for any routing or scoring that depends on seniority.</p>
+
+        <h3>Account completeness</h3>
+
+        <pre><code>SELECT COUNT(Id) FROM Account WHERE Industry = null
+SELECT COUNT(Id) FROM Account WHERE AnnualRevenue = null
+SELECT COUNT(Id) FROM Account WHERE NumberOfEmployees = null
+SELECT COUNT(Id) FROM Account WHERE BillingState = null
+SELECT COUNT(Id) FROM Account WHERE Website = null</code></pre>
+
+        <p>AnnualRevenue and NumberOfEmployees are usually the worst. Most orgs we audit have these fields filled on fewer than 30% of their Account records.</p>
+
+        <h3>Lead completeness</h3>
+
+        <pre><code>SELECT COUNT(Id) FROM Lead WHERE Company = null OR Company = ''
+SELECT COUNT(Id) FROM Lead WHERE Email = null
+SELECT COUNT(Id) FROM Lead WHERE Phone = null
+SELECT COUNT(Id) FROM Lead WHERE Industry = null</code></pre>
 
         <div class="stat-box">
-          <p><strong>Benchmarks</strong> (based on <a href="https://www.validity.com/resources/data-quality-benchmarks/" target="_blank" rel="noopener">industry data quality standards</a>):<br>
-          <span class="benchmark benchmark--good">Good: &lt;5% duplicates</span><br>
-          <span class="benchmark benchmark--okay">Needs work: 5-10% duplicates</span><br>
-          <span class="benchmark benchmark--bad">Problem: &gt;10% duplicates</span></p>
+          <p><strong>Benchmark:</strong> Calculate your field fill rate for each critical field. Above 85% is good. Below 60% means that field is effectively unusable for segmentation or routing.</p>
         </div>
 
-        <h3>Consistency Metrics</h3>
+        <h2>Step 2: Identify Duplicates</h2>
 
-        <p>Check categorical fields for variant values:</p>
+        <p>Duplicates are the most expensive data quality problem because they cause split pipelines, double outreach, and inaccurate forecasting. They're also the hardest to find because they hide behind name variations.</p>
 
-        <ul>
-          <li>How many unique values exist in the Industry field? (20 is reasonable; 200 suggests inconsistency)</li>
-          <li>How many Country variations exist? (Should map to a standard list)</li>
-          <li>Are account names standardized? (Check for "Inc." vs "Inc" vs "Incorporated" variations)</li>
-        </ul>
+        <h3>Find potential duplicate Contacts by email</h3>
 
-        <h2>Contact-Level Audit</h2>
+        <pre><code>SELECT Email, COUNT(Id) cnt
+FROM Contact
+WHERE Email != null
+GROUP BY Email
+HAVING COUNT(Id) > 1
+ORDER BY COUNT(Id) DESC</code></pre>
 
-        <p>Contacts are where most data quality issues live, and where the impact is most directly felt.</p>
+        <h3>Find potential duplicate Accounts by name</h3>
 
-        <h3>Completeness Metrics</h3>
+        <pre><code>SELECT Name, COUNT(Id) cnt
+FROM Account
+GROUP BY Name
+HAVING COUNT(Id) > 1
+ORDER BY COUNT(Id) DESC</code></pre>
 
-        <table class="metrics-table">
+        <p>That second query only catches exact name matches. It won't find "Acme Corp" and "Acme Corporation" as duplicates. For that, you need either a normalized name field (see our <a href="/resources/salesforce-company-name-normalization.html">company name normalization guide</a>) or Salesforce's built-in <a href="/resources/salesforce-duplicate-management.html">duplicate management</a> with fuzzy matching enabled.</p>
+
+        <h3>Find orphaned Contacts</h3>
+
+        <pre><code>SELECT COUNT(Id) FROM Contact WHERE AccountId = null</code></pre>
+
+        <p>Contacts not linked to any Account are often leftovers from bad imports or Lead conversions that went sideways. They clutter your database and confuse reps.</p>
+
+        <h2>Step 3: Assess Accuracy</h2>
+
+        <p>Accuracy is harder to measure than completeness because you can't just check for null values. You need to look for signals that data has gone stale or was wrong from the start.</p>
+
+        <h3>Email bounce indicators</h3>
+
+        <p>If you're using Salesforce with a marketing automation tool (Pardot, HubSpot, Marketo), check for hard bounces. Contacts with bounced emails should be flagged or removed from active outreach lists.</p>
+
+        <pre><code>SELECT COUNT(Id) FROM Contact
+WHERE HasOptedOutOfEmail = true</code></pre>
+
+        <p>Also look for email patterns that suggest fake or low-quality addresses: noreply@, info@, test@, and personal domains (gmail, yahoo) for B2B records where you'd expect a corporate domain.</p>
+
+        <h3>Stale records</h3>
+
+        <pre><code>SELECT COUNT(Id) FROM Contact
+WHERE LastActivityDate < LAST_N_DAYS:365
+
+SELECT COUNT(Id) FROM Account
+WHERE LastActivityDate < LAST_N_DAYS:365</code></pre>
+
+        <p>Records with no activity in over a year are likely stale. The contacts may have changed roles, the accounts may have been acquired. These records inflate your database size without contributing value.</p>
+
+        <h3>Suspicious patterns</h3>
+
+        <p>Look for fields where the same value appears suspiciously often. If 60% of your Accounts have Industry set to "Technology," that's probably a default value or lazy data entry rather than an accurate reflection of your market.</p>
+
+        <pre><code>SELECT Industry, COUNT(Id) cnt
+FROM Account
+WHERE Industry != null
+GROUP BY Industry
+ORDER BY COUNT(Id) DESC</code></pre>
+
+        <h2>Step 4: Check Consistency</h2>
+
+        <p>Inconsistent data breaks automation. A Flow that routes leads based on Country won't work if your data has "US," "USA," "United States," "U.S.," and "United States of America" all in the same field.</p>
+
+        <h3>Country field variations</h3>
+
+        <pre><code>SELECT BillingCountry, COUNT(Id) cnt
+FROM Account
+WHERE BillingCountry != null
+GROUP BY BillingCountry
+ORDER BY COUNT(Id) DESC</code></pre>
+
+        <h3>State field variations</h3>
+
+        <pre><code>SELECT BillingState, COUNT(Id) cnt
+FROM Account
+WHERE BillingState != null
+GROUP BY BillingState
+ORDER BY COUNT(Id) DESC</code></pre>
+
+        <p>If you see "California" and "CA" and "Calif" all appearing, you've got a consistency problem. Same goes for Title, Industry, and any picklist field where users can type free text.</p>
+
+        <h2>Step 5: Calculate Your Data Quality Score</h2>
+
+        <p>Now turn your findings into a single score so you can track improvement over time. Weight each dimension based on what matters most for your business.</p>
+
+        <table class="example-table">
           <thead>
             <tr>
+              <th>Dimension</th>
+              <th>Weight</th>
+              <th>How to Calculate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Completeness</td>
+              <td>40%</td>
+              <td>Average fill rate across critical fields</td>
+            </tr>
+            <tr>
+              <td>Accuracy</td>
+              <td>25%</td>
+              <td>% of records with valid, non-bounced email + recent activity</td>
+            </tr>
+            <tr>
+              <td>Uniqueness</td>
+              <td>20%</td>
+              <td>100% minus duplicate rate</td>
+            </tr>
+            <tr>
+              <td>Consistency</td>
+              <td>15%</td>
+              <td>% of records using standard picklist values</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p><strong>Example:</strong> Your Contacts have 72% average completeness across key fields, 65% have valid emails with activity in the last year, your duplicate rate is 8% (so uniqueness is 92%), and 80% of records use standardized picklist values.</p>
+
+        <p>Score: (0.72 x 40) + (0.65 x 25) + (0.92 x 20) + (0.80 x 15) = 28.8 + 16.25 + 18.4 + 12 = <strong>75.45</strong></p>
+
+        <p>That's a B. Not terrible, but the accuracy number is dragging you down.</p>
+
+        <h2>Step 6: Build Your Action Plan</h2>
+
+        <p>An audit without a cleanup plan is just depressing. Prioritize based on impact and effort.</p>
+
+        <h3>Quick wins (do this week)</h3>
+
+        <ul>
+          <li><strong>Standardize picklist values.</strong> Country, State, Industry. Write a Flow or use Data Loader to bulk-update the variations to standard values.</li>
+          <li><strong>Delete or archive obviously dead records.</strong> No email, no phone, no activity in 2+ years, no open Opportunities. These are dead weight.</li>
+          <li><strong>Flag bounced emails.</strong> Mark hard bounces as invalid so reps stop wasting time on them.</li>
+        </ul>
+
+        <h3>Medium effort (do this month)</h3>
+
+        <ul>
+          <li><strong>Merge duplicates.</strong> Start with exact-match email duplicates since those are unambiguous. Then move to fuzzy name matching. See our <a href="/resources/salesforce-duplicate-management.html">duplicate management guide</a> for the full process.</li>
+          <li><strong>Fill critical gaps on active records.</strong> Focus on records with open Opportunities or recent activity. <a href="/resources/salesforce-data-enrichment.html">Enrichment tools</a> can backfill Industry, employee count, and revenue.</li>
+          <li><strong>Set up validation rules.</strong> Prevent bad data from entering in the first place. Required fields on Lead and Contact creation, picklist enforcement, email format validation.</li>
+        </ul>
+
+        <h3>Longer-term (this quarter)</h3>
+
+        <ul>
+          <li><strong>Implement <a href="/resources/salesforce-duplicate-management.html">duplicate rules</a>.</strong> Configure matching rules and duplicate rules to catch duplicates at point of entry.</li>
+          <li><strong>Set up enrichment automation.</strong> Auto-enrich new Leads and Contacts with firmographic data on creation.</li>
+          <li><strong>Build a data quality dashboard.</strong> Track completeness, duplicate rate, and bounce rate monthly so you can see trends.</li>
+          <li><strong>Establish <a href="/resources/data-governance-without-team.html">data governance</a> ownership.</strong> Someone has to own this, even if it's a shared responsibility with clear rules.</li>
+        </ul>
+
+        <h2>Field-Level Audit Checklist</h2>
+
+        <p>Use this checklist to audit each critical field. Print it, stick it in a spreadsheet, whatever works.</p>
+
+        <table class="example-table">
+          <thead>
+            <tr>
+              <th>Object</th>
               <th>Field</th>
-              <th>Why It Matters</th>
-              <th>Target Fill Rate</th>
+              <th>Check</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Email</strong></td>
-              <td>Primary communication channel</td>
-              <td>>98%</td>
+              <td>Contact</td>
+              <td>Email</td>
+              <td>Fill rate, bounce rate, personal vs corporate domain ratio</td>
             </tr>
             <tr>
-              <td><strong>First Name</strong></td>
-              <td>Personalization</td>
-              <td>100%</td>
+              <td>Contact</td>
+              <td>Phone</td>
+              <td>Fill rate, format consistency, disconnected numbers</td>
             </tr>
             <tr>
-              <td><strong>Last Name</strong></td>
-              <td>Identification</td>
-              <td>100%</td>
+              <td>Contact</td>
+              <td>Title</td>
+              <td>Fill rate, standardization (VP vs Vice President), junk values</td>
             </tr>
             <tr>
-              <td><strong>Title</strong></td>
-              <td>Routing, scoring, personalization</td>
-              <td>>90%</td>
+              <td>Contact</td>
+              <td>MailingAddress</td>
+              <td>Fill rate, consistency (state abbreviations), completeness (zip without city)</td>
             </tr>
             <tr>
-              <td><strong>Phone</strong></td>
-              <td>Outbound calling</td>
-              <td>>60%</td>
+              <td>Account</td>
+              <td>Industry</td>
+              <td>Fill rate, "Other" percentage, accuracy spot-check</td>
             </tr>
             <tr>
-              <td><strong>Account (lookup)</strong></td>
-              <td>Company relationship</td>
-              <td>100%</td>
+              <td>Account</td>
+              <td>AnnualRevenue</td>
+              <td>Fill rate, outliers (suspiciously round numbers, $1 entries)</td>
             </tr>
             <tr>
-              <td><strong>Mailing Address</strong></td>
-              <td>Direct mail, events</td>
-              <td>>50%</td>
+              <td>Account</td>
+              <td>NumberOfEmployees</td>
+              <td>Fill rate, outliers, staleness</td>
+            </tr>
+            <tr>
+              <td>Account</td>
+              <td>Website</td>
+              <td>Fill rate, broken URLs, http vs https</td>
+            </tr>
+            <tr>
+              <td>Lead</td>
+              <td>Company</td>
+              <td>Fill rate, junk values ("test," "asdf," single characters)</td>
+            </tr>
+            <tr>
+              <td>Lead</td>
+              <td>LeadSource</td>
+              <td>Fill rate, value distribution, "Other" percentage</td>
             </tr>
           </tbody>
         </table>
 
-        <h3>Email Quality Metrics</h3>
+        <h2>Common Mistakes When Auditing</h2>
 
-        <p>Email completeness isn't enough. You need to assess email quality:</p>
+        <p><strong>Auditing everything at once.</strong> Your Salesforce org probably has hundreds of fields. Don't try to audit them all. Focus on the 10-15 fields that actually drive routing, scoring, segmentation, and reporting. The rest can wait.</p>
 
-        <ul>
-          <li><strong>Format validity:</strong> Does the email follow proper syntax?</li>
-          <li><strong>Domain validity:</strong> Does the domain exist and accept mail?</li>
-          <li><strong>Mailbox validity:</strong> Does the specific mailbox exist?</li>
-          <li><strong>Role-based rate:</strong> What percentage are info@, sales@, support@ addresses?</li>
-          <li><strong>Disposable rate:</strong> What percentage are throwaway email services?</li>
-        </ul>
+        <p><strong>Counting records instead of active records.</strong> A database with 200,000 Contacts sounds impressive. But if 120,000 of them have no activity in two years and bounced emails, your "real" database is 80,000. Audit the records that matter, not the total count.</p>
 
-        <p>Run your email list through a <a href="/resources/salesforce-email-validation.html">validation service</a> to get these metrics.</p>
+        <p><strong>Not establishing a baseline.</strong> If you don't write down your current scores, you can't prove improvement later. Save your audit results. You'll need them when someone asks whether the cleanup initiative was worth the investment.</p>
 
-        <div class="stat-box">
-          <p><strong>Email quality benchmarks</strong> (based on <a href="https://www.validity.com/resource-center/state-of-email-deliverability/" target="_blank" rel="noopener">email deliverability research</a>):<br>
-          <span class="benchmark benchmark--good">Good: &gt;85% valid</span><br>
-          <span class="benchmark benchmark--okay">Needs work: 70-85% valid</span><br>
-          <span class="benchmark benchmark--bad">Problem: &lt;70% valid</span></p>
+        <p><strong>Treating the audit as a one-time thing.</strong> Data quality isn't a project. It's a process. Run this audit quarterly, or at minimum before any major initiative: a new marketing campaign, a territory realignment, a CRM migration, or an enrichment project.</p>
+
+        <p><strong>Ignoring custom fields.</strong> Standard fields get all the attention, but your custom fields often hold the data that's most critical to your specific business. Audit your ICP fields, your product interest fields, your custom scoring inputs.</p>
+
+        <h2>When to DIY vs. Get Help</h2>
+
+        <p>You can absolutely run this audit yourself. The SOQL queries above work in any Salesforce org, and the scoring framework doesn't require any special tools.</p>
+
+        <p>Where it gets harder is the cleanup. Merging 3,000 duplicate pairs without losing data. Enriching 50,000 Accounts with missing firmographics. Normalizing 15 variations of every state name across 200,000 records. That's where the volume makes DIY impractical.</p>
+
+        <p>If you're dealing with a large database and the audit reveals significant issues, we can help. We clean Salesforce data for a living, and we typically start with a free assessment that gives you the same numbers this guide describes, but faster.</p>
+
+        <h2>Common Questions About Salesforce Data Quality Audits</h2>
+
+        <div class="faq-section">
+          <h3>How often should I audit Salesforce data quality?</h3>
+          <p>Quarterly for a full audit. Monthly for key metrics (completeness on critical fields, duplicate rate, email bounce rate). If you're about to launch a major campaign or migrate CRMs, run an audit right before regardless of your regular schedule.</p>
+
+          <h3>What's a good data quality score for Salesforce?</h3>
+          <p>Most orgs score between 40-60% on their first audit. Above 80% is strong. Above 90% is exceptional and usually requires active data governance. The trend matters more than the absolute number. Going from 45% to 65% in a quarter is significant progress.</p>
+
+          <h3>Can I automate a Salesforce data quality audit?</h3>
+          <p>You can automate the measurement with scheduled reports and dashboards that track completeness, duplicate rates, and bounce rates over time. Some teams build custom Apex to calculate scores weekly. The interpretation and action planning still requires human judgment. Tools like Validity DemandTools or Cloudingo can help with ongoing monitoring.</p>
+
+          <h3>What SOQL queries are most useful for a data quality audit?</h3>
+          <p>Start with completeness queries that count null values on critical fields. Then run GROUP BY queries on fields like Industry, Country, and State to spot inconsistencies. Finally, use GROUP BY on Email to find duplicate Contacts. These three query types cover 80% of what you need.</p>
         </div>
 
-        <h3>Uniqueness Metrics</h3>
-
-        <p>Contact duplicates are tricky because the same person might have multiple legitimate records (changed companies, different email addresses).</p>
-
-        <p>Check for duplicates using:</p>
-        <ul>
-          <li><strong>Exact email matches:</strong> Same email on multiple Contact records</li>
-          <li><strong>Same name + same Account:</strong> Strong duplicate indicator</li>
-          <li><strong>Same name + same domain:</strong> Likely duplicate even if different email address</li>
-        </ul>
-
-        <h3>Timeliness Metrics</h3>
-
-        <p>How stale is your Contact data?</p>
-
-        <ul>
-          <li><strong>Last Activity Date distribution:</strong> What percentage of Contacts have had activity in the last 6 months? 12 months? 24 months?</li>
-          <li><strong>Last Modified Date distribution:</strong> When was the record data last updated?</li>
-          <li><strong>Created Date age:</strong> Records created 3+ years ago without updates are likely outdated</li>
-        </ul>
-
-        <p>Contacts with no activity in 24+ months and no updates in 12+ months are high-risk for data decay.</p>
-
-        <h2>Lead-Level Audit</h2>
-
-        <p>If you use Leads, apply similar metrics:</p>
-
-        <ul>
-          <li><strong>Completeness:</strong> Fill rates for key fields (email, company, title)</li>
-          <li><strong>Email validity:</strong> Same validation as Contacts</li>
-          <li><strong>Lead-to-Contact duplicates:</strong> How many Leads already exist as Contacts?</li>
-          <li><strong>Lead aging:</strong> How long do Leads sit before conversion or disqualification?</li>
-          <li><strong>Source quality:</strong> Which Lead Sources have the worst data quality?</li>
-        </ul>
-
-        <h2>Opportunity-Level Audit</h2>
-
-        <p>Opportunity data quality directly affects forecasting and reporting:</p>
-
-        <ul>
-          <li><strong>Stage consistency:</strong> Are stages being used correctly or skipped?</li>
-          <li><strong>Close Date accuracy:</strong> How often do Close Dates slip past the original date?</li>
-          <li><strong>Amount fill rate:</strong> What percentage of Opportunities have amounts?</li>
-          <li><strong>Contact Roles:</strong> What percentage of Opportunities have associated Contacts?</li>
-          <li><strong>Orphan Opportunities:</strong> Opportunities without Accounts or with deleted Accounts</li>
-        </ul>
-
-        <h2>Running the Audit: Practical Steps</h2>
-
-        <h3>Step 1: Export Your Data</h3>
-
-        <p>Pull reports for each object you're auditing. Include all fields you want to measure. Export to CSV for analysis.</p>
-
-        <p>For large databases, you may need to use <a href="https://help.salesforce.com/s/articleView?id=sf.data_loader.htm" target="_blank" rel="noopener">Data Loader</a> or the Bulk API instead of standard reports.</p>
-
-        <h3>Step 2: Calculate Completeness</h3>
-
-        <p>For each field, count:</p>
-        <ul>
-          <li>Total records</li>
-          <li>Records with blank/null values</li>
-          <li>Fill rate = (Total - Blank) / Total</li>
-        </ul>
-
-        <p>This can be done in Excel with COUNTBLANK functions, or programmatically with Python/SQL.</p>
-
-        <h3>Step 3: Identify Duplicates</h3>
-
-        <p>For exact matches (same email, same domain), simple sorting and comparison works.</p>
-
-        <p>For fuzzy matches (similar names, minor spelling variations), you'll need:</p>
-        <ul>
-          <li>Fuzzy matching algorithms (Levenshtein distance, Jaro-Winkler)</li>
-          <li>Specialized tools (Cloudingo, DemandTools, RingLead)</li>
-          <li>Or manual review of sorted lists</li>
-        </ul>
-
-        <h3>Step 4: Validate Emails</h3>
-
-        <p>Upload your email list to a validation service. They'll return results categorized by validity status.</p>
-
-        <h3>Step 5: Assess Consistency</h3>
-
-        <p>For picklist fields, pull the distinct value counts. High counts suggest inconsistency:</p>
-
-        <ul>
-          <li>Country field with 50+ values probably has inconsistent entries</li>
-          <li>Industry field with 200+ values definitely needs cleanup</li>
-        </ul>
-
-        <p>For free-text fields like company names, look for obvious variations (Inc vs Inc. vs Incorporated).</p>
-
-        <h3>Step 6: Compile Results</h3>
-
-        <p>Create a summary scorecard with all metrics:</p>
-
-        <table class="metrics-table">
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Current</th>
-              <th>Target</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Account duplicate rate</td>
-              <td>8.3%</td>
-              <td>&lt;5%</td>
-              <td><span class="benchmark benchmark--okay">Needs work</span></td>
-            </tr>
-            <tr>
-              <td>Contact email fill rate</td>
-              <td>94.2%</td>
-              <td>&gt;98%</td>
-              <td><span class="benchmark benchmark--okay">Needs work</span></td>
-            </tr>
-            <tr>
-              <td>Contact email validity</td>
-              <td>78.5%</td>
-              <td>&gt;85%</td>
-              <td><span class="benchmark benchmark--bad">Problem</span></td>
-            </tr>
-            <tr>
-              <td>Account industry fill rate</td>
-              <td>89.1%</td>
-              <td>&gt;85%</td>
-              <td><span class="benchmark benchmark--good">Good</span></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>Prioritizing Cleanup</h2>
-
-        <p>You can't fix everything at once. Prioritize based on:</p>
-
-        <p><strong>Business impact:</strong> Email validity directly affects campaigns. Duplicate Accounts affect forecasting. Missing industry data affects segmentation. Rank by what's costing you most.</p>
-
-        <p><strong>Effort to fix:</strong> Some issues (email validation) are straightforward. Others (duplicate merging) require more careful work. Balance quick wins with important fixes.</p>
-
-        <p><strong>Compounding effect:</strong> Duplicates get worse over time as people add to both records. Bad data entry processes create ongoing problems. Fix root causes early.</p>
-
-        <p>A typical prioritization:</p>
-        <ol>
-          <li>Merge duplicate Accounts (affects everything else)</li>
-          <li>Validate and flag invalid emails (highest immediate ROI)</li>
-          <li>Merge duplicate Contacts (reduces confusion)</li>
-          <li>Fill missing critical fields through <a href="/resources/salesforce-data-enrichment.html">enrichment</a></li>
-          <li>Standardize categorical fields</li>
-          <li>Archive or delete truly dead records</li>
-        </ol>
-
-        <h2>Ongoing Monitoring</h2>
-
-        <p>A data quality audit isn't a one-time event. It's the first step in building a real <a href="/use-cases/crm-hygiene/">CRM data hygiene</a> practice. Set up ongoing monitoring:</p>
-
-        <p><strong>Scheduled reports:</strong> Create Salesforce reports that surface data quality issues weekly or monthly.</p>
-
-        <p><strong>Dashboard:</strong> Build a data quality dashboard with key metrics visible to RevOps and leadership.</p>
-
-        <p><strong>Trend tracking:</strong> Are metrics improving or degrading over time? A declining email validity rate suggests a process problem.</p>
-
-        <p><strong>Source analysis:</strong> Which Lead Sources, import files, or entry points create the worst data? Fix the sources, not just the symptoms.</p>
-
-        <h2>When to Get Help</h2>
-
-        <p>Running a comprehensive data quality audit takes time and expertise. Consider getting help if:</p>
-
-        <ul>
-          <li><strong>You've never done one:</strong> First-time audits benefit from experienced perspective</li>
-          <li><strong>Your database is large:</strong> 100K+ records means significant analysis work</li>
-          <li><strong>You need to justify investment:</strong> An external audit carries more weight with leadership</li>
-          <li><strong>You need benchmarks:</strong> How do you compare to similar companies?</li>
-        </ul>
-
-        <p>At Verum, <a href="/services/data-cleaning.html">data audits</a> are often the first step in our engagements. We assess your current state, identify priorities, and give you a clear picture of what cleanup will involve. If you just want the audit without the cleanup, that works too.</p>
-
-        <div class="article-cta">
-          <p><strong>Not sure about your data quality?</strong></p>
-          <p>We can run a comprehensive audit of your Salesforce instance and give you a detailed report with specific metrics and prioritized recommendations.</p>
-          <p><a href="/contact.html" class="btn btn--primary">Audit My Data</a></p>
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Want someone to run this audit for you? We'll assess your Salesforce data and show you exactly where the problems are, with a cleanup plan attached.</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">Get a Free Data Assessment</a>
         </div>
 
-        
-        <p class="mt-xl text-muted">Related: <a href="/resources/salesforce/">All Salesforce Guides</a> | <a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data</a> | <a href="/resources/salesforce-email-validation.html">Email Validation</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+        <p class="mt-xl text-muted">Related: <a href="/resources/salesforce/">All Salesforce Guides</a> | <a href="/resources/salesforce-duplicate-management.html">Duplicate Management Guide</a> | <a href="/resources/salesforce-data-enrichment.html">Data Enrichment</a> | <a href="/resources/data-quality-metrics.html">Data Quality Metrics</a></p>
 
-        <div style="margin-top: 3rem; padding: 2rem; background: var(--color-bg-secondary, #f0faf7); border-radius: 12px; text-align: center;">
-          <h3 style="margin-bottom: 0.5rem;">Need help with your data?</h3>
-          <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Tell us about your data challenges and we'll show you what clean, enriched data looks like.</p>
-          <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
-        </div>
-
-<div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
           <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
           <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
         </div>
