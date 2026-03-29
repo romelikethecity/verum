@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Merge Two CRM Databases After an Acquisition | Verum</title>
+  <meta name="description" content="A phased approach to merging CRM databases post-acquisition. Field mapping, deduplication, data migration, and the common mistakes that derail the process.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/how-to-merge-crm-databases-acquisition.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/how-to-merge-crm-databases-acquisition.html">
+  <meta property="og:title" content="How to Merge Two CRM Databases After an Acquisition">
+  <meta property="og:description" content="A phased approach to merging CRM databases post-acquisition. Field mapping, dedup, and migration.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Merge Two CRM Databases After an Acquisition">
+  <meta name="twitter:description" content="A phased approach to merging CRM databases post-acquisition. Field mapping, dedup, and migration.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Merge Two CRM Databases After an Acquisition"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Merge Two CRM Databases After an Acquisition",
+    "description": "A phased approach to merging CRM databases post-acquisition. Field mapping, deduplication, data migration, and the common mistakes that derail the process.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-29",
+    "dateModified": "2026-03-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/how-to-merge-crm-databases-acquisition.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does it take to merge two CRM databases?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For databases under 50,000 records each, expect 4-8 weeks for a thorough merge. For larger databases or situations involving different CRM platforms, plan for 8-16 weeks. The field mapping and deduplication phases take the most time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should we merge into the acquirer's CRM or the acquired company's CRM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Almost always the acquirer's CRM. It has the existing automations, integrations, reporting, and user training. Migrating to the acquired company's CRM only makes sense if their system is significantly more capable or the acquirer was already planning a CRM migration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What percentage of records overlap in a typical CRM merge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "B2B companies in the same industry typically see 15-40% contact overlap after an acquisition. Companies in different verticals see 5-15%. The overlap rate determines how much deduplication work is needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do we handle conflicting data between the two CRMs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Define a data hierarchy before you start merging. Typically, the most recently verified data wins for contact fields (email, phone, title), while the acquirer's data wins for account-level fields (industry, segment, territory assignment). Document these rules and apply them consistently."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .step-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .step-box__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--color-teal);
+      color: var(--color-bg-primary);
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: var(--space-md);
+    }
+    .step-box__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-sm);
+    }
+    .step-box__text {
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">CRM Operations</p>
+      <h1 class="page-hero__title">How to Merge Two CRM Databases After an Acquisition</h1>
+      <p class="page-hero__subtitle">You closed the deal. Now you have two CRMs full of overlapping, conflicting, and incomplete data. Here is a phased approach to combining them without losing records or breaking automations.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">March 2026 &middot; 13 min read</div>
+
+      <div class="blog-content">
+
+        <p><strong>Post-acquisition CRM merging</strong> is the process of combining two separate CRM databases into a single system while preserving data integrity, historical records, and automation logic. In a typical B2B acquisition, the two databases share 15-40% overlapping contacts if the companies operated in the same industry. The merge involves four phases: inventory and audit, field mapping, cross-database deduplication, and staged migration. Most teams underestimate the complexity and end up with a merged database that is worse than either original.</p>
+
+        <p>The pressure to merge quickly is real. Sales teams need unified visibility. Marketing needs a single audience. Leadership wants one dashboard. But rushing the merge creates problems that take months to untangle: duplicate records, broken automations, orphaned activities, and conflicting data that nobody trusts.</p>
+
+        <p>This guide lays out a structured approach. Follow the phases in order. Skip one and you will pay for it later.</p>
+
+        <h2>Phase 1: Inventory Both Databases (Week 1-2)</h2>
+
+        <p>Before you merge anything, you need a complete picture of what exists in both systems.</p>
+
+        <h3>Document the Object Model</h3>
+
+        <p>For each CRM, map out:</p>
+        <ul>
+          <li>Which objects are in use (Accounts, Contacts, Leads, Opportunities, Custom Objects)</li>
+          <li>Total record counts per object</li>
+          <li>Custom fields on each object (this is where the real complexity lives)</li>
+          <li>Relationships between objects (Account-Contact associations, Opportunity-Contact roles)</li>
+        </ul>
+
+        <h3>Assess Data Quality in Both Systems</h3>
+
+        <p>Run a <a href="/resources/data-quality-metrics.html">data quality audit</a> on each database separately. For each system, measure:</p>
+        <ul>
+          <li><strong>Completeness:</strong> What percentage of records have email, phone, title, and company filled in?</li>
+          <li><strong>Accuracy:</strong> Sample 100 records from each and verify the data against LinkedIn or company websites. What percentage is correct?</li>
+          <li><strong>Freshness:</strong> How many records have not been updated in 12+ months?</li>
+          <li><strong>Duplication:</strong> What is the internal duplicate rate within each database?</li>
+        </ul>
+
+        <div class="callout-box">
+          <p><strong>This audit determines your data hierarchy.</strong> If the acquired company's CRM has 85% email accuracy and yours has 60%, their email data should take priority in the merge. Measure before you decide.</p>
+        </div>
+
+        <h3>Catalog Active Automations</h3>
+
+        <p>List every workflow, automation rule, and integration that touches data in both systems:</p>
+        <ul>
+          <li>Email sequences and nurture campaigns</li>
+          <li>Lead assignment and routing rules</li>
+          <li>Integrations with marketing automation, billing, support, etc.</li>
+          <li>Scheduled reports and dashboards</li>
+          <li>API connections with third-party tools</li>
+        </ul>
+
+        <p>Any automation that references specific field values, record types, or picklist options will break if the merged data uses different values. Document everything now so you can update them during migration.</p>
+
+        <h2>Phase 2: Field Mapping (Week 2-3)</h2>
+
+        <p>This is the most tedious phase and the most important one. You need to map every field in the source CRM to a corresponding field in the target CRM.</p>
+
+        <h3>Create a Field Mapping Spreadsheet</h3>
+
+        <p>Build a spreadsheet with these columns:</p>
+        <ul>
+          <li>Source CRM field name</li>
+          <li>Source CRM field type (text, picklist, number, date, etc.)</li>
+          <li>Target CRM field name (the equivalent field, or "NEW" if you need to create one)</li>
+          <li>Target CRM field type</li>
+          <li>Transformation rules (e.g., "Map source value 'Enterprise' to target value 'Large Enterprise'")</li>
+          <li>Priority (which system's data wins when both have a value)</li>
+        </ul>
+
+        <h3>Handle Common Mapping Challenges</h3>
+
+        <p><strong>Picklist value mismatches:</strong> One CRM uses "Enterprise, Mid-Market, SMB" and the other uses "Large, Medium, Small." Create a translation table and apply it during migration.</p>
+
+        <p><strong>Custom fields with no equivalent:</strong> The acquired company tracks data that your CRM does not. Decide whether to create new fields in the target CRM or archive the data separately. If fewer than 10% of records use the field, consider archiving.</p>
+
+        <p><strong>Different field types:</strong> One CRM stores phone numbers as text, the other as a phone type with formatting. Standardize during migration to avoid import errors.</p>
+
+        <p><strong>Lifecycle stage and status differences:</strong> The two companies almost certainly use different definitions of "Qualified Lead" or "Customer." Map these explicitly. Get agreement from both sales teams before migrating.</p>
+
+        <h2>Phase 3: Cross-Database Deduplication (Week 3-5)</h2>
+
+        <p>Now comes the hard part: finding records that exist in both databases and deciding which version to keep.</p>
+
+        <h3>Match Records Across Databases</h3>
+
+        <p>Export both databases and run matching at multiple levels:</p>
+
+        <ol>
+          <li><strong>Account-level matching:</strong> Match companies by domain name first (most reliable), then by company name with fuzzy matching. Normalize company names before matching (remove Inc, LLC, Corp, and standardize capitalization).</li>
+          <li><strong>Contact-level matching:</strong> Match by email address first (exact match). Then match by name + company for records without email overlap.</li>
+          <li><strong>Opportunity matching:</strong> If both systems have opportunities for the same account, flag these for manual review. Merging opportunity data incorrectly can double-count pipeline.</li>
+        </ol>
+
+        <div class="warning-box">
+          <p class="warning-box__title">The Pipeline Double-Count Problem</p>
+          <p>If both companies were selling to the same prospect, you may have two open opportunities for one deal. Identify and resolve these before migration. Nothing destroys leadership trust faster than a pipeline that halves after the merge because duplicates are removed.</p>
+        </div>
+
+        <h3>Apply Survivor Rules</h3>
+
+        <p>For matched records, define which version wins for each field:</p>
+        <ul>
+          <li><strong>Contact fields (email, phone, title):</strong> Most recently verified data wins. If neither is verified, prefer the data from the system with higher overall accuracy (from your Phase 1 audit).</li>
+          <li><strong>Account fields (industry, employee count, revenue):</strong> The acquirer's data typically wins, unless the acquired company had a deeper relationship with the account.</li>
+          <li><strong>Activity history:</strong> Preserve all activities from both systems. Do not overwrite or delete activity records.</li>
+          <li><strong>Ownership:</strong> This is a business decision, not a data decision. Get the sales leadership alignment on territory and account ownership before migration.</li>
+        </ul>
+
+        <h2>Phase 4: Staged Migration (Week 5-8)</h2>
+
+        <p>Never migrate everything at once. Use a staged approach that lets you catch problems before they spread.</p>
+
+        <h3>Stage 1: Accounts First</h3>
+        <ol>
+          <li>Migrate non-overlapping accounts from the source CRM to the target CRM</li>
+          <li>For overlapping accounts, update the target records with any better data from the source</li>
+          <li>Verify: Spot-check 50 migrated accounts. Are the fields correct? Are the picklist values mapped properly?</li>
+        </ol>
+
+        <h3>Stage 2: Contacts</h3>
+        <ol>
+          <li>Migrate contacts associated with the accounts you just moved</li>
+          <li>Ensure Account-Contact associations are preserved</li>
+          <li>Merge overlapping contacts using your survivor rules</li>
+          <li>Verify: Check that activities, tasks, and notes transferred with the contacts</li>
+        </ol>
+
+        <h3>Stage 3: Opportunities and Pipeline</h3>
+        <ol>
+          <li>Migrate open opportunities first (these have the highest business impact)</li>
+          <li>Migrate closed-won opportunities for historical reporting</li>
+          <li>Resolve any pipeline duplicates identified in Phase 3</li>
+          <li>Verify: Compare total pipeline value before and after. It should not change significantly unless you intentionally removed duplicates.</li>
+        </ol>
+
+        <h3>Stage 4: Everything Else</h3>
+        <p>Cases, custom objects, attachments, and any remaining data. This is lowest priority because it has the least impact on day-to-day operations.</p>
+
+        <h2>Post-Migration: Validate and Clean</h2>
+
+        <p>After migration, run a validation pass:</p>
+        <ul>
+          <li>Record counts: Do the numbers match what you expected?</li>
+          <li>Automation testing: Run each workflow and verify it still works with the merged data</li>
+          <li>Report validation: Compare key reports (pipeline, activity, conversion rates) against pre-merge baselines</li>
+          <li>User acceptance: Have reps from both teams verify their accounts and contacts look correct</li>
+        </ul>
+
+        <p>Plan for 2-4 weeks of post-migration cleanup. No matter how thorough your preparation, there will be edge cases and exceptions that require manual attention.</p>
+
+        <h2>When to Get Help</h2>
+
+        <p>CRM merges after acquisitions are high-stakes projects. The data represents customer relationships, pipeline, and revenue history. If you have more than 50,000 records to merge, different CRM platforms, or complex custom objects, bringing in a specialist is worth the investment.</p>
+
+        <p>We have done this for companies ranging from 10,000 to 500,000+ records. <a href="/contact.html">Reach out</a> if you want to talk through your situation.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>How long does a CRM merge take?</h3>
+          <p>Under 50,000 records each: 4-8 weeks. Larger databases or cross-platform migrations: 8-16 weeks. The field mapping and deduplication phases take the most time.</p>
+
+          <h3>Should we merge into the acquirer's CRM or the acquired company's?</h3>
+          <p>Almost always the acquirer's. It has the existing automations, integrations, and user training. The exception is when the acquired company's system is significantly more capable.</p>
+
+          <h3>What percentage of records typically overlap?</h3>
+          <p>Same industry: 15-40% contact overlap. Different verticals: 5-15%. The overlap rate determines how much deduplication work is needed.</p>
+
+          <h3>How do we handle conflicting data between the two CRMs?</h3>
+          <p>Define a data hierarchy before you start. Most recently verified data wins for contact fields. Acquirer's data wins for account-level fields. Document the rules and apply them consistently. See our guide on <a href="/resources/data-quality-for-ma-due-diligence.html">data quality for M&A due diligence</a>.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Need help merging CRM databases?</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">See What We'll Find</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/crm-migration-data-cleanup.html">CRM Migration Cleanup</a> | <a href="/resources/salesforce-data-migration-cleanup.html">Salesforce Data Migration</a> | <a href="/resources/data-quality-for-ma-due-diligence.html">Data Quality for M&A</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+        <p style="color: var(--color-text-muted); font-size: 0.875rem;">Further reading: <a href="/resources/multi-crm-data-sync.html" style="color: var(--color-teal);">Multi-CRM Data Sync</a> | <a href="/resources/how-to-clean-salesforce-data.html" style="color: var(--color-teal);">How to Clean Salesforce Data</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their CRM data.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Segment Your Database for ABM Campaigns | Verum</title>
+  <meta name="description" content="Build ABM segments using firmographic, technographic, and intent data. Practical framework for tiered account lists that drive targeted campaigns.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/how-to-segment-database-abm-campaigns.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/how-to-segment-database-abm-campaigns.html">
+  <meta property="og:title" content="How to Segment Your Database for ABM Campaigns">
+  <meta property="og:description" content="Build ABM segments using firmographic, technographic, and intent data layers.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Segment Your Database for ABM Campaigns">
+  <meta name="twitter:description" content="Build ABM segments using firmographic, technographic, and intent data layers.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Segment Your Database for ABM Campaigns"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Segment Your Database for ABM Campaigns",
+    "description": "Build ABM segments using firmographic, technographic, and intent data. Practical framework for tiered account lists that drive targeted campaigns.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-29",
+    "dateModified": "2026-03-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/how-to-segment-database-abm-campaigns.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many accounts should be in each ABM tier?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tier 1 (one-to-one): 10-50 accounts. Tier 2 (one-to-few): 50-200 accounts. Tier 3 (one-to-many): 200-1,000 accounts. These numbers scale with your sales team size. A team of 5 reps can realistically work 25 Tier 1 accounts. A team of 50 can handle 250."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data do I need for ABM segmentation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At minimum, you need firmographic data (industry, employee count, revenue, location) and contact-level data (title, department, seniority). For better targeting, add technographic data (what software they use) and intent data (what topics they are researching). The more data layers you add, the more precise your segments become."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I refresh my ABM segments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Review Tier 1 accounts monthly. Review Tier 2 and Tier 3 quarterly. Intent data changes weekly, so accounts can move between tiers based on current buying signals. Firmographic changes (funding rounds, leadership changes, acquisitions) should trigger automatic re-scoring."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I do ABM with bad CRM data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Poorly. ABM depends on accurate firmographic, technographic, and contact data to build segments and personalize outreach. If 30% of your company data is wrong and you are missing key contacts at target accounts, your segments will be inaccurate and your campaigns will underperform. Data quality is a prerequisite for effective ABM."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .tier-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-xl) 0;
+      font-size: 0.9rem;
+    }
+    .tier-table th,
+    .tier-table td {
+      padding: var(--space-md);
+      border: 1px solid var(--color-border);
+      text-align: left;
+    }
+    .tier-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .tier-table td {
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">ABM Strategy</p>
+      <h1 class="page-hero__title">How to Segment Your Database for ABM Campaigns</h1>
+      <p class="page-hero__subtitle">Account-based marketing fails when segmentation is based on gut instinct instead of data. Here is how to build tiered account lists using firmographic, technographic, and intent signals.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">March 2026 &middot; 13 min read</div>
+
+      <div class="blog-content">
+
+        <p><strong>ABM database segmentation</strong> is the process of dividing your CRM accounts into tiered lists based on fit (firmographic and technographic data) and readiness (intent signals and engagement data). The goal is to create three tiers of accounts: Tier 1 for one-to-one personalized outreach, Tier 2 for one-to-few campaigns targeting account clusters, and Tier 3 for one-to-many programmatic campaigns. Effective segmentation requires clean, enriched data across multiple dimensions. Without it, you are guessing at which accounts to prioritize and how to message them.</p>
+
+        <p>Most ABM programs fail not because the strategy is wrong but because the data underneath is incomplete. If half your accounts are missing industry classification, employee count, or tech stack data, your segments are built on gaps. The result is misallocated budget: high-value accounts get generic outreach while low-fit accounts consume expensive one-to-one resources.</p>
+
+        <p>This guide walks through how to build ABM segments from your existing database, layer in additional data sources, and maintain segments as accounts evolve.</p>
+
+        <h2>The Data You Need for ABM Segmentation</h2>
+
+        <p>ABM segmentation works by layering multiple data types. Each layer adds precision to your targeting.</p>
+
+        <h3>Layer 1: Firmographic Data (Foundation)</h3>
+
+        <p>Firmographic data describes the company itself. This is the baseline for determining whether an account fits your ideal customer profile.</p>
+
+        <ul>
+          <li><strong>Industry / Vertical:</strong> Which industries do you sell to? Use standardized classifications (NAICS, SIC) for consistent segmentation.</li>
+          <li><strong>Employee count:</strong> Size ranges that match your product (1-50, 51-200, 201-1000, 1001-5000, 5000+).</li>
+          <li><strong>Annual revenue:</strong> Revenue brackets that align with your pricing and deal size.</li>
+          <li><strong>Headquarters location:</strong> Geographic targeting for regional sales teams or compliance requirements.</li>
+          <li><strong>Funding stage:</strong> For selling to startups: seed, Series A, Series B, etc. Recent funding often signals budget availability.</li>
+        </ul>
+
+        <p>Most of this data should already exist in your CRM. If it does not, it is available through <a href="/services/data-enrichment.html">enrichment providers</a> with 70-90% coverage for established companies.</p>
+
+        <h3>Layer 2: Technographic Data (Differentiation)</h3>
+
+        <p>Technographic data tells you what software a company uses. This is powerful for targeting because it reveals:</p>
+
+        <ul>
+          <li><strong>Competitor usage:</strong> Companies using a competitor's product are proven buyers of your category. They already have budget and understand the problem.</li>
+          <li><strong>Complementary tools:</strong> Companies using tools that integrate with yours are more likely to see value in your product.</li>
+          <li><strong>Technology maturity:</strong> A company using modern marketing automation is more likely to adopt your analytics tool than one still using spreadsheets.</li>
+        </ul>
+
+        <p>Sources for technographic data include <a href="https://builtwith.com/" target="_blank" rel="noopener">BuiltWith</a> (web technologies), <a href="https://www.g2.com/" target="_blank" rel="noopener">G2</a> (software reviews), and enrichment providers like Clearbit and ZoomInfo that include tech stack data.</p>
+
+        <h3>Layer 3: Intent Data (Timing)</h3>
+
+        <p>Intent data reveals which companies are actively researching topics related to your product. This is the timing signal that separates accounts that fit your ICP from accounts that fit your ICP and are actively in-market.</p>
+
+        <p>Types of intent data:</p>
+        <ul>
+          <li><strong>First-party intent:</strong> Your own website analytics. Which companies are visiting your pricing page, reading case studies, or returning multiple times? Tools like Clearbit Reveal or 6sense identify anonymous visitors by company.</li>
+          <li><strong>Third-party intent:</strong> Research behavior across the web. <a href="https://www.bombora.com/" target="_blank" rel="noopener">Bombora</a>, G2, and TrustRadius track when companies surge in research activity on specific topics.</li>
+          <li><strong>Engagement intent:</strong> Your own engagement data. Email opens, content downloads, webinar attendance, ad clicks. This is first-party data you already have.</li>
+        </ul>
+
+        <div class="callout-box">
+          <p><strong>Intent data is a force multiplier, not a foundation.</strong> Do not build your entire ABM list from intent signals alone. Intent data has false positives (a single employee researching a topic does not mean the company is buying) and it changes weekly. Use firmographic fit as the foundation and intent data to prioritize timing.</p>
+        </div>
+
+        <h3>Layer 4: Relationship Data (Advantage)</h3>
+
+        <p>Relationship data tracks your existing connections with the account:</p>
+        <ul>
+          <li>How many contacts do you have at the account?</li>
+          <li>What seniority levels are represented? Do you have access to decision-makers?</li>
+          <li>Is there existing engagement history (meetings, demos, past opportunities)?</li>
+          <li>Are there mutual connections or warm introduction paths?</li>
+        </ul>
+
+        <p>This data lives in your CRM already. Pull it and factor it into your segmentation scoring.</p>
+
+        <h2>Building Your Account Scoring Model</h2>
+
+        <p>With data layers defined, build a scoring model that produces a single account score for tiering.</p>
+
+        <h3>Define Your Ideal Customer Profile</h3>
+
+        <p>Before scoring, write down the attributes of your best customers. Look at your top 20 accounts by revenue and identify the patterns:</p>
+        <ul>
+          <li>What industries are they in?</li>
+          <li>What size are they (employees, revenue)?</li>
+          <li>What technology do they use?</li>
+          <li>What titles are your buyers and champions?</li>
+        </ul>
+
+        <p>This becomes your ICP definition. Every account in your database gets scored against this profile. For a deeper process, see our guide on <a href="/resources/how-to-build-data-driven-icp.html">building a data-driven ICP</a>.</p>
+
+        <h3>Assign Weighted Scores</h3>
+
+        <p>Create a point system for each data layer:</p>
+
+        <table class="tier-table">
+          <thead>
+            <tr>
+              <th>Data Layer</th>
+              <th>Weight</th>
+              <th>Example Criteria</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Firmographic Fit</strong></td>
+              <td>35%</td>
+              <td>Industry match: +10. Size match: +10. Revenue match: +10. Location match: +5.</td>
+              <td>0-35</td>
+            </tr>
+            <tr>
+              <td><strong>Technographic Fit</strong></td>
+              <td>20%</td>
+              <td>Uses competitor: +15. Uses complementary tool: +5.</td>
+              <td>0-20</td>
+            </tr>
+            <tr>
+              <td><strong>Intent Signals</strong></td>
+              <td>25%</td>
+              <td>High intent surge: +15. Website visits: +5. Content engagement: +5.</td>
+              <td>0-25</td>
+            </tr>
+            <tr>
+              <td><strong>Relationship</strong></td>
+              <td>20%</td>
+              <td>Decision-maker contact: +10. 3+ contacts: +5. Past engagement: +5.</td>
+              <td>0-20</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Total possible score: 100. This is deliberately simple. Complex scoring models with 50 variables look impressive but are impossible to maintain and debug. Start simple, measure results, and add complexity only where it improves outcomes.</p>
+
+        <h2>Creating Your Account Tiers</h2>
+
+        <p>Score every account in your database and sort into tiers:</p>
+
+        <table class="tier-table">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Score Range</th>
+              <th>Account Count</th>
+              <th>Campaign Approach</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tier 1</strong></td>
+              <td>75-100</td>
+              <td>10-50</td>
+              <td>One-to-one. Custom research, personalized content, executive outreach, direct mail, custom landing pages.</td>
+            </tr>
+            <tr>
+              <td><strong>Tier 2</strong></td>
+              <td>50-74</td>
+              <td>50-200</td>
+              <td>One-to-few. Cluster by industry or use case. Personalized ads, tailored email sequences, industry-specific content.</td>
+            </tr>
+            <tr>
+              <td><strong>Tier 3</strong></td>
+              <td>25-49</td>
+              <td>200-1,000</td>
+              <td>One-to-many. Programmatic ads, automated nurture, broad content campaigns.</td>
+            </tr>
+            <tr>
+              <td><strong>Below threshold</strong></td>
+              <td>0-24</td>
+              <td>Everything else</td>
+              <td>Not in ABM program. Standard inbound/demand gen.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Contact-Level Segmentation Within Accounts</h2>
+
+        <p>ABM targets accounts, but campaigns reach people. For each account in your program, you need contacts mapped to the buying committee.</p>
+
+        <h3>Map the Buying Committee</h3>
+
+        <p>For Tier 1 and Tier 2 accounts, identify contacts in these roles:</p>
+        <ul>
+          <li><strong>Decision Maker:</strong> The person who signs the contract. Usually VP+ or C-level.</li>
+          <li><strong>Champion:</strong> The internal advocate who pushes for your solution. Usually a director or senior manager.</li>
+          <li><strong>Influencer:</strong> People who inform the decision. Could be technical evaluators, end users, or consultants.</li>
+          <li><strong>Blocker:</strong> People who might oppose the purchase. Procurement, legal, or competing internal teams.</li>
+        </ul>
+
+        <p>If you are missing contacts in key roles, prioritize enrichment for those accounts. A Tier 1 account with no decision-maker contact is a Tier 1 account you cannot actually work.</p>
+
+        <div class="warning-box">
+          <p class="warning-box__title">The Contact Gap Problem</p>
+          <p>Most CRM databases have 2-3 contacts per account. Effective ABM requires 5-10 contacts per Tier 1 account covering different roles in the buying committee. If your database has gaps, <a href="/services/data-enrichment.html">enrichment</a> is not optional. It is a prerequisite for running the ABM program.</p>
+        </div>
+
+        <h2>Implementing Segments in Your CRM</h2>
+
+        <h3>In Salesforce</h3>
+        <ol>
+          <li>Create a custom field on the Account object: "ABM Tier" (picklist: Tier 1, Tier 2, Tier 3, Not in Program)</li>
+          <li>Create a custom field: "ABM Score" (number, 0-100)</li>
+          <li>Build reports that show accounts by tier with drill-down to contacts</li>
+          <li>Create list views for each tier so reps can focus on their assigned accounts</li>
+          <li>Sync tiers to your marketing automation and ad platforms for campaign targeting</li>
+        </ol>
+
+        <h3>In HubSpot</h3>
+        <ol>
+          <li>Create company properties: "ABM Tier" (dropdown) and "ABM Score" (number)</li>
+          <li>Use Target Accounts feature (ABM tools in Marketing Hub Enterprise)</li>
+          <li>Create active lists for each tier based on the ABM Tier property</li>
+          <li>Use these lists for workflow enrollment, email campaigns, and ad audience sync</li>
+        </ol>
+
+        <h2>Maintaining Your Segments</h2>
+
+        <p>ABM segments are not static. Accounts move between tiers as their data changes.</p>
+
+        <ul>
+          <li><strong>Monthly:</strong> Review Tier 1 accounts. Are they still the right ones? Has engagement changed? Have new high-scoring accounts emerged?</li>
+          <li><strong>Quarterly:</strong> Re-score the full database. Update firmographic data through enrichment. Refresh technographic data. Pull new intent data.</li>
+          <li><strong>On trigger:</strong> When a Tier 3 account shows strong intent signals, promote them to Tier 2. When a Tier 1 account goes dark for 90 days, review whether to demote them.</li>
+        </ul>
+
+        <p>Automate as much of this as possible. Create workflows that re-score accounts when key properties change and alert the team when an account moves between tiers.</p>
+
+        <h2>When to Get Help</h2>
+
+        <p>Segmentation is only as good as the data behind it. If your CRM is missing firmographic data on 30%+ of accounts, or if you have fewer than 3 contacts per target account, you need enrichment before you can segment effectively.</p>
+
+        <p>We help companies build the data foundation for ABM: enriching accounts with firmographic and technographic data, identifying and adding missing buying committee contacts, and building <a href="/resources/how-to-build-data-driven-icp.html">data-driven ICPs</a>. <a href="/contact.html">Get in touch</a> if you want help.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>How many accounts should be in each tier?</h3>
+          <p>Tier 1: 10-50. Tier 2: 50-200. Tier 3: 200-1,000. Scale with your sales team size. A team of 5 reps can realistically work 25 Tier 1 accounts with true one-to-one attention.</p>
+
+          <h3>What data do I need for ABM segmentation?</h3>
+          <p>At minimum: firmographic data (industry, size, revenue) and contact data (title, department). For better targeting: technographic data (software used) and intent data (research behavior). More layers means more precise segments.</p>
+
+          <h3>How often should I refresh segments?</h3>
+          <p>Tier 1: monthly. Tier 2 and 3: quarterly. Intent data changes weekly, so accounts can move between tiers based on current buying signals. See our <a href="/resources/abm-data-strategy.html">ABM data strategy guide</a> for more detail.</p>
+
+          <h3>Can I do ABM with bad CRM data?</h3>
+          <p>Poorly. ABM depends on accurate data for segmentation and personalization. If 30% of your data is wrong, your segments will be inaccurate and your campaigns will underperform. <a href="/resources/abm-account-data-quality.html">Data quality is a prerequisite for ABM</a>.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Need help building your ABM data foundation?</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">See What We'll Find</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/abm-data-strategy.html">ABM Data Strategy</a> | <a href="/resources/abm-account-data-quality.html">ABM Account Data Quality</a> | <a href="/resources/how-to-build-data-driven-icp.html">Data-Driven ICP</a> | <a href="/resources/intent-data-guide.html">Intent Data Guide</a></p>
+        <p style="color: var(--color-text-muted); font-size: 0.875rem;">Further reading: <a href="/resources/lead-scoring-with-enriched-data.html" style="color: var(--color-teal);">Lead Scoring with Enriched Data</a> | <a href="/resources/signal-based-selling.html" style="color: var(--color-teal);">Signal-Based Selling</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their CRM data.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

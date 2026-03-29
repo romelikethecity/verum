@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Deduplicate Contacts in Salesforce | Verum</title>
+  <meta name="description" content="Step-by-step guide to finding and merging duplicate contacts in Salesforce using native tools, third-party apps, and manual review workflows.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/how-to-deduplicate-contacts-salesforce.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/how-to-deduplicate-contacts-salesforce.html">
+  <meta property="og:title" content="How to Deduplicate Contacts in Salesforce">
+  <meta property="og:description" content="Step-by-step guide to finding and merging duplicate contacts in Salesforce using native tools and third-party apps.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Deduplicate Contacts in Salesforce">
+  <meta name="twitter:description" content="Step-by-step guide to finding and merging duplicate contacts in Salesforce using native tools and third-party apps.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Deduplicate Contacts in Salesforce"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Deduplicate Contacts in Salesforce",
+    "description": "Step-by-step guide to finding and merging duplicate contacts in Salesforce using native tools, third-party apps, and manual review workflows.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-29",
+    "dateModified": "2026-03-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/how-to-deduplicate-contacts-salesforce.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many duplicate contacts does a typical Salesforce org have?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most Salesforce orgs accumulate 10-30% duplicate records over their lifetime. An org with 100,000 contacts likely has 10,000-30,000 duplicates from form submissions, list imports, manual entry, and integration syncs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will merging duplicates in Salesforce break my workflows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Salesforce's native merge function preserves the master record's ID and reassigns related records (activities, opportunities, cases) to the surviving record. Workflows triggered by record updates may fire during the merge, so test with a small batch first."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is fuzzy matching for Salesforce deduplication?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fuzzy matching identifies records that are similar but not identical. For example, matching 'Bob Smith' at 'Acme Corp' with 'Robert Smith' at 'ACME Corporation.' Salesforce's native matching rules support some fuzzy logic, but third-party tools like DemandTools or Cloudingo offer more sophisticated algorithms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I deduplicate contacts or leads first in Salesforce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with contacts. They represent real relationships your team has built. Once contacts are clean, deduplicate leads, then run cross-object deduplication to find leads that already exist as contacts."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .step-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .step-box__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--color-teal);
+      color: var(--color-bg-primary);
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: var(--space-md);
+    }
+    .step-box__title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-sm);
+    }
+    .step-box__text {
+      color: var(--color-text-secondary);
+      margin: 0;
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Salesforce</p>
+      <h1 class="page-hero__title">How to Deduplicate Contacts in Salesforce</h1>
+      <p class="page-hero__subtitle">Duplicate contacts destroy reporting accuracy, waste rep time, and cause embarrassing double-outreach. Here is how to find them, merge them, and prevent them from coming back.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">March 2026 &middot; 11 min read</div>
+
+      <div class="blog-content">
+
+        <p><strong>Salesforce contact deduplication</strong> is the process of identifying and merging duplicate contact records in your CRM. A typical Salesforce org accumulates <a href="https://www.validity.com/resources/the-state-of-crm-data-management/" target="_blank" rel="noopener">10-30% duplicate records</a> over its lifetime through form submissions, list imports, manual entry, and integration syncs. Left unchecked, duplicates inflate pipeline reports, cause reps to compete for the same prospect, and damage email deliverability through repeated sends to the same address.</p>
+
+        <p>If you have been running Salesforce for more than a year, you have duplicates. The question is how many and how bad they are. This guide walks through the full process: auditing the damage, choosing your approach, executing the merge, and building prevention rules so you do not end up back here in six months.</p>
+
+        <h2>Step 1: Assess the Scope of Your Duplicate Problem</h2>
+
+        <p>Before you merge anything, you need to understand what you are dealing with. There are three types of duplicates in Salesforce:</p>
+
+        <ul>
+          <li><strong>Exact duplicates:</strong> Same email address, different record IDs. These are easy to find and safe to merge.</li>
+          <li><strong>Fuzzy duplicates:</strong> Same person, slightly different data. "Bob Smith" at "Acme" and "Robert Smith" at "ACME Corporation." These require matching logic.</li>
+          <li><strong>Cross-object duplicates:</strong> The same person exists as both a Lead and a Contact. Salesforce treats these as completely separate objects.</li>
+        </ul>
+
+        <h3>Run a Quick Duplicate Count</h3>
+
+        <p>Create a Salesforce report that groups Contacts by email address. Any email that appears more than once is a confirmed duplicate. For a rough count, export your contacts to a spreadsheet and use a COUNTIF formula on the email column.</p>
+
+        <p>For fuzzy matching, you will need to look beyond email. Group by combinations of first name + last name + company, or first name + last name + phone number. This catches records where one version has an email and the other does not.</p>
+
+        <div class="callout-box">
+          <p><strong>Benchmark:</strong> If fewer than 5% of your records are duplicates, you are in good shape. 5-15% is typical. Above 15%, your data has serious problems that are affecting downstream operations.</p>
+        </div>
+
+        <h2>Step 2: Choose Your Deduplication Approach</h2>
+
+        <h3>Option A: Salesforce Native Tools (Free)</h3>
+
+        <p>Salesforce includes built-in duplicate management. Here is what it can and cannot do:</p>
+
+        <p><strong>Duplicate Rules</strong> define when Salesforce should flag a record as a potential duplicate. You configure matching criteria (email, name + company, phone) and choose whether to alert users, block creation, or allow creation with a warning.</p>
+
+        <p><strong>Matching Rules</strong> control the logic behind comparisons. Salesforce supports exact match and fuzzy match on standard fields. You can use the "Standard Contact Matching Rule" or create custom rules.</p>
+
+        <p>To set these up:</p>
+        <ol>
+          <li>Go to Setup > Duplicate Rules</li>
+          <li>Click "New Rule" and select the Contact object</li>
+          <li>Choose your matching rule (or create a custom one)</li>
+          <li>Set the action: Alert, Block, or Allow with logging</li>
+          <li>Activate the rule</li>
+        </ol>
+
+        <p><strong>The limitation:</strong> Native tools are better at preventing new duplicates than cleaning existing ones. They do not provide bulk merge capabilities. You will need to merge records one at a time through the UI, which is not realistic if you have thousands of duplicates.</p>
+
+        <h3>Option B: Third-Party Deduplication Tools</h3>
+
+        <p>For bulk deduplication, third-party tools are significantly more capable:</p>
+
+        <ul>
+          <li><strong>DemandTools (Validity):</strong> The industry standard for Salesforce dedup. Supports complex matching rules, bulk merge with field-level survivor rules, and scheduled dedup jobs. Starts around $125/user/month.</li>
+          <li><strong>Cloudingo:</strong> A lighter-weight option with a strong visual interface for reviewing and merging duplicates. Good for teams that need non-technical users to participate in the review process. Starts around $99/month.</li>
+          <li><strong>Duplicate Check:</strong> A native Salesforce app that runs entirely within the platform. No external data transfer. Good for orgs with strict data residency requirements.</li>
+        </ul>
+
+        <h3>Option C: Export, Deduplicate Externally, Re-Import</h3>
+
+        <p>For one-time cleanups, you can export your contacts, deduplicate in a spreadsheet or Python script, and re-import using Data Loader with the surviving record IDs. This approach works well if you have technical resources and want full control over the matching logic.</p>
+
+        <div class="warning-box">
+          <p class="warning-box__title">Before You Merge Anything</p>
+          <p>Export a full backup of your Contact object. If a merge goes wrong, you cannot un-merge records in Salesforce. The backup is your only recovery option.</p>
+        </div>
+
+        <h2>Step 3: Define Your Survivor Rules</h2>
+
+        <p>When two records merge, one survives and one is deleted. You need rules for which data wins. This matters more than most people realize.</p>
+
+        <p>For each field, decide the priority:</p>
+        <ul>
+          <li><strong>Most recently updated:</strong> Good for fields that change (title, phone, address)</li>
+          <li><strong>Most complete:</strong> Good for fields that are often blank (direct dial, mobile)</li>
+          <li><strong>Specific source priority:</strong> If data from your web forms is more reliable than imported lists, favor that source</li>
+          <li><strong>Master record wins:</strong> The older record keeps its values (useful for preserving historical data)</li>
+        </ul>
+
+        <p>Document these rules before you start merging. If you use DemandTools or Cloudingo, you can configure these as automated survivor rules. If you are merging manually, print the rules and follow them consistently.</p>
+
+        <h2>Step 4: Execute the Merge</h2>
+
+        <h3>Small Batches (Under 500 Duplicates)</h3>
+
+        <p>If you have a manageable number, you can merge directly in Salesforce:</p>
+        <ol>
+          <li>Navigate to a Contact record that has duplicates</li>
+          <li>Click "View Duplicates" in the Potential Duplicates component</li>
+          <li>Select the records to merge (up to 3 at a time)</li>
+          <li>Choose the master record and select field values from each duplicate</li>
+          <li>Click Merge</li>
+        </ol>
+
+        <p>This preserves activities, opportunities, and related records on the master.</p>
+
+        <h3>Large Batches (500+ Duplicates)</h3>
+
+        <p>For bulk operations, use a third-party tool or build an automated process:</p>
+        <ol>
+          <li>Run your matching rules to generate a list of duplicate pairs</li>
+          <li>Review the matches in batches (50-100 at a time)</li>
+          <li>Flag false positives for exclusion</li>
+          <li>Apply survivor rules and execute the merge</li>
+          <li>Verify a sample of merged records to confirm data integrity</li>
+        </ol>
+
+        <p>Start with exact email matches first. These are the safest. Move to fuzzy matches after you have validated the process with the easy cases.</p>
+
+        <h2>Step 5: Handle Cross-Object Duplicates</h2>
+
+        <p>The same person often exists as a Lead and a Contact in Salesforce. Native duplicate rules can flag this, but merging across objects requires converting the Lead to a Contact and then merging.</p>
+
+        <ol>
+          <li>Identify Leads that match existing Contacts (match on email)</li>
+          <li>For each match, decide whether the Lead has useful data the Contact is missing</li>
+          <li>Convert the Lead, mapping it to the existing Contact and Account</li>
+          <li>If the Lead had different field values, update the Contact with the better data</li>
+        </ol>
+
+        <p>Third-party tools like DemandTools handle cross-object dedup in a single workflow. If you are doing this manually, work through them in batches and keep a log of what you changed.</p>
+
+        <h2>Step 6: Set Up Prevention Rules</h2>
+
+        <p>Deduplication without prevention is a waste of time. You will be back in the same position within months.</p>
+
+        <ul>
+          <li><strong>Activate Salesforce Duplicate Rules</strong> on Contact, Lead, and Account objects. Set them to "Alert" at minimum, "Block" if your team can handle the occasional false positive.</li>
+          <li><strong>Standardize data entry:</strong> Create picklist fields instead of free-text fields wherever possible. Use validation rules to enforce email format, phone format, and required fields.</li>
+          <li><strong>Audit integrations:</strong> Every tool that pushes data into Salesforce is a potential source of duplicates. Map each integration and ensure it checks for existing records before creating new ones.</li>
+          <li><strong>Schedule regular dedup scans:</strong> Run a monthly or quarterly dedup report. Catching duplicates early (before they accumulate activities and notes) makes merging much simpler.</li>
+        </ul>
+
+        <div class="callout-box">
+          <p><strong>Pro tip:</strong> The biggest source of duplicates is usually web form submissions. If your marketing automation creates a new Lead for every form fill without checking existing records, fix that first.</p>
+        </div>
+
+        <h2>When to Bring in Help</h2>
+
+        <p>You can handle deduplication yourself if you have fewer than 10,000 records and the duplicates are mostly exact matches. For larger databases, complex matching requirements, or orgs where you cannot afford downtime, a <a href="/services/data-cleaning.html">data cleaning service</a> will save you time and reduce risk.</p>
+
+        <p>We clean Salesforce data for a living. If you want help with deduplication, <a href="/contact.html">get in touch</a>.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>How many duplicate contacts does a typical Salesforce org have?</h3>
+          <p>Most orgs accumulate <a href="https://www.validity.com/resources/the-state-of-crm-data-management/" target="_blank" rel="noopener">10-30% duplicate records</a> over their lifetime. An org with 100,000 contacts likely has 10,000-30,000 duplicates.</p>
+
+          <h3>Will merging duplicates break my workflows?</h3>
+          <p>Salesforce's native merge preserves the master record's ID and reassigns related records. Workflows triggered by record updates may fire during the merge, so test with a small batch first.</p>
+
+          <h3>What is fuzzy matching?</h3>
+          <p>Fuzzy matching identifies records that are similar but not identical. "Bob Smith" at "Acme" matching with "Robert Smith" at "ACME Corporation." Third-party tools like DemandTools offer more sophisticated fuzzy algorithms than Salesforce's native matching.</p>
+
+          <h3>Should I deduplicate contacts or leads first?</h3>
+          <p>Start with contacts. They represent real relationships your team has built. Once contacts are clean, deduplicate leads, then run cross-object dedup to find leads that already exist as contacts.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Need help deduplicating your Salesforce data?</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">See What We'll Find</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/salesforce-duplicate-contacts.html">Salesforce Duplicate Contacts Guide</a> | <a href="/resources/salesforce-duplicate-management.html">Duplicate Management</a> | <a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+        <p style="color: var(--color-text-muted); font-size: 0.875rem;">Further reading: <a href="/resources/hubspot-duplicate-contacts.html" style="color: var(--color-teal);">HubSpot Duplicate Contacts</a> | <a href="/resources/crm-data-quality-checklist.html" style="color: var(--color-teal);">CRM Data Quality Checklist</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their CRM data.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

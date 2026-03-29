@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Calculate Your Data Quality Score | Verum</title>
+  <meta name="description" content="A scoring framework with weighted dimensions to measure CRM data quality. Completeness, accuracy, freshness, duplication, and consistency scored 0-100.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/how-to-calculate-data-quality-score.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/how-to-calculate-data-quality-score.html">
+  <meta property="og:title" content="How to Calculate Your Data Quality Score">
+  <meta property="og:description" content="A weighted scoring framework to measure CRM data quality across five dimensions.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Calculate Your Data Quality Score">
+  <meta name="twitter:description" content="A weighted scoring framework to measure CRM data quality across five dimensions.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Calculate Your Data Quality Score"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Calculate Your Data Quality Score",
+    "description": "A scoring framework with weighted dimensions to measure CRM data quality. Completeness, accuracy, freshness, duplication, and consistency scored 0-100.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-29",
+    "dateModified": "2026-03-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/how-to-calculate-data-quality-score.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good data quality score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Above 80 is strong. 60-80 means your data is usable but has issues that affect operations. Below 60 indicates serious problems that are likely costing you revenue through failed campaigns, wasted rep time, and broken automation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I measure my data quality score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Monthly is ideal. Quarterly at minimum. B2B data decays at 30% per year, so your score will drop over time without active maintenance. Monthly measurement lets you catch problems before they compound."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which data quality dimension matters most?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Accuracy. Complete data that is wrong is worse than incomplete data that is right. A database full of outdated job titles and old email addresses actively misleads your team. This is why the recommended weighting gives accuracy the highest weight at 30%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I automate data quality scoring?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Completeness, duplication, consistency, and freshness can all be automated with CRM reports or simple scripts. Accuracy requires sampling and manual verification, which is harder to automate but can be partially addressed with email validation tools and enrichment verification."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: var(--color-bg-card);
+      border-left: 4px solid var(--color-teal);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .warning-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .warning-box__title {
+      color: #ff6b6b;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+    .warning-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: var(--space-xl) 0;
+      font-size: 0.9rem;
+    }
+    .score-table th,
+    .score-table td {
+      padding: var(--space-md);
+      border: 1px solid var(--color-border);
+      text-align: left;
+    }
+    .score-table th {
+      background: var(--color-bg-card);
+      font-weight: 600;
+      color: var(--color-text-primary);
+    }
+    .score-table td {
+      color: var(--color-text-secondary);
+    }
+    .formula-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: var(--color-text-primary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Data Quality</p>
+      <h1 class="page-hero__title">How to Calculate Your Data Quality Score</h1>
+      <p class="page-hero__subtitle">You cannot improve what you do not measure. Here is a scoring framework that gives you a single number representing the health of your CRM data, broken down by dimension so you know exactly what to fix.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+
+      <div class="blog-meta">March 2026 &middot; 12 min read</div>
+
+      <div class="blog-content">
+
+        <p>A <strong>data quality score</strong> is a composite metric (0-100) that quantifies the health of your CRM data across multiple dimensions: completeness, accuracy, freshness, duplication, and consistency. Each dimension is scored independently and then combined with weights that reflect its relative impact on business operations. The result is a single number that answers the question "how good is our data?" and a breakdown that shows where to focus improvement efforts.</p>
+
+        <p>Most companies have a vague sense that their data is "not great." That is not actionable. A data quality score turns the vague sense into specific, measurable problems. Your completeness is 72% because 28% of contacts are missing email addresses. Your accuracy is 61% because nearly 4 in 10 job titles are outdated. Your duplication rate is 18%. These are problems you can assign, budget for, and track progress on.</p>
+
+        <p>This guide walks through how to measure each dimension, weight them appropriately, and calculate a composite score you can track over time.</p>
+
+        <h2>The Five Dimensions of Data Quality</h2>
+
+        <p>There are many ways to slice data quality, but five dimensions cover the territory that matters for B2B operations:</p>
+
+        <table class="score-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Weight</th>
+              <th>What It Measures</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Accuracy</strong></td>
+              <td>30%</td>
+              <td>Is the data correct? Do email addresses work? Are job titles current?</td>
+            </tr>
+            <tr>
+              <td><strong>Completeness</strong></td>
+              <td>25%</td>
+              <td>Are required fields filled in? Email, phone, title, company, industry?</td>
+            </tr>
+            <tr>
+              <td><strong>Freshness</strong></td>
+              <td>20%</td>
+              <td>How recently was the data verified or updated?</td>
+            </tr>
+            <tr>
+              <td><strong>Duplication</strong></td>
+              <td>15%</td>
+              <td>What percentage of records are duplicates?</td>
+            </tr>
+            <tr>
+              <td><strong>Consistency</strong></td>
+              <td>10%</td>
+              <td>Are fields formatted uniformly? Phone numbers, state names, job titles?</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The weights reflect real-world impact. Accurate data matters more than consistent formatting. Complete records matter more than low duplication. You can adjust these weights based on your business priorities, but this distribution works well as a starting point for most B2B companies.</p>
+
+        <h2>How to Measure Each Dimension</h2>
+
+        <h3>1. Accuracy (Weight: 30%)</h3>
+
+        <p>Accuracy is the hardest dimension to measure because it requires verification against external sources. You cannot tell whether a job title is correct by looking at it in your CRM. You need to check.</p>
+
+        <p><strong>How to measure:</strong></p>
+        <ol>
+          <li>Pull a random sample of 200-500 records from your database</li>
+          <li>For each record, verify key fields against external sources (LinkedIn for job title, email validation tool for email address, company website for company info)</li>
+          <li>Score each field as correct or incorrect</li>
+          <li>Calculate the percentage of fields that are correct across the sample</li>
+        </ol>
+
+        <p>Key fields to verify: email address (use a <a href="/resources/how-to-validate-email-addresses-bulk.html">validation tool</a>), job title, company name, phone number.</p>
+
+        <div class="callout-box">
+          <p><strong>Shortcut for email accuracy:</strong> Run your full email list through a validation tool. The percentage that comes back as "valid" is your email accuracy score. This is faster than manual sampling and covers your entire database.</p>
+        </div>
+
+        <h3>2. Completeness (Weight: 25%)</h3>
+
+        <p>Completeness measures the percentage of records that have all required fields populated. Define your required fields first, then measure.</p>
+
+        <p><strong>Recommended required fields for B2B contacts:</strong></p>
+        <ul>
+          <li>Email address</li>
+          <li>First name and last name</li>
+          <li>Job title</li>
+          <li>Company name</li>
+          <li>Phone number (direct or mobile)</li>
+        </ul>
+
+        <p><strong>How to measure:</strong></p>
+        <ol>
+          <li>For each required field, count the number of records where the field is not blank</li>
+          <li>Divide by total records to get the fill rate per field</li>
+          <li>Average the fill rates across all required fields</li>
+        </ol>
+
+        <p>Example: If you have 50,000 contacts and the fill rates are Email: 82%, Title: 68%, Phone: 45%, First Name: 98%, Company: 95%, your completeness score is (82 + 68 + 45 + 98 + 95) / 5 = 77.6%.</p>
+
+        <h3>3. Freshness (Weight: 20%)</h3>
+
+        <p>Freshness measures how recently your data was updated or verified. <a href="/resources/what-is-b2b-data-decay.html">B2B data decays at 30% per year</a>, so data that has not been touched in 12+ months is significantly degraded.</p>
+
+        <p><strong>How to measure:</strong></p>
+        <ol>
+          <li>Pull the "Last Modified Date" for each record</li>
+          <li>Categorize records by age: 0-3 months (fresh), 3-6 months (aging), 6-12 months (stale), 12+ months (decayed)</li>
+          <li>Assign scores: Fresh = 100, Aging = 75, Stale = 40, Decayed = 10</li>
+          <li>Calculate the weighted average</li>
+        </ol>
+
+        <p>Example: If 30% of records are fresh, 25% aging, 20% stale, and 25% decayed, your freshness score is (0.30 x 100) + (0.25 x 75) + (0.20 x 40) + (0.25 x 10) = 30 + 18.75 + 8 + 2.5 = 59.25.</p>
+
+        <h3>4. Duplication (Weight: 15%)</h3>
+
+        <p>Duplication is the inverse of your duplicate rate. Lower duplication means a higher score.</p>
+
+        <p><strong>How to measure:</strong></p>
+        <ol>
+          <li>Count the total number of contact records</li>
+          <li>Count the number of unique contacts (deduplicate by email, then by name + company for records without email)</li>
+          <li>Calculate: Duplication Score = (Unique Records / Total Records) x 100</li>
+        </ol>
+
+        <p>Example: 50,000 total records, 43,000 unique = (43,000 / 50,000) x 100 = 86. You have a 14% duplication rate and an 86% duplication dimension score.</p>
+
+        <h3>5. Consistency (Weight: 10%)</h3>
+
+        <p>Consistency measures whether fields are formatted uniformly. Inconsistent data breaks automations, reporting, and segmentation.</p>
+
+        <p><strong>Fields to check for consistency:</strong></p>
+        <ul>
+          <li><strong>Phone numbers:</strong> Are they all formatted the same way? (123) 456-7890 vs 1234567890 vs +1-123-456-7890</li>
+          <li><strong>State/Country:</strong> "California" vs "CA" vs "ca" vs "Calif."</li>
+          <li><strong>Job titles:</strong> "VP of Sales" vs "Vice President, Sales" vs "VP Sales"</li>
+          <li><strong>Company names:</strong> "Acme Inc." vs "ACME" vs "Acme, Inc"</li>
+        </ul>
+
+        <p><strong>How to measure:</strong></p>
+        <ol>
+          <li>For each field, identify the dominant format (the one used most frequently)</li>
+          <li>Count the percentage of records that match the dominant format</li>
+          <li>Average across all checked fields</li>
+        </ol>
+
+        <h2>Calculating Your Composite Score</h2>
+
+        <p>Once you have a score (0-100) for each dimension, calculate the composite:</p>
+
+        <div class="formula-box">
+          Data Quality Score = (Accuracy x 0.30) + (Completeness x 0.25) + (Freshness x 0.20) + (Duplication x 0.15) + (Consistency x 0.10)
+        </div>
+
+        <p><strong>Worked example:</strong></p>
+        <ul>
+          <li>Accuracy: 72</li>
+          <li>Completeness: 78</li>
+          <li>Freshness: 59</li>
+          <li>Duplication: 86</li>
+          <li>Consistency: 65</li>
+        </ul>
+
+        <p>Score = (72 x 0.30) + (78 x 0.25) + (59 x 0.20) + (86 x 0.15) + (65 x 0.10) = 21.6 + 19.5 + 11.8 + 12.9 + 6.5 = <strong>72.3</strong></p>
+
+        <h2>Interpreting Your Score</h2>
+
+        <table class="score-table">
+          <thead>
+            <tr>
+              <th>Score Range</th>
+              <th>Rating</th>
+              <th>What It Means</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>90-100</strong></td>
+              <td>Excellent</td>
+              <td>Active data governance in place. Rare for companies without a dedicated data team.</td>
+            </tr>
+            <tr>
+              <td><strong>80-89</strong></td>
+              <td>Strong</td>
+              <td>Data supports operations well. Minor issues that do not significantly impact revenue.</td>
+            </tr>
+            <tr>
+              <td><strong>60-79</strong></td>
+              <td>Needs Work</td>
+              <td>Data is usable but causing friction. Reps work around data problems daily. Campaigns underperform.</td>
+            </tr>
+            <tr>
+              <td><strong>40-59</strong></td>
+              <td>Poor</td>
+              <td>Data is actively hurting operations. High bounce rates, wasted rep time, unreliable reporting.</td>
+            </tr>
+            <tr>
+              <td><strong>Below 40</strong></td>
+              <td>Critical</td>
+              <td>Data is a liability. Major cleanup or rebuild needed before the database is operationally useful.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Tracking Your Score Over Time</h2>
+
+        <p>A single score is useful. A trend line is powerful. Measure monthly and track how your score changes as you invest in data quality.</p>
+
+        <p><strong>What to track:</strong></p>
+        <ul>
+          <li>Composite score (the headline number)</li>
+          <li>Individual dimension scores (to spot which areas are improving or declining)</li>
+          <li>Record count (to understand if score changes are driven by data volume or quality)</li>
+          <li>Source-level scores (if you track data sources, score each one separately to identify which sources produce the best and worst data)</li>
+        </ul>
+
+        <div class="callout-box">
+          <p><strong>Present the score to leadership with context.</strong> "Our data quality score is 72, up from 64 last quarter. The improvement was driven by email validation (accuracy went from 65 to 78) and quarterly deduplication (duplication score went from 78 to 86). The next biggest opportunity is completeness, where 28% of contacts are missing phone numbers."</p>
+        </div>
+
+        <h2>When to Get Help</h2>
+
+        <p>If your data quality score is below 60, the cleanup work required is significant. Manual measurement, deduplication, validation, and enrichment across tens of thousands of records takes weeks of focused effort. If you do not have a dedicated data team, outsourcing the cleanup and initial scoring is often faster and more cost-effective.</p>
+
+        <p>We help companies measure, clean, and maintain their data quality. <a href="/contact.html">Get in touch</a> if you want help getting your score above 80.</p>
+
+        <h2>Common Questions</h2>
+
+        <div class="faq-section">
+          <h3>What is a good data quality score?</h3>
+          <p>Above 80 is strong. 60-80 is usable but has issues. Below 60 indicates serious problems that are costing you revenue.</p>
+
+          <h3>How often should I measure?</h3>
+          <p>Monthly is ideal. Quarterly at minimum. <a href="/resources/crm-data-decay-rate.html">Data decays at 30% per year</a>, so your score drops over time without active maintenance.</p>
+
+          <h3>Which dimension matters most?</h3>
+          <p>Accuracy. Complete data that is wrong is worse than incomplete data that is right. This is why accuracy gets the highest weight (30%) in the framework.</p>
+
+          <h3>Can I automate scoring?</h3>
+          <p>Completeness, duplication, consistency, and freshness can be automated with CRM reports or scripts. Accuracy requires sampling and external verification, which is harder to fully automate. See our <a href="/resources/data-quality-dashboards.html">data quality dashboards guide</a> for automation approaches.</p>
+        </div>
+
+        <div class="text-center mt-xl">
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-lg);">Want to know your data quality score?</p>
+          <a href="/contact.html" class="btn btn--primary btn--lg">See What We'll Find</a>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/data-quality-metrics.html">Data Quality Metrics</a> | <a href="/resources/data-quality-dashboards.html">Data Quality Dashboards</a> | <a href="/resources/crm-data-quality-checklist.html">CRM Data Quality Checklist</a> | <a href="/services/data-cleaning.html">Data Cleaning Services</a></p>
+        <p style="color: var(--color-text-muted); font-size: 0.875rem;">Further reading: <a href="/resources/data-quality-roadmap.html" style="color: var(--color-teal);">Data Quality Roadmap</a> | <a href="/resources/data-quality-for-sales-leaders.html" style="color: var(--color-teal);">Data Quality for Sales Leaders</a></p>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their CRM data.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
