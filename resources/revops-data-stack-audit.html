@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevOps Data Stack Audit: Find What's Broken | Verum</title>
+  <meta name="description" content="Your RevOps data stack has gaps you can't see. Here's a practical audit framework to find broken integrations, silent sync failures, and field-level rot.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/revops-data-stack-audit.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/revops-data-stack-audit.html">
+  <meta property="og:title" content="RevOps Data Stack Audit: Find What's Broken">
+  <meta property="og:description" content="A practical audit framework for RevOps teams to find broken integrations, silent sync failures, and field-level data rot.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RevOps Data Stack Audit: Find What's Broken">
+  <meta name="twitter:description" content="A practical audit framework for RevOps teams to find broken integrations, silent sync failures, and field-level data rot.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "RevOps Data Stack Audit: Find What's Broken"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "RevOps Data Stack Audit: Find What's Broken",
+    "description": "Your RevOps data stack has gaps you can't see. Here's a practical audit framework to find broken integrations, silent sync failures, and field-level rot.",
+    "author": {
+      "@type": "Person",
+      "@id": "https://veruminc.com/team/#rome"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-29",
+    "dateModified": "2026-03-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/revops-data-stack-audit.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often should RevOps teams audit their data stack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Quarterly at minimum. Major changes like new tool integrations, CRM migrations, or team restructuring should trigger an immediate audit. Most teams find that a lightweight monthly check on sync health catches problems before they compound."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the most common RevOps data stack failures?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Silent sync failures between CRM and marketing automation platforms are the most common. Second is field-level rot where data exists but is outdated. Third is duplicate creation from multiple tools writing to the same CRM without dedup rules. According to Gartner, organizations estimate that data quality issues cost them an average of $12.9 million per year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What tools do I need for a RevOps data stack audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can start with what you already have. Most CRMs have built-in reporting for field completeness and duplicate rates. Integration platforms like Workato or Tray show sync logs. For deeper analysis, export your data and run completeness checks in a spreadsheet. You don't need to buy another tool to audit the tools you already own."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I prioritize which data quality issues to fix first?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with whatever touches revenue. If your lead routing is broken because job titles aren't standardized, fix that before worrying about incomplete address fields. Map each data quality issue to a revenue process (lead scoring, routing, segmentation, reporting) and prioritize by impact on pipeline."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .article-content h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .article-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .article-content p {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .article-content ul, .article-content ol {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-content li {
+      margin-bottom: 0.5rem;
+    }
+    .article-content strong {
+      color: var(--color-text-primary);
+    }
+    .article-cta {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .article-cta p {
+      margin-bottom: 1rem;
+    }
+    .stat-box {
+      background: var(--color-bg-card);
+      border-left: 3px solid var(--color-teal);
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-box p {
+      margin: 0;
+    }
+    .checklist {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .checklist h4 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--color-text-primary);
+    }
+    .checklist ul {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <main>
+    <article class="section">
+      <div class="article-content">
+        <h1>RevOps Data Stack Audit: How to Find What's Broken Before It Costs You</h1>
+        <p class="article-meta">March 2026 · 12 min read</p>
+
+        <p>The average B2B company uses <a href="https://chiefmartec.com/2023/05/marketing-technology-landscape-2023/" target="_blank" rel="noopener">91 different SaaS tools</a>. Your RevOps stack probably touches a dozen of them on any given day. CRM, marketing automation, enrichment providers, intent data platforms, conversation intelligence, CPQ. All of them write data. Most of them read data. Very few of them agree on what that data should look like.</p>
+
+        <p>So things break. Quietly.</p>
+
+        <p>A sync between HubSpot and Salesforce fails on a Tuesday night. Nobody notices until a rep complains two weeks later that a lead never showed up. A Marketo field mapping changes after an update. Enrichment data stops flowing because an API key expired. These aren't catastrophic failures. They're the slow leaks that drain pipeline accuracy over months.</p>
+
+        <p>According to <a href="https://www.gartner.com/smarterwithgartner/how-to-improve-your-data-quality" target="_blank" rel="noopener">Gartner research</a>, poor data quality costs organizations an average of $12.9 million per year. For RevOps teams specifically, that cost shows up as bad lead routing, broken attribution, inaccurate forecasts, and sales reps who don't trust the CRM.</p>
+
+        <p>This guide walks you through a systematic audit of your RevOps data stack. Not the "buy another tool" kind of audit. The kind where you sit down with your actual systems and figure out where the rot is.</p>
+
+        <h2>Why Most RevOps Teams Don't Audit Until Something Explodes</h2>
+
+        <p>You already know your data isn't perfect. Everyone does. But auditing feels like a luxury when you've got a queue of Salesforce tickets, a marketing team that needs new fields, and a CFO asking why the forecast was off by 30%.</p>
+
+        <p>The problem with waiting is that data issues compound. A single broken sync creates duplicates. Those duplicates break lead scoring. Broken lead scoring means bad routing. Bad routing means missed follow-ups. Missed follow-ups mean lost deals. You trace it back six months later and realize a field mapping change caused the whole chain.</p>
+
+        <p>Salesforce's own research found that sales reps spend only 28% of their time actually selling. The rest goes to admin work, internal meetings, and, yes, wrestling with bad data. A quarterly audit prevents the kind of compounding failures that turn a small issue into a systemic one.</p>
+
+        <h2>The Five Layers of a RevOps Data Stack Audit</h2>
+
+        <p>Think of your data stack as five layers. Problems in lower layers cascade upward, so you audit from the bottom.</p>
+
+        <h3>Layer 1: Source Systems</h3>
+
+        <p>Start with wherever data enters your ecosystem. For most B2B companies, that's:</p>
+
+        <ul>
+          <li><strong>Web forms</strong> (marketing site, landing pages, chatbots)</li>
+          <li><strong>Manual entry</strong> (sales reps creating records in CRM)</li>
+          <li><strong>Enrichment providers</strong> (ZoomInfo, Clearbit, Apollo, etc.)</li>
+          <li><strong>Import files</strong> (event lists, purchased data, partner lists)</li>
+          <li><strong>Product usage data</strong> (for PLG companies)</li>
+        </ul>
+
+        <p>For each source, answer three questions: What fields does it populate? What validation exists at the point of entry? When did you last verify the data coming in is accurate?</p>
+
+        <p>Most teams have strong validation on web forms (required fields, email format checks) and almost zero validation on everything else. Sales reps create contacts with just a name and email. Enrichment providers backfill fields that nobody reviews. CSV imports get dumped in with whatever formatting the source used.</p>
+
+        <div class="stat-box">
+          <p><strong>Check this now:</strong> Pull a sample of 50 records created in the last 30 days from each source. Measure field completeness for your critical fields (email, title, company, phone, industry). If any source is below 70% completeness on critical fields, you've found your first problem.</p>
+        </div>
+
+        <h3>Layer 2: Integration Health</h3>
+
+        <p>This is where things get interesting. Every integration between systems is a potential failure point. The tricky part is that most integrations fail silently.</p>
+
+        <p>Pull up your integration platform (Workato, Tray, Zapier, native connectors, whatever you're using) and check:</p>
+
+        <ul>
+          <li><strong>Sync success rates:</strong> What percentage of records sync successfully? Anything below 99% needs investigation.</li>
+          <li><strong>Error logs:</strong> When was the last error? What type? How many records were affected?</li>
+          <li><strong>Sync timing:</strong> Are syncs running on schedule? Is there latency between systems?</li>
+          <li><strong>Field mapping accuracy:</strong> Do the same fields in both systems contain the same values?</li>
+        </ul>
+
+        <p>Here's what I see most often: a sync between CRM and marketing automation that's running fine at the record level but has field-level discrepancies. The contact exists in both systems, but the job title in one is "VP of Marketing" and in the other it's "Vice President, Marketing." The sync created the record but didn't update the title because of a conflict resolution rule nobody remembers setting.</p>
+
+        <p>Multiply that by thousands of records and you've got a marketing team segmenting on titles that don't match what sales sees in the CRM.</p>
+
+        <h3>Layer 3: Field-Level Data Quality</h3>
+
+        <p>This is the boring layer. It's also the most important one.</p>
+
+        <p>Export your CRM data and run these checks on your critical fields:</p>
+
+        <ul>
+          <li><strong>Completeness:</strong> What percentage of records have this field populated?</li>
+          <li><strong>Accuracy:</strong> Of the populated fields, what percentage are correct? (Sample 100 records and manually verify.)</li>
+          <li><strong>Freshness:</strong> When was this field last updated? Data more than 12 months old is suspect.</li>
+          <li><strong>Consistency:</strong> Are values standardized? (e.g., "United States" vs "US" vs "USA")</li>
+          <li><strong>Uniqueness:</strong> What's your duplicate rate at the account level? Contact level?</li>
+        </ul>
+
+        <p>The fields that matter most depend on your revenue processes. If <a href="/resources/lead-scoring-not-working.html">lead scoring</a> uses industry and company size, those fields better be complete and accurate. If <a href="/resources/lead-routing-broken-data.html">lead routing</a> depends on geography, your address data needs to be clean.</p>
+
+        <p>One pattern I see constantly: enrichment tools fill fields at the point of record creation, but nobody re-enriches existing records. So your database has a mix of fresh data (recently created records) and stale data (records created two years ago with information that was accurate then but isn't now). The <a href="/resources/what-is-b2b-data-decay.html">average B2B database decays at roughly 30% per year</a>. That means nearly a third of your data from last year is wrong today.</p>
+
+        <h3>Layer 4: Process Integrity</h3>
+
+        <p>Data feeds processes. If the data is broken, the processes produce bad outcomes. Audit these:</p>
+
+        <p><strong>Lead scoring:</strong> Pull your last 50 closed-won deals. What score did they have when they entered the pipeline? If high-scoring leads don't correlate with actual revenue, your scoring model is running on bad inputs.</p>
+
+        <p><strong>Lead routing:</strong> Track 100 recent leads through your routing rules. Did they land with the right rep? How many got stuck or misrouted? Routing failures are almost always a data problem, not a logic problem.</p>
+
+        <p><strong>Segmentation:</strong> Run your key marketing segments and spot-check the results. Are enterprise accounts showing up in your SMB segment because revenue data is missing? Are healthcare companies categorized as "Other" because the industry field is blank?</p>
+
+        <p><strong>Forecasting:</strong> Compare your last three quarters of forecast vs. actuals. If the delta is consistently large, look at the data feeding your pipeline stages. Are close dates accurate? Are deal amounts realistic? Is stage progression being tracked properly?</p>
+
+        <h3>Layer 5: Reporting and Attribution</h3>
+
+        <p>The top layer. If everything below it is broken, your reports are fiction.</p>
+
+        <p>Check your key reports for data completeness. If your marketing attribution report only covers 60% of closed-won revenue because 40% of deals have no campaign association, that report is misleading. It's not that marketing influenced 60% of revenue. It's that you can only measure 60% of revenue.</p>
+
+        <p>Same goes for any report that filters on fields with low completeness. A "Revenue by Industry" report is useless if 35% of your accounts have no industry value.</p>
+
+        <p>Pull your three most important dashboards. For each metric, trace it back to the underlying data. How complete is that data? How accurate? How fresh? If you can't answer those questions, the dashboard is decoration.</p>
+
+        <h2>The Audit Checklist</h2>
+
+        <div class="checklist">
+          <h4>RevOps Data Stack Audit Tasks</h4>
+          <ul>
+            <li>Map all data sources feeding your CRM</li>
+            <li>Sample 50 recent records from each source for completeness</li>
+            <li>Review integration error logs for the last 90 days</li>
+            <li>Check sync success rates across all integrations</li>
+            <li>Verify field mapping accuracy between systems</li>
+            <li>Run field completeness analysis on all critical CRM fields</li>
+            <li>Sample 100 records for accuracy verification</li>
+            <li>Check duplicate rates at account and contact levels</li>
+            <li>Test lead scoring model against actual closed-won deals</li>
+            <li>Track 100 leads through routing rules for accuracy</li>
+            <li>Spot-check marketing segments for misclassified records</li>
+            <li>Verify data completeness behind your top 3 dashboards</li>
+            <li>Document all findings and prioritize fixes by revenue impact</li>
+          </ul>
+        </div>
+
+        <h2>What to Do With What You Find</h2>
+
+        <p>After the audit, you'll have a list of issues. Resist the urge to fix everything at once. Prioritize by revenue impact.</p>
+
+        <p>If your <a href="/resources/data-quality-for-sales-leaders.html">lead routing is misrouting enterprise deals</a> to the wrong reps, fix that before you worry about standardizing country codes. If your email bounce rate is above 5% because of <a href="/resources/email-deliverability-data-quality.html">invalid addresses</a>, that's costing you deliverability reputation on every campaign.</p>
+
+        <p>Group your findings into three categories:</p>
+
+        <p><strong>Fix now (this week):</strong> Broken syncs, failed integrations, API key expirations. These are active problems getting worse every day.</p>
+
+        <p><strong>Fix soon (this month):</strong> Field completeness gaps, duplicate backlog, stale enrichment data. These are drag on performance but not actively breaking.</p>
+
+        <p><strong>Fix systematically (this quarter):</strong> Process changes, new validation rules, enrichment strategy. These prevent future problems but need planning.</p>
+
+        <p>The most important outcome of an audit isn't the fixes. It's the baseline. Now you know your duplicate rate is 14%, your email validity is 82%, and your title completeness is 67%. Next quarter, you measure again. If the numbers aren't better, your processes aren't working.</p>
+
+        <h2>Building Audit Into Your Operating Rhythm</h2>
+
+        <p>A one-time audit is helpful. A recurring audit is transformative.</p>
+
+        <p>Set up a monthly lightweight check: sync health, error logs, field completeness on your top five fields. Takes about two hours. Catches 80% of problems before they compound.</p>
+
+        <p>Run a full audit quarterly. Go through all five layers. Update your baseline metrics. Adjust priorities.</p>
+
+        <p>The teams that do this well treat data quality like they treat security. Not something you check once and forget. Something you monitor continuously because the cost of neglect is always higher than the cost of maintenance.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-section">
+          <h3>How often should RevOps teams audit their data stack?</h3>
+          <p>Quarterly for a full audit. Monthly for a lightweight sync-health and field-completeness check. Any major system change (new integration, CRM migration, team restructure) should trigger an immediate audit. The monthly check takes about two hours and catches most problems before they cascade.</p>
+
+          <h3>What are the most common RevOps data stack failures?</h3>
+          <p>Silent sync failures between CRM and marketing automation are the single most common issue. Second is field-level rot, where data exists but hasn't been updated in over a year. Third is duplicate creation from multiple tools writing to the CRM without coordinated dedup rules. All three are invisible until someone pulls a report and the numbers don't add up.</p>
+
+          <h3>What tools do I need for a RevOps data stack audit?</h3>
+          <p>You can start with what you have. CRM reports for field completeness and duplicate rates. Integration platform logs for sync health. A spreadsheet for tracking findings. You don't need to buy another tool to audit the tools you already own. If you want to go deeper, a data quality platform like Monte Carlo or Atlan can automate monitoring, but start manual first.</p>
+
+          <h3>How do I get leadership buy-in for a data quality initiative?</h3>
+          <p>Tie it to money. If you can show that 15% of leads are misrouted because of bad data, and misrouted leads convert at half the rate, that's a calculable pipeline impact. If your forecast is off by 20% because deal data is incomplete, that's a credibility problem the CFO cares about. Run the audit first, then present findings in revenue terms.</p>
+        </div>
+
+        <div class="article-cta">
+          <p><strong>Don't have time to run a full audit?</strong></p>
+          <p>Send us a sample of your CRM data. We'll run a complimentary quality assessment and show you exactly where the gaps are.</p>
+          <p><a href="/contact.html" class="btn btn--primary">Get a Free Data Assessment</a></p>
+        </div>
+
+        <p class="mt-xl text-muted">Related: <a href="/resources/data-quality-metrics.html">Data Quality Metrics</a> | <a href="/resources/data-quality-dashboards.html">Data Quality Dashboards</a> | <a href="/resources/crm-data-quality-checklist.html">CRM Data Quality Checklist</a> | <a href="/resources/prepare-crm-for-enrichment.html">Prepare CRM for Enrichment</a></p>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: var(--color-bg-secondary, #f0faf7); border-radius: 12px; text-align: center;">
+          <h3 style="margin-bottom: 0.5rem;">Need help with your data?</h3>
+          <p style="color: var(--color-text-secondary); margin-bottom: 1rem;">Tell us about your data challenges and we'll show you what clean, enriched data looks like.</p>
+          <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
+        </div>
+
+        <div style="margin-top: var(--space-2xl); padding: var(--space-xl); background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+          <p style="font-weight: 600; margin-bottom: var(--space-sm);">About the Author</p>
+          <p style="color: var(--color-text-secondary); margin: 0;"><a href="https://www.linkedin.com/in/romethorndike/" target="_blank" rel="noopener">Rome Thorndike</a> is the founder of Verum. Before starting Verum, Rome spent years at Salesforce working on data quality and CRM implementation challenges. He now helps B2B companies clean, enrich, and maintain their Salesforce data.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

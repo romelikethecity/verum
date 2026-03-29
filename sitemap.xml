@@ -1483,6 +1483,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://veruminc.com/resources/churn-signals-hidden-in-crm.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://veruminc.com/resources/cognism-data-enrichment-salesforce.html</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -1855,6 +1861,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://veruminc.com/resources/manual-data-entry-cost-sales-teams.html</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://veruminc.com/resources/multi-crm-data-sync.html</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
@@ -1881,6 +1893,12 @@
   <url>
     <loc>https://veruminc.com/resources/real-time-vs-batch-enrichment.html</loc>
     <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://veruminc.com/resources/revops-data-stack-audit.html</loc>
+    <lastmod>2026-03-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
