@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Measure Data Enrichment Accuracy | Verum</title>
+  <meta name="description" content="A practical guide to measuring data enrichment accuracy. Covers match rates, field-level accuracy, decay tracking, and the benchmarks that separate good vendors from bad ones.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/how-to-measure-enrichment-accuracy.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/how-to-measure-enrichment-accuracy.html">
+  <meta property="og:title" content="How to Measure Data Enrichment Accuracy">
+  <meta property="og:description" content="A practical guide to measuring data enrichment accuracy. Covers match rates, field-level accuracy, decay tracking, and the benchmarks that separate good vendors from bad ones.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Measure Data Enrichment Accuracy">
+  <meta name="twitter:description" content="A practical guide to measuring data enrichment accuracy. Covers match rates, field-level accuracy, decay tracking, and the benchmarks that separate good vendors from bad ones.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "How to Measure Data Enrichment Accuracy"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Measure Data Enrichment Accuracy",
+    "description": "A practical guide to measuring data enrichment accuracy. Covers match rates, field-level accuracy, decay tracking, and the benchmarks that separate good vendors from bad ones.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-29",
+    "dateModified": "2026-03-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/how-to-measure-enrichment-accuracy.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good data enrichment accuracy rate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For B2B data enrichment, good accuracy benchmarks are: 85%+ email deliverability on enriched records, 80%+ match rate for emails, 60%+ for direct dial phones, and 90%+ for company firmographics. These vary by market segment. Enterprise contacts are easier to enrich accurately than SMB. Niche industries will run 10-15 points lower than mainstream markets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you test data enrichment accuracy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The gold standard is a manual spot-check. Pull 50-100 random enriched records, then verify each field independently: send test emails and check for bounces, call phone numbers, look up titles on LinkedIn. Automated verification catches obvious errors but misses subtle ones like outdated titles or emails that deliver to the wrong person. Do both."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between match rate and accuracy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Match rate measures how many records received a value for a given field (e.g., 80% of submitted records got an email address). Accuracy measures how many of those matched values are correct (e.g., 92% of those emails are deliverable and belong to the right person). A vendor can have a high match rate and low accuracy by returning guessed or outdated data. Always measure both."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should you audit data enrichment quality?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run a full accuracy audit quarterly. Monitor leading indicators weekly: email bounce rates from outbound campaigns, phone connect rates from sales dials, and title mismatch flags from reps. If any leading indicator degrades more than 5 points from baseline, trigger an ad hoc audit immediately rather than waiting for the quarterly cycle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do data enrichment vendors overstate their accuracy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vendors measure accuracy on their best-performing segments and report those numbers. They also test against their own sample datasets rather than customer data. Real-world accuracy on your specific ICP, industry, and geography will almost always be lower than vendor-reported benchmarks. The only number that matters is performance on your data, measured by your team."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border-left: 4px solid var(--color-teal);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Measurement</p>
+      <h1 class="page-hero__title">How to Measure Data Enrichment Accuracy</h1>
+      <p class="page-hero__subtitle">Match rate is not accuracy. Here's how to measure what your enrichment vendor is actually delivering, field by field.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+      <div class="blog-meta">2026-03-29 &middot; 13 min read</div>
+
+      <div class="blog-content">
+        <p>Your data enrichment vendor says they deliver 95% accuracy. Your sales team says half the emails bounce. Someone's wrong, and it's almost never the sales team.</p>
+
+        <p>The gap between vendor-reported accuracy and real-world performance is one of the most expensive problems in B2B data. It's not that vendors are lying, exactly. It's that the way they measure accuracy and the way your team experiences accuracy are two different things.</p>
+
+        <p>Here's how to measure what's actually happening with your enriched data.</p>
+
+        <h2>Match Rate vs Accuracy: The Distinction That Matters</h2>
+
+        <p>These two metrics get conflated constantly, and the confusion costs companies real money.</p>
+
+        <p><strong>Match rate</strong> is the percentage of records that received a value for a given field. You submitted 10,000 contacts and 8,000 got an email address. That's an 80% match rate.</p>
+
+        <p><strong>Accuracy</strong> is the percentage of matched values that are correct. Of those 8,000 email addresses, how many are deliverable and belong to the right person? If 600 bounce and another 400 deliver to someone who left the company, your accuracy is 87.5%. Not bad, but a far cry from 95%.</p>
+
+        <p>A vendor can inflate match rates by returning best-guess data. An email constructed from a common pattern (firstname.lastname@company.com) might count as a "match" even when no verification was done. That inflates the match rate while tanking accuracy.</p>
+
+        <p>Measure both. Report them separately. Never let a vendor combine them into a single metric.</p>
+
+        <h2>The Four Levels of Accuracy Measurement</h2>
+
+        <h3>Level 1: Automated verification (table stakes)</h3>
+
+        <p>This is the bare minimum. Run enriched emails through an SMTP verification tool to check deliverability. Check phone numbers against a carrier lookup to confirm they're active lines, not disconnected. Validate company URLs resolve to live websites.</p>
+
+        <p>Automated verification catches the obvious junk: invalid email syntax, disconnected phones, defunct companies. It does not catch subtle errors like emails that deliver to the wrong person, phones that ring to a general line instead of a direct dial, or titles that are six months stale.</p>
+
+        <p>Cost: $0.001-$0.005 per record. Run it on every enrichment batch.</p>
+
+        <h3>Level 2: Manual spot-check (required quarterly)</h3>
+
+        <p>Pull 50-100 random records from each enrichment batch. For each record, verify independently:</p>
+
+        <ul>
+          <li><strong>Email:</strong> Send a test message. Did it deliver? Did the auto-reply (if any) match the expected contact?</li>
+          <li><strong>Phone:</strong> Call the number. Did you reach the right person, or at least the right company?</li>
+          <li><strong>Title:</strong> Check LinkedIn. Does the enriched title match the current title?</li>
+          <li><strong>Company:</strong> Is this person still at the enriched company?</li>
+        </ul>
+
+        <p>This is tedious. It takes 2-4 hours per batch of 50 records. It's also the only way to get a real accuracy number. Automated tools can't tell you if a working email address belongs to the right person. A human checking LinkedIn can.</p>
+
+        <h3>Level 3: Downstream signal tracking (ongoing)</h3>
+
+        <p>Your sales and marketing activities generate accuracy signals constantly. Track them:</p>
+
+        <ul>
+          <li><strong>Email bounce rate:</strong> Hard bounces from outbound campaigns (target: under 3%)</li>
+          <li><strong>Phone connect rate:</strong> Percentage of dials that reach the named contact (target: 15%+ for direct dials)</li>
+          <li><strong>Title mismatch rate:</strong> How often reps flag that a contact's title is wrong in the CRM</li>
+          <li><strong>Company mismatch rate:</strong> How often contacts have moved to a different company than what's listed</li>
+        </ul>
+
+        <p>These aren't precision measurements, but they're excellent leading indicators. If your <a href="/resources/email-deliverability-data-quality.html">email bounce rate</a> spikes from 2% to 6% over a quarter, something changed in your enrichment quality. Investigate before it gets worse.</p>
+
+        <h3>Level 4: Cohort decay analysis (advanced)</h3>
+
+        <p>B2B data decays at roughly 2-3% per month. But that's an average, and averages hide a lot. Track accuracy by enrichment cohort: records enriched in January, February, March, and so on. Measure the accuracy of each cohort over time.</p>
+
+        <p>This tells you two things: how quickly your enriched data decays (which determines re-enrichment frequency), and whether your vendor's accuracy is improving or declining over time. If January cohorts and June cohorts have the same 90-day accuracy, your vendor is consistent. If June is measurably worse, you have a vendor problem, not a decay problem.</p>
+
+        <p>For more on tracking decay, see our guide on <a href="/resources/calculate-crm-data-decay-rate.html">calculating CRM data decay rates</a>.</p>
+
+        <div class="callout-box">
+          <p><strong>The 50-record rule:</strong> If you do nothing else, manually verify 50 random records after every enrichment batch. It takes half a day. It's the difference between knowing your data quality and guessing at it.</p>
+        </div>
+
+        <h2>Field-by-Field Benchmarks</h2>
+
+        <p>Not all fields are created equal. Here's what "good" looks like for each, based on US mid-market B2B data:</p>
+
+        <h3>Email addresses</h3>
+
+        <p>Match rate benchmark: 75-85%. Accuracy benchmark: 90%+ deliverability on matched records. Reality check: if a vendor claims 95%+ email match rates across all segments, they're likely including pattern-guessed emails that haven't been verified. Ask how they verify. SMTP verification is the minimum; catch-all domain detection matters too.</p>
+
+        <h3>Phone numbers (direct dial)</h3>
+
+        <p>Match rate benchmark: 40-65%. Accuracy benchmark: 70%+ of direct dials should connect to the named person or their voicemail. This is the hardest field to enrich accurately. Direct dial coverage varies enormously by seniority (C-suite is harder), industry, and geography. If a vendor promises 80%+ direct dial match rates, ask for a test batch.</p>
+
+        <h3>Job titles</h3>
+
+        <p>Match rate benchmark: 85-95%. Accuracy benchmark: 85%+ should match LinkedIn within the last 6 months. Titles are easy to find but hard to keep current. The average B2B contact changes titles every 2.5 years, and it takes data providers 3-6 months to catch the change. Freshness matters more than match rate for titles.</p>
+
+        <h3>Company firmographics (size, revenue, industry)</h3>
+
+        <p>Match rate benchmark: 90%+. Accuracy benchmark: 85%+ for employee count within one band (e.g., 50-200 vs 200-500), 80%+ for revenue within one band. These fields change less frequently than contact data, but they're also harder to verify. Self-reported data on LinkedIn or company websites often conflicts with third-party estimates. Pick a source of truth and stick with it.</p>
+
+        <h2>How Vendors Game Accuracy Metrics</h2>
+
+        <p>Understanding the games helps you ask better questions.</p>
+
+        <h3>Cherry-picked test data</h3>
+
+        <p>Vendors test accuracy on their own sample datasets, which are curated to include contacts that are easy to enrich. Enterprise companies with large web footprints, well-known executives, frequently crawled domains. Your data probably includes harder targets: SMB contacts, niche industries, people who don't have LinkedIn profiles. Vendor benchmarks will overstate what you'll get.</p>
+
+        <h3>Segment-specific reporting</h3>
+
+        <p>A vendor might achieve 92% accuracy on technology companies and 68% on manufacturing. If they report the blended average as "85% accuracy" and your ICP is manufacturing, you're getting the 68% experience.</p>
+
+        <h3>Measuring at the record level, not the field level</h3>
+
+        <p>If a record has 10 fields and 8 are correct, some vendors count that as a "match" with "80% field accuracy." But if the two wrong fields are email and phone, that record is useless for outbound, and "80% accurate" is misleading.</p>
+
+        <h3>Ignoring staleness</h3>
+
+        <p>An email address that was correct when enriched but belongs to someone who left the company two months ago counts as "accurate" at enrichment time. The vendor's accuracy metric looks fine. Your bounce rate tells a different story.</p>
+
+        <h2>Building an Accuracy Monitoring System</h2>
+
+        <p>You don't need a data science team for this. You need a spreadsheet and discipline.</p>
+
+        <h3>Weekly: check leading indicators</h3>
+
+        <p>Pull email bounce rates from your marketing automation or outbound tool. Pull phone connect rates from your dialer. If either moves more than 5 percentage points from your rolling average, flag it for investigation.</p>
+
+        <h3>Monthly: run automated verification</h3>
+
+        <p>SMTP-verify a random sample of 500-1,000 enriched records from the past 30 days. Track the deliverability rate month over month. This catches gradual degradation before it becomes a crisis.</p>
+
+        <h3>Quarterly: do the manual spot-check</h3>
+
+        <p>50 records. LinkedIn verification of title and company. Email send test. Phone call test. Record results in a tracking spreadsheet. Compare quarter over quarter. This is your ground truth.</p>
+
+        <h3>Annually: full vendor review</h3>
+
+        <p>Compile quarterly accuracy data. Compare against vendor SLAs and against alternative vendors (run a competitive test batch). Decide whether to renew, renegotiate, or switch. Having 12 months of tracked accuracy data gives you negotiating power that most buyers lack. Our <a href="/resources/data-enrichment-rfp-template.html">RFP template</a> includes benchmarking criteria for this review.</p>
+
+        <h2>What to Do When Accuracy Falls Short</h2>
+
+        <p>Identifying poor accuracy is step one. Here's step two.</p>
+
+        <p>If accuracy drops on specific fields but not others, the issue is likely a single data source within the vendor's waterfall that degraded. Ask them to investigate and, if possible, route around the problematic source.</p>
+
+        <p>If accuracy drops across all fields simultaneously, the issue is more fundamental: either your ICP shifted into a harder-to-enrich segment, or the vendor's overall data quality declined. A test batch with a competing vendor will tell you which.</p>
+
+        <p>If accuracy was never good to begin with, you have a vendor selection problem. Go back to <a href="/resources/evaluate-data-enrichment-vendors.html">vendor evaluation basics</a> and run competitive test batches.</p>
+
+        <p>The companies that get the best results from data enrichment aren't the ones with the most expensive vendors. They're the ones who measure relentlessly and hold vendors accountable to specific, field-level accuracy standards. That's not a vendor capability. It's an internal discipline. And it's free.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What is a good data enrichment accuracy rate?</h3>
+        <p>For B2B: 85%+ email deliverability, 80%+ email match rate, 60%+ direct dial match rate, 90%+ company firmographics. These vary by segment. Enterprise is easier than SMB. Niche industries run 10-15 points lower.</p>
+
+        <h3>How do you test data enrichment accuracy?</h3>
+        <p>The gold standard is a manual spot-check of 50-100 random records: send test emails, call phone numbers, verify titles on LinkedIn. Automated SMTP verification catches obvious bounces but misses subtle errors. Do both.</p>
+
+        <h3>What is the difference between match rate and accuracy?</h3>
+        <p>Match rate measures how many records got a value for a given field. Accuracy measures how many of those values are correct. A vendor can have high match rates and low accuracy by returning guessed or outdated data. Always measure both separately.</p>
+
+        <h3>How often should you audit data enrichment quality?</h3>
+        <p>Quarterly for full manual audits. Weekly for leading indicators (bounce rates, connect rates). Monthly for automated SMTP verification on random samples. If any indicator degrades more than 5 points, trigger an ad hoc audit immediately.</p>
+
+        <h3>Why do data enrichment vendors overstate their accuracy?</h3>
+        <p>Vendors measure on their best-performing segments and test against curated sample data. Real-world accuracy on your specific ICP will almost always be lower. The only number that matters is performance on your data, measured by your team.</p>
+      </div>
+
+      <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">
+        <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
+      </div>
+
+      <p class="text-muted" style="font-size: 0.875rem;">Related: <a href="/resources/data-quality-metrics.html">Data Quality Metrics</a> | <a href="/resources/measuring-enrichment-roi.html">Measuring Enrichment ROI</a> | <a href="/resources/prepare-crm-for-enrichment.html">Prepare Your CRM for Enrichment</a> | <a href="/pricing.html">Pricing</a></p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

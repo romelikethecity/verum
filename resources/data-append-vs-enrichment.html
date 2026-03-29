@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Append vs Data Enrichment: What's Different | Verum</title>
+  <meta name="description" content="Data append fills missing fields. Data enrichment verifies, updates, and adds context. Here's when you need each, what they cost, and why the distinction matters for your CRM.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-append-vs-enrichment.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-append-vs-enrichment.html">
+  <meta property="og:title" content="Data Append vs Data Enrichment: What's Different">
+  <meta property="og:description" content="Data append fills missing fields. Data enrichment verifies, updates, and adds context. Here's when you need each, what they cost, and why the distinction matters for your CRM.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Append vs Data Enrichment: What's Different">
+  <meta name="twitter:description" content="Data append fills missing fields. Data enrichment verifies, updates, and adds context. Here's when you need each, what they cost, and why the distinction matters for your CRM.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Append vs Data Enrichment"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data Append vs Data Enrichment: What's Different",
+    "description": "Data append fills missing fields. Data enrichment verifies, updates, and adds context. Here's when you need each, what they cost, and why the distinction matters for your CRM.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-29",
+    "dateModified": "2026-03-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-append-vs-enrichment.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is data append?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data append is the process of adding missing information to existing records in your database. You have a contact's name and company; data append adds their email address, phone number, or job title. It fills gaps in fields that are empty. Data append does not verify or update existing data, and it typically does not add contextual fields like technographics, intent signals, or organizational data. It's narrower in scope than data enrichment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between data append and data enrichment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data append fills missing fields. Data enrichment does that plus verifies existing data, updates stale information, and adds contextual fields that weren't in your original schema (technographics, firmographics, intent signals, org hierarchy). Think of append as filling blanks and enrichment as upgrading the entire record. Enrichment includes append, but append does not include enrichment. Most B2B teams need enrichment, not just append."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does data append cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data append pricing typically ranges from $0.02-$0.10 per record for basic fields (email, phone) and $0.10-$0.30 per record for expanded fields (title, company data, firmographics). Pricing varies by volume, match rate guarantees, and whether you pay per record submitted or per record matched. Some providers charge per field rather than per record. Full data enrichment, which includes verification and contextual data, runs $0.05-$0.50 per record depending on depth."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I use data append vs full enrichment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use append when you have a clean, recently verified database that just needs specific missing fields filled (e.g., you have names and companies but need emails). Use full enrichment when your data is more than 90 days old, when you need to verify existing fields are still accurate, when you need contextual data beyond basic contact info, or when you're preparing data for a CRM migration. If in doubt, enrichment is the safer choice because it catches stale data that append ignores."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border-left: 4px solid var(--color-teal);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Concepts</p>
+      <h1 class="page-hero__title">Data Append vs Data Enrichment</h1>
+      <p class="page-hero__subtitle">They sound like the same thing. They aren't. Choosing wrong means you either overpay for what you need or underpay for what you don't get.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+      <div class="blog-meta">2026-03-29 &middot; 13 min read</div>
+
+      <div class="blog-content">
+        <p>Someone on the team says the database needs better data. The sales manager wants more phone numbers. Marketing wants verified emails. The CRO wants to know why outbound metrics are declining.</p>
+
+        <p>So you start looking at vendors. Half of them call their service "data append." The other half call it "data enrichment." Some use both terms interchangeably. Are they the same thing? Not exactly. And the difference determines whether you solve the problem or just put fresh paint on a rotting house.</p>
+
+        <h2>Data Append: Filling the Blanks</h2>
+
+        <p>Data append is straightforward. You have records with missing fields. Append fills those fields.</p>
+
+        <p>You have a contact's name and company. Append finds their email address. You have a company name. Append adds their revenue, employee count, and industry classification. You have a phone number that's clearly a switchboard. Append finds a direct line.</p>
+
+        <p>That's it. Append looks at what's empty and fills it in. It doesn't touch fields that already have values. It doesn't question whether existing data is still accurate. It doesn't add fields that aren't in your schema.</p>
+
+        <h3>What append does well</h3>
+
+        <p>Append is fast and cheap. Because the scope is narrow (fill empty fields), vendors can process high volumes at low per-record costs. It's the right tool when you have a fundamentally clean database that just has gaps in specific fields.</p>
+
+        <p>Common append use cases:</p>
+        <ul>
+          <li>Event leads who gave you name and company but no email</li>
+          <li>Inbound form submissions with minimal fields</li>
+          <li>Imported lists from a partner or acquisition that lack key contact details</li>
+          <li>Legacy records that were never fully populated</li>
+        </ul>
+
+        <h3>What append doesn't do</h3>
+
+        <p>Append does not verify. If a record has an email address that's six months stale, append won't flag it. The email field has a value, so append skips it. The fact that the value is wrong doesn't enter the equation.</p>
+
+        <p>Append also doesn't add context. It won't tell you what technology stack a company uses, whether they recently raised funding, what their org structure looks like, or whether the contact changed jobs. Those are enrichment capabilities, not append capabilities.</p>
+
+        <h2>Data Enrichment: The Full Picture</h2>
+
+        <p>Enrichment is a superset that includes append. Everything append does, enrichment also does. But enrichment goes further in three important ways.</p>
+
+        <h3>1. Verification of existing data</h3>
+
+        <p>Enrichment doesn't just fill blanks. It checks what's already there. Is the email still deliverable? Is the title still current? Is this person still at this company? Is the phone number still active?</p>
+
+        <p>This matters because <a href="/resources/what-is-b2b-data-decay.html">B2B data decays</a> at 2-3% per month. A database that was 95% accurate in January is down to ~83% accurate by December. Append would look at that database and say "looks complete to me." Enrichment would find the 17% that's gone stale and fix it.</p>
+
+        <h3>2. Contextual data addition</h3>
+
+        <p>Enrichment adds fields you didn't originally have. Firmographic data: revenue, headcount, funding stage, year founded. Technographic data: what CRM they use, what marketing automation, what analytics tools. Intent signals: are they researching topics related to your product? Organizational data: who reports to whom, what department sits where.</p>
+
+        <p>These contextual fields transform a contact record from "someone at a company" to "a VP of Sales at a 200-person SaaS company that uses HubSpot, recently raised a Series B, and has been researching CRM migration." The first record is a cold call. The second is an informed conversation.</p>
+
+        <h3>3. Ongoing freshness</h3>
+
+        <p>Many enrichment services include ongoing monitoring or refresh capabilities. When a contact changes jobs, the enrichment flags or updates the record. When a company is acquired, the enrichment notes the change. Append is a point-in-time operation. Enrichment can be continuous.</p>
+
+        <div class="callout-box">
+          <p><strong>The simplest distinction:</strong> Append fills blanks in your existing data. Enrichment upgrades your entire database: filling blanks, verifying what's there, adding context, and keeping it fresh. If you're choosing between them and aren't sure, choose enrichment. You can always use it as append (by only requesting missing fields), but you can't use append as enrichment.</p>
+        </div>
+
+        <h2>When Append Is Enough</h2>
+
+        <p>Append is the right choice in a few specific scenarios.</p>
+
+        <h3>Fresh inbound data with known gaps</h3>
+
+        <p>You ran an event last week. You collected 500 leads via a badge scan that captured name, company, and title, but no email or phone. This data is days old. The contacts are still at their companies. The titles are current. You just need the missing contact information. Append is the efficient choice.</p>
+
+        <h3>A recently cleaned database</h3>
+
+        <p>If you did a <a href="/resources/what-to-expect-data-cleaning-project.html">full data cleaning project</a> within the last 60 days, your existing data has been verified. The only gap is fields that the cleaning project didn't cover. Append fills those gaps without re-verifying what you just cleaned.</p>
+
+        <h3>High-volume, low-value records</h3>
+
+        <p>If you have 500,000 records and only need email addresses appended to enable a broad marketing campaign, the per-record economics of full enrichment might not justify the cost. Append at $0.03/record is $15,000. Enrichment at $0.15/record is $75,000. If you don't need the verification and context, don't pay for them.</p>
+
+        <h2>When You Need Full Enrichment</h2>
+
+        <h3>Your data is more than 90 days old</h3>
+
+        <p>If the data hasn't been verified in the last quarter, assume 6-9% of it is stale. Append won't catch that. Enrichment will. The older the data, the more critical enrichment becomes.</p>
+
+        <h3>You're preparing for a CRM migration</h3>
+
+        <p>Migrating dirty data into a new CRM is one of the most expensive mistakes in ops. You carry the junk forward, poison the new system from day one, and then spend months cleaning up what should have been fixed before migration. Full enrichment before migration is a one-time cost that saves multiples of itself in post-migration cleanup. Our <a href="/resources/crm-migration-data-cleanup.html">CRM migration cleanup guide</a> covers the full process.</p>
+
+        <h3>You need data for segmentation and scoring</h3>
+
+        <p>Lead scoring models and account segmentation require contextual data: company size, industry, technology usage, funding status. Append gives you contact details. Enrichment gives you the firmographic and technographic data that scoring models need to function. Without enrichment, your scoring is based on behavioral signals alone, and that's only half the picture.</p>
+
+        <h3>Your sales team needs call intelligence</h3>
+
+        <p>An SDR dialing into an account needs more than a phone number. They need to know the company's size, their tech stack, recent news, and the contact's role in the buying process. That context comes from enrichment. Append gives them a number to dial but nothing to say when someone answers.</p>
+
+        <h3>You're running ABM campaigns</h3>
+
+        <p>Account-based marketing requires deep account intelligence: org charts, technology profiles, buying committee members, and company-level signals. None of that comes from append. It all comes from enrichment. If you're running ABM on appended data, you're running ABM without account intelligence, which defeats the point. See our piece on <a href="/resources/abm-account-data-quality.html">ABM account data quality</a>.</p>
+
+        <h2>The Pricing Landscape</h2>
+
+        <h3>Data append pricing</h3>
+
+        <p>Basic fields (email, phone): $0.02-$0.10 per record. Expanded fields (title, company data): $0.10-$0.30 per record. Most providers price per record submitted, not per record matched. Some offer "pay per match" pricing at a higher per-record rate. At volume (100K+ records), negotiate for per-match pricing to avoid paying for records that return no results.</p>
+
+        <h3>Data enrichment pricing</h3>
+
+        <p>Self-serve platforms: $0.05-$0.20 per record for standard fields. Managed enrichment services: $0.15-$0.50 per record, including human QA and custom matching. Enterprise contracts: typically $30K-$150K annually, with per-record costs decreasing at volume. For detailed pricing considerations, see our <a href="/resources/how-to-choose-data-enrichment-provider.html">enrichment provider guide</a>.</p>
+
+        <h3>The hidden cost of choosing wrong</h3>
+
+        <p>Choosing append when you need enrichment saves money upfront and costs more downstream. You'll discover stale data through bounced emails, failed calls, and missed opportunities. The cost of those failures typically exceeds the price difference between append and enrichment within a single quarter.</p>
+
+        <p>Choosing enrichment when you only need append wastes money but doesn't create downstream problems. It's the less expensive mistake of the two. When in doubt, err toward enrichment.</p>
+
+        <h2>A Decision Framework</h2>
+
+        <p>Ask yourself three questions:</p>
+
+        <ol>
+          <li><strong>When was this data last verified?</strong> Under 60 days: append might be sufficient. Over 90 days: you need enrichment.</li>
+          <li><strong>Do I need more than contact details?</strong> If you need firmographics, technographics, or org data: enrichment. If you only need email and phone: append could work.</li>
+          <li><strong>What happens if existing data is wrong?</strong> If incorrect data causes bounces, wasted dials, or embarrassing outreach: enrichment. If the stakes are low (broad awareness campaign, one-time event follow-up): append.</li>
+        </ol>
+
+        <p>Most B2B teams asking "do I need append or enrichment?" need enrichment. The question itself usually indicates that the data hasn't been looked at carefully in a while, and data that hasn't been verified is data you can't trust. Append doesn't verify. Enrichment does.</p>
+
+        <p>The vendors who blur the line between these terms aren't doing you a favor. If someone selling you "data append" can't explain what they don't verify, they're either calling enrichment by the wrong name or they're selling you something incomplete. Ask the question. The answer tells you a lot about the vendor.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What is data append?</h3>
+        <p>Data append adds missing information to existing records. You have a name and company; append finds the email, phone, or title. It fills blanks without verifying existing data or adding contextual fields like technographics or intent signals.</p>
+
+        <h3>What is the difference between data append and data enrichment?</h3>
+        <p>Append fills missing fields. Enrichment fills missing fields, verifies existing data, updates stale information, and adds contextual data (firmographics, technographics, intent signals). Enrichment includes append. Append does not include enrichment.</p>
+
+        <h3>How much does data append cost?</h3>
+        <p>Basic fields (email, phone): $0.02-$0.10 per record. Expanded fields: $0.10-$0.30 per record. Full enrichment with verification: $0.05-$0.50 per record depending on depth. At volume, negotiate for pay-per-match pricing.</p>
+
+        <h3>When should I use data append vs full enrichment?</h3>
+        <p>Use append when data is under 60 days old and you only need missing contact details filled. Use enrichment when data is over 90 days old, when you need to verify existing fields, when you need contextual data for scoring or ABM, or when you're preparing for a CRM migration.</p>
+      </div>
+
+      <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">
+        <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
+      </div>
+
+      <p class="text-muted" style="font-size: 0.875rem;">Related: <a href="/resources/what-is-data-enrichment.html">What Is Data Enrichment?</a> | <a href="/resources/data-cleaning-vs-data-enrichment.html">Cleaning vs Enrichment</a> | <a href="/resources/prepare-crm-for-enrichment.html">Prepare Your CRM for Enrichment</a> | <a href="/pricing.html">Pricing</a></p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

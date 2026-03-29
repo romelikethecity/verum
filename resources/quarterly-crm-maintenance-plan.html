@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly CRM Data Maintenance Plan | Verum</title>
+  <meta name="description" content="A repeatable quarterly CRM maintenance plan for RevOps teams. Covers deduplication, decay audits, field standardization, enrichment refresh, and reporting cadence.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/quarterly-crm-maintenance-plan.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/quarterly-crm-maintenance-plan.html">
+  <meta property="og:title" content="Quarterly CRM Data Maintenance Plan">
+  <meta property="og:description" content="A repeatable quarterly CRM maintenance plan for RevOps teams. Covers deduplication, decay audits, field standardization, enrichment refresh, and reporting cadence.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Quarterly CRM Data Maintenance Plan">
+  <meta name="twitter:description" content="A repeatable quarterly CRM maintenance plan for RevOps teams. Covers deduplication, decay audits, field standardization, enrichment refresh, and reporting cadence.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Quarterly CRM Data Maintenance Plan"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Quarterly CRM Data Maintenance Plan",
+    "description": "A repeatable quarterly CRM maintenance plan for RevOps teams. Covers deduplication, decay audits, field standardization, enrichment refresh, and reporting cadence.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-03-29",
+    "dateModified": "2026-03-29",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/quarterly-crm-maintenance-plan.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How often should you clean CRM data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A quarterly deep-clean is the standard cadence for most B2B companies. This includes deduplication, field standardization, email validation, and enrichment refresh. Between quarterly cycles, run weekly automated checks on leading indicators: bounce rates, duplicate creation rate, and incomplete record percentage. Companies with high-volume inbound (1,000+ new records per month) should consider monthly light maintenance in addition to quarterly deep cleans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should a CRM data maintenance plan include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A complete quarterly maintenance plan covers six areas: (1) Deduplication scan and merge of new duplicates. (2) Email validation on all active contacts. (3) Field standardization for titles, company names, and addresses. (4) Data decay audit comparing a sample of records against current reality. (5) Enrichment refresh on records that have gone stale. (6) Reporting on data quality metrics and quarter-over-quarter trends. Each area should have a defined owner, timeline, and success metric."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much time does quarterly CRM maintenance take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For a database of 50K-200K records, expect 15-25 hours of ops time per quarter for the full maintenance cycle. This breaks down roughly as: 3-5 hours for dedup, 2-3 hours for email validation (mostly automated), 3-5 hours for field standardization, 4-6 hours for decay audit and enrichment refresh, and 3-5 hours for reporting and stakeholder communication. Outsourcing the enrichment and validation components can reduce internal time by 40-50%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What CRM data quality metrics should you track quarterly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Track these six metrics every quarter: (1) Duplicate rate: percentage of records with a potential match. Target under 3%. (2) Email deliverability: percentage of emails that pass SMTP validation. Target over 92%. (3) Field completeness: percentage of records with all required fields populated. Target over 80%. (4) Data freshness: percentage of records enriched or verified within the last 90 days. (5) Title accuracy: sample-checked percentage of titles matching LinkedIn. Target over 85%. (6) Bounce rate trend: quarter-over-quarter movement in hard bounces."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should you delete old CRM records or archive them?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Archive, don't delete. Records that are no longer active prospects still contain historical value: past interactions, deal history, referral connections. Move them to an archive segment or status that excludes them from active lists, sequences, and reporting, but keeps the data accessible. The exception is junk records (fake emails, test entries, clear spam) which should be permanently deleted. Review and prune the archive annually."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border-left: 4px solid var(--color-teal);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Playbook</p>
+      <h1 class="page-hero__title">Quarterly CRM Data Maintenance Plan</h1>
+      <p class="page-hero__subtitle">A repeatable framework for keeping your CRM clean. Copy this, assign owners, run it every quarter. Your pipeline numbers will thank you.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+      <div class="blog-meta">2026-03-29 &middot; 15 min read</div>
+
+      <div class="blog-content">
+        <p>CRM data degrades at 2-3% per month. That means a database you cleaned thoroughly in January is 6-9% wrong by March and 12-18% wrong by June. Left alone for a full year, a quarter of your records are inaccurate.</p>
+
+        <p>Everyone knows this. Almost nobody has a system for dealing with it.</p>
+
+        <p>Most teams do CRM maintenance reactively. Something breaks, bounces spike, the sales team complains, someone spends a panicked week fixing things, and then the cycle restarts. That's not maintenance. That's firefighting.</p>
+
+        <p>What follows is a structured quarterly maintenance plan you can copy and adapt. It covers the six areas that matter, in the order you should tackle them, with time estimates for each.</p>
+
+        <h2>Before You Start: The Quarterly Prep Checklist</h2>
+
+        <p>Block 2-3 days on the RevOps calendar. Not scattered across the quarter. Concentrated at the start, with follow-up tasks distributed across the remaining weeks. CRM maintenance done in fragments never gets finished.</p>
+
+        <p>Pull your baseline metrics before touching anything:</p>
+
+        <ul>
+          <li>Total active records (contacts and companies)</li>
+          <li>Duplicate rate (run a dedup scan, note the count)</li>
+          <li>Email deliverability rate (SMTP validation on a random 1,000-record sample)</li>
+          <li>Field completeness rate (percentage of required fields populated)</li>
+          <li>Last enrichment date distribution (how old is your data?)</li>
+        </ul>
+
+        <p>These baselines are your "before" picture. You'll compare against them at the end of the cycle to measure impact.</p>
+
+        <h2>Phase 1: Deduplication (Day 1, 3-5 hours)</h2>
+
+        <p>Start with dedup because duplicate records contaminate every other maintenance activity. If you're validating emails on records that have duplicates, you're validating the same person twice. If you're enriching duplicates, you're paying twice for the same data.</p>
+
+        <h3>Contact-level dedup</h3>
+
+        <p>Run a fuzzy match on name + email, name + company, and email alone. Review the matches in clusters, not individually. Most dedup tools will show you groups of 2-5 records that likely represent the same person. Merge the groups, keeping the record with the most complete data as the master.</p>
+
+        <p>For Salesforce-specific dedup workflows, see our <a href="/resources/salesforce-duplicate-management.html">Salesforce duplicate management guide</a>. For HubSpot, see <a href="/resources/hubspot-duplicate-contacts.html">HubSpot duplicate contacts</a>.</p>
+
+        <h3>Company-level dedup</h3>
+
+        <p>Company dedup is harder because of name variations. "IBM," "International Business Machines," and "IBM Corporation" are the same company. So are "McKinsey" and "McKinsey & Company." Fuzzy matching helps, but plan on manual review for anything the algorithm flags as uncertain.</p>
+
+        <p>Don't try to merge companies that are parent-child relationships (e.g., Google and Alphabet). Those are legitimately different entities in most CRM structures, even though they're related. Focus on true duplicates: the same entity entered multiple times with slightly different names.</p>
+
+        <h3>Set a dedup target</h3>
+
+        <p>Your duplicate rate should be under 3% of total records. If your scan finds more than that, you've been creating duplicates faster than you've been catching them. That's a process problem, not just a cleanup problem. After merging, investigate where duplicates are coming from (web forms, imports, integrations) and fix the source.</p>
+
+        <h2>Phase 2: Email Validation (Day 1, 2-3 hours)</h2>
+
+        <p>Run SMTP validation on all active contacts. "Active" means contacts your sales or marketing team will email in the next 90 days. Don't waste validation credits on archived records nobody's touching.</p>
+
+        <h3>Categorize the results</h3>
+
+        <ul>
+          <li><strong>Valid:</strong> SMTP check passed. Email is deliverable. No action needed.</li>
+          <li><strong>Invalid:</strong> Hard bounce confirmed. Remove from all active lists immediately. These will never deliver and damage your sender reputation every time you try.</li>
+          <li><strong>Risky:</strong> Catch-all domain, temporary error, or accept-all server. These might deliver, might not. Flag them and exclude from high-volume sends. Use for targeted outreach only.</li>
+          <li><strong>Unknown:</strong> Server didn't respond to validation check. Re-validate in a week. If still unknown, treat as risky.</li>
+        </ul>
+
+        <p>Target: 92%+ of active contacts should validate as "valid." If you're below 85%, your enrichment source has a quality problem, your data is too old, or both.</p>
+
+        <h2>Phase 3: Field Standardization (Day 1-2, 3-5 hours)</h2>
+
+        <p>Fields drift. Job titles accumulate dozens of variations for the same role. Company names have inconsistent capitalization, abbreviations, and suffixes. Phone numbers appear in six different formats. State fields mix abbreviations and full names.</p>
+
+        <p>This phase brings everything back to standard.</p>
+
+        <h3>Job titles</h3>
+
+        <p>Title standardization is the most impactful and most time-consuming field to normalize. Map common variations to canonical forms: "VP Sales," "Vice President of Sales," "VP, Sales," and "Vice President - Sales" should all normalize to one standard.</p>
+
+        <p>Most CRM platforms let you create normalization rules or use automation to standardize titles on entry. If you haven't set these up yet, the quarterly maintenance cycle is when you build the initial mapping. After that, you're just catching new variations each quarter. Our <a href="/resources/salesforce-job-title-standardization.html">title standardization guide</a> covers the methodology.</p>
+
+        <h3>Company names</h3>
+
+        <p>Standardize suffixes (LLC, Inc., Corp., Ltd.), remove trailing spaces, fix capitalization. This is largely automatable. The manual work is catching variations that automated rules miss: trade names vs. legal names, acquired companies that haven't been updated, and subsidiary vs. parent naming.</p>
+
+        <h3>Phone numbers</h3>
+
+        <p>Normalize to a single format. E.164 international format is the safest standard for systems that need to dial or look up numbers. At minimum, strip out inconsistent formatting: parentheses, dashes, dots, spaces. Pick one format and enforce it.</p>
+
+        <h3>Geographic fields</h3>
+
+        <p>State, country, and address fields accumulate inconsistencies faster than almost anything else. "CA" vs. "California" vs. "Calif." vs. "ca" in your state field means your territory assignments, routing rules, and geographic reporting are all unreliable. Standardize to abbreviation codes and automate enforcement going forward.</p>
+
+        <h2>Phase 4: Data Decay Audit (Day 2, 4-6 hours)</h2>
+
+        <p>This is the most important phase, and the one most teams skip.</p>
+
+        <p>Pull a random sample of 50-100 records that were last enriched or verified more than 90 days ago. Manually check each one against current reality:</p>
+
+        <ul>
+          <li>Is this person still at the listed company? (Check LinkedIn)</li>
+          <li>Is the job title current? (Check LinkedIn)</li>
+          <li>Is the email still valid? (Send a test or run SMTP check)</li>
+          <li>Is the phone number still connected? (Call it)</li>
+          <li>Is the company still operating? (Check their website)</li>
+        </ul>
+
+        <p>This gives you a decay rate. If 12 out of 50 records have at least one stale field, your 90-day decay rate is 24%. That tells you how aggressively you need to re-enrich.</p>
+
+        <p>Compare this quarter's decay rate against last quarter's. If it's accelerating, something changed in your market (more job mobility, company closures, M&A activity). If it's stable, your current re-enrichment cadence is probably right.</p>
+
+        <p>For a deeper framework, see our guide on how to <a href="/resources/calculate-crm-data-decay-rate.html">calculate your CRM data decay rate</a>.</p>
+
+        <div class="callout-box">
+          <p><strong>The decay audit shortcut:</strong> If you can't do 100 records, do 30. Even a small sample gives you directional data on whether your database is healthy or degrading. The goal is to measure, not to achieve statistical perfection. Thirty records, honestly checked, beats zero records assumed to be fine.</p>
+        </div>
+
+        <h2>Phase 5: Enrichment Refresh (Day 2-3, 4-6 hours)</h2>
+
+        <p>Based on your decay audit results, identify which records need re-enrichment. Prioritize by business value:</p>
+
+        <ol>
+          <li><strong>Active deals:</strong> Contacts associated with open opportunities. These are the most time-sensitive. Stale data here costs real pipeline.</li>
+          <li><strong>Target accounts:</strong> High-fit accounts your team is actively pursuing. Enrichment freshness directly impacts outreach quality.</li>
+          <li><strong>Active sequences:</strong> Any contact currently in an outbound sequence. Invalid emails here damage your sending reputation.</li>
+          <li><strong>Inbound leads from last quarter:</strong> Leads that came in but haven't been fully enriched. These have expressed interest; don't waste that signal with incomplete data.</li>
+          <li><strong>Everything else:</strong> The long tail. Re-enrich when budget allows or when these records become active targets.</li>
+        </ol>
+
+        <p>Submit the priority groups to your enrichment vendor or run them through your enrichment workflow. For most databases, you'll re-enrich 15-30% of active records each quarter.</p>
+
+        <h2>Phase 6: Reporting and Communication (Day 3, 3-5 hours)</h2>
+
+        <p>Maintenance without reporting is invisible. If stakeholders don't see the results, they won't support the time investment next quarter.</p>
+
+        <h3>Build a one-page quarterly data health report</h3>
+
+        <p>Include these metrics with quarter-over-quarter trends:</p>
+
+        <ul>
+          <li><strong>Duplicate rate:</strong> Before and after dedup. Target: under 3%.</li>
+          <li><strong>Email deliverability:</strong> Percentage of active contacts with valid emails. Target: over 92%.</li>
+          <li><strong>Field completeness:</strong> Percentage of records with all required fields. Target: over 80%.</li>
+          <li><strong>Data freshness:</strong> Percentage of records enriched within the last 90 days.</li>
+          <li><strong>Decay rate:</strong> From your manual audit sample.</li>
+          <li><strong>Records remediated:</strong> Total records deduped, re-validated, standardized, or re-enriched.</li>
+        </ul>
+
+        <p>Send this to: VP of Sales, VP of Marketing, and whoever approves the data quality budget. Include a one-paragraph summary of what was done, what improved, and what the team should watch for next quarter.</p>
+
+        <p>For a deeper treatment of which metrics matter most, see our <a href="/resources/data-quality-metrics.html">data quality metrics guide</a>.</p>
+
+        <h3>Share with the sales team</h3>
+
+        <p>A shorter version for reps: "We cleaned up X duplicates, validated Y emails, and refreshed Z records. If you see bad data, flag it in [location]. Here's the feedback form." Keep it brief. Reps care about whether the data works, not about the process behind it.</p>
+
+        <h2>The Annual Overlay</h2>
+
+        <p>Once a year, layer these additional activities onto your Q4 maintenance cycle:</p>
+
+        <ul>
+          <li><strong>Archive review:</strong> Move genuinely dead records out of the active database. Contacts who bounced on the last three sends, companies that no longer exist, people who've been unresponsive for 18+ months. Archive, don't delete. You may need the historical data later.</li>
+          <li><strong>Vendor review:</strong> Compile your four quarters of accuracy and match rate data. Compare against vendor SLAs and against competitive benchmarks. Decide whether to renew, renegotiate, or run a competitive evaluation.</li>
+          <li><strong>Process audit:</strong> Where are new duplicates coming from? Which integrations are creating the most dirty data? What fields are most commonly incomplete on new records? Fix the input, not just the output.</li>
+          <li><strong>CRM backup:</strong> Full export of your database to a secure location outside the CRM. If you haven't done this, see our <a href="/resources/crm-backup-recovery.html">CRM backup and recovery guide</a>.</li>
+        </ul>
+
+        <h2>Making It Stick</h2>
+
+        <p>The plan above works. The challenge isn't the plan. It's executing it consistently for four consecutive quarters.</p>
+
+        <p>Two things help. First, put the maintenance cycle on the calendar at the beginning of the year. Block the days. Treat them as non-negotiable. Data maintenance that gets postponed "until things slow down" never happens, because things never slow down.</p>
+
+        <p>Second, assign a single owner. Not a committee. One person who's responsible for driving the quarterly cycle to completion and reporting results. If nobody owns it, nobody does it.</p>
+
+        <p>The companies with the cleanest CRMs aren't the ones with the best tools or the biggest budgets. They're the ones that treat data maintenance as recurring infrastructure work, like updating software or paying invoices. It's not glamorous. It doesn't make the quarterly all-hands. But it's the foundation everything else runs on, and the teams that neglect it spend far more time and money fixing the downstream consequences.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>How often should you clean CRM data?</h3>
+        <p>Quarterly deep-cleans are the standard. Between cycles, run weekly automated checks on bounce rates, duplicate creation rate, and incomplete records. High-volume teams (1,000+ new records/month) should consider monthly light maintenance alongside quarterly deep cleans.</p>
+
+        <h3>What should a CRM data maintenance plan include?</h3>
+        <p>Six areas: deduplication, email validation, field standardization, data decay audit, enrichment refresh, and reporting. Each needs a defined owner, timeline, and success metric.</p>
+
+        <h3>How much time does quarterly CRM maintenance take?</h3>
+        <p>For 50K-200K records: 15-25 hours of ops time per quarter. Roughly 3-5 hours dedup, 2-3 hours email validation, 3-5 hours standardization, 4-6 hours decay audit and enrichment, and 3-5 hours reporting. Outsourcing enrichment and validation reduces internal time by 40-50%.</p>
+
+        <h3>What CRM data quality metrics should you track quarterly?</h3>
+        <p>Six metrics: duplicate rate (target under 3%), email deliverability (target over 92%), field completeness (target over 80%), data freshness (percentage verified within 90 days), title accuracy (sample-checked against LinkedIn, target over 85%), and bounce rate trend quarter-over-quarter.</p>
+
+        <h3>Should you delete old CRM records or archive them?</h3>
+        <p>Archive. Old records have historical value: past interactions, deal history, referral connections. Move them to an archive segment that excludes them from active lists and reporting, but keeps data accessible. Delete only clear junk: fake emails, test entries, spam. Review archives annually.</p>
+      </div>
+
+      <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">
+        <a href="/#contact" class="btn btn--primary btn--lg">See What We'll Find</a>
+      </div>
+
+      <p class="text-muted" style="font-size: 0.875rem;">Related: <a href="/resources/crm-data-quality-checklist.html">CRM Data Quality Checklist</a> | <a href="/resources/signs-crm-data-needs-cleaning.html">Signs Your CRM Needs Cleaning</a> | <a href="/resources/data-quality-roadmap.html">Data Quality Roadmap</a> | <a href="/pricing.html">Pricing</a></p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
