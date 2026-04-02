@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Enrichment for Product-Led Growth: Turn Signups Into Pipeline | Verum</title>
+  <meta name="description" content="PLG companies get thousands of signups with minimal data. Here is how enrichment identifies which free users are worth a sales conversation.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-enrichment-for-product-led-growth.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-enrichment-for-product-led-growth.html">
+  <meta property="og:title" content="Data Enrichment for Product-Led Growth">
+  <meta property="og:description" content="PLG companies get thousands of signups with minimal data. Here is how enrichment identifies which free users are worth a sales conversation.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Enrichment for Product-Led Growth">
+  <meta name="twitter:description" content="PLG companies get thousands of signups with minimal data. Here is how enrichment identifies which free users are worth a sales conversation.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uzzgoxxnof");
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Data Enrichment for Product-Led Growth"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data Enrichment for Product-Led Growth",
+    "description": "PLG companies get thousands of signups with minimal data. Here is how enrichment identifies which free users are worth a sales conversation.",
+    "author": {
+      "@type": "Organization",
+      "@id": "https://veruminc.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://veruminc.com/#organization"
+    },
+    "datePublished": "2026-04-02",
+    "dateModified": "2026-04-02",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://veruminc.com/resources/data-enrichment-for-product-led-growth.html"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do PLG companies need data enrichment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PLG companies collect minimal data at signup to reduce friction, often just an email address and name. This means the CRM has thousands of users with no company information, no title, no industry, and no way to prioritize who deserves sales attention. Enrichment fills in these gaps so sales teams can identify high-value accounts among the noise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What data should PLG companies enrich on free users?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At minimum: company name, employee count, industry, and job title. These four fields enable basic ICP scoring. For more sophisticated PQL models, add company revenue, funding stage, technology stack, and department. Enrich in tiers: lightweight enrichment on all signups, deeper enrichment on users who pass an initial activity threshold."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you build a product-qualified lead model with enriched data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Combine product usage signals (feature adoption, frequency, depth) with enriched firmographic data (company size, industry, role seniority). Score users on both dimensions. A director at a 500-person SaaS company who activated 3 features in the first week is a PQL. An individual contributor at a 5-person shop who logged in once is not. Enrichment provides the firmographic half of this equation."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-xl);
+    }
+    .blog-content h2 {
+      margin-top: var(--space-2xl);
+    }
+    .blog-content h3 {
+      margin-top: var(--space-xl);
+    }
+    .callout-box {
+      background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%);
+      border-left: 4px solid var(--color-teal);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      margin: var(--space-xl) 0;
+    }
+    .callout-box p {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/solutions/" style="color:#fff;margin:0 1rem;">Solutions</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Blog</a>
+      <a href="/about.html" style="color:#fff;margin:0 1rem;">About</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Strategy</p>
+      <h1 class="page-hero__title">Data Enrichment for Product-Led Growth</h1>
+      <p class="page-hero__subtitle">You have 10,000 free users. Maybe 200 are worth a sales conversation. Enrichment tells you which 200.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+      <div class="blog-meta">2026-04-02 &middot; 11 min read</div>
+
+      <div class="blog-content">
+        <p>Your product just crossed 15,000 free signups. The growth chart looks great in the board deck. But your sales team is drowning. They have a list of email addresses, maybe first names, and usage data that tells them someone logged in three times last week.</p>
+
+        <p>Who works at a company with 500 employees? Who's a VP vs. an intern? Who's at a company that can afford your enterprise plan? Nobody knows. The signup form only asked for an email.</p>
+
+        <p>This is the PLG enrichment problem. You optimized for signup conversion by removing friction. But you created a pipeline problem by stripping out every signal your sales team needs.</p>
+
+        <h2>The PLG Data Paradox</h2>
+
+        <p>Product-led growth works because it reduces friction. Every form field you add to signup drops conversion rates. The best PLG companies ask for an email and nothing else. Some don't even ask for a name.</p>
+
+        <p>This is great for top-of-funnel volume. It's terrible for sales efficiency.</p>
+
+        <p>A typical PLG company with 10,000 free users might have:</p>
+        <ul>
+          <li>10,000 email addresses</li>
+          <li>8,000 first names (the rest are blank or fake)</li>
+          <li>0 company names (not collected)</li>
+          <li>0 job titles (not collected)</li>
+          <li>0 company sizes (not collected)</li>
+          <li>Product usage data (login frequency, features used, actions taken)</li>
+        </ul>
+
+        <p>Sales needs to find the 200 users in that list who work at companies in the ICP, have purchasing authority, and are engaged enough to convert. Without enrichment, they're guessing. Or worse, they're trying to qualify all 10,000 one by one.</p>
+
+        <h2>What to Enrich and When</h2>
+
+        <p>PLG enrichment should happen in tiers. You don't need full firmographic profiles on every free signup. That's expensive and wasteful. Instead, enrich progressively based on user behavior.</p>
+
+        <h3>Tier 1: Signup (Email-Based Enrichment)</h3>
+        <p>As soon as someone signs up, enrich their email address. From a business email, you can usually derive:</p>
+        <ul>
+          <li>Company domain and name</li>
+          <li>Company size (employee count range)</li>
+          <li>Industry</li>
+          <li>Headquarters location</li>
+        </ul>
+
+        <p>This takes seconds and costs $0.01-0.05 per record. It immediately separates enterprise prospects from personal Gmail signups. A user@salesforce.com signup gets flagged. A user@gmail.com signup does not.</p>
+
+        <p>One important note: 30-40% of PLG signups use personal email addresses. These aren't necessarily low-value. They might be testing the product before bringing it to their company. But they're invisible to email-based enrichment. Handle them in Tier 2.</p>
+
+        <h3>Tier 2: Activation (Behavioral Threshold)</h3>
+        <p>When a user hits an activation milestone (creates a project, invites a teammate, uses a key feature), trigger deeper enrichment:</p>
+        <ul>
+          <li>Full contact profile (title, seniority, department)</li>
+          <li>Detailed firmographics (revenue, funding, growth rate)</li>
+          <li>Technology stack (what other tools the company uses)</li>
+        </ul>
+
+        <p>This costs $0.10-0.50 per record but only runs on engaged users. If 20% of signups reach activation, you're enriching 2,000 instead of 10,000. The economics work.</p>
+
+        <p>For personal email signups, activation is the trigger to attempt company identification through LinkedIn matching, IP-to-company mapping, or cross-referencing the user's name against business databases.</p>
+
+        <h3>Tier 3: PQL Threshold (Sales-Ready Enrichment)</h3>
+        <p>When a user qualifies as a product-qualified lead (based on usage + enriched firmographics), do the final enrichment pass:</p>
+        <ul>
+          <li>Verified direct phone number</li>
+          <li>LinkedIn profile</li>
+          <li>Org chart context (who else at this company might be involved)</li>
+          <li>Technographic data relevant to your integration story</li>
+        </ul>
+
+        <p>This is the most expensive tier ($0.50-2.00 per record) but it's only running on your best prospects. Maybe 2-5% of total signups reach this stage.</p>
+
+        <h2>Building a Product-Qualified Lead Model</h2>
+
+        <p>A PQL model has two axes: product engagement and account fit. Enrichment provides the account fit axis.</p>
+
+        <h3>Product Engagement Signals</h3>
+        <p>These come from your product analytics:</p>
+        <ul>
+          <li>Feature adoption breadth (how many features used)</li>
+          <li>Feature adoption depth (how deeply they used core features)</li>
+          <li>Frequency (how often they return)</li>
+          <li>Team adoption (did they invite colleagues)</li>
+          <li>Integration connections (did they connect other tools)</li>
+        </ul>
+
+        <h3>Account Fit Signals (From Enrichment)</h3>
+        <ul>
+          <li>Company size matches ICP (e.g., 100-5000 employees)</li>
+          <li>Industry matches target verticals</li>
+          <li>User's title indicates purchasing authority</li>
+          <li>Company uses complementary technology</li>
+          <li>Company has budget indicators (recent funding, revenue tier)</li>
+        </ul>
+
+        <h3>The Scoring Matrix</h3>
+        <p>Plot users on a 2x2: high engagement + high fit = PQL (route to sales immediately). High engagement + low fit = self-serve candidate (let them convert on their own). Low engagement + high fit = marketing nurture (send targeted content to drive adoption). Low engagement + low fit = ignore (don't waste resources).</p>
+
+        <p>Without enrichment, you only have the engagement axis. You're routing users to sales based entirely on product behavior, which means your reps waste time on engaged users from 5-person companies that will never buy an enterprise plan.</p>
+
+        <h2>Implementation Architecture</h2>
+
+        <p><strong>Real-time signup enrichment.</strong> When a user signs up, fire an API call to your enrichment provider with their email address. Store the results in your user database. This should add less than 200ms to the signup flow and happen asynchronously so it doesn't affect user experience.</p>
+
+        <p><strong>Batch activation enrichment.</strong> Run a daily batch job that identifies users who crossed activation thresholds in the last 24 hours. Send their records for deeper enrichment. Store results and update PQL scores.</p>
+
+        <p><strong>PQL routing.</strong> When a user's combined score (engagement + fit) crosses the PQL threshold, create an opportunity in your CRM and assign it to the appropriate rep based on territory, account size, or round-robin. Include the enriched data in the opportunity so the rep has context before their first outreach.</p>
+
+        <p><strong>Feedback loop.</strong> Track which PQLs convert to paid customers. Use the conversion data to adjust your scoring weights. If users from the healthcare vertical convert at 2x the rate of other industries, increase the weight for healthcare accounts.</p>
+
+        <h2>Common PLG Enrichment Mistakes</h2>
+
+        <h3>Enriching Everyone Equally</h3>
+        <p>Running full enrichment on every signup is expensive and pointless. 60-70% of free signups will never become customers. Tiered enrichment saves money and focuses resources on users who show intent.</p>
+
+        <h3>Ignoring Personal Emails</h3>
+        <p>Discarding signups with @gmail.com addresses throws away potential enterprise champions who are evaluating your product on their own before bringing it to their team. Build a separate track for personal email signups that triggers enrichment at activation instead of signup.</p>
+
+        <h3>Over-Routing to Sales</h3>
+        <p>Enrichment makes it tempting to route every ICP-fit user to sales. Resist this. If the user isn't engaged with the product, a sales call will feel premature. Let the product do its job. Route to sales only when both engagement and fit criteria are met.</p>
+
+        <h3>Not Updating Enrichment</h3>
+        <p>A user who signed up six months ago might have changed companies since then. If they suddenly become active again, re-enrich their record before routing to sales. The company and title might be completely different.</p>
+
+        <h2>Measuring Enrichment ROI for PLG</h2>
+
+        <p>Track these metrics to justify enrichment spend:</p>
+
+        <ul>
+          <li><strong>PQL-to-opportunity conversion rate:</strong> Should be 2-5x higher than routing based on product signals alone</li>
+          <li><strong>Sales cycle length for PQLs vs. non-PQLs:</strong> Enriched PQLs typically close 30-40% faster because reps have context before the first call</li>
+          <li><strong>Cost per PQL:</strong> Total enrichment spend divided by PQLs generated. Compare to your cost per MQL from other channels.</li>
+          <li><strong>Revenue per enriched user:</strong> Total revenue from enrichment-identified PQLs divided by total enrichment cost. This should be 10x+ for the program to make sense.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Why do PLG companies need data enrichment?</h3>
+        <p>PLG signup forms collect minimal data to reduce friction. This leaves sales teams with thousands of users and no way to identify which ones are worth talking to. Enrichment adds company, title, and firmographic data so teams can prioritize.</p>
+
+        <h3>What data should PLG companies enrich on free users?</h3>
+        <p>Start with company name, employee count, industry, and job title from the signup email. Add revenue, funding, and tech stack for users who hit activation thresholds. Full contact profiles for users who qualify as PQLs.</p>
+
+        <h3>How do you build a product-qualified lead model with enriched data?</h3>
+        <p>Combine product usage signals (features used, frequency, team adoption) with enriched firmographics (company size, industry, title seniority). Score on both dimensions. Route to sales when both engagement and fit thresholds are met.</p>
+
+        <p>If you're a PLG company sitting on thousands of free signups and need help identifying the ones worth selling to, we can enrich your user base and build PQL scoring. We clean data for a living.</p>
+      </div>
+
+      <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">
+        <a href="/#contact" class="btn btn--primary btn--lg">See What We\'ll Find</a>
+      </div>
+
+      <p class="text-muted" style="font-size: 0.875rem;">Related: <a href="/resources/data-enrichment-for-saas.html">Data Enrichment for SaaS</a> | <a href="/resources/lead-scoring-with-enriched-data.html">Lead Scoring with Enriched Data</a> | <a href="/services/data-enrichment.html">Data Enrichment Services</a> | <a href="/resources/event-driven-enrichment.html">Event-Driven Enrichment</a></p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
