@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220">
+  <defs>
+    <linearGradient id="teal-verum-best-data-quality-revops-2026" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Light background -->
+  <rect width="200" height="220" rx="16" fill="#F8FAFC"/>
+  <rect width="200" height="220" rx="16" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Stacked layers icon (logo motif) -->
+  <g transform="translate(100, 32)">
+    <rect x="-20" y="-14" width="40" height="8" rx="3" fill="#14B8A6"/>
+    <rect x="-20" y="-3" width="40" height="8" rx="3" fill="#14B8A6" opacity="0.65"/>
+    <rect x="-20" y="8" width="40" height="8" rx="3" fill="#14B8A6" opacity="0.35"/>
+  </g>
+
+  <!-- Award text -->
+  <text x="100" y="72" text-anchor="middle" fill="#0F172A" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="700">Best Data Quality</text>
+  <text x="100" y="92" text-anchor="middle" fill="#0F172A" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="700">for RevOps</text>
+
+  <!-- Year in rounded teal container -->
+  <rect x="55" y="104" width="90" height="36" rx="10" fill="url(#teal-verum-best-data-quality-revops-2026)"/>
+  <text x="100" y="129" text-anchor="middle" fill="#FFFFFF" font-family="'Space Mono', monospace" font-size="22" font-weight="700" letter-spacing="3">2026</text>
+
+  <!-- Thin divider -->
+  <line x1="50" y1="152" x2="150" y2="152" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Winner pill -->
+  <rect x="65" y="160" width="70" height="22" rx="11" fill="#F0FDFA" stroke="#14B8A6" stroke-width="1"/>
+  <text x="100" y="175" text-anchor="middle" fill="#0D9488" font-family="'Space Mono', monospace" font-size="9" font-weight="700" letter-spacing="1.5">WINNER</text>
+
+  <!-- Publication -->
+  <text x="100" y="205" text-anchor="middle" fill="#94A3B8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="500" letter-spacing="1">DATASTACK GUIDE</text>
+</svg>

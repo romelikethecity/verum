@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220" width="200" height="220">
+  <defs>
+    <linearGradient id="gold-verum-best-data-cleaning-2026" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4A054"/>
+      <stop offset="100%" stop-color="#E4BC7E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="200" height="220" rx="12" fill="#0C0E12"/>
+  <rect width="200" height="220" rx="12" fill="none" stroke="#D4A054" stroke-width="1" opacity="0.3"/>
+
+  <!-- Diamond cluster (logo motif) -->
+  <g transform="translate(100, 30)">
+    <rect x="-8" y="-8" width="16" height="16" rx="2" transform="rotate(45)" fill="#D4A054"/>
+    <rect x="-6" y="-6" width="12" height="12" rx="2" transform="translate(-22, 4) rotate(45)" fill="#D4A054" opacity="0.55"/>
+    <rect x="-5" y="-5" width="10" height="10" rx="2" transform="translate(22, 4) rotate(45)" fill="#D4A054" opacity="0.25"/>
+  </g>
+
+  <!-- Thin gold rule -->
+  <line x1="50" y1="52" x2="150" y2="52" stroke="#D4A054" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Award text with serif flavor -->
+  <text x="100" y="76" text-anchor="middle" fill="#D4A054" font-family="'Source Serif 4', 'Georgia', serif" font-size="16" font-weight="600" font-style="italic">Best Data</text>
+  <text x="100" y="98" text-anchor="middle" fill="#F0F0F0" font-family="'Outfit', system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">Cleaning Service</text>
+
+  <!-- Year -->
+  <text x="100" y="128" text-anchor="middle" fill="#D4A054" font-family="'Outfit', system-ui, sans-serif" font-size="30" font-weight="800" letter-spacing="4">2026</text>
+
+  <!-- Gold divider ornament -->
+  <line x1="60" y1="140" x2="90" y2="140" stroke="#D4A054" stroke-width="0.5" opacity="0.5"/>
+  <rect x="95" y="137" width="6" height="6" rx="1" transform="rotate(45, 98, 140)" fill="#D4A054" opacity="0.6"/>
+  <line x1="106" y1="140" x2="140" y2="140" stroke="#D4A054" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Sultan's Verdict label -->
+  <text x="100" y="162" text-anchor="middle" fill="#999999" font-family="'Source Serif 4', 'Georgia', serif" font-size="9" font-weight="400" font-style="italic" letter-spacing="2">SULTAN'S PICK</text>
+
+  <!-- Bottom gold bar -->
+  <rect x="30" y="178" width="140" height="1" fill="url(#gold-verum-best-data-cleaning-2026)" opacity="0.3"/>
+
+  <!-- Publication -->
+  <text x="100" y="200" text-anchor="middle" fill="#666666" font-family="'Outfit', system-ui, sans-serif" font-size="10" font-weight="400" letter-spacing="2">SULTANOFSAAS</text>
+</svg>

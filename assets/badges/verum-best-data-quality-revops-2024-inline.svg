@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" width="260" height="48">
+  <rect width="260" height="48" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <!-- Mini stacked layers -->
+  <rect x="12" y="12" width="16" height="5" rx="2" fill="#14B8A6"/>
+  <rect x="12" y="19" width="16" height="5" rx="2" fill="#14B8A6" opacity="0.65"/>
+  <rect x="12" y="26" width="16" height="5" rx="2" fill="#14B8A6" opacity="0.35"/>
+  <!-- Text -->
+  <text x="38" y="19" fill="#0F172A" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700">Best Data Quality for RevOps</text>
+  <text x="38" y="34" fill="#94A3B8" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" letter-spacing="0.5">DataStack Guide</text>
+  <!-- Year pill -->
+  <rect x="210" y="12" width="40" height="24" rx="8" fill="#14B8A6"/>
+  <text x="230" y="29" text-anchor="middle" fill="#FFFFFF" font-family="'Space Mono', monospace" font-size="12" font-weight="700">2024</text>
+</svg>
