@@ -279,6 +279,22 @@
         <h3>What firmographic fields should I enrich first?</h3>
         <p>Industry and employee count. These two fields enable basic segmentation and scoring. Add revenue, location, and ownership type next.</p>
 
+        <h3>How do I verify firmographic data accuracy after enrichment?</h3>
+        <p>Spot-check a random sample of 50-100 records against company websites and LinkedIn company pages. For employee count, compare against LinkedIn's "X employees on LinkedIn" number (remember it skews 10-20% high). For revenue, cross-reference public companies against <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany" target="_blank" rel="noopener">SEC EDGAR filings</a>. For private companies, check Crunchbase or PitchBook if you have access.</p>
+
+        <h3>What is the difference between NAICS and SIC industry codes?</h3>
+        <p>SIC codes (Standard Industrial Classification) are the older system with 4-digit codes, still used by the SEC and many financial databases. <a href="https://www.census.gov/naics/" target="_blank" rel="noopener">NAICS codes</a> (North American Industry Classification System) are the newer 6-digit system used by the Census Bureau and most modern databases. NAICS provides more granularity, especially for technology and service industries. If your CRM uses one system, make sure your enrichment provider maps to the same one.</p>
+
+        <h2>Firmographic Data for Private vs. Public Companies</h2>
+
+        <p>The accuracy gap between private and public company data is significant, and most people underestimate it.</p>
+
+        <p>For public companies, revenue and employee count are reported quarterly in SEC filings. The data is precise and current. For private companies, these numbers are estimated based on indirect signals: LinkedIn headcount, web traffic, technology spend, and industry revenue multiples. These estimates can be off by 30-50% for revenue and 20-30% for headcount.</p>
+
+        <p>This matters for segmentation. If your ICP targets companies with $10M-50M in revenue and your enrichment provider's estimates are 40% off, a $7M company might show as $10M and enter your pipeline incorrectly. Or a $45M company might show as $63M and get routed to your enterprise team when it belongs in mid-market.</p>
+
+        <p>The practical solution: use revenue ranges rather than point estimates for private companies. Build your segmentation tiers wide enough to absorb the estimation error. And when a deal reaches the qualification stage, verify the company's actual size through conversation rather than relying solely on enriched data.</p>
+
         <p>If your CRM's firmographic data is incomplete or inconsistent, we can fix it. We enrich company records from 50+ sources and validate accuracy before delivery.</p>
       </div>
 

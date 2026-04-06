@@ -282,6 +282,24 @@
         <h3>What tools are used for reverse ETL?</h3>
         <p>Census, Hightouch, RudderStack, and Polytomic are the main platforms. Some teams build custom pipelines using Airflow or dbt plus direct API calls.</p>
 
+        <h3>How much does reverse ETL cost to implement?</h3>
+        <p>Census and Hightouch start at $300-500/month for basic connectors and scale to $2,000+/month for enterprise features. The bigger cost is engineering time for setup: plan for 40-80 hours to configure models, field mappings, sync schedules, and conflict resolution rules. Open-source options like <a href="https://rudderstack.com/" target="_blank" rel="noopener">RudderStack</a> eliminate the license fee but require more engineering maintenance.</p>
+
+        <h3>What happens if reverse ETL overwrites data a rep manually entered?</h3>
+        <p>This is the most common reverse ETL failure. Prevent it by defining clear field ownership. Enrichment-sourced fields (industry, employee count, revenue) should be warehouse-controlled. Relationship fields (next steps, notes, custom tags) should be CRM-controlled. Most reverse ETL tools support field-level conflict resolution rules. Set these up before your first sync, not after someone complains about overwritten data.</p>
+
+        <h2>Getting Started Without a Data Warehouse</h2>
+
+        <p>Not every company needs reverse ETL. If you don't have a data warehouse yet, there's a simpler path to getting enriched data into your CRM.</p>
+
+        <p><strong>Option 1: Direct CRM enrichment.</strong> Many enrichment providers offer native CRM integrations that append data directly to Salesforce or HubSpot records without a warehouse in between. This works well for companies under 50,000 records that need basic firmographic and contact enrichment.</p>
+
+        <p><strong>Option 2: Scheduled CSV imports.</strong> Run enrichment on an exported CSV, then import the enriched data back into your CRM using native import tools or a tool like <a href="https://dataloader.io/" target="_blank" rel="noopener">Dataloader.io</a>. This is manual but reliable for quarterly enrichment cycles.</p>
+
+        <p><strong>Option 3: iPaaS connectors.</strong> Tools like Zapier, Make (formerly Integromat), and Workato can connect enrichment APIs to your CRM without custom code. They lack the modeling power of a warehouse but handle simple enrichment-to-CRM flows for teams without engineering resources.</p>
+
+        <p>The <a href="https://www.getdbt.com/blog" target="_blank" rel="noopener">dbt Labs blog</a> has extensive documentation on building the modeling layer that makes reverse ETL valuable. If you're considering a warehouse-first approach, their resources on data modeling are worth reading before you start.</p>
+
         <p>If you have enriched data stuck in a warehouse and need it in your CRM, we can help with both the enrichment and the operational handoff. We clean data for a living.</p>
       </div>
 

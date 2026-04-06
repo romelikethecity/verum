@@ -304,6 +304,22 @@
         <h3>How do you build a product-qualified lead model with enriched data?</h3>
         <p>Combine product usage signals (features used, frequency, team adoption) with enriched firmographics (company size, industry, title seniority). Score on both dimensions. Route to sales when both engagement and fit thresholds are met.</p>
 
+        <h3>What enrichment providers work best for PLG companies?</h3>
+        <p>For real-time email-based enrichment at signup, Clearbit (now part of HubSpot) and <a href="https://www.apollo.io/" target="_blank" rel="noopener">Apollo.io</a> offer API-based enrichment that returns results in under 200ms. For deeper batch enrichment at the activation tier, providers with broader data coverage (like FullContact or People Data Labs) fill in fields that the fast-lookup APIs miss. The key is matching enrichment speed to the tier: instant for signup, batch for deeper analysis.</p>
+
+        <h3>How do I handle the 30-40% of signups that use personal email?</h3>
+        <p>Don't discard them. First, try IP-to-company matching through tools like Kickfire or Leadfeeder, which can identify the company even from a Gmail signup. Second, if the user activates, look for company identification in their product usage (workspace name, team invites from business domains, connected integrations). Third, for engaged users with no company match, LinkedIn profile matching using the user's name and location can identify their employer. The <a href="https://www.opengrm.org/" target="_blank" rel="noopener">OpenGRM project</a> and similar open-source name matching libraries can help automate the LinkedIn lookup step.</p>
+
+        <h2>PLG Enrichment Economics: Making the Numbers Work</h2>
+
+        <p>The math behind tiered enrichment is straightforward, but it is worth running the numbers for your specific situation.</p>
+
+        <p>Assume 10,000 monthly free signups. Tier 1 enrichment (email-based, $0.03/record) costs $300/month. Of those, maybe 2,000 (20%) hit activation. Tier 2 enrichment ($0.25/record) costs $500/month. Of those, maybe 200 (10% of activated, 2% of total) become PQLs. Tier 3 enrichment ($1.00/record) costs $200/month.</p>
+
+        <p>Total monthly enrichment spend: $1,000. If those 200 PQLs convert at 10% to paid customers at $500 ACV, that is $10,000 in new revenue from $1,000 in enrichment cost. A 10x return, and this is a conservative scenario.</p>
+
+        <p>Compare this to the alternative: hiring two SDRs at $60K/year each to manually qualify signups. They can handle maybe 50 conversations per day between them, qualifying 2,500 signups per month. Enrichment qualifies all 10,000 for $1,000/month. The SDRs cost $10,000/month and cover a quarter of the volume. According to <a href="https://openviewpartners.com/blog/" target="_blank" rel="noopener">OpenView Partners</a>, the top-performing PLG companies use enrichment to pre-qualify before human touch, not as a replacement for sales conversations but as a filter that ensures sales conversations happen with the right people.</p>
+
         <p>If you're a PLG company sitting on thousands of free signups and need help identifying the ones worth selling to, we can enrich your user base and build PQL scoring. We clean data for a living.</p>
       </div>
 

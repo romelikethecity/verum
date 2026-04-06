@@ -170,6 +170,8 @@
 
         <p>This template cuts the standard RFP down to the sections that matter. Use it as-is or adapt it to your procurement process.</p>
 
+        <p>A well-structured RFP does two things: it helps you compare vendors on the criteria that actually predict performance, and it signals to vendors that you are a serious buyer with clear requirements. The <a href="https://www.acquisition.gov/far" target="_blank" rel="noopener">Federal Acquisition Regulation (FAR)</a> framework used by government procurement offers a useful principle: evaluate vendors on demonstrable capability, not on promises. Your RFP should be designed to elicit demonstrable capability.</p>
+
         <h2>Section 1: Project Scope</h2>
 
         <p>Start with what you need. Be specific enough that vendors can give you accurate pricing but don't over-specify the methodology (let them propose their approach).</p>
@@ -257,6 +259,15 @@
           <li><strong>Re-enrichment policy:</strong> If data goes stale within a defined period, is there a re-enrichment option?</li>
         </ul>
 
+        <h3>Escalation and SLA Terms</h3>
+        <p>Define what happens when things go wrong. How quickly does the vendor respond to quality complaints? Is there a dedicated escalation path, or do you go through a general support queue? For time-sensitive projects (like pre-event list cleaning or fundraising data prep), a 48-hour response SLA is the minimum. For routine engagements, 5 business days is acceptable.</p>
+
+        <h3>Integration and Delivery Format</h3>
+        <p>Specify how you want to receive enriched data. Options include direct CRM integration (vendor pushes data to Salesforce or HubSpot), API delivery for technical teams, or structured CSV/Excel files for manual import. Also ask whether the vendor supports incremental updates (only changed records) or full file replacements. Incremental updates are better for ongoing engagements because they reduce import complexity and preserve CRM field history.</p>
+
+        <h3>Reference Checks</h3>
+        <p>Ask each vendor for two reference customers who are similar to you in industry, CRM platform, and database size. When you call references, ask these three questions: What was the match rate on your actual data? Did the vendor hit the quoted turnaround time? Would you use them again? References from dissimilar companies are less useful because data quality varies dramatically by market segment.</p>
+
         <h2>Section 7: Evaluation Scoring</h2>
 
         <p>Weight your evaluation criteria to reflect what actually matters:</p>
@@ -281,6 +292,20 @@
           <li><strong>Signing long-term contracts before testing.</strong> Start with a single project before committing to an annual deal.</li>
         </ol>
 
+        <h2>Sample Scoring Rubric</h2>
+
+        <p>Here is a concrete scoring template you can adapt for your evaluation. Rate each vendor on a 1-5 scale for each criterion, then apply the weights from Section 7.</p>
+
+        <ul>
+          <li><strong>Match rate on test batch (weight: 40%).</strong> 5 = exceeds target by 10%+. 4 = meets target. 3 = within 5% of target. 2 = within 10% of target. 1 = misses target by more than 10%.</li>
+          <li><strong>Pricing (weight: 25%).</strong> 5 = lowest total cost. 4 = within 10% of lowest. 3 = within 25%. 2 = within 50%. 1 = highest cost.</li>
+          <li><strong>Data ownership (weight: 15%).</strong> 5 = permanent ownership, no restrictions. 4 = permanent with minor restrictions. 3 = ownership during contract. 2 = ownership with deletion clause. 1 = vendor retains rights.</li>
+          <li><strong>Turnaround and support (weight: 10%).</strong> 5 = dedicated account manager, 3-day turnaround. 4 = named contact, 5-day turnaround. 3 = support queue, 7-day turnaround. 2 = email only, 10+ days. 1 = no clear support path.</li>
+          <li><strong>Additional capabilities (weight: 10%).</strong> 5 = full cleaning + enrichment + custom research. 4 = cleaning + enrichment. 3 = enrichment only. 2 = single-source enrichment. 1 = basic append only.</li>
+        </ul>
+
+        <p>Total score = sum of (rating x weight) for each criterion. The vendor with the highest weighted score wins, assuming no disqualifying issues in the data ownership or compliance sections.</p>
+
         <h2>Frequently Asked Questions</h2>
 
         <h3>What should a data enrichment RFP include?</h3>
@@ -291,6 +316,20 @@
 
         <h3>What match rate should I require in a data enrichment RFP?</h3>
         <p>For US mid-market: 80%+ email, 60%+ direct dial, 90%+ firmographics. Adjust down 10-15 points for SMB or niche markets. Always measure against your test data, not the vendor's samples.</p>
+
+        <h3>Should I include compliance requirements in the RFP?</h3>
+        <p>Yes. At minimum, ask about <a href="https://www.ftc.gov/business-guidance/privacy-security" target="_blank" rel="noopener">FTC data privacy guidelines</a>, GDPR compliance (if you have EU contacts), CCPA compliance (if you have California contacts), and SOC 2 certification. Any vendor handling your customer data should be able to document their security practices.</p>
+
+        <h3>How many vendors should I include in an RFP?</h3>
+        <p>Three to four is the sweet spot. Fewer than three doesn't give you enough comparison data. More than five creates evaluation fatigue and slows the process. Include at least one large platform vendor and one specialized managed service to see the range of approaches.</p>
+
+        <h2>Implementation Timeline After Vendor Selection</h2>
+
+        <p>Once you select a vendor, the implementation process typically follows this pattern. Week one: data mapping and field alignment between your CRM and the vendor's system. Week two: test batch on a subset of records (separate from the evaluation batch). Week three: full production run. Week four: quality review and adjustments.</p>
+
+        <p>For ongoing engagements, expect the first batch to take the longest as you calibrate expectations. Subsequent batches run faster because the mapping and rules are already in place. The <a href="https://www.nist.gov/data" target="_blank" rel="noopener">National Institute of Standards and Technology</a> recommends establishing data quality baselines before and after vendor engagement to measure actual improvement.</p>
+
+        <p>One more thing: build a re-evaluation trigger into your contract. If match rates drop below the agreed threshold for two consecutive batches, you should have the option to exit without penalty. Good vendors will agree to this because they're confident in their consistency.</p>
       </div>
 
       <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">

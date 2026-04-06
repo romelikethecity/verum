@@ -271,6 +271,24 @@
         <h3>How do you improve CRM data quality for forecasting?</h3>
         <p>Audit pipeline hygiene, implement stage validation rules, standardize amount formats, run deduplication passes, and enrich account data for context. Make data quality a weekly metric, not a quarterly project.</p>
 
+        <h3>Can AI forecasting models compensate for bad data?</h3>
+        <p>No. AI models amplify data quality problems rather than compensating for them. A model trained on CRM data with 15% duplicate opportunities will learn to expect inflated pipeline. The predictions will be confident but systematically wrong. According to <a href="https://ai.google/responsibility/responsible-ai-practices/" target="_blank" rel="noopener">Google's responsible AI guidelines</a>, data quality is the single most important factor in model performance. Clean the data first, then apply the model.</p>
+
+        <h3>How often should pipeline data quality be audited?</h3>
+        <p>Monthly for the five core audits (completeness, duplicates, freshness, amount consistency, attribution). Weekly for a quick pipeline freshness check (how many deals have stale stages). Quarterly for a deep historical accuracy review comparing past forecasts to actual results. The <a href="https://www.saleshacker.com/" target="_blank" rel="noopener">Sales Hacker community</a> and RevOps Co-op both recommend building these audits into the regular operating cadence, not treating them as special projects.</p>
+
+        <h2>Building Forecast Confidence Intervals</h2>
+
+        <p>Most companies present a single forecast number. Better practice is to present a range with a confidence interval that reflects your data quality level.</p>
+
+        <p><strong>If your pipeline data quality is high</strong> (under 5% stale deals, under 5% duplicates, consistent amounts): present a tight range. Your weighted pipeline is probably within 10-15% of reality. A $4M weighted pipeline means you're likely to close $3.4M-4.6M.</p>
+
+        <p><strong>If your data quality is moderate</strong> (5-15% stale deals, 5-10% duplicates): widen the range to 20-30%. That $4M pipeline means $2.8M-5.2M in reality. The uncertainty comes directly from data you can't trust.</p>
+
+        <p><strong>If your data quality is poor</strong> (15%+ stale deals, 10%+ duplicates, inconsistent amounts): your forecast is a guess. Acknowledge it. Clean the data, then rebuild the forecast from honest inputs.</p>
+
+        <p>Presenting confidence intervals forces a conversation about data quality that single-number forecasts hide. When the CRO sees a forecast range of $2.8M-5.2M instead of a precise $4M, the next question is "Why is the range so wide?" The answer is always data quality. That's the conversation that gets budget for cleanup.</p>
+
         <p>If your forecasts keep missing and you suspect the data is part of the problem, we can audit your pipeline data and fix the issues. We clean data for a living.</p>
       </div>
 
