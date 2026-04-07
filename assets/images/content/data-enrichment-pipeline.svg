@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1a1d1e"/>
+  <text x="600" y="50" font-family="Inter,system-ui,sans-serif" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">Data Enrichment Pipeline</text>
+  <!-- Step 1 -->
+  <g transform="translate(60,90)">
+    <rect width="200" height="190" rx="12" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <text x="100" y="32" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#00b894" text-anchor="middle">STEP 1</text>
+    <text x="100" y="56" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Your Raw CRM Data</text>
+    <rect x="16" y="76" width="168" height="26" rx="4" fill="#3d4446"/>
+    <text x="28" y="94" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Names + Emails</text>
+    <rect x="16" y="110" width="168" height="26" rx="4" fill="#3d4446"/>
+    <text x="28" y="128" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Partial phones</text>
+    <rect x="16" y="144" width="168" height="26" rx="4" fill="#3d4446"/>
+    <text x="28" y="162" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">Missing 40% of fields</text>
+  </g>
+  <g transform="translate(270,175)"><line x1="0" y1="0" x2="50" y2="0" stroke="#00b894" stroke-width="2" stroke-dasharray="5,3"/><polygon points="46,-6 58,0 46,6" fill="#00b894"/></g>
+  <!-- Step 2 -->
+  <g transform="translate(330,90)">
+    <rect width="200" height="190" rx="12" fill="#2d3436" stroke="#00b894" stroke-width="2"/>
+    <text x="100" y="32" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#00b894" text-anchor="middle">STEP 2</text>
+    <text x="100" y="56" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Multi-Source Enrichment</text>
+    <rect x="16" y="76" width="168" height="26" rx="4" fill="rgba(0,184,148,0.1)"/>
+    <text x="28" y="94" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894">+ Verified emails</text>
+    <rect x="16" y="110" width="168" height="26" rx="4" fill="rgba(0,184,148,0.08)"/>
+    <text x="28" y="128" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894">+ Direct dials</text>
+    <rect x="16" y="144" width="168" height="26" rx="4" fill="rgba(0,184,148,0.1)"/>
+    <text x="28" y="162" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894">+ Firmographics</text>
+  </g>
+  <g transform="translate(540,175)"><line x1="0" y1="0" x2="50" y2="0" stroke="#00b894" stroke-width="2" stroke-dasharray="5,3"/><polygon points="46,-6 58,0 46,6" fill="#00b894"/></g>
+  <!-- Step 3 -->
+  <g transform="translate(600,90)">
+    <rect width="200" height="190" rx="12" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <text x="100" y="32" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#00b894" text-anchor="middle">STEP 3</text>
+    <text x="100" y="56" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Human QA Review</text>
+    <rect x="16" y="76" width="168" height="26" rx="4" fill="#3d4446"/>
+    <text x="28" y="94" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Manual validation</text>
+    <rect x="16" y="110" width="168" height="26" rx="4" fill="#3d4446"/>
+    <text x="28" y="128" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Edge case handling</text>
+    <rect x="16" y="144" width="168" height="26" rx="4" fill="#3d4446"/>
+    <text x="28" y="162" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Quality scoring</text>
+  </g>
+  <g transform="translate(810,175)"><line x1="0" y1="0" x2="50" y2="0" stroke="#00b894" stroke-width="2" stroke-dasharray="5,3"/><polygon points="46,-6 58,0 46,6" fill="#00b894"/></g>
+  <!-- Step 4 -->
+  <g transform="translate(870,90)">
+    <rect width="270" height="190" rx="12" fill="#00b894" opacity="0.12" stroke="#00b894" stroke-width="2"/>
+    <text x="135" y="32" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#00b894" text-anchor="middle">RESULT</text>
+    <text x="135" y="56" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Clean, Enriched Data</text>
+    <rect x="16" y="76" width="238" height="26" rx="4" fill="rgba(0,184,148,0.15)"/>
+    <text x="28" y="94" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894">93% email deliverability</text>
+    <rect x="16" y="110" width="238" height="26" rx="4" fill="rgba(0,184,148,0.1)"/>
+    <text x="28" y="128" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894">50+ data sources matched</text>
+    <rect x="16" y="144" width="238" height="26" rx="4" fill="rgba(0,184,148,0.15)"/>
+    <text x="28" y="162" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894">Data you own forever</text>
+  </g>
+  <!-- Stats bar -->
+  <g transform="translate(60,320)">
+    <rect width="1080" height="90" rx="10" fill="#2d3436"/>
+    <g transform="translate(60,18)">
+      <text x="0" y="22" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="800" fill="#00b894">93%</text>
+      <text x="0" y="44" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">Deliverability</text>
+    </g>
+    <g transform="translate(280,18)">
+      <text x="0" y="22" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="800" fill="#fff">24-48hr</text>
+      <text x="0" y="44" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">Turnaround</text>
+    </g>
+    <g transform="translate(520,18)">
+      <text x="0" y="22" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="800" fill="#00b894">50+</text>
+      <text x="0" y="44" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">Data Sources</text>
+    </g>
+    <g transform="translate(720,18)">
+      <text x="0" y="22" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="800" fill="#fff">0</text>
+      <text x="0" y="44" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">Long-term contracts</text>
+    </g>
+    <g transform="translate(920,18)">
+      <text x="0" y="22" font-family="Inter,system-ui,sans-serif" font-size="30" font-weight="800" fill="#00b894">30%</text>
+      <text x="0" y="44" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">Annual data decay</text>
+    </g>
+  </g>
+  <!-- Services grid -->
+  <g transform="translate(60,440)">
+    <rect width="340" height="150" rx="10" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <text x="24" y="32" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff">Data Enrichment</text>
+    <text x="24" y="56" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Fill gaps in your CRM with verified</text>
+    <text x="24" y="74" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">contact, company, and tech data.</text>
+    <rect x="24" y="96" width="100" height="28" rx="6" fill="#00b894"/>
+    <text x="74" y="114" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">Learn More</text>
+  </g>
+  <g transform="translate(430,440)">
+    <rect width="340" height="150" rx="10" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <text x="24" y="32" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff">Data Cleaning</text>
+    <text x="24" y="56" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Deduplicate, standardize, and fix</text>
+    <text x="24" y="74" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">your existing records.</text>
+    <rect x="24" y="96" width="100" height="28" rx="6" fill="rgba(0,184,148,0.2)"/>
+    <text x="74" y="114" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894" text-anchor="middle">Learn More</text>
+  </g>
+  <g transform="translate(800,440)">
+    <rect width="340" height="150" rx="10" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <text x="24" y="32" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff">Data Analysis</text>
+    <text x="24" y="56" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">ICP analysis, segmentation, and</text>
+    <text x="24" y="74" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">market sizing from your own data.</text>
+    <rect x="24" y="96" width="100" height="28" rx="6" fill="rgba(0,184,148,0.2)"/>
+    <text x="74" y="114" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894" text-anchor="middle">Learn More</text>
+  </g>
+</svg>

@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1a1d1e"/>
+  <text x="600" y="44" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">CRM Data: Before vs After Verum</text>
+  <!-- Before -->
+  <g transform="translate(40,65)">
+    <rect width="550" height="525" rx="12" fill="#2d3436" stroke="#dc2626" stroke-width="2" stroke-opacity="0.5"/>
+    <rect width="550" height="44" rx="12" fill="#dc2626" opacity="0.15"/>
+    <text x="275" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-anchor="middle">Before: Your CRM Today</text>
+    <g transform="translate(16,60)">
+      <rect width="518" height="30" rx="4" fill="#3d4446"/>
+      <text x="12" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Contact</text>
+      <text x="160" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Email</text>
+      <text x="290" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Phone</text>
+      <text x="380" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Company</text>
+      <text x="470" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Revenue</text>
+    </g>
+    <g transform="translate(16,98)">
+      <text x="12" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">J. Smith</text>
+      <rect x="148" y="2" width="70" height="18" rx="3" fill="#dc2626" opacity="0.15"/>
+      <text x="160" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#dc2626">bounced</text>
+      <text x="290" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">555-0100</text>
+      <text x="380" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Acme Inc</text>
+      <rect x="458" y="2" width="50" height="18" rx="3" fill="#dc2626" opacity="0.15"/>
+      <text x="470" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#dc2626">missing</text>
+    </g>
+    <g transform="translate(16,124)">
+      <text x="12" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">Sarah K.</text>
+      <rect x="148" y="2" width="70" height="18" rx="3" fill="#dc2626" opacity="0.15"/>
+      <text x="160" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#dc2626">missing</text>
+      <rect x="278" y="2" width="70" height="18" rx="3" fill="#dc2626" opacity="0.15"/>
+      <text x="290" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#dc2626">missing</text>
+      <text x="380" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">TechCo</text>
+      <text x="470" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">$5M</text>
+    </g>
+    <g transform="translate(16,150)">
+      <text x="12" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">M. Johnson</text>
+      <text x="160" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">mj@old.co</text>
+      <text x="290" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">555-0200</text>
+      <rect x="368" y="2" width="70" height="18" rx="3" fill="#dc2626" opacity="0.15"/>
+      <text x="380" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#dc2626">wrong co</text>
+      <rect x="458" y="2" width="50" height="18" rx="3" fill="#dc2626" opacity="0.15"/>
+      <text x="470" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#dc2626">missing</text>
+    </g>
+    <!-- Problem stats -->
+    <g transform="translate(16,200)">
+      <rect width="518" height="100" rx="8" fill="#dc2626" opacity="0.08"/>
+      <text x="259" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-anchor="middle">Data Quality Issues</text>
+      <g transform="translate(30,44)">
+        <text x="0" y="20" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#dc2626">42%</text>
+        <text x="0" y="40" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499">Missing emails</text>
+      </g>
+      <g transform="translate(170,44)">
+        <text x="0" y="20" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#dc2626">35%</text>
+        <text x="0" y="40" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499">Stale records</text>
+      </g>
+      <g transform="translate(310,44)">
+        <text x="0" y="20" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#dc2626">23%</text>
+        <text x="0" y="40" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499">Duplicates</text>
+      </g>
+    </g>
+    <g transform="translate(16,320)">
+      <rect width="518" height="80" rx="8" fill="#3d4446"/>
+      <text x="259" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#dc2626" text-anchor="middle">Impact on Revenue</text>
+      <text x="259" y="50" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3" text-anchor="middle">Bounced emails hurt sender reputation</text>
+      <text x="259" y="68" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3" text-anchor="middle">Wasted dials, missed opportunities, bad routing</text>
+    </g>
+  </g>
+  <!-- After -->
+  <g transform="translate(610,65)">
+    <rect width="550" height="525" rx="12" fill="#2d3436" stroke="#00b894" stroke-width="2"/>
+    <rect width="550" height="44" rx="12" fill="#00b894" opacity="0.15"/>
+    <text x="275" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="#00b894" text-anchor="middle">After: With Verum Enrichment</text>
+    <g transform="translate(16,60)">
+      <rect width="518" height="30" rx="4" fill="#3d4446"/>
+      <text x="12" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Contact</text>
+      <text x="160" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Email</text>
+      <text x="290" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Phone</text>
+      <text x="380" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Company</text>
+      <text x="470" y="20" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#8a9499">Revenue</text>
+    </g>
+    <g transform="translate(16,98)">
+      <text x="12" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">John Smith</text>
+      <rect x="148" y="2" width="70" height="18" rx="3" fill="#00b894" opacity="0.15"/>
+      <text x="160" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#00b894">verified ✓</text>
+      <text x="290" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">555-0100</text>
+      <text x="380" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Acme Inc</text>
+      <rect x="458" y="2" width="50" height="18" rx="3" fill="#00b894" opacity="0.15"/>
+      <text x="470" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#00b894">$12M</text>
+    </g>
+    <g transform="translate(16,124)">
+      <text x="12" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">Sarah Kim</text>
+      <rect x="148" y="2" width="70" height="18" rx="3" fill="#00b894" opacity="0.15"/>
+      <text x="160" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#00b894">found ✓</text>
+      <rect x="278" y="2" width="70" height="18" rx="3" fill="#00b894" opacity="0.15"/>
+      <text x="290" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#00b894">found ✓</text>
+      <text x="380" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">TechCo</text>
+      <text x="470" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">$5M</text>
+    </g>
+    <g transform="translate(16,150)">
+      <text x="12" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">Mike Johnson</text>
+      <rect x="148" y="2" width="70" height="18" rx="3" fill="#00b894" opacity="0.15"/>
+      <text x="160" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#00b894">updated ✓</text>
+      <text x="290" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">555-0200</text>
+      <rect x="368" y="2" width="70" height="18" rx="3" fill="#00b894" opacity="0.15"/>
+      <text x="380" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#00b894">corrected ✓</text>
+      <rect x="458" y="2" width="50" height="18" rx="3" fill="#00b894" opacity="0.15"/>
+      <text x="470" y="16" font-family="Inter,system-ui,sans-serif" font-size="10" fill="#00b894">$8M</text>
+    </g>
+    <!-- Success stats -->
+    <g transform="translate(16,200)">
+      <rect width="518" height="100" rx="8" fill="#00b894" opacity="0.06"/>
+      <text x="259" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="#00b894" text-anchor="middle">Data Quality After Enrichment</text>
+      <g transform="translate(30,44)">
+        <text x="0" y="20" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#00b894">93%</text>
+        <text x="0" y="40" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499">Email coverage</text>
+      </g>
+      <g transform="translate(170,44)">
+        <text x="0" y="20" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#00b894">95%</text>
+        <text x="0" y="40" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499">Records current</text>
+      </g>
+      <g transform="translate(310,44)">
+        <text x="0" y="20" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#00b894">0%</text>
+        <text x="0" y="40" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499">Duplicates</text>
+      </g>
+    </g>
+    <g transform="translate(16,320)">
+      <rect width="518" height="80" rx="8" fill="#3d4446"/>
+      <text x="259" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#00b894" text-anchor="middle">Impact on Revenue</text>
+      <text x="259" y="50" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3" text-anchor="middle">3x better connect rates on outbound</text>
+      <text x="259" y="68" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3" text-anchor="middle">Clean routing, accurate scoring, trusted pipeline</text>
+    </g>
+  </g>
+</svg>

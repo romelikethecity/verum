@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1a1d1e"/>
+  <text x="600" y="44" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">Data Quality Scoring</text>
+  <!-- Left: Quality checks -->
+  <g transform="translate(40,70)">
+    <rect width="540" height="520" rx="12" fill="#2d3436"/>
+    <text x="270" y="32" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Quality Verification Steps</text>
+    <g transform="translate(20,52)">
+      <rect width="500" height="44" rx="6" fill="rgba(0,184,148,0.08)"/>
+      <rect x="12" y="10" width="24" height="24" rx="4" fill="#00b894"/>
+      <text x="24" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+      <text x="48" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Email SMTP verification</text>
+      <text x="440" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894">PASS</text>
+    </g>
+    <g transform="translate(20,104)">
+      <rect width="500" height="44" rx="6" fill="rgba(0,184,148,0.05)"/>
+      <rect x="12" y="10" width="24" height="24" rx="4" fill="#00b894"/>
+      <text x="24" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+      <text x="48" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Phone line type check</text>
+      <text x="440" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894">PASS</text>
+    </g>
+    <g transform="translate(20,156)">
+      <rect width="500" height="44" rx="6" fill="rgba(0,184,148,0.08)"/>
+      <rect x="12" y="10" width="24" height="24" rx="4" fill="#00b894"/>
+      <text x="24" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+      <text x="48" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Company name normalization</text>
+      <text x="440" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894">PASS</text>
+    </g>
+    <g transform="translate(20,208)">
+      <rect width="500" height="44" rx="6" fill="rgba(0,184,148,0.05)"/>
+      <rect x="12" y="10" width="24" height="24" rx="4" fill="#00b894"/>
+      <text x="24" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+      <text x="48" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Duplicate detection and merge</text>
+      <text x="440" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894">PASS</text>
+    </g>
+    <g transform="translate(20,260)">
+      <rect width="500" height="44" rx="6" fill="rgba(0,184,148,0.08)"/>
+      <rect x="12" y="10" width="24" height="24" rx="4" fill="#00b894"/>
+      <text x="24" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+      <text x="48" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Address standardization (USPS)</text>
+      <text x="440" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894">PASS</text>
+    </g>
+    <g transform="translate(20,312)">
+      <rect width="500" height="44" rx="6" fill="rgba(0,184,148,0.05)"/>
+      <rect x="12" y="10" width="24" height="24" rx="4" fill="#00b894"/>
+      <text x="24" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+      <text x="48" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Job title normalization</text>
+      <text x="440" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894">PASS</text>
+    </g>
+    <g transform="translate(20,364)">
+      <rect width="500" height="44" rx="6" fill="rgba(0,184,148,0.08)"/>
+      <rect x="12" y="10" width="24" height="24" rx="4" fill="#00b894"/>
+      <text x="24" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+      <text x="48" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Firmographic enrichment</text>
+      <text x="440" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894">PASS</text>
+    </g>
+    <g transform="translate(20,416)">
+      <rect width="500" height="44" rx="6" fill="rgba(0,184,148,0.05)"/>
+      <rect x="12" y="10" width="24" height="24" rx="4" fill="#00b894"/>
+      <text x="24" y="28" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">✓</text>
+      <text x="48" y="28" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Human QA review</text>
+      <text x="440" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894">PASS</text>
+    </g>
+    <g transform="translate(20,470)">
+      <rect width="500" height="32" rx="6" fill="#00b894" opacity="0.2"/>
+      <text x="250" y="22" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#00b894" text-anchor="middle">8/8 checks passed — record verified</text>
+    </g>
+  </g>
+  <!-- Right: Accuracy bars -->
+  <g transform="translate(620,70)">
+    <rect width="540" height="520" rx="12" fill="#2d3436"/>
+    <text x="270" y="32" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Accuracy by Field Type</text>
+    <g transform="translate(20,60)">
+      <text x="0" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Email Deliverability</text>
+      <text x="460" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#00b894">93%</text>
+      <rect y="28" width="500" height="10" rx="5" fill="#3d4446"/>
+      <rect y="28" width="465" height="10" rx="5" fill="#00b894"/>
+    </g>
+    <g transform="translate(20,116)">
+      <text x="0" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Phone Connectivity</text>
+      <text x="460" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#00b894">89%</text>
+      <rect y="28" width="500" height="10" rx="5" fill="#3d4446"/>
+      <rect y="28" width="445" height="10" rx="5" fill="#00b894"/>
+    </g>
+    <g transform="translate(20,172)">
+      <text x="0" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Company Match Rate</text>
+      <text x="460" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#00b894">96%</text>
+      <rect y="28" width="500" height="10" rx="5" fill="#3d4446"/>
+      <rect y="28" width="480" height="10" rx="5" fill="#00b894"/>
+    </g>
+    <g transform="translate(20,228)">
+      <text x="0" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Job Title Accuracy</text>
+      <text x="460" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#00b894">91%</text>
+      <rect y="28" width="500" height="10" rx="5" fill="#3d4446"/>
+      <rect y="28" width="455" height="10" rx="5" fill="#00b894"/>
+    </g>
+    <g transform="translate(20,284)">
+      <text x="0" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Address Standardization</text>
+      <text x="460" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#00b894">97%</text>
+      <rect y="28" width="500" height="10" rx="5" fill="#3d4446"/>
+      <rect y="28" width="485" height="10" rx="5" fill="#00b894"/>
+    </g>
+    <g transform="translate(20,340)">
+      <text x="0" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Revenue Data Fill Rate</text>
+      <text x="460" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#fff">78%</text>
+      <rect y="28" width="500" height="10" rx="5" fill="#3d4446"/>
+      <rect y="28" width="390" height="10" rx="5" fill="#fff" opacity="0.6"/>
+    </g>
+    <g transform="translate(20,396)">
+      <text x="0" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#fff">Tech Stack Detection</text>
+      <text x="460" y="16" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#fff">82%</text>
+      <rect y="28" width="500" height="10" rx="5" fill="#3d4446"/>
+      <rect y="28" width="410" height="10" rx="5" fill="#fff" opacity="0.6"/>
+    </g>
+    <!-- Overall -->
+    <g transform="translate(20,450)">
+      <rect width="500" height="50" rx="8" fill="rgba(0,184,148,0.15)"/>
+      <text x="250" y="22" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#8a9499" text-anchor="middle">Overall Data Quality Score</text>
+      <text x="250" y="42" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="800" fill="#00b894" text-anchor="middle">91.4%</text>
+    </g>
+  </g>
+</svg>

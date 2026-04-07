@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1a1d1e"/>
+  <text x="600" y="44" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">Data Vendor Comparison</text>
+  <g transform="translate(40,65)">
+    <rect width="1120" height="50" rx="8" fill="#2d3436"/>
+    <text x="170" y="32" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#8a9499" text-anchor="middle">Feature</text>
+    <text x="400" y="32" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#00b894" text-anchor="middle">Verum</text>
+    <text x="600" y="32" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#8a9499" text-anchor="middle">ZoomInfo</text>
+    <text x="800" y="32" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#8a9499" text-anchor="middle">Apollo</text>
+    <text x="1000" y="32" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#8a9499" text-anchor="middle">In-House</text>
+    <!-- Rows -->
+    <g transform="translate(0,58)">
+      <rect width="1120" height="44" rx="4" fill="#3d4446"/>
+      <text x="20" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">Pricing</text>
+      <rect x="345" y="10" width="110" height="24" rx="4" fill="#00b894" opacity="0.15"/>
+      <text x="400" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894" text-anchor="middle">Per project</text>
+      <text x="600" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">$15K-50K/yr</text>
+      <text x="800" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3" text-anchor="middle">$5K-20K/yr</text>
+      <text x="1000" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3" text-anchor="middle">FTE cost</text>
+    </g>
+    <g transform="translate(0,108)">
+      <rect width="1120" height="44" rx="4" fill="rgba(61,68,70,0.5)"/>
+      <text x="20" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">Contracts</text>
+      <rect x="345" y="10" width="110" height="24" rx="4" fill="#00b894" opacity="0.15"/>
+      <text x="400" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894" text-anchor="middle">No contract</text>
+      <text x="600" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">12-24 months</text>
+      <text x="800" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">12 months</text>
+      <text x="1000" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894" text-anchor="middle">None</text>
+    </g>
+    <g transform="translate(0,158)">
+      <rect width="1120" height="44" rx="4" fill="#3d4446"/>
+      <text x="20" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">Data ownership</text>
+      <rect x="345" y="10" width="110" height="24" rx="4" fill="#00b894" opacity="0.15"/>
+      <text x="400" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894" text-anchor="middle">Yours forever</text>
+      <text x="600" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Delete on cancel</text>
+      <text x="800" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">License only</text>
+      <text x="1000" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894" text-anchor="middle">Yours</text>
+    </g>
+    <g transform="translate(0,208)">
+      <rect width="1120" height="44" rx="4" fill="rgba(61,68,70,0.5)"/>
+      <text x="20" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">Human QA</text>
+      <rect x="345" y="10" width="110" height="24" rx="4" fill="#00b894" opacity="0.15"/>
+      <text x="400" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894" text-anchor="middle">Every record</text>
+      <text x="600" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Automated only</text>
+      <text x="800" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Automated only</text>
+      <text x="1000" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894" text-anchor="middle">If staffed</text>
+    </g>
+    <g transform="translate(0,258)">
+      <rect width="1120" height="44" rx="4" fill="#3d4446"/>
+      <text x="20" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">CRM cleaning</text>
+      <rect x="345" y="10" width="110" height="24" rx="4" fill="#00b894" opacity="0.15"/>
+      <text x="400" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894" text-anchor="middle">Included</text>
+      <text x="600" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Not included</text>
+      <text x="800" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Not included</text>
+      <text x="1000" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3" text-anchor="middle">Manual effort</text>
+    </g>
+    <g transform="translate(0,308)">
+      <rect width="1120" height="44" rx="4" fill="rgba(61,68,70,0.5)"/>
+      <text x="20" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">Turnaround</text>
+      <rect x="345" y="10" width="110" height="24" rx="4" fill="#00b894" opacity="0.15"/>
+      <text x="400" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" font-weight="600" fill="#00b894" text-anchor="middle">24-48 hours</text>
+      <text x="600" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3" text-anchor="middle">Self-serve</text>
+      <text x="800" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3" text-anchor="middle">Self-serve</text>
+      <text x="1000" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Weeks-months</text>
+    </g>
+    <g transform="translate(0,358)">
+      <rect width="1120" height="44" rx="4" fill="#3d4446"/>
+      <text x="20" y="28" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#fff">Best for</text>
+      <rect x="325" y="6" width="150" height="32" rx="4" fill="rgba(0,184,148,0.1)"/>
+      <text x="400" y="28" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#00b894" text-anchor="middle">Existing CRM cleanup</text>
+      <text x="600" y="28" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499" text-anchor="middle">Enterprise prospecting</text>
+      <text x="800" y="28" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499" text-anchor="middle">Net-new outbound</text>
+      <text x="1000" y="28" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499" text-anchor="middle">Full control needed</text>
+    </g>
+  </g>
+  <!-- Bottom verdict -->
+  <g transform="translate(40,500)">
+    <rect width="1120" height="90" rx="10" fill="#2d3436"/>
+    <rect x="20" y="16" width="4" height="58" rx="2" fill="#00b894"/>
+    <text x="40" y="36" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#fff">Key Takeaway</text>
+    <text x="40" y="58" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#b2bec3">ZoomInfo and Apollo sell net-new contacts. Verum enriches the data you already have.</text>
+    <text x="40" y="76" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#b2bec3">Different problem, different pricing, different ownership model. No annual contracts required.</text>
+  </g>
+</svg>
