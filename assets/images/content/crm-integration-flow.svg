@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1a1d1e"/>
+  <text x="600" y="50" font-family="Inter,system-ui,sans-serif" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">CRM Integration Flow</text>
+  <text x="600" y="78" font-family="Inter,system-ui,sans-serif" font-size="14" fill="#8a9499" text-anchor="middle">Export from your CRM, enrich with Verum, import back with full field coverage</text>
+
+  <!-- Phase 1: CRM Export -->
+  <g transform="translate(40,110)">
+    <rect width="300" height="260" rx="12" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <text x="150" y="32" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Your CRM (Before)</text>
+    <text x="150" y="52" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499" text-anchor="middle">Salesforce / HubSpot / Other</text>
+    <line x1="20" y1="64" x2="280" y2="64" stroke="#4d5456" stroke-width="1"/>
+
+    <!-- Field completeness bars (before) -->
+    <text x="24" y="90" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Email</text>
+    <rect x="100" y="78" width="170" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="78" width="119" height="16" rx="4" fill="#e17055"/>
+    <text x="228" y="90" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">70%</text>
+
+    <text x="24" y="118" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Phone</text>
+    <rect x="100" y="106" width="170" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="106" width="68" height="16" rx="4" fill="#e74c3c"/>
+    <text x="176" y="118" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">40%</text>
+
+    <text x="24" y="146" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Job Title</text>
+    <rect x="100" y="134" width="170" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="134" width="102" height="16" rx="4" fill="#e17055"/>
+    <text x="210" y="146" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">60%</text>
+
+    <text x="24" y="174" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Company</text>
+    <rect x="100" y="162" width="170" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="162" width="136" height="16" rx="4" fill="#e17055"/>
+    <text x="244" y="174" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">80%</text>
+
+    <text x="24" y="202" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Industry</text>
+    <rect x="100" y="190" width="170" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="190" width="51" height="16" rx="4" fill="#e74c3c"/>
+    <text x="159" y="202" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">30%</text>
+
+    <text x="24" y="230" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Revenue</text>
+    <rect x="100" y="218" width="170" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="218" width="34" height="16" rx="4" fill="#e74c3c"/>
+    <text x="142" y="230" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">20%</text>
+
+    <!-- Average -->
+    <rect x="24" y="240" width="252" height="1" fill="#4d5456"/>
+    <text x="150" y="256" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#e17055" text-anchor="middle">Avg. completeness: 50%</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(350,225)">
+    <line x1="0" y1="0" x2="70" y2="0" stroke="#00b894" stroke-width="2"/>
+    <polygon points="66,-6 80,0 66,6" fill="#00b894"/>
+    <text x="40" y="-12" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#00b894" text-anchor="middle">Export</text>
+  </g>
+
+  <!-- Phase 2: Verum Enrichment -->
+  <g transform="translate(440,130)">
+    <rect width="260" height="220" rx="12" fill="#2d3436" stroke="#00b894" stroke-width="2.5"/>
+    <text x="130" y="32" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="700" fill="#00b894" text-anchor="middle">Verum Enrichment</text>
+    <line x1="20" y1="44" x2="240" y2="44" stroke="#4d5456" stroke-width="1"/>
+
+    <rect x="20" y="58" width="220" height="28" rx="6" fill="rgba(0,184,148,0.1)"/>
+    <text x="130" y="77" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894" text-anchor="middle">50+ source cross-reference</text>
+
+    <rect x="20" y="94" width="220" height="28" rx="6" fill="rgba(0,184,148,0.08)"/>
+    <text x="130" y="113" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894" text-anchor="middle">Email verification</text>
+
+    <rect x="20" y="130" width="220" height="28" rx="6" fill="rgba(0,184,148,0.1)"/>
+    <text x="130" y="149" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894" text-anchor="middle">Phone validation</text>
+
+    <rect x="20" y="166" width="220" height="28" rx="6" fill="rgba(0,184,148,0.08)"/>
+    <text x="130" y="185" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894" text-anchor="middle">Human QA review</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(710,225)">
+    <line x1="0" y1="0" x2="70" y2="0" stroke="#00b894" stroke-width="2"/>
+    <polygon points="66,-6 80,0 66,6" fill="#00b894"/>
+    <text x="40" y="-12" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#00b894" text-anchor="middle">Import</text>
+  </g>
+
+  <!-- Phase 3: CRM After -->
+  <g transform="translate(800,110)">
+    <rect width="360" height="260" rx="12" fill="#2d3436" stroke="#00b894" stroke-width="2"/>
+    <text x="180" y="32" font-family="Inter,system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Your CRM (After)</text>
+    <text x="180" y="52" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#00b894" text-anchor="middle">Same CRM, transformed data</text>
+    <line x1="20" y1="64" x2="340" y2="64" stroke="#4d5456" stroke-width="1"/>
+
+    <!-- Field completeness bars (after) -->
+    <text x="24" y="90" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Email</text>
+    <rect x="100" y="78" width="230" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="78" width="219" height="16" rx="4" fill="#00b894"/>
+    <text x="327" y="90" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">95%</text>
+
+    <text x="24" y="118" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Phone</text>
+    <rect x="100" y="106" width="230" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="106" width="196" height="16" rx="4" fill="#00b894"/>
+    <text x="304" y="118" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">85%</text>
+
+    <text x="24" y="146" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Job Title</text>
+    <rect x="100" y="134" width="230" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="134" width="214" height="16" rx="4" fill="#00b894"/>
+    <text x="321" y="146" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">93%</text>
+
+    <text x="24" y="174" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Company</text>
+    <rect x="100" y="162" width="230" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="162" width="225" height="16" rx="4" fill="#00b894"/>
+    <text x="333" y="174" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">98%</text>
+
+    <text x="24" y="202" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Industry</text>
+    <rect x="100" y="190" width="230" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="190" width="207" height="16" rx="4" fill="#00b894"/>
+    <text x="315" y="202" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">90%</text>
+
+    <text x="24" y="230" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#b2bec3">Revenue</text>
+    <rect x="100" y="218" width="230" height="16" rx="4" fill="#3d4446"/>
+    <rect x="100" y="218" width="184" height="16" rx="4" fill="#00b894"/>
+    <text x="292" y="230" font-family="Inter,system-ui,sans-serif" font-size="10" font-weight="600" fill="#fff">80%</text>
+
+    <!-- Average -->
+    <rect x="24" y="240" width="312" height="1" fill="#4d5456"/>
+    <text x="180" y="256" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#00b894" text-anchor="middle">Avg. completeness: 90%</text>
+  </g>
+
+  <!-- Bottom summary bar -->
+  <g transform="translate(60,420)">
+    <rect width="1080" height="80" rx="10" fill="#2d3436"/>
+    <g transform="translate(80,14)">
+      <text x="0" y="22" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#e17055">50%</text>
+      <text x="0" y="44" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">Before completeness</text>
+    </g>
+    <g transform="translate(320,14)">
+      <text x="0" y="22" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#00b894">90%</text>
+      <text x="0" y="44" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">After completeness</text>
+    </g>
+    <g transform="translate(560,14)">
+      <text x="0" y="22" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#fff">24&#8209;48hr</text>
+      <text x="0" y="44" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">Turnaround time</text>
+    </g>
+    <g transform="translate(800,14)">
+      <text x="0" y="22" font-family="Inter,system-ui,sans-serif" font-size="28" font-weight="800" fill="#00b894">0</text>
+      <text x="0" y="44" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">CRM changes needed</text>
+    </g>
+  </g>
+
+  <!-- Compatible CRMs -->
+  <g transform="translate(60,530)">
+    <text x="0" y="16" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#8a9499">Works with:</text>
+    <rect x="90" y="0" width="100" height="28" rx="6" fill="#3d4446"/>
+    <text x="140" y="18" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#b2bec3" text-anchor="middle">Salesforce</text>
+    <rect x="200" y="0" width="90" height="28" rx="6" fill="#3d4446"/>
+    <text x="245" y="18" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#b2bec3" text-anchor="middle">HubSpot</text>
+    <rect x="300" y="0" width="80" height="28" rx="6" fill="#3d4446"/>
+    <text x="340" y="18" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#b2bec3" text-anchor="middle">Pipedrive</text>
+    <rect x="390" y="0" width="90" height="28" rx="6" fill="#3d4446"/>
+    <text x="435" y="18" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#b2bec3" text-anchor="middle">Dynamics</text>
+    <rect x="490" y="0" width="60" height="28" rx="6" fill="#3d4446"/>
+    <text x="520" y="18" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#b2bec3" text-anchor="middle">Zoho</text>
+    <rect x="560" y="0" width="80" height="28" rx="6" fill="#3d4446"/>
+    <text x="600" y="18" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#b2bec3" text-anchor="middle">Any CSV</text>
+  </g>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#1a1d1e"/>
+  <text x="600" y="50" font-family="Inter,system-ui,sans-serif" font-size="24" font-weight="700" fill="#fff" text-anchor="middle">Data Cleaning Checklist</text>
+  <text x="600" y="78" font-family="Inter,system-ui,sans-serif" font-size="14" fill="#8a9499" text-anchor="middle">The 6 steps Verum runs on every dataset before delivery</text>
+
+  <!-- Checklist items - 2 columns -->
+  <!-- Column 1 -->
+  <!-- Step 1: Deduplication -->
+  <g transform="translate(60,110)">
+    <rect width="520" height="130" rx="12" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <rect x="20" y="20" width="36" height="36" rx="8" fill="#00b894"/>
+    <text x="38" y="44" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+    <text x="72" y="36" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">Deduplication</text>
+    <text x="72" y="58" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Fuzzy matching across name, email, phone, and company</text>
+    <text x="72" y="76" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">to merge true duplicates without losing data.</text>
+    <rect x="72" y="90" width="130" height="24" rx="5" fill="rgba(0,184,148,0.12)"/>
+    <text x="137" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#00b894" text-anchor="middle">Avg: 12% duplicates</text>
+    <rect x="212" y="90" width="140" height="24" rx="5" fill="rgba(0,184,148,0.08)"/>
+    <text x="282" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499" text-anchor="middle">Master record selection</text>
+  </g>
+
+  <!-- Step 2: Email Validation -->
+  <g transform="translate(60,260)">
+    <rect width="520" height="130" rx="12" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <rect x="20" y="20" width="36" height="36" rx="8" fill="#00b894"/>
+    <text x="38" y="44" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+    <text x="72" y="36" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">Email Validation</text>
+    <text x="72" y="58" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Syntax check, MX record lookup, SMTP verification,</text>
+    <text x="72" y="76" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">catch-all detection, and disposable domain filtering.</text>
+    <rect x="72" y="90" width="120" height="24" rx="5" fill="rgba(0,184,148,0.12)"/>
+    <text x="132" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#00b894" text-anchor="middle">93% deliverability</text>
+    <rect x="202" y="90" width="120" height="24" rx="5" fill="rgba(0,184,148,0.08)"/>
+    <text x="262" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499" text-anchor="middle">Bounce prevention</text>
+  </g>
+
+  <!-- Step 3: Phone Formatting -->
+  <g transform="translate(60,410)">
+    <rect width="520" height="130" rx="12" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <rect x="20" y="20" width="36" height="36" rx="8" fill="#00b894"/>
+    <text x="38" y="44" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+    <text x="72" y="36" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">Phone Formatting</text>
+    <text x="72" y="58" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">E.164 standardization, line type detection (mobile vs</text>
+    <text x="72" y="76" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">landline vs VoIP), and disconnected number removal.</text>
+    <rect x="72" y="90" width="130" height="24" rx="5" fill="rgba(0,184,148,0.12)"/>
+    <text x="137" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#00b894" text-anchor="middle">Line type identified</text>
+    <rect x="212" y="90" width="130" height="24" rx="5" fill="rgba(0,184,148,0.08)"/>
+    <text x="277" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499" text-anchor="middle">DNC list checked</text>
+  </g>
+
+  <!-- Column 2 -->
+  <!-- Step 4: Address Standardization -->
+  <g transform="translate(620,110)">
+    <rect width="520" height="130" rx="12" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <rect x="20" y="20" width="36" height="36" rx="8" fill="#00b894"/>
+    <text x="38" y="44" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+    <text x="72" y="36" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">Address Standardization</text>
+    <text x="72" y="58" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">USPS/postal validation, abbreviation normalization,</text>
+    <text x="72" y="76" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">ZIP+4 appending, and geocoding for territory mapping.</text>
+    <rect x="72" y="90" width="130" height="24" rx="5" fill="rgba(0,184,148,0.12)"/>
+    <text x="137" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#00b894" text-anchor="middle">CASS certified</text>
+    <rect x="212" y="90" width="130" height="24" rx="5" fill="rgba(0,184,148,0.08)"/>
+    <text x="277" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499" text-anchor="middle">Territory-ready</text>
+  </g>
+
+  <!-- Step 5: Job Title Normalization -->
+  <g transform="translate(620,260)">
+    <rect width="520" height="130" rx="12" fill="#2d3436" stroke="#4d5456" stroke-width="1"/>
+    <rect x="20" y="20" width="36" height="36" rx="8" fill="#00b894"/>
+    <text x="38" y="44" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">5</text>
+    <text x="72" y="36" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">Job Title Normalization</text>
+    <text x="72" y="58" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Map free-text titles to standard roles, seniority levels,</text>
+    <text x="72" y="76" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">and departments for lead routing and scoring accuracy.</text>
+    <rect x="72" y="90" width="160" height="24" rx="5" fill="rgba(0,184,148,0.12)"/>
+    <text x="152" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#00b894" text-anchor="middle">Seniority level tagged</text>
+    <rect x="242" y="90" width="160" height="24" rx="5" fill="rgba(0,184,148,0.08)"/>
+    <text x="322" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499" text-anchor="middle">Department classified</text>
+  </g>
+
+  <!-- Step 6: Company Name Matching -->
+  <g transform="translate(620,410)">
+    <rect width="520" height="130" rx="12" fill="#2d3436" stroke="#00b894" stroke-width="2"/>
+    <rect x="20" y="20" width="36" height="36" rx="8" fill="#00b894"/>
+    <text x="38" y="44" font-family="Inter,system-ui,sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">6</text>
+    <text x="72" y="36" font-family="Inter,system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">Company Name Matching</text>
+    <text x="72" y="58" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">Parent/subsidiary resolution, legal entity normalization,</text>
+    <text x="72" y="76" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#b2bec3">and D-U-N-S matching for accurate account hierarchies.</text>
+    <rect x="72" y="90" width="160" height="24" rx="5" fill="rgba(0,184,148,0.12)"/>
+    <text x="152" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" font-weight="600" fill="#00b894" text-anchor="middle">Account hierarchy built</text>
+    <rect x="242" y="90" width="150" height="24" rx="5" fill="rgba(0,184,148,0.08)"/>
+    <text x="317" y="106" font-family="Inter,system-ui,sans-serif" font-size="11" fill="#8a9499" text-anchor="middle">M&amp;A changes tracked</text>
+  </g>
+
+  <!-- Bottom result bar -->
+  <g transform="translate(60,565)">
+    <rect width="1080" height="50" rx="8" fill="rgba(0,184,148,0.1)" stroke="#00b894" stroke-width="1"/>
+    <text x="540" y="32" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="600" fill="#00b894" text-anchor="middle">Result: CRM-ready data with 90%+ field completeness, verified contacts, and standardized records</text>
+  </g>
+</svg>
