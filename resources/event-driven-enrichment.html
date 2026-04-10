@@ -107,7 +107,7 @@
         "name": "When should I use event-driven vs. batch enrichment?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Use event-driven enrichment when timing matters—new lead routing, sales prioritization, or customer onboarding where delays cost money. Use batch enrichment for periodic data maintenance, large-scale refreshes, or when real-time isn't necessary. Many organizations combine both: event-driven for new records, batch for periodic refresh of existing data."
+          "text": "Use event-driven enrichment when timing matters, new lead routing, sales prioritization, or customer onboarding where delays cost money. Use batch enrichment for periodic data maintenance, large-scale refreshes, or when real-time isn't necessary. Many organizations combine both: event-driven for new records, batch for periodic refresh of existing data."
         }
       },
       {
@@ -123,7 +123,7 @@
         "name": "How do I handle enrichment failures in event-driven systems?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Implement retry logic with exponential backoff, dead-letter queues for persistent failures, graceful degradation (don't block workflows if enrichment fails), monitoring and alerting on failure rates, and manual intervention workflows for critical records. Design systems to be eventually consistent—enrichment may complete after the triggering workflow."
+          "text": "Implement retry logic with exponential backoff, dead-letter queues for persistent failures, graceful degradation (don't block workflows if enrichment fails), monitoring and alerting on failure rates, and manual intervention workflows for critical records. Design systems to be eventually consistent, enrichment may complete after the triggering workflow."
         }
       }
     ]
@@ -339,7 +339,7 @@
       </header>
 
       <div class="article-content">
-        <p>Most data enrichment happens on a schedule—nightly batch jobs that process records regardless of whether they need updates. This approach works but creates delays between when data enters your system and when it's enriched, and wastes API calls on records that haven't changed.</p>
+        <p>Most data enrichment happens on a schedule, nightly batch jobs that process records regardless of whether they need updates. This approach works but creates delays between when data enters your system and when it's enriched, and wastes API calls on records that haven't changed.</p>
 
         <p>Event-driven enrichment flips this model. Instead of enriching on a schedule, you enrich in response to specific events: a new lead created, a form submitted, an email received, or a company funding announcement. The result is faster time-to-enrichment, more efficient API usage, and enrichment that happens when it matters most.</p>
 
@@ -457,7 +457,7 @@
 
         <h3>Pattern 1: Direct Webhook Integration</h3>
 
-        <p>Simplest pattern—CRM webhooks directly call enrichment API:</p>
+        <p>Simplest pattern, CRM webhooks directly call enrichment API:</p>
 
         <pre><code>CRM Event → Webhook → Enrichment API → CRM Update
 
@@ -637,7 +637,7 @@ Platforms:
 
         <h2>Error Handling and Reliability</h2>
 
-        <p>Event-driven systems need robust error handling:</p>
+        <p>Event-driven systems need reliable error handling:</p>
 
         <h3>Failure Scenarios</h3>
 
@@ -892,7 +892,7 @@ PATCH /services/data/v58.0/sobjects/Lead/{id}
 
           <div class="faq-item">
             <h3>When should I use event-driven vs. batch enrichment?</h3>
-            <p>Use event-driven enrichment when timing matters—new lead routing, sales prioritization, or customer onboarding where delays cost money. Use batch enrichment for periodic data maintenance, large-scale refreshes, or when real-time isn't necessary. Many organizations combine both: event-driven for new records, batch for periodic refresh of existing data.</p>
+            <p>Use event-driven enrichment when timing matters, new lead routing, sales prioritization, or customer onboarding where delays cost money. Use batch enrichment for periodic data maintenance, large-scale refreshes, or when real-time isn't necessary. Many organizations combine both: event-driven for new records, batch for periodic refresh of existing data.</p>
           </div>
 
           <div class="faq-item">
@@ -902,7 +902,7 @@ PATCH /services/data/v58.0/sobjects/Lead/{id}
 
           <div class="faq-item">
             <h3>How do I handle enrichment failures in event-driven systems?</h3>
-            <p>Implement retry logic with exponential backoff, dead-letter queues for persistent failures, graceful degradation (don't block workflows if enrichment fails), monitoring and alerting on failure rates, and manual intervention workflows for critical records. Design systems to be eventually consistent—enrichment may complete after the triggering workflow.</p>
+            <p>Implement retry logic with exponential backoff, dead-letter queues for persistent failures, graceful degradation (don't block workflows if enrichment fails), monitoring and alerting on failure rates, and manual intervention workflows for critical records. Design systems to be eventually consistent, enrichment may complete after the triggering workflow.</p>
           </div>
         </section>
 

@@ -99,7 +99,7 @@
         "name": "What is a contact data waterfall?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "A contact data waterfall is a strategy that queries multiple data providers in sequence to maximize contact data coverage. When the first provider doesn't have data for a contact, the request falls through to the second provider, then the third, and so on—like water cascading down a waterfall."
+          "text": "A contact data waterfall is a strategy that queries multiple data providers in sequence to maximize contact data coverage. When the first provider doesn't have data for a contact, the request falls through to the second provider, then the third, and so on, like water cascading down a waterfall."
         }
       },
       {
@@ -107,7 +107,7 @@
         "name": "How many providers should be in a waterfall?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Most waterfalls use 2-4 providers. Beyond 4, you see diminishing returns—each additional provider adds maybe 5-10% more coverage at significant cost and complexity. Start with 2 providers, measure your coverage gap, and add more only if needed."
+          "text": "Most waterfalls use 2-4 providers. Beyond 4, you see diminishing returns, each additional provider adds maybe 5-10% more coverage at significant cost and complexity. Start with 2 providers, measure your coverage gap, and add more only if needed."
         }
       },
       {
@@ -371,7 +371,7 @@
       </header>
 
       <div class="article-body">
-        <p>No single data provider has complete coverage. Based on Verum's testing across multiple B2B segments, individual providers typically cover 60-75% of target accounts—but the gaps differ by provider. When you combine them strategically in a waterfall, you can reach 85-95% coverage.</p>
+        <p>No single data provider has complete coverage. Based on Verum's testing across multiple B2B segments, individual providers typically cover 60-75% of target accounts, but the gaps differ by provider. When you combine them strategically in a waterfall, you can reach 85-95% coverage.</p>
 
         <p>This is the waterfall strategy: query multiple providers in sequence until you get a match. When Provider A doesn't have the data, fall through to Provider B, then Provider C. Like water cascading down, each level catches what the one above missed.</p>
 
@@ -447,7 +447,7 @@
         <h3>Waterfall Logic</h3>
 
         <ol>
-          <li><strong>Input</strong>: Start with what you know—name, company, LinkedIn URL, domain</li>
+          <li><strong>Input</strong>: Start with what you know, name, company, LinkedIn URL, domain</li>
           <li><strong>Primary query</strong>: Hit your highest-quality (usually highest-cost) provider first</li>
           <li><strong>Evaluate result</strong>: Did you get a match? Is it complete? Does it meet quality thresholds?</li>
           <li><strong>Fall through</strong>: If no match or incomplete data, query the next provider</li>
@@ -482,7 +482,7 @@
           <li><strong>Integration ease</strong>: Native CRM connectors, API quality</li>
         </ul>
 
-        <p>Cost matters less for the primary—you're paying for most records anyway.</p>
+        <p>Cost matters less for the primary, you're paying for most records anyway.</p>
 
         <h3>Choosing Secondary/Tertiary Providers</h3>
 
@@ -586,7 +586,7 @@
 
         <h3>Option 1: Sequential API Calls</h3>
 
-        <p>Simplest approach—query providers one at a time:</p>
+        <p>Simplest approach, query providers one at a time:</p>
 
         <div class="code-block">
 <code>async function enrichContact(input) {
@@ -1000,12 +1000,12 @@ function selectProviders(input) {
 
           <div class="faq-item">
             <p class="faq-question">What is a contact data waterfall?</p>
-            <p class="faq-answer">A contact data waterfall is a strategy that queries multiple data providers in sequence to maximize contact data coverage. When the first provider doesn't have data for a contact, the request falls through to the second provider, then the third, and so on—like water cascading down a waterfall.</p>
+            <p class="faq-answer">A contact data waterfall is a strategy that queries multiple data providers in sequence to maximize contact data coverage. When the first provider doesn't have data for a contact, the request falls through to the second provider, then the third, and so on, like water cascading down a waterfall.</p>
           </div>
 
           <div class="faq-item">
             <p class="faq-question">How many providers should be in a waterfall?</p>
-            <p class="faq-answer">Most waterfalls use 2-4 providers. Beyond 4, you see diminishing returns—each additional provider adds maybe 5-10% more coverage at significant cost and complexity. Start with 2 providers, measure your coverage gap, and add more only if needed.</p>
+            <p class="faq-answer">Most waterfalls use 2-4 providers. Beyond 4, you see diminishing returns, each additional provider adds maybe 5-10% more coverage at significant cost and complexity. Start with 2 providers, measure your coverage gap, and add more only if needed.</p>
           </div>
 
           <div class="faq-item">

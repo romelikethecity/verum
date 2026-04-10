@@ -99,7 +99,7 @@
         "name": "Does Salesforce automatically back up my data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Salesforce maintains infrastructure-level backups for disaster recovery, but these aren't designed for individual customer data recovery. According to Salesforce Help documentation, the Data Recovery Service costs $10,000+ and takes 6-8 weeks. For practical data protection, you need your own backup solution—either native Data Export, a third-party backup tool, or custom API-based backups to your own storage."
+          "text": "Salesforce maintains infrastructure-level backups for disaster recovery, but these aren't designed for individual customer data recovery. According to Salesforce Help documentation, the Data Recovery Service costs $10,000+ and takes 6-8 weeks. For practical data protection, you need your own backup solution, either native Data Export, a third-party backup tool, or custom API-based backups to your own storage."
         }
       },
       {
@@ -107,7 +107,7 @@
         "name": "How often should I back up my CRM data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Backup frequency depends on your data change velocity and acceptable data loss. For most organizations: daily backups for core objects (Accounts, Contacts, Opportunities), more frequent for high-change objects, and real-time replication for mission-critical data. Consider your Recovery Point Objective (RPO)—if you can't afford to lose more than 4 hours of data, you need at least 4-hour backup intervals."
+          "text": "Backup frequency depends on your data change velocity and acceptable data loss. For most organizations: daily backups for core objects (Accounts, Contacts, Opportunities), more frequent for high-change objects, and real-time replication for mission-critical data. Consider your Recovery Point Objective (RPO),if you can't afford to lose more than 4 hours of data, you need at least 4-hour backup intervals."
         }
       },
       {
@@ -123,7 +123,7 @@
         "name": "How do I recover from mass data deletion or corruption?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "First, stop the bleeding—identify what's affected and prevent further damage. Check the Recycle Bin for deleted records (per Salesforce documentation, deleted records are retained for 15 days). For corruption or Recycle Bin-expired data, you'll need your backup solution. Restore in a sandbox first to validate, then restore to production. Document what happened for process improvement. Having tested recovery procedures before an incident is critical."
+          "text": "First, stop the bleeding, identify what's affected and prevent further damage. Check the Recycle Bin for deleted records (per Salesforce documentation, deleted records are retained for 15 days). For corruption or Recycle Bin-expired data, you'll need your backup solution. Restore in a sandbox first to validate, then restore to production. Document what happened for process improvement. Having tested recovery procedures before an incident is critical."
         }
       }
     ]
@@ -336,13 +336,13 @@
       </header>
 
       <div class="article-content">
-        <p>Your CRM contains your company's revenue history, customer relationships, and sales pipeline. It's also one of the systems most vulnerable to data loss—not from hackers or infrastructure failures, but from everyday mistakes, bad integrations, and user errors.</p>
+        <p>Your CRM contains your company's revenue history, customer relationships, and sales pipeline. It's also one of the systems most vulnerable to data loss, not from hackers or infrastructure failures, but from everyday mistakes, bad integrations, and user errors.</p>
 
         <p>A sales rep accidentally mass-deletes accounts while trying to clean up their pipeline. An integration goes haywire and overwrites thousands of records. A departing employee corrupts data on their way out. A well-meaning admin runs a data loader job that goes wrong.</p>
 
         <p>Most CRM platforms don't include the backup and recovery capabilities you need to handle these scenarios. <a href="https://help.salesforce.com/s/articleView?id=000385702&type=1" target="_blank" rel="noopener">Salesforce's recovery service costs $10,000+ and takes weeks</a>. HubSpot's restore options are limited. The assumption is that you've got this handled.</p>
 
-        <p>This guide covers how to actually protect your CRM data—backup strategies, recovery procedures, and disaster planning that works for revenue operations.</p>
+        <p>This guide covers how to actually protect your CRM data, backup strategies, recovery procedures, and disaster planning that works for revenue operations.</p>
 
         <h2>Why CRM Data Is at Risk</h2>
 
@@ -386,10 +386,10 @@
         <div class="warning-box">
           <h4>Common Misconception</h4>
           <ul>
-            <li>"Our CRM vendor backs up our data" — They back up their infrastructure, not your data for your use</li>
-            <li>"We can just restore from the Recycle Bin" — Recycle Bin has limits (<a href="https://help.salesforce.com/s/articleView?id=sf.home_delete.htm&type=5" target="_blank" rel="noopener">15 days in Salesforce</a>, varies by platform)</li>
-            <li>"Our IT team handles backups" — CRM often falls outside traditional IT backup scope</li>
-            <li>"We've never had a problem" — Data loss is a matter of when, not if</li>
+            <li>"Our CRM vendor backs up our data". They back up their infrastructure, not your data for your use</li>
+            <li>"We can just restore from the Recycle Bin". Recycle Bin has limits (<a href="https://help.salesforce.com/s/articleView?id=sf.home_delete.htm&type=5" target="_blank" rel="noopener">15 days in Salesforce</a>, varies by platform)</li>
+            <li>"Our IT team handles backups". CRM often falls outside traditional IT backup scope</li>
+            <li>"We've never had a problem". Data loss is a matter of when, not if</li>
           </ul>
         </div>
 
@@ -649,7 +649,7 @@
           <ul>
             <li><strong>Detection:</strong> User reports missing records, monitoring alert</li>
             <li><strong>Assessment:</strong> How many records? Which objects? When did it happen?</li>
-            <li><strong>Triage:</strong> Check Recycle Bin first—fastest recovery if within retention</li>
+            <li><strong>Triage:</strong> Check Recycle Bin first, fastest recovery if within retention</li>
             <li><strong>Restore:</strong> If not in Recycle Bin, restore from backup</li>
             <li><strong>Validation:</strong> Verify record count and relationships</li>
           </ul>
@@ -740,7 +740,7 @@
 
         <h2>Testing Your Backup</h2>
 
-        <p>Untested backups aren't backups—they're hopes:</p>
+        <p>Untested backups aren't backups, they're hopes:</p>
 
         <h3>Recovery Testing Schedule</h3>
 
@@ -905,12 +905,12 @@
 
           <div class="faq-item">
             <h3>Does Salesforce automatically back up my data?</h3>
-            <p>Salesforce maintains infrastructure-level backups for disaster recovery, but these aren't designed for individual customer data recovery. <a href="https://help.salesforce.com/s/articleView?id=000385702&type=1" target="_blank" rel="noopener">Salesforce's Data Recovery Service costs $10,000+ and takes 6-8 weeks</a>. For practical data protection, you need your own backup solution—either native Data Export, a third-party backup tool, or custom API-based backups to your own storage.</p>
+            <p>Salesforce maintains infrastructure-level backups for disaster recovery, but these aren't designed for individual customer data recovery. <a href="https://help.salesforce.com/s/articleView?id=000385702&type=1" target="_blank" rel="noopener">Salesforce's Data Recovery Service costs $10,000+ and takes 6-8 weeks</a>. For practical data protection, you need your own backup solution, either native Data Export, a third-party backup tool, or custom API-based backups to your own storage.</p>
           </div>
 
           <div class="faq-item">
             <h3>How often should I back up my CRM data?</h3>
-            <p>Backup frequency depends on your data change velocity and acceptable data loss. For most organizations: daily backups for core objects (Accounts, Contacts, Opportunities), more frequent for high-change objects, and real-time replication for mission-critical data. Consider your Recovery Point Objective (RPO)—if you can't afford to lose more than 4 hours of data, you need at least 4-hour backup intervals.</p>
+            <p>Backup frequency depends on your data change velocity and acceptable data loss. For most organizations: daily backups for core objects (Accounts, Contacts, Opportunities), more frequent for high-change objects, and real-time replication for mission-critical data. Consider your Recovery Point Objective (RPO),if you can't afford to lose more than 4 hours of data, you need at least 4-hour backup intervals.</p>
           </div>
 
           <div class="faq-item">
@@ -920,7 +920,7 @@
 
           <div class="faq-item">
             <h3>How do I recover from mass data deletion or corruption?</h3>
-            <p>First, stop the bleeding—identify what's affected and prevent further damage. Check the Recycle Bin for deleted records (<a href="https://help.salesforce.com/s/articleView?id=sf.home_delete.htm&type=5" target="_blank" rel="noopener">Salesforce keeps them for 15 days</a>). For corruption or Recycle Bin-expired data, you'll need your backup solution. Restore in a sandbox first to validate, then restore to production. Document what happened for process improvement. Having tested recovery procedures before an incident is critical.</p>
+            <p>First, stop the bleeding, identify what's affected and prevent further damage. Check the Recycle Bin for deleted records (<a href="https://help.salesforce.com/s/articleView?id=sf.home_delete.htm&type=5" target="_blank" rel="noopener">Salesforce keeps them for 15 days</a>). For corruption or Recycle Bin-expired data, you'll need your backup solution. Restore in a sandbox first to validate, then restore to production. Document what happened for process improvement. Having tested recovery procedures before an incident is critical.</p>
           </div>
         </section>
 

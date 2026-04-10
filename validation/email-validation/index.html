@@ -91,7 +91,7 @@
         "name": "How accurate is email validation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "93%+ accuracy for most lists. Catch-all domains are the main limitation—they accept all mail, so we can't verify specific mailboxes."
+          "text": "93%+ accuracy for most lists. Catch-all domains are the main limitation, they accept all mail, so we can't verify specific mailboxes."
         }
       },
       {
@@ -165,7 +165,7 @@
         </figure>
 
 
-        <p>Every bounced email damages your sender reputation. Enough bounces and your emails start landing in spam—even the ones to valid addresses. ISPs see high bounce rates as a signal of a bad sender.</p>
+        <p>Every bounced email damages your sender reputation. Enough bounces and your emails start landing in spam, even the ones to valid addresses. ISPs see high bounce rates as a signal of a bad sender.</p>
 
         <p>The problem: you can't tell which emails will bounce by looking at them. john.smith@acme.com looks perfectly valid. But John left Acme two years ago. His mailbox doesn't exist. You send, it bounces, your reputation takes a hit.</p>
 
@@ -173,7 +173,7 @@
 
         <div class="testimonial mt-xl mb-xl">
           <blockquote class="testimonial__quote">"Our deliverability went from 72% to 94% after validation. We stopped hitting spam folders."</blockquote>
-          <cite class="testimonial__author">— Marketing Director</cite>
+          <cite class="testimonial__author">Marketing Director</cite>
         </div>
 
         <h2>How We Validate</h2>
@@ -221,7 +221,7 @@
           <p>No. SMTP verification confirms mailbox existence without sending messages. We connect to the server, ask if the address exists, then disconnect.</p>
 
           <h3>How accurate is validation?</h3>
-          <p>93%+ accuracy for most lists. Catch-all domains are the main limitation—they accept all mail, so we can't verify specific mailboxes.</p>
+          <p>93%+ accuracy for most lists. Catch-all domains are the main limitation, they accept all mail, so we can't verify specific mailboxes.</p>
 
           <h3>What about catch-all domains?</h3>
           <p>We flag catch-all domains separately. The domain is valid, but we can't verify the specific mailbox. You decide whether to send.</p>

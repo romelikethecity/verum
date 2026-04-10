@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Quality for AI SDR Agents: Why Your AI SDR Is Sending Garbage | Verum</title>
+  <meta name="description" content="AI SDR agents amplify data quality problems. Bad emails, wrong names, dead phones, and stale company data turn AI outbound into a deliverability and brand disaster. Here's how to feed AI SDRs clean data.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-quality-for-ai-sdr-agents.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-quality-for-ai-sdr-agents.html">
+  <meta property="og:title" content="Data Quality for AI SDR Agents: Why Your AI SDR Is Sending Garbage">
+  <meta property="og:description" content="AI SDR agents amplify data quality problems. Here's how to feed AI SDRs clean data.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Quality for AI SDR Agents">
+  <meta name="twitter:description" content="AI SDR agents amplify data quality problems. Here's how to feed AI SDRs clean data.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-R416JZ91B1');</script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://veruminc.com/"},
+    {"@type":"ListItem","position":2,"name":"Resources","item":"https://veruminc.com/resources/"},
+    {"@type":"ListItem","position":3,"name":"Data Quality for AI SDR Agents"}
+  ]}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Data Quality for AI SDR Agents: Why Your AI SDR Is Sending Garbage","description":"AI SDR agents amplify data quality problems. Bad emails, wrong names, dead phones, and stale company data turn AI outbound into a deliverability and brand disaster.","author":{"@type":"Organization","@id":"https://veruminc.com/#organization"},"publisher":{"@id":"https://veruminc.com/#organization"},"datePublished":"2026-04-09","dateModified":"2026-04-09","mainEntityOfPage":{"@type":"WebPage","@id":"https://veruminc.com/resources/data-quality-for-ai-sdr-agents.html"}}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why does data quality matter more for AI SDR agents than human reps?","acceptedAnswer":{"@type":"Answer","text":"Human reps catch obvious data errors before sending. They notice when a name looks wrong, when a company description doesn't match the website, when an email address has a typo. AI SDR agents don't catch these. They send confidently regardless. At scale (thousands of messages per day), bad data produces brand damage and deliverability harm at a rate human reps would never approach."}},
+    {"@type":"Question","name":"What data fields matter most for AI SDR personalization?","acceptedAnswer":{"@type":"Answer","text":"First name (correctly capitalized and free of typos), current job title, current company, recent company news or hiring signals, technology stack indicators, and email validity. Without these, AI personalization defaults to template-grade output. With them, AI SDRs can produce messages that compete with human-written outbound."}},
+    {"@type":"Question","name":"How should I prepare a list before feeding it to an AI SDR?","acceptedAnswer":{"@type":"Answer","text":"Run email validation and remove invalid addresses. Standardize first names (normalize capitalization, fix obvious typos, handle preferred names). Verify current employer (job changes break personalization). Confirm current title (promotions matter). Validate that company URLs are current (acquisitions and rebrands break references). Add enrichment fields the AI can use for personalization (recent hires, recent funding, tech stack). Skip everything below a quality threshold rather than including it in the send."}},
+    {"@type":"Question","name":"What happens if an AI SDR sends to bad data?","acceptedAnswer":{"@type":"Answer","text":"At low volume, bad emails bounce and get filtered. At high volume (which is the whole point of AI SDRs), bounces compound and damage your domain reputation. Spam complaints rise when messages reach the wrong people or contain wrong personalization. Brand damage compounds when prospects share screenshots of terrible AI outreach. The cost of bad data scales with the speed of AI sending, and the damage is harder to reverse than with human-rep mistakes."}},
+    {"@type":"Question","name":"How often should I refresh AI SDR data?","acceptedAnswer":{"@type":"Answer","text":"Continuously. AI SDRs work best with data that's verified within the last 30-60 days. Job changes, company changes, and email deliverability shifts happen constantly. A list that was clean 90 days ago is no longer clean. Build refresh into the workflow rather than treating it as a one-time setup task."}}
+  ]}
+  </script>
+
+  <style>
+    .blog-meta { font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-xl); }
+    .blog-content h2 { margin-top: var(--space-2xl); }
+    .blog-content h3 { margin-top: var(--space-xl); }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Resources</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">AI Data Quality</p>
+      <h1 class="page-hero__title">Data Quality for AI SDR Agents: Why Your AI SDR Is Sending Garbage</h1>
+      <p class="page-hero__subtitle">AI SDR tools amplify whatever you feed them. Feed them clean data and they multiply your reach. Feed them dirty data and they multiply your damage.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+      <div class="blog-meta">2026-04-09 &middot; 10 min read</div>
+
+      <div class="blog-content">
+        <p>Every AI SDR vendor pitch leads with the same promise: replace your SDR team, send 10x the volume, automate personalization. The pitch is real. The volume is real. The personalization can be real. What every vendor leaves out is the prerequisite that makes any of it work: the data feeding the AI has to be clean.</p>
+
+        <p>AI SDR tools don't have judgment. A human SDR notices when "Dr Bobby Smith MD" looks wrong and pauses to verify. An AI SDR sends "Hi Dr Bobby Smith MD, I noticed Acme Corp Inc Inc..." with full confidence. At a thousand messages per day, the damage compounds before anyone notices.</p>
+
+        <h2>How AI SDRs Amplify Data Quality Problems</h2>
+
+        <h3>Wrong Names Become Wrong Personalization</h3>
+
+        <p>The AI uses whatever first name field it finds. If your data has "BOB" in all caps, the AI says "Hi BOB." If the field has a placeholder like "Unknown" or "Test," the AI tries to personalize anyway and produces something like "Hi Unknown, I noticed your work at..."</p>
+
+        <p>Human reps catch this. AI SDRs don't.</p>
+
+        <h3>Wrong Companies Become Wrong References</h3>
+
+        <p>The AI looks up the prospect's company to generate personalization. If your data has the wrong company (because the prospect changed jobs and you didn't update), the AI references the wrong company. The recipient gets a message about a job they don't have at a company they don't work for. They mark it as spam. They share the screenshot. Your brand takes the hit.</p>
+
+        <h3>Bad Emails Multiply Bounces</h3>
+
+        <p>Human SDRs send hundreds of emails per week. AI SDRs send thousands per day. At human volumes, a 5% bounce rate is annoying. At AI volumes, a 5% bounce rate destroys domain reputation in days. Once your sending domain is damaged, every legitimate email from your team lands in spam.</p>
+
+        <h3>Stale Company Data Becomes Stale Personalization</h3>
+
+        <p>The AI references "your recent funding round" when the funding round is two years old. It mentions "your new product launch" when the product was sunsetted. It congratulates a hire who left six months ago. Each of these is a credibility-destroying error that human reps would catch.</p>
+
+        <h3>Title Drift Becomes Wrong Buyer Targeting</h3>
+
+        <p>Your data shows "Marketing Coordinator." The actual title is now "VP Marketing." The AI sends a message designed for an entry-level marketer to a VP. The VP archives it without reading. Six months later, when you have something the VP would actually buy, your domain is already in their spam filter from previous mistakes.</p>
+
+        <h2>What Clean Data for AI SDRs Looks Like</h2>
+
+        <p>A list that's ready for AI SDR sending has, at minimum:</p>
+
+        <ul>
+          <li><strong>First name</strong> normalized: correctly capitalized, no all-caps, no all-lowercase, no placeholders, preferred names where applicable (Bob vs Robert vs Bobby)</li>
+          <li><strong>Last name</strong> validated: real last name, not "Test" or "Unknown"</li>
+          <li><strong>Email</strong> validated: deliverable, not role-based, not catch-all, not disposable</li>
+          <li><strong>Job title</strong> verified within the last 60 days against the prospect's current employer</li>
+          <li><strong>Company name</strong> matching the prospect's current employer</li>
+          <li><strong>Company URL</strong> resolving to a live website</li>
+          <li><strong>Company size</strong> within the last quarter</li>
+          <li><strong>Recent activity signals</strong> validated against current sources (recent funding, hires, news, tech stack changes)</li>
+        </ul>
+
+        <p>Anything missing or stale should be removed from the AI sending list, not patched over with a confident hallucination.</p>
+
+        <h2>The Pre-AI-SDR Data Pipeline</h2>
+
+        <p>The right architecture has data quality steps between your data source and your AI SDR tool:</p>
+
+        <ol>
+          <li><strong>Source</strong>: pull leads from your data provider, CRM, or list-builder</li>
+          <li><strong>Job change verification</strong>: confirm each prospect is still at the listed company in the listed role</li>
+          <li><strong>Email validation</strong>: verify deliverability, exclude role-based and catch-all addresses</li>
+          <li><strong>Name normalization</strong>: clean up casing, handle preferred names, exclude placeholders</li>
+          <li><strong>Company verification</strong>: confirm company name matches current employer, URL resolves, size data is current</li>
+          <li><strong>Signal enrichment</strong>: add recent activity signals from current sources</li>
+          <li><strong>Quality threshold</strong>: drop any record that doesn't meet a minimum data quality bar</li>
+          <li><strong>Send</strong>: feed the cleaned, verified, enriched list to the AI SDR tool</li>
+        </ol>
+
+        <p>Most AI SDR setups skip steps 2 through 7. They go directly from source to send. That's why most AI SDR programs fail to produce results that justify the investment.</p>
+
+        <h2>The Job Change Problem</h2>
+
+        <p>Job changes are the single biggest threat to AI SDR personalization. According to public LinkedIn data, more than 20% of professionals change jobs each year. For a list pulled six months ago, that means 10% of the records have stale employment data. For a list pulled a year ago, 20%.</p>
+
+        <p>The fix is continuous job change monitoring. As prospects change jobs, your list updates automatically. The AI SDR sends to the current employer with current title, not stale data from when the list was first built.</p>
+
+        <p>Job change verification is one of the highest-leverage data quality investments for any AI SDR program. It's also one of the most commonly skipped steps.</p>
+
+        <h2>The Email Validation Cliff</h2>
+
+        <p>Most data providers offer "verified" emails. The verification quality varies enormously. Some providers do basic syntax checks. Some run real SMTP verification. Some test deliverability with sender reputation built in. Treating all "verified" emails as equally clean is a mistake.</p>
+
+        <p>For AI SDR sending, validate emails through multiple layers:</p>
+
+        <ul>
+          <li>Syntax check (basic formatting)</li>
+          <li>Domain validation (does the domain exist and accept mail)</li>
+          <li>SMTP verification (does the specific mailbox exist)</li>
+          <li>Catch-all detection (does the domain accept everything, making verification meaningless)</li>
+          <li>Role-based filter (info@, sales@, support@ rarely produce reply rates worth the deliverability cost)</li>
+          <li>Disposable email filter (mailinator and similar)</li>
+          <li>Engagement scoring (has this email shown signs of life recently)</li>
+        </ul>
+
+        <p>A clean list for AI SDR sending should have valid, individual, deliverable mailboxes with engagement signals. Anything below that bar gets dropped.</p>
+
+        <h2>What Happens When You Get This Right</h2>
+
+        <p>Properly prepared data turns AI SDR programs from a deliverability disaster into a real channel. Reply rates approach human-rep levels. Bounce rates stay low enough to preserve domain reputation. Personalization references stay accurate. Brand damage stays minimal.</p>
+
+        <p>The companies winning with AI SDRs aren't the ones with the best AI tooling. They're the ones with the cleanest data going into the tooling. The AI is the same. The data is the difference.</p>
+
+        <p>If your AI SDR program is producing more bounces than meetings, the AI isn't broken. The data is. We clean and verify lists for AI outbound programs every month. The cleanup pays for itself in deliverability and reply rate improvements within the first sending cycle.</p>
+      </div>
+
+      <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">
+        <a href="/#contact" class="btn btn--primary btn--lg">Clean My AI SDR Data</a>
+      </div>
+
+      <p class="text-muted" style="font-size: 0.875rem;">Related: <a href="/resources/email-deliverability-data-quality.html">Email Deliverability Data Quality</a> | <a href="/resources/data-enrichment-outbound-sales.html">Data Enrichment for Outbound Sales</a> | <a href="/resources/how-to-fix-high-email-bounce-rate.html">How to Fix High Email Bounce Rate</a> | <a href="/resources/data-quality-ai-ml.html">Data Quality for AI/ML</a></p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

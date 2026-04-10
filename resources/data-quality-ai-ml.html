@@ -99,7 +99,7 @@
         "name": "Why does data quality matter more for AI/ML than traditional analytics?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ML models learn patterns from training data—if that data contains errors, biases, or inconsistencies, the model learns those flaws. Traditional analytics might produce wrong insights from bad data, but ML multiplies the problem: models trained on poor data make systematically wrong predictions at scale, and those errors are often invisible until they cause real damage. The phrase 'garbage in, garbage out' applies exponentially to machine learning."
+          "text": "ML models learn patterns from training data, if that data contains errors, biases, or inconsistencies, the model learns those flaws. Traditional analytics might produce wrong insights from bad data, but ML multiplies the problem: models trained on poor data make systematically wrong predictions at scale, and those errors are often invisible until they cause real damage. The phrase 'garbage in, garbage out' applies exponentially to machine learning."
         }
       },
       {
@@ -107,7 +107,7 @@
         "name": "How do I detect bias in training data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Analyze representation across sensitive categories (demographics, geography, etc.) compared to the population you're making predictions about. Check for label consistency across groups—are similar cases labeled differently based on protected characteristics? Use statistical tests to identify features that correlate with protected attributes. Audit edge cases and failure modes by group. Many organizations use automated fairness tools (Aequitas, IBM AI Fairness 360) to systematically detect bias."
+          "text": "Analyze representation across sensitive categories (demographics, geography, etc.) compared to the population you're making predictions about. Check for label consistency across groups, are similar cases labeled differently based on protected characteristics? Use statistical tests to identify features that correlate with protected attributes. Audit edge cases and failure modes by group. Many organizations use automated fairness tools (Aequitas, IBM AI Fairness 360) to systematically detect bias."
         }
       },
       {
@@ -123,7 +123,7 @@
         "name": "How often should I refresh training data for production models?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It depends on how quickly your domain changes. Models predicting customer behavior may need monthly updates as preferences shift. Fraud detection models often need continuous retraining as fraud patterns evolve. Document classification models might be stable for years. Monitor model performance on recent data—when accuracy drops below thresholds, it's time to retrain. Build automated pipelines that can detect drift and trigger retraining workflows."
+          "text": "It depends on how quickly your domain changes. Models predicting customer behavior may need monthly updates as preferences shift. Fraud detection models often need continuous retraining as fraud patterns evolve. Document classification models might be stable for years. Monitor model performance on recent data, when accuracy drops below thresholds, it's time to retrain. Build automated pipelines that can detect drift and trigger retraining workflows."
         }
       }
     ]
@@ -333,9 +333,9 @@
       </header>
 
       <div class="article-content">
-        <p>Machine learning models are only as good as the data they're trained on. This isn't a cliché—it's the fundamental challenge of ML. You can use the most sophisticated algorithms available, but if your training data is incomplete, inconsistent, or biased, your model will learn those flaws and reproduce them at scale.</p>
+        <p>Machine learning models are only as good as the data they're trained on. This isn't a cliché, it's the fundamental challenge of ML. You can use the most sophisticated algorithms available, but if your training data is incomplete, inconsistent, or biased, your model will learn those flaws and reproduce them at scale.</p>
 
-        <p>The industry talks a lot about model architecture and training techniques. It talks less about the unglamorous work of data quality—the cleaning, validation, labeling, and maintenance that determines whether models actually work in production.</p>
+        <p>The industry talks a lot about model architecture and training techniques. It talks less about the unglamorous work of data quality, the cleaning, validation, labeling, and maintenance that determines whether models actually work in production.</p>
 
         <p>This guide covers data quality practices for AI and ML projects. It's written for data teams, ML engineers, and operations professionals who need to prepare and maintain training data that produces reliable models.</p>
 
@@ -347,21 +347,21 @@
 
         <p>In traditional analytics, bad data produces wrong reports. Someone might notice the numbers don't make sense and investigate. In ML, the model learns from your mistakes and encodes them into predictions that look authoritative.</p>
 
-        <p>If your training data has systematic labeling errors—like mislabeling 10% of fraud cases as legitimate—the model learns that pattern. It will confidently predict fraud as legitimate in production, and the error compounds with every prediction.</p>
+        <p>If your training data has systematic labeling errors, like mislabeling 10% of fraud cases as legitimate, the model learns that pattern. It will confidently predict fraud as legitimate in production, and the error compounds with every prediction.</p>
 
         <h3>Edge Cases Matter More</h3>
 
-        <p>Traditional analytics often focuses on typical cases—averages, trends, common scenarios. ML models need to handle edge cases correctly, which means your training data needs to represent them.</p>
+        <p>Traditional analytics often focuses on typical cases, averages, trends, common scenarios. ML models need to handle edge cases correctly, which means your training data needs to represent them.</p>
 
         <p>A model trained mostly on common scenarios may fail catastrophically on rare but important cases. The long tail of your data distribution is often where model failures cause the most damage.</p>
 
         <h3>Bias Amplification</h3>
 
-        <p>If your historical data reflects past biases—in hiring, lending, medical treatment, or any other domain—your model will learn and potentially amplify those biases. Unlike a human decision-maker who might recognize and correct bias, a model implements it systematically.</p>
+        <p>If your historical data reflects past biases, in hiring, lending, medical treatment, or any other domain, your model will learn and potentially amplify those biases. Unlike a human decision-maker who might recognize and correct bias, a model implements it systematically.</p>
 
         <h3>Feature Quality Propagates</h3>
 
-        <p>ML models use many features (input variables) to make predictions. Poor quality in any feature can degrade model performance. And features often interact—one bad feature can corrupt the signal from other good features.</p>
+        <p>ML models use many features (input variables) to make predictions. Poor quality in any feature can degrade model performance. And features often interact, one bad feature can corrupt the signal from other good features.</p>
 
         <h2>Data Quality Dimensions for ML</h2>
 
@@ -791,13 +791,13 @@ profile.generate_report()
           <li><strong>Resampling:</strong> Oversample underrepresented groups, undersample overrepresented</li>
           <li><strong>Data augmentation:</strong> Generate synthetic examples for underrepresented scenarios</li>
           <li><strong>Label correction:</strong> Adjust labels that reflect historical bias</li>
-          <li><strong>Feature removal:</strong> Remove proxy variables (with care—may reduce accuracy)</li>
+          <li><strong>Feature removal:</strong> Remove proxy variables (with care, may reduce accuracy)</li>
           <li><strong>Collection improvement:</strong> Gather more data from underrepresented groups</li>
         </ul>
 
         <h2>Data Quality Monitoring</h2>
 
-        <p>ML data quality isn't a one-time effort—it requires ongoing monitoring:</p>
+        <p>ML data quality isn't a one-time effort, it requires ongoing monitoring:</p>
 
         <h3>Training Data Monitoring</h3>
 
@@ -920,7 +920,7 @@ alerts:
         <h3>Bias Detection</h3>
         <ul>
           <li><strong>Aequitas:</strong> Fairness audit toolkit</li>
-          <li><strong>IBM AI Fairness 360:</strong> Comprehensive fairness library</li>
+          <li><strong>IBM AI Fairness 360:</strong> Complete fairness library</li>
           <li><strong>Google What-If Tool:</strong> Model fairness exploration</li>
           <li><strong>Fairlearn:</strong> Microsoft fairness toolkit</li>
         </ul>
@@ -978,12 +978,12 @@ alerts:
 
           <div class="faq-item">
             <h3>Why does data quality matter more for AI/ML than traditional analytics?</h3>
-            <p>ML models learn patterns from training data—if that data contains errors, biases, or inconsistencies, the model learns those flaws. Traditional analytics might produce wrong insights from bad data, but ML multiplies the problem: models trained on poor data make systematically wrong predictions at scale, and those errors are often invisible until they cause real damage. The phrase 'garbage in, garbage out' applies exponentially to machine learning.</p>
+            <p>ML models learn patterns from training data, if that data contains errors, biases, or inconsistencies, the model learns those flaws. Traditional analytics might produce wrong insights from bad data, but ML multiplies the problem: models trained on poor data make systematically wrong predictions at scale, and those errors are often invisible until they cause real damage. The phrase 'garbage in, garbage out' applies exponentially to machine learning.</p>
           </div>
 
           <div class="faq-item">
             <h3>How do I detect bias in training data?</h3>
-            <p>Analyze representation across sensitive categories (demographics, geography, etc.) compared to the population you're making predictions about. Check for label consistency across groups—are similar cases labeled differently based on protected characteristics? Use statistical tests to identify features that correlate with protected attributes. Audit edge cases and failure modes by group. Many organizations use automated fairness tools (Aequitas, IBM AI Fairness 360) to systematically detect bias.</p>
+            <p>Analyze representation across sensitive categories (demographics, geography, etc.) compared to the population you're making predictions about. Check for label consistency across groups, are similar cases labeled differently based on protected characteristics? Use statistical tests to identify features that correlate with protected attributes. Audit edge cases and failure modes by group. Many organizations use automated fairness tools (Aequitas, IBM AI Fairness 360) to systematically detect bias.</p>
           </div>
 
           <div class="faq-item">
@@ -993,7 +993,7 @@ alerts:
 
           <div class="faq-item">
             <h3>How often should I refresh training data for production models?</h3>
-            <p>It depends on how quickly your domain changes. Models predicting customer behavior may need monthly updates as preferences shift. Fraud detection models often need continuous retraining as fraud patterns evolve. Document classification models might be stable for years. Monitor model performance on recent data—when accuracy drops below thresholds, it's time to retrain. Build automated pipelines that can detect drift and trigger retraining workflows.</p>
+            <p>It depends on how quickly your domain changes. Models predicting customer behavior may need monthly updates as preferences shift. Fraud detection models often need continuous retraining as fraud patterns evolve. Document classification models might be stable for years. Monitor model performance on recent data, when accuracy drops below thresholds, it's time to retrain. Build automated pipelines that can detect drift and trigger retraining workflows.</p>
           </div>
         </section>
 

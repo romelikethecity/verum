@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipedrive Data Cleaning: How to Fix Pipedrive CRM Data Without Losing History | Verum</title>
+  <meta name="description" content="Pipedrive data cleaning guide. How to dedupe persons, organizations, and deals, fix custom field drift, and standardize data without losing pipeline history.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/pipedrive-data-cleaning.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/pipedrive-data-cleaning.html">
+  <meta property="og:title" content="Pipedrive Data Cleaning: How to Fix Pipedrive CRM Data Without Losing History">
+  <meta property="og:description" content="Pipedrive data cleaning guide. How to dedupe persons, organizations, and deals, fix custom field drift, and standardize data without losing pipeline history.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pipedrive Data Cleaning">
+  <meta name="twitter:description" content="Pipedrive data cleaning guide. How to dedupe persons, organizations, and deals, fix custom field drift, and standardize data without losing pipeline history.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R416JZ91B1');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://veruminc.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://veruminc.com/resources/"},
+      {"@type": "ListItem", "position": 3, "name": "Pipedrive Data Cleaning"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Pipedrive Data Cleaning: How to Fix Pipedrive CRM Data Without Losing History",
+    "description": "Pipedrive data cleaning guide. How to dedupe persons, organizations, and deals, fix custom field drift, and standardize data without losing pipeline history.",
+    "author": {"@type": "Organization", "@id": "https://veruminc.com/#organization"},
+    "publisher": {"@id": "https://veruminc.com/#organization"},
+    "datePublished": "2026-04-09",
+    "dateModified": "2026-04-09",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://veruminc.com/resources/pipedrive-data-cleaning.html"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "How do I deduplicate Pipedrive contacts and organizations?", "acceptedAnswer": {"@type": "Answer", "text": "Pipedrive has a built-in merge tool for persons and organizations under Settings > Data > Merge Duplicates. It matches on name, email, and phone. The native tool catches obvious duplicates but misses fuzzy matches (Bob Smith vs Robert Smith) and cross-field matches (same phone, different name). For complete deduplication, export, run a fuzzy match algorithm or use a third-party tool, then re-import with merge logic that preserves the older record's history."}},
+      {"@type": "Question", "name": "How do I clean up Pipedrive custom fields?", "acceptedAnswer": {"@type": "Answer", "text": "Audit custom fields quarterly: identify which fields are populated on less than 20% of records, which fields have inconsistent value formats, and which fields are duplicates of other fields with slightly different names. Document the canonical field for each data point. Use Pipedrive's bulk edit to standardize values. Delete or hide custom fields that aren't being used. Custom field drift is the silent killer of Pipedrive data quality."}},
+      {"@type": "Question", "name": "Will cleaning Pipedrive data lose my pipeline history?", "acceptedAnswer": {"@type": "Answer", "text": "Not if you do it right. Pipedrive merges preserve the history of both records when you merge them. Deal stage history, activity logs, notes, and emails are retained on the surviving record. The risk is when teams export, clean externally, and re-import without preserving Pipedrive IDs. Always keep IDs on round-trip exports. Always test merges on a sandbox or small batch first."}},
+      {"@type": "Question", "name": "How often should I clean Pipedrive data?", "acceptedAnswer": {"@type": "Answer", "text": "Run a deduplication pass quarterly. Audit custom fields quarterly. Run a pipeline hygiene check (stale deals, missing fields, zombie deals) monthly. Validate email addresses on a rolling basis as new records enter. Major cleanups should happen before any significant CRM project: forecasting model rebuild, marketing campaign launch, sales territory realignment, or migration to a new tool."}},
+      {"@type": "Question", "name": "Can I clean Pipedrive data myself or do I need a service?", "acceptedAnswer": {"@type": "Answer", "text": "For small Pipedrive instances (under 5,000 records) with simple custom field structures, you can do most of the work yourself using built-in tools and CSV exports. For larger instances, complex custom field architectures, or when data quality affects forecasting accuracy and revenue, an experienced data cleaning service is faster and produces better results than a DIY effort. The break-even point is usually around 10,000 records or 50+ custom fields."}}
+    ]
+  }
+  </script>
+
+  <style>
+    .blog-meta { font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-xl); }
+    .blog-content h2 { margin-top: var(--space-2xl); }
+    .blog-content h3 { margin-top: var(--space-xl); }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Resources</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">Pipedrive</p>
+      <h1 class="page-hero__title">Pipedrive Data Cleaning: Fix Pipedrive CRM Data Without Losing History</h1>
+      <p class="page-hero__subtitle">Pipedrive starts simple and grows complicated. Here's how to clean it up without breaking what already works.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+      <div class="blog-meta">2026-04-09 &middot; 9 min read</div>
+
+      <div class="blog-content">
+        <p>Pipedrive's strength is also its weakness. The product is famously easy to set up. Anyone can add custom fields, create new pipelines, and configure activities without an admin. Two years in, that flexibility produces a CRM where the same data point lives in three different fields, half the records are missing email addresses, and the duplicate count is in the thousands.</p>
+
+        <p>Most Pipedrive cleanup advice tells you to use the built-in merge tool and call it done. That's necessary but not sufficient. Real Pipedrive cleanup requires a deeper audit of how the system has drifted from its original architecture and a structured plan to restore data quality without losing pipeline history.</p>
+
+        <h2>The Three Layers of Pipedrive Data Drift</h2>
+
+        <h3>Record-Level Drift</h3>
+        <p>Duplicate persons, duplicate organizations, duplicate deals. The same human exists three times because three reps imported them from three different sources. The same company exists with five name variations (Acme Corp, Acme Corporation, Acme, Acme Inc., ACME). Email addresses are missing or wrong. Phone numbers are formatted inconsistently.</p>
+
+        <h3>Field-Level Drift</h3>
+        <p>Custom fields multiply. The original "Industry" field gets joined by "Vertical," "Sector," "Business Type," and "Industry Category" because successive admins didn't realize the field already existed. Picklist values drift: "SaaS," "Software," and "Software-as-a-Service" all mean the same thing but live in different rows. Required fields stop being enforced because reps complained about friction.</p>
+
+        <h3>Process-Level Drift</h3>
+        <p>Pipelines proliferate. The original Sales pipeline is joined by Renewals, Expansion, Partner, and three more. Stages within each pipeline have inconsistent definitions. Activity types stop matching what reps actually do. Deal lost reasons become a free-text field instead of a standardized picklist.</p>
+
+        <p>All three layers compound. Cleaning records without fixing fields and processes is a temporary win. Within a quarter, the same drift is back.</p>
+
+        <h2>Step 1: Deduplicate Persons and Organizations</h2>
+
+        <p>Pipedrive's built-in merge tool (Settings > Data > Merge Duplicates) catches name and email matches. It misses:</p>
+
+        <ul>
+          <li>Fuzzy name matches: Bob Smith vs Robert Smith vs Bobby Smith</li>
+          <li>Email variations: bob@acme.com vs bob.smith@acme.com vs bsmith@acmecorp.com</li>
+          <li>Cross-field matches: same phone number, different name spelling</li>
+          <li>Organization name variants: Acme Corp vs Acme Corporation vs Acme Inc</li>
+          <li>Same person at same company with different titles</li>
+        </ul>
+
+        <p>For complete deduplication, export persons and organizations to CSV, run fuzzy matching with a tool that handles name normalization, and re-import with merge logic that preserves the older record's IDs. Always keep IDs intact through the export-clean-import cycle. Losing IDs means losing pipeline history attached to those records.</p>
+
+        <h2>Step 2: Audit and Consolidate Custom Fields</h2>
+
+        <p>Pull a list of all custom fields. For each field, check:</p>
+
+        <ul>
+          <li>What percentage of records have a value populated</li>
+          <li>How many distinct values exist (high counts often indicate free-text drift in what should be a picklist)</li>
+          <li>Whether another field captures the same data point</li>
+          <li>Whether the field is referenced in any reports, automations, or integrations</li>
+        </ul>
+
+        <p>Fields with low population and no downstream dependency get deleted. Duplicate fields get consolidated by picking a canonical and bulk-updating values from the duplicates before deleting them. Picklist drift gets fixed by standardizing values.</p>
+
+        <p>Pipedrive's bulk edit handles most of this. For larger instances, exporting, cleaning in a spreadsheet or script, and re-importing is faster than clicking through bulk edit screens.</p>
+
+        <h2>Step 3: Standardize Pipeline Stages and Lost Reasons</h2>
+
+        <p>Document every active pipeline and its stages. Compare stage definitions across pipelines: are "Discovery" and "Qualify" used consistently? Do reps know what each stage means? If the answer is unclear, the data feeding your forecast is unreliable.</p>
+
+        <p>Lost reasons are usually a mess. Free-text lost reasons produce hundreds of unique values that can't be analyzed. Convert lost reasons to a standardized picklist with 8-12 categories. Bulk-update historical lost deals to match the new picklist using rules-based mapping (or LLM classification for complex free-text reasons).</p>
+
+        <h2>Step 4: Pipeline Hygiene Audit</h2>
+
+        <p>Run these queries:</p>
+
+        <ul>
+          <li>Open deals with no activity in 30+ days</li>
+          <li>Open deals with close dates in the past</li>
+          <li>Deals in early stages older than 90 days</li>
+          <li>Deals with $0 amounts in stages past Discovery</li>
+          <li>Deals not associated with any person or organization</li>
+        </ul>
+
+        <p>Each of these is a data quality smell. Open deals with no activity become zombie deals that inflate pipeline coverage. Past close dates without status updates break velocity reporting. Empty amounts make forecasting meaningless.</p>
+
+        <p>For each problem deal, the resolution is one of: update the stage and close date, mark the deal closed-lost with a documented reason, or delete if it was never a real opportunity. This isn't a one-time exercise. Build it into a monthly RevOps cadence.</p>
+
+        <h2>Step 5: Email and Phone Validation</h2>
+
+        <p>Pipedrive doesn't validate email addresses on entry. Bad emails accumulate. Bounced emails kill deliverability and damage your domain reputation. Run email validation across your person records, separate by status (valid, invalid, role-based, catch-all, disposable), and update or remove records with invalid addresses.</p>
+
+        <p>Phone numbers benefit from format standardization. Pick a format (E.164 is the cleanest), bulk-convert existing numbers, and consider phone validation if outbound calling is part of your motion.</p>
+
+        <h2>Step 6: Activity Type Cleanup</h2>
+
+        <p>Pipedrive's activity types proliferate the same way custom fields do. Audit the list, consolidate duplicates, and remove activity types that aren't being used. Reps are more consistent when there are 6 activity types than when there are 26.</p>
+
+        <h2>Common Pipedrive Cleanup Mistakes</h2>
+
+        <h3>Mistake 1: Cleaning Without Backing Up</h3>
+        <p>Always export a full backup before any major cleanup operation. Pipedrive doesn't have native version control. Once you delete records or merge duplicates, you can't undo. A simple full export of persons, organizations, deals, and activities saves you from a recoverable disaster.</p>
+
+        <h3>Mistake 2: Deleting Instead of Marking Lost</h3>
+        <p>Reps and admins sometimes delete old or low-quality deals to clean up the pipeline view. This destroys win-rate calculations, conversion funnel data, and historical context. The right move is to mark deals closed-lost with a reason. Lost deals stay in reports without polluting the open pipeline view.</p>
+
+        <h3>Mistake 3: Cleaning Without Process Changes</h3>
+        <p>If the data quality problems came from process gaps (no required fields, no validation, no admin governance), cleaning the data without fixing the process means the same problems return within a quarter. Fix process before fixing data, or fix both at the same time.</p>
+
+        <h3>Mistake 4: Treating Pipedrive Like Salesforce</h3>
+        <p>Pipedrive's strengths are simplicity and speed. Adding Salesforce-style governance (50 custom fields, 12 required fields per object, complex validation rules) breaks what makes Pipedrive useful. Cleanup should aim for simplified, not heavyweight.</p>
+
+        <h2>What Good Pipedrive Data Looks Like</h2>
+
+        <p>After cleanup, a healthy Pipedrive instance has:</p>
+
+        <ul>
+          <li>Person and organization duplicates under 1%</li>
+          <li>Custom field count rationalized (no duplicates, all fields used)</li>
+          <li>Picklist values standardized with no free-text drift</li>
+          <li>Pipeline stages defined consistently across pipelines</li>
+          <li>Lost reasons captured as a structured picklist</li>
+          <li>Email validation status known on every person record</li>
+          <li>Phone numbers formatted consistently</li>
+          <li>Open deals with current stages and accurate close dates</li>
+          <li>No zombie deals older than 90 days without activity</li>
+        </ul>
+
+        <p>If your Pipedrive instance is far from this state and you don't have time to clean it yourself, we run cleanup projects on Pipedrive instances every month. We dedupe, normalize, validate, and document the canonical schema so your team can maintain quality after we're done.</p>
+      </div>
+
+      <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">
+        <a href="/#contact" class="btn btn--primary btn--lg">Clean My Pipedrive Data</a>
+      </div>
+
+      <p class="text-muted" style="font-size: 0.875rem;">Related: <a href="/resources/how-to-clean-hubspot-data-without-breaking-workflows.html">How to Clean HubSpot Data</a> | <a href="/resources/how-to-clean-salesforce-data.html">How to Clean Salesforce Data</a> | <a href="/resources/crm-data-quality-checklist.html">CRM Data Quality Checklist</a> | <a href="/resources/data-quality-for-revenue-forecasting.html">Data Quality for Revenue Forecasting</a></p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

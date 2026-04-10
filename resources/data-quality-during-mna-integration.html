@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Quality During M&A Integration: How to Merge CRMs Without Losing Pipeline | Verum</title>
+  <meta name="description" content="M&A integrations break CRM data quality in predictable ways. Here's how to merge two CRMs, harmonize accounts, dedupe contacts, and protect pipeline reporting through the integration freeze.">
+
+  <link rel="canonical" href="https://veruminc.com/resources/data-quality-during-mna-integration.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#00b894">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=6">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://veruminc.com/resources/data-quality-during-mna-integration.html">
+  <meta property="og:title" content="Data Quality During M&A Integration: How to Merge CRMs Without Losing Pipeline">
+  <meta property="og:description" content="M&A integrations break CRM data quality in predictable ways. Here's how to merge two CRMs without losing pipeline.">
+  <meta property="og:site_name" content="Verum">
+  <meta property="og:image" content="https://veruminc.com/assets/social/og-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Data Quality During M&A Integration">
+  <meta name="twitter:description" content="M&A integrations break CRM data quality in predictable ways. Here's how to merge two CRMs without losing pipeline.">
+  <meta name="twitter:image" content="https://veruminc.com/assets/social/twitter-card.png">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R416JZ91B1"></script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-R416JZ91B1');</script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://veruminc.com/"},
+    {"@type":"ListItem","position":2,"name":"Resources","item":"https://veruminc.com/resources/"},
+    {"@type":"ListItem","position":3,"name":"Data Quality During M&A Integration"}
+  ]}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Data Quality During M&A Integration: How to Merge CRMs Without Losing Pipeline","description":"M&A integrations break CRM data quality in predictable ways. Here's how to merge two CRMs, harmonize accounts, dedupe contacts, and protect pipeline reporting through the integration freeze.","author":{"@type":"Organization","@id":"https://veruminc.com/#organization"},"publisher":{"@id":"https://veruminc.com/#organization"},"datePublished":"2026-04-09","dateModified":"2026-04-09","mainEntityOfPage":{"@type":"WebPage","@id":"https://veruminc.com/resources/data-quality-during-mna-integration.html"}}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the biggest data quality risk in M&A integration?","acceptedAnswer":{"@type":"Answer","text":"Account overlap. Both companies have customers that are the same legal entity, but the records have different names, different account IDs, and different account hierarchies. If you merge the CRMs without resolving the overlap, you end up with duplicate accounts, broken pipeline rollups, and inaccurate revenue reporting for the combined entity. Account harmonization should happen before any technical migration."}},
+    {"@type":"Question","name":"Should we merge CRMs immediately after a deal closes?","acceptedAnswer":{"@type":"Answer","text":"No. The right sequence is: data audit during diligence, account harmonization in the first 30-60 days post-close, schema mapping in months 2-3, technical migration in months 3-6. Rushing the technical merge before the data is harmonized produces a combined CRM that's worse than either source CRM. Plan for 6-12 months of integration work for a typical mid-market combination."}},
+    {"@type":"Question","name":"How do we preserve pipeline reporting through an integration freeze?","acceptedAnswer":{"@type":"Answer","text":"Maintain both CRMs in parallel during the integration period. Build a unified reporting layer (data warehouse, BI dashboard) that combines data from both source systems while the merge happens. The reporting layer becomes the single source of truth for revenue while the CRMs are being reconciled. Don't try to do live forecasting on a CRM that's actively being merged."}},
+    {"@type":"Question","name":"What about contact duplicates between two CRMs?","acceptedAnswer":{"@type":"Answer","text":"Contact deduplication is the second-largest data quality challenge after account harmonization. Same humans exist in both systems with different email addresses, different titles (if they changed roles), and different account associations. Run cross-system fuzzy matching with multiple match keys (email, name + company, phone), generate a merge plan, and review high-confidence matches before executing. Manual review on edge cases is faster than fixing bad merges later."}},
+    {"@type":"Question","name":"How do we handle different CRM platforms in an M&A?","acceptedAnswer":{"@type":"Answer","text":"You have three options: migrate everyone to one platform (the surviving CRM), keep both platforms with a data warehouse layer for reporting, or rebuild both into a third platform. The right choice depends on size, complexity, and process compatibility. Salesforce-to-Salesforce merges are simpler than cross-platform migrations. HubSpot-to-Salesforce or Salesforce-to-HubSpot migrations require schema redesign, not just record transfer."}}
+  ]}
+  </script>
+
+  <style>
+    .blog-meta { font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: var(--space-xl); }
+    .blog-content h2 { margin-top: var(--space-2xl); }
+    .blog-content h3 { margin-top: var(--space-xl); }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <noscript>
+    <nav style="background:#1a1a2e;padding:1rem;text-align:center;">
+      <a href="/" style="color:#fff;margin:0 1rem;">Home</a>
+      <a href="/services/" style="color:#fff;margin:0 1rem;">Services</a>
+      <a href="/resources/" style="color:#fff;margin:0 1rem;">Resources</a>
+      <a href="/contact.html" style="color:#fff;margin:0 1rem;">Contact</a>
+    </nav>
+  </noscript>
+
+  <section class="page-hero">
+    <div class="container">
+      <p style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-teal); margin-bottom: var(--space-md);">M&A Integration</p>
+      <h1 class="page-hero__title">Data Quality During M&A Integration: How to Merge CRMs Without Losing Pipeline</h1>
+      <p class="page-hero__subtitle">Most M&A integrations break revenue reporting for 6-12 months. The cause is almost always rushed CRM merges done before the data was harmonized.</p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container" style="max-width: 700px;">
+      <div class="blog-meta">2026-04-09 &middot; 11 min read</div>
+
+      <div class="blog-content">
+        <p>The deal closes on a Friday. The press release goes out on Monday. By Tuesday, leadership wants combined pipeline reporting, unified forecasting, and a single source of truth for the new entity. By Wednesday, RevOps is staring at two CRMs with overlapping accounts, conflicting contact records, incompatible schemas, and active opportunities that can't be reconciled.</p>
+
+        <p>This pattern plays out in almost every mid-market and enterprise M&A. Leadership underestimates the data work. RevOps overcompensates with rushed technical migrations. The result is a combined CRM that's worse than either source system, broken reporting that takes 6-12 months to recover, and a quarter of revenue leakage from accounts that fall through the cracks.</p>
+
+        <p>The good news: this is preventable. Here's the playbook for protecting data quality through M&A integration.</p>
+
+        <h2>Start During Diligence</h2>
+
+        <p>The data quality work should start before the deal closes. During diligence, request:</p>
+
+        <ul>
+          <li>Total account count, contact count, opportunity count from each CRM</li>
+          <li>Pipeline coverage and forecast accuracy history</li>
+          <li>Custom field inventory for accounts, contacts, opportunities</li>
+          <li>Active workflow and automation list</li>
+          <li>Integration list (marketing automation, billing, support, BI)</li>
+          <li>User count and team structure</li>
+          <li>Last data quality audit date and findings</li>
+        </ul>
+
+        <p>This data tells you what you're inheriting before you own it. If the target's CRM has 30% duplicate rates, missing close dates on half the opportunities, and three years of unmaintained custom fields, you can plan for the cleanup as part of the integration scope, not discover it three months in.</p>
+
+        <h2>Phase 1: Account Harmonization (Days 1-60)</h2>
+
+        <p>Account harmonization is the most important data quality work in any M&A integration. Both companies have accounts that overlap (same legal entity in both CRMs) and accounts that don't. Resolving the overlap is what makes combined revenue reporting possible.</p>
+
+        <h3>Step 1: Cross-System Account Matching</h3>
+
+        <p>Export accounts from both CRMs with: legal name, DBA name, primary domain, billing address, employee count, industry, and account ID. Run fuzzy matching with multiple match keys (legal name, domain, billing address). Generate three buckets:</p>
+
+        <ul>
+          <li><strong>High-confidence matches</strong>: same legal entity, both records should merge</li>
+          <li><strong>Medium-confidence matches</strong>: probably the same entity but needs human review</li>
+          <li><strong>No match</strong>: account exists in only one system</li>
+        </ul>
+
+        <h3>Step 2: Resolve Account Hierarchies</h3>
+
+        <p>Both companies probably have parent-child account hierarchies. Combine them. A subsidiary that's a "parent" in one system and a "child" in another needs reconciliation. Document the canonical hierarchy for each merged account.</p>
+
+        <h3>Step 3: Map Customer-Vendor Overlaps</h3>
+
+        <p>Some target company customers may be combined company vendors (or vice versa). These records need cross-team review because the relationship dynamics matter for renewal conversations.</p>
+
+        <h2>Phase 2: Contact Deduplication (Days 30-90)</h2>
+
+        <p>After accounts are harmonized, move to contacts. Same humans exist in both systems. Sometimes with the same email, sometimes with different emails (work email vs personal, old company email vs new). Sometimes with different titles (they were promoted between the two systems' last update times).</p>
+
+        <p>Cross-system contact matching requires multiple match keys. Email is the strongest signal but not sufficient on its own. Name + company + role + phone produces better matches when emails differ.</p>
+
+        <p>Generate the contact merge plan, review high-confidence matches in batches, and execute. Always preserve activity history from both source records on the surviving record.</p>
+
+        <h2>Phase 3: Pipeline Reconciliation (Days 60-120)</h2>
+
+        <p>Open opportunities from both CRMs need to land in the combined system without duplicates and without losing forecast value. The hard cases:</p>
+
+        <ul>
+          <li>Both companies were selling to the same prospect with different products</li>
+          <li>Both companies had open opportunities at the same account</li>
+          <li>Stage definitions don't align between the two CRMs (Discovery in one is Qualify in the other)</li>
+          <li>Probability assignments and amount conventions differ</li>
+        </ul>
+
+        <p>Resolve each case with a documented merge or cohabitation rule. Don't auto-merge opportunities. The risk of losing a real deal is too high.</p>
+
+        <h2>Phase 4: Schema Mapping (Days 60-150)</h2>
+
+        <p>The combined CRM needs a unified schema. Custom fields, picklist values, record types, and process definitions all need to be reconciled. The work is detailed and tedious but it's what makes the combined system maintainable.</p>
+
+        <p>Pick a canonical field for each data point. Document the mapping from each source CRM to the canonical schema. Build the data transformation rules. Test on a small batch before running on the full dataset.</p>
+
+        <h2>Phase 5: Technical Migration (Days 120-180)</h2>
+
+        <p>Only after the data is harmonized do you run the technical migration. Move records from the source system to the destination, applying the schema mapping rules and the merge plans you generated in earlier phases. Validate row counts, association integrity, and historical data preservation at every step.</p>
+
+        <p>Run the migration in batches with rollback plans. Validate sample records manually. Compare reporting before and after migration to catch gaps.</p>
+
+        <h2>Reporting Through the Freeze</h2>
+
+        <p>While the integration is in progress, leadership still needs forecast and pipeline reporting. Don't try to do live forecasting on a CRM in the middle of being merged. Instead:</p>
+
+        <ul>
+          <li>Build a unified reporting layer (data warehouse + BI dashboard) that pulls from both source CRMs</li>
+          <li>Apply the harmonized account mapping in the reporting layer</li>
+          <li>Report on combined pipeline, combined revenue, combined forecast from the warehouse</li>
+          <li>Treat the warehouse as the single source of truth for revenue during the freeze</li>
+          <li>Migrate the warehouse to the new CRM after the technical merge completes</li>
+        </ul>
+
+        <p>This pattern lets the integration take the time it needs without breaking the metrics that the board cares about.</p>
+
+        <h2>Common M&A Data Quality Mistakes</h2>
+
+        <h3>Mistake 1: Rushing the Technical Merge</h3>
+
+        <p>The pressure to "show progress" pushes RevOps teams to merge CRMs technically before the data is harmonized. The result is a combined CRM full of duplicate accounts, broken hierarchies, and bad reporting. Reversing the merge is harder than doing it right the first time.</p>
+
+        <h3>Mistake 2: Treating It as an IT Project</h3>
+
+        <p>M&A CRM integration is a data project, not an IT project. The hard work is in matching accounts, deduplicating contacts, and reconciling pipelines. The technical migration is the easy part. Staffing the project with IT resources instead of data ops resources produces predictable failures.</p>
+
+        <h3>Mistake 3: Losing Activity History</h3>
+
+        <p>Sales teams lose trust in a combined CRM when their historical activity, notes, and emails disappear during the merge. Always preserve activity history when merging contacts and accounts. It's worth the extra effort.</p>
+
+        <h3>Mistake 4: Skipping the Diligence Audit</h3>
+
+        <p>Going into close without a data quality audit of both CRMs means discovering integration risks after the deal is signed. The audit should be part of standard M&A diligence for any deal where revenue ops integration is on the critical path.</p>
+
+        <h2>What Good M&A Data Integration Looks Like</h2>
+
+        <p>The signs that your integration is going well:</p>
+
+        <ul>
+          <li>Combined revenue reporting is accurate within 30 days of close</li>
+          <li>Account harmonization is complete in 60-90 days</li>
+          <li>Contact deduplication is complete in 90-120 days</li>
+          <li>Schema mapping is documented and approved by data owners</li>
+          <li>Sales teams trust the combined data within 6 months</li>
+          <li>Forecast accuracy returns to pre-merger levels within 12 months</li>
+          <li>No reporting outages or revenue leakage during the freeze</li>
+        </ul>
+
+        <p>If you're heading into an M&A integration and you want help making sure the data work doesn't slow down the deal, we run M&A data integration projects regularly. We handle the harmonization, deduplication, and schema mapping so the technical migration goes smoothly when it's time.</p>
+      </div>
+
+      <div class="text-center mt-xl" style="margin-bottom: var(--space-xl);">
+        <a href="/#contact" class="btn btn--primary btn--lg">Plan My M&A Data Integration</a>
+      </div>
+
+      <p class="text-muted" style="font-size: 0.875rem;">Related: <a href="/resources/how-to-merge-crm-databases-acquisition.html">How to Merge CRM Databases After Acquisition</a> | <a href="/resources/data-quality-for-ma-due-diligence.html">Data Quality for M&A Due Diligence</a> | <a href="/resources/crm-migration-data-cleanup.html">CRM Migration Data Cleanup</a> | <a href="/resources/data-quality-for-revenue-forecasting.html">Data Quality for Revenue Forecasting</a></p>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
