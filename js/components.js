@@ -125,8 +125,11 @@
         </div>
 
         <div>
-          <h4 class="footer__heading">Publications</h4>
+          <h4 class="footer__heading">Our Properties</h4>
           <ul class="footer__links">
+            <li><a href="https://getprovyx.com" target="_blank" rel="noopener noreferrer">Provyx</a></li>
+            <li><a href="https://sharppages.com" target="_blank" rel="noopener noreferrer">SharpPages</a></li>
+            <li><a href="https://datastackguide.com" target="_blank" rel="noopener noreferrer">DataStack Guide</a></li>
             <li><a href="https://thecroreport.com" target="_blank" rel="noopener noreferrer">The CRO Report</a></li>
             <li><a href="https://theaimarketpulse.com" target="_blank" rel="noopener noreferrer">AI Market Pulse</a></li>
           </ul>
