@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Verum industry data coverage map</title>
+  <desc id="desc">Grid of B2B industries Verum enriches with sample data point counts per industry.</desc>
+  <defs>
+    <style>
+      .bg { fill: #1a1d1e; }
+      .card { fill: #2d3436; stroke: #3a4244; stroke-width: 1; }
+      .cardAccent { fill: #2d3436; stroke: #00b894; stroke-width: 1.5; }
+      .h { fill: #ffffff; font: 700 30px Inter, system-ui, sans-serif; }
+      .sub { fill: #b2bec3; font: 400 16px Inter, system-ui, sans-serif; }
+      .label { fill: #ffffff; font: 600 16px Inter, system-ui, sans-serif; }
+      .count { fill: #00b894; font: 700 22px Inter, system-ui, sans-serif; }
+      .muted { fill: #7f8c8d; font: 400 12px Inter, system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .dot { fill: #00b894; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="630"/>
+  <text class="muted" x="60" y="64">Industry Coverage</text>
+  <text class="h" x="60" y="108">Data enrichment by industry</text>
+  <text class="sub" x="60" y="140">85+ industry pipelines. Verified contacts, firmographics, and signals per vertical.</text>
+
+  <g transform="translate(60,180)">
+    <!-- row 1 -->
+    <g>
+      <rect class="cardAccent" x="0" y="0" width="260" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Healthcare</text>
+      <text class="muted" x="24" y="58">NPI + practice + payer</text>
+      <text class="count" x="24" y="96">6.2M providers</text>
+    </g>
+    <g transform="translate(280,0)">
+      <rect class="card" width="260" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">SaaS</text>
+      <text class="muted" x="24" y="58">Tech stack + funding</text>
+      <text class="count" x="24" y="96">180K companies</text>
+    </g>
+    <g transform="translate(560,0)">
+      <rect class="card" width="260" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Fintech</text>
+      <text class="muted" x="24" y="58">Licensing + KYC data</text>
+      <text class="count" x="24" y="96">94K firms</text>
+    </g>
+    <g transform="translate(840,0)">
+      <rect class="card" width="240" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Legal</text>
+      <text class="muted" x="24" y="58">Bar numbers + practice</text>
+      <text class="count" x="24" y="96">450K attorneys</text>
+    </g>
+
+    <!-- row 2 -->
+    <g transform="translate(0,140)">
+      <rect class="card" width="260" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Manufacturing</text>
+      <text class="muted" x="24" y="58">Distributor networks</text>
+      <text class="count" x="24" y="96">312K plants</text>
+    </g>
+    <g transform="translate(280,140)">
+      <rect class="cardAccent" width="260" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Real Estate</text>
+      <text class="muted" x="24" y="58">License + brokerage</text>
+      <text class="count" x="24" y="96">1.5M licenses</text>
+    </g>
+    <g transform="translate(560,140)">
+      <rect class="card" width="260" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Insurance</text>
+      <text class="muted" x="24" y="58">Agent licensing + NAIC</text>
+      <text class="count" x="24" y="96">2.1M agents</text>
+    </g>
+    <g transform="translate(840,140)">
+      <rect class="card" width="240" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Construction</text>
+      <text class="muted" x="24" y="58">Bids + licensing</text>
+      <text class="count" x="24" y="96">730K firms</text>
+    </g>
+
+    <!-- row 3 -->
+    <g transform="translate(0,280)">
+      <rect class="card" width="260" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Cybersecurity</text>
+      <text class="muted" x="24" y="58">CISO mobility</text>
+      <text class="count" x="24" y="96">28K vendors</text>
+    </g>
+    <g transform="translate(280,280)">
+      <rect class="card" width="260" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">AdTech / MarTech</text>
+      <text class="muted" x="24" y="58">DSP + stack data</text>
+      <text class="count" x="24" y="96">11K+ tools</text>
+    </g>
+    <g transform="translate(560,280)">
+      <rect class="cardAccent" width="260" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Education</text>
+      <text class="muted" x="24" y="58">Alumni + development</text>
+      <text class="count" x="24" y="96">42K institutions</text>
+    </g>
+    <g transform="translate(840,280)">
+      <rect class="card" width="240" height="120" rx="10"/>
+      <circle class="dot" cx="24" cy="26" r="5"/>
+      <text class="label" x="40" y="32">Plus 74 more</text>
+      <text class="muted" x="24" y="58">See all verticals</text>
+      <text class="count" x="24" y="96">85 total</text>
+    </g>
+  </g>
+</svg>

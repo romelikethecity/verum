@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Verum contact discovery funnel</title>
+  <desc id="desc">Funnel showing how raw universe is filtered, enriched, verified, and delivered as qualified contacts.</desc>
+  <defs>
+    <style>
+      .bg { fill: #1a1d1e; }
+      .card { fill: #2d3436; stroke: #3a4244; stroke-width: 1; }
+      .h { fill: #ffffff; font: 700 30px Inter, system-ui, sans-serif; }
+      .sub { fill: #b2bec3; font: 400 16px Inter, system-ui, sans-serif; }
+      .label { fill: #ffffff; font: 700 20px Inter, system-ui, sans-serif; }
+      .labelSub { fill: #b2bec3; font: 400 14px Inter, system-ui, sans-serif; }
+      .count { fill: #00b894; font: 700 28px Inter, system-ui, sans-serif; }
+      .muted { fill: #7f8c8d; font: 400 12px Inter, system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .funnel { fill: #2d3436; stroke: #00b894; stroke-width: 1.5; }
+      .funnel2 { fill: #2d3436; stroke: #00b894; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="630"/>
+  <text class="muted" x="60" y="64">Contact Discovery</text>
+  <text class="h" x="60" y="108">From universe to qualified list</text>
+  <text class="sub" x="60" y="140">Each stage strips noise. What ships is what your sales team can actually call.</text>
+
+  <!-- Funnel stages -->
+  <g transform="translate(80,190)">
+    <!-- stage 1 -->
+    <path class="funnel" d="M 0 0 L 1040 0 L 960 70 L 80 70 Z"/>
+    <text class="label" x="520" y="30" text-anchor="middle">Source universe</text>
+    <text class="labelSub" x="520" y="54" text-anchor="middle">Gov registries, NPI, SOS, web crawl, directories</text>
+    <text class="count" x="1070" y="44">~42M</text>
+
+    <!-- stage 2 -->
+    <path class="funnel" d="M 80 80 L 960 80 L 880 150 L 160 150 Z"/>
+    <text class="label" x="520" y="110" text-anchor="middle">ICP filter</text>
+    <text class="labelSub" x="520" y="134" text-anchor="middle">Geography, size, SIC / NAICS, role, signals</text>
+    <text class="count" x="1070" y="124">3.1M</text>
+
+    <!-- stage 3 -->
+    <path class="funnel" d="M 160 160 L 880 160 L 800 230 L 240 230 Z"/>
+    <text class="label" x="520" y="190" text-anchor="middle">Enrich</text>
+    <text class="labelSub" x="520" y="214" text-anchor="middle">Emails, direct dials, LinkedIn, company firmographics</text>
+    <text class="count" x="1070" y="204">480K</text>
+
+    <!-- stage 4 -->
+    <path class="funnel" d="M 240 240 L 800 240 L 720 310 L 320 310 Z"/>
+    <text class="label" x="520" y="270" text-anchor="middle">Verify</text>
+    <text class="labelSub" x="520" y="294" text-anchor="middle">SMTP, HLR, address, manual QA on edge cases</text>
+    <text class="count" x="1070" y="284">310K</text>
+
+    <!-- stage 5 -->
+    <path class="funnel2" d="M 320 320 L 720 320 L 720 400 L 320 400 Z"/>
+    <text class="label" x="520" y="360" text-anchor="middle">Deliver</text>
+    <text class="labelSub" x="520" y="384" text-anchor="middle">CSV or direct sync, only what passed every check</text>
+    <text class="count" x="1070" y="364">280K</text>
+  </g>
+</svg>

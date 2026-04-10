@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Verum CRM integration architecture</title>
+  <desc id="desc">Flow showing CRM export to Verum enrichment back into Salesforce, HubSpot, or Dynamics with field mapping.</desc>
+  <defs>
+    <style>
+      .bg { fill: #1a1d1e; }
+      .card { fill: #2d3436; stroke: #3a4244; stroke-width: 1; }
+      .cardPrimary { fill: #2d3436; stroke: #00b894; stroke-width: 2; }
+      .h { fill: #ffffff; font: 700 30px Inter, system-ui, sans-serif; }
+      .sub { fill: #b2bec3; font: 400 16px Inter, system-ui, sans-serif; }
+      .muted { fill: #7f8c8d; font: 400 12px Inter, system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .crmName { fill: #ffffff; font: 700 18px Inter, system-ui, sans-serif; }
+      .crmSub { fill: #b2bec3; font: 400 13px Inter, system-ui, sans-serif; }
+      .step { fill: #ffffff; font: 600 15px Inter, system-ui, sans-serif; }
+      .detail { fill: #b2bec3; font: 400 12px Inter, system-ui, sans-serif; }
+      .arrow { stroke: #00b894; stroke-width: 2; fill: none; }
+      .arrowBack { stroke: #00b894; stroke-width: 2; fill: none; stroke-dasharray: 6 4; }
+      .num { fill: #00b894; font: 700 12px Inter, system-ui, sans-serif; letter-spacing: 0.08em; }
+      .big { fill: #ffffff; font: 700 22px Inter, system-ui, sans-serif; }
+    </style>
+    <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00b894"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="630"/>
+  <text class="muted" x="60" y="64">CRM Integration</text>
+  <text class="h" x="60" y="108">Your CRM stays the system of record</text>
+  <text class="sub" x="60" y="140">Export, enrich, return. No new tools. Field mapping preserved.</text>
+
+  <!-- CRM stack on left -->
+  <g transform="translate(60,200)">
+    <text class="muted" x="0" y="-10">Your CRMs</text>
+    <g>
+      <rect class="card" x="0" y="0" width="220" height="70" rx="10"/>
+      <circle cx="30" cy="35" r="16" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+      <text x="30" y="40" text-anchor="middle" fill="#00b894" font-family="Inter" font-weight="700" font-size="14">SF</text>
+      <text class="crmName" x="60" y="32">Salesforce</text>
+      <text class="crmSub" x="60" y="52">Accounts, Contacts, Leads</text>
+    </g>
+    <g transform="translate(0,85)">
+      <rect class="card" width="220" height="70" rx="10"/>
+      <circle cx="30" cy="35" r="16" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+      <text x="30" y="40" text-anchor="middle" fill="#00b894" font-family="Inter" font-weight="700" font-size="12">HS</text>
+      <text class="crmName" x="60" y="32">HubSpot</text>
+      <text class="crmSub" x="60" y="52">Contacts, Companies</text>
+    </g>
+    <g transform="translate(0,170)">
+      <rect class="card" width="220" height="70" rx="10"/>
+      <circle cx="30" cy="35" r="16" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+      <text x="30" y="40" text-anchor="middle" fill="#00b894" font-family="Inter" font-weight="700" font-size="10">D365</text>
+      <text class="crmName" x="60" y="32">Dynamics 365</text>
+      <text class="crmSub" x="60" y="52">Entities, custom objects</text>
+    </g>
+  </g>
+
+  <!-- Arrows to Verum -->
+  <g>
+    <line class="arrow" x1="290" y1="235" x2="480" y2="290" marker-end="url(#arrowHead)"/>
+    <line class="arrow" x1="290" y1="320" x2="480" y2="320" marker-end="url(#arrowHead)"/>
+    <line class="arrow" x1="290" y1="405" x2="480" y2="350" marker-end="url(#arrowHead)"/>
+    <text class="num" x="310" y="268">1. Export CSV / API</text>
+  </g>
+
+  <!-- Verum pipeline in center -->
+  <g transform="translate(480,240)">
+    <rect class="cardPrimary" width="280" height="180" rx="12"/>
+    <text class="muted" x="20" y="30">Verum Pipeline</text>
+    <text class="big" x="20" y="60">Clean + Enrich</text>
+    <g transform="translate(20,80)">
+      <circle cx="6" cy="8" r="3" fill="#00b894"/>
+      <text class="detail" x="16" y="12">Dedupe across object types</text>
+      <circle cx="6" cy="30" r="3" fill="#00b894"/>
+      <text class="detail" x="16" y="34">Normalize fields to CRM schema</text>
+      <circle cx="6" cy="52" r="3" fill="#00b894"/>
+      <text class="detail" x="16" y="56">Enrich from 50+ sources</text>
+      <circle cx="6" cy="74" r="3" fill="#00b894"/>
+      <text class="detail" x="16" y="78">Verify, score, flag edge cases</text>
+    </g>
+  </g>
+
+  <!-- Return arrows -->
+  <g>
+    <line class="arrowBack" x1="760" y1="290" x2="960" y2="240" marker-end="url(#arrowHead)"/>
+    <line class="arrowBack" x1="760" y1="330" x2="960" y2="330" marker-end="url(#arrowHead)"/>
+    <line class="arrowBack" x1="760" y1="370" x2="960" y2="420" marker-end="url(#arrowHead)"/>
+    <text class="num" x="780" y="270">2. Return mapped records</text>
+  </g>
+
+  <!-- Output on right -->
+  <g transform="translate(960,200)">
+    <text class="muted" x="0" y="-10">Updated In Place</text>
+    <g>
+      <rect class="cardPrimary" width="180" height="70" rx="10"/>
+      <text class="step" x="16" y="30">Existing records</text>
+      <text class="detail" x="16" y="52">Same IDs, enriched fields</text>
+    </g>
+    <g transform="translate(0,85)">
+      <rect class="cardPrimary" width="180" height="70" rx="10"/>
+      <text class="step" x="16" y="30">Field-level map</text>
+      <text class="detail" x="16" y="52">Respects custom schemas</text>
+    </g>
+    <g transform="translate(0,170)">
+      <rect class="cardPrimary" width="180" height="70" rx="10"/>
+      <text class="step" x="16" y="30">Audit trail</text>
+      <text class="detail" x="16" y="52">Every change logged</text>
+    </g>
+  </g>
+
+  <text class="muted" x="60" y="588">Works with Salesforce, HubSpot, Dynamics 365, Pipedrive, Zoho, and custom databases.</text>
+</svg>

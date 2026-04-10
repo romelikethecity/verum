@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Verum data maintenance cadence</title>
+  <desc id="desc">Timeline showing weekly validation, monthly enrichment refresh, and quarterly cleanup cycles.</desc>
+  <defs>
+    <style>
+      .bg { fill: #1a1d1e; }
+      .h { fill: #ffffff; font: 700 30px Inter, system-ui, sans-serif; }
+      .sub { fill: #b2bec3; font: 400 16px Inter, system-ui, sans-serif; }
+      .muted { fill: #7f8c8d; font: 400 12px Inter, system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .axis { stroke: #3a4244; stroke-width: 1; }
+      .tick { fill: #7f8c8d; font: 500 12px Inter, system-ui, sans-serif; }
+      .bandLabel { fill: #ffffff; font: 600 16px Inter, system-ui, sans-serif; }
+      .bandSub { fill: #b2bec3; font: 400 13px Inter, system-ui, sans-serif; }
+      .weekly { fill: #00b894; }
+      .monthly { fill: #00b894; fill-opacity: 0.6; }
+      .quarterly { fill: #00b894; fill-opacity: 0.35; }
+      .legend { fill: #b2bec3; font: 500 13px Inter, system-ui, sans-serif; }
+      .drop { fill: #ff7675; font: 700 14px Inter, system-ui, sans-serif; }
+      .line { stroke: #00b894; stroke-width: 2; fill: none; }
+      .card { fill: #2d3436; stroke: #3a4244; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="630"/>
+  <text class="muted" x="60" y="64">Ongoing Maintenance</text>
+  <text class="h" x="60" y="108">What happens every week, month, and quarter</text>
+  <text class="sub" x="60" y="140">Data decays ~30% per year. Verum runs cycles so it never compounds.</text>
+
+  <!-- Quality over time chart background -->
+  <g transform="translate(60,190)">
+    <rect class="card" x="0" y="0" width="1080" height="340" rx="10"/>
+    <!-- y-axis labels -->
+    <text class="tick" x="20" y="40">100%</text>
+    <text class="tick" x="20" y="110">90%</text>
+    <text class="tick" x="20" y="180">80%</text>
+    <text class="tick" x="20" y="250">70%</text>
+    <text class="tick" x="20" y="320">60%</text>
+    <!-- grid -->
+    <line class="axis" x1="70" y1="32" x2="1060" y2="32"/>
+    <line class="axis" x1="70" y1="102" x2="1060" y2="102"/>
+    <line class="axis" x1="70" y1="172" x2="1060" y2="172"/>
+    <line class="axis" x1="70" y1="242" x2="1060" y2="242"/>
+    <line class="axis" x1="70" y1="312" x2="1060" y2="312"/>
+
+    <!-- weekly validation ticks -->
+    <g>
+      <rect class="weekly" x="120" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="200" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="280" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="360" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="440" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="520" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="600" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="680" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="760" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="840" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="920" y="28" width="6" height="14" rx="1"/>
+      <rect class="weekly" x="1000" y="28" width="6" height="14" rx="1"/>
+    </g>
+
+    <!-- monthly enrichment -->
+    <g>
+      <rect class="monthly" x="160" y="48" width="14" height="28" rx="2"/>
+      <rect class="monthly" x="480" y="48" width="14" height="28" rx="2"/>
+      <rect class="monthly" x="800" y="48" width="14" height="28" rx="2"/>
+    </g>
+
+    <!-- quarterly cleanup -->
+    <g>
+      <rect class="quarterly" x="300" y="48" width="28" height="40" rx="2"/>
+      <rect class="quarterly" x="900" y="48" width="28" height="40" rx="2"/>
+    </g>
+
+    <!-- quality line -->
+    <path class="line" d="M 70 60 L 120 72 L 160 78 L 200 64 L 240 78 L 280 88 L 320 62 L 360 72 L 400 86 L 440 98 L 480 72 L 520 82 L 560 94 L 600 104 L 640 116 L 680 126 L 720 104 L 760 116 L 800 72 L 840 82 L 880 92 L 920 104 L 960 62 L 1000 72 L 1040 82"/>
+
+    <!-- x-axis month labels -->
+    <g transform="translate(0,330)">
+      <text class="tick" x="120" text-anchor="middle">Wk1</text>
+      <text class="tick" x="280" text-anchor="middle">Month 1</text>
+      <text class="tick" x="480" text-anchor="middle">Month 2</text>
+      <text class="tick" x="680" text-anchor="middle">Month 3</text>
+      <text class="tick" x="880" text-anchor="middle">Q end</text>
+      <text class="tick" x="1040" text-anchor="middle">Next Q</text>
+    </g>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(60,560)">
+    <rect class="weekly" x="0" y="-10" width="14" height="14" rx="2"/>
+    <text class="legend" x="22" y="2">Weekly validation</text>
+
+    <rect class="monthly" x="200" y="-10" width="14" height="14" rx="2"/>
+    <text class="legend" x="222" y="2">Monthly enrichment refresh</text>
+
+    <rect class="quarterly" x="460" y="-10" width="14" height="14" rx="2"/>
+    <text class="legend" x="482" y="2">Quarterly full cleanup</text>
+
+    <line class="line" x1="700" y1="-4" x2="730" y2="-4"/>
+    <text class="legend" x="738" y="2">Database accuracy score</text>
+  </g>
+</svg>

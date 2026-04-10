@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Verum healthcare practice enrichment fields</title>
+  <desc id="desc">Provider record showing NPI, taxonomy, hospital affiliation, practice type, and contact fields.</desc>
+  <defs>
+    <style>
+      .bg { fill: #1a1d1e; }
+      .card { fill: #2d3436; stroke: #3a4244; stroke-width: 1; }
+      .cardAccent { fill: #2d3436; stroke: #00b894; stroke-width: 1.5; }
+      .h { fill: #ffffff; font: 700 30px Inter, system-ui, sans-serif; }
+      .sub { fill: #b2bec3; font: 400 16px Inter, system-ui, sans-serif; }
+      .muted { fill: #7f8c8d; font: 400 12px Inter, system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .fieldLabel { fill: #7f8c8d; font: 500 11px Inter, system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .fieldVal { fill: #ffffff; font: 600 16px Inter, system-ui, sans-serif; }
+      .fieldValSmall { fill: #ffffff; font: 500 14px Inter, system-ui, sans-serif; }
+      .tag { fill: #00b894; }
+      .tagText { fill: #1a1d1e; font: 700 11px Inter, system-ui, sans-serif; letter-spacing: 0.04em; }
+      .check { stroke: #00b894; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .divider { stroke: #3a4244; stroke-width: 1; }
+      .name { fill: #ffffff; font: 700 22px Inter, system-ui, sans-serif; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="630"/>
+  <text class="muted" x="60" y="64">Provider Record</text>
+  <text class="h" x="60" y="108">Every field is verified against a primary source</text>
+  <text class="sub" x="60" y="140">NPI, taxonomy, hospital affiliations, practice details, and contact data.</text>
+
+  <!-- Main provider card -->
+  <g transform="translate(60,180)">
+    <rect class="cardAccent" width="720" height="410" rx="12"/>
+
+    <!-- Avatar circle -->
+    <circle cx="70" cy="70" r="40" fill="#00b894" fill-opacity="0.15" stroke="#00b894" stroke-width="2"/>
+    <text x="70" y="80" text-anchor="middle" fill="#00b894" font-family="Inter" font-weight="700" font-size="24">MD</text>
+
+    <text class="name" x="130" y="60">Dr. Priya Chandra, MD</text>
+    <text class="fieldValSmall" x="130" y="86">Interventional Cardiologist</text>
+
+    <rect class="tag" x="130" y="98" width="70" height="22" rx="11"/>
+    <text class="tagText" x="165" y="113" text-anchor="middle">NPI VERIFIED</text>
+    <rect x="210" y="98" width="86" height="22" rx="11" fill="none" stroke="#00b894"/>
+    <text x="253" y="113" text-anchor="middle" fill="#00b894" font-family="Inter" font-weight="700" font-size="11" letter-spacing="0.04em">DEA CURRENT</text>
+    <rect x="306" y="98" width="86" height="22" rx="11" fill="none" stroke="#00b894"/>
+    <text x="349" y="113" text-anchor="middle" fill="#00b894" font-family="Inter" font-weight="700" font-size="11" letter-spacing="0.04em">MEDICARE PTP</text>
+
+    <line class="divider" x1="28" y1="150" x2="692" y2="150"/>
+
+    <!-- Fields grid -->
+    <g transform="translate(28,176)">
+      <text class="fieldLabel" x="0" y="0">NPI</text>
+      <text class="fieldVal" x="0" y="22">1760512839</text>
+
+      <text class="fieldLabel" x="220" y="0">Taxonomy</text>
+      <text class="fieldVal" x="220" y="22">207RI0011X</text>
+
+      <text class="fieldLabel" x="440" y="0">State License</text>
+      <text class="fieldVal" x="440" y="22">CA A112998</text>
+
+      <text class="fieldLabel" x="0" y="60">Primary hospital</text>
+      <text class="fieldVal" x="0" y="82">Cedars-Sinai</text>
+
+      <text class="fieldLabel" x="220" y="60">Affiliations</text>
+      <text class="fieldVal" x="220" y="82">3 hospitals</text>
+
+      <text class="fieldLabel" x="440" y="60">Group practice</text>
+      <text class="fieldVal" x="440" y="82">Westside Heart</text>
+
+      <text class="fieldLabel" x="0" y="120">Direct email</text>
+      <text class="fieldVal" x="0" y="142">p.chandra@wsh...</text>
+
+      <text class="fieldLabel" x="220" y="120">Practice phone</text>
+      <text class="fieldVal" x="220" y="142">(310) 555-0142</text>
+
+      <text class="fieldLabel" x="440" y="120">Address</text>
+      <text class="fieldVal" x="440" y="142">Los Angeles, CA</text>
+
+      <text class="fieldLabel" x="0" y="180">Practice type</text>
+      <text class="fieldVal" x="0" y="202">Private group</text>
+
+      <text class="fieldLabel" x="220" y="180">Subspecialty</text>
+      <text class="fieldVal" x="220" y="202">Interventional</text>
+
+      <text class="fieldLabel" x="440" y="180">Patient volume</text>
+      <text class="fieldVal" x="440" y="202">High</text>
+    </g>
+  </g>
+
+  <!-- Sidebar: checks -->
+  <g transform="translate(820,180)">
+    <rect class="card" width="320" height="410" rx="12"/>
+    <text class="muted" x="20" y="36">Every Record Passes</text>
+    <g transform="translate(20,60)">
+      <g transform="translate(0,0)">
+        <circle cx="12" cy="12" r="12" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+        <path class="check" d="M 6 12 L 10 16 L 18 8"/>
+        <text class="fieldValSmall" x="34" y="17">NPI registry match</text>
+      </g>
+      <g transform="translate(0,42)">
+        <circle cx="12" cy="12" r="12" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+        <path class="check" d="M 6 12 L 10 16 L 18 8"/>
+        <text class="fieldValSmall" x="34" y="17">State license active</text>
+      </g>
+      <g transform="translate(0,84)">
+        <circle cx="12" cy="12" r="12" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+        <path class="check" d="M 6 12 L 10 16 L 18 8"/>
+        <text class="fieldValSmall" x="34" y="17">Taxonomy subspecialty</text>
+      </g>
+      <g transform="translate(0,126)">
+        <circle cx="12" cy="12" r="12" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+        <path class="check" d="M 6 12 L 10 16 L 18 8"/>
+        <text class="fieldValSmall" x="34" y="17">Hospital affiliation</text>
+      </g>
+      <g transform="translate(0,168)">
+        <circle cx="12" cy="12" r="12" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+        <path class="check" d="M 6 12 L 10 16 L 18 8"/>
+        <text class="fieldValSmall" x="34" y="17">Group practice verified</text>
+      </g>
+      <g transform="translate(0,210)">
+        <circle cx="12" cy="12" r="12" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+        <path class="check" d="M 6 12 L 10 16 L 18 8"/>
+        <text class="fieldValSmall" x="34" y="17">Email deliverable</text>
+      </g>
+      <g transform="translate(0,252)">
+        <circle cx="12" cy="12" r="12" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+        <path class="check" d="M 6 12 L 10 16 L 18 8"/>
+        <text class="fieldValSmall" x="34" y="17">Phone line active</text>
+      </g>
+      <g transform="translate(0,294)">
+        <circle cx="12" cy="12" r="12" fill="#00b894" fill-opacity="0.15" stroke="#00b894"/>
+        <path class="check" d="M 6 12 L 10 16 L 18 8"/>
+        <text class="fieldValSmall" x="34" y="17">Human QA sample</text>
+      </g>
+    </g>
+  </g>
+</svg>

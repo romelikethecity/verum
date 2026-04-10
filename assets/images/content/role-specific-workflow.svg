@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Verum workflow for RevOps, Marketing Ops, and Sales teams</title>
+  <desc id="desc">Shows how different operations roles plug Verum into their existing workflow: briefs, delivery, ownership.</desc>
+  <defs>
+    <style>
+      .bg { fill: #1a1d1e; }
+      .card { fill: #2d3436; stroke: #3a4244; stroke-width: 1; }
+      .cardPrimary { fill: #2d3436; stroke: #00b894; stroke-width: 2; }
+      .h { fill: #ffffff; font: 700 30px Inter, system-ui, sans-serif; }
+      .sub { fill: #b2bec3; font: 400 16px Inter, system-ui, sans-serif; }
+      .muted { fill: #7f8c8d; font: 400 12px Inter, system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .role { fill: #ffffff; font: 700 18px Inter, system-ui, sans-serif; }
+      .roleSub { fill: #b2bec3; font: 400 13px Inter, system-ui, sans-serif; }
+      .step { fill: #ffffff; font: 600 14px Inter, system-ui, sans-serif; }
+      .stepDetail { fill: #b2bec3; font: 400 12px Inter, system-ui, sans-serif; }
+      .arrow { stroke: #00b894; stroke-width: 2; fill: none; }
+      .num { fill: #00b894; font: 700 12px Inter, system-ui, sans-serif; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00b894"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="630"/>
+  <text class="muted" x="60" y="64">Workflow</text>
+  <text class="h" x="60" y="108">How ops teams plug Verum in</text>
+  <text class="sub" x="60" y="140">You stay the owner. We do the heavy lifting. Fits around your existing stack.</text>
+
+  <!-- Role rows -->
+  <g transform="translate(60,190)">
+
+    <!-- Row 1: RevOps -->
+    <g>
+      <rect class="cardPrimary" width="200" height="90" rx="10"/>
+      <text class="role" x="20" y="38">RevOps</text>
+      <text class="roleSub" x="20" y="60">Pipeline integrity</text>
+      <text class="roleSub" x="20" y="78">Forecast accuracy</text>
+    </g>
+    <g transform="translate(240,0)">
+      <rect class="card" width="200" height="90" rx="10"/>
+      <text class="num" x="16" y="28">BRIEF</text>
+      <text class="step" x="16" y="50">Territory audit</text>
+      <text class="stepDetail" x="16" y="70">Dedupe accounts, fix</text>
+      <text class="stepDetail" x="16" y="84">owner assignments</text>
+    </g>
+    <g transform="translate(480,0)">
+      <rect class="card" width="200" height="90" rx="10"/>
+      <text class="num" x="16" y="28">DELIVERY</text>
+      <text class="step" x="16" y="50">Clean CSV + API</text>
+      <text class="stepDetail" x="16" y="70">Merged duplicates,</text>
+      <text class="stepDetail" x="16" y="84">parent-child hierarchy</text>
+    </g>
+    <g transform="translate(720,0)">
+      <rect class="card" width="200" height="90" rx="10"/>
+      <text class="num" x="16" y="28">OUTCOME</text>
+      <text class="step" x="16" y="50">Routing unbroken</text>
+      <text class="stepDetail" x="16" y="70">Forecast stops</text>
+      <text class="stepDetail" x="16" y="84">double-counting</text>
+    </g>
+    <line class="arrow" x1="200" y1="45" x2="238" y2="45" marker-end="url(#arr)"/>
+    <line class="arrow" x1="440" y1="45" x2="478" y2="45" marker-end="url(#arr)"/>
+    <line class="arrow" x1="680" y1="45" x2="718" y2="45" marker-end="url(#arr)"/>
+
+    <!-- Row 2: Marketing Ops -->
+    <g transform="translate(0,110)">
+      <rect class="cardPrimary" width="200" height="90" rx="10"/>
+      <text class="role" x="20" y="38">Marketing Ops</text>
+      <text class="roleSub" x="20" y="60">List quality</text>
+      <text class="roleSub" x="20" y="78">Deliverability</text>
+    </g>
+    <g transform="translate(240,110)">
+      <rect class="card" width="200" height="90" rx="10"/>
+      <text class="num" x="16" y="28">BRIEF</text>
+      <text class="step" x="16" y="50">Campaign list prep</text>
+      <text class="stepDetail" x="16" y="70">ICP segment, remove</text>
+      <text class="stepDetail" x="16" y="84">bounces, dedupe</text>
+    </g>
+    <g transform="translate(480,110)">
+      <rect class="card" width="200" height="90" rx="10"/>
+      <text class="num" x="16" y="28">DELIVERY</text>
+      <text class="step" x="16" y="50">Validated send list</text>
+      <text class="stepDetail" x="16" y="70">SMTP + role ICP</text>
+      <text class="stepDetail" x="16" y="84">filtered</text>
+    </g>
+    <g transform="translate(720,110)">
+      <rect class="card" width="200" height="90" rx="10"/>
+      <text class="num" x="16" y="28">OUTCOME</text>
+      <text class="step" x="16" y="50">Lower bounce rate</text>
+      <text class="stepDetail" x="16" y="70">Sender reputation</text>
+      <text class="stepDetail" x="16" y="84">protected</text>
+    </g>
+    <line class="arrow" x1="200" y1="155" x2="238" y2="155" marker-end="url(#arr)"/>
+    <line class="arrow" x1="440" y1="155" x2="478" y2="155" marker-end="url(#arr)"/>
+    <line class="arrow" x1="680" y1="155" x2="718" y2="155" marker-end="url(#arr)"/>
+
+    <!-- Row 3: Sales Ops -->
+    <g transform="translate(0,220)">
+      <rect class="cardPrimary" width="200" height="90" rx="10"/>
+      <text class="role" x="20" y="38">Sales Ops / Leaders</text>
+      <text class="roleSub" x="20" y="60">Rep productivity</text>
+      <text class="roleSub" x="20" y="78">Target accounts</text>
+    </g>
+    <g transform="translate(240,220)">
+      <rect class="card" width="200" height="90" rx="10"/>
+      <text class="num" x="16" y="28">BRIEF</text>
+      <text class="step" x="16" y="50">Target list build</text>
+      <text class="stepDetail" x="16" y="70">Direct dials, LinkedIn</text>
+      <text class="stepDetail" x="16" y="84">titles, email</text>
+    </g>
+    <g transform="translate(480,220)">
+      <rect class="card" width="200" height="90" rx="10"/>
+      <text class="num" x="16" y="28">DELIVERY</text>
+      <text class="step" x="16" y="50">Rep-ready accounts</text>
+      <text class="stepDetail" x="16" y="70">Contacts + context</text>
+      <text class="stepDetail" x="16" y="84">per account</text>
+    </g>
+    <g transform="translate(720,220)">
+      <rect class="card" width="200" height="90" rx="10"/>
+      <text class="num" x="16" y="28">OUTCOME</text>
+      <text class="step" x="16" y="50">More conversations</text>
+      <text class="stepDetail" x="16" y="70">Less prospecting</text>
+      <text class="stepDetail" x="16" y="84">time wasted</text>
+    </g>
+    <line class="arrow" x1="200" y1="265" x2="238" y2="265" marker-end="url(#arr)"/>
+    <line class="arrow" x1="440" y1="265" x2="478" y2="265" marker-end="url(#arr)"/>
+    <line class="arrow" x1="680" y1="265" x2="718" y2="265" marker-end="url(#arr)"/>
+  </g>
+
+  <text class="muted" x="60" y="588">Same pipeline, different briefs. You keep ownership, we handle the work.</text>
+</svg>

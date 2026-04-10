@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Verum data validation pipeline</title>
+  <desc id="desc">Validation stages from raw record through SMTP, line status, address checks, and confidence scoring.</desc>
+  <defs>
+    <style>
+      .bg { fill: #1a1d1e; }
+      .card { fill: #2d3436; stroke: #3a4244; stroke-width: 1; }
+      .cardPrimary { fill: #2d3436; stroke: #00b894; stroke-width: 2; }
+      .h { fill: #ffffff; font: 700 30px Inter, system-ui, sans-serif; }
+      .sub { fill: #b2bec3; font: 400 16px Inter, system-ui, sans-serif; }
+      .step { fill: #ffffff; font: 600 18px Inter, system-ui, sans-serif; }
+      .detail { fill: #b2bec3; font: 400 13px Inter, system-ui, sans-serif; }
+      .pct { fill: #00b894; font: 700 18px Inter, system-ui, sans-serif; }
+      .muted { fill: #7f8c8d; font: 400 12px Inter, system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
+      .arrow { fill: none; stroke: #00b894; stroke-width: 2; }
+      .pill { fill: #00b894; }
+      .pillText { fill: #1a1d1e; font: 700 14px Inter, system-ui, sans-serif; }
+      .num { fill: #00b894; font: 700 14px Inter, system-ui, sans-serif; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00b894"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="630"/>
+  <text class="muted" x="60" y="64">Validation Pipeline</text>
+  <text class="h" x="60" y="108">How a record earns a confidence score</text>
+  <text class="sub" x="60" y="140">Every email, phone, and address passes independent checks before scoring.</text>
+
+  <!-- Input -->
+  <g transform="translate(60,200)">
+    <rect class="card" width="160" height="260" rx="10"/>
+    <text class="num" x="18" y="36">01</text>
+    <text class="step" x="18" y="66">Raw record</text>
+    <text class="detail" x="18" y="92">Uploaded from CRM</text>
+    <text class="detail" x="18" y="112">or list provider.</text>
+    <line x1="18" y1="140" x2="142" y2="140" stroke="#3a4244"/>
+    <text class="detail" x="18" y="172">email</text>
+    <text class="detail" x="18" y="196">phone</text>
+    <text class="detail" x="18" y="220">address</text>
+    <text class="detail" x="18" y="244">company</text>
+  </g>
+
+  <!-- Step 2 SMTP -->
+  <g transform="translate(260,200)">
+    <rect class="cardPrimary" width="200" height="260" rx="10"/>
+    <text class="num" x="18" y="36">02</text>
+    <text class="step" x="18" y="66">Email SMTP</text>
+    <text class="detail" x="18" y="92">Syntax, MX record,</text>
+    <text class="detail" x="18" y="112">mailbox ping.</text>
+    <line x1="18" y1="140" x2="182" y2="140" stroke="#3a4244"/>
+    <text class="detail" x="18" y="172">Deliverable</text>
+    <text class="pct" x="130" y="172">96%</text>
+    <text class="detail" x="18" y="196">Catch all</text>
+    <text class="pct" x="130" y="196">3%</text>
+    <text class="detail" x="18" y="220">Invalid</text>
+    <text class="pct" x="130" y="220">1%</text>
+  </g>
+
+  <!-- Step 3 Phone -->
+  <g transform="translate(500,200)">
+    <rect class="cardPrimary" width="200" height="260" rx="10"/>
+    <text class="num" x="18" y="36">03</text>
+    <text class="step" x="18" y="66">Phone line</text>
+    <text class="detail" x="18" y="92">Carrier lookup,</text>
+    <text class="detail" x="18" y="112">HLR line status.</text>
+    <line x1="18" y1="140" x2="182" y2="140" stroke="#3a4244"/>
+    <text class="detail" x="18" y="172">Active line</text>
+    <text class="pct" x="130" y="172">92%</text>
+    <text class="detail" x="18" y="196">Mobile vs LL</text>
+    <text class="detail" x="18" y="220">Carrier name</text>
+  </g>
+
+  <!-- Step 4 Address -->
+  <g transform="translate(740,200)">
+    <rect class="cardPrimary" width="200" height="260" rx="10"/>
+    <text class="num" x="18" y="36">04</text>
+    <text class="step" x="18" y="66">USPS address</text>
+    <text class="detail" x="18" y="92">CASS, DPV, ZIP+4</text>
+    <text class="detail" x="18" y="112">standardization.</text>
+    <line x1="18" y1="140" x2="182" y2="140" stroke="#3a4244"/>
+    <text class="detail" x="18" y="172">Deliverable</text>
+    <text class="pct" x="130" y="172">94%</text>
+    <text class="detail" x="18" y="196">Business vs res</text>
+    <text class="detail" x="18" y="220">Geocoded</text>
+  </g>
+
+  <!-- Step 5 Score -->
+  <g transform="translate(980,200)">
+    <rect class="cardPrimary" width="160" height="260" rx="10"/>
+    <text class="num" x="18" y="36">05</text>
+    <text class="step" x="18" y="66">Confidence</text>
+    <text class="detail" x="18" y="92">Weighted composite</text>
+    <text class="detail" x="18" y="112">score per record.</text>
+    <line x1="18" y1="140" x2="142" y2="140" stroke="#3a4244"/>
+    <rect class="pill" x="18" y="160" width="124" height="28" rx="14"/>
+    <text class="pillText" x="80" y="179" text-anchor="middle">A 93-100</text>
+    <rect x="18" y="196" width="124" height="28" rx="14" fill="none" stroke="#00b894"/>
+    <text class="detail" x="80" y="215" text-anchor="middle" fill="#00b894">B 80-92</text>
+    <rect x="18" y="232" width="124" height="28" rx="14" fill="none" stroke="#636e72"/>
+    <text class="detail" x="80" y="251" text-anchor="middle">C flagged</text>
+  </g>
+
+  <!-- arrows -->
+  <g>
+    <line class="arrow" x1="228" y1="330" x2="254" y2="330" marker-end="url(#arrow)"/>
+    <line class="arrow" x1="466" y1="330" x2="494" y2="330" marker-end="url(#arrow)"/>
+    <line class="arrow" x1="706" y1="330" x2="734" y2="330" marker-end="url(#arrow)"/>
+    <line class="arrow" x1="946" y1="330" x2="974" y2="330" marker-end="url(#arrow)"/>
+  </g>
+
+  <text class="muted" x="60" y="528">Output</text>
+  <text class="detail" x="60" y="552">Every field gets its own verdict. Failed records never ship without a flag.</text>
+</svg>
