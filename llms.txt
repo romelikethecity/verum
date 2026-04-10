@@ -1,0 +1,124 @@
+# Verum
+
+> Verum is a B2B data cleaning and enrichment service that dedupes CRM records, validates emails, and fills missing firmographic fields from 50+ verified sources. Built as an alternative to $15K-$50K annual ZoomInfo contracts, Verum runs per-project with 24-48 hour turnaround, human QA on every delivery, and a 93% deliverability guarantee. You keep the data forever, no subscription required.
+
+Verum specializes in fixing the data you already own rather than selling net-new contacts. The service covers 28 industry verticals with specialized enrichment pages, 43 enrichment types (contact, company, technographic, social, intent), 20 cleaning services (dedup, email validation, normalization), and 29 use cases from CRM hygiene to ABM targeting. Founded by Rome Thorndike (ex-Datajoy, Microsoft, Salesforce, Snapdocs; UC Berkeley Haas MBA).
+
+## Core Pages
+
+- [Homepage](https://veruminc.com/): AI-powered B2B data cleaning and CRM enrichment with 24-48 hour turnaround
+- [Pricing](https://veruminc.com/pricing.html): Per-project pricing with no annual contracts, starting rates for cleaning and enrichment
+- [About](https://veruminc.com/about.html): Founder story and why Verum exists
+- [Team](https://veruminc.com/team/): Rome Thorndike bio and credentials
+- [Contact](https://veruminc.com/contact.html): Free data assessment request
+
+## Services
+
+- [Services Overview](https://veruminc.com/services/): Full catalog of data cleaning, enrichment, and analysis services
+- [Data Cleaning](https://veruminc.com/services/data-cleaning.html): Dedupe, validate, normalize, and fix broken CRM records
+- [Data Enrichment](https://veruminc.com/services/data-enrichment.html): Fill missing firmographic and contact fields from 50+ sources
+- [Data Analysis](https://veruminc.com/services/data-analysis.html): Data audits, ICP refinement, and segmentation analysis
+- [ICP Analysis](https://veruminc.com/services/icp-analysis.html): Ideal customer profile analysis starting at $2,500
+
+## Competitor Comparisons
+
+- [Verum vs ZoomInfo](https://veruminc.com/compare/verum-vs-zoominfo/): ZoomInfo alternative without annual contract lock-in
+- [Verum vs Apollo](https://veruminc.com/compare/verum-vs-apollo/): Apollo comparison for data cleaning vs contact databases
+- [Verum vs Clearbit](https://veruminc.com/compare/verum-vs-clearbit/): Clearbit alternative for one-time cleaning projects
+- [Verum vs Cognism](https://veruminc.com/compare/verum-vs-cognism/): Cognism comparison and per-project alternative
+- [Verum vs Lusha](https://veruminc.com/compare/verum-vs-lusha/): Lusha alternative for existing data cleanup
+
+## Alternatives
+
+- [ZoomInfo Alternative](https://veruminc.com/alternatives/zoominfo-alternative/): Why per-project beats $15K-$50K ZoomInfo contracts
+- [Apollo Alternative](https://veruminc.com/alternatives/apollo-alternative/): Apollo alternative for CRM hygiene
+- [Clearbit Alternative](https://veruminc.com/alternatives/clearbit-alternative/): Clearbit alternative after HubSpot acquisition changes
+- [Cognism Alternative](https://veruminc.com/alternatives/cognism-alternative/): Cognism alternatives for mid-market teams
+- [6sense Alternative](https://veruminc.com/alternatives/6sense-alternative/): 6sense alternatives for account intelligence
+- [Lusha Alternative](https://veruminc.com/alternatives/lusha-alternative/): Lusha alternative with full CRM cleanup
+- [Hunter Alternative](https://veruminc.com/alternatives/hunter-alternative/): Hunter.io alternatives for email enrichment
+- [RocketReach Alternative](https://veruminc.com/alternatives/rocketreach-alternative/): RocketReach alternatives
+- [Seamless.AI Alternative](https://veruminc.com/alternatives/seamless-ai-alternative/): Seamless.AI alternatives
+- [Demandbase Alternative](https://veruminc.com/alternatives/demandbase-alternative/): Demandbase alternatives for ABM data
+- [SalesIntel Alternative](https://veruminc.com/alternatives/salesintel-alternative/): SalesIntel alternatives
+
+## Industry Solutions
+
+- [All Solutions](https://veruminc.com/solutions/): 28 industry-specific data enrichment pages
+- [Healthcare Data Enrichment](https://veruminc.com/solutions/healthcare-data-enrichment/): NPI verification and provider data for healthcare companies
+- [SaaS Data Enrichment](https://veruminc.com/solutions/saas-data-enrichment/): Tech stack detection and funding signals for SaaS sales
+- [Fintech Data Enrichment](https://veruminc.com/solutions/fintech-data-enrichment/): KYC/AML compliance and regulatory accuracy
+- [Manufacturing Data Enrichment](https://veruminc.com/solutions/manufacturing-data-enrichment/): Distributor networks and long-cycle sales data
+- [Cybersecurity Data Enrichment](https://veruminc.com/solutions/cybersecurity-data-enrichment/): CISO mobility and security vendor landscape
+- [Legal Data Enrichment](https://veruminc.com/solutions/legal-data-enrichment/): Bar numbers, practice areas, and attorney CRM data
+- [Real Estate Data Enrichment](https://veruminc.com/solutions/real-estate-data-enrichment/): License data and transaction history
+- [Insurance Data Enrichment](https://veruminc.com/solutions/insurance-data-enrichment/): Agent licensing and claims data
+- [MarTech Data Enrichment](https://veruminc.com/solutions/martech-data-enrichment/): CMO turnover and marketing tech stack data
+- [HR Tech Data Enrichment](https://veruminc.com/solutions/hr-tech-data-enrichment/): HRIS stack detection and title normalization
+
+## Enrichment Services
+
+- [All Enrichment Services](https://veruminc.com/enrichment/): 43 enrichment types organized by category
+- [Contact Enrichment](https://veruminc.com/enrichment/contact-enrichment/): Full contact record enrichment
+- [Email Enrichment](https://veruminc.com/enrichment/email-enrichment/): Email discovery and validation
+- [Email Finder](https://veruminc.com/enrichment/email-finder/): Find verified email addresses
+- [Phone Number Enrichment](https://veruminc.com/enrichment/phone-number-enrichment/): Direct dial and mobile number enrichment
+- [Company Enrichment](https://veruminc.com/enrichment/company-enrichment/): Full company firmographic enrichment
+- [LinkedIn Profile Enrichment](https://veruminc.com/enrichment/linkedin-profile-enrichment/): LinkedIn profile URLs and data
+- [Tech Stack Enrichment](https://veruminc.com/enrichment/tech-stack-enrichment/): Technology detection for target accounts
+- [Firmographic Enrichment](https://veruminc.com/enrichment/firmographic-enrichment/): Revenue, employee count, industry
+- [Intent Data Enrichment](https://veruminc.com/enrichment/intent-data-enrichment/): Buying intent signals
+- [NAICS Code Enrichment](https://veruminc.com/enrichment/naics-code-enrichment/): Industry classification codes
+
+## Cleaning Services
+
+- [All Cleaning Services](https://veruminc.com/cleaning/): 20 data cleaning service types
+- [CRM Data Cleaning](https://veruminc.com/cleaning/crm-data-cleaning/): Full CRM database cleanup
+- [Data Deduplication](https://veruminc.com/cleaning/data-deduplication/): Remove duplicate records at scale
+- [Email Validation](https://veruminc.com/cleaning/email-validation/): Bulk email validation and verification
+- [Email Verification](https://veruminc.com/cleaning/email-verification/): Real-time email verification
+- [Duplicate Detection](https://veruminc.com/cleaning/duplicate-detection/): Fuzzy matching and merge candidates
+- [Address Normalization](https://veruminc.com/cleaning/address-normalization/): USPS-standardized addresses
+- [Phone Formatting](https://veruminc.com/cleaning/phone-formatting/): Phone number standardization
+- [Job Title Normalization](https://veruminc.com/cleaning/job-title-normalization/): Title mapping and seniority tagging
+- [Company Name Standardization](https://veruminc.com/cleaning/company-name-standardization/): Entity resolution and name matching
+
+## Use Cases
+
+- [All Use Cases](https://veruminc.com/use-cases/): 29 use-case pages for data operations teams
+- [CRM Hygiene](https://veruminc.com/use-cases/crm-hygiene/): Ongoing CRM data quality
+- [Lead Scoring](https://veruminc.com/use-cases/lead-scoring/): Lead scoring with clean firmographic data
+- [Lead Routing](https://veruminc.com/use-cases/lead-routing/): Fixing routing logic with clean territory data
+- [ABM Targeting](https://veruminc.com/use-cases/abm-targeting/): Account-based marketing data prep
+- [Data Migration](https://veruminc.com/use-cases/data-migration/): CRM migration cleanup
+- [CRM Migration](https://veruminc.com/use-cases/crm-migration/): HubSpot to Salesforce and other CRM moves
+- [ICP Development](https://veruminc.com/use-cases/icp-development/): Ideal customer profile refinement
+- [TAM SAM SOM Analysis](https://veruminc.com/use-cases/tam-sam-som-analysis/): Market sizing with clean data
+- [Territory Planning](https://veruminc.com/use-cases/territory-planning/): Sales territory data preparation
+- [Sales Prospecting](https://veruminc.com/use-cases/sales-prospecting/): Prospect list building
+
+## Audience Pages
+
+- [For Sales Leaders](https://veruminc.com/for/sales-leaders/): Data services for VP Sales and CROs
+- [For RevOps](https://veruminc.com/for/revenue-ops/): RevOps data operations support
+- [For Marketing Ops](https://veruminc.com/for/marketing-ops/): Marketing ops data projects
+- [For Sales Ops](https://veruminc.com/for/sales-ops/): Sales ops cleanup and enrichment
+- [For Data Teams](https://veruminc.com/for/data-teams/): Data team augmentation services
+
+## Resources
+
+- [Resources Hub](https://veruminc.com/resources/): Data quality guides and CRM hygiene playbooks
+- [Data Quality for Sales Leaders](https://veruminc.com/resources/data-quality-for-sales-leaders.html): Executive guide to CRM data quality
+- [Data Hygiene for Marketing Ops](https://veruminc.com/resources/data-hygiene-for-marketing-ops.html): Marketing ops data playbook
+- [CEO Guide to CRM Data Quality](https://veruminc.com/resources/ceo-guide-crm-data-quality.html): Executive briefing on data quality impact
+- [Calculate CRM Data Decay Rate](https://veruminc.com/resources/calculate-crm-data-decay-rate.html): Decay rate calculation framework
+- [Data Quality Metrics](https://veruminc.com/resources/data-quality-metrics.html): KPIs for measuring data quality
+- [True Cost of Bad CRM Data](https://veruminc.com/resources/true-cost-bad-crm-data.html): Financial impact of data decay
+
+## Optional
+
+- [Find Business Lists](https://veruminc.com/find/): 25 industry-specific list building services
+- [Healthcare Practices](https://veruminc.com/healthcare/): 9 healthcare practice specialty pages
+- [Integrations](https://veruminc.com/integrations/): Salesforce, HubSpot, and Dynamics 365 integration
+- [Glossary](https://veruminc.com/glossary/): Data operations terminology
+- [Case Studies](https://veruminc.com/case-studies/): Client case studies and outcomes
