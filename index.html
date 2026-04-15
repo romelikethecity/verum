@@ -16,8 +16,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=6">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=7">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veruminc.com/">
@@ -493,13 +493,6 @@
       50% { box-shadow: 0 0 16px rgba(0, 184, 148, 0.8); }
     }
 
-    /* Comparison grids — stack on mobile */
-    @media (max-width: 768px) {
-      .comparison-grid {
-        grid-template-columns: 1fr !important;
-      }
-    }
-
     /* Testimonials */
     .testimonials-grid {
       display: grid;
@@ -584,12 +577,6 @@
       margin: 0;
     }
 
-    /* Comparison grid responsive */
-    @media (max-width: 768px) {
-      .comparison-grid {
-        grid-template-columns: 1fr !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -711,17 +698,17 @@
   </section>
 
   <!-- Awards Strip -->
-  <section style="padding: 2rem 0; border-bottom: 1px solid var(--color-border);">
-    <div class="container" style="text-align: center;">
-      <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); margin-bottom: 1rem;">Recognized by</p>
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; align-items: center;">
-        <a href="https://sultanofsaas.com/roundups/best-data-enrichment-tools-midmarket/" target="_blank" rel="noopener" style="display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"><img src="/assets/badges/verum-best-data-enrichment-2026-inline.svg?v=2" alt="Best Data Enrichment Service 2026" width="260" height="48" loading="lazy"></a>
-        <a href="https://sultanofsaas.com/roundups/best-data-cleaning-services/" target="_blank" rel="noopener" style="display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"><img src="/assets/badges/verum-best-data-cleaning-2026-inline.svg?v=2" alt="Best Data Cleaning Service 2026" width="260" height="48" loading="lazy"></a>
-        <a href="https://sultanofsaas.com/roundups/best-smb-data-providers/" target="_blank" rel="noopener" style="display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"><img src="/assets/badges/verum-best-smb-data-2026-inline.svg?v=2" alt="Best SMB Data Provider 2026" width="260" height="48" loading="lazy"></a>
-        <a href="https://b2bsalestools.com/guides/best-zoominfo-alternatives/" target="_blank" rel="noopener" style="display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"><img src="/assets/badges/verum-best-zoominfo-alt-2026-inline.svg?v=2" alt="Best ZoomInfo Alternative 2026" width="260" height="48" loading="lazy"></a>
-        <a href="https://therevopsreport.com/tools/best-data-hygiene/" target="_blank" rel="noopener" style="display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"><img src="/assets/badges/verum-best-crm-hygiene-2026-inline.svg?v=2" alt="Best CRM Data Hygiene 2026" width="260" height="48" loading="lazy"></a>
-        <a href="https://datastackguide.com/best/best-data-quality-tools-for-revenue-operations/" target="_blank" rel="noopener" style="display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"><img src="/assets/badges/verum-best-data-quality-revops-2026-inline.svg?v=2" alt="Best Data Quality for RevOps 2026" width="260" height="48" loading="lazy"></a>
-        <a href="https://thecroreport.com/best/best-data-providers-for-cros/" target="_blank" rel="noopener" style="display: block; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'"><img src="/assets/badges/verum-top-data-tools-cro-2026-inline.svg?v=2" alt="Top Data Tools for CROs 2026" width="260" height="48" loading="lazy"></a>
+  <section class="awards-strip">
+    <div class="container">
+      <p class="awards-strip__label">Recognized by</p>
+      <div class="awards-strip__grid">
+        <a href="https://sultanofsaas.com/roundups/best-data-enrichment-tools-midmarket/" target="_blank" rel="noopener" class="awards-strip__link"><img src="/assets/badges/verum-best-data-enrichment-2026-inline.svg?v=2" alt="Best Data Enrichment Service 2026" width="260" height="48" loading="lazy"></a>
+        <a href="https://sultanofsaas.com/roundups/best-data-cleaning-services/" target="_blank" rel="noopener" class="awards-strip__link"><img src="/assets/badges/verum-best-data-cleaning-2026-inline.svg?v=2" alt="Best Data Cleaning Service 2026" width="260" height="48" loading="lazy"></a>
+        <a href="https://sultanofsaas.com/roundups/best-smb-data-providers/" target="_blank" rel="noopener" class="awards-strip__link"><img src="/assets/badges/verum-best-smb-data-2026-inline.svg?v=2" alt="Best SMB Data Provider 2026" width="260" height="48" loading="lazy"></a>
+        <a href="https://b2bsalestools.com/guides/best-zoominfo-alternatives/" target="_blank" rel="noopener" class="awards-strip__link"><img src="/assets/badges/verum-best-zoominfo-alt-2026-inline.svg?v=2" alt="Best ZoomInfo Alternative 2026" width="260" height="48" loading="lazy"></a>
+        <a href="https://therevopsreport.com/tools/best-data-hygiene/" target="_blank" rel="noopener" class="awards-strip__link"><img src="/assets/badges/verum-best-crm-hygiene-2026-inline.svg?v=2" alt="Best CRM Data Hygiene 2026" width="260" height="48" loading="lazy"></a>
+        <a href="https://datastackguide.com/best/best-data-quality-tools-for-revenue-operations/" target="_blank" rel="noopener" class="awards-strip__link"><img src="/assets/badges/verum-best-data-quality-revops-2026-inline.svg?v=2" alt="Best Data Quality for RevOps 2026" width="260" height="48" loading="lazy"></a>
+        <a href="https://thecroreport.com/best/best-data-providers-for-cros/" target="_blank" rel="noopener" class="awards-strip__link"><img src="/assets/badges/verum-top-data-tools-cro-2026-inline.svg?v=2" alt="Top Data Tools for CROs 2026" width="260" height="48" loading="lazy"></a>
       </div>
     </div>
   </section>
@@ -731,99 +718,99 @@
     <div class="container">
       <div class="text-center mb-2xl">
         <h2>What agencies quote in weeks, we deliver in hours</h2>
-        <p style="max-width: 600px; margin: 0 auto; color: var(--color-text-secondary);">Legacy services companies built their business on billable hours. We built ours on AI that actually delivers.</p>
+        <p class="page-hero__subtitle">Legacy services companies built their business on billable hours. We built ours on AI that actually delivers.</p>
       </div>
 
-      <div class="comparison-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); max-width: 1000px; margin: 2rem auto 0;">
+      <div class="comparison-grid">
 
         <!-- Legacy Column -->
-        <div class="comparison-card comparison-card--legacy" style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-xl); position: relative;">
-          <div style="position: absolute; top: -12px; left: var(--space-lg); background: #ff6b6b; color: white; padding: 0.25rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600; text-transform: uppercase;">The Old Way</div>
-          <h3 style="color: var(--color-text-muted); margin-bottom: var(--space-lg);">Legacy Services & Agencies</h3>
+        <div class="comparison-card comparison-card--legacy">
+          <div class="comparison-card__badge comparison-card__badge--legacy">The Old Way</div>
+          <h3 class="comparison-card__title">Legacy Services & Agencies</h3>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span style="color: #ff6b6b; font-size: 1.25rem;">✕</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--bad">&#10005;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">$150–300/hour billing</strong>
-              <p style="color: var(--color-text-muted); margin: 0.25rem 0 0 0; font-size: 0.875rem;">Incentivized to work slowly. A "simple" project becomes 40+ hours.</p>
+              <strong>$150-300/hour billing</strong>
+              <p>Incentivized to work slowly. A "simple" project becomes 40+ hours.</p>
             </div>
           </div>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span style="color: #ff6b6b; font-size: 1.25rem;">✕</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--bad">&#10005;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">2–6 week timelines</strong>
-              <p style="color: var(--color-text-muted); margin: 0.25rem 0 0 0; font-size: 0.875rem;">Manual processes. Waiting for contractors. Endless back-and-forth.</p>
+              <strong>2-6 week timelines</strong>
+              <p>Manual processes. Waiting for contractors. Endless back-and-forth.</p>
             </div>
           </div>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span style="color: #ff6b6b; font-size: 1.25rem;">✕</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--bad">&#10005;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">Unpredictable costs</strong>
-              <p style="color: var(--color-text-muted); margin: 0.25rem 0 0 0; font-size: 0.875rem;">"We'll need to scope this" becomes a $15K invoice. Every time.</p>
+              <strong>Unpredictable costs</strong>
+              <p>"We'll need to scope this" becomes a $15K invoice. Every time.</p>
             </div>
           </div>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span style="color: #ff6b6b; font-size: 1.25rem;">✕</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--bad">&#10005;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">Human error at scale</strong>
-              <p style="color: var(--color-text-muted); margin: 0.25rem 0 0 0; font-size: 0.875rem;">Copy-paste mistakes. Inconsistent formatting. Tired contractors on Friday afternoons.</p>
+              <strong>Human error at scale</strong>
+              <p>Copy-paste mistakes. Inconsistent formatting. Tired contractors on Friday afternoons.</p>
             </div>
           </div>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md);">
-            <span style="color: #ff6b6b; font-size: 1.25rem;">✕</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--bad">&#10005;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">Black box process</strong>
-              <p style="color: var(--color-text-muted); margin: 0.25rem 0 0 0; font-size: 0.875rem;">You hand over data and hope for the best. No visibility until delivery.</p>
+              <strong>Black box process</strong>
+              <p>You hand over data and hope for the best. No visibility until delivery.</p>
             </div>
           </div>
         </div>
 
         <!-- Verum Column -->
-        <div class="comparison-card comparison-card--verum" style="background: linear-gradient(135deg, rgba(0, 184, 148, 0.1) 0%, rgba(0, 184, 148, 0.05) 100%); border: 2px solid var(--color-teal); border-radius: var(--radius-lg); padding: var(--space-xl); position: relative;">
-          <div style="position: absolute; top: -12px; left: var(--space-lg); background: var(--color-teal); color: var(--color-bg); padding: 0.25rem 0.75rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600; text-transform: uppercase;">The Verum Way</div>
-          <h3 style="color: var(--color-teal); margin-bottom: var(--space-lg);">AI-Powered Data Operations</h3>
+        <div class="comparison-card comparison-card--verum">
+          <div class="comparison-card__badge comparison-card__badge--verum">The Verum Way</div>
+          <h3 class="comparison-card__title">AI-Powered Data Operations</h3>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span style="color: var(--color-teal); font-size: 1.25rem;">✓</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--good">&#10003;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">Pay per record, not per hour</strong>
-              <p style="color: var(--color-text-secondary); margin: 0.25rem 0 0 0; font-size: 0.875rem;">Fixed pricing. Know exactly what you'll pay before we start. No surprises.</p>
+              <strong>Pay per record, not per hour</strong>
+              <p>Fixed pricing. Know exactly what you'll pay before we start. No surprises.</p>
             </div>
           </div>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span style="color: var(--color-teal); font-size: 1.25rem;">✓</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--good">&#10003;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">24–48 hour delivery</strong>
-              <p style="color: var(--color-text-secondary); margin: 0.25rem 0 0 0; font-size: 0.875rem;">AI agents work around the clock. What took weeks now takes hours.</p>
+              <strong>24-48 hour delivery</strong>
+              <p>AI agents work around the clock. What took weeks now takes hours.</p>
             </div>
           </div>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span style="color: var(--color-teal); font-size: 1.25rem;">✓</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--good">&#10003;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">70% lower cost</strong>
-              <p style="color: var(--color-text-secondary); margin: 0.25rem 0 0 0; font-size: 0.875rem;">AI economics, not agency economics. Better results at a fraction of the price.</p>
+              <strong>70% lower cost</strong>
+              <p>AI economics, not agency economics. Better results at a fraction of the price.</p>
             </div>
           </div>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-lg);">
-            <span style="color: var(--color-teal); font-size: 1.25rem;">✓</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--good">&#10003;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">Consistent, scalable accuracy</strong>
-              <p style="color: var(--color-text-secondary); margin: 0.25rem 0 0 0; font-size: 0.875rem;">AI doesn't get tired. Every record processed with the same precision.</p>
+              <strong>Consistent, scalable accuracy</strong>
+              <p>AI doesn't get tired. Every record processed with the same precision.</p>
             </div>
           </div>
 
-          <div class="comparison-item" style="display: flex; align-items: flex-start; gap: var(--space-md);">
-            <span style="color: var(--color-teal); font-size: 1.25rem;">✓</span>
+          <div class="comparison-item">
+            <span class="comparison-item__icon comparison-item__icon--good">&#10003;</span>
             <div>
-              <strong style="color: var(--color-text-primary);">Human verification on every project</strong>
-              <p style="color: var(--color-text-secondary); margin: 0.25rem 0 0 0; font-size: 0.875rem;">AI does the heavy lifting. Humans ensure quality. Best of both worlds.</p>
+              <strong>Human verification on every project</strong>
+              <p>AI does the heavy lifting. Humans ensure quality. Best of both worlds.</p>
             </div>
           </div>
         </div>
@@ -1347,6 +1334,14 @@
   </section>
 
   </main>
+
+  <!-- Floating CTA bar -->
+  <div class="floating-cta">
+    <div class="container floating-cta__inner">
+      <span class="floating-cta__text"><strong>Free data score</strong> - see what's hiding in your CRM</span>
+      <a href="#contact" class="btn btn--primary btn--sm">Get My Score</a>
+    </div>
+  </div>
 
   <!-- Footer (injected by components.js) -->
   <footer id="site-footer"></footer>
