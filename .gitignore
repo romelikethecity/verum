@@ -9,3 +9,7 @@ generate_pages.py
 # Internal docs
 CLAUDE.md
 docs/
+
+# Internal agents and settings (not for public serving)
+.agents/
+.claude/
