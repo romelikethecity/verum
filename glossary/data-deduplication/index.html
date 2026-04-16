@@ -102,6 +102,22 @@
                 "@type": "Answer",
                 "text": "We handle data deduplication as part of our data cleaning and enrichment services. Send us your data, and we'll apply data deduplication best practices using 50+ sources with human QA. Most projects complete in 24-48 hours."
             }
+        },
+        {
+            "@type": "Question",
+            "name": "What's the difference between exact match and fuzzy match deduplication?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Exact match only catches identical records. Fuzzy matching uses algorithms to find records that are similar but not identical, like Acme Corp and ACME Corporation. Fuzzy matching typically finds 5-10x more duplicates than exact match alone."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How many duplicates does a typical B2B CRM have?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most B2B CRMs have 10-30% duplicate records. The rate depends on how many data sources feed into the system, how long it's been since the last cleanup, and whether dedup runs on ingest. CRMs with heavy marketing automation integrations tend to be on the higher end."
+            }
         }
     ]
 }
@@ -155,12 +171,39 @@
       <figcaption>How Verum approaches data deduplication with 50+ data sources and human QA.</figcaption>
     </figure>
 
-        <h2>Common Mistakes</h2>
+        <h2>How B2B Data Deduplication Actually Works</h2>
+        <p>Most people think deduplication is simple: find exact matches, merge them, done. In practice, exact matches account for maybe 10% of your duplicates. The rest are fuzzy. "Acme Corp" and "ACME Corporation" are the same company. "mike.jones@acme.com" and "michael.jones@acme.com" are probably the same person. Probably.</p>
+        <p>Here's what a real dedup process looks like:</p>
+        <h3>Fuzzy Matching on Company Name + Domain</h3>
+        <p>The first pass compares company names using similarity algorithms that account for abbreviations, punctuation, and legal suffixes. "LLC" vs "L.L.C." vs nothing at all. Domain matching adds a second signal. If two records share the same website domain, they're almost certainly the same company, even if one says "International Business Machines" and the other says "IBM."</p>
+        <h3>Email Normalization</h3>
+        <p>Email addresses get standardized before comparison. Lowercase everything. Strip plus-addressing (john+crm@company.com becomes john@company.com). Handle common alias patterns. A surprising number of duplicates hide behind email formatting differences that a simple string comparison misses.</p>
+        <h3>Phone Standardization</h3>
+        <p>Phone numbers come in dozens of formats: (555) 123-4567, 555.123.4567, +15551234567, 5551234567. Standardize all of them to E.164 format before comparing. Extensions matter too. Two records with the same base number but different extensions are likely different people at the same company, not duplicates.</p>
+        <h3>Confidence Scoring</h3>
+        <p>Not every potential match is a real match. Good dedup systems assign confidence scores based on how many fields align and how closely. A match on company name + domain + email might score 95%. A match on company name alone might score 40%. You set the threshold based on your tolerance for false positives vs. missed duplicates. At Verum, we flag anything above 70% for human review and auto-merge above 95%.</p>
+
+        <h2>Common Deduplication Mistakes</h2>
         <ul>
             <li><strong>Treating it as a one-time project.</strong> Data decays continuously. A one-time effort buys you a few months of clean data, then quality degrades right back to where it started.</li>
             <li><strong>Relying on a single data source.</strong> No single vendor has complete or perfectly accurate data. Cross-referencing 50+ sources produces significantly better results than relying on one.</li>
             <li><strong>Skipping human QA.</strong> Automated processes handle 90% of cases well. The remaining 10%, the edge cases and ambiguous matches, need human review to prevent errors from entering your database.</li>
+            <li><strong>Over-merging related companies.</strong> "IBM" and "IBM Watson Health" are not the same account. Neither are "Goldman Sachs" and "Goldman Sachs Asset Management." Parent companies and subsidiaries need separate records. Merge them and you lose visibility into who you're actually selling to.</li>
+            <li><strong>Under-merging on name variants.</strong> "Johnson & Johnson" vs "Johnson and Johnson" vs "J&J" are the same company. "Co." vs "Company" vs "Corp" trips up basic matching. If your dedup only catches exact matches, you're missing 60-70% of your actual duplicates.</li>
+            <li><strong>Ignoring subsidiary relationships.</strong> A company with 12 subsidiaries isn't 12 duplicates. It's a hierarchy. Your dedup process needs to understand the difference between "same entity, different name" and "related but separate entities." Getting this wrong wrecks your account-based reporting.</li>
+            <li><strong>Merging across CRM object types.</strong> A contact duplicate and an account duplicate are different problems. Merging two contact records under the wrong account creates a mess that's harder to fix than the original duplicates. Always dedup within object types first, then reconcile relationships.</li>
         </ul>
+
+        <h2>When to Deduplicate Your CRM</h2>
+        <p>There's no single right cadence for deduplication. But there are clear triggers that mean you should run one now:</p>
+        <ul>
+            <li><strong>Before any list import.</strong> Importing 5,000 records from a trade show? Run dedup on the import file first, then against your existing database. Otherwise you're creating duplicates at scale. We've seen imports create 15-20% duplicate rates when this step gets skipped.</li>
+            <li><strong>Quarterly maintenance.</strong> Even without imports, duplicates accumulate. SDRs create records manually. Marketing automation syncs create ghost records. Web forms don't always match to existing contacts. A quarterly dedup pass catches the drift before it compounds.</li>
+            <li><strong>Before major campaigns.</strong> Nothing kills campaign performance like sending the same person three versions of the same email. Or worse, sending different messages that contradict each other. Dedup before any campaign that touches more than 1,000 recipients.</li>
+            <li><strong>After CRM migrations.</strong> Migrating from HubSpot to Salesforce? From one Salesforce org to another? Migrations are duplicate factories. Field mapping inconsistencies, partial imports, test records that never got cleaned up. Run a full dedup within the first week of going live on the new system.</li>
+            <li><strong>When forecasting looks off.</strong> If your pipeline suddenly shows 30% more opportunities than last quarter but bookings haven't changed, duplicates are probably inflating your numbers. Same deal if win rates drop for no obvious reason. Duplicate accounts create phantom pipeline.</li>
+        </ul>
+        <p>At Verum, we handle dedup as part of our <a href="/services/data-cleaning.html">data cleaning service</a>. Send us your export, and we'll identify duplicates, assign confidence scores, and return a clean file with merge recommendations. Most projects finish in 24-48 hours.</p>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-section">
@@ -175,6 +218,14 @@
           <div class="faq-item" style="margin-bottom: 1.5rem;">
             <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How does Verum help with data deduplication?</h3>
             <p style="color: var(--color-text-secondary);">We handle data deduplication as part of our data cleaning and enrichment services. Send us your data, and we'll apply best practices using 50+ sources with human QA. Most projects complete in 24-48 hours.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the difference between exact match and fuzzy match deduplication?</h3>
+            <p style="color: var(--color-text-secondary);">Exact match only catches identical records. Fuzzy matching uses algorithms to find records that are similar but not identical, like "Acme Corp" and "ACME Corporation." Fuzzy matching typically finds 5-10x more duplicates than exact match alone.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How many duplicates does a typical B2B CRM have?</h3>
+            <p style="color: var(--color-text-secondary);">Most B2B CRMs have 10-30% duplicate records. The rate depends on how many data sources feed into the system, how long it's been since the last cleanup, and whether dedup runs on ingest. CRMs with heavy marketing automation integrations tend to be on the higher end.</p>
           </div>
         </div>
 

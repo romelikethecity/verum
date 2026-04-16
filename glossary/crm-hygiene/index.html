@@ -81,7 +81,7 @@
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "What is crm hygiene?",
+            "name": "What is CRM hygiene?",
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "The ongoing practice of maintaining clean, accurate, and complete data within a Customer Relationship Management system."
@@ -89,18 +89,34 @@
         },
         {
             "@type": "Question",
-            "name": "Why does crm hygiene matter for B2B teams?",
+            "name": "Why does CRM hygiene matter for B2B teams?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "B2B data decays at 30% per year. Without crm hygiene, your database loses accuracy every month. Clean, complete data drives better targeting, higher conversion rates, and more accurate reporting. The average cost of poor data quality is $15M per year for large organizations."
+                "text": "B2B data decays at 30% per year. Without CRM hygiene, your database loses accuracy every month. Clean, complete data drives better targeting, higher conversion rates, and more accurate reporting. The average cost of poor data quality is $15M per year for large organizations."
             }
         },
         {
             "@type": "Question",
-            "name": "How does Verum help with crm hygiene?",
+            "name": "How does Verum help with CRM hygiene?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We handle crm hygiene as part of our data cleaning and enrichment services. Send us your data, and we'll apply crm hygiene best practices using 50+ sources with human QA. Most projects complete in 24-48 hours."
+                "text": "We handle CRM hygiene as part of our data cleaning and enrichment services. Send us your data, and we'll apply CRM hygiene best practices using 50+ sources with human QA. Most projects complete in 24-48 hours."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How often should I clean my CRM?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Email validation monthly, full deduplication quarterly, enrichment on ingest, and stale record review every 6 months. High-volume teams sending 10,000+ emails per month should validate emails weekly."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What percentage of CRM records are typically bad?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "In a B2B CRM that hasn't been cleaned in 6+ months, expect 15-25% invalid emails, 10-30% duplicate records, and 30-40% of contacts with outdated job titles or companies. The longer between cleanups, the worse it gets."
             }
         }
     ]
@@ -155,6 +171,39 @@
       <figcaption>How Verum approaches crm hygiene with 50+ data sources and human QA.</figcaption>
     </figure>
 
+        <h2>What Bad CRM Data Actually Costs</h2>
+        <p>The real cost of dirty CRM data isn't abstract. It shows up in specific, measurable ways every week.</p>
+        <h3>Sales Reps Waste 30% of Their Time on Bad Data</h3>
+        <p>That's not a guess. Salesforce's own research puts it at roughly a third of selling time lost to searching for contact info, manually updating records, and working leads that turn out to be junk. For a 10-person SDR team making $60K each, that's $180,000 per year spent on data janitorial work instead of pipeline generation.</p>
+        <h3>Marketing Sends to Dead Emails</h3>
+        <p>Every email that bounces hurts your sender reputation. Once your bounce rate crosses 2%, ESPs start throttling delivery for your entire domain. Not just the bad addresses. All of them. A single dirty list import can tank deliverability for months. We've seen companies drop from 95% inbox placement to 70% after one uncleaned import.</p>
+        <h3>Forecasting Breaks When Duplicates Inflate Pipeline</h3>
+        <p>If the same opportunity exists twice in your CRM under slightly different account names, your pipeline report shows double the revenue. Your VP of Sales reports a $4M quarter when the real number is $3.2M. Nobody catches it until the board meeting. Duplicate accounts are the most common source of forecast inflation, and they're invisible until someone audits the data.</p>
+        <h3>Compliance Risk from Stale Consent Records</h3>
+        <p>GDPR and CCPA require you to honor opt-out requests and data deletion. If a contact opted out but their record got duplicated before the opt-out synced, you're now emailing someone who told you to stop. That's not a theoretical risk. It's a regulatory fine waiting to happen. Stale consent data is a legal liability.</p>
+
+        <h2>A CRM Hygiene Checklist</h2>
+        <p>If you haven't cleaned your CRM in the last 90 days, start here:</p>
+        <ul>
+            <li><strong>Standardize job titles.</strong> "VP Sales," "Vice President of Sales," "VP, Sales," and "V.P. Sales" are all the same title. Pick a format and normalize everything to it. This matters for lead routing, scoring, and any report that segments by role.</li>
+            <li><strong>Normalize company names.</strong> Remove legal suffixes ("Inc.", "LLC", "Corp") or standardize them. Map common abbreviations. "GE" should resolve to "General Electric." Without this, account-based anything falls apart.</li>
+            <li><strong>Validate email addresses.</strong> Run your entire database through email validation. Not just syntax checks. Verify that the mailbox exists, the domain accepts mail, and the address isn't a known spam trap. Expect to find 15-25% invalid emails in a database that hasn't been validated in 6 months.</li>
+            <li><strong>Remove duplicates.</strong> Run <a href="/glossary/data-deduplication/">deduplication</a> using fuzzy matching, not just exact match. Exact match catches maybe 10% of real duplicates. The rest hide behind name variants, email aliases, and formatting differences.</li>
+            <li><strong>Enrich missing fields.</strong> Records missing phone numbers, company size, industry, or technology stack can't be scored or routed properly. Enrichment fills those gaps from external sources. At Verum, we use 50+ sources to hit fill rates above 85%.</li>
+            <li><strong>Verify phone numbers.</strong> Check that phone numbers are valid, in service, and connected to the right person. Disconnected numbers waste dialer time and hurt connect rates. Line-type detection (mobile vs. landline) improves SMS campaign targeting.</li>
+            <li><strong>Update stale records.</strong> People change jobs every 2.5 years on average. If a contact's record hasn't been updated in 12 months, there's a 40% chance their job title or company is wrong. Flag records older than 6 months for re-verification.</li>
+        </ul>
+
+        <h2>How Often to Clean Your CRM</h2>
+        <p>There's no one-size-fits-all cadence, but here's what works for most B2B teams with 10,000+ records:</p>
+        <ul>
+            <li><strong>Email validation: monthly.</strong> Email addresses go bad fast. People leave companies, domains expire, mailboxes fill up. Monthly validation catches decay before it hurts deliverability. If you send more than 10,000 emails per month, consider validating weekly.</li>
+            <li><strong>Full deduplication: quarterly.</strong> New duplicates accumulate from web forms, marketing automation syncs, manual entry, and list imports. Quarterly catches the buildup before it compounds into a forecasting problem.</li>
+            <li><strong>Enrichment: on ingest.</strong> Don't wait to enrich new records. Enrich them as they enter the system. A lead that comes in with just a name and email is useless for routing and scoring until someone fills in company, title, and phone. Automate this at the point of entry.</li>
+            <li><strong>Stale record review: every 6 months.</strong> Pull every record that hasn't been touched (no email opens, no form fills, no sales activity) in 180 days. Re-verify the contact's current role and company. Archive records where the person has left and you can't find a replacement.</li>
+        </ul>
+        <p>Verum handles all of this as a managed service. You send us an export, we clean it and send it back. No software to install, no annual contract. Most projects finish in <a href="/services/data-cleaning.html">24-48 hours</a>.</p>
+
         <h2>Common Mistakes</h2>
         <ul>
             <li><strong>Treating it as a one-time project.</strong> Data decays continuously. A one-time effort buys you a few months of clean data, then quality degrades right back to where it started.</li>
@@ -165,16 +214,24 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq-section">
           <div class="faq-item" style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What is crm hygiene?</h3>
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What is CRM hygiene?</h3>
             <p style="color: var(--color-text-secondary);">The ongoing practice of maintaining clean, accurate, and complete data within a Customer Relationship Management system.</p>
           </div>
           <div class="faq-item" style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Why does crm hygiene matter for B2B teams?</h3>
-            <p style="color: var(--color-text-secondary);">B2B data decays at 30% per year. Without crm hygiene, your database loses accuracy every month. Clean, complete data drives better targeting, higher conversion rates, and more accurate reporting.</p>
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Why does CRM hygiene matter for B2B teams?</h3>
+            <p style="color: var(--color-text-secondary);">B2B data decays at 30% per year. Without CRM hygiene, your database loses accuracy every month. Clean, complete data drives better targeting, higher conversion rates, and more accurate reporting.</p>
           </div>
           <div class="faq-item" style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How does Verum help with crm hygiene?</h3>
-            <p style="color: var(--color-text-secondary);">We handle crm hygiene as part of our data cleaning and enrichment services. Send us your data, and we'll apply best practices using 50+ sources with human QA. Most projects complete in 24-48 hours.</p>
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How does Verum help with CRM hygiene?</h3>
+            <p style="color: var(--color-text-secondary);">We handle CRM hygiene as part of our data cleaning and enrichment services. Send us your data, and we'll apply best practices using 50+ sources with human QA. Most projects complete in 24-48 hours.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How often should I clean my CRM?</h3>
+            <p style="color: var(--color-text-secondary);">Email validation monthly, full deduplication quarterly, enrichment on ingest, and stale record review every 6 months. High-volume teams sending 10,000+ emails per month should validate emails weekly.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What percentage of CRM records are typically bad?</h3>
+            <p style="color: var(--color-text-secondary);">In a B2B CRM that hasn't been cleaned in 6+ months, expect 15-25% invalid emails, 10-30% duplicate records, and 30-40% of contacts with outdated job titles or companies. The longer between cleanups, the worse it gets.</p>
           </div>
         </div>
 
