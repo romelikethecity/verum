@@ -276,6 +276,28 @@
       <figcaption>Visual guide to how Verum solves B2B data challenges.</figcaption>
     </figure>
 
+        <h2>How Real Estate Brokerage Data Is Structured</h2>
+
+        <p>Real estate prospecting data is messier than most B2B verticals because the industry combines state licensing, MLS membership, and brokerage hierarchy. Three layers worth knowing about:</p>
+
+        <p><strong>State licensing.</strong> Every agent and broker holds a license issued by a state real estate commission (DRE in California, TREC in Texas, REBNY in New York, and so on). License records include name, license type (salesperson vs. broker vs. broker-associate), expiration date, and disciplinary history. The license database is the authoritative source for "is this person actually a licensed agent in this state."</p>
+
+        <p><strong>MLS membership.</strong> An agent can be licensed in California but not a member of any MLS (and so can't list properties on most platforms). MLS membership is regional, not state-level, and a brokerage often spans multiple MLSs. For lead generation targeting active listing agents, MLS membership is a stronger filter than license alone.</p>
+
+        <p><strong>Brokerage of record.</strong> Every licensed agent is affiliated with a brokerage. Affiliations change often (industry average is 18-24 months at a brokerage before a switch). Targeting at the brokerage level requires keeping current on those moves. Targeting at the team level (e.g., "all agents on the Stevens Team at Compass") adds another layer of complexity since teams form, dissolve, and migrate together.</p>
+
+        <h2>Common Segmentation Patterns</h2>
+
+        <p>Different real estate buyers care about different cuts of the data:</p>
+
+        <p><strong>By production volume.</strong> Top-producing agents drive most of the industry's transactions. The standard cuts are top 1%, top 10%, and "above average." Production data isn't free, but state-by-state transaction filings plus MLS sold data give a reasonable approximation. We can prioritize lists by recent volume where the data is available.</p>
+
+        <p><strong>By specialty.</strong> Residential vs. commercial vs. property management vs. luxury. Commercial agents work very different deal sizes and cycles than residential. Luxury (typically $1M+ list price for residential) is its own world with its own conferences, MLS systems, and certification programs.</p>
+
+        <p><strong>By brokerage tier.</strong> National franchises (Coldwell Banker, Keller Williams, RE/MAX, Compass, eXp) have different decision-making structures than independent brokerages. Vendor decisions at a national franchise often happen at the franchise-corporate level; at an independent brokerage, the broker-owner is the buyer.</p>
+
+        <p><strong>By geography.</strong> Most B2B selling into real estate is hyper-local. A list of "all brokerages in Chicago" usually performs worse than "all brokerages in Lincoln Park serving the $750K-$1.5M segment." Geographic + segment cuts produce the highest reply rates.</p>
+
         <h2>Common Questions About Finding Real Estate Agencies</h2>
         <div class="faq-section">
           <div class="faq-item" style="margin-bottom: 1.5rem;">
@@ -283,7 +305,7 @@
             <p style="color: var(--color-text-secondary);">We compile data from business registrations, professional directories, verified databases, and public records. Every record is cross-referenced across 50+ sources and validated before delivery. You get accurate, current data, not a scraped list from 2023.</p>
           </div>
           <div class="faq-item" style="margin-bottom: 1.5rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What data do I get for each real estate agencie record?</h3>
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What data do I get for each real estate agency record?</h3>
             <p style="color: var(--color-text-secondary);">Business name, address, phone, owner/operator name, owner email, owner phone, website, and available firmographic data (employee count, revenue range, years in business). Exact fields depend on data availability for each record.</p>
           </div>
           <div class="faq-item" style="margin-bottom: 1.5rem;">

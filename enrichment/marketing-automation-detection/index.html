@@ -239,6 +239,28 @@
           <a href="/#contact" class="btn btn--primary btn--lg">Enrich My Data</a>
         </div>
 
+        <h2>What MAP Detection Actually Tells You</h2>
+
+        <p>Knowing a prospect runs HubSpot vs. Marketo is one signal. The richer signals come from cross-referencing detection with other data:</p>
+
+        <p><strong>Stack maturity by combination.</strong> A company running HubSpot Marketing Hub plus HubSpot CRM is probably mid-market and ops-light. A company running Marketo plus Salesforce plus Demandbase is enterprise with a real RevOps team. Same vertical, very different sales motions.</p>
+
+        <p><strong>Migration likelihood by signal pattern.</strong> Multiple MAPs detected simultaneously often means a migration in progress. A 6-month-old Marketo install at a company that just hired a HubSpot-experienced marketing leader is a high-probability switch. Job-posting signals (looking for HubSpot admins at a Marketo shop) tighten the prediction further.</p>
+
+        <p><strong>Marketing leader changes as buying triggers.</strong> New CMOs commonly re-evaluate the marketing stack in their first 90 days. MAP detection plus a CMO-tenure field surfaces the prospects most likely to be open to switching platforms or adding complementary tools right now.</p>
+
+        <p><strong>Geographic and size patterns.</strong> Mailchimp dominates SMB. ActiveCampaign and Klaviyo dominate DTC e-commerce. Marketo and Eloqua dominate enterprise B2B. If your ICP says "1,000+ employee B2B SaaS" and most detections come back Mailchimp, your ICP and detections disagree about something worth investigating.</p>
+
+        <h2>Where MAP Detection Goes Wrong</h2>
+
+        <p>Three failure modes show up consistently in incoming data we audit:</p>
+
+        <p><strong>Subdomain confusion.</strong> A company's main site runs HubSpot, but their support portal runs Zendesk and their pricing page runs a separate Webflow instance. Single-page detection misses the full stack. We scan multiple subpaths and subdomains to get the complete picture.</p>
+
+        <p><strong>White-label MAPs.</strong> Some agencies and platforms (especially in financial services and healthcare) deploy white-labeled versions of HubSpot or Marketo. Detection on technical signatures works; brand-name matching fails. We rely on the underlying fingerprints rather than visible branding.</p>
+
+        <p><strong>Migration timing.</strong> A company that switched from Marketo to HubSpot last quarter still has Marketo-branded landing pages indexed in Google for months. Detection that relies on cached or indexed content can flag the old platform long after migration. We weight recent crawls more heavily than indexed historical data.</p>
+
         <h2>Common Questions About Marketing Automation Detection</h2>
         <div style="max-width: 700px;">
           <div class="faq-item" style="margin-bottom: 1.5rem;">

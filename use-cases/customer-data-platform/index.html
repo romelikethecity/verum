@@ -256,6 +256,28 @@
           </tbody>
         </table>
 
+        <h2>Where CDP Implementations Fall Apart</h2>
+
+        <p>CDP vendors sell unification. The reality is that unification only works on data the source systems were already keeping clean. Three failure modes account for most stalled CDP rollouts:</p>
+
+        <p><strong>Matching keys that aren't actually keys.</strong> A CDP needs deterministic identifiers (email, user ID, phone) to merge profiles confidently. Most B2B source systems treat email as a soft attribute. Customers re-sign-up with personal addresses, marketing imports use list IDs, support uses a CRM contact ID. The CDP merges where it can and creates "anonymous" duplicates everywhere else. Cleaning the source matching keys before ingestion fixes this at the root.</p>
+
+        <p><strong>Real-time event volume swamping batch profile data.</strong> Behavioral events come in real-time. Profile data (the firmographic and contact fields that make events useful) gets refreshed weekly or monthly. Events arrive against profiles that are six months out of date, segmentation is built on stale fields, and the personalization that was supposed to power the use case never works. A quarterly enrichment cadence on profile data keeps the firmographic layer fresh.</p>
+
+        <p><strong>Activation-side schema mismatches.</strong> Source data uses one industry taxonomy, the CDP normalizes to a second, the downstream activation tool (paid media, email, in-product) expects a third. By the time data reaches the activation point, the segments have been remapped twice and no longer mean what the marketer thinks they mean. Standardizing taxonomies at the source (NAICS for industry, ISO codes for country, a canonical job-level field) keeps the mapping shallow.</p>
+
+        <h2>Getting CDP Source Data Clean Takes Less Time Than Your Next Quarterly Review</h2>
+
+        <p><strong>Step 1: Free Assessment (5 minutes).</strong> Send us an export from one source system feeding your CDP. Salesforce contacts, HubSpot marketing list, support tool export, anything. We'll tell you duplicate rate, field completeness, and identity-resolution risk before you commit.</p>
+
+        <p><strong>Step 2: Discovery Call (30 minutes).</strong> We walk through which systems feed the CDP, where they conflict, and which activation use cases the CDP is supposed to support. The right cleanup depends on whether you're optimizing for paid-media audience syncs, in-product personalization, or sales enablement.</p>
+
+        <p><strong>Step 3: Data Analysis (on us).</strong> We clean a sample slice (typically 5K-10K records) and show you the duplicate clusters, identity matches, and field-enrichment hit rate. You see the output before paying for the full job.</p>
+
+        <p><strong>Step 4: Full Engagement.</strong> We process the full source-system exports in 24-48 hours. Output is import-ready with a per-record changelog so your data engineers can validate before the next CDP ingestion runs.</p>
+
+        <p><strong>Step 5: Ongoing (if you want it).</strong> CDPs degrade fast without ongoing hygiene. Some clients run us monthly during high-volume campaign seasons, quarterly during steady state. No contract, just send the next file.</p>
+
         <h2>Common Questions</h2>
         <div class="faq-section">
           <h3>Should we clean data before loading it into the CDP or after?</h3>
@@ -266,6 +288,12 @@
 
           <h3>Can you help with identity resolution across our source systems?</h3>
           <p>Yes. Cross-system identity resolution is one of our core capabilities. We match records across your CRM, marketing platform, support tool, and other systems using multiple matching strategies. The result is a master identity map that tells your CDP which records across systems belong to the same person.</p>
+
+          <h3>Do we still need a reverse-ETL tool if you clean the source data?</h3>
+          <p>Probably yes. Cleanup and reverse ETL solve different problems. Reverse ETL moves data from your warehouse back into operational tools. We clean the source data before it gets to the warehouse, and again on the way out if the warehouse layer introduces new quality issues. The two are complementary, not substitutes.</p>
+
+          <h3>How do you handle GDPR or CCPA when cleaning customer data?</h3>
+          <p>We process data under a standard DPA. We don't retain raw customer data after delivery, we sign mutual NDAs as standard, and we can work in your environment if your security team prefers data not leaving your perimeter. Most projects ship via secure file transfer; sensitive ones go via SFTP or your preferred secure channel.</p>
         </div>
 
         <h2>Ready to Make Your CDP Actually Deliver?</h2>
