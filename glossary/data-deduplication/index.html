@@ -184,6 +184,25 @@
         <p>The biggest shift in deduplication this year is the move toward real-time matching at the point of data entry, not just batch processing after the fact. More CRM integrations mean more entry points for duplicates. The average mid-market company now has 15+ tools feeding data into their CRM, each with its own formatting conventions. "Acme Corp" from your marketing automation platform and "ACME Corporation" from your sales team's manual entry are the same company, but they'll create separate records unless you have matching rules in place.</p>
         <p>We're also seeing more companies run multi-CRM setups (Salesforce for enterprise sales, HubSpot for marketing, sometimes a third system for customer success). Cross-system deduplication is a different challenge than within a single CRM, and most native dedup tools don't handle it well.</p>
 
+        <h2>Types of Duplicates</h2>
+        <p>Not all duplicates are the same shape. Different types need different fixes.</p>
+
+        <h3>Exact duplicates</h3>
+        <p>Same email, same first/last name, same company. These are the easy ones. Native CRM dedup tools catch them. If exact duplicates are a meaningful share of your database, the problem isn't dedup, it's that someone disabled the duplicate rule on imports.</p>
+
+        <h3>Fuzzy duplicates</h3>
+        <p>Same person, different formatting. "Robert Smith" and "Bob Smith" at the same company. "jsmith@acme.com" and "john.smith@acme.com" with the same display name. These need similarity scoring (Jaro-Winkler for names, normalized email comparison) plus a confidence threshold. Salesforce's standard dedup rules miss most of these.</p>
+
+        <h3>Cross-record duplicates</h3>
+        <p>Same person, different records because they changed jobs. Now you have an old record at their former company and a new one at the new company. Both are technically real, but for ABM and outreach you usually want them linked rather than treated as unrelated.</p>
+
+        <h3>Entity duplicates (companies)</h3>
+        <p>Parent/subsidiary confusion. Pre- and post-acquisition entries. The same company under a DBA name. These need firmographic matching (domain, address, industry, headcount) rather than name-only matching, since "ACME Corp" and "Acme Inc." might actually be different entities and "ACME Corp" and "Acme International Holdings" might be the same one.</p>
+
+        <h2>When to Dedupe vs. Merge vs. Delete</h2>
+        <p>Most teams over-delete. A duplicate record often has unique data on it (a different phone number, an older activity history, a contract on the right account) that you lose if you wipe the record.</p>
+        <p>Default to <strong>merge</strong> for fuzzy and cross-record duplicates. Pick a master, roll forward activities and notes, preserve the audit trail. <strong>Delete</strong> only when one record is clearly junk (test data, mistyped entries, system noise). For entity duplicates at the account level, parent-child relationships are usually the right structure rather than a merge, especially if billing or contract data lives at the subsidiary level.</p>
+
         <h2>Related Terms</h2>
         <ul>
                 <li><a href="/glossary/duplicate-detection/">Duplicate Detection</a></li>

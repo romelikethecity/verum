@@ -268,6 +268,24 @@
       <figcaption>Visual guide to how Verum solves B2B data challenges.</figcaption>
     </figure>
 
+        <h2>How NAICS Codes Actually Work</h2>
+
+        <p>NAICS is the North American Industry Classification System, a six-digit hierarchy used by the US Census, IRS, government contractors, and most B2B data vendors. The hierarchy matters more than the codes themselves.</p>
+
+        <p>The first two digits define the sector (e.g., 51 = Information, 54 = Professional Services, 23 = Construction). Digits three through six narrow the classification by subsector, industry group, industry, and national industry. A company with NAICS 541512 is in Information Technology Consulting Services; a company at 541511 is in Custom Computer Programming Services. Same broad sector, different national industry. For lead routing and segmentation, the distinction often matters.</p>
+
+        <p>NAICS gets revised every five years. The 2022 revision introduced new codes for cannabis, EV charging, and several digital-economy categories that didn't exist in the 2017 list. We update against the current official taxonomy, not whatever subset a vendor cached three revisions ago.</p>
+
+        <h2>Where NAICS Enrichment Goes Wrong</h2>
+
+        <p>Three failure modes account for most bad enrichments we see in incoming data:</p>
+
+        <p><strong>Name-only matching.</strong> Vendors that match "Acme Logistics" to NAICS 484121 (General Freight Trucking, Long-Distance) without verifying via domain or address often misclassify diversified or holding companies. We cross-reference domain, address, and SIC code where available before assigning the primary code.</p>
+
+        <p><strong>Stale parent-company mapping.</strong> Subsidiary records inheriting the parent's NAICS when the subsidiary is in a different industry. A retail subsidiary of a financial services parent should not show up as Securities Brokers and Dealers in your CRM. We classify at the operating-entity level when subsidiary data is available.</p>
+
+        <p><strong>Single-code assumption.</strong> Many companies operate in multiple industries (e.g., a company doing both software and consulting services). We can return a primary code plus secondary codes when the company operates across categories, which keeps segmentation accurate without inflating a single bucket.</p>
+
         <h2>Common Questions About NAICS Code Enrichment</h2>
         <div class="faq-section">
           <div class="faq-item" style="margin-bottom: 1.5rem;">
@@ -277,6 +295,14 @@
           <div class="faq-item" style="margin-bottom: 1.5rem;">
             <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What's the typical match rate for naics code enrichment?</h3>
             <p style="color: var(--color-text-secondary);">Match rates depend on the completeness of your input data and the specific enrichment type. For well-structured B2B records with company names and domains, expect 60-80% match rates. We run a free sample analysis to show you expected rates before you commit.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Do you return SIC codes too?</h3>
+            <p style="color: var(--color-text-secondary);">Yes. We can return both NAICS and SIC codes on the same enrichment pass. SIC is older and shallower (four digits versus six) but some downstream systems (legacy CRM fields, government RFP forms, certain financial reporting tools) still require it. We map both from the same source data.</p>
+          </div>
+          <div class="faq-item" style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">What about 2-digit vs 6-digit precision?</h3>
+            <p style="color: var(--color-text-secondary);">We return the most precise level available per record. Most B2B records get a 4- or 6-digit code. Some get only a 2- or 3-digit sector if we can't verify the more granular classification. Records flagged at lower precision get a confidence indicator so you can decide whether to use them for routing.</p>
           </div>
           <div class="faq-item" style="margin-bottom: 1.5rem;">
             <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">How is this different from buying a ZoomInfo license?</h3>
