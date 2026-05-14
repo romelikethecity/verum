@@ -238,11 +238,11 @@
         <h1>How to Standardize Job Titles in Salesforce</h1>
         <p class="article-meta">January 2026 · 8 min read</p>
 
-        <p>You want to see all VP-level contacts at your target accounts. You run a report filtering for "VP" in the title field. You get some results, but you're missing half of them.</p>
+        <p>You want to see every VP-level contact at your target accounts. You filter the title field for "VP," get some results, and the count looks low. It is low. You're missing half of them.</p>
 
-        <p>Why? Because your database has "VP Sales", "Vice President of Sales", "VP, Sales", "Vice President - Sales", "Sales VP", and "V.P. Sales". They're all the same seniority level, but your filter only catches the ones with "VP" at the beginning.</p>
+        <p>The other half are in there as "Vice President of Sales," "VP, Sales," "Vice President - Sales," "Sales VP," and "V.P. Sales." Same seniority, six spellings, and your filter only caught the ones that happened to start with "VP." Run enough of these reports and you stop trusting any of them.</p>
 
-        <p>This is the job title standardization problem. It breaks lead scoring, routing, reporting, and segmentation. Here's how to fix it.</p>
+        <p>This is the job title standardization problem, and it quietly breaks lead scoring, routing, reporting, and segmentation. Here's how to fix it for good.</p>
 
         <h2>Why Job Titles Are So Messy</h2>
 
@@ -250,7 +250,7 @@
 
         <p><strong>No standard exists.</strong> Unlike countries (ISO codes) or currencies (USD, EUR), there's no universal list of job titles. Every company makes them up as they go.</p>
 
-        <p><strong>Titles mean different things at different companies.</strong> A "Director" at a startup might be an individual contributor. A "Director" at a Fortune 500 company manages 50 people. Same title, completely different seniority.</p>
+        <p><strong>Titles mean different things at different companies.</strong> A "Director" at a 20-person startup might have zero reports. A "Director" at a Fortune 500 runs an org of 50. I've sat across the table from both in the same week, and the title told me almost nothing about who actually held the budget. Same word, completely different seniority.</p>
 
         <p><strong>People write their own titles.</strong> Web forms, business cards, LinkedIn profiles all have self-reported titles with inconsistent formatting.</p>
 
