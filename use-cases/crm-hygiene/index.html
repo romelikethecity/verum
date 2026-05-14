@@ -183,23 +183,23 @@
         </figure>
 <h2>The CRM Data Problem Nobody Talks About</h2>
 
-        <p><em>Updated April 2026:</em> CRM data quality keeps getting worse, not better. More integrations, more data sources, more systems feeding records into your CRM with no validation layer in between. The tools have gotten fancier. The underlying problem hasn't changed.</p>
+        <p>I spent years on the other side of this. At Salesforce and Snapdocs, I watched sales teams treat the CRM as the source of truth right up until the moment they needed it to be. Then the VP of Sales would squint at the pipeline number and quietly add his own mental discount. Everyone knew the data was soft. Nobody owned fixing it.</p>
 
-        <p>You invested six figures in your CRM. Your team logs calls, updates opportunities, and runs reports every Monday morning. And yet your VP of Sales doesn't trust the pipeline number. Your marketing ops lead runs a manual dedup before every campaign. Your SDRs Google prospects before calling because the phone numbers in Salesforce are probably wrong.</p>
+        <p>That's what bad CRM hygiene actually looks like. Not a dramatic failure. A slow erosion of trust where your marketing ops lead runs a manual dedup before every campaign and your SDRs Google prospects before dialing because the numbers in Salesforce are probably wrong. You paid six figures for the system. It's become a system people work around.</p>
 
-        <p>This is what bad CRM hygiene looks like. Not a dramatic failure. A slow erosion of trust that makes your most expensive system functionally useless.</p>
+        <p>And it gets worse on its own. More integrations, more web forms, more tools writing records into your CRM with no validation layer in between. Four things drive the rot.</p>
 
         <h3>Your data is decaying right now</h3>
-        <p>People change jobs, companies rebrand, offices move. According to <a href="https://www.bls.gov/news.release/tenure.nr0.htm" target="_blank" rel="noopener">Bureau of Labor Statistics</a> data on job tenure, the median employee stays at a job for about 4 years. That means roughly 25-30% of your contact data goes stale every year. If you haven't cleaned your CRM in 12 months, nearly a third of your contacts are wrong.</p>
+        <p>People change jobs, companies rebrand, offices move. <a href="https://www.bls.gov/news.release/tenure.nr0.htm" target="_blank" rel="noopener">Bureau of Labor Statistics</a> job-tenure data puts the median employee at about 4 years in a role, which works out to roughly 25-30% of your contact data going stale every year. Skip a cleanup for 12 months and nearly a third of your contacts are pointing at someone who moved on.</p>
 
         <h3>Duplicates multiply silently</h3>
-        <p>Every web form submission, list import, and integration sync is a chance for duplicates to sneak in. "Acme Corp" and "ACME Corporation" and "Acme, Corp." are the same company, but your CRM treats them as three separate accounts. Your reps call the same prospect twice. Your territory reports are inflated. Your ABM campaigns target the same account from three different angles.</p>
+        <p>Every form submission, list import, and integration sync is another chance for a duplicate to slip in. "Acme Corp," "ACME Corporation," and "Acme, Corp." are one company that your CRM is counting as three. Two reps work the same account without knowing. Territory reports inflate. Your ABM campaign hits the same buying committee from three angles and looks desperate.</p>
 
         <h3>Missing fields kill automation</h3>
-        <p>You built a lead scoring model that factors in company size and industry. But 40% of your account records are missing employee count, and 25% have no industry classification. Your scoring model is making decisions on incomplete data. Your lead routing sends enterprise prospects to SMB reps because the revenue field is blank.</p>
+        <p>Here's the one that frustrates me most, because it's invisible. You build a lead-scoring model around company size and industry. Then 40% of your account records turn out to have no employee count and a quarter have no industry at all. The model still runs. It just runs on guesses. Enterprise prospects route to SMB reps because the revenue field is blank, and nobody notices until a six-figure deal goes cold in the wrong queue.</p>
 
         <h3>Bad emails waste your biggest channel</h3>
-        <p>Email marketing depends on deliverability. Every hard bounce damages your sender reputation. Every email to an address that no longer exists is a wasted touch. ISPs notice, and eventually your emails to <em>good</em> addresses start landing in spam. A CRM full of unvalidated emails is a ticking deliverability bomb.</p>
+        <p>Email deliverability is cumulative. Every hard bounce chips at your sender reputation, and once ISPs decide your list hygiene is sloppy, even your messages to <em>good</em> addresses start landing in spam. A CRM full of unvalidated emails isn't a minor annoyance. It's a slow-acting tax on the channel you spent the most building.</p>
 
         <div class="text-center mt-xl">
           <a href="/#contact" class="btn btn--secondary">See How Bad Your Data Really Is</a>
@@ -318,8 +318,8 @@
         </div>
 
         <h2>What Changed in 2026</h2>
-        <p>Three things are different about CRM hygiene in 2026 compared to even a year ago. First, AI-powered enrichment tools have gotten significantly better at matching contacts across sources, which means higher fill rates on fields like direct dial and LinkedIn. Second, more companies are running multi-CRM environments (Salesforce for sales, HubSpot for marketing, sometimes a third for customer success), and the dedup problem across systems is worse than within a single CRM. Third, buyer expectations around data privacy mean your bounce rate matters more than ever. ISPs are stricter. Getting flagged as a sender with bad list hygiene can tank deliverability for months.</p>
-        <p>The bottom line: if you cleaned your CRM in 2025 and haven't touched it since, roughly 25-30% of those records have already gone stale. That's not a guess. It's the math on B2B job tenure.</p>
+        <p>A year ago I'd have told you CRM hygiene was the same problem it always was. It isn't, quite. Enrichment matching got noticeably better, so fill rates on direct dials and LinkedIn URLs are higher than they were. That's the good news. The harder news is that multi-CRM setups went mainstream: Salesforce for sales, HubSpot for marketing, often a third system for customer success. Cross-system dedup is a meaner problem than cleaning one CRM, because no single system owns the truth.</p>
+        <p>And ISPs got stricter. A sender with sloppy list hygiene can lose deliverability for months, not days. If you cleaned your CRM in 2025 and haven't touched it since, the job-tenure math says a quarter to a third of those records have already gone stale. Waiting isn't neutral. It compounds.</p>
 
         <h2>Ready to Stop Fighting Your CRM Data?</h2>
         <p>Two paths forward:</p>

@@ -258,9 +258,11 @@
 
         <p>Your sales rep closes a deal with "Acme Corporation." Finance creates an invoice for "Acme Corp." Marketing imported a list with "ACME, Inc." The CEO filled out a web form as just "Acme."</p>
 
-        <p>Same company. Four Account records in Salesforce. Four contacts scattered across them. No unified view of the customer relationship. This happens more than you'd think.</p>
+        <p>Same company. Four Account records in Salesforce. Four contacts scattered across them. No unified view of the customer relationship.</p>
 
-        <p>This guide covers the specific normalization rules you should implement, the best practices that separate one-time cleanups from sustainable data quality, and how to automate the whole thing inside Salesforce.</p>
+        <p>I ran into this constantly running sales teams. The one that stuck with me: a forecast review where two reps argued over who owned an account, and it turned out they both did, because the account existed twice under names that differed by a comma. Nobody had done anything wrong. Salesforce just had no opinion about whether "Acme, Inc." and "Acme Inc" were the same thing. That's the gap normalization closes.</p>
+
+        <p>This guide covers the specific normalization rules to implement, the practices that separate a one-time cleanup from sustainable data quality, and how to automate the whole thing inside Salesforce.</p>
 
         <h2>Why Company Names Get Messy</h2>
 
