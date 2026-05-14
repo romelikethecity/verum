@@ -172,13 +172,13 @@
         <p>Without LinkedIn data attached to your records, your team is flying blind. They're sending generic outreach to people whose roles changed six months ago, missing the fact that a prospect just moved from a company that was already a customer, or overlooking career signals that would've made a warm intro possible.</p>
 
         <h3>Reaching the Right Decision&#8209;Makers</h3>
-        <p>Title fields in CRMs are notoriously unreliable. Someone entered as "Manager" three years ago might be a VP now. Someone listed as "Director of Operations" might actually run all of IT. LinkedIn profiles reflect what people call themselves today, not what your SDR typed in during a trade show two years back. Enriching with current LinkedIn data means your outreach hits the actual decision&#8209;maker, not someone who left the role.</p>
+        <p>The title field in a CRM is one of the least trustworthy things in it. It records what someone typed at a trade show two years ago, not what the contact does today. The "Manager" your SDR entered back then may run a 30-person org now. The "Director of Operations" may quietly own all of IT. A LinkedIn headline, by contrast, is the title the person picked for themselves this morning. Enrich against it and your outreach lands on the actual decision&#8209;maker instead of someone who left the seat.</p>
 
         <h3>Validating Your Contact Records</h3>
-        <p>B2B data decays at roughly 30% per year. People change jobs, get promoted, move companies. A contact list that was accurate in January is already losing value by April. LinkedIn profiles are self&#8209;maintained by the people themselves, which makes them one of the most current sources of professional identity data available. Matching your records against LinkedIn surfaces which contacts are still at the company you think they're at and which have moved on.</p>
+        <p>B2B contact data decays at roughly 30% a year. A list that was clean in January is visibly soft by spring. What makes LinkedIn useful here is who maintains it. The contacts maintain it themselves, because their next job depends on it being current. Match your records against it and you find out, fast, which contacts are still where you think they are and which moved on a quarter ago without telling anyone.</p>
 
         <h3>Competitive Intelligence from Profile Changes</h3>
-        <p>When three engineers leave a prospect's company in the same quarter, that tells you something. When a new CTO joins from a company that already uses your product, that's a warm signal. LinkedIn career data turns your CRM from a static list into a living intelligence feed. Job changes, promotions, and lateral moves all create selling moments. Most teams miss them because the data isn't connected to their records.</p>
+        <p>Profile changes are signal. A new CTO who joins from a company that already runs your product is a warm intro you didn't have last week. Three engineers leaving the same prospect in one quarter says something about budget. The career moves happen either way. The only question is whether they're attached to your CRM records or sitting unnoticed on LinkedIn, and for most teams it's the second one. That's usually how a competitor gets there first.</p>
 
         <div class="text-center mt-xl">
           <a href="/#contact" class="btn btn--secondary">See What LinkedIn Data Can Add to Your CRM</a>
@@ -199,12 +199,9 @@
         </ul>
 
         <h2>How We Match LinkedIn Profiles</h2>
-        <ul>
-          <li><strong>Identity matching.</strong> We match your contacts to LinkedIn profiles using full name, company, title, and location to find the right person among potential matches.</li>
-          <li><strong>Disambiguation.</strong> For common names with multiple LinkedIn results, we use company, title, and location data from your records to identify the correct profile.</li>
-          <li><strong>Profile verification.</strong> Each match is verified to ensure the LinkedIn profile belongs to the right person at the right company, not a name&#8209;match at a different organization.</li>
-          <li><strong>Data extraction.</strong> From matched profiles, we extract the profile URL, current headline, career fields, and profile completeness indicator.</li>
-        </ul>
+        <p>The hard part of LinkedIn enrichment isn't finding a profile. It's being sure the profile is the right one. There are a lot of John Smiths, and the wrong match is worse than no match, because it still looks confident sitting in your CRM.</p>
+        <p>We start from what's already on your record: full name, company, and whatever title and location you have. That produces a candidate set, and common names blow that set wide open, so the real work is disambiguation. Company is the strongest signal. Title and location break most of the remaining ties. Nicknames get normalized on the way through, because "Bob Smith" and "Robert Smith" are one person and a naive matcher counts them as two.</p>
+        <p>Every surviving candidate gets verified against the company it claims, so a name&#8209;match at a different org gets dropped instead of passed through. Only then do we pull the profile URL, current headline, career fields, and a completeness score. The pairs that land in the ambiguous middle go to a person, not an algorithm.</p>
 
         <h2>Use Cases: What Teams Do With LinkedIn&#8209;Enriched Data</h2>
         <ul class="feature-list">
