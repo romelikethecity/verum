@@ -218,7 +218,7 @@
 
         <p>This shows you every email address that appears on multiple Contacts. Same logic works for phone number, name, or any other field.</p>
 
-        <p>The limitation: this only catches exact matches. "john@acme.com" matches "john@acme.com," but it won't catch "john.smith@acme.com" and "jsmith@acme.com" as the same person.</p>
+        <p>What this misses is everything that isn't an exact match. "john@acme.com" lines up with "john@acme.com," but it won't connect "john.smith@acme.com" and "jsmith@acme.com" as the same person, and that's where a lot of your real duplicates live.</p>
 
         <h3>Duplicate Rules and Matching Rules</h3>
 
@@ -232,7 +232,7 @@
 
         <p>You can view potential duplicates on individual records. Go to any Contact, and if duplicates exist, you'll see a "Potential Duplicates" component (if you've added it to the page layout).</p>
 
-        <p>The problem: you have to check records one at a time. For bulk duplicate detection, you need something more.</p>
+        <p>It works, but only one record at a time. For bulk duplicate detection across the whole org, you need something more.</p>
 
         <h2>Finding Duplicates: The Better Way</h2>
 
@@ -382,7 +382,7 @@
 
         <p><strong>Broken automation.</strong> <a href="/glossary/lead-scoring/">Lead scoring</a> that considers email engagement is wrong when engagement is split across duplicates. Nurture sequences trigger multiple times for the same person.</p>
 
-        <p><strong>Lost trust.</strong> When reps don't trust the CRM, they stop using it. They keep their own spreadsheets. The system becomes less valuable for everyone.</p>
+        <p><strong>Lost trust.</strong> When reps don't trust the CRM, they stop using it and quietly start keeping their own spreadsheets. I watched this happen at two different companies, and once a sales floor stops trusting the system, you don't win that back with a memo. The whole org gets less out of the CRM because a handful of duplicates made it feel unreliable.</p>
 
         <p>If your Salesforce has been running for more than a couple years without serious duplicate management, you probably have thousands of them. The question is whether to spend time fixing them now or keep paying the hidden cost every day.</p>
 
