@@ -192,13 +192,13 @@
 
       <div class="blog-content">
 
-        <p>HubSpot's <a href="https://knowledge.hubspot.com/contacts/marketing-contacts" target="_blank" rel="noopener">marketing contact pricing</a> is clever. You only pay for contacts you can actually market to. The theory is fair: why pay for people you can't email?</p>
+        <p>HubSpot's <a href="https://knowledge.hubspot.com/contacts/marketing-contacts" target="_blank" rel="noopener">marketing contact pricing</a> is clever. You only pay for the contacts you can actually market to, which sounds fair, and on day one it is.</p>
 
-        <p>The reality is messier. Contacts accumulate. They bounce. They unsubscribe. They go quiet. But they stay marked as marketing contacts, counting against your tier limit and adding to your bill. Eventually you either hit your limit and get auto-upgraded, or you realize you're paying thousands per month for a database that's 30% garbage.</p>
+        <p>Then the database does what databases do. Contacts accumulate. They bounce, they unsubscribe, they quietly stop opening anything, and almost none of that flips their marketing-contact status. They keep counting against your tier limit and padding your bill. Eventually you either trip your limit and get auto-upgraded, or you look closely one month and realize you're paying for a database that's 30% dead weight.</p>
 
         <p>This guide covers how to identify which marketing contacts aren't earning their keep, how to reduce your count without losing valuable data, and how to prevent the bloat from coming back.</p>
 
-        <h2>Understanding Marketing Contact Billing</h2>
+        <h2>How Marketing Contact Billing Actually Works</h2>
 
         <p>A few things about how this works that matter for cleanup.</p>
 
@@ -210,7 +210,7 @@
 
         <h3>Downgrades Only Happen at Renewal</h3>
 
-        <p>Here's the catch. If you reduce your marketing contacts, you don't automatically drop back to a lower tier. You stay at the upgraded tier until your contract renews.</p>
+        <p>Reducing your marketing contacts doesn't drop you back down, though. You stay at the upgraded tier until your contract renews, no matter how many contacts you cut in the meantime.</p>
 
         <p>To actually get a lower rate, you need to contact HubSpot at least 5 business days before renewal and request a downgrade. They'll verify your contact count and adjust your next contract accordingly.</p>
 
@@ -228,7 +228,7 @@
 
         <h3>Hard Bounces</h3>
 
-        <p>Contacts whose emails have hard bounced can't receive email. HubSpot won't send to them anyway. There's zero reason for them to be marketing contacts.</p>
+        <p>A hard-bounced email can't be delivered, and HubSpot won't even try to send to it. So there's no reason for that contact to sit in your billable count.</p>
 
         <p>Create a list: Marketing contact status is Marketing contact AND Email hard bounce reason is known.</p>
 
@@ -236,7 +236,7 @@
 
         <h3>Unsubscribed From All Email</h3>
 
-        <p>Contacts who have unsubscribed from all email communications have opted out. You can't email them without violating their preferences (and potentially regulations). Marketing contact status serves no purpose.</p>
+        <p>If someone opted out of all email, you can't market to them without stepping on their stated preferences and, depending on where they are, the law. Marketing contact status does nothing for you here.</p>
 
         <p>List: Marketing contact status is Marketing contact AND Unsubscribed from all email is true.</p>
 
@@ -248,7 +248,7 @@
 
         <h3>Long-Term Disengaged</h3>
 
-        <p>Contacts who haven't engaged with your emails in 12+ months are unlikely to start now. They're either ignoring you, filtering you to spam, or no longer using that email address.</p>
+        <p>Someone who hasn't opened an email in 12+ months probably isn't about to start. They're ignoring you, filtering you to spam, or off that address entirely.</p>
 
         <p>List: Marketing contact status is Marketing contact AND Last marketing email open date is more than 12 months ago AND Marketing emails opened is greater than 0.</p>
 
@@ -256,7 +256,7 @@
 
         <h3>Never Engaged</h3>
 
-        <p>Contacts who have received multiple marketing emails and never opened any of them. They're either not real addresses, not interested, or your emails are going to spam.</p>
+        <p>Then there's the contact who's been sent a stack of marketing emails and opened none of them. Either the address isn't real, the person isn't interested, or your mail is landing in spam.</p>
 
         <p>List: Marketing contact status is Marketing contact AND Marketing emails sent is greater than 5 AND Marketing emails opened is 0.</p>
 
