@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=8">
+  <link rel="stylesheet" href="/css/styles.css?v=10">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://veruminc.com/use-cases/master-data-management/">
   <meta property="og:title" content="Master Data Management | Verum">
@@ -276,28 +276,6 @@
       <figcaption>Visual guide to how Verum solves B2B data challenges.</figcaption>
     </figure>
 
-        <h2>MDM vs. CDP vs. CRM: Where Verum Fits</h2>
-
-        <p>These three categories get conflated. Worth knowing the difference because the data-quality problems are different.</p>
-
-        <p><strong>CRM</strong> is your operating system for sales and customer activity. Salesforce, HubSpot, Microsoft Dynamics. Each user touches it daily. The data quality problem is duplicate records and stale contact info from manual entry and integration drift.</p>
-
-        <p><strong>CDP (Customer Data Platform)</strong> unifies behavioral and identity data across product, marketing, and support. Segment, RudderStack, mParticle. The data quality problem is identity resolution: matching the same person across the product, the marketing site, and the CRM when the keys don't line up.</p>
-
-        <p><strong>MDM (Master Data Management)</strong> is the discipline of maintaining a single authoritative record for each entity (account, contact, product, location) across every downstream system. Reltio, Informatica, Riversand. The data quality problem is governance: deciding which system owns the record, when downstream systems can override, and how conflicts get resolved.</p>
-
-        <p>Verum sits upstream of all three. We clean the source data before it loads into the MDM, the CDP, or the CRM. A clean input means fewer governance conflicts downstream and less identity-resolution work in the CDP.</p>
-
-        <h2>Where MDM Implementations Stall</h2>
-
-        <p>Most MDM projects don't fail at the technology layer. They fail at the data-quality layer that nobody scoped properly during the implementation.</p>
-
-        <p><strong>Survivorship rules that fight your reality.</strong> Out-of-the-box survivorship picks the "most recent" record or the "highest source priority." That works until your most recent record came from a webform with two filled fields. We surface this before survivorship runs so the master picks up the right data.</p>
-
-        <p><strong>Unmodeled entities.</strong> MDM platforms model accounts and contacts well. They model the messy entities (partner contacts that are also customer contacts, prospects that are also vendors) badly. We flag relationship duplicates in the input data so your governance team can decide how to model them.</p>
-
-        <p><strong>Source-system data debt.</strong> The MDM is only as good as the upstream feeds. A clean install plus 18 months of dirty Salesforce imports equals a dirty MDM. Recurring upstream cleanup is the part most teams under-budget.</p>
-
         <h2>Common Questions About Master Data Management</h2>
         <div class="faq-section">
           <div class="faq-item" style="margin-bottom: 1.5rem;">
@@ -328,6 +306,10 @@
         </div>
 
 
+        <aside class="sources-block" aria-label="Sources">
+          <h2 class="sources-block__heading">Sources</h2>
+          <ul class="sources-block__list"><li><a href="https://www.hubspot.com/state-of-marketing" target="_blank" rel="noopener noreferrer">HubSpot State of Marketing Report</a></li><li><a href="https://www.forrester.com/blogs/category/data-strategy-insights/" target="_blank" rel="noopener noreferrer">Forrester Data Strategy Insights</a></li><li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights" target="_blank" rel="noopener noreferrer">McKinsey QuantumBlack analytics research</a></li></ul>
+        </aside>
         <p class="mt-lg text-muted">Related: <a href="/use-cases/">All Use Cases</a> | <a href="/services/data-cleaning.html">Data Cleaning</a> | <a href="/services/data-enrichment.html">Data Enrichment</a> | <a href="/cleaning/crm-data-cleaning/">CRM Data Cleaning</a></p>
       </div>
     </section>

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=8">
+  <link rel="stylesheet" href="/css/styles.css?v=10">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://veruminc.com/glossary/data-deduplication/">
   <meta property="og:title" content="What Is Data Deduplication? | Verum">
@@ -131,18 +131,19 @@
         <h2>Definition</h2>
         <p><strong>Data Deduplication</strong> is the process of identifying and removing or merging duplicate records within a database.</p>
 
-        <p><em>Updated April 2026:</em> Deduplication has gotten harder as companies run more integrations and import data from more sources. The good news: matching algorithms are significantly better than they were even a year ago, particularly for fuzzy matching across CRMs with inconsistent formatting.</p>
-
         <h2>Why It Matters</h2>
         <p>About 30% of B2B data goes bad every year. People change jobs, companies close, phone numbers get reassigned. If data deduplication isn't part of your regular process, your CRM data drifts further from reality every quarter. Gartner puts the average cost of poor data quality at $15 million annually for large companies. For smaller teams, it shows up as bounced emails, misrouted leads, and reps wasting time on dead contacts.</p>
-        <p>When dedup breaks down, everything sitting on top of that data inherits the problem. Your lead-scoring model splits one buyer's signal across three records and ranks all of them lukewarm. Forecasts double-count. ABM campaigns hit the same account from two directions and look uncoordinated. None of this is hard to fix, but it doesn't stay fixed on its own.</p>
+        <p>When data deduplication breaks down, everything built on that data breaks too. Lead scoring produces noise. Pipeline forecasts miss. Segmentation targets the wrong accounts. The fix isn't complicated, but it does need to be ongoing.</p>
 
         <h2>How It Works in Practice</h2>
-        <p>Good deduplication runs in a sequence, and the order matters.</p>
-        <p>Standardize first. Names, company names, emails, and phone numbers get normalized so "Acme Corp." and "ACME Corporation" line up before anything tries to match them. Skip this step and match rates collapse, because the algorithm ends up comparing formatting noise instead of identity.</p>
-        <p>Then block. Comparing every record against every other one in a 100,000-row file is 10 billion comparisons, which is why naive tools choke on large databases. Blocking groups records that could plausibly match (same email domain, same normalized company, same zip) so the costly comparison only runs inside small buckets.</p>
-        <p>Inside each block, score. Jaro-Winkler on names, token overlap on company names, normalized comparison on emails: every candidate pair gets a confidence number. Above your threshold, auto-merge. Below it, leave it alone. The gray band in the middle is where most bad merges happen, and it's the part automated tools quietly skip, so that's where a person reviews.</p>
-        <p>Last is survivorship. When two records merge, which phone number wins? Which owner? Which created date? The rule should favor the most recently verified value, not just the newest record.</p>
+        <p>The process depends on what your data actually needs, but at a high level:</p>
+        <ul>
+            <li><strong>Look at what you have.</strong> We assess your current data for gaps, inconsistencies, and quality issues specific to data deduplication.</li>
+            <li><strong>Fix what's broken.</strong> That might mean pulling from external sources, validating against reference databases, or standardizing formats that are all over the place.</li>
+            <li><strong>Verify the results.</strong> Cross-reference against multiple sources. Our team reviews edge cases that automated matching gets wrong.</li>
+            <li><strong>Deliver clean data.</strong> CRM-ready files you can import immediately. No reformatting needed.</li>
+            <li><strong>Keep it clean.</strong> Data decays at 30% per year. Periodic refreshes prevent the work from going stale.</li>
+        </ul>
 
         <h2>Example</h2>
         <p>Your CRM has 50,000 records. After applying data deduplication, you discover that 15% need attention. Fixing those 7,500 records before your next campaign prevents bounces, misroutes, and wasted spend.</p>
@@ -155,9 +156,11 @@
     </figure>
 
         <h2>Common Mistakes</h2>
-        <p>The most expensive mistake is treating dedup as a one-time project. Data doesn't stay clean. People change jobs, companies move, numbers get reassigned. Clean your database in January and by summer a noticeable chunk of it is wrong again.</p>
-        <p>The second is trusting a single source. No vendor gets everything right. One has the correct email but a stale title, another has the current title and a dead email. You need several, compared against each other, or you're just laundering one vendor's errors.</p>
-        <p>And the quiet one: letting automation merge unsupervised. Tools handle the obvious cases fine. It's the two "John Smith" entries at the same company, or the contact who switched roles last month, that need a person to make the call before anything gets merged for good.</p>
+        <ul>
+            <li><strong>Treating it as a one-time fix.</strong> Data doesn't stay clean. People change jobs, companies move, phone numbers get reassigned. If you cleaned your data six months ago and haven't touched it since, a chunk of it has already gone stale.</li>
+            <li><strong>Using a single data source.</strong> No single vendor gets everything right. We pull from 50+ sources and cross-reference because one source might have the right email but the wrong title, and another might have the opposite.</li>
+            <li><strong>Trusting automation without review.</strong> Automated tools handle most records fine. But the tricky ones, like two "John Smith" entries at the same company, or a contact who just switched roles, need a person to make the call.</li>
+        </ul>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-section">
@@ -174,29 +177,6 @@
             <p style="color: var(--color-text-secondary);">We handle data deduplication as part of our data cleaning and enrichment services. Send us your data, and we'll apply best practices using 50+ sources with human QA. Most projects complete in 24-48 hours.</p>
           </div>
         </div>
-
-        <h2>What's Changed in 2026</h2>
-        <p>The biggest shift in deduplication this year is the move toward real-time matching at the point of data entry, not just batch processing after the fact. More CRM integrations mean more entry points for duplicates. The average mid-market company now has 15+ tools feeding data into their CRM, each with its own formatting conventions. "Acme Corp" from your marketing automation platform and "ACME Corporation" from your sales team's manual entry are the same company, but they'll create separate records unless you have matching rules in place.</p>
-        <p>We're also seeing more companies run multi-CRM setups (Salesforce for enterprise sales, HubSpot for marketing, sometimes a third system for customer success). Cross-system deduplication is a different challenge than within a single CRM, and most native dedup tools don't handle it well.</p>
-
-        <h2>Types of Duplicates</h2>
-        <p>Not all duplicates are the same shape. Different types need different fixes.</p>
-
-        <h3>Exact duplicates</h3>
-        <p>Same email, same first/last name, same company. These are the easy ones, and native CRM dedup tools catch them. If exact duplicates are a meaningful share of your database, dedup isn't really your problem. Someone disabled the duplicate rule on imports, and that's the thing to go fix.</p>
-
-        <h3>Fuzzy duplicates</h3>
-        <p>Same person, different formatting. "Robert Smith" and "Bob Smith" at the same company. "jsmith@acme.com" and "john.smith@acme.com" with the same display name. These need similarity scoring (Jaro-Winkler for names, normalized email comparison) plus a confidence threshold. Salesforce's standard dedup rules miss most of these.</p>
-
-        <h3>Cross-record duplicates</h3>
-        <p>Same person, different records because they changed jobs. Now you have an old record at their former company and a new one at the new company. Both are technically real, but for ABM and outreach you usually want them linked rather than treated as unrelated.</p>
-
-        <h3>Entity duplicates (companies)</h3>
-        <p>Parent/subsidiary confusion. Pre- and post-acquisition entries. The same company under a DBA name. These need firmographic matching (domain, address, industry, headcount) rather than name-only matching, since "ACME Corp" and "Acme Inc." might actually be different entities and "ACME Corp" and "Acme International Holdings" might be the same one.</p>
-
-        <h2>When to Dedupe vs. Merge vs. Delete</h2>
-        <p>Most teams over-delete. A duplicate record often has unique data on it (a different phone number, an older activity history, a contract on the right account) that you lose if you wipe the record.</p>
-        <p>Default to <strong>merge</strong> for fuzzy and cross-record duplicates. Pick a master, roll forward activities and notes, preserve the audit trail. <strong>Delete</strong> only when one record is clearly junk (test data, mistyped entries, system noise). For entity duplicates at the account level, parent-child relationships are usually the right structure rather than a merge, especially if billing or contract data lives at the subsidiary level.</p>
 
         <h2>Related Terms</h2>
         <ul>
